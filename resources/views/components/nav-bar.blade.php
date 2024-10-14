@@ -1,3 +1,10 @@
-<div>
-    <!-- The best way to take care of the future is to take care of the present moment. - Thich Nhat Hanh -->
-</div>
+<nav>
+    <li>
+        <ul><a href="#home">HOME</a></ul>
+        <ul><a href="#">ABOUT US</a></ul>
+        <ul><a href="#">PRODUCTS</a></ul>
+        <ul><a href="#">EO & MICE</a></ul>
+        <ul><a href="#">CONTACT US</a></ul>
+        <ul><a href="#">SIGN IN</a></ul>
+    </li>
+</nav>
