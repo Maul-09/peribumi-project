@@ -9,12 +9,11 @@
 </head>
 
 <body>
-    <div>
-        <x-navbar></x-navbar>
-        <main>
-            {{ $slot }}
-        </main>
-    </div>
+    <x-navbar></x-navbar>
+    <main>
+        {{ $slot }}
+    </main>
+    <x-footer></x-footer>
 </body>
 
 </html>
