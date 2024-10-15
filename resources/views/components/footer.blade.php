@@ -1,4 +1,4 @@
-<footer>
+<footer id="footer">
     <div class="title">
         <img src="#" alt="logo">
         <h2>PERIBUMI CONSULTANT</h2>
@@ -27,7 +27,7 @@
         <a href="#about">About Us</a>
         <a href="#product">Products Us</a>
         <a href="#mitra">Mitra</a>
-        <a href="contact">Contact Us</a>
+        <a href="#footer">Contact Us</a>
     </div>
 
     <div>
