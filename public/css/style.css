@@ -63,7 +63,9 @@ header ul li a{
     display: inline-blok;
     margin: 0 15px;
     color: #fff;
+    font-decoration: uppercase;
     font-size: 12px;
+    font-weight: 500;
     text-decoration: none;
     transition: 0.5s;
 }
@@ -71,7 +73,22 @@ header ul li a:hover{
     color: var(--skin-color-1);
 }
 header.sticky ul li a{
-    color: #111;
+    color: #fff;
 }
 header.sticky ul li a:hover{
     color: var(--skin-color-1);
+}
+section{
+    padding: 100px;
+}
+
+.banner{
+    position: relative;
+    min-height: 100vh;
+    background: url(../image/bg-1.jpg);
+    background-size: cover;
+    display: flex;
+    background-position: right;
+    justify-content: space-between;
+    align-items: center;
+}
