@@ -3,7 +3,7 @@
         CONSULTANT</a>
     <div class="toggle"></div>
     <ul class="menu">
-        <li><a href="{{ route('beranda') }}#home">imah</a></li>
+        <li><a href="{{ route('beranda') }}#home">Home</a></li>
         <li><a href="{{ route('beranda') }}#about">About us</a></li>
         <li><a href="{{ route('beranda') }}#product">Product</a></li>
         <li><a href="{{ route('beranda') }}#mitra">Mitra</a></li>
