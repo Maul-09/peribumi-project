@@ -93,17 +93,29 @@ section {
     background-position: right;
     justify-content: space-between;
     align-items: center;
+    z-index:-4;
+}
+
+.banner::before {
+    content:"";
+    background-color : #04364A;
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: 100%;
+    opacity:0.3;
+    z-index:-5;
 }
 
 .banner::after {
     content: "";
-    display:blok;
     position: absolute;
     top: 100px;
     left:0;
     width: 100%;
     height: 100%;
     background-image: linear-gradient(180deg, transparent 0 30%, #04364A 70% 100%);
+
 }
 
 .banner .textBx h2 {
