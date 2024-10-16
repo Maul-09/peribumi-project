@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot:title>{{ asset('css/style-manajemen.css') }}</x-slot>
     <section class="banner" id="home">
         <div class="textBx">
             <h2>MANAGEMENT BUSINESS</h2>
