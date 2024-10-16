@@ -10,36 +10,37 @@
     </section>
 
     <section class=" about" id="about">
-        <div>
-            <h3>Tentang Peribumi Consultan</h3>
-            <h1>Kami hadir sejak tahun 2023</h1>
-            <div>
-                <div>
-                    <button>Visi</button>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quo mollitia tempora enim
-                    perspiciatis
-                    natus blanditiis ullam at maiores, nobis reiciendis magni. Eius officiis dicta iure possimus, illo
-                    recusandae ipsam.</p>
+        <div class="content">
+            <div class="contenBx w50">
+                <div class="heading">
+                    <h3>Tentang Peribumi Consultan</h3>
+                    <h1>Kami hadir sejak tahun 2023</h1>
                 </div>
-                <div>
-                    <button>Misi</button>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum voluptates ab assumenda aliquam
-                    similique, labore minus quo totam incidunt asperiores explicabo eligendi? Possimus placeat laborum
-                    dolorem accusantium atque expedita molestiae.</p>
-                </div>
+                <button>Visi</button>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quo mollitia tempora enim
+                perspiciatis
+                natus blanditiis ullam at maiores, nobis reiciendis magni. Eius officiis dicta iure possimus, illo
+                recusandae ipsam.</p>
+                <button>Misi</button>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum voluptates ab assumenda aliquam
+                similique, labore minus quo totam incidunt asperiores explicabo eligendi? Possimus placeat laborum
+                dolorem accusantium atque expedita molestiae.</p>
             </div>
-            <div>
-                <img src="#" alt="foto">
-            </div>
-            <div>
-                <h1>Tentang Kami</h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, assumenda eaque unde nostrum neque
-                architecto esse maxime optio exercitationem quam! Quos rem aspernatur ab cupiditate nisi incidunt
-                molestiae aliquid delectus.</p>
-                <button>TIM PERIBUMI</button>
+            <div class="w50">
+                <img src="{{ asset('../image/bg-4.jpg') }}" alt="foto">
             </div>
         </div>
     </section>
+    <section>
+        <div>
+            <h1>Tentang Kami</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, assumenda eaque unde nostrum neque
+            architecto esse maxime optio exercitationem quam! Quos rem aspernatur ab cupiditate nisi incidunt
+            molestiae aliquid delectus.</p>
+            <button>TIM PERIBUMI</button>
+        </div>
+    </section>
+
 
     <section>
         <div id="product">
