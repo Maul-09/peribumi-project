@@ -1,6 +1,62 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-.title img {
-    width: 80px;
-    height: 30px;
+footer {
+    padding: 100px;
 }
+
+.title-foot {
+    display: flex;
+    aligh-item: center;
+}
+
+.title-foot img {
+    width: 100px;
+    height: 40px;
+}
+
+.title-foot h2 {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.con{
+    display:flex;
+    justify-content: space-between;
+}
+
+.about-foot {
+    color: #fff;
+    padding:10px;
+    max-width:400px;
+}
+
+.produk-foot {
+    color: #fff;
+    padding:10px;
+    max-width:400px;
+}
+
+.produk-foot a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-foot{
+    color: #fff;
+    padding:10px;
+    max-width:400px;
+
+}
+
+.nav-foot a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.media-foot {
+    color: #fff;
+    padding:10px;
+    max-width:400px;
+}
+
+

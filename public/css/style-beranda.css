@@ -49,7 +49,7 @@ header .logo img {
     margin-right: 10px;
 }
 header.sticky .logo {
-    color: #111;
+    color: #fff;
 }
 header ul {
     position: relative;
