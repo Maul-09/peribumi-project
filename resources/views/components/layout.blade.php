@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ $title }}">
     <link rel="stylesheet" href="{{ asset('css/skin/color-palete.css') }}">
     <link rel="icon" type="image/png" href="{{ asset('image/logo-peribumi.png') }} ">
-    <title>Beranda</title>
+    <title>{{ $name }}</title>
 </head>
 
 <body>
