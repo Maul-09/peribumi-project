@@ -18,6 +18,9 @@
         {{ $slot }}
     </main>
     <x-footer></x-footer>
+
+    <script src="{{ asset('css/js/script.js') }}"></script>
+    <script src="{{ asset('css/js/nav.js') }}"></script>
 </body>
 
 </html>

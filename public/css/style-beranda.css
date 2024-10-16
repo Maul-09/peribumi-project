@@ -164,22 +164,49 @@ section {
 .content {
     display: flex;
     justify-content: space-between;
-}
-.contentBx {
-    padding-right: 30px;
-}
-.contentBx h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-.contentBx p {
-    font-size: 17px;
-    font-style: italic;
+
 }
 .w50 {
     max-width: 50%;
 }
 .w50 img {
     width: 90%;
+}
+.w50 h1{
+    font-size: 20px;
+    color: #FF9B06;
+}
+.w50 h2{
+    font-size: 30px;
+    color: #FF9B06;
+}
+.w50 .nav-tabs{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+}
+.w50 .nav-tabs li{
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-bottom: 2px solid transparent;
+    transition: background-color 0.3s ease, border-color
+}
+.w50 .nav-tabs li:hover{
+    background-color: #f0f0f0;
+}
+
+.w50 .tab-content{
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.w50 .tab-content .tab-pane{
+    display: none;
+}
+.w50 .tab-content .tab-pane: hover{
+    display: block;
 }
