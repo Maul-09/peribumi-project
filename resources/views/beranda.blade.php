@@ -1,9 +1,10 @@
 <x-layout>
-    <x-slot:title>{{ asset('css/style-beranda.css') }}</x-slot>
+    <x-slot:title>{{ asset('css/style-beranda.css') }}</x-slot:title>
     <section class="banner" id="home">
         <div class="textBx">
             <h2>PERIBUMI CONSULTANT</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sint voluptate consequatur alias recusandae
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sint voluptate consequatur alias
+                recusandae
                 explicabo temporibus, ad dolorum nisi, voluptatum ab non minima totam iure repellat sapiente nulla
                 repellendus
                 suscipit?</p>
@@ -19,13 +20,13 @@
                 </div>
                 <button>Visi</button>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quo mollitia tempora enim
-                perspiciatis
-                natus blanditiis ullam at maiores, nobis reiciendis magni. Eius officiis dicta iure possimus, illo
-                recusandae ipsam.</p>
+                    perspiciatis
+                    natus blanditiis ullam at maiores, nobis reiciendis magni. Eius officiis dicta iure possimus, illo
+                    recusandae ipsam.</p>
                 <button>Misi</button>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum voluptates ab assumenda aliquam
-                similique, labore minus quo totam incidunt asperiores explicabo eligendi? Possimus placeat laborum
-                dolorem accusantium atque expedita molestiae.</p>
+                    similique, labore minus quo totam incidunt asperiores explicabo eligendi? Possimus placeat laborum
+                    dolorem accusantium atque expedita molestiae.</p>
             </div>
             <div class="w50">
                 <img src="{{ asset('../image/bg-4.jpg') }}" alt="foto">
@@ -36,8 +37,8 @@
         <div>
             <h1>Tentang Kami</h1>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, assumenda eaque unde nostrum neque
-            architecto esse maxime optio exercitationem quam! Quos rem aspernatur ab cupiditate nisi incidunt
-            molestiae aliquid delectus.</p>
+                architecto esse maxime optio exercitationem quam! Quos rem aspernatur ab cupiditate nisi incidunt
+                molestiae aliquid delectus.</p>
             <button>TIM PERIBUMI</button>
         </div>
     </section>
@@ -51,37 +52,42 @@
             <div class="card">
                 <div class="box">
                     <h3>Management Business</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo nemo pariatur autem libero eveniet,
-                    animi provident itaque reiciendis veniam nesciunt, nam ipsam hic minima in dolorum vel odio ad
-                    dolor!</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo nemo pariatur autem libero
+                        eveniet,
+                        animi provident itaque reiciendis veniam nesciunt, nam ipsam hic minima in dolorum vel odio ad
+                        dolor!</p>
                     <a href="#"><img src="#" alt="foto"></a>
                 </div>
                 <div class="box">
                     <h3>Training Center</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis
-                    repudiandae tempore, repellendus error sequi ab suscipit sapiente aliquid distinctio aperiam esse
-                    autem animi deserunt, sint impedit.</p>
+                        repudiandae tempore, repellendus error sequi ab suscipit sapiente aliquid distinctio aperiam
+                        esse
+                        autem animi deserunt, sint impedit.</p>
                     <a href="#"><img src="#" alt="foto"></a>
                 </div>
                 <div class="box">
                     <h3>Digital Solution</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus pariatur esse quaerat minima
-                    obcaecati repellat quasi sequi, incidunt quo porro beatae! Vel odit sapiente sint adipisci,
-                    dignissimos laboriosam assumenda veniam?</p>
+                        obcaecati repellat quasi sequi, incidunt quo porro beatae! Vel odit sapiente sint adipisci,
+                        dignissimos laboriosam assumenda veniam?</p>
                     <a href="#"><img src="#" alt="foto"></a>
                 </div>
                 <div class="box">
                     <h3>Personal Development</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga consectetur consequatur magnam
-                    incidunt harum quasi dolores vel, repellat officia aliquam quaerat accusamus sint, eos cupiditate
-                    eum sed, voluptas assumenda commodi?</p>
+                        incidunt harum quasi dolores vel, repellat officia aliquam quaerat accusamus sint, eos
+                        cupiditate
+                        eum sed, voluptas assumenda commodi?</p>
                     <a href="#"><img src="#" alt="foto"></a>
                 </div>
                 <div class="box">
                     <h3>Event Organizer</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cupiditate obcaecati officia velit
-                    nulla. Vitae, tempora? Numquam aliquid necessitatibus quas consequatur inventore mollitia dolores
-                    expedita, at iste incidunt cupiditate consequuntur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi cupiditate obcaecati officia
+                        velit
+                        nulla. Vitae, tempora? Numquam aliquid necessitatibus quas consequatur inventore mollitia
+                        dolores
+                        expedita, at iste incidunt cupiditate consequuntur.</p>
                     <a href="#"><img src="#" alt="foto"></a>
                 </div>
             </div>

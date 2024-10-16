@@ -8,7 +8,7 @@
     scroll-behavior: smooth;
 }
 body {
-    background-color: #04364A;
+    background-color: #04364a;
 }
 
 header {
@@ -97,13 +97,17 @@ section {
 
 .banner::after {
     content: "";
-    display:blok;
+    display: blok;
     position: absolute;
     top: 100px;
-    left:0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(180deg, transparent 0 30%, #04364A 70% 100%);
+    background-image: linear-gradient(
+        180deg,
+        transparent 0 30%,
+        #04364a 70% 100%
+    );
 }
 
 .banner .textBx h2 {
