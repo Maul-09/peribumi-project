@@ -6,7 +6,6 @@
                 explicabo temporibus, ad dolorum nisi, voluptatum ab non minima totam iure repellat sapiente nulla
                 repellendus
                 suscipit?</p>
-            <a href="" class="btn">TENTANG KAMI</a>
         </div>
     </section>
 
