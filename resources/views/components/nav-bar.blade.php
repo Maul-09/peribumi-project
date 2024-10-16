@@ -8,7 +8,7 @@
         <li class="dropdown">
             <button class="dropbtn">Product</button>
             <div class="dropdown-content">
-                <a href="manajemen-bisnis">Management Business</a>
+                <a href="manajemen">Management Business</a>
                 <a href="#">Training Center</a>
                 <a href="#">Digital Solution</a>
                 <a href="#">Personal Development</a>

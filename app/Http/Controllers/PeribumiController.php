@@ -13,6 +13,6 @@ class PeribumiController extends Controller
 
     public function manajemen()
     {
-        return view('manajemen-bisnis');
+        return view('manajemen');
     }
 }
