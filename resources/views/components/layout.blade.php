@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/skin/color-palete.css') }}">
     <link rel="icon" type="image/png" href="{{ asset('image/favicon.ico') }} ">
+    <link rel="stylesheet" href="{{ asset('css/style-nav.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>{{ $name }}</title>
 </head>
@@ -20,8 +21,8 @@
     </main>
     <x-footer></x-footer>
 
-    <script src="{{ asset('css/js/script.js') }}"></script>
-    <script src="{{ asset('css/js/nav.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/nav.js') }}"></script>
 </body>
 
 </html>
