@@ -25,7 +25,7 @@ header {
 header.sticky {
     background-color: #fff;
     padding: 20px 0px;
-    box-shadow: 0 5px 20px rga(0, 0, 0, 1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 header .logo {
     display: flex;
@@ -47,7 +47,7 @@ header .logo img {
     margin-right: 10px;
 }
 header.sticky .logo {
-    color: #04364A;
+    color: #04364a;
 }
 header ul {
     position: relative;
@@ -57,27 +57,26 @@ header ul {
 header ul li {
     position: relative;
     list-style: none;
-
 }
 
-header ul li.dropdown{
+header ul li.dropdown {
     display: inline-block;
-    justify-content:center;
+    justify-content: center;
 }
 
-header ul li.dropdown .dropdown-content{
+header ul li.dropdown .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 180px;
     z-index: 1;
 }
-header ul li.dropdown:hover .dropdown-content{
+header ul li.dropdown:hover .dropdown-content {
     display: block;
     transition: 0.5s;
 }
 
-header ul li.dropdown .dropdown-content a{
+header ul li.dropdown .dropdown-content a {
     color: black;
     padding: 12px 16px;
     font-size: 10px;
@@ -99,11 +98,11 @@ header ul li a {
 }
 header ul li a:hover,
 .dropdown:hover .dropbtn {
-    color: #FF9B06;
+    color: #ff9b06;
 }
 header.sticky ul li a {
-    color: #04364A;
+    color: #04364a;
 }
 header.sticky ul li a:hover {
-    color: #FF9B06 ;
+    color: #ff9b06;
 }
