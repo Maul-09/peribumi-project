@@ -112,15 +112,59 @@ section {
     display: block;
 }
 
-section.mitra {
+section.mitpro {
     background-color: #fff;
 }
+
+section.mitpro hr {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.box {
+    position: relative;
+    padding: 40px 20px;
+    color: #fff;
+    max-width: 200px;
+    margin: 20px;
+    text-align: left;
+    height: 300px;
+}
+.box img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    object-position: 15% 100%;
+}
+.textbx-card {
+    position: absolute;
+    bottom: 50px;
+}
+
+.product-title {
+    color: #04364a;
+    display: flex;
+    justify-content: center;
+    aligh-item: center;
+    margin-bottom: 30px;
+}
+
 .client {
     color: #04364a;
     display: flex;
     justify-content: center;
     aligh-item: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .mitra-logo {
