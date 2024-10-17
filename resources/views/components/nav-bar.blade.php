@@ -1,4 +1,4 @@
-<header class="sticky">
+<header>
     <a href="#home" class="logo"><img src="{{ asset('image/logo-peribumi.png') }}" alt="logo">PERIBUMI
         CONSULTANT</a>
     <div class="toggle"></div>
