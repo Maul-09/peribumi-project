@@ -25,7 +25,7 @@ header {
 header.sticky {
     background-color: #fff;
     padding: 20px 0px;
-    box-shadow: 0 5px 20px rga(0, 0, 0, 1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 header .logo {
     display: flex;
@@ -47,7 +47,7 @@ header .logo img {
     margin-right: 10px;
 }
 header.sticky .logo {
-    color: #04364A;
+    color: #04364a;
 }
 header ul {
     position: relative;
@@ -57,7 +57,6 @@ header ul {
 header ul li {
     position: relative;
     list-style: none;
-
 }
 
 header ul li a {
@@ -89,7 +88,7 @@ header ul li a {
 }
 
 .dropdown-button:hover {
-    color: var(--skin-color-4) ;
+    color: var(--skin-color-4);
 }
 
 .dropdown-menu {
@@ -104,7 +103,7 @@ header ul li a {
     z-index: 1;
 }
 
-header.sticky .dropdown-menu{
+header.sticky .dropdown-menu {
     background-color: #fff;
 }
 
@@ -115,14 +114,12 @@ header.sticky .dropdown-menu{
     transition: 0.5s;
 }
 
-
 header ul li a:hover,
 .dropdown-menu a:hover {
     color: var(--skin-color-4);
 }
 header.sticky ul li a,
-header.sticky .dropdown-button
-{
+header.sticky .dropdown-button {
     color: var(--skin-color-1);
 }
 header.sticky ul li a:hover,
