@@ -23,7 +23,7 @@ header {
 }
 
 header.sticky {
-    backround: #fff;
+    background-color: #fff;
     padding: 20px 0px;
     box-shadow: 0 5px 20px rga(0, 0, 0, 1);
 }
@@ -47,7 +47,7 @@ header .logo img {
     margin-right: 10px;
 }
 header.sticky .logo {
-    color: #fff;
+    color: #04364A;
 }
 header ul {
     position: relative;
@@ -74,6 +74,7 @@ header ul li.dropdown .dropdown-content{
 }
 header ul li.dropdown:hover .dropdown-content{
     display: block;
+    transition: 0.5s;
 }
 
 header ul li.dropdown .dropdown-content a{
@@ -98,11 +99,11 @@ header ul li a {
 }
 header ul li a:hover,
 .dropdown:hover .dropbtn {
-    color: var(--skin-color-1);
+    color: #FF9B06;
 }
 header.sticky ul li a {
-    color: #fff;
+    color: #04364A;
 }
 header.sticky ul li a:hover {
-    color: var(--skin-color-1);
+    color: #FF9B06 ;
 }
