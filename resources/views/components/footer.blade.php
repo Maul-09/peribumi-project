@@ -22,20 +22,11 @@
             <a href="#">Event Organizer</a>
         </div>
 
-        <div class="nav-foot">
-            <h3>Navigasi</h3>
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#product">Products Us</a>
-            <a href="#mitra">Mitra</a>
-            <a href="#footer">Contact Us</a>
-        </div>
-
         <div class="media-foot">
             <h3>Sosial Media</h3>
-            <a href="#" class="fa-solid fa-user"></i></a>
-            <a href="#"><img src="#" alt="icon"></a>
-            <a href="#"><img src="#" alt="icon"></a>
+            <a href="#" class="fa-brands fa-instagram"></a>
+            <a href="#" class="fa-brands fa-facebook"></a>
+            <a href="#" class="fa-brands fa-youtube"></a>
         </div>
 
         <div class="maps">
