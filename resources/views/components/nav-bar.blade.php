@@ -8,13 +8,13 @@
         <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Product</a>
             <div class="dropdown-content">
-              <a href="#">Management Bussines</a>
-              <a href="#">Training Center</a>
-              <a href="#">Digital Solution</a>
-              <a href="#">Personal Development</a>
-              <a href="#">Event Organizer</a>
+                <a href="manajemen">Management Bussines</a>
+                <a href="#">Training Center</a>
+                <a href="#">Digital Solution</a>
+                <a href="#">Personal Development</a>
+                <a href="#">Event Organizer</a>
             </div>
-          </li>
+        </li>
         <li><a href="{{ route('beranda') }}#mitra">Mitra</a></li>
         <li><a href="{{ route('beranda') }}#footer">Contact us</a></li>
         <li><a href="{{ route('beranda') }}#">Sign in</a></li>
