@@ -6,13 +6,13 @@
         <li><a href="{{ route('beranda') }}#home">Home</a></li>
         <li><a href="{{ route('beranda') }}#about">About us</a></li>
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Product</a>
-            <div class="dropdown-content">
-                <a href="manajemen">Management Bussines</a>
-                <a href="#">Training Center</a>
-                <a href="#">Digital Solution</a>
-                <a href="#">Personal Development</a>
-                <a href="#">Event Organizer</a>
+                <button class="dropdown-button" id="dropdownButton">Product</button>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="{{ asset('manajemen') }}">Management Bussines</a>
+                    <a href="#">Training Center</a>
+                    <a href="#">Digital Solution</a>
+                    <a href="#">Personal Development</a>
+                    <a href="#">Event Organizer</a>
             </div>
         </li>
         <li><a href="{{ route('beranda') }}#mitra">Mitra</a></li>
