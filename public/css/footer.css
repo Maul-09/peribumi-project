@@ -4,6 +4,13 @@ footer {
     padding: 100px;
 }
 
+footer h3{
+    text-decoration:underline;
+    text-underline-position: under;
+    margin-bottom:20px;
+    font-size: medium;
+}
+
 .title-foot {
     display: flex;
     aligh-item: center;
@@ -22,41 +29,41 @@ footer {
 .con{
     display:flex;
     justify-content: space-between;
+    padding-top:20px;
 }
 
 .about-foot {
     color: #fff;
     padding:10px;
-    max-width:400px;
+    max-width:300px;
+}
+
+.about-foot p{
+    text-align: justify;
 }
 
 .produk-foot {
     color: #fff;
     padding:10px;
-    max-width:400px;
+    max-width:300px;
 }
 
 .produk-foot a{
     color: #fff;
     text-decoration: none;
-}
-
-.nav-foot{
-    color: #fff;
-    padding:10px;
-    max-width:400px;
-
-}
-
-.nav-foot a{
-    color: #fff;
-    text-decoration: none;
+    position:relative;
 }
 
 .media-foot {
     color: #fff;
     padding:10px;
-    max-width:400px;
+    max-width:500px;
+}
+
+.media-foot a{
+    text-decoration:none;
+    color: #fff;
+    font-size:30px;
 }
 
 
