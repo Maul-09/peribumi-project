@@ -1,14 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 footer {
-    padding: 100px;
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
-footer h3{
-    text-decoration:underline;
+footer h3 {
+    color: #fff;
+    text-decoration: underline;
     text-underline-position: under;
-    margin-bottom:20px;
+    margin-bottom: 20px;
     font-size: medium;
+}
+
+footer hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .title-foot {
@@ -26,44 +34,57 @@ footer h3{
     font-size: 1.5rem;
 }
 
-.con{
-    display:flex;
+.con {
+    display: flex;
     justify-content: space-between;
-    padding-top:20px;
+    padding-top: 20px;
 }
 
 .about-foot {
     color: #fff;
-    padding:10px;
-    max-width:300px;
+    padding: 10px;
+    max-width: 300px;
+    margin-right: 50px;
 }
 
-.about-foot p{
+.about-foot p {
     text-align: justify;
 }
 
 .produk-foot {
-    color: #fff;
-    padding:10px;
-    max-width:300px;
+    padding: 10px;
+    width: 100%;
+    max-width: 30%;
+    margin-bottom: 30px;
+    text-aligh: center;
 }
 
-.produk-foot a{
+.produk-foot ul {
+    list-style: none;
+}
+
+.produk-foot a {
     color: #fff;
     text-decoration: none;
-    position:relative;
 }
 
 .media-foot {
+    left: 0;
     color: #fff;
-    padding:10px;
-    max-width:500px;
+    padding: 10px;
+    max-width: 500px;
 }
 
-.media-foot a{
-    text-decoration:none;
+.media-foot a {
+    text-decoration: none;
     color: #fff;
-    font-size:30px;
+    font-size: 30px;
 }
 
-
+.tm {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    aligh-item: center;
+    margin-bottom: 20px;
+}

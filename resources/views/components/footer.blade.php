@@ -15,11 +15,13 @@
 
         <div class="produk-foot">
             <h3>Produk</h3>
-            <a href="#">Management Business</a>
-            <a href="#">Training Center</a>
-            <a href="#">Digital Solution</a>
-            <a href="#">Personal Development</a>
-            <a href="#">Event Organizer</a>
+            <ul>
+                <li><a href="#">Management Business</a></li>
+                <li><a href="#">Training Center</a></li>
+                <li><a href="#">Digital Solution</a></li>
+                <li><a href="#">Personal Development</a></li>
+                <li><a href="#">Event Organizer</a></li>
+            </ul>
         </div>
 
         <div class="media-foot">
@@ -35,5 +37,9 @@
                 width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+    </div>
+    <hr>
+    <div class="tm">
+        <p>Copyright &copy</p>
     </div>
 </footer>
