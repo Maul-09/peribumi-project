@@ -116,7 +116,7 @@ section.mitra {
     background-color: #fff;
 }
 .client {
-    color: var(--skin-color-1);
+    color: #04364a;
     display: flex;
     justify-content: center;
     aligh-item: center;
