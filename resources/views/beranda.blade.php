@@ -57,36 +57,48 @@
                     </div>
                 </div>
                 <div class="box">
-                    <h3>Training Center</h3>
-                    <p>{{ Str::limit(
-                        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis',
-                        50,
-                    ) }}
-                    </p>
+                    <img src="{{ asset('../image/bg-8.jpg') }}" alt="">
+                    <div class="textbx-card">
+                        <h3>Training Center</h3>
+                        <p>{{ Str::limit(
+                            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis',
+                            50,
+                        ) }}
+                        </p>
+                    </div>
                 </div>
                 <div class="box">
-                    <h3>Digital Solution</h3>
-                    <p>{{ Str::limit(
-                        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis',
-                        50,
-                    ) }}
-                    </p>
+                    <img src="{{ asset('../image/bg-5.jpg') }}" alt="">
+                    <div class="textbx-card">
+                        <h3>Digital Solution</h3>
+                        <p>{{ Str::limit(
+                            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis',
+                            50,
+                        ) }}
+                        </p>
+                    </div>
                 </div>
                 <div class="box">
-                    <h3>Personal Development</h3>
-                    <p>{{ Str::limit(
-                        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis',
-                        50,
-                    ) }}
-                    </p>
+                    <img src="{{ asset('../image/bg-6.jpg') }}" alt="">
+                    <div class="textbx-card">
+                        <h3>Personal Development</h3>
+                        <p>{{ Str::limit(
+                            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis',
+                            50,
+                        ) }}
+                        </p>
+                    </div>
                 </div>
                 <div class="box">
-                    <h3>Event Organizer</h3>
-                    <p>{{ Str::limit(
-                        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis',
-                        50,
-                    ) }}
-                    </p>
+                    <img src="{{ asset('../image/bg-7.jpg') }}" alt="">
+                    <div class="textbx-card">
+                        <h3>Event Organizer</h3>
+                        <p>{{ Str::limit(
+                            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis',
+                            50,
+                        ) }}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

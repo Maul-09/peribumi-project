@@ -127,28 +127,36 @@ section.mitpro hr {
     align-items: center;
     flex-wrap: wrap;
     flex-direction: row;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 .box {
     position: relative;
-    padding: 40px 20px;
-    color: #fff;
     max-width: 200px;
-    margin: 20px;
-    text-align: left;
-    height: 300px;
+    margin: 30px;
 }
 .box img {
-    width: 200px;
+    width: 220px;
     height: 300px;
     object-fit: cover;
     object-position: 15% 100%;
+    border-radius: 10px;
 }
-.textbx-card {
+.textbx-card p {
+    padding-bottom: 20px;
+    padding-left: 20px;
     position: absolute;
-    bottom: 50px;
+    bottom: 0;
+    color: #fff;
+}
+
+.textbx-card h3 {
+    padding-top: 50px;
+    padding-left: 20px;
+    position: absolute;
+    top: 0;
+    color: #fff;
 }
 
 .product-title {
