@@ -4,7 +4,8 @@
     <section class="banner" id="home">
         <div class="textBx">
             <h2>PERIBUMI CONSULTANT</h2>
-            <p>PERI BUMI hadir dan berkomitmen untuk membantu memfasilitasi langkah percepatan dalam rangka pengembangan dan atau peningkatan kompetensi serta kapasitas Sumber  daya  manusia  yang  dimiliki</p>
+            <p>PERI BUMI hadir dan berkomitmen untuk membantu memfasilitasi langkah percepatan dalam rangka pengembangan
+                dan atau peningkatan kompetensi serta kapasitas Sumber daya manusia yang dimiliki</p>
         </div>
     </section>
 
@@ -88,26 +89,17 @@
         </div>
     </section>
 
-    <section>
+    <section class="mitra">
         <div id="mitra">
-            <div class="title">
+            <div class="client">
                 <h2>CLIENT & KEMITRAAN</h2>
             </div>
-            <div>
-                <img src="#" alt="logo">
+            <div class="mitra-logo">
+                <img src="{{ asset('../image/mitra1.png') }}" alt="logo">
+                <img src="{{ asset('../image/mitra2.png') }}" alt="logo">
+                <img src="{{ asset('../image/mitra3.png') }}" alt="logo">
             </div>
-            <div>
-                <img src="#" alt="logo">
-            </div>
-            <div>
-                <img src="#" alt="logo">
-            </div>
-            <div>
-                <img src="#" alt="logo">
-            </div>
-            <div>
-                <img src="#" alt="logo">
-            </div>
+
         </div>
     </section>
 </x-layout>
