@@ -8,7 +8,7 @@
         <li class="dropdown">
                 <button class="dropdown-button" id="dropdownButton">Product</button>
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <a href="#">Management Bussines</a>
+                    <a href="{{ asset('manajemen') }}">Management Bussines</a>
                     <a href="#">Training Center</a>
                     <a href="#">Digital Solution</a>
                     <a href="#">Personal Development</a>
