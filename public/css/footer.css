@@ -43,10 +43,11 @@ footer hr {
 .about-foot {
     color: #fff;
     padding: 10px;
-    max-width: 300px;
+    max-width: 305px;
 }
 
 .about-foot p {
+    padding-top: 6px;
     font-size: 13px;
     text-align: justify;
 }
@@ -54,8 +55,7 @@ footer hr {
 .produk-foot {
     padding: 10px;
     width: 100%;
-    max-width: 190px;
-    margin-bottom: 30px;
+    max-width: 180px;
     text-aligh: center;
 }
 
@@ -63,7 +63,7 @@ footer hr {
     list-style: none;
 }
 
-.produk-foot ul a {
+.produk-foot ul li a {
     font-size: 13px;
     color: #fff;
     text-decoration: none;
@@ -76,7 +76,6 @@ footer hr {
 }
 
 .media-foot {
-    left: 0;
     color: #fff;
     padding: 10px;
     max-width: 500px;
