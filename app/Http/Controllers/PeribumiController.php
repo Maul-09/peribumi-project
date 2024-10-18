@@ -15,4 +15,24 @@ class PeribumiController extends Controller
     {
         return view('manajemen');
     }
+
+    public function training()
+    {
+        return view('training');
+    }
+
+    public function personal()
+    {
+        return view('personal');
+    }
+
+    public function digital()
+    {
+        return view('digital');
+    }
+
+    public function event()
+    {
+        return view('event');
+    }
 }
