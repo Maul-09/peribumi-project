@@ -11,7 +11,7 @@ body {
     background-color: #04364a;
 }
 section {
-    padding: 100px;
+    padding: 60px;
 }
 
 .banner {
@@ -177,10 +177,11 @@ section.mitpro hr {
 
 .mitra-logo {
     display: flex;
+    justify-content: center;
     max-width: 100%;
 }
 .mitra-logo img {
-    width: 35%;
+    width: 30%;
     justify-content: center;
     aligh-item: center;
     padding: 10px;
