@@ -20,7 +20,7 @@
                 <li><a href="training">Training Center</a></li>
                 <li><a href="digital">Digital Solution</a></li>
                 <li><a href="personal">Personal Development</a></li>
-                <li><a href="event">Event Organizer</a></li>
+                <li><a href="event">Organizer</a></li>
             </ul>
         </div>
 

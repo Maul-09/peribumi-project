@@ -1,9 +1,9 @@
 <x-layout>
-    <x-slot:name>Event Organizer</x-slot>
+    <x-slot:name>Organizer</x-slot>
     <x-slot:title>{{ asset('css/style-event.css') }}</x-slot>
     <section class="banner" id="home">
         <div class="textBx">
-            <h2>EVENT ORGANIZER</h2>
+            <h2>ORGANIZER</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sint voluptate consequatur alias
                 recusandae
                 explicabo temporibus, ad dolorum nisi, voluptatum ab non minima totam iure repellat sapiente nulla

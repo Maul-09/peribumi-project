@@ -12,7 +12,7 @@
                 <a href="training">Training Center</a>
                 <a href="digital">Digital Solution</a>
                 <a href="personal">Personal Development</a>
-                <a href="event">Event Organizer</a>
+                <a href="event">Organizer</a>
             </div>
         </li>
         <li><a href="{{ route('beranda') }}#mitra">Mitra</a></li>
