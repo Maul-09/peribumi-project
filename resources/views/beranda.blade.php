@@ -14,22 +14,34 @@
             <div class="w50">
                 <h1>Tentang Peribumi Consultan</h1>
                 <h2>Kami hadir sejak tahun 2023</h2>
-                <ul class="nav-tabs">
-                    <li class="active" data-tab="tab1">Home</li>
-                    <li data-tab="tab2">About</li>
-                </ul>
-                <div class="tab-content">
-                    <div id="tab1" class="tab-pane active">
-                        <h2>Welcome to Home</h2>
-                        <p>This is the home section content.</p>
+                <div class="navtab">
+                    <div class="tab">
+                        <button class="tablinks" onclick="openTab(event, 'Tab1')" id="defaultOpen">Visi</button>
+                        <button class="tablinks" onclick="openTab(event, 'Tab2')">Misi</button>
                     </div>
-                    <div id="tab2" class="tab-pane">
-                        <h2>About Us</h2>
-                        <p>This is the about section content.</p>
+
+                    <div id="Tab1" class="tabcontent">
+                        <p class="misi">Menjadi Pelopor Bisnis  yang Menginspirasi, Mendukung dan
+                        Mewujudkan</p>
                     </div>
-                    <div id="tab3" class="tab-pane">
-                        <h2>Contact Us</h2>
-                        <p>This is the contact section content.</p>
+
+                    <div id="Tab2" class="tabcontent scrollable-content">
+                        <p>1. Menghadirkan berbagai unit kerja yang berkaitan dengan
+                        Pembangunan dan Pengembangan suatu bisnis baik fisik
+                        maupun non-fisik (Infrastruktur)</p>
+                        <p>2. Memfasilitasi kebutuhan pengguna atau pelanggan melalui
+                        berbagai produk dan Layanan yang dimiliki baik berupa
+                        barang dan jasa</p>
+                        <p>3. Memastikan pemenuhan kebutuhan pengguna atau
+                        pelanggan dengan standar mutu yang terjamin dan
+                        berkualitas dalam balutan profesionalitas yang tinggi.</p>
+                        <p>4. Mendukung proses pertumbuhan pengguna atau pelanggan ke
+                        arah yang lebih baik melalui kesiagaan dan pemberdayaan
+                        sumber daya yang dimiliki</p>
+                        <p>5. Menjadikan kepuasan yang dirasakan oleh pengguna atau
+                        pelanggan atas produk dan layanan yang dihadirkan
+                        sebagai pengalaman berharga tak akan ternilai yang
+                        memberikan motivasi lebih untuk terus berinovasi</p>
                     </div>
                 </div>
             </div>
