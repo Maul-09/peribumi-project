@@ -26,22 +26,24 @@
                     </div>
 
                     <div id="Tab2" class="tabcontent scrollable-content">
-                        <p>1. Menghadirkan berbagai unit kerja yang berkaitan dengan
-                            Pembangunan dan Pengembangan suatu bisnis baik fisik
-                            maupun non-fisik (Infrastruktur)</p>
-                        <p>2. Memfasilitasi kebutuhan pengguna atau pelanggan melalui
-                            berbagai produk dan Layanan yang dimiliki baik berupa
-                            barang dan jasa</p>
-                        <p>3. Memastikan pemenuhan kebutuhan pengguna atau
-                            pelanggan dengan standar mutu yang terjamin dan
-                            berkualitas dalam balutan profesionalitas yang tinggi.</p>
-                        <p>4. Mendukung proses pertumbuhan pengguna atau pelanggan ke
-                            arah yang lebih baik melalui kesiagaan dan pemberdayaan
-                            sumber daya yang dimiliki</p>
-                        <p>5. Menjadikan kepuasan yang dirasakan oleh pengguna atau
-                            pelanggan atas produk dan layanan yang dihadirkan
-                            sebagai pengalaman berharga tak akan ternilai yang
-                            memberikan motivasi lebih untuk terus berinovasi</p>
+                        <ol>
+                            <li>Menghadirkan berbagai unit kerja yang berkaitan dengan Pembangunan dan
+                                Pengembangan suatu bisnis baik fisik
+                                maupun non-fisik (Infrastruktur)</li>
+                            <li>Memfasilitasi kebutuhan pengguna atau pelanggan melalui
+                                berbagai produk dan Layanan yang dimiliki baik berupa
+                                barang dan jasa</li>
+                            <li>Memastikan pemenuhan kebutuhan pengguna atau
+                                pelanggan dengan standar mutu yang terjamin dan
+                                berkualitas dalam balutan profesionalitas yang tinggi.</li>
+                            <li>Mendukung proses pertumbuhan pengguna atau pelanggan ke
+                                arah yang lebih baik melalui kesiagaan dan pemberdayaan
+                                sumber daya yang dimiliki</li>
+                            <li>Menjadikan kepuasan yang dirasakan oleh pengguna atau
+                                pelanggan atas produk dan layanan yang dihadirkan
+                                sebagai pengalaman berharga tak akan ternilai yang
+                                memberikan motivasi lebih untuk terus berinovasi</li>
+                        </ol>
                     </div>
                 </div>
             </div>

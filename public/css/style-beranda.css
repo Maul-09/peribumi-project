@@ -11,7 +11,10 @@ body {
     background-color: #04364a;
 }
 section {
-    padding: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 .banner {
@@ -87,7 +90,7 @@ section {
     justify-content: center;
     align-item: center;
     border-radius: 8px;
-    background-color:#fff;
+    background-color: #fff;
     justify-content: flex-start;
 }
 
@@ -128,18 +131,17 @@ section {
     display: none; /* Menghilangkan scroll bar di WebKit */
 }
 
-.tabcontent p.misi{
-    max-width: 400px;
+.tabcontent ol {
+    max-width: 430px;
     font-size: 14px;
+    padding-left: 10px;
+}
 
- }
-
- .tabcontent p{
+.tabcontent p {
     max-width: 430px;
     font-size: 14px;
     margin-bottom: 10px;
-
- }
+}
 
 /* Default content visible */
 #defaultOpen {
