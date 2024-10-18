@@ -112,17 +112,26 @@ header.sticky .dropdown-menu {
     padding: 10px;
     text-decoration: none;
     transition: 0.5s;
+    font-size: 11px;
 }
 
 header ul li a:hover,
 .dropdown-menu a:hover {
     color: var(--skin-color-4);
+    font-size: 12px;
 }
+
 header.sticky ul li a,
 header.sticky .dropdown-button {
     color: var(--skin-color-1);
 }
+
 header.sticky ul li a:hover,
 header.sticky .dropdown-menu a:hover {
+    color: var(--skin-color-4);
+    font-size: 12px;
+}
+
+header.sticky .dropdown-button:hover {
     color: var(--skin-color-4);
 }

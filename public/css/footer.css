@@ -63,12 +63,11 @@ footer hr {
     list-style: none;
 }
 
-.produk-foot a {
+.produk-foot ul a {
     font-size: 13px;
     color: #fff;
     text-decoration: none;
-    transition: width 2s;
-    transition-timing-function: ease-in-out;
+    transition: 0.5s;
 }
 
 .produk-foot a:hover {
