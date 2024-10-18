@@ -128,7 +128,8 @@ section {
     overflow-y: auto;
 }
 .scrollable-content::-webkit-scrollbar {
-    display: none; /* Menghilangkan scroll bar di WebKit */
+    display: none;
+
 }
 
 .tabcontent ol {
