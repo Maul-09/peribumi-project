@@ -8,3 +8,6 @@ Route::get('/training', 'App\Http\Controllers\PeribumiController@training')->nam
 Route::get('/digital', 'App\Http\Controllers\PeribumiController@digital')->name('digital');
 Route::get('/personal', 'App\Http\Controllers\PeribumiController@personal')->name('personal');
 Route::get('/event', 'App\Http\Controllers\PeribumiController@event')->name('event');
+
+Route::get('/auth/register', 'App\Http\Controllers\PeribumiController@register')->name('register');
+Route::post('/store', 'App\Http\Controllers\PeribumiController@postStore')->name('store');
