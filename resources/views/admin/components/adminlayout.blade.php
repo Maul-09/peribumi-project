@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+    <x-nav-bar-admin></x-nav-bar-admin>
     {{ $slot }}
 </body>
 </html>
