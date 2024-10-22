@@ -1,3 +1,24 @@
 <div>
-    <!-- Act only according to that maxim whereby you can, at the same time, will that it should become a universal law. - Immanuel Kant -->
+    <h2>ADMINISTRATOR</h2>
+    <hr>
+    <div>
+        <img src="" alt="">
+        <p>Peribumi Consultan Admin</p>
+        <i href=""></i>
+        <i href=""></i>
+        <i href=""></i>
+    </div>
+    <hr>
+    <div>
+        <i href=""></i>
+        <p>Dashboard</p>
+    </div>
+    <div>
+        <i href=""></i>
+        <p>Manajemen Produk</p>
+    </div>
+    <div>
+        <i href=""></i>
+        <p>LMS</p>
+    </div>
 </div>
