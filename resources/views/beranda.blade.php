@@ -54,68 +54,66 @@
     </section>
 
     <section class="mitpro">
-        <div id="product">
-            <div class="product-title">
-                <h2>PRODUK & LAYANAN</h2>
+        <div class="client">
+            <h2>PRODUK KAMI</h2>
+        </div>
+        <div class="cards-container">
+            <div class="card">
+                <div class="box">
+                    <img src="{{ asset('../image/bg-10.jpg') }}" alt="">
+                    <div class="gradient-layer"></div>
+                    <div class="textbx-card">
+                        <h3>Management Business</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.</p>
+                    </div>
+                </div>
             </div>
+
+            <div class="card">
+                <div class="box">
+                    <img src="{{ asset('../image/bg-8.jpg') }}" alt="">
+                    <div class="gradient-layer"></div>
+                    <div class="textbx-card">
+                        <h3>Training Center</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="card">
                 <div class="box">
                     <img src="{{ asset('../image/bg-4.jpg') }}" alt="">
-                    <div class="textbx-card">
-                        <h3>Management Business</h3>
-                        <p>{{ Str::limit(
-                            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis',
-                            50,
-                        ) }}
-                        </p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="{{ asset('../image/bg-8.jpg') }}" alt="">
-                    <div class="textbx-card">
-                        <h3>Training Center</h3>
-                        <p>{{ Str::limit(
-                            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis',
-                            50,
-                        ) }}
-                        </p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="{{ asset('../image/bg-5.jpg') }}" alt="">
+                    <div class="gradient-layer"></div>
                     <div class="textbx-card">
                         <h3>Digital Solution</h3>
-                        <p>{{ Str::limit(
-                            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis',
-                            50,
-                        ) }}
-                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.</p>
                     </div>
                 </div>
+            </div>
+
+            <div class="card">
                 <div class="box">
-                    <img src="{{ asset('../image/bg-6.jpg') }}" alt="">
+                    <img src="{{ asset('../image/bg-5.jpg') }}" alt="">
+                    <div class="gradient-layer"></div>
                     <div class="textbx-card">
                         <h3>Personal Development</h3>
-                        <p>{{ Str::limit(
-                            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis',
-                            50,
-                        ) }}
-                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.</p>
                     </div>
                 </div>
+            </div>
+
+            <div class="card">
                 <div class="box">
-                    <img src="{{ asset('../image/bg-7.jpg') }}" alt="">
+                    <img src="{{ asset('../image/bg-6.jpg') }}" alt="">
+                    <div class="gradient-layer"></div>
                     <div class="textbx-card">
                         <h3>Organizer</h3>
-                        <p>{{ Str::limit(
-                            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis',
-                            50,
-                        ) }}
-                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.</p>
                     </div>
                 </div>
             </div>
         </div>
+
 
         <hr>
 
