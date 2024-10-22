@@ -1,4 +1,6 @@
 <x-layout>
+    <x-slot:name>Beranda</x-slot>
+    <x-slot:title>{{ asset('css/style-beranda.css') }}</x-slot>
     <div>
         <h2>ADMINISTRATOR</h2>
         <hr>

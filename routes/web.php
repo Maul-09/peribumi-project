@@ -5,6 +5,10 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
+Route::get('/admin', function () {
+    return view('admin\dashboard');
+});
+
 Route::get('/', 'App\Http\Controllers\PeribumiController@beranda')->name('beranda');
 Route::get('/manajemen', 'App\Http\Controllers\PeribumiController@manajemen')->name('manajemen');
 Route::get('/training', 'App\Http\Controllers\PeribumiController@training')->name('training');
