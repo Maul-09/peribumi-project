@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:name>Beranda</x-slot>
-    <x-slot:title>{{ asset('css/style-beranda.css') }}</x-slot>
+    <x-slot:title>{{ asset('css/user-style/style-beranda.css') }}</x-slot>
     <section class="banner" id="home">
         <div class="textBx">
             <h2>PERIBUMI CONSULTANT</h2>
