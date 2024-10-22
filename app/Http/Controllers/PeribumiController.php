@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Registered;
 
 class PeribumiController extends Controller
 {
@@ -37,40 +39,34 @@ class PeribumiController extends Controller
         return view('event');
     }
 
-    public function register()
+    public function authentication()
     {
-        return view('/auth/register');
+        return view('auth/logreg');
     }
 
-    // public function postStore(Request $request)
-    // {
-    //     $peribumi = new Peribumi();
-    //     $peribumi->first_name = $request->first_name;
-    //     $peribumi->last_name = $request->last_name;
-    //     $peribumi->email = $request->email;
-    //     $peribumi->username = $request->username;
-    //     $peribumi->password = bcrypt($request->password);
-    //     $peribumi->save();
-    //     dd($peribumi);
-    //     return redirect()->route('login');
-
-    // }
-
-    public function postStore(Request $request)
+    public function signup(Request $request)
     {
-        $request->validate([
-            'first_name'    => 'required',
-            'last_name'    => 'required',
-            'email' => 'required',
-            'username' => 'required',
-            'password' => 'required',
-        ]);
-        $input = $request->all();
+        $peribumi = new User();
+        $peribumi->first_name = $request->first_name;
+        $peribumi->last_name = $request->last_name;
+        $peribumi->email = $request->email;
+        $peribumi->username = $request->username;
+        $peribumi->password = bcrypt($request->password);
+        // $peribumi->save();
+        event(new Registered($peribumi));
+        return redirect()->route('logreg', ['#signin']);
+    }
 
-        User::create($input);
+    public function signin(Request $request)
+    {
+        $data = $request->only('username', 'password');
 
-        dd($input);
+        if (Auth::attempt($data)) {
+            $request->session()->regenerate();
 
-        // return redirect()->route('listanggota.getIndex')->with('success', 'Anggota telah ditambahkan.');
+            return redirect()->route('beranda');
+        } else {
+            return redirect()->back()->with('Failed', 'Username atau password anda salah!');
+        }
     }
 }
