@@ -1,0 +1,149 @@
+/* General sidebar styles */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #0b3c4d;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+/* Collapsed sidebar */
+.sidebar.collapsed {
+    width: 70px;
+}
+
+.sidebar.collapsed .admin-title,
+.sidebar.collapsed .profile-pic,
+.sidebar.collapsed .admin-profile p,
+.sidebar.collapsed .menu-item p {
+    display: none;
+}
+
+.sidebar.collapsed .admin-logo {
+    margin-right: 0;
+}
+
+/* Logo and admin section are hidden when collapsed */
+.sidebar.collapsed .admin-logo-section {
+    display: none;
+}
+
+/* Adjust spacing in collapsed sidebar */
+.sidebar.collapsed .admin-header {
+    margin-bottom: 10px; /* Mengurangi jarak antara hamburger dan konten */
+    justify-content: flex-start; /* Membuat hamburger lebih dekat ke kiri */
+    padding-left: 10px; /* Menambah padding agar tidak terlalu mepet */
+}
+
+.sidebar.collapsed .menu-item {
+    padding: 8px 5px; /* Mengurangi padding agar lebih rapat */
+}
+
+.sidebar.collapsed .sidebar-menu {
+    margin-top: 5px; /* Mengurangi jarak antara hamburger dan menu */
+}
+
+.sidebar-menu .menu-item {
+    margin-bottom: 10px; /* Mengurangi jarak antar menu-item */
+}
+
+.sidebar-menu .menu-item p {
+    margin-left: 10px;
+}
+
+.sidebar.collapsed .menu-item p {
+    display: none; /* Tetap sembunyikan teks saat collapsed */
+}
+
+/* Admin header section */
+.admin-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.admin-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.hamburger-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Admin logo and icons section (Who is logged in) */
+.admin-logo-section {
+    text-align: center;
+    margin-bottom: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.admin-logo {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.admin-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+/* Sidebar menu */
+.sidebar-menu .menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar-menu .active {
+    background-color: #20788f;
+}
+
+.sidebar-menu .menu-item:hover {
+    background-color: #1c5f6d;
+}
+
+.dashboard-icon,
+.product-icon,
+.lms-icon {
+    color: white;
+}
+
+/* Profile Picture and Watermark */
+.admin-profile {
+    text-align: center;
+    margin-top: auto;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.admin-profile p {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+/* Divider styles */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #7f8c8d;
+    margin: 10px 0;
+}
