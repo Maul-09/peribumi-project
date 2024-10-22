@@ -11,32 +11,32 @@ class PeribumiController extends Controller
 {
     public function beranda()
     {
-        return view('beranda');
+        return view('user\beranda');
     }
 
     public function manajemen()
     {
-        return view('manajemen');
+        return view('user\manajemen');
     }
 
     public function training()
     {
-        return view('training');
+        return view('user\training');
     }
 
     public function personal()
     {
-        return view('personal');
+        return view('user\personal');
     }
 
     public function digital()
     {
-        return view('digital');
+        return view('user\digital');
     }
 
     public function event()
     {
-        return view('event');
+        return view('user\event');
     }
 
     public function authentication()
@@ -64,7 +64,7 @@ class PeribumiController extends Controller
         if (Auth::attempt($data)) {
             $request->session()->regenerate();
 
-            return redirect()->route('beranda');
+            return redirect()->route('user\beranda');
         } else {
             return redirect()->back()->with('Failed', 'Username atau password anda salah!');
         }
