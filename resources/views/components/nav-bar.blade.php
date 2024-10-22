@@ -17,6 +17,6 @@
         </li>
         <li><a href="{{ route('beranda') }}#mitra">Mitra</a></li>
         <li><a href="{{ route('beranda') }}#footer">Contact us</a></li>
-        <li><a href="{{ route('beranda') }}#">Sign in</a></li>
+        <li><a href="{{ route('logreg') }}">Sign in</a></li>
     </ul>
 </header>
