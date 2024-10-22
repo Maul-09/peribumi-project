@@ -1,9 +1,6 @@
 <?php
 
-use App\Http\Controllers\EmailVerificationController;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 
 Route::get('/admin', function () {
     return view('admin\dashboard');
@@ -21,15 +18,3 @@ Route::post('/signup', 'App\Http\Controllers\PeribumiController@signup')->name('
 
 Route::get('/auth/logreg', 'App\Http\Controllers\PeribumiController@authentication')->name('logreg');
 Route::post('/signin', 'App\Http\Controllers\PeribumiController@signin')->name('signin');
-
-Route::get('/logreg', [EmailVerificationController::class, 'signup'])
-    ->middleware('auth')
-    ->name('verification.notice');
-
-Route::post('/verify_email/request', [EmailVerificationController::class, 'request'])
-    ->middleware('auth')
-    ->name('verification.request');
-
-Route::post('/verify_email/{id}/{hash}', [EmailVerificationController::class, 'verify'])
-    ->middleware(['auth', 'signed']) // <-- don't remove "signed"
-    ->name('verification.verify');

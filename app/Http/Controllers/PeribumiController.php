@@ -52,8 +52,8 @@ class PeribumiController extends Controller
         $peribumi->email = $request->email;
         $peribumi->username = $request->username;
         $peribumi->password = bcrypt($request->password);
-        // $peribumi->save();
-        event(new Registered($peribumi));
+        $peribumi->save();
+        // event(new Registered($peribumi));
         return redirect()->route('logreg', ['#signin']);
     }
 
