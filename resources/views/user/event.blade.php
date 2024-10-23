@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:name>Organizer</x-slot>
-    <x-slot:title>{{ asset('css/style-event.css') }}</x-slot>
+    <x-slot:title>{{ asset('css/user-style/style-event.css') }}</x-slot>
     <section class="banner" id="home">
         <div class="textBx">
             <h2>ORGANIZER</h2>

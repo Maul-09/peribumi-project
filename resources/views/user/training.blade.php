@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:name>Training Center</x-slot>
-    <x-slot:title>{{ asset('css/style-training.css') }}</x-slot>
+    <x-slot:title>{{ asset('css/user-style/style-training.css') }}</x-slot>
     <section class="banner" id="home">
         <div class="textBx">
             <h2>TRAINING CENTER</h2>

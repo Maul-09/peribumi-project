@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:name>Personal Development</x-slot>
-    <x-slot:title>{{ asset('css/style-personal.css') }}</x-slot>
+    <x-slot:title>{{ asset('css/user-style/style-personal.css') }}</x-slot>
     <section class="banner" id="home">
         <div class="textBx">
             <h2>PERSONAL DEVELOPMENT</h2>

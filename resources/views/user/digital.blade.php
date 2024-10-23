@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:name>Digital Solution</x-slot>
-    <x-slot:title>{{ asset('css/style-digital.css') }}</x-slot>
+    <x-slot:title>{{ asset('css/user-style/style-digital.css') }}</x-slot>
     <section class="banner" id="home">
         <div class="textBx">
             <h2>DIGITAL SOLUTION</h2>
