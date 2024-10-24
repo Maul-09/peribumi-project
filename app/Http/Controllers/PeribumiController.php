@@ -64,9 +64,14 @@ class PeribumiController extends Controller
         if (Auth::attempt($data)) {
             $request->session()->regenerate();
 
-            return redirect()->route('user\beranda');
+            return redirect()->route('beranda');
         } else {
             return redirect()->back()->with('Failed', 'Username atau password anda salah!');
         }
+    }
+
+    public function logout(Request $request) {
+        Auth::logout();
+        return redirect()->route('logreg');
     }
 }
