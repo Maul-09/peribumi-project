@@ -4,8 +4,6 @@
         <h2 class="admin-title">ADMINISTRATOR</h2>
         <i class="fas fa-bars hamburger-icon" id="hamburger-icon" onclick="toggleSidebar()"></i>
     </div>
-
-    <!-- Admin Logo and Icons (Who is Logged In) -->
     <div class="admin-logo-section">
         <img src="logo.png" alt="Admin Logo" class="admin-logo">
         <div class="admin-icons">
@@ -38,23 +36,3 @@
         <p>Peribumi Consultan Admin</p>
     </div>
 </div>
-
-<script>
-    function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    const adminProfile = document.getElementById('admin-profile');
-    const adminLogoSection = document.querySelector('.admin-logo-section');
-
-    sidebar.classList.toggle('collapsed');
-
-    // Menyembunyikan profile section dan admin logo ketika sidebar collapsed
-    if (sidebar.classList.contains('collapsed')) {
-        adminProfile.style.display = 'none'; // Hide profile icons
-        adminLogoSection.style.display = 'none'; // Hide admin logo and icons
-    } else {
-        adminProfile.style.display = 'block'; // Show profile icons when expanded
-        adminLogoSection.style.display = 'block'; // Show admin logo and icons when expanded
-    }
-}
-
-</script>

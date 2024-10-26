@@ -12,5 +12,7 @@
 <body>
     <x-nav-bar-admin></x-nav-bar-admin>
     {{ $slot }}
+
+    <script src="js/nav.js"></script>
 </body>
 </html>

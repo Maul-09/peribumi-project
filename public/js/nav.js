@@ -5,12 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     tabs.forEach(tab => {
         tab.addEventListener('click', function() {
-            // Remove active class from all tabs
             tabs.forEach(tab => tab.classList.remove('active'));
-            // Add active class to clicked tab
             tab.classList.add('active');
-
-            // Show corresponding tab pane and hide others
             const target = tab.getAttribute('data-tab');
             tabPanes.forEach(pane => {
                 pane.classList.remove('active');
@@ -21,3 +17,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const adminProfile = document.getElementById('admin-profile');
+    const adminLogoSection = document.querySelector('.admin-logo-section');
+
+    sidebar.classList.toggle('collapsed');
+
+
+    if (sidebar.classList.contains('collapsed')) {
+        adminProfile.style.display = 'none';
+        adminLogoSection.style.display = 'none';
+    } else {
+        adminProfile.style.display = 'block';
+        adminLogoSection.style.display = 'block';
+    }
+}
