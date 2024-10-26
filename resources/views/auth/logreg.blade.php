@@ -26,6 +26,7 @@
                 <input type="password" name="password">
                 <button type="submit">Sign Up</button>
             </form>
+            
         </div>
         <div id="signin">
             <h2>Welcome Back!</h2>
@@ -37,7 +38,11 @@
                 <input type="password" name="password">
                 <button type="submit">Sign In</button>
             </form>
-
+            @if (session('Failed'))
+                <div>
+                    {{ session('Failed') }}
+                </div>
+            @endif
         </div>
     </div>
 </body>
