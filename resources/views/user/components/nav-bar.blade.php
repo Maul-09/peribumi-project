@@ -17,15 +17,25 @@
         </li>
         <li><a href="{{ route('beranda') }}#mitra">Mitra</a></li>
         <li><a href="{{ route('beranda') }}#footer">Contact us</a></li>
-        <li><a href="{{ route('logreg') }}">Sign in</a></li>
         @guest
-        <form action="{{ route('logout') }}" method="post">
-            @csrf
-            <button>logout</button>
-        </form>
+        <li><a href="{{ route('logreg') }}">Sign in</a></li>
         @endguest
         @auth
-        
+        <li class="dropdown">
+            <button class="dropdown-button" id="userDropdownButton">
+                <img src="{{ asset('#') }}" alt="User Logo" class="user-logo">
+                @if (Auth::check())
+                    <p>{{ Auth::user()->name }}</p>
+                @endif
+            </button>
+            <div class="dropdown-menu" id="userDropdownMenu">
+                <a href="">Profile</a>
+                <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="logout-button">Logout</button>
+                </form>
+            </div>
+        </li>
         @endauth
     </ul>
 </header>

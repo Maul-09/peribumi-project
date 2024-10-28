@@ -2,10 +2,7 @@
     <x-slot:name>Beranda</x-slot>
     <x-slot:title>{{ asset('css/user-style/style-beranda.css') }}</x-slot>
     <section class="banner" id="home">
-        @if (Auth::check())
-            <p>halo {{ Auth::user()->username }}</p>
-        @endif
-        <div class="textBx">
+       <div class="textBx">
             <h2>PERIBUMI CONSULTANT</h2>
             <p>PERI BUMI hadir dan berkomitmen untuk membantu memfasilitasi langkah percepatan dalam rangka pengembangan
                 dan atau peningkatan kompetensi serta kapasitas Sumber daya manusia yang dimiliki</p>

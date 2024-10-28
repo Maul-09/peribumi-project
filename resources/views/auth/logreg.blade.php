@@ -14,10 +14,8 @@
             <h2>Creat an Account</h2>
             <form action="{{ route('signup') }}" method="post">
                 @csrf
-                <label>Nama Depan</label>
-                <input type="text" name="first_name">
-                <label>Nama belakang</label>
-                <input type="text" name="last_name">
+                <label>Nama Lengkap</label>
+                <input type="text" name="name">
                 <label>Email</label>
                 <input type="email" id="email" name="email">
                 <label>Username</label>
@@ -26,7 +24,7 @@
                 <input type="password" name="password">
                 <button type="submit">Sign Up</button>
             </form>
-            
+
         </div>
         <div id="signin">
             <h2>Welcome Back!</h2>

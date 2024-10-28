@@ -47,8 +47,7 @@ class PeribumiController extends Controller
     public function signup(Request $request)
     {
         $peribumi = new User();
-        $peribumi->first_name = $request->first_name;
-        $peribumi->last_name = $request->last_name;
+        $peribumi->name = $request->name;
         $peribumi->email = $request->email;
         $peribumi->username = $request->username;
         $peribumi->password = bcrypt($request->password);
@@ -72,6 +71,6 @@ class PeribumiController extends Controller
 
     public function logout(Request $request) {
         Auth::logout();
-        return redirect()->route('logreg');
+        return redirect()->route('beranda');
     }
 }
