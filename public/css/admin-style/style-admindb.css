@@ -78,7 +78,6 @@
     cursor: pointer;
 }
 
-/* Admin logo and icons section (Who is logged in) */
 .admin-logo-section {
     text-align: center;
     margin-bottom: 20px;
@@ -98,7 +97,6 @@
     margin-top: 10px;
 }
 
-/* Sidebar menu */
 .sidebar-menu .menu-item {
     display: flex;
     align-items: center;
@@ -140,7 +138,6 @@
     opacity: 0.6;
 }
 
-/* Divider styles */
 hr {
     border: none;
     height: 1px;
