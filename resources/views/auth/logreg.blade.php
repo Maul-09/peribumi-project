@@ -5,44 +5,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('css/head-footer-style/logreg.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Register</title>
 </head>
 
-<body>
-    <div>
-        <div>
-            <h2>Creat an Account</h2>
-            <form action="{{ route('signup') }}" method="post">
+<body class="log">
+      <div class="container">
+        <div class="forms-container">
+          <div class="signin-signup">
+            <form action="{{ route('signin') }}" method="post" class="sign-in-form" id="signin">
                 @csrf
-                <label>Nama Lengkap</label>
-                <input type="text" name="name">
-                <label>Email</label>
-                <input type="email" id="email" name="email">
-                <label>Username</label>
-                <input type="text" name="username">
-                <label>Password</label>
-                <input type="password" name="password">
-                <button type="submit">Sign Up</button>
+              <h2 class="title">Sign in</h2>
+              <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="text" name="username" placeholder="Username" />
+              </div>
+              <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="Password" />
+              </div>
+              @if (session('Failed'))
+                <div style="color:red;">
+                    {{ session('Failed') }}
+                </div>
+              @endif
+              <input type="submit" value="Login" class="btn solid" />
+
+              <p class="social-text">Or Sign in with social platforms</p>
+              <div class="social-media">
+                <a href="#" class="social-icon">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-google"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </form>
+            <form action="{{ route('signup') }}" method="post" class="sign-up-form" id="signup">
+                @csrf
+              <h2 class="title">Sign up</h2>
+              <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input type="text" name="name" placeholder="Nama lengkap" />
+              </div>
+              <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email" />
+              </div>
+              <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="text" name="username" placeholder="Username" />
+              </div>
+              <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="Password" />
+              </div>
+              <input type="submit" class="btn" value="Sign up" />
+
+              <p class="social-text">Or Sign up with social platforms</p>
+              <div class="social-media">
+                <a href="#" class="social-icon">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-google"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
             </form>
 
         </div>
-        <div id="signin">
-            <h2>Welcome Back!</h2>
-            <form action="{{ route('signin') }}" method="post">
-                @csrf
-                <label>Username</label>
-                <input type="text" name="username">
-                <label>Password</label>
-                <input type="password" name="password">
-                <button type="submit">Sign In</button>
-            </form>
-            @if (session('Failed'))
-                <div>
-                    {{ session('Failed') }}
-                </div>
-            @endif
         </div>
-    </div>
+        <div class="panels-container">
+          <div class="panel left-panel">
+            <div class="content">
+              <h3>Start your
+                Carier now</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
+                ex ratione. Aliquid!
+              </p>
+              <button class="btn transparent" id="sign-up-btn">
+                Sign up
+              </button>
+            </div>
+            <img src="{{ asset('image/log.svg') }}" class="image" alt="" />
+          </div>
+          <div class="panel right-panel">
+            <div class="content">
+              <h3>Hello
+                friends</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                laboriosam ad deleniti.
+              </p>
+              <button class="btn transparent" id="sign-in-btn">
+                Sign in
+              </button>
+            </div>
+            <img src="{{ asset('image/register.svg') }}" class="image" alt="" />
+          </div>
+        </div>
+      </div>
+
+<script src="{{ asset('js/logreg.js') }}"></script>
 </body>
 
 </html>
