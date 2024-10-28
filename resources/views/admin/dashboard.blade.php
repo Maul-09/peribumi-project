@@ -37,7 +37,7 @@
             </div>
         </div>
         <div>
-            <p>Statistik Pengunjung</p>
+            <p>Statistik Pengunjungp</p>
         </div>
     </div>
 </x-adminlayout>
