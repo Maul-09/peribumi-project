@@ -143,12 +143,12 @@ header.sticky .dropdown-button:hover {
     margin-right: 5px;
 }
 
-.dropdownicn {
+.dropbutton {
     position: relative;
     display: inline-block;
 }
 
-.dropdown-button-icn {
+.drop-menu {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -157,7 +157,7 @@ header.sticky .dropdown-button:hover {
     z-index: 1;
 }
 
-.dropdownicn:hover .dropdown-button-icn {
+.dropbutton:hover .drop-menu {
     display: block;
 }
 

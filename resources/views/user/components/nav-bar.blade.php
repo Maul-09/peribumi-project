@@ -21,14 +21,14 @@
         <li><a href="{{ route('logreg') }}">Sign in</a></li>
         @endguest
         @auth
-        <li class="dropdownicn">
-            <button class="dropdown-button-icn" id="userDropdownButton">
+        <li class="dropbutton">
+            <button class="drop-button" id="userDropdownButton">
                 <img src="{{ asset('#') }}" alt="User Logo" class="user-logo">
                 @if (Auth::check())
                     <p>{{ Auth::user()->name }}</p>
                 @endif
             </button>
-            <div class="dropdown-button-icn" id="userDropdownMenu">
+            <div class="drop-menu" id="userDropdownMenu">
                 <a href="">Profile</a>
                 <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                     @csrf
