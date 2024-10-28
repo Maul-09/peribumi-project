@@ -21,8 +21,8 @@
         <li><a href="{{ route('logreg') }}">Sign in</a></li>
         @endguest
         @auth
-        <li class="dropdown">
-            <button class="dropdown-button" id="userDropdownButton">
+        <li class="dropdownicn">
+            <button class="dropdown-button-icn" id="userDropdownButton">
                 <img src="{{ asset('#') }}" alt="User Logo" class="user-logo">
                 @if (Auth::check())
                     <p>{{ Auth::user()->name }}</p>
