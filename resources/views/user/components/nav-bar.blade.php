@@ -18,9 +18,14 @@
         <li><a href="{{ route('beranda') }}#mitra">Mitra</a></li>
         <li><a href="{{ route('beranda') }}#footer">Contact us</a></li>
         <li><a href="{{ route('logreg') }}">Sign in</a></li>
+        @guest
         <form action="{{ route('logout') }}" method="post">
             @csrf
             <button>logout</button>
         </form>
+        @endguest
+        @auth
+        
+        @endauth
     </ul>
 </header>
