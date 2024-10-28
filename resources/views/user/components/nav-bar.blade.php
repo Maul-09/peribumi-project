@@ -28,7 +28,7 @@
                     <p>{{ Auth::user()->name }}</p>
                 @endif
             </button>
-            <div class="dropdown-menu" id="userDropdownMenu">
+            <div class="dropdown-button-icn" id="userDropdownMenu">
                 <a href="">Profile</a>
                 <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                     @csrf
