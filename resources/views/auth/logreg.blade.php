@@ -54,18 +54,38 @@
               <div class="input-field">
                 <i class="fas fa-envelope"></i>
                 <input type="text" name="name" placeholder="Nama lengkap" />
+                @error('name')
+
+                <p>{{ $message }}</p>
+                  
+                @enderror
               </div>
               <div class="input-field">
                 <i class="fas fa-envelope"></i>
                 <input type="email" name="email" placeholder="Email" />
+                @error('email')
+
+                <p>{{ $message }}</p>
+                  
+                @enderror
               </div>
               <div class="input-field">
                 <i class="fas fa-user"></i>
                 <input type="text" name="username" placeholder="Username" />
+                @error('username')
+
+                <p>{{ $message }}</p>
+                  
+                @enderror
               </div>
               <div class="input-field">
                 <i class="fas fa-lock"></i>
                 <input type="password" name="password" placeholder="Password" />
+                @error('password')
+
+                <p>{{ $message }}</p>
+                  
+                @enderror
               </div>
               <input type="submit" class="btn" value="Sign up" />
 

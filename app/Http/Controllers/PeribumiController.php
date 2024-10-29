@@ -47,13 +47,21 @@ class PeribumiController extends Controller
 
     public function signup(Request $request)
     {
-        $peribumi = new User();
-        $peribumi->name = $request->name;
-        $peribumi->email = $request->email;
-        $peribumi->username = $request->username;
-        $peribumi->password = bcrypt($request->password);
-        $peribumi->save();
-        
+        $field = $request->validate([
+            'name'=>['required','max:255'],
+            'email'=>['required','max:255', 'email', 'unique:users'],
+            'username'=>['required','max:255'],
+            'password'=>['required','min:8'],
+        ]);
+
+        $peribumi = User::create($field);
+
+        // $peribumi = new User();
+        // $peribumi->name = $request->name;
+        // $peribumi->email = $request->email;
+        // $peribumi->username = $request->username;
+        // $peribumi->password = bcrypt($request->password);
+        // $peribumi->save();
 
         Auth::login($peribumi);
 
