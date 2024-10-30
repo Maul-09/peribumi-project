@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CrudController;
 use App\Http\Controllers\PeribumiController;
 
 
@@ -17,18 +19,21 @@ Route::middleware('auth')->group(function() {
         Route::get('/event', [PeribumiController::class, 'event'])->name('event');
     });
     
-    Route::get('/email/verify',[PeribumiController::class, 'verifyNotice'])->name('verification.notice');
-    Route::get('/email/verify/{id}/{hash}', [PeribumiController::class, 'verifyEmail'])->middleware('signed')->name('verification.verify');
-    Route::post('/email/verification-notification', [PeribumiController::class, 'verifyHandler'])->middleware('throttle:6,1')->name('verification.send');
+    Route::get('/email/verify',[AuthController::class, 'verifyNotice'])->name('verification.notice');
+    Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verifyEmail'])->middleware('signed')->name('verification.verify');
+    Route::post('/email/verification-notification', [AuthController::class, 'verifyHandler'])->middleware('throttle:6,1')->name('verification.send');
     
 });
 
 Route::get('/', [PeribumiController::class, 'beranda'])->name('beranda');
 
-Route::post('/signup', [PeribumiController::class, 'signup'])->name('signup');
+Route::post('/signup', [AuthController::class, 'signup'])->name('signup');
 Route::get('/auth/logreg', [PeribumiController::class, 'logreg'])->name('logreg');
-Route::post('/signin', [PeribumiController::class, 'signin'])->name('signin');
-Route::post('/logout', [PeribumiController::class, 'logout'])->name('logout');
+Route::post('/signin', [AuthController::class, 'signin'])->name('signin');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/edit/profile{id}', [CrudController::class, 'editProfile'])->name('editProfile');
+
 
 
 
