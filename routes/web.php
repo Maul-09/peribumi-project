@@ -33,4 +33,5 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/edit/profile{id}', [CrudController::class, 'editProfile'])->name('editProfile');
 
-Route::get('admin/dashboard', [AuthController::class, 'admin']);
+Route::get('admin/dashboard', [AuthController::class, 'admin'])
+    ->middleware(['auth', 'admin']);
