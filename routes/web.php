@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CrudController;
 use App\Http\Controllers\PeribumiController;
 
 
@@ -30,6 +31,9 @@ Route::post('/signup', [AuthController::class, 'signup'])->name('signup');
 Route::get('/auth/logreg', [PeribumiController::class, 'logreg'])->name('logreg');
 Route::post('/signin', [AuthController::class, 'signin'])->name('signin');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/edit/profile{id}', [CrudController::class, 'editProfile'])->name('editProfile');
+
 
 
 
