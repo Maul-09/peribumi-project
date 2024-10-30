@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/head-footer-style/logreg.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Register</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="{{ asset('css/head-footer-style/logreg.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>Peribumi Consultant - Register</title>
 </head>
 
 <body class="log">
@@ -30,21 +30,11 @@
                     {{ session('Failed') }}
                 </div>
               @endif
-              <input type="submit" value="Login" class="btn solid" />
-
-              <p class="social-text">Or Sign in with social platforms</p>
+              <input type="submit" class="btn" value="Sign up" />
+              <p class="social-text">Or signin with Google</p>
               <div class="social-media">
                 <a href="#" class="social-icon">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="social-icon">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="social-icon">
                   <i class="fab fa-google"></i>
-                </a>
-                <a href="#" class="social-icon">
-                  <i class="fab fa-linkedin-in"></i>
                 </a>
               </div>
             </form>
@@ -57,7 +47,7 @@
                 @error('name')
 
                 <p>{{ $message }}</p>
-                  
+
                 @enderror
               </div>
               <div class="input-field">
@@ -66,7 +56,7 @@
                 @error('email')
 
                 <p>{{ $message }}</p>
-                  
+
                 @enderror
               </div>
               <div class="input-field">
@@ -75,7 +65,7 @@
                 @error('username')
 
                 <p>{{ $message }}</p>
-                  
+
                 @enderror
               </div>
               <div class="input-field">
@@ -84,24 +74,14 @@
                 @error('password')
 
                 <p>{{ $message }}</p>
-                  
+
                 @enderror
               </div>
               <input type="submit" class="btn" value="Sign up" />
-
-              <p class="social-text">Or Sign up with social platforms</p>
+              <p class="social-text">Or signup with Google</p>
               <div class="social-media">
                 <a href="#" class="social-icon">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="social-icon">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="social-icon">
                   <i class="fab fa-google"></i>
-                </a>
-                <a href="#" class="social-icon">
-                  <i class="fab fa-linkedin-in"></i>
                 </a>
               </div>
             </form>

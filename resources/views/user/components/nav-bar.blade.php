@@ -23,7 +23,7 @@
         @auth
         <li class="dropbutton">
             <button class="drop-button" id="userDropdownButton">
-                <img src="{{ asset('#') }}" alt="User Logo" class="user-logo">
+                <img src="{{ asset('aset/assets/img/profile-img.jpg') }}" alt="User Logo" class="user-logo">
                 @if (Auth::check())
                     <p>{{ Auth::user()->name }}</p>
                 @endif
