@@ -20,7 +20,7 @@ class CrudController extends Controller
     public function editProfile(string $id): View
     {
         //get product by ID
-        $product = User::findOrFail($id);
+        $field = User::findOrFail($id);
 
         //render view with product
         return view('user.profile-view', compact('users'));
@@ -37,47 +37,47 @@ class CrudController extends Controller
     {
         //validate form
         $request->validate([
-            'image'         => 'image|mimes:jpeg,jpg,png|max:2048',
-            'title'         => 'required|min:5',
-            'description'   => 'required|min:10',
-            'price'         => 'required|numeric',
-            'stock'         => 'required|numeric'
+            'image' => 'image|mimes:jpeg,jpg,png|max:2048',
+            'name' => ['required', 'max:255'],
+            'email' => ['required', 'max:255', 'email', 'unique:users'],
+            'username' => ['required', 'max:255'],
+            'password' => ['required', 'min:8'],
         ]);
 
         //get product by ID
-        $product = User::findOrFail($id);
+        $field = User::findOrFail($id);
 
         //check if image is uploaded
         if ($request->hasFile('image')) {
 
             //upload new image
             $image = $request->file('image');
-            $image->storeAs('public/products', $image->hashName());
+            $image->storeAs('public/profile', $image->hashName());
 
             //delete old image
-            Storage::delete('public/products/'.$product->image);
+            Storage::delete('public/profile/'.$field->image);
 
             //update product with new image
-            $product->update([
+            $field->update([
                 'image'         => $image->hashName(),
-                'title'         => $request->title,
-                'description'   => $request->description,
-                'price'         => $request->price,
-                'stock'         => $request->stock
+                'name'         => $request->name,
+                'username'   => $request->username,
+                'email'         => $request->email,
+                'password'         => $request->password
             ]);
 
         } else {
 
             //update product without image
-            $product->update([
-                'title'         => $request->title,
-                'description'   => $request->description,
-                'price'         => $request->price,
-                'stock'         => $request->stock
+            $field->update([
+                'name'         => $request->name,
+                'username'   => $request->username,
+                'email'         => $request->email,
+                'password'         => $request->password
             ]);
         }
 
         //redirect to index
-        return redirect()->route('products.index')->with(['success' => 'Data Berhasil Diubah!']);
+        return redirect()->route('editProfile')->with(['success' => 'Data Berhasil Diubah!']);
     }
 }
