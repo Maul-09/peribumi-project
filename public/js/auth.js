@@ -9,3 +9,11 @@ sign_up_btn.addEventListener("click", () => {
 sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
+
+function showConfirmation() {
+    const confirmationMessage = document.getElementById('confirmationMessage');
+    confirmationMessage.style.display = 'block';
+    setTimeout(() => {
+        confirmationMessage.style.display = 'none';
+    }, 3000); // Pesan hilang setelah 3 detik
+}
