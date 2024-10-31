@@ -35,3 +35,35 @@ function toggleSidebar() {
         adminLogoSection.style.display = 'block';
     }
 }
+
+function toggleDropdown() {
+    const dropdownMenu = document.getElementById('userDropdownMenu');
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+}
+
+
+window.onclick = function(event) {
+    const dropdownMenu = document.getElementById('userDropdownMenu');
+    const dropdownButton = document.getElementById('userDropdownButton');
+
+    if (!dropdownMenu.contains(event.target) && !dropdownButton.contains(event.target)) {
+        dropdownMenu.style.display = 'none';
+    }
+}
+
+function confirmLogout() {
+    document.getElementById('logoutModal').style.display = 'block';
+}
+
+
+function closeModal() {
+    document.getElementById('logoutModal').style.display = 'none';
+}
+
+function performLogout() {
+    document.getElementById('logoutForm').submit();
+}
+
+window.onload = function() {
+    closeModal();
+};
