@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes(); // Menambahkan kolom deleted_at untuk SoftDeletes
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

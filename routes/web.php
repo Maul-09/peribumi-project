@@ -29,3 +29,4 @@ Route::post('/signin', [AuthController::class, 'signin'])->name('signin');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/edit/profile{id}', [CrudController::class, 'editProfile'])->name('editProfile');
+Route::post('/edit/profile/delete{id}', [CrudController::class, 'deleteAccount'])->name('deleteAccount');
