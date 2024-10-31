@@ -124,23 +124,18 @@ header.sticky .dropdown-menu {
 }
 
 header ul li a:hover,
-.dropdown-menu a:hover,
-.dropbutton .drop-menu a:hover,
-.dropbutton .drop-menu button:hover {
+.dropdown-menu a:hover {
     color: var(--skin-color-4);
     font-size: 12px;
 }
 
 header.sticky ul li a,
-header.sticky .dropdown-button,
-header.sticky .dropbutton {
+header.sticky .dropdown-button {
     color: var(--skin-color-1);
 }
 
 header.sticky ul li a:hover,
-header.sticky .dropdown-menu a:hover,
-header.sticky .drop-menu a:hover,
-header.sticky .drop-menu button:hover {
+header.sticky .dropdown-menu a:hover, {
     color: var(--skin-color-4);
     font-size: 12px;
 }
@@ -150,43 +145,101 @@ header.sticky .dropdown-button:hover {
 
 }
 
-.dropbutton {
-    position: relative;
-}
-
 .drop-menu {
     display: none;
-    background-color: var(--skin-color-1);
     position: absolute;
-    min-width: 150px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    transition: 0.5s;
-}
-
-.dropbutton:hover .drop-menu {
-    display: block;
-    position: absolute;
+    justify: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
     padding: 10px;
-    text-decoration: none;
-    font-size: 12px;
+    top: 50px;
+    right: 0;
+    z-index: 1000;
 }
-
-.dropbutton .drop-menu a{
-    color: #fff;
-}
-
-.dropbutton .drop-menu button{
+.drop-menu button {
+    background-color: transparent;
+    padding: 10px 15px;
     font-size: 12px;
-    color: #fff;
     font-weight: 500;
+    color: #111;
+    border: none;
+
+}
+.drop-menu a{
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 12px;
+    font-weight: 500;
+    color: #111;
+    border: none;
     transition: 0.5s;
+
+}
+.drop-menu a:hover,
+.drop-menu button:hover {
+    color: var(--skin-color-4);
+
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
-.logout-button {
-    background: none;
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.modal-content button {
+    margin: 5px;
+    padding: 8px 16px;
     border: none;
-    color: #333;
+    border-radius: 4px;
     cursor: pointer;
+}
+.modal-content button:first-of-type {
+    background-color: #d9534f;
+    color: white;
+}
+.modal-content button:last-of-type {
+    background-color: #5bc0de;
+    color: white;
 }
 
