@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id()->primary();
+            $table->uuid('id')->primary(); // Menggunakan UUID sebagai primary key
             $table->string('name');
             $table->string('email')->unique();
             $table->string('usertype')->default('user');
@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes(); // Menambahkan kolom deleted_at untuk SoftDeletes
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
@@ -32,7 +33,7 @@ return new class extends Migration
 
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
-            $table->foreignId('user_id')->nullable()->index();
+            $table->foreignUuid('user_id')->nullable()->index(); // Menggunakan UUID sebagai foreign key
             $table->string('ip_address', 45)->nullable();
             $table->text('user_agent')->nullable();
             $table->longText('payload');

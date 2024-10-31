@@ -1,5 +1,6 @@
 <x-layout>
-
+    <x-slot:name>Beranda</x-slot>
+    <x-slot:title>{{ asset('css/user-style/style-edit-profile.css') }}</x-slot>
     <form action="" method="post">
         @csrf
         @method('PUT')
@@ -56,7 +57,7 @@
             <div class="">
                 <div class="">
                     <label class="">Password</label>
-                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password', $field->password) }}" placeholder="Masukkan password baru">
+                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Masukkan password baru">
                 
                     <!-- error message untuk stock -->
                     @error('password')
@@ -67,9 +68,15 @@
                 </div>
             </div>
         </div>
-
         
-
+        <button type="submit" class="btn btn-primary">Simpan</button>
+        
     </form>
+    <div>
+        <form action="{{ route('deleteAccount', $field->id) }}"method="post">
+            @csrf
+            <button type="submit" class="btn btn-primary">Hapus Akun</button>
+        </form>
+    </div>
 
 </x-layout>

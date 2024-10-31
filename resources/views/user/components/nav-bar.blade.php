@@ -26,7 +26,7 @@
                 <img src="{{ asset('aset/assets/img/profile-img.jpg') }}" alt="User Logo" class="user-logo">
             </button>
             <div class="drop-menu" id="userDropdownMenu">
-                <a href="">Profile</a>
+                <a href="{{ route('editProfile', auth()->user()->id) }}">Profile</a>
                 <button type="button" class="logout-button" onclick="confirmLogout()">Logout</button>
                 <form action="{{ route('logout') }}" method="POST" id="logoutForm" style="display: none;">
                     @csrf
