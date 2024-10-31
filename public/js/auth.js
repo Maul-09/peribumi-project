@@ -17,3 +17,11 @@ function showConfirmation() {
         confirmationMessage.style.display = 'none';
     }, 3000); // Pesan hilang setelah 3 detik
 }
+
+function openProfileModal() {
+    document.getElementById("modalProfile").style.display = "flex";
+}
+
+function closeProfileModal() {
+    document.getElementById("modalProfile").style.display = "none";
+}
