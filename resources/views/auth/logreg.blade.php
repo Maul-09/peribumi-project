@@ -2,16 +2,18 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="{{ asset('css/head-footer-style/auth.css') }}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<title>Peribumi Consultant - Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('css/head-footer-style/auth.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Peribumi Consultant - Register</title>
 </head>
 
 <body class="log">
-      <div class="container">
+    <div class="container">
         <div class="forms-container">
           <div class="signin-signup">
             <form action="{{ route('signin') }}" method="post" class="sign-in-form" id="signin">
@@ -30,7 +32,6 @@
                     {{ session('Failed') }}
                 </div>
               @endif
-              <a href="{{ route('password.request') }}">lupa password?</a>
               <input type="submit" class="btn" value="Sign up" />
               <p class="social-text">Or signin with Google</p>
               <div class="social-media">
@@ -87,41 +88,41 @@
               </div>
             </form>
 
-        </div>
+            </div>
         </div>
         <div class="panels-container">
-          <div class="panel left-panel">
-            <div class="content">
-              <h3>Start your
-                Carier now</h3>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-                ex ratione. Aliquid!
-              </p>
-              <button class="btn transparent" id="sign-up-btn">
-                Sign up
-              </button>
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Start your
+                        Carier now</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
+                        ex ratione. Aliquid!
+                    </p>
+                    <button class="btn transparent" id="sign-up-btn">
+                        Sign up
+                    </button>
+                </div>
+                <img src="{{ asset('image/log.svg') }}" class="image" alt="" />
             </div>
-            <img src="{{ asset('image/log.svg') }}" class="image" alt="" />
-          </div>
-          <div class="panel right-panel">
-            <div class="content">
-              <h3>Hello
-                friends</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                laboriosam ad deleniti.
-              </p>
-              <button class="btn transparent" id="sign-in-btn">
-                Sign in
-              </button>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Hello
+                        friends</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                        laboriosam ad deleniti.
+                    </p>
+                    <button class="btn transparent" id="sign-in-btn">
+                        Sign in
+                    </button>
+                </div>
+                <img src="{{ asset('image/register.svg') }}" class="image" alt="" />
             </div>
-            <img src="{{ asset('image/register.svg') }}" class="image" alt="" />
-          </div>
         </div>
-      </div>
+    </div>
 
-<script src="{{ asset('js/auth.js') }}"></script>
+    <script src="{{ asset('js/logreg.js') }}"></script>
 </body>
 
 </html>

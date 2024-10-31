@@ -40,11 +40,23 @@ class AuthController extends Controller
 
     public function signin(Request $request)
     {
-        $data = $request->only('username', 'password');
+        // Validate the incoming request
+        $request->validate([
+            'username' => 'required|string',
+            'password' => 'required|string',
+            'remember' => 'nullable|boolean', // Optional remember me field
+        ]);
 
-        if (Auth::attempt($data)) {
+        // Retrieve the credentials
+        $data = $request->only('username', 'password');
+        $remember = $request->has('remember'); // Check if 'remember' checkbox was checked
+
+        // Attempt to authenticate the user
+        if (Auth::attempt($data, $remember)) {
+            // Regenerate the session to prevent session fixation
             $request->session()->regenerate();
 
+            // Check the user type and redirect accordingly
             if ($request->user()->usertype === 'admin') {
                 return redirect('admin/dashboard');
             }
