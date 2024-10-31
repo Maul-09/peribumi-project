@@ -30,6 +30,7 @@
                     {{ session('Failed') }}
                 </div>
               @endif
+              <a href="{{ route('password.request') }}">lupa password?</a>
               <input type="submit" class="btn" value="Sign up" />
               <p class="social-text">Or signin with Google</p>
               <div class="social-media">

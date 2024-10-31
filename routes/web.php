@@ -30,3 +30,11 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/edit/profile{id}', [CrudController::class, 'editProfile'])->name('editProfile');
 Route::post('/edit/profile/delete{id}', [CrudController::class, 'deleteAccount'])->name('deleteAccount');
+
+Route::get('/forgot-password', [CrudController::class, 'forgotView'])->name('password.request');
+ 
+Route::post('/forgot-password',[CrudController::class, 'forgotSend'])->name('password.email');
+
+Route::get('/reset-password/{token}', [CrudController::class, 'forgotHandler'])->name('password.reset');
+
+Route::post('/reset-password', [CrudController::class, 'forgotUpdate'])->name('password.update');
