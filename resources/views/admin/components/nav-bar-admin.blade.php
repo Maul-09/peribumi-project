@@ -78,7 +78,7 @@
 <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
-            <a class="nav-link " href="{{ asset('admin') }}">
+            <a class="nav-link " href="{{ route('admin') }}">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
@@ -91,27 +91,27 @@
             </a>
             <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="#">
+                    <a href="{{ route('manajemen.admin') }}">
                         <i class="bi bi-circle"></i><span>Management Bussines</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('training.admin') }}">
                         <i class="bi bi-circle"></i><span>Training Center</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('digital.admin') }}">
                         <i class="bi bi-circle"></i><span>Digital Solution</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('personal.admin') }}">
                         <i class="bi bi-circle"></i><span>Personal Development</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('organizer.admin') }}">
                         <i class="bi bi-circle"></i><span>Organizer</span>
                     </a>
                 </li>

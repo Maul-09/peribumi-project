@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CrudController;
@@ -46,3 +47,9 @@ Route::get('/restore-confirm', [CrudController::class, 'confirmRestore'])->name(
 Route::get('/trash', [CrudController::class, 'trash'])->name('trash');
 
 Route::get('/after-restore', [CrudController::class, 'afterRestore'])->name('after.restore');
+
+Route::get('/manajemen-admin', [AdminController::class, 'manajemenAdmin'])->name('manajemen.admin');
+Route::get('/training-admin', [AdminController::class, 'trainingAdmin'])->name('training.admin');
+Route::get('/digital-admin', [AdminController::class, 'digitalAdmin'])->name('digital.admin');
+Route::get('/personal-admin', [AdminController::class, 'personalAdmin'])->name('personal.admin');
+Route::get('/organizer-admin', [AdminController::class, 'organizerAdmin'])->name('organizer.admin');

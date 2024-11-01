@@ -14,4 +14,29 @@ class AdminController extends Controller
 
         return view('users.index', compact('userCount'));
     }
+
+    public function manajemenAdmin()
+    {
+        return view('admin.manajemen-business');
+    }
+
+    public function trainingAdmin()
+    {
+        return view('admin.training-center');
+    }
+
+    public function digitalAdmin()
+    {
+        return view('admin.digital-solution');
+    }
+
+    public function personalAdmin()
+    {
+        return view('admin.personal-development');
+    }
+
+    public function organizerAdmin()
+    {
+        return view('admin.organizer');
+    }
 }
