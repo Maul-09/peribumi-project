@@ -24,7 +24,7 @@
         @auth
         <li class="dropbutton">
             <button class="dropdown-button" id="userDropdownButton" onclick="toggleDropdown()">
-                <img src="{{ asset('aset/assets/img/profile-img.jpg') }}" alt="User Logo" class="user-logo">
+                <img src="{{ auth()->user()->image ? asset(auth()->user()->image) : asset('image/user-icon.png') }}" alt="User Logo" class="user-logo">
             </button>
             <div class="drop-menu" id="userDropdownMenu">
                 <a href="{{ route('editProfile', auth()->user()->id) }}">Profile</a>
@@ -34,7 +34,7 @@
                 </form>
             </div>
         </li>
-        {{-- <li><a href="javascript:void(0);" onclick="openProfileModal()">Edit Profile</a></li> --}}
+
         @endauth
     </ul>
 </header>
