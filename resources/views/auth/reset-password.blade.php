@@ -3,7 +3,7 @@
 <head>
     <title>Reset Password</title>
 </head>
-<body>
+<body class="reset">
     <h1>Reset Password</h1>
 
     @if(session('success'))

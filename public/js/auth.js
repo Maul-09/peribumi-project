@@ -39,3 +39,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
+    window.onload = function() {
+        const successMessage = document.querySelector('.success-message');
+        if (successMessage) {
+            successMessage.style.opacity = 1;
+        }
+    };
+
