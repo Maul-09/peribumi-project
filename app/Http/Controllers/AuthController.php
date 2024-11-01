@@ -58,7 +58,8 @@ class AuthController extends Controller
 
             // Check the user type and redirect accordingly
             if ($request->user()->usertype === 'admin') {
-                return redirect('admin/dashboard');
+
+                return redirect()->route('admin');
             }
 
             return redirect()->route('beranda');
@@ -94,6 +95,7 @@ class AuthController extends Controller
 
     public function admin()
     {
-        return view('admin.dashboard');
+        $userCount = User::count();
+        return view('admin.dashboard', compact('userCount'));
     }
 }
