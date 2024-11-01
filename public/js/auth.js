@@ -15,13 +15,27 @@ function showConfirmation() {
     confirmationMessage.style.display = 'block';
     setTimeout(() => {
         confirmationMessage.style.display = 'none';
-    }, 3000); // Pesan hilang setelah 3 detik
+    }, 3000);
 }
 
-function openProfileModal() {
-    document.getElementById("modalProfile").style.display = "flex";
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleButtons = document.querySelectorAll(".toggle-password");
 
-function closeProfileModal() {
-    document.getElementById("modalProfile").style.display = "none";
-}
+    toggleButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            const passwordInput = this.previousElementSibling;
+            const eyeIcon = this.querySelector("i");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                eyeIcon.classList.remove("fa-eye-slash");
+                eyeIcon.classList.add("fa-eye");
+            } else {
+                passwordInput.type = "password";
+                eyeIcon.classList.remove("fa-eye");
+                eyeIcon.classList.add("fa-eye-slash");
+            }
+        });
+    });
+});
+
