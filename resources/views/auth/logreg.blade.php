@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/head-footer-style/auth.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/skin/color-palete.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,19 +26,21 @@
               </div>
               <div class="input-field">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password" placeholder="Password" />
+                <input type="password" id="password" name="password" placeholder="Password" />
+                <span id="togglePassword" class="toggle-password">
+                    <i class="fas fa-eye-slash" id="eyeIcon"></i>
+                </span>
               </div>
+
               @if (session('Failed'))
                 <div style="color:red;">
                     {{ session('Failed') }}
                 </div>
               @endif
-              <div>
-                <label>
+                <label class="forgot">
                     <input type="checkbox" name="remember" value="1"> Remember me
                     <a href="{{ route('password.request') }}">Forgot Password?</a>
                 </label>
-            </div>
               <input type="submit" class="btn" value="Sign up" />
               <p class="social-text">Or signin with Google</p>
               <div class="social-media">
@@ -78,7 +81,10 @@
               </div>
               <div class="input-field">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password" placeholder="Password" />
+                <input type="password" id="password" name="password" placeholder="Password" />
+                <span id="togglePassword" class="toggle-password">
+                    <i class="fas fa-eye-slash" id="eyeIcon"></i>
+                </span>
                 @error('password')
 
                 <p>{{ $message }}</p>
@@ -102,8 +108,7 @@
                     <h3>Start your
                         Carier now</h3>
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-                        ex ratione. Aliquid!
+                        If you don’t have an account yet, join us and start your carier
                     </p>
                     <button class="btn transparent" id="sign-up-btn">
                         Sign up
@@ -116,8 +121,7 @@
                     <h3>Hello
                         friends</h3>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                        laboriosam ad deleniti.
+                        If you already have an account, signin here and have fun!
                     </p>
                     <button class="btn transparent" id="sign-in-btn">
                         Sign in

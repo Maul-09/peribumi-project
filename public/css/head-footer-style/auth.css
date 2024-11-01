@@ -51,6 +51,30 @@ form {
   grid-row: 1 / 2;
 }
 
+.signin-signup form .forgot{
+    position: relative;
+    display: flex;
+    list-style: none;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.signin-signup form .forgot input{
+    margin: 0 10px;
+}
+
+.signin-signup form .forgot a{
+    margin-left: 60px;
+    color: var{--skin-color-1};
+    text-decoration: none;
+    transition: 0.5s;
+
+}
+
+.signin-signup form .forgot a:hover{
+    color: var(--skin-color-4);
+}
+
 form.sign-up-form {
   opacity: 0;
   z-index: 1;
@@ -105,6 +129,15 @@ form.sign-in-form {
 .social-text {
   padding: 0.7rem 0;
   font-size: 1rem;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
 }
 
 .social-media {
