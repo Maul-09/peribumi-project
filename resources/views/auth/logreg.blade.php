@@ -32,6 +32,12 @@
                     {{ session('Failed') }}
                 </div>
               @endif
+              <div>
+                <label>
+                    <input type="checkbox" name="remember" value="1"> Remember me
+                    <a href="{{ route('password.request') }}">Forgot Password?</a>
+                </label>
+            </div>
               <input type="submit" class="btn" value="Sign up" />
               <p class="social-text">Or signin with Google</p>
               <div class="social-media">
@@ -122,7 +128,7 @@
         </div>
     </div>
 
-    <script src="{{ asset('js/logreg.js') }}"></script>
+    <script src="{{ asset('js/auth.js') }}"></script>
 </body>
 
 </html>

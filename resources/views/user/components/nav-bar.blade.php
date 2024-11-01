@@ -18,12 +18,37 @@
         </li>
         <li><a href="{{ route('beranda') }}#mitra">Mitra</a></li>
         <li><a href="{{ route('beranda') }}#footer">Contact us</a></li>
-        <li><a href="javascript:void(0);" onclick="openProfileModal()">Edit Profile</a></li>
+        @guest
+        <li><a href="{{ route('logreg') }}">Sign in</a></li>
+        @endguest
+        @auth
+        <li class="dropbutton">
+            <button class="dropdown-button" id="userDropdownButton" onclick="toggleDropdown()">
+                <img src="{{ asset('aset/assets/img/profile-img.jpg') }}" alt="User Logo" class="user-logo">
+            </button>
+            <div class="drop-menu" id="userDropdownMenu">
+                <a href="{{ route('editProfile', auth()->user()->id) }}">Profile</a>
+                <button type="submit" class="logout-button" onclick="confirmLogout()">Logout</button>
+                <form action="{{ route('logout') }}" method="POST" id="logoutForm" style="display: none;">
+                    @csrf
+                </form>
+            </div>
+        </li>
+        {{-- <li><a href="javascript:void(0);" onclick="openProfileModal()">Edit Profile</a></li> --}}
+        @endauth
     </ul>
 </header>
 
+<div id="logoutModal" class="modal">
+    <div class="modal-content">
+        <p>Are you sure you want to logout?</p>
+        <button onclick="performLogout()">Yes</button>
+        <button onclick="closeModal()">Cancel</button>
+    </div>
+</div>
+
 <!-- Modal Popup Edit Profile -->
-<div id="modalProfile" class="modal-profile">
+{{-- <div id="modalProfile" class="modal-profile">
     <div class="modal-content-profile">
         <span class="close-btn" onclick="closeProfileModal()">&times;</span>
         <h2>Edit Profile</h2>
@@ -78,4 +103,4 @@
             <button type="submit" class="btn-danger">Hapus Akun</button>
         </form>
     </div>
-</div>
+</div> --}}
