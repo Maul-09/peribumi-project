@@ -14,7 +14,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/event', [PeribumiController::class, 'event'])->name('event');
     });
 
-    Route::get('admin/dashboard', [AuthController::class, 'admin'])->middleware(['admin']);
+    Route::get('admin/dashboard', [AuthController::class, 'admin'])->middleware(['admin'])->name('admin');
 
     Route::get('/email/verify', [AuthController::class, 'verifyNotice'])->name('verification.notice');
     Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verifyEmail'])->middleware('signed')->name('verification.verify');
