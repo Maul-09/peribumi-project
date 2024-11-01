@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Reset Password</title>
 </head>
+
 <body>
     <h1>Masukan Email</h1>
 
-    @if(session('success'))
+    @if (session('success'))
         <div>{{ session('success') }}</div>
     @endif
 
@@ -18,5 +20,8 @@
         </div>
         <button type="submit">Reset Password</button>
     </form>
+
+    <a href="{{ route('trash') }}">Restore akun</a>
 </body>
+
 </html>

@@ -14,6 +14,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use Notifiable, HasFactory, SoftDeletes; // Tambahkan SoftDeletes
 
     protected $keyType = 'string'; // Menentukan bahwa tipe kunci adalah string
+    protected $dates = ['deleted_at'];
     public $incrementing = false;   // Menonaktifkan auto-increment
 
     protected $fillable = [
