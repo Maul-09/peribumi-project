@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i");
 
 * {
   margin: 0;
@@ -124,6 +124,7 @@ form.sign-in-form {
 .input-field input::placeholder {
   color: #aaa;
   font-weight: 500;
+  border: none;
 }
 
 .social-text {
@@ -507,101 +508,124 @@ body.verif {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.modal-profile {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+body.forgot {
+    display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-}
-
-.modal-content-profile {
-    background-color: #fff;
-    padding: 30px;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    position: relative;
-}
-
-/* Form Styling */
-.modal-content-profile h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
+    height: 100vh;
     color: #333;
 }
 
-.form-group {
-    margin-bottom: 15px;
+.logo-forgot {
+    width: 200px;
+    margin-bottom: 30px;
+}
+
+.content-forgot {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.content-forgot h1 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.success-message {
+    background-color: #e7f6e7;
+    color: #28a745;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+/* Input Field Styles */
+.input-forgot {
+    width: 300px;
+    margin-bottom: 20px;
     text-align: left;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
+.input-forgot label {
     font-weight: bold;
-    color: #333;
+    color: #666;
 }
 
-.form-control {
-    width: 100%;
-    padding: 8px;
-    border-radius: 4px;
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background: #f2f3f7;
     border: 1px solid #ddd;
-}
-
-.error-message {
-    color: #e3342f;
-    font-size: 13px;
-    margin-top: 5px;
-}
-
-/* Button Styling */
-.btn-primary, .btn-danger {
-    display: block;
-    width: 100%;
+    border-radius: 8px;
     padding: 10px;
-    font-size: 16px;
-    color: #fff;
+    transition: border 0.3s;
+}
+
+.input-wrapper:hover,
+.input-wrapper:focus-within {
+    border: 1px solid #4f93c1;
+}
+
+.input-wrapper .icon {
+    color: #4f93c1;
+    margin-right: 8px;
+}
+
+.input-wrapper input[type="email"] {
+    width: 100%;
     border: none;
-    border-radius: 5px;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+}
+
+.reset-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4f93c1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s;
-    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-.btn-primary {
-    background-color: #007bff;
+.reset-button:hover {
+    background-color: var(--skin-color-1);
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
+.reset-button:active {
+    transform: scale(0.98);
 }
 
-.btn-danger {
-    background-color: #dc3545;
+/*
+.restore-link {
+    display: block;
+    margin-top: 20px;
+    color: #4f93c1;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-.btn-danger:hover {
-    background-color: #c82333;
-}
-
-/* Close Button */
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 20px;
-    cursor: pointer;
-    color: #999;
-}
-.close-btn:hover {
-    color: #333;
-}
+.restore-link:hover {
+    color: #3b76a0;
+    text-decoration: underline;
+} */

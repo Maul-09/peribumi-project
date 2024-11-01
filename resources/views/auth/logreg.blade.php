@@ -39,19 +39,14 @@
                     <input type="checkbox" name="remember" value="1"> Remember me
                     <a href="{{ route('password.request') }}">Forgot Password?</a>
                 </label>
-              <input type="submit" class="btn" value="Sign up" />
-              <p class="social-text">Or signin with Google</p>
-              <div class="social-media">
-                <a href="#" class="social-icon">
-                  <i class="fab fa-google"></i>
-                </a>
-              </div>
+              <input type="submit" class="btn" value="Sign In" />
+
             </form>
             <form action="{{ route('signup') }}" method="post" class="sign-up-form" id="signup">
                 @csrf
               <h2 class="title">Sign up</h2>
               <div class="input-field">
-                <i class="fas fa-envelope"></i>
+                <i class="fas fa-id-card"></i>
                 <input type="text" name="name" placeholder="Nama lengkap" />
                 @error('name')
 
@@ -90,12 +85,7 @@
                 @enderror
               </div>
               <input type="submit" class="btn" value="Sign up" />
-              <p class="social-text">Or signup with Google</p>
-              <div class="social-media">
-                <a href="#" class="social-icon">
-                  <i class="fab fa-google"></i>
-                </a>
-              </div>
+
             </form>
 
             </div>
