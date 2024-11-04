@@ -125,6 +125,7 @@ header.sticky .dropdown-menu {
 }
 
 header ul li a:hover,
+header.sticky ul li a:hover,
 .dropdown-menu a:hover {
     color: var(--skin-color-4);
     font-size: 12px;
