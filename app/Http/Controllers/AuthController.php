@@ -92,10 +92,4 @@ class AuthController extends Controller
 
         return back()->with('message', 'Verification link sent!');
     }
-
-    public function admin()
-    {
-        $userCount = User::count();
-        return view('admin.dashboard', compact('userCount'));
-    }
 }

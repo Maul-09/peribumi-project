@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CrudController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PeribumiController;
 
 Route::middleware('auth')->group(function () {
@@ -14,8 +15,15 @@ Route::middleware('auth')->group(function () {
         Route::get('/personal', [PeribumiController::class, 'personal'])->name('personal');
         Route::get('/event', [PeribumiController::class, 'event'])->name('event');
     });
+    Route::middleware('admin')->group(function () {
+        Route::get('admin/dashboard', [AdminController::class, 'admin'])->name('admin');
+        Route::get('/manajemen-admin', [AdminController::class, 'manajemenAdmin'])->name('manajemen.admin');
+        Route::get('/training-admin', [AdminController::class, 'trainingAdmin'])->name('training.admin');
+        Route::get('/digital-admin', [AdminController::class, 'digitalAdmin'])->name('digital.admin');
+        Route::get('/personal-admin', [AdminController::class, 'personalAdmin'])->name('personal.admin');
+        Route::get('/organizer-admin', [AdminController::class, 'organizerAdmin'])->name('organizer.admin');
 
-    Route::get('admin/dashboard', [AuthController::class, 'admin'])->middleware(['admin'])->name('admin');
+    });
 
     Route::get('/email/verify', [AuthController::class, 'verifyNotice'])->name('verification.notice');
     Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verifyEmail'])->middleware('signed')->name('verification.verify');
@@ -48,8 +56,8 @@ Route::get('/trash', [CrudController::class, 'trash'])->name('trash');
 
 Route::get('/after-restore', [CrudController::class, 'afterRestore'])->name('after.restore');
 
-Route::get('/manajemen-admin', [AdminController::class, 'manajemenAdmin'])->name('manajemen.admin');
-Route::get('/training-admin', [AdminController::class, 'trainingAdmin'])->name('training.admin');
-Route::get('/digital-admin', [AdminController::class, 'digitalAdmin'])->name('digital.admin');
-Route::get('/personal-admin', [AdminController::class, 'personalAdmin'])->name('personal.admin');
-Route::get('/organizer-admin', [AdminController::class, 'organizerAdmin'])->name('organizer.admin');
+Route::get('/produk/create', [ProdukController::class, 'create'])->name('produk.create'); // Menampilkan form tambah produk
+Route::post('/produk', [ProdukController::class, 'store'])->name('produk.store');
+Route::get('/produk/{id}', [ProdukController::class, 'show'])->name('produk.show');
+Route::get('/produk/{id}/edit', [ProdukController::class, 'edit'])->name('produk.edit');
+Route::delete('/produk/{id}', [ProdukController::class, 'destroy'])->name('produk.destroy');

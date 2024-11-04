@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class AdminController extends Controller
 {
-    public function index()
+    public function admin()
     {
-        // Menghitung jumlah pengguna
-        $userCount = User::count();
-
-        return view('users.index', compact('userCount'));
+        // Menghitung jumlah pengguna dengan usertype 'user'
+        $userCount = User::where('usertype', 'admin')->count();
+        // Mengembalikan view dashboard dengan data userCount
+        return view('admin.dashboard', compact('userCount'));
     }
 
     public function manajemenAdmin()
