@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Reset Password</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Peribumi Consultant - Reset Password</title>
+    <link href="{{ asset('image/logo-peribumi.png') }}" rel="icon">
+    <link rel="stylesheet" href="{{ asset('css/head-footer-style/auth.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/skin/color-palete.css') }}">
 </head>
 <body class="reset">
-    <h1>Reset Password</h1>
+    <div class="reset-container">
+        <img src="{{ asset('image/logo-peribumi.png') }}" alt="Website Logo" class="logo-reset">
+        <h1>Reset Password</h1>
 
-    @if(session('success'))
-        <div>{{ session('success') }}</div>
-    @endif
-
-    <form method="POST" action="{{ route('password.update') }}">
-        @csrf
-        <input type="hidden" name="token" value="{{ $token }}">
-        <div>
-            <label>Email:</label>
-            <input type="email" name="email" required>
-        </div>
-        <div>
-            <label>Password:</label>
-            <input type="password" name="password" required>
-        </div>
-        <div>
-            <label>Konfirmasi Password:</label>
-            <input type="password" name="password_confirmation" required>
-        </div>
-        <button type="submit">Reset Password</button>
-    </form>
+        @if(session('success'))
+            <div class="success-message">{{ session('success') }}</div>
+        @endif
+        <form class="reset-form" method="POST" action="{{ route('password.update') }}">
+            @csrf
+            <input type="hidden" name="token" value="{{ $token }}">
+            <div class="input-reset">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-reset">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="New password" required>
+            </div>
+            <div class="input-reset">
+                <label for="password_confirmation">Confirm Password</label>
+                <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm new password" required>
+            </div>
+            <button type="submit" class="reset-btn">Reset Password</button>
+        </form>
+    </div>
 </body>
 </html>
