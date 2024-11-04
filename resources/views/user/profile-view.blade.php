@@ -1,82 +1,66 @@
 <x-layout>
     <x-slot:name>Beranda</x-slot>
     <x-slot:title>{{ asset('css/user-style/style-edit-profile.css') }}</x-slot>
-    <form action="" method="post">
-        @csrf
-        @method('PUT')
-        <div class="">
-            <label class="">IMAGE</label>
-            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
-
-            <!-- error message untuk image -->
-            @error('image')
-                <div class="">
-                    {{ $message }}
-                </div>
-            @enderror
-        </div>
-
-        <div class="">
-            <label class="">Nama</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name', $field->name) }}" placeholder="Masukkan Nama">
-
-            <!-- error message untuk title -->
-            @error('name')
-                <div class="">
-                    {{ $message }}
-                </div>
-            @enderror
-        </div>
-
-        <div class="">
-            <label class="">Email</label>
-            <input type="email" class="form-control @error('Email') is-invalid @enderror" name="email" value="{{ old('email', $field->email) }}" placeholder="Masukan Email Baru">
-
-            <!-- error message untuk description -->
-            @error('email')
-                <div class="">
-                    {{ $message }}
-                </div>
-            @enderror
-        </div>
-
-        <div class="">
-            <div class="">
-                <div class="">
-                    <label class="">Username</label>
-                    <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username', $field->username) }}" placeholder="Masukkan Username">
-
-                    <!-- error message untuk price -->
-                    @error('username')
-                        <div class="">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
-            </div>
-            <div class="">
-                <div class="">
-                    <label class="">Password</label>
-                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Masukkan password baru">
-
-                    <!-- error message untuk stock -->
-                    @error('password')
-                        <div class="">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
-            </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Simpan</button>
-
-    </form>
-    <div>
-        <form action="{{ route('deleteAccount', $field->id) }}"method="post">
+    <div class="profile-container">
+        <form action="" method="post" class="profile-form" enctype="multipart/form-data">
             @csrf
-            <button type="submit" class="btn btn-primary">Hapus Akun</button>
-        </form>
+            @method('PUT')
+
+            <!-- Profile Image -->
+            <div class="form-profile">
+                <label class="label-image">Profile Image</label>
+                <input type="file" class="file-input @error('image') is-invalid @enderror" name="image">
+                @error('image')
+                    <div class="error">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <!-- Name Input -->
+            <div class="form-profile">
+                <label class="label">Name</label>
+                <input type="text" class="form-control" @error('name') is-invalid @enderror" name="name" value="{{ old('name', $field->name) }}" placeholder="Enter your name">
+                @error('name')
+                    <div class="error">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <!-- Email Input -->
+            <div class="form-profile">
+                <label class="label">Email</label>
+                <input type="email" class="form-control" @error('email') is-invalid @enderror" name="email" value="{{ old('email', $field->email) }}" placeholder="Enter your new email">
+                @error('email')
+                    <div class="error">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <!-- Username Input -->
+            <div class="form-profile">
+                <label class="label">Username</label>
+                <input type="text" class="form-control" @error('username') is-invalid @enderror" name="username" value="{{ old('username', $field->username) }}" placeholder="Enter your username">
+                @error('username')
+                    <div class="error">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <!-- Password Input -->
+            <div class="form-profile">
+                <label class="label">Password</label>
+                <input type="password" class="form-control" @error('password') is-invalid @enderror" name="password" placeholder="Enter new password">
+                @error('password')
+                    <div class="error">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="save-btn">Save Changes</button>
+            <form action="{{ route('deleteAccount', $field->id) }}" method="post" class="delete-form">
+                @csrf
+                <button type="submit" class="delete-btn">Delete Account</button>
+            </form>
+            </form>
+
+        <!-- Delete Account Button -->
+
     </div>
 
 </x-layout>
