@@ -722,8 +722,3 @@ body.reset {
 .reset-btn:hover {
     background-color: var(--skin-color-1);
 }
-
-::placeholder {
-    color: #bbb;
-    font-size: 14px;
-}
