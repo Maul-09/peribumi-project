@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset Password</title>
+    <title>Peribumi Consultant - Forgot Password</title>
+    <link href="{{ asset('image/logo-peribumi.png') }}" rel="icon">
     <link rel="stylesheet" href="{{ asset('css/skin/color-palete.css') }}">
     <link rel="stylesheet" href="{{ asset('css/head-footer-style/auth.css') }}">
 </head>
