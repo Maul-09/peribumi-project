@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('deskripsi')->nullable();
             $table->text('apa_yang_dipelajari');
             $table->text('Benefit');
-            $table->int('harga');
+            $table->integer('harga');
             $table->timestamps();
         });
     }

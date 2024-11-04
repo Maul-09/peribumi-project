@@ -17,6 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
 
             'admin' => \App\Http\Middleware\Admin::class,
+            'track.visits' => App\Http\Middleware\TrackVisits::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

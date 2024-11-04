@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/email/verification-notification', [AuthController::class, 'verifyHandler'])->middleware('throttle:6,1')->name('verification.send');
 });
 
-Route::get('/', [PeribumiController::class, 'beranda'])->name('beranda');
+Route::get('/', [PeribumiController::class, 'beranda'])->middleware('track.visits')->name('beranda');
 
 Route::post('/signup', [AuthController::class, 'signup'])->name('signup');
 Route::get('/auth/logreg', [PeribumiController::class, 'logreg'])->name('logreg');
@@ -60,3 +60,6 @@ Route::post('/produk', [ProdukController::class, 'store'])->name('produk.store')
 Route::get('/produk/{id}', [ProdukController::class, 'show'])->name('produk.show');
 Route::get('/produk/{id}/edit', [ProdukController::class, 'edit'])->name('produk.edit');
 Route::delete('/produk/{id}', [ProdukController::class, 'destroy'])->name('produk.destroy');
+
+Route::get('/filter-data', [AdminController::class, 'filterData']);
+
