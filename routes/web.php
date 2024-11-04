@@ -22,7 +22,6 @@ Route::middleware('auth')->group(function () {
         Route::get('/digital-admin', [AdminController::class, 'digitalAdmin'])->name('digital.admin');
         Route::get('/personal-admin', [AdminController::class, 'personalAdmin'])->name('personal.admin');
         Route::get('/organizer-admin', [AdminController::class, 'organizerAdmin'])->name('organizer.admin');
-
     });
 
     Route::get('/email/verify', [AuthController::class, 'verifyNotice'])->name('verification.notice');

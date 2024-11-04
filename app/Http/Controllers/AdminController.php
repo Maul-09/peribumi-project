@@ -12,7 +12,7 @@ class AdminController extends Controller
     public function admin()
     {
         // Menghitung jumlah pengguna dengan usertype 'user'
-        $userCount = User::where('usertype', 'admin')->count();
+        $userCount = User::where('usertype', 'user')->count();
         // Mengembalikan view dashboard dengan data userCount
         return view('admin.dashboard', compact('userCount'));
     }
