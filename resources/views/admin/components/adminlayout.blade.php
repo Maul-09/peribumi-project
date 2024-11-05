@@ -38,7 +38,8 @@
     <script src="{{ asset('aset/assets/vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('aset/assets/vendor/php-email-form/validate.js') }}"></script>
 
-  <!-- Template Main JS File -->
-  <script src="{{ asset('aset/assets/js/main.js') }}"></script>
+
+    <script src="{{ asset('aset/assets/js/main.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>
