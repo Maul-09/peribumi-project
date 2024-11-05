@@ -60,10 +60,13 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
+                        <a class="dropdown-item d-flex align-items-center" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
                             <i class="bi bi-box-arrow-right"></i>
                             <span>Sign Out</span>
                         </a>
+                        <form action="{{ route('logout') }}" method="POST" id="logoutForm" style="display: none;">
+                            @csrf
+                        </form>
                     </li>
 
                 </ul><!-- End Profile Dropdown Items -->
