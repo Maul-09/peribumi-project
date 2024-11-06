@@ -1,7 +1,6 @@
 <x-adminlayout>
 
     <main id="main" class="main">
-
         <div class="pagetitle">
             <h1>Dashboard</h1>
             <nav>
@@ -10,7 +9,7 @@
                     <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
             </nav>
-        </div><!-- End Page Title -->
+        </div>
 
         <section class="section dashboard">
             <div class="row">
@@ -79,7 +78,6 @@
 
                         <!-- Customers Card -->
                         <div class="col-xxl-4 col-xl-12">
-
                             <div class="card info-card customers-card">
 
                                 <div class="filter">
@@ -117,7 +115,7 @@
                         <!-- Reports -->
                         <div class="col-12">
                             <div class="card">
-                        
+
                                 <div class="filter">
                                     <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -129,25 +127,25 @@
                                         <li><a class="dropdown-item filter-option" href="#" data-filter="year">This Year</a></li>
                                     </ul>
                                 </div>
-                        
+
                                 <div class="card-body">
                                     <h5 class="card-title">Reports <span id="dateLabel">/Today</span></h5>
-                        
+
                                     <!-- Line Chart -->
                                     <div id="reportsChart"></div>
-                        
+
                                     <script>
                                         document.addEventListener("DOMContentLoaded", () => {
                                             let chart; // Simpan instance chart
-                        
+
                                             // Fungsi untuk membuat chart
                                             function createChart(weeks, visits) {
                                                 const chartElement = document.querySelector("#reportsChart");
-                        
+
                                                 if (chart) {
                                                     chart.destroy(); // Hancurkan chart lama jika ada
                                                 }
-                        
+
                                                 chart = new ApexCharts(chartElement, {
                                                     series: [{
                                                         name: 'Pengunjung',
@@ -190,10 +188,10 @@
                                                         },
                                                     }
                                                 });
-                        
+
                                                 chart.render(); // Render chart
                                             }
-                        
+
                                             // Fungsi untuk mengambil data berdasarkan filter
                                             function fetchFilteredData(filter) {
                                                 fetch(`/filter-data?range=${filter}`)
@@ -206,7 +204,7 @@
                                                     })
                                                     .catch(error => console.error('Error fetching data:', error));
                                             }
-                        
+
                                             // Event listener untuk dropdown filter
                                             document.querySelectorAll(".filter-option").forEach(option => {
                                                 option.addEventListener("click", function (e) {
@@ -215,21 +213,21 @@
                                                     fetchFilteredData(filter);
                                                 });
                                             });
-                        
+
                                             // Buat chart awal dengan data yang sudah ada (dari server)
                                             const initialWeeks = @json($weeks); // Pastikan $weeks sudah didefinisikan di backend
                                             const initialVisits = @json($visits); // Pastikan $visits sudah didefinisikan di backend
                                             createChart(initialWeeks, initialVisits);
                                         });
                                     </script>
-                        
+
                                     <!-- End Line Chart -->
-                        
+
                                 </div>
-                        
+
                             </div>
                         </div>
-                        
+
 
                     </div>
                 </div><!-- End Left side columns -->
