@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Mail\RestoreAccountVerification;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Support\Facades\File;
 
 class CrudController extends Controller
 {
@@ -55,16 +56,30 @@ class CrudController extends Controller
 
         // Cek jika gambar diupload
         if ($request->hasFile('image')) {
+            // Tentukan path folder
+            $path = public_path('profile');
+
+            // Cek dan buat folder jika belum ada
+            if (!File::exists($path)) {
+                File::makeDirectory($path, 0755, true); // Buat folder dengan hak akses 755
+            }
+
+            // Hapus gambar lama jika ada
+            if ($field->image) {
+                $oldImagePath = public_path('profile/' . $field->image);
+                if (File::exists($oldImagePath)) {
+                    File::delete($oldImagePath);
+                }
+            }
+
             // Upload gambar baru
             $image = $request->file('image');
-            $image->storeAs('public/profile', $image->hashName());
-
-            // Hapus gambar lama
-            Storage::delete('public/profile/' . $field->image);
+            $imageName = time() . '_' . $image->getClientOriginalName(); // Nama file unik
+            $image->move($path, $imageName); // Simpan gambar ke folder public/profile
 
             // Update pengguna dengan gambar baru
             $field->update([
-                'image' => $image->hashName(),
+                'image' => $imageName,
                 'name' => $request->name,
                 'username' => $request->username,
                 'email' => $request->email,
