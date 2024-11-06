@@ -3,7 +3,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <img src="{{ asset('image/logo-peribumi.png') }}" alt="" style="width: 70px; height: auto;">
-        <a href="#" class="logo d-flex align-items-center">
+            <a href="#" class="logo d-flex align-items-center">
             <span class="d-none d-lg-block pe-3">Adminisitrator</span>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </a>
