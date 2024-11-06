@@ -40,6 +40,6 @@
     </div>
     <hr>
     <div class="tm">
-        <p>Copyright &copy</p>
+        <p>&copy; Copyright <strong><span>PT Peribumi Consulant</span></strong>. All Rights Reserved</p>
     </div>
 </footer>
