@@ -74,27 +74,46 @@ class AdminController extends Controller
 
     public function manajemenAdmin()
     {
-        $kat= ['Pengembangan_Bisnis', 'Pendampingan_Manajemen_Bisnis'];
-        return view('admin.manajemen-business', compact('kat'));
+        $kat= ['Pengembangan Bisnis', 'Pendampingan Manajemen Bisnis'];
+
+        session(['kategori' => $kat]);
+
+        return view('admin.manajemen-business');
     }
 
     public function trainingAdmin()
     {
+        $kat= ['Pelatihan Calon Tenaga Kerja', 'Pelatihan Tenaga Kerja Aktif'];
+
+        session(['kategori' => $kat]);
+
         return view('admin.training-center');
     }
 
     public function digitalAdmin()
     {
+        $kat= ['Software/Aplikasi/Website', 'Artificial Intelegence'];
+
+        session(['kategori' => $kat]);
+
         return view('admin.digital-solution');
     }
 
     public function personalAdmin()
     {
+        $kat= ['Individu', 'Kelompok'];
+
+        session(['kategori' => $kat]);
+
         return view('admin.personal-development');
     }
 
     public function organizerAdmin()
     {
+        $kat= ['Pengembangan_Bisnis', 'Pendampingan_Manajemen_Bisnis'];
+
+        session(['kategori' => $kat]);
+
         return view('admin.organizer');
     }
 }

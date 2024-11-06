@@ -76,6 +76,13 @@
                     <label for="hl_harga">Highlight Harga Produk :</label>
                     <textarea name="hl_harga" id="hl_harga" class="form-control" required></textarea>
                 </div>
+                <label for="kategori">Pilih Kategori:</label>
+                <select name="kategori" id="kategori">
+                    <option value="">Pilih Kategori</option>
+                    @foreach($kategori as $kat)
+                        <option value="{{ $kat }}">{{ $kat }}</option>
+                    @endforeach
+                </select>
                 <div id="silabus-container">
                     <h3>Silabus</h3>
                     <button type="button" class="btn btn-secondary mb-3" onclick="addSilabus()">Tambah Silabus</button>
@@ -83,12 +90,6 @@
                 <button type="submit" class="btn btn-primary mt-3">Simpan Produk</button>
                 </div>
 
-                <select class="form-control" name="produkType">
-                    <option value="">Pilihan Bidang</option>
-                    @foreach ($kat as $k)
-                        <option value="{{$k->id}}">{{$k->kategori}}</option>
-                    @endforeach
-                </select>
 
                 </form>
         </div>

@@ -19,7 +19,8 @@ class ProdukController extends Controller
 
     public function create()
     {
-        return view('admin.produk');
+        $kategori = session('kategori', []);
+        return view('admin.produk', compact('kategori'));
     }
 
     /**

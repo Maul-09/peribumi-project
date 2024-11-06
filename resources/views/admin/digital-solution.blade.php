@@ -3,7 +3,7 @@
         <div class="pagetitle">
             <div class="d-flex align-items-center justify-content-between pe-4">
                 <h1>Digital Solution</h1>
-                <a href="#" class="btn btn-primary"><i class="bi bi-plus me-1"></i> Tambah Data</a>
+                <a href="{{ route('produk.create') }}" class="btn btn-primary"><i class="bi bi-plus me-1"></i> Tambah Data</a>
             </div>
             <nav>
                 <ol class="breadcrumb">
