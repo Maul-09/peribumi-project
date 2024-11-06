@@ -38,6 +38,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/edit/profile{id}', [CrudController::class, 'editProfile'])->name('editProfile');
 Route::post('/edit/profile/delete{id}', [CrudController::class, 'deleteAccount'])->name('deleteAccount');
+Route::post('/edit/profile/update{id}', [CrudController::class, 'update'])->name('update.profile');
 
 Route::get('/forgot-password', [CrudController::class, 'forgotView'])->name('password.request');
 
@@ -62,4 +63,3 @@ Route::get('/produk/{id}/edit', [ProdukController::class, 'edit'])->name('produk
 Route::delete('/produk/{id}', [ProdukController::class, 'destroy'])->name('produk.destroy');
 
 Route::get('/filter-data', [AdminController::class, 'filterData']);
-

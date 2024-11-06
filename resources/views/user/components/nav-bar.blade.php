@@ -19,21 +19,22 @@
         <li><a href="{{ route('beranda') }}#mitra">Mitra</a></li>
         <li><a href="{{ route('beranda') }}#footer">Contact us</a></li>
         @guest
-        <li><a href="{{ route('logreg') }}">Sign in</a></li>
+            <li><a href="{{ route('logreg') }}">Sign in</a></li>
         @endguest
         @auth
-        <li class="dropbutton">
-            <button class="dropdown-button" id="userDropdownButton" onclick="toggleDropdown()">
-                <img src="{{ auth()->user()->image ? asset(auth()->user()->image) : asset('image/user-icon.png') }}" alt="User Logo" class="user-logo">
-            </button>
-            <div class="drop-menu" id="userDropdownMenu">
-                <a href="{{ route('editProfile', auth()->user()->id) }}">Profile</a>
-                <button type="submit" class="logout-button" onclick="confirmLogout()">Logout</button>
-                <form action="{{ route('logout') }}" method="POST" id="logoutForm" style="display: none;">
-                    @csrf
-                </form>
-            </div>
-        </li>
+            <li class="dropbutton">
+                <button class="dropdown-button" id="userDropdownButton" onclick="toggleDropdown()">
+                    <img src="{{ auth()->user()->image ? asset('profile/' . auth()->user()->image) : asset('image/user-icon.png') }}"
+                        alt="User  Logo" class="user-logo">
+                </button>
+                <div class="drop-menu" id="userDropdownMenu">
+                    <a href="{{ route('editProfile', auth()->user()->id) }}">Profile</a>
+                    <button type="submit" class="logout-button" onclick="confirmLogout()">Logout</button>
+                    <form action="{{ route('logout') }}" method="POST" id="logoutForm" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </li>
 
         @endauth
     </ul>
@@ -49,4 +50,3 @@
         </div>
     </div>
 </div>
-
