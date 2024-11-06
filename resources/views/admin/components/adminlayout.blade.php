@@ -40,6 +40,6 @@
 
 
     <script src="{{ asset('aset/assets/js/main.js') }}"></script>
-    <script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/component.js') }}"></script>
 </body>
 </html>
