@@ -3,7 +3,7 @@
         <div class="pagetitle">
             <div class="d-flex align-items-center justify-content-between pe-4">
                 <h1>Organizer</h1>
-                <button type="button" class="btn btn-primary"><i class="bi bi-plus me-1"></i> Tambah Data</button>
+                <a href="#" class="btn btn-primary"><i class="bi bi-plus me-1"></i> Tambah Data</a>
             </div>
             <nav>
                 <ol class="breadcrumb">

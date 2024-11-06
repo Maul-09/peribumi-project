@@ -1,9 +1,9 @@
 <x-adminlayout>
     <main id="main" class="main">
         <div class="pagetitle">
-            <div class="d-flex align-items-center justify-content-between pe-4">
+            <div class="d-flex align-items-center justify-content-between pe-3">
                 <h1>Management Business</h1>
-                <button type="button" class="btn btn-primary"><i class="bi bi-plus me-1"></i> Tambah Data</button>
+                <a href="#" class="btn btn-primary"><i class="bi bi-plus me-1"></i> Tambah Data</a>
             </div>
             <nav>
                 <ol class="breadcrumb">
