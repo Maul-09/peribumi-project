@@ -49,7 +49,7 @@
                                             <i class="bi bi-box"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>0</h6>
+                                            <h6>{{ $totalProducts }}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -80,14 +80,18 @@
                             <div class="card">
 
                                 <div class="filter">
-                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i
+                                            class="bi bi-three-dots"></i></a>
                                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                         <li class="dropdown-header text-start">
                                             <h6>Filter</h6>
                                         </li>
-                                        <li><a class="dropdown-item filter-option" href="#" data-filter="today">Today</a></li>
-                                        <li><a class="dropdown-item filter-option" href="#" data-filter="month">This Month</a></li>
-                                        <li><a class="dropdown-item filter-option" href="#" data-filter="year">This Year</a></li>
+                                        <li><a class="dropdown-item filter-option" href="#"
+                                                data-filter="today">Today</a></li>
+                                        <li><a class="dropdown-item filter-option" href="#"
+                                                data-filter="month">This Month</a></li>
+                                        <li><a class="dropdown-item filter-option" href="#"
+                                                data-filter="year">This Year</a></li>
                                     </ul>
                                 </div>
 
@@ -163,14 +167,15 @@
                                                         console.log(data); // Debugging
                                                         // Update chart dan label tanggal
                                                         createChart(data.weeks, data.visits);
-                                                        document.getElementById('dateLabel').innerText = `/${filter.charAt(0).toUpperCase() + filter.slice(1)}`;
+                                                        document.getElementById('dateLabel').innerText =
+                                                            `/${filter.charAt(0).toUpperCase() + filter.slice(1)}`;
                                                     })
                                                     .catch(error => console.error('Error fetching data:', error));
                                             }
 
                                             // Event listener untuk dropdown filter
                                             document.querySelectorAll(".filter-option").forEach(option => {
-                                                option.addEventListener("click", function (e) {
+                                                option.addEventListener("click", function(e) {
                                                     e.preventDefault();
                                                     const filter = this.getAttribute("data-filter");
                                                     fetchFilteredData(filter);
