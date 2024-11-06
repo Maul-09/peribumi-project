@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Visit;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -78,7 +79,9 @@ class AdminController extends Controller
 
         session(['kategori' => $kat, 'route' => 'manajemen.admin']);
 
-        return view('admin.manajemen-business');
+        $produkGrouped = Produk::whereIn('produkType', $kat)->get()->groupBy('produkType');
+
+        return view('admin.manajemen-business', compact('produkGrouped'));
     }
 
     public function trainingAdmin()
@@ -87,7 +90,15 @@ class AdminController extends Controller
 
         session(['kategori' => $kat, 'route' => 'training.admin']);
 
-        return view('admin.training-center');
+        $produkGrouped = Produk::whereIn('produkType', $kat)->get()->groupBy('produkType');
+
+        foreach ($kat as $kategori) {
+            if (!$produkGrouped->has($kategori)) {
+                $produkGrouped[$kategori] = collect();  // Set produk kosong jika kategori tidak ada
+            }
+        }
+
+        return view('admin.training-center', compact('produkGrouped'));
     }
 
     public function digitalAdmin()
@@ -96,7 +107,15 @@ class AdminController extends Controller
 
         session(['kategori' => $kat, 'route' => 'digital.admin']);
 
-        return view('admin.digital-solution');
+        $produkGrouped = Produk::whereIn('produkType', $kat)->get()->groupBy('produkType');
+
+        foreach ($kat as $kategori) {
+            if (!$produkGrouped->has($kategori)) {
+                $produkGrouped[$kategori] = collect();  // Set produk kosong jika kategori tidak ada
+            }
+        }
+
+        return view('admin.digital-solution',  compact('produkGrouped'));
     }
 
     public function personalAdmin()
@@ -105,15 +124,31 @@ class AdminController extends Controller
 
         session(['kategori' => $kat, 'route' => 'personal.admin']);
 
-        return view('admin.personal-development');
+        $produkGrouped = Produk::whereIn('produkType', $kat)->get()->groupBy('produkType');
+
+        foreach ($kat as $kategori) {
+            if (!$produkGrouped->has($kategori)) {
+                $produkGrouped[$kategori] = collect();  // Set produk kosong jika kategori tidak ada
+            }
+        }
+
+        return view('admin.personal-development', compact('produkGrouped'));
     }
 
     public function organizerAdmin()
     {
-        $kat= ['Pengembangan_Bisnis', 'Pendampingan_Manajemen_Bisnis'];
+        $kat= ['MICE & Travel Vacation', 'Wedding & Integrated Event'];
 
         session(['kategori' => $kat, 'route' => 'organizer.admin']);
 
-        return view('admin.organizer');
+        $produkGrouped = Produk::whereIn('produkType', $kat)->get()->groupBy('produkType');
+
+        foreach ($kat as $kategori) {
+            if (!$produkGrouped->has($kategori)) {
+                $produkGrouped[$kategori] = collect();  // Set produk kosong jika kategori tidak ada
+            }
+        }
+
+        return view('admin.organizer', compact('produkGrouped'));
     }
 }
