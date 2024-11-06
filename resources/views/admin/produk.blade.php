@@ -77,7 +77,7 @@
                     <textarea name="hl_harga" id="hl_harga" class="form-control" required></textarea>
                 </div>
                 <label for="kategori">Pilih Kategori:</label>
-                <select name="kategori" id="kategori">
+                <select name="produkType" id="produkType">
                     <option value="">Pilih Kategori</option>
                     @foreach($kategori as $kat)
                         <option value="{{ $kat }}">{{ $kat }}</option>
