@@ -1,8 +1,13 @@
 <x-layout>
     <x-slot:name>Beranda</x-slot>
     <x-slot:title>{{ asset('css/user-style/style-beranda.css') }}</x-slot>
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <section class="banner" id="home">
-       <div class="textBx">
+        <div class="textBx">
             <h2>PERIBUMI CONSULTANT</h2>
             <p>PERI BUMI hadir dan berkomitmen untuk membantu memfasilitasi langkah percepatan dalam rangka pengembangan
                 dan atau peningkatan kompetensi serta kapasitas Sumber daya manusia yang dimiliki</p>
@@ -64,7 +69,8 @@
                     <div class="gradient-layer"></div>
                     <div class="textbx-card">
                         <h3>Management Business</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -75,7 +81,8 @@
                     <div class="gradient-layer"></div>
                     <div class="textbx-card">
                         <h3>Training Center</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -86,7 +93,8 @@
                     <div class="gradient-layer"></div>
                     <div class="textbx-card">
                         <h3>Digital Solution</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -97,7 +105,8 @@
                     <div class="gradient-layer"></div>
                     <div class="textbx-card">
                         <h3>Personal Development</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -108,7 +117,8 @@
                     <div class="gradient-layer"></div>
                     <div class="textbx-card">
                         <h3>Organizer</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
+                        </p>
                     </div>
                 </div>
             </div>

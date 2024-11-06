@@ -62,7 +62,9 @@ class AuthController extends Controller
                 return redirect()->route('admin');
             }
 
-            return redirect()->route('beranda');
+            $field = Auth::user();
+
+            return redirect()->route('beranda')->with('success', 'Selamat datang kembali, ' . $field->name);
         } else {
             return redirect()->back()->with('Failed', 'Username atau password anda salah!');
         }
