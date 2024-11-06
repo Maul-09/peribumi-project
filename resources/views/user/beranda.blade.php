@@ -2,9 +2,13 @@
     <x-slot:name>Beranda</x-slot>
     <x-slot:title>{{ asset('css/user-style/style-beranda.css') }}</x-slot>
     @if (session('success'))
+    <div class="alert-popup" id="alertPopup">
         <div class="alert alert-success">
-            {{ session('success') }}
+            <i class="fa fa-check-circle icon"></i>
+            <span>{{ session('success') }}</span>
+            <button class="close-btn" onclick="closePopup()">×</button>
         </div>
+    </div>
     @endif
     <section class="banner" id="home">
         <div class="textBx">
