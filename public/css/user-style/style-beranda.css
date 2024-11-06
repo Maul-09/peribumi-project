@@ -272,3 +272,81 @@ section.mitpro hr {
     aligh-item: center;
     padding: 10px;
 }
+
+.alert-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.alert {
+    background: linear-gradient(145deg, #e0ffe0, #b6e8b6);
+    border: 1px solid #a8d5a8;
+    color: #155724;
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 350px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 4px 10px rgba(0, 255, 0, 0.1);
+    transform: translateY(30px);
+    animation: slideUp 0.6s ease forwards;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.icon {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 12px;
+    color: #28a745;
+    animation: bounceIcon 1s infinite alternate;
+}
+
+.message {
+    font-size: 16px;
+    font-weight: 500;
+    color: #155724;
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #155724;
+    transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); }
+    to { transform: translateY(0); }
+}
+
+@keyframes bounceIcon {
+    from { transform: translateY(-3px); }
+    to { transform: translateY(3px); }
+}
