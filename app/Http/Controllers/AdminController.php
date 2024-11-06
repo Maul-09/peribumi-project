@@ -74,7 +74,8 @@ class AdminController extends Controller
 
     public function manajemenAdmin()
     {
-        return view('admin.manajemen-business');
+        $kat= ['Pengembangan_Bisnis', 'Pendampingan_Manajemen_Bisnis'];
+        return view('admin.manajemen-business', compact('kat'));
     }
 
     public function trainingAdmin()

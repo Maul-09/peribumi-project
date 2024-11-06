@@ -35,9 +35,16 @@ class ProdukController extends Controller
             $request->validate([
                 'nama_produk' => 'required|string|max:255',
                 'deskripsi' => 'nullable|string',
-                'apa_yang_dipelajari'=> 'nullable|string',
-                'benefit'=>'nullable|string',
-                'harga'=>'required|integer',
+                'durasi' => 'required|string|max:255',
+                'personil' => 'required|string|max:255',
+                'sasaran' => 'required|string|max:255',
+                'persyaratan' => 'required|string|max:255',
+                'metodologi' => 'required|string|max:255',
+                'jadwal_lokasi_fasilitas' => 'required|string|max:255',
+                'desc_harga' => 'required|string|max:255',
+                'hl_harga' => 'required|string|max:255',
+                'produkType' => 'nullable|string|max:255',
+                
                 'silabus' => 'array',
                 'silabus.*.judul' => 'required|string|max:255',
                 'silabus.*.deskripsi' => 'nullable|string',
@@ -49,7 +56,17 @@ class ProdukController extends Controller
             // Simpan data produk
             $produk = Produk::create([
                 'nama_produk' => $request->input('nama_produk'),
-                'deskripsi' => $request->input('deskripsi')
+                'deskripsi' => $request->input('deskripsi'),
+                'durasi' => $request->input('durasi'),
+                'personil' => $request->input('personil'),
+                'sasaran' => $request->input('sasaran'),
+                'persyaratan' => $request->input('persyaratan'),
+                'metodologi' => $request->input('metodologi'),
+                'jadwal_lokasi_fasilitas' => $request->input('jadwal_lokasi_fasilitas'),
+                'desc_harga' => $request->input('desc_harga'),
+                'hl_harga' => $request->input('hl_harga'),
+                'produkType' => $request->input('produkType'),
+
             ]);
 
             // Simpan data silabus
@@ -71,7 +88,7 @@ class ProdukController extends Controller
             // Commit transaksi jika semua data tersimpan dengan sukses
             DB::commit();
 
-            return redirect()->route('produk.index')->with('success', 'Produk dan silabus berhasil disimpan.');
+            return redirect()->route('')->with('success', 'Produk dan silabus berhasil disimpan.');
         } catch (\Exception $e) {
             // Rollback transaksi jika terjadi kesalahan
             DB::rollBack();

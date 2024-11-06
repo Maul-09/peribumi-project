@@ -5,7 +5,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produk extends Model
 {
-    protected $fillable = ['nama_produk', 'image', 'deskripsi', 'apa_yang_dipelajari', 'Benefit', 'harga'];
+    protected $fillable = [
+        'nama_produk',
+        'image',
+        'deskripsi',
+        'durasi',
+        'personil',
+        'sasaran',
+        'persyaratan',
+        'metodologi',
+        'sasaran',
+        'jadwal_lokasi_fasilitas',
+        'desc_harga',
+        'hl_harga',
+        'produkType'
+    ];
     // Definisikan relasi dengan model Silabus
     public function silabus()
     {

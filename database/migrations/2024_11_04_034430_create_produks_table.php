@@ -15,10 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('nama_produk');
             $table->string('image')->nullable();
-            $table->text('deskripsi')->nullable();
-            $table->text('apa_yang_dipelajari');
-            $table->text('Benefit');
-            $table->integer('harga');
+            $table->string('deskripsi')->nullable();
+            $table->string('durasi');
+            $table->string('personil');
+            $table->string('persyaratan');
+            $table->string('metodologi');
+            $table->string('sasaran');
+            $table->string('jadwal_lokasi_fasilitas');
+            $table->string('desc_harga');
+            $table->string('hl_harga');
+            $table->string('produkType')->nullable();
             $table->timestamps();
         });
     }
