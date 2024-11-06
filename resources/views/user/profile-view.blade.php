@@ -8,6 +8,13 @@
 
             <!-- Profile Image -->
             <div class="form-profile">
+                @if ($field->image)
+                    <img src="{{ asset('profile/' . $field->image) }}" alt="Profile Image" class="profile-image"
+                        style="width: 150px; height: 150px; object-fit: cover;">
+                @else
+                    <p>No profile image uploaded.</p>
+                @endif
+
                 <label class="label-image">Profile Image</label>
                 <input type="file" class="file-input @error('image') is-invalid @enderror" name="image">
                 @error('image')
