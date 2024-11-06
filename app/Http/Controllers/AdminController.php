@@ -76,7 +76,7 @@ class AdminController extends Controller
     {
         $kat= ['Pengembangan Bisnis', 'Pendampingan Manajemen Bisnis'];
 
-        session(['kategori' => $kat]);
+        session(['kategori' => $kat, 'route' => 'manajemen.admin']);
 
         return view('admin.manajemen-business');
     }
@@ -85,7 +85,7 @@ class AdminController extends Controller
     {
         $kat= ['Pelatihan Calon Tenaga Kerja', 'Pelatihan Tenaga Kerja Aktif'];
 
-        session(['kategori' => $kat]);
+        session(['kategori' => $kat, 'route' => 'training.admin']);
 
         return view('admin.training-center');
     }
@@ -94,7 +94,7 @@ class AdminController extends Controller
     {
         $kat= ['Software/Aplikasi/Website', 'Artificial Intelegence'];
 
-        session(['kategori' => $kat]);
+        session(['kategori' => $kat, 'route' => 'digital.admin']);
 
         return view('admin.digital-solution');
     }
@@ -103,7 +103,7 @@ class AdminController extends Controller
     {
         $kat= ['Individu', 'Kelompok'];
 
-        session(['kategori' => $kat]);
+        session(['kategori' => $kat, 'route' => 'personal.admin']);
 
         return view('admin.personal-development');
     }
@@ -112,7 +112,7 @@ class AdminController extends Controller
     {
         $kat= ['Pengembangan_Bisnis', 'Pendampingan_Manajemen_Bisnis'];
 
-        session(['kategori' => $kat]);
+        session(['kategori' => $kat, 'route' => 'organizer.admin']);
 
         return view('admin.organizer');
     }

@@ -89,7 +89,9 @@ class ProdukController extends Controller
             // Commit transaksi jika semua data tersimpan dengan sukses
             DB::commit();
 
-            return redirect()->route('')->with('success', 'Produk dan silabus berhasil disimpan.');
+            $route = session('route');
+
+            return redirect()->route($route)->with('success', 'Produk dan silabus berhasil disimpan.');
         } catch (\Exception $e) {
             // Rollback transaksi jika terjadi kesalahan
             DB::rollBack();
