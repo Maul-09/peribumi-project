@@ -10,9 +10,25 @@
             <div class="form-profile">
                 @if ($field->image)
                     <img src="{{ asset('profile/' . $field->image) }}" alt="Profile Image" class="profile-image"
-                        style="width: 150px; height: 150px; object-fit: cover;">
+                        style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;">
                 @else
-                    <p>No profile image uploaded.</p>
+                    @php
+                        // Menggunakan huruf pertama dari nama untuk gambar default
+                        $initial = strtolower(substr($field->name, 0, 1));
+                        $defaultImageName = 'default_' . $initial . '.png';
+                        $defaultImagePath = public_path('profile/' . $defaultImageName);
+                    @endphp
+
+                    @if (file_exists($defaultImagePath))
+                        <img src="{{ asset('profile/' . $defaultImageName) }}" alt="Default Profile Image"
+                            class="profile-image"
+                            style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;">
+                    @else
+                        <div class="profile-image"
+                            style="width: 150px; height: 150px; background-color: #ccc; display: flex; justify-content: center; align-items: center; border-radius: 50%;">
+                            <span style="font-size: 60px; color: white;">{{ strtoupper($initial) }}</span>
+                        </div>
+                    @endif
                 @endif
 
                 <label class="label-image">Profile Image</label>

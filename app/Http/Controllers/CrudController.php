@@ -78,22 +78,45 @@ class CrudController extends Controller
             $image->move($path, $imageName); // Simpan gambar ke folder public/profile
 
             // Update pengguna dengan gambar baru
-            $field->update([
-                'image' => $imageName,
-                'name' => $request->name,
-                'username' => $request->username,
-                'email' => $request->email,
-                'password' => bcrypt($request->password), // Mengenkripsi password
-            ]);
+            $field->image = $imageName;
         } else {
-            // Update pengguna tanpa gambar
-            $field->update([
-                'name' => $request->name,
-                'username' => $request->username,
-                'email' => $request->email,
-                'password' => bcrypt($request->password), // Mengenkripsi password
-            ]);
+            // Jika tidak ada gambar diupload, gunakan gambar default
+            if (!$field->image) {
+                // Menggunakan huruf pertama dari nama sebagai gambar default
+                $defaultImageName = 'default_' . strtolower(substr($field->name, 0, 1)) . '.png';
+                $defaultImagePath = public_path('profile/' . $defaultImageName);
+
+                // Cek apakah gambar default sudah ada
+                if (!File::exists($defaultImagePath)) {
+                    // Buat gambar default menggunakan GD library atau library lain
+                    $img = imagecreatetruecolor(150, 150);
+                    $bgColor = imagecolorallocate($img, 204, 204, 204); // Warna latar belakang abu-abu
+                    $textColor = imagecolorallocate($img, 255, 255, 255); // Warna huruf putih
+
+                    // Mengisi latar belakang
+                    imagefill($img, 0, 0, $bgColor);
+
+                    // Menambahkan huruf ke gambar
+                    $fontPath = public_path('fonts/arial.ttf'); // Pastikan font tersedia
+                    $text = strtoupper(substr($field->name, 0, 1));
+                    imagettftext($img, 60, 0, 40, 100, $textColor, $fontPath, $text);
+
+                    // Menyimpan gambar
+                    imagepng($img, $defaultImagePath);
+                    imagedestroy($img);
+                }
+
+                // Set gambar default ke pengguna
+                $field->image = $defaultImageName;
+            }
         }
+
+        // Update informasi pengguna lainnya
+        $field->name = $request->name;
+        $field->username = $request->username;
+        $field->email = $request->email;
+        $field->password = bcrypt($request->password); // Mengenkripsi password
+        $field->save(); // Simpan perubahan
 
         // Redirect ke halaman edit profile dengan pesan sukses
         return redirect()->route('editProfile', $id)->with(['success' => 'Data Berhasil Diubah!']);

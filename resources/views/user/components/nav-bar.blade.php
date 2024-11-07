@@ -24,8 +24,20 @@
         @auth
             <li class="dropbutton">
                 <button class="dropdown-button" id="userDropdownButton" onclick="toggleDropdown()">
-                    <img src="{{ auth()->user()->image ? asset('profile/' . auth()->user()->image) : asset('image/user-icon.png') }}"
-                        alt="User  Logo" class="user-logo">
+                    @php
+                        // Jika tidak ada gambar profil, buat gambar default dengan huruf awal
+                        $initial = strtoupper(substr(auth()->user()->name, 0, 1));
+                        $hasImage = auth()->user()->image ? true : false;
+                    @endphp
+                    @if ($hasImage)
+                        <img src="{{ asset('profile/' . auth()->user()->image) }}" alt="User  Logo" class="user-logo"
+                            style="border-radius: 50%; width: 40px; height: 40px; object-fit: cover;">
+                    @else
+                        <div
+                            style="width: 40px; height: 40px; background-color: #ccc; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+                            <span style="font-size: 20px; color: white;">{{ $initial }}</span>
+                        </div>
+                    @endif
                 </button>
                 <div class="drop-menu" id="userDropdownMenu">
                     <a href="{{ route('editProfile', auth()->user()->id) }}">Profile</a>
