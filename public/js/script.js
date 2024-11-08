@@ -37,6 +37,7 @@ function closePopup() {
     document.getElementById("alertPopup").style.display = "none";
 }
 
+// Otomatis tutup popup setelah 3 detik
 window.onload = function() {
     setTimeout(closePopup, 3000);
 };

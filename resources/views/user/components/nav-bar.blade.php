@@ -25,7 +25,7 @@
             <li class="dropbutton">
                 <button class="dropdown-button" id="userDropdownButton" onclick="toggleDropdown()">
                     @php
-                        // Jika tidak ada gambar profil, buat gambar default dengan huruf awal
+
                         $initial = strtoupper(substr(auth()->user()->name, 0, 1));
                         $hasImage = auth()->user()->image ? true : false;
                     @endphp
@@ -39,12 +39,21 @@
                         </div>
                     @endif
                 </button>
-                <div class="drop-menu" id="userDropdownMenu">
-                    <a href="{{ route('editProfile', auth()->user()->id) }}">Profile</a>
-                    <button type="submit" class="logout-button" onclick="confirmLogout()">Logout</button>
-                    <form action="{{ route('logout') }}" method="POST" id="logoutForm" style="display: none;">
-                        @csrf
-                    </form>
+                <div class="dropdown">
+                    <div class="drop-menu" id="userDropdownMenu">
+                        @if (Auth::check())
+                            <h6 class="username"><span>Hello, </span>{{ Auth::user()->name }}</h6>
+                        @endif
+                        <a href="{{ route('editProfile', auth()->user()->id) }}" class="menu-item">
+                            <i class="fas fa-user-edit"></i> Profile
+                        </a>
+                        <button type="button" class="menu-item logout-button" onclick="confirmLogout()">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </button>
+                        <form action="{{ route('logout') }}" method="POST" id="logoutForm" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
                 </div>
             </li>
 

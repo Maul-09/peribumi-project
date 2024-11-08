@@ -1,15 +1,17 @@
 <x-layout>
     <x-slot:name>Beranda</x-slot>
     <x-slot:title>{{ asset('css/user-style/style-beranda.css') }}</x-slot>
+    {{-- Alertt berhasil --}}
     @if (session('success'))
     <div class="alert-popup" id="alertPopup">
         <div class="alert alert-success">
             <i class="fa fa-check-circle icon"></i>
-            <span>{{ session('success') }}</span>
+            <span class="message">{{ session('success') }}</span>
             <button class="close-btn" onclick="closePopup()">×</button>
         </div>
     </div>
     @endif
+    {{-- End Alertt berhasil --}}
     <section class="banner" id="home">
         <div class="textBx">
             <h2>PERIBUMI CONSULTANT</h2>
