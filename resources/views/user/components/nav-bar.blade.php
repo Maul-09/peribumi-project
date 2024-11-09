@@ -39,15 +39,16 @@
                         </div>
                     @endif
                 </button>
-                <div class="dropdown">
+                <div class="drop-down">
                     <div class="drop-menu" id="userDropdownMenu">
                         @if (Auth::check())
                             <h6 class="username"><span>Hello, </span>{{ Auth::user()->name }}</h6>
                         @endif
-                        <a href="{{ route('editProfile', auth()->user()->id) }}" class="menu-item">
+                        <hr>
+                        <a href="{{ route('editProfile', auth()->user()->id) }}" class="menu-items">
                             <i class="fas fa-user-edit"></i> Profile
                         </a>
-                        <button type="button" class="menu-item logout-button" onclick="confirmLogout()">
+                        <button type="drop-button" class="menu-items logout-button" onclick="confirmLogout()">
                             <i class="fas fa-sign-out-alt"></i> Logout
                         </button>
                         <form action="{{ route('logout') }}" method="POST" id="logoutForm" style="display: none;">

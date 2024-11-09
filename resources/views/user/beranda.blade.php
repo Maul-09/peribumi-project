@@ -20,7 +20,7 @@
         </div>
     </section>
 
-    <section class=" about" id="about">
+    <section class="about" id="about">
         <div class="content">
             <div class="w50">
                 <h1>Tentang Peribumi Consultan</h1>
@@ -55,6 +55,9 @@
                                 sebagai pengalaman berharga tak akan ternilai yang
                                 memberikan motivasi lebih untuk terus berinovasi</li>
                         </ol>
+                    </div>
+                    <div class="tim-peribumi">
+                        <button class="tim-peribumi">Tim Peribumi</button>
                     </div>
                 </div>
             </div>
