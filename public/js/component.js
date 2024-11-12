@@ -6,15 +6,10 @@ function addSilabus() {
 
     let silabusHTML = `
         <div class="silabus mt-3" id="silabus-${silabusCount}">
-            <button type="button" class="btn btn-danger btn-sm mb-3" onclick="deleteSilabus(${silabusCount})">Hapus Silabus</button>
             <div class="form-group">
                 <label for="judul_silabus_${silabusCount}">Judul Silabus:</label>
                 <input type="text" name="silabus[${silabusCount}][judul]" id="judul_silabus_${silabusCount}" class="form-control" required>
-            </div>
-
-            <div class="form-group">
-                <label for="deskripsi_silabus_${silabusCount}">Deskripsi Silabus:</label>
-                <textarea name="silabus[${silabusCount}][deskripsi]" id="deskripsi_silabus_${silabusCount}" class="form-control" required></textarea>
+                <button type="button" class="btn btn-danger btn-sm mb-3" onclick="deleteSilabus(${silabusCount})">Hapus Silabus</button>
             </div>
 
             <!-- Bagian Isi Silabus -->
@@ -36,13 +31,8 @@ function addIsiSilabus(silabusIndex) {
             <div class="form-group">
                 <label for="judul_isi_${silabusIndex}_${isiCount}">Judul Isi Silabus:</label>
                 <input type="text" name="silabus[${silabusIndex}][isi_silabus][${isiCount}][judul_isi]" id="judul_isi_${silabusIndex}_${isiCount}" class="form-control" required>
+                <button type="button" class="btn btn-danger btn-sm" onclick="deleteIsiSilabus(${silabusIndex}, ${isiCount})">Hapus Isi Silabus</button>
             </div>
-
-            <div class="form-group">
-                <label for="konten_${silabusIndex}_${isiCount}">Konten:</label>
-                <textarea name="silabus[${silabusIndex}][isi_silabus][${isiCount}][konten]" id="konten_${silabusIndex}_${isiCount}" class="form-control" required></textarea>
-            </div>
-            <button type="button" class="btn btn-danger btn-sm" onclick="deleteIsiSilabus(${silabusIndex}, ${isiCount})">Hapus Isi Silabus</button>
         </div>
     `;
 
@@ -62,3 +52,13 @@ function deleteIsiSilabus(silabusIndex, isiIndex) {
         isiElement.remove();
     }
 }
+
+{/* <div class="form-group">
+    <label for="deskripsi_silabus_${silabusCount}">Deskripsi Silabus:</label>
+    <textarea name="silabus[${silabusCount}][deskripsi]" id="deskripsi_silabus_${silabusCount}" class="form-control" required></textarea>
+</div> */}
+
+{/* <div class="form-group">
+    <label for="konten_${silabusIndex}_${isiCount}">Konten:</label>
+    <textarea name="silabus[${silabusIndex}][isi_silabus][${isiCount}][konten]" id="konten_${silabusIndex}_${isiCount}" class="form-control" required></textarea>
+</div> */}

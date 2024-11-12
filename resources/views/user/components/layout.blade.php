@@ -16,11 +16,17 @@
 </head>
 
 <body>
-    <x-navbar></x-navbar>
+    @props(['ShowNavbar' => true, 'ShowFooter' => true])
+    @if ($ShowNavbar)
+        <x-navbar></x-navbar>
+    @endif
+
     <main>
         {{ $slot }}
     </main>
-    <x-footer></x-footer>
+    @if ($ShowFooter)
+        <x-footer></x-footer>
+    @endif
 
 <script src="{{ asset('js/script.js') }}"></script>
 <script src="{{ asset('js/nav.js') }}"></script>
