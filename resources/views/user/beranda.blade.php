@@ -37,7 +37,7 @@
                     </div>
 
                     <div id="Tab2" class="tabcontent scrollable-content">
-                        <ol>
+                        <ol type="1">
                             <li>Menghadirkan berbagai unit kerja yang berkaitan dengan Pembangunan dan
                                 Pengembangan suatu bisnis baik fisik
                                 maupun non-fisik (Infrastruktur)</li>

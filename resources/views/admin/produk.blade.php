@@ -24,7 +24,7 @@
             </div>
             @endif
             <div class="container mt-5">
-                <h1>Tambah Produk</h1>
+                <h2>Tambah Produk</h2>
                 <form action="{{ route('produk.store') }}" method="POST">
                 @csrf
                 <div class="form-group">
