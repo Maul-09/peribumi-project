@@ -24,6 +24,11 @@
                 @foreach($produkList as $item)
                     <li>{{ $item->nama_produk }} - Harga: {{ $item->hl_harga }}</li>
                     <p>{{ $item->deskripsi }}</p>
+                    <form action="{{route('produk.destroy',$item->id)}}" method="POST" onsubmit="return submitForm(this);">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" value="Delete" class="btn btn-danger btn-sm" id="hps">Hapus</button>
+                    </form>
                 @endforeach
             </ul>
         @endif

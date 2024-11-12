@@ -83,6 +83,12 @@ class AdminController extends Controller
 
         $produkGrouped = Produk::whereIn('produkType', $kat)->get()->groupBy('produkType');
 
+        foreach ($kat as $kategori) {
+            if (!$produkGrouped->has($kategori)) {
+                $produkGrouped[$kategori] = collect();  // Set produk kosong jika kategori tidak ada
+            }
+        }
+
         return view('admin.manajemen-business', compact('produkGrouped'));
     }
 
