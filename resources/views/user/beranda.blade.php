@@ -30,7 +30,7 @@
         </div>
     </section>
 
-    <section class=" about" id="about">
+    <section class="about" id="about">
         <div class="content">
             <div class="w50">
                 <h1>Tentang Peribumi Consultan</h1>
@@ -47,7 +47,7 @@
                     </div>
 
                     <div id="Tab2" class="tabcontent scrollable-content">
-                        <ol>
+                        <ol type="1">
                             <li>Menghadirkan berbagai unit kerja yang berkaitan dengan Pembangunan dan
                                 Pengembangan suatu bisnis baik fisik
                                 maupun non-fisik (Infrastruktur)</li>
@@ -65,6 +65,9 @@
                                 sebagai pengalaman berharga tak akan ternilai yang
                                 memberikan motivasi lebih untuk terus berinovasi</li>
                         </ol>
+                    </div>
+                    <div class="tim-peribumi">
+                        <button class="tim-peribumi">Tim Peribumi</button>
                     </div>
                 </div>
             </div>

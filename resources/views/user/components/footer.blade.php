@@ -40,6 +40,6 @@
     </div>
     <hr>
     <div class="tm">
-        <p>&copy; Copyright <strong><span>PT Peribumi Consulant</span></strong>. All Rights Reserved</p>
+        <p>&copy; Copyright <script type="text/javascript">document.write(new Date().getFullYear());</script><strong><span> PT Peribumi Consulant</span></strong>. All Rights Reserved</p>
     </div>
 </footer>
