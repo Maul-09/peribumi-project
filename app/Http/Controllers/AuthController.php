@@ -84,8 +84,9 @@ class AuthController extends Controller
     public function verifyEmail(EmailVerificationRequest $request)
     {
         $request->fulfill();
+        $field = Auth::user();
 
-        return redirect()->route('beranda');
+        return redirect()->route('beranda')->with('register', 'Hello, Welcome to Peribumi Consultan ' . $field->name);
     }
 
     public function verifyHandler(Request $request)
