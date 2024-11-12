@@ -63,6 +63,15 @@ button[type="submit"]:hover {
     background-color: #357ABD;
 }
 
+#silabus-arrow-2{
+    padding: 1em;
+}
+
+#silabus-arrow{
+    padding-top: 1.3em;
+    border-top: 2px solid #eee;
+}
+
 #silabus-container {
     margin-top: 1.5em;
     padding: 1em;

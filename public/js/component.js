@@ -5,11 +5,15 @@ function addSilabus() {
     let silabusContainer = document.getElementById("silabus-container");
 
     let silabusHTML = `
-        <div class="silabus mt-3" id="silabus-${silabusCount}">
-            <div class="form-group">
+        <div class="silabus mt-2" id="silabus-${silabusCount}">
+            <div class="form-group" id="silabus-arrow" >
                 <label for="judul_silabus_${silabusCount}">Judul Silabus:</label>
-                <input type="text" name="silabus[${silabusCount}][judul]" id="judul_silabus_${silabusCount}" class="form-control" required>
-                <button type="button" class="btn btn-danger btn-sm mb-3" onclick="deleteSilabus(${silabusCount})">Hapus Silabus</button>
+                <div style="display: flex; align-items: center;">
+                    <input type="text" name="silabus[${silabusCount}][judul]" id="judul_silabus_${silabusCount}" class="form-control" required>
+                    <button type="button" class="btn btn-danger btn-sm mb-3" onclick="deleteSilabus(${silabusCount})" style="margin-left: 8px; margin-top:15px;">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
             </div>
 
             <!-- Bagian Isi Silabus -->
@@ -28,10 +32,14 @@ function addIsiSilabus(silabusIndex) {
 
     let isiHTML = `
         <div class="isi-silabus mt-2" id="isi-silabus-${silabusIndex}-${isiCount}">
-            <div class="form-group">
+            <div class="form-group" id="silabus-arrow-2">
                 <label for="judul_isi_${silabusIndex}_${isiCount}">Judul Isi Silabus:</label>
-                <input type="text" name="silabus[${silabusIndex}][isi_silabus][${isiCount}][judul_isi]" id="judul_isi_${silabusIndex}_${isiCount}" class="form-control" required>
-                <button type="button" class="btn btn-danger btn-sm" onclick="deleteIsiSilabus(${silabusIndex}, ${isiCount})">Hapus Isi Silabus</button>
+                <div style="display: flex; align-items: center;">
+                    <input type="text" name="silabus[${silabusIndex}][isi_silabus][${isiCount}][judul_isi]" id="judul_isi_${silabusIndex}_${isiCount}" class="form-control" required>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="deleteIsiSilabus(${silabusIndex}, ${isiCount})" style="margin-left: 8px;">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
             </div>
         </div>
     `;
@@ -52,13 +60,3 @@ function deleteIsiSilabus(silabusIndex, isiIndex) {
         isiElement.remove();
     }
 }
-
-{/* <div class="form-group">
-    <label for="deskripsi_silabus_${silabusCount}">Deskripsi Silabus:</label>
-    <textarea name="silabus[${silabusCount}][deskripsi]" id="deskripsi_silabus_${silabusCount}" class="form-control" required></textarea>
-</div> */}
-
-{/* <div class="form-group">
-    <label for="konten_${silabusIndex}_${isiCount}">Konten:</label>
-    <textarea name="silabus[${silabusIndex}][isi_silabus][${isiCount}][konten]" id="konten_${silabusIndex}_${isiCount}" class="form-control" required></textarea>
-</div> */}
