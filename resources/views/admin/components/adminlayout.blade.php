@@ -21,6 +21,7 @@
   <link href="{{ asset('aset/assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
   <!-- Template Main CSS File -->
   <link href="{{ asset('aset/assets/css/style.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/admin-style/style-product.css') }}">
   <title>Peribumi Consultant - Admin Dashboard</title>
 </head>
 <body>
