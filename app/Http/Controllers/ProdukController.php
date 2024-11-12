@@ -117,7 +117,9 @@ class ProdukController extends Controller
     public function edit($id)
     {
         $produk = Produk::findOrFail($id);
-        return view('produk.edit', compact('produk'));
+
+        $kategori = session('kategori', []);
+        return view('admin.edit-produk', compact('produk', 'kategori'));
     }
 
     // Mengupdate produk
@@ -133,7 +135,9 @@ class ProdukController extends Controller
         $produk = Produk::findOrFail($id);
         $produk->update($request->all());
 
-        return redirect()->route('produk.index')->with('success', 'Produk berhasil diperbarui!');
+        $route = session('route');
+
+        return redirect()->route($route)->with('success', 'Produk berhasil diperbarui!');
     }
     public function destroy($id)
     {

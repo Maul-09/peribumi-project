@@ -29,6 +29,7 @@
                     <form action="{{ route('produk.destroy', $item->id) }}" method="POST" onsubmit="return submitForm(this);">
                         @csrf
                         @method('DELETE')
+                        <a href="{{ route('produk.edit', $item->id) }}" class="btn btn-success btn-sm">Edit</a>
                         <button type="submit" class="btn-delete">Hapus</button>
                     </form>
                 </div>
