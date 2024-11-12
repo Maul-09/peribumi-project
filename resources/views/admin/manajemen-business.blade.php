@@ -20,17 +20,21 @@
         @if($produkList->isEmpty())
             <p>Tidak ada produk dalam kategori ini.</p>
         @else
-            <ul>
-                @foreach($produkList as $item)
-                    <li>{{ $item->nama_produk }} - Harga: {{ $item->hl_harga }}</li>
-                    <p>{{ $item->deskripsi }}</p>
-                    <form action="{{route('produk.destroy',$item->id)}}" method="POST" onsubmit="return submitForm(this);">
+        <div class="product-container">
+            @foreach($produkList as $item)
+                <div class="product-card">
+                    <h3 class="product-name">{{ $item->nama_produk }}</h3>
+                    <p class="product-price">Harga: {{ $item->hl_harga }}</p>
+                    <p class="product-description">{{ $item->deskripsi }}</p>
+                    <form action="{{ route('produk.destroy', $item->id) }}" method="POST" onsubmit="return submitForm(this);">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" value="Delete" class="btn btn-danger btn-sm" id="hps">Hapus</button>
+                        <button type="submit" class="btn-delete">Hapus</button>
                     </form>
-                @endforeach
-            </ul>
+                </div>
+            @endforeach
+        </div>
+
         @endif
     @endforeach
     </main>
