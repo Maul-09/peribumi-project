@@ -29,6 +29,7 @@ class CrudController extends Controller
         // Mendapatkan pengguna berdasarkan ID
         $field = User::findOrFail($id);
 
+
         // Merender tampilan dengan data pengguna
         return view('user.profile-view', compact('field'));
     }

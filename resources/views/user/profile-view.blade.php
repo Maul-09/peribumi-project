@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :ShowNavbar="false" :ShowFooter="false">
     <x-slot:name>Beranda</x-slot>
     <x-slot:title>{{ asset('css/user-style/style-edit-profile.css') }}</x-slot>
     <div class="profile-container">
