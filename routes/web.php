@@ -63,3 +63,4 @@ Route::get('/produk/{id}/edit', [ProdukController::class, 'edit'])->name('produk
 Route::delete('/produk/{id}', [ProdukController::class, 'destroy'])->name('produk.destroy');
 
 Route::get('/filter-data', [AdminController::class, 'filterData']);
+Route::post('/profile/{id}/update-password', [ProfileController::class, 'updatePassword'])->name('updatePassword');
