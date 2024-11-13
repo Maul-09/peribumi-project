@@ -23,6 +23,7 @@
         <div class="product-container">
             @foreach($produkList as $item)
                 <div class="product-card">
+                    <a href="index.html">
                     <h3 class="product-name">{{ $item->nama_produk }}</h3>
                     <p class="product-price">Harga: {{ $item->hl_harga }}</p>
                     <p class="product-description">{{ $item->deskripsi }}</p>
@@ -32,6 +33,7 @@
                         <a href="{{ route('produk.edit', $item->id) }}" class="btn btn-success">Edit</a>
                         <button type="submit" class="btn-delete">Hapus</button>
                     </form>
+                    </a>
                 </div>
             @endforeach
         </div>
