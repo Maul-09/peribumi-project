@@ -34,42 +34,42 @@
 
                                             <div class="form-group">
                                                 <label for="durasi">Durasi Produk:</label>
-                                                <textarea name="durasi" id="durasi" class="form-control" required value="{{ $produk->durasi }}"></textarea>
+                                                <input name="durasi" id="durasi" class="form-control" required value="{{ $produk->durasi }}">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="personil">Personil :</label>
-                                                <textarea name="personil" id="personil" class="form-control" required value="{{ $produk->personil }}"></textarea>
+                                                <input name="personil" id="personil" class="form-control" required value="{{ $produk->personil }}">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="persyaratan">Persyaratan Produk:</label>
-                                                <textarea name="persyaratan" id="persyaratan" class="form-control" required value="{{ $produk->persyaratan }}"></textarea>
+                                                <input name="persyaratan" id="persyaratan" class="form-control" required value="{{ $produk->persyaratan }}">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="metodologi">Metodologi :</label>
-                                                <textarea name="metodologi" id="metodologi" class="form-control" required value="{{ $produk->motodologi }}"></textarea>
+                                                <input name="metodologi" id="metodologi" class="form-control" required value="{{ $produk->motodologi }}">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="sasaran">Sasaran Produk:</label>
-                                                <textarea name="sasaran" id="sasaran" class="form-control" required value="{{ $produk->sasaran }}"></textarea>
+                                                <input name="sasaran" id="sasaran" class="form-control" required value="{{ $produk->sasaran }}">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="jadwal_lokasi_fasilitas">Jadwal, Lokasi, Fasilitas :</label>
-                                                <textarea name="jadwal_lokasi_fasilitas" id="jadwal_lokasi_fasilitas" class="form-control" required value="{{ $produk->jadwal_lokasi_fasilitas }}"></textarea>
+                                                <input name="jadwal_lokasi_fasilitas" id="jadwal_lokasi_fasilitas" class="form-control" required value="{{ $produk->jadwal_lokasi_fasilitas }}">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="desc_harga">Deskripsi Harga Produk :</label>
-                                                <textarea name="desc_harga" id="desc_harga" class="form-control" required value="{{ $produk->desc_harga }}"></textarea>
+                                                <input name="desc_harga" id="desc_harga" class="form-control" required value="{{ $produk->desc_harga }}">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="hl_harga">Highlight Harga Produk :</label>
-                                                <textarea name="hl_harga" id="hl_harga" class="form-control" required value="{{ $produk->hl_harga }}"></textarea>
+                                                <input name="hl_harga" id="hl_harga" class="form-control" required value="{{ $produk->hl_harga }}">
                                             </div>
 
                                             <label for="kategori">Pilih Kategori:</label>
