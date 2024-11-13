@@ -29,47 +29,47 @@
 
                                             <div class="form-group">
                                                 <label for="deskripsi">Deskripsi Singkat Produk:</label>
-                                                <textarea name="deskripsi" id="deskripsi" class="form-control" required></textarea>
+                                                <input name="deskripsi" id="deskripsi" class="form-control" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="durasi">Durasi Produk:</label>
-                                                <textarea name="durasi" id="durasi" class="form-control" required></textarea>
+                                                <input name="durasi" id="durasi" class="form-control" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="personil">Personil :</label>
-                                                <textarea name="personil" id="personil" class="form-control" required></textarea>
+                                                <input name="personil" id="personil" class="form-control" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="persyaratan">Persyaratan Produk:</label>
-                                                <textarea name="persyaratan" id="persyaratan" class="form-control" required></textarea>
+                                                <input name="persyaratan" id="persyaratan" class="form-control" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="metodologi">Metodologi :</label>
-                                                <textarea name="metodologi" id="metodologi" class="form-control" required></textarea>
+                                                <input name="metodologi" id="metodologi" class="form-control" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="sasaran">Sasaran Produk:</label>
-                                                <textarea name="sasaran" id="sasaran" class="form-control" required></textarea>
+                                                <input name="sasaran" id="sasaran" class="form-control" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="jadwal_lokasi_fasilitas">Jadwal, Lokasi, Fasilitas :</label>
-                                                <textarea name="jadwal_lokasi_fasilitas" id="jadwal_lokasi_fasilitas" class="form-control" required></textarea>
+                                                <input name="jadwal_lokasi_fasilitas" id="jadwal_lokasi_fasilitas" class="form-control" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="desc_harga">Deskripsi Harga Produk :</label>
-                                                <textarea name="desc_harga" id="desc_harga" class="form-control" required></textarea>
+                                                <input name="desc_harga" id="desc_harga" class="form-control" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="hl_harga">Highlight Harga Produk :</label>
-                                                <textarea name="hl_harga" id="hl_harga" class="form-control" required></textarea>
+                                                <input name="hl_harga" id="hl_harga" class="form-control" required>
                                             </div>
 
                                             <label for="kategori">Pilih Kategori:</label>
