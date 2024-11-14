@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.product-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    background-color: #f7f9fc;
+}
+
+.product-link {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    max-width: 300px;
+    cursor: pointer;
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.product-name {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.product-price {
+    font-size: 1.2em;
+    color: #27ae60;
+    font-weight: 600;
+    text-align: center;
+}
+
+.product-description {
+    font-size: 1em;
+    color: #555;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-edit,
+.btn-hapus {
+    padding: 10px 20px !important;
+    width: 100px !important;
+    border-radius: 8px !important;
+    font-size: 0.9em !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease, transform 0.3s ease !important;
+}
+
+.btn-edit {
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+.btn-edit:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+
+.btn-hapus {
+    background-color: #e74c3c;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-hapus:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+}

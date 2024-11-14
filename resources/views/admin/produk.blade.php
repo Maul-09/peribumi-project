@@ -32,79 +32,77 @@
                                     <form action="{{ route('produk.store') }}" method="POST">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="nama_produk">Nama Produk:</label>
-                                            <input type="text" name="nama_produk" id="nama_produk"
-                                                class="form-control" required>
+                                            <label for="nama_produk" class="form-label">Nama Produk:</label>
+                                            <input type="text" name="nama_produk" id="nama_produk" class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="deskripsi">Deskripsi Singkat Produk:</label>
+                                            <label for="deskripsi" class="form-label">Deskripsi Singkat Produk:</label>
                                             <input name="deskripsi" id="deskripsi" class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="durasi">Durasi Produk:</label>
+                                            <label for="durasi" class="form-label">Durasi Produk:</label>
                                             <input name="durasi" id="durasi" class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="personil">Personil :</label>
+                                            <label for="personil" class="form-label">Personil :</label>
                                             <input name="personil" id="personil" class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="persyaratan">Persyaratan Produk:</label>
+                                            <label for="persyaratan" class="form-label">Persyaratan Produk:</label>
                                             <input name="persyaratan" id="persyaratan" class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="metodologi">Metodologi :</label>
+                                            <label for="metodologi" class="form-label">Metodologi :</label>
                                             <input name="metodologi" id="metodologi" class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="sasaran">Sasaran Produk:</label>
+                                            <label for="sasaran" class="form-label">Sasaran Produk:</label>
                                             <input name="sasaran" id="sasaran" class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="jadwal_lokasi_fasilitas">Jadwal, Lokasi, Fasilitas :</label>
+                                            <label for="jadwal_lokasi_fasilitas" class="form-label">Jadwal, Lokasi, Fasilitas :</label>
                                             <input name="jadwal_lokasi_fasilitas" id="jadwal_lokasi_fasilitas"
                                                 class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="desc_harga">Deskripsi Harga Produk :</label>
+                                            <label for="desc_harga" class="form-label">Deskripsi Harga Produk :</label>
                                             <input name="desc_harga" id="desc_harga" class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="hl_harga">Highlight Harga Produk :</label>
+                                            <label for="hl_harga" class="form-label">Highlight Harga Produk :</label>
                                             <input name="hl_harga" id="hl_harga" class="form-control" required>
                                         </div>
 
-                                        <label for="kategori">Pilih Kategori:</label>
-                                        <select name="produkType" id="produkType">
-                                            <option value="">Pilih Kategori</option>
-                                            @foreach ($kategori as $kat)
-                                                <option value="{{ $kat }}">{{ $kat }}</option>
-                                            @endforeach
-                                        </select>
+                                        <div class="form-group">
+                                            <label for="produkType" class="form-label">Pilih Kategori:</label>
+                                            <select name="produkType" id="produkType" class="select-control">
+                                                <option value="">Pilih Kategori</option>
+                                                @foreach ($kategori as $kat)
+                                                    <option value="{{ $kat }}">{{ $kat }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                         <div class="card-prod">
                                             <div class="card">
                                                 <div class="card-body">
                                                     <h4 class="card-title">Silabus Program</h4>
                                                     <div id="silabus-container" class="card-scroll">
                                                         <h3>Silabus</h3>
-                                                        <button type="button" class="btn btn-secondary mb-3"
-                                                            onclick="addSilabus()">Tambah
-                                                            Silabus</button>
+                                                        <button type="button" class="btn-tambah-silabus" onclick="addSilabus()">Tambah Silabus</button>
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
-                                        <button type="submit" class="btn btn-primary mt-3">Simpan Produk</button>
+                                        <button type="submit" class="btn-tambah-product">Simpan Produk</button>
                                     </form>
                                 </div>
                             </div>

@@ -23,6 +23,7 @@
   <!-- Template Main CSS File -->
   <link href="{{ asset('aset/assets/css/style.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/admin-style/style-product.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/admin-style/style-card-product.css') }}">
   <title>Peribumi Consultant - Admin Dashboard</title>
 </head>
 <body>

@@ -23,20 +23,21 @@
         <div class="product-container">
             @foreach($produkList as $item)
                 <div class="product-card">
-                    <a href="index.html">
-                    <h3 class="product-name">{{ $item->nama_produk }}</h3>
-                    <p class="product-price">Harga: {{ $item->hl_harga }}</p>
-                    <p class="product-description">{{ $item->deskripsi }}</p>
+                    <a href="index.html" class="product-link">
+                        <h3 class="product-name">{{ $item->nama_produk }}</h3>
+                        <p class="product-price">Harga: {{ $item->hl_harga }}</p>
+                        <p class="product-description">{{ $item->deskripsi }}</p>
+                    </a>
                     <form action="{{ route('produk.destroy', $item->id) }}" method="POST" onsubmit="return submitForm(this);">
                         @csrf
                         @method('DELETE')
-                        <a href="{{ route('produk.edit', $item->id) }}" class="btn btn-success">Edit</a>
-                        <button type="submit" class="btn-delete">Hapus</button>
+                        <a href="{{ route('produk.edit', $item->id) }}" class="btn-edit">Edit</a>
+                        <button type="submit" class="btn-hapus">Hapus</button>
                     </form>
-                    </a>
                 </div>
             @endforeach
         </div>
+
 
         @endif
     @endforeach

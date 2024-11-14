@@ -1,4 +1,3 @@
-/* General Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,68 +5,85 @@
     font-family: Arial, sans-serif;
 }
 
-form {
+.form-container {
     max-width: 700px;
     margin: auto;
     padding: 2em;
     border-radius: 8px;
+    background-color: #ffffff;
 }
 
 .form-group {
     margin-bottom: 1.5em;
 }
 
-label {
+.form-label {
     font-weight: bold;
     color: #333;
     margin-bottom: 0.5em;
     display: block;
 }
 
-input[type="text"],
-textarea,
-select {
+.form-control {
     width: 100%;
     padding: 0.75em;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
     background-color: #f5f5f5;
-    transition: border 0.3s;
+    transition: border 0.3s ease;
 }
 
-input[type="text"]:focus,
-textarea:focus,
-select:focus {
+.form-control:focus {
     border: 1px solid #4a90e2;
     background-color: #fff;
     outline: none;
 }
 
-button[type="button"],
-button[type="submit"] {
+.select-control {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #f5f5f5;
+    transition: border 0.3s ease;
+}
+
+.select-control:focus {
+    border: 1px solid #4a90e2;
+    background-color: #fff;
+    outline: none;
+}
+
+.btn-tambah-silabus,
+.btn-tambah-product {
     display: inline-block;
-    padding: 0.5em 1em;
+    padding: 0.50em 1em;
     font-size: 1em;
     font-weight: bold;
     color: #fff;
-    background-color: #4a90e2;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
-button[type="button"]:hover,
-button[type="submit"]:hover {
-    background-color: #357abd;
+.btn-tambah-silabus,
+.btn-tambah-product {
+    background-color: #4a90e2;
 }
 
-#silabus-arrow-2 {
+.btn-tambah-silabus:hover,
+.btn-tambah-product:hover {
+    background-color: #357ABD;
+}
+
+#silabus-arrow-2{
     padding: 1em;
 }
 
-#silabus-arrow {
+#silabus-arrow{
     padding-top: 1.3em;
     border-top: 2px solid #eee;
 }
@@ -88,68 +104,11 @@ button[type="submit"]:hover {
     margin-top: 0.5em;
 }
 
-.btn-secondary {
-    background-color: #6c757d;
-}
-
-.btn-secondary:hover {
-    background-color: #5a6268;
-}
-
-.product-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.product-card {
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-name {
-    font-size: 1.25em;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.product-price {
-    font-size: 1.1em;
-    color: #ff6600;
-    margin-bottom: 15px;
-}
-
-.product-description {
-    font-size: 0.95em;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.btn-delete {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.3s;
-}
-
-.btn-delete:hover {
-    background-color: #c0392b;
-}
-
 .card-prod {
     position: fixed;
-    top: 24%;
+    top: 21%;
     right: 2%;
-    width: 300px;
+    width: 350px;
 }
 
 .card-scroll {
@@ -158,7 +117,7 @@ button[type="submit"]:hover {
     overflow-x: hidden;
 }
 
-/* Additional Styling for Responsive Design */
+
 @media (max-width: 768px) {
     form {
         padding: 1em;
