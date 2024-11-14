@@ -47,7 +47,7 @@ select:focus {
 button[type="button"],
 button[type="submit"] {
     display: inline-block;
-    padding: 0.50em 1em;
+    padding: 0.5em 1em;
     font-size: 1em;
     font-weight: bold;
     color: #fff;
@@ -60,14 +60,14 @@ button[type="submit"] {
 
 button[type="button"]:hover,
 button[type="submit"]:hover {
-    background-color: #357ABD;
+    background-color: #357abd;
 }
 
-#silabus-arrow-2{
+#silabus-arrow-2 {
     padding: 1em;
 }
 
-#silabus-arrow{
+#silabus-arrow {
     padding-top: 1.3em;
     border-top: 2px solid #eee;
 }
@@ -145,6 +145,18 @@ button[type="submit"]:hover {
     background-color: #c0392b;
 }
 
+.card-prod {
+    position: fixed;
+    top: 24%;
+    right: 2%;
+    width: 300px;
+}
+
+.card-scroll {
+    max-height: 350px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
 /* Additional Styling for Responsive Design */
 @media (max-width: 768px) {

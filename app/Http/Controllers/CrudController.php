@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\View\View;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\RedirectResponse;
@@ -13,7 +15,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Mail\RestoreAccountVerification;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Auth\Events\PasswordReset;
-use Illuminate\Support\Facades\File;
+use Illuminate\Validation\ValidationException;
 
 class CrudController extends Controller
 {
@@ -34,6 +36,29 @@ class CrudController extends Controller
         return view('user.profile-view', compact('field'));
     }
 
+    public function changePassword(Request $request, string $id)
+    {
+        // Mendapatkan pengguna berdasarkan ID
+        $field = User::findOrFail($id);
+
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => 'required|min:8|confirmed',
+        ]);
+
+        // Cek apakah password saat ini benar
+        if (!Hash::check($request->current_password, $field->password)) {
+            throw ValidationException::withMessages([
+                'current_password' => ['Password saat ini tidak valid.'],
+            ]);
+        }
+
+        // Update password
+        $field->password = Hash::make($request->new_password);
+        $field->save(); // Simpan perubahan
+
+        return redirect()->route('editProfile', ['id' => $field->id])->with('status', 'Password berhasil diubah!');
+    }
     /**
      * update
      *

@@ -10,7 +10,7 @@ class IsiSilabus extends Model
     use HasFactory;
 
     // Atribut yang dapat diisi secara massal
-    protected $fillable = ['silabus_id', 'konten']; // Sesuaikan dengan atribut yang Anda butuhkan
+    protected $fillable = ['silabus_id', 'judul_isi']; // Sesuaikan dengan atribut yang Anda butuhkan
 
     // Relasi ke model Silabus
     public function silabus()

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('isi_silabuses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('silabus_id')->constrained('silabuses')->onDelete('cascade');
-            $table->text('konten')->nullable();
+            $table->text('judul_isi')->nullable();
             $table->timestamps();
         });
     }

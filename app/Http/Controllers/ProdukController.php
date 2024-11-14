@@ -40,13 +40,11 @@ class ProdukController extends Controller
                 'desc_harga' => 'required|string|max:255',
                 'hl_harga' => 'required|string|max:255',
                 'produkType' => 'nullable|string|max:255',
-                
+
                 'silabus' => 'array',
                 'silabus.*.judul' => 'required|string|max:255',
-                'silabus.*.deskripsi' => 'nullable|string',
                 'silabus.*.isi_silabus' => 'array',
                 'silabus.*.isi_silabus.*.judul_isi' => 'required|string|max:255',
-                'silabus.*.isi_silabus.*.konten' => 'nullable|string',
             ]);
 
             // Simpan data produk
@@ -76,7 +74,7 @@ class ProdukController extends Controller
                 foreach ($silabusData['isi_silabus'] ?? [] as $isiData) {
                     IsiSilabus::create([
                         'silabus_id' => $silabus->id,
-                        'konten' => $isiData['konten'],
+                        'judul_isi' => $isiData['judul_isi'],
                     ]);
                 }
             }
@@ -193,4 +191,3 @@ class ProdukController extends Controller
         return redirect()->back()->with('success', 'Produk berhasil dihapus!');
     }
 }
-
