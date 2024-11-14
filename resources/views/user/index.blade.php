@@ -1,21 +1,22 @@
-<x-layout>
+<x-layout :ShowNavbar="false" :ShowFooter="false">
+    
+    <x-slot:name>Digital Solution</x-slot>
+    <x-slot:title>{{ asset('css/user-style/style-digital.css') }}</x-slot>
     <div class="container">
-        <h1>Daftar Produk</h1>
         
-        @foreach ($produk as $item)
             <div class="produk-item">
-                <h2>{{ $item->nama_produk }}</h2>
-                <p><strong>Deskripsi Produk:</strong> {{ $item->deskripsi }}</p>
-                <p><strong>Durasi:</strong> {{ $item->durasi }}</p>
-                <p><strong>Personil:</strong> {{ $item->personil }}</p>
-                <p><strong>Sasaran:</strong> {{ $item->sasaran }}</p>
-                <p><strong>Persyaratan:</strong> {{ $item->persyaratan }}</p>
-                <p><strong>Metodologi:</strong> {{ $item->metodologi }}</p>
-                <p><strong>Jadwal, Lokasi, dan Fasilitas:</strong> {{ $item->jadwal_lokasi_fasilitas }}</p>
-                <p><strong>Harga:</strong> {{ $item->desc_harga }} ({{ $item->hl_harga }})</p>
+                <h2>{{ $produk->nama_produk }}</h2>
+                <p><strong>Deskripsi Produk:</strong> {{ $produk->deskripsi }}</p>
+                <p><strong>Durasi:</strong> {{ $produk->durasi }}</p>
+                <p><strong>Personil:</strong> {{ $produk->personil }}</p>
+                <p><strong>Sasaran:</strong> {{ $produk->sasaran }}</p>
+                <p><strong>Persyaratan:</strong> {{ $produk->persyaratan }}</p>
+                <p><strong>Metodologi:</strong> {{ $produk->metodologi }}</p>
+                <p><strong>Jadwal, Lokasi, dan Fasilitas:</strong> {{ $produk->jadwal_lokasi_fasilitas }}</p>
+                <p><strong>Harga:</strong> {{ $produk->desc_harga }} ({{ $produk->hl_harga }})</p>
 
                 <h3>Silabus:</h3>
-                @foreach ($item->silabus as $silabus)
+                @foreach ($produk->silabus as $silabus)
                     <div class="silabus-item">
                         <h4>{{ $silabus->judul }}</h4>
                         <p><strong>Deskripsi Silabus:</strong> {{ $silabus->deskripsi }}</p>
@@ -30,7 +31,6 @@
                     </div>
                 @endforeach
             </div>
-        @endforeach
     </div>
 
 </x-layout>

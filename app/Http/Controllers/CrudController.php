@@ -73,8 +73,6 @@ class CrudController extends Controller
             'image' => 'image|mimes:jpeg,jpg,png|max:2048',
             'name' => ['required', 'max:255'],
             'email' => ['required', 'max:255', 'email', 'unique:users,email,' . $id],
-            'username' => ['required', 'max:255'],
-            'password' => ['required', 'min:8'],
         ]);
 
         // Mendapatkan pengguna berdasarkan ID
@@ -141,7 +139,6 @@ class CrudController extends Controller
         $field->name = $request->name;
         $field->username = $request->username;
         $field->email = $request->email;
-        $field->password = bcrypt($request->password); // Mengenkripsi password
         $field->save(); // Simpan perubahan
 
         // Redirect ke halaman edit profile dengan pesan sukses
