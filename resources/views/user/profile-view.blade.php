@@ -19,16 +19,7 @@
                 </div>
             @endif
 
-            <div class="image-buttons">
-                <label for="file-upload" class="icon-button" title="Choose Photo">
-                    <i class="fas fa-upload"></i>
-                </label>
-                <input id="file-upload" type="file" class="file-input @error('image') is-invalid @enderror"
-                    name="image" style="display: none;">
-                <button type="button" class="icon-button icon-delete" title="Delete Photo">
-                    <i class="fas fa-trash"></i>
-                </button>
-            </div>
+
             @error('image')
                 <div class="error">{{ $message }}</div>
             @enderror
@@ -40,6 +31,16 @@
             <div class="profile-card">
                 <form action="{{ route('update.profile', $field->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
+                    <div class="image-buttons">
+                        <label for="file-upload" class="icon-button" title="Choose Photo">
+                            <i class="fas fa-upload"></i>
+                        </label>
+                        <input id="file-upload" type="file" class="file-input @error('image') is-invalid @enderror"
+                            name="image" style="display: none;">
+                        <button type="button" class="icon-button icon-delete" title="Delete Photo">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
                     <!-- Name -->
                     <div class="form-profile">
                         <label class="label">Name</label>
