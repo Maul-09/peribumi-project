@@ -1,23 +1,35 @@
 let silabusCount = 0;
 
-function addSilabus() {
+function addSilabus(item = {}, index) {
     silabusCount++;
     let silabusContainer = document.getElementById("silabus-container");
 
     let silabusHTML = `
         <div class="silabus mt-2" id="silabus-${silabusCount}">
-            <div class="form-group" id="silabus-arrow" >
+            <div class="form-group">
                 <label for="judul_silabus_${silabusCount}">Judul Silabus:</label>
                 <div style="display: flex; align-items: center;">
-                    <input type="text" name="silabus[${silabusCount}][judul]" id="judul_silabus_${silabusCount}" class="form-control" required>
+                    <input type="text" name="silabus[${silabusCount}][judul]" id="judul_silabus_${silabusCount}" class="form-control" value="${item.judul || ''}" required>
                     <button type="button" class="btn btn-danger btn-sm mb-3" onclick="deleteSilabus(${silabusCount})" style="margin-left: 8px; margin-top:15px;">
                         <i class="fas fa-trash-alt"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Bagian Isi Silabus -->
             <div class="isi-silabus-container" id="isi-silabus-container-${silabusCount}">
+                ${item.isi_silabus ? item.isi_silabus.map((isi, i) => `
+                    <div class="isi-silabus mt-2" id="isi-silabus-${silabusCount}-${i + 1}">
+                        <div class="form-group">
+                            <label for="judul_isi_${silabusCount}_${i + 1}">Judul Isi Silabus:</label>
+                            <div style="display: flex; align-items: center;">
+                                <input type="text" name="silabus[${silabusCount}][isi_silabus][${i + 1}][judul_isi]" id="judul_isi_${silabusCount}_${i + 1}" class="form-control" value="${isi.judul_isi || ''}" required>
+                                <button type="button" class="btn btn-danger btn-sm" onclick="deleteIsiSilabus(${silabusCount}, ${i + 1})" style="margin-left: 8px;">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('') : ''}
                 <button type="button" class="btn btn-secondary" onclick="addIsiSilabus(${silabusCount})">Tambah Isi Silabus</button>
             </div>
         </div>
@@ -60,3 +72,12 @@ function deleteIsiSilabus(silabusIndex, isiIndex) {
         isiElement.remove();
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Periksa apakah ada data silabus yang sudah ada
+    if (typeof existingSilabus !== 'undefined' && existingSilabus.length > 0) {
+        existingSilabus.forEach(function(item, index) {
+            addSilabus(item, index);
+        });
+    }
+});

@@ -129,10 +129,11 @@ class ProdukController extends Controller
     }
     public function edit($id)
     {
-        $produk = Produk::findOrFail($id);
+        $produk = Produk::with('silabus.isiSilabus')->find($id);
+        $silabus = $produk->silabus;
 
         $kategori = session('kategori', []);
-        return view('admin.edit-produk', compact('produk', 'kategori'));
+        return view('admin.edit-produk', compact('produk', 'kategori', 'silabus'));
     }
 
     // Mengupdate produk
