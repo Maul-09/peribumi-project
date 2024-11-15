@@ -3,7 +3,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <img src="{{ asset('image/logo-peribumi.png') }}" alt="" style="width: 70px; height: auto;">
-            <a href="#" class="logo d-flex align-items-center">
+        <a href="#" class="logo d-flex align-items-center">
             <span class="d-none d-lg-block pe-3">Adminisitrator</span>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </a>
@@ -14,7 +14,20 @@
         <ul class="d-flex align-items-center">
             <li class="nav-item dropdown pe-5">
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="{{ asset('aset/assets/img/profile-img.jpg') }}" alt="Profile" class="rounded-circle">
+                    @php
+
+                        $initial = strtoupper(substr(auth()->user()->name, 0, 1));
+                        $hasImage = auth()->user()->image ? true : false;
+                    @endphp
+                    @if ($hasImage)
+                        <img src="{{ asset('profile/' . auth()->user()->image) }}" alt="User  Logo" class="user-logo"
+                            style="border-radius: 50%; width: 40px; height: 40px; object-fit: cover;">
+                    @else
+                        <div
+                            style="width: 40px; height: 40px; background-color: #ccc; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+                            <span style="font-size: 20px; color: white;">{{ $initial }}</span>
+                        </div>
+                    @endif
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li class="dropdown-header">
@@ -52,7 +65,8 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
+                        <a class="dropdown-item d-flex align-items-center"
+                            onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
                             <i class="bi bi-box-arrow-right"></i>
                             <span>Sign Out</span>
                         </a>
