@@ -79,6 +79,19 @@
                                                 <option value="{{ $kat }}">{{ $kat }}</option>
                                                     @endforeach
                                             </select>
+
+                                            
+                                            <div class="col-lg-4">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">Silabus Program</h4>
+                                                        <div id="silabus-container">
+                                                            <h3>Silabus</h3>
+                                                            <button type="button" class="btn btn-secondary mb-3" onclick="addSilabus()">Tambah Silabus</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         <button type="submit" class="btn btn-primary mt-3">Simpan Produk</button>
                                     </form>
                                 </div>
@@ -87,17 +100,10 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Silabus Program</h4>
-                            <div id="silabus-container">
-                                <h3>Silabus</h3>
-                                <button type="button" class="btn btn-secondary mb-3" onclick="addSilabus()">Tambah Silabus</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 </section>
 </main>
+<script type="text/javascript">
+    // Pass the PHP array as a JSON object
+    var existingSilabus = @json($silabus);
+</script>
 </x-adminlayout>
