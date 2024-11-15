@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\PeribumiController;
 
 Route::middleware('auth')->group(function () {
@@ -65,3 +66,5 @@ Route::delete('/produk/{id}', [ProdukController::class, 'destroy'])->name('produ
 Route::get('/filter-data', [AdminController::class, 'filterData']);
 
 Route::post('/profile/change-password/{id}', [CrudController::class, 'changePassword'])->name('change.password');
+
+Route::post('review-store', [ReviewController::class, 'reviewStore'])->name('review.store');
