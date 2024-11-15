@@ -25,7 +25,7 @@
                     @foreach ($produkList as $item)
                         <div class="product-card">
                             <a href="{{ route('produk.show', $item->id) }}">
-                                <img src="{{ asset($item->image) }}" alt="image">
+                                <img src="{{ asset($item->image) }}" alt="image" style="width: 100%; min-height: 150px;>
                                 <h3 class="product-name">{{ $item->nama_produk }}</h3>
                                 <p class="product-price">Harga: {{ $item->hl_harga }}</p>
                                 <p class="product-description">{{ $item->deskripsi }}</p>

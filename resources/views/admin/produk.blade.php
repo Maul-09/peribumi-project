@@ -36,7 +36,7 @@
                                         <div class="form-group">
                                             <label for="image" class="form-label">Upload Gambar Produk:</label>
                                             <input type="file" name="image" id="image" class="form-control"
-                                                accept="image/*" required>
+                                                accept="image/*">
                                         </div>
 
                                         <div class="form-group">

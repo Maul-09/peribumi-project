@@ -5,6 +5,7 @@
     <div class="container">
         
             <div class="produk-item">
+                <img src="{{ asset($produk->image) }}" alt="image" style="width: 100%; min-height: 150px;>
                 <h2>{{ $produk->nama_produk }}</h2>
                 <p><strong>Deskripsi Produk:</strong> {{ $produk->deskripsi }}</p>
                 <p><strong>Durasi:</strong> {{ $produk->durasi }}</p>

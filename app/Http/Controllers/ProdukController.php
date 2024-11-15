@@ -41,7 +41,7 @@ class ProdukController extends Controller
                 'desc_harga' => 'required|string|max:255',
                 'hl_harga' => 'required|string|max:255',
                 'produkType' => 'nullable|string|max:255',
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
 
                 'silabus' => 'array',
                 'silabus.*.judul' => 'required|string|max:255',
@@ -78,6 +78,9 @@ class ProdukController extends Controller
                 $request->image->move($destinationPath, $fileName);
                 $produk->image = 'produk/' . $fileName; // Simpan path gambar ke database
                 $produk->save(); // Simpan perubahan
+            } else {
+                $produk->image = 'produk/default.jpg'; // Gambar default jika tidak ada yang di-upload
+                $produk->save();
             }
 
             // Simpan data silabus
