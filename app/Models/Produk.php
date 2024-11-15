@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -25,5 +26,10 @@ class Produk extends Model
     {
         return $this->hasMany(Silabus::class); // Jika Produk memiliki banyak Silabus
         // return $this->belongsToMany(Silabus::class); // Jika relasi banyak ke banyak
+    }
+
+    public function reviewRatings()
+    {
+        return $this->hasMany(ReviewRating::class, 'booking_id'); // Sesuaikan dengan kolom yang benar
     }
 }

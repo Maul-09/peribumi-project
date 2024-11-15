@@ -33,5 +33,37 @@
             @endforeach
         </div>
     </div>
-
+    <form action="{{ route('review.store') }}" method="POST">
+        @csrf
+        <input type="hidden" name="booking_id" value="{{ $produk->id }}">
+        <div class="rate">
+            <input type="radio" id="star5" name="rating" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rating" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rating" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rating" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rating" value="1" />
+            <label for="star1" title="text">1 star</label>
+        </div>
+        <textarea name="comment" rows="4" placeholder="Comment"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <h3>Ulasan dan Rating</h3>
+    @if ($produk->reviewRatings->isEmpty())
+        <p>Tidak ada ulasan yang tersedia.</p>
+    @else
+        <ul>
+            @foreach ($produk->reviewRatings as $review)
+                <li>
+                    <strong>{{ $review->user->name ?? 'Tidak diketahui' }}:</strong>
+                    <span>{{ str_repeat('⭐', $review->star_rating) }}</span>
+                    <p>{{ $review->comments }}</p>
+                    <p><em>{{ $review->created_at->format('d-m-Y') }}</em></p>
+                </li>
+            @endforeach
+        </ul>
+    @endif
 </x-layout>

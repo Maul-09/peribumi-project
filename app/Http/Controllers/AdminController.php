@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Visit;
 use App\Models\Produk;
+use App\Models\ReviewRating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -69,8 +70,10 @@ class AdminController extends Controller
 
         $totalProducts = Produk::count();
 
+        $averageRating = ReviewRating::average('star_rating');
+        $formattedAverageRating = number_format($averageRating, 1);
         // Mengembalikan view dashboard dengan data yang dibutuhkan
-        return view('admin.dashboard', compact('userCount', 'urlCounts', 'weeks', 'visits', 'totalProducts'));
+        return view('admin.dashboard', compact('formattedAverageRating', 'userCount', 'urlCounts', 'weeks', 'visits', 'totalProducts'));
     }
 
 

@@ -68,7 +68,7 @@
                                             <i class="bi bi-star"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>5.0</h6>
+                                            <h6>{{ $formattedAverageRating }}</h6>
                                         </div>
                                     </div>
                                 </div>
