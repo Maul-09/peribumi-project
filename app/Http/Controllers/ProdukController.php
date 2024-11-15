@@ -8,6 +8,7 @@ use App\Models\IsiSilabus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\File;
 
 class ProdukController extends Controller
 {
@@ -40,6 +41,7 @@ class ProdukController extends Controller
                 'desc_harga' => 'required|string|max:255',
                 'hl_harga' => 'required|string|max:255',
                 'produkType' => 'nullable|string|max:255',
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
 
                 'silabus' => 'array',
                 'silabus.*.judul' => 'required|string|max:255',
@@ -47,7 +49,7 @@ class ProdukController extends Controller
                 'silabus.*.isi_silabus.*.judul_isi' => 'required|string|max:255',
             ]);
 
-            // Simpan data produk
+            // Simpan data produk tanpa gambar terlebih dahulu
             $produk = Produk::create([
                 'nama_produk' => $request->input('nama_produk'),
                 'deskripsi' => $request->input('deskripsi'),
@@ -60,8 +62,23 @@ class ProdukController extends Controller
                 'desc_harga' => $request->input('desc_harga'),
                 'hl_harga' => $request->input('hl_harga'),
                 'produkType' => $request->input('produkType'),
-
             ]);
+
+            // Jika ada file gambar yang diunggah
+            if ($request->hasFile('image')) {
+                $destinationPath = public_path('produk');
+
+                // Buat folder jika belum ada
+                if (!File::exists($destinationPath)) {
+                    File::makeDirectory($destinationPath, 0755, true);
+                }
+
+                // Pindahkan file dan simpan pathnya
+                $fileName = time() . '.' . $request->image->extension();
+                $request->image->move($destinationPath, $fileName);
+                $produk->image = 'produk/' . $fileName; // Simpan path gambar ke database
+                $produk->save(); // Simpan perubahan
+            }
 
             // Simpan data silabus
             foreach ($request->input('silabus', []) as $silabusData) {

@@ -57,7 +57,7 @@ Route::get('/trash', [CrudController::class, 'trash'])->name('trash');
 Route::get('/after-restore', [CrudController::class, 'afterRestore'])->name('after.restore');
 
 Route::get('/produk/create', [ProdukController::class, 'create'])->name('produk.create'); // Menampilkan form tambah produk
-Route::post('/produk', [ProdukController::class, 'store'])->name('produk.store');
+Route::post('/post/produk', [ProdukController::class, 'store'])->name('produk.store');
 Route::get('/produk/{id}', [ProdukController::class, 'show'])->name('produk.show');
 Route::get('/produk/{id}/edit', [ProdukController::class, 'edit'])->name('produk.edit');
 Route::delete('/produk/{id}', [ProdukController::class, 'destroy'])->name('produk.destroy');

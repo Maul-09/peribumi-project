@@ -29,11 +29,20 @@
                                             </ul>
                                         </div>
                                     @endif
-                                    <form action="{{ route('produk.store') }}" method="POST">
+                                    <form action="{{ route('produk.store') }}" method="POST" <form
+                                        action="{{ route('produk.store') }}" method="POST"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
+                                            <label for="image" class="form-label">Upload Gambar Produk:</label>
+                                            <input type="file" name="image" id="image" class="form-control"
+                                                accept="image/*" required>
+                                        </div>
+
+                                        <div class="form-group">
                                             <label for="nama_produk" class="form-label">Nama Produk:</label>
-                                            <input type="text" name="nama_produk" id="nama_produk" class="form-control" required>
+                                            <input type="text" name="nama_produk" id="nama_produk"
+                                                class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
@@ -67,7 +76,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="jadwal_lokasi_fasilitas" class="form-label">Jadwal, Lokasi, Fasilitas :</label>
+                                            <label for="jadwal_lokasi_fasilitas" class="form-label">Jadwal, Lokasi,
+                                                Fasilitas :</label>
                                             <input name="jadwal_lokasi_fasilitas" id="jadwal_lokasi_fasilitas"
                                                 class="form-control" required>
                                         </div>
@@ -97,7 +107,8 @@
                                                     <h4 class="card-title">Silabus Program</h4>
                                                     <div id="silabus-container" class="card-scroll">
                                                         <h3>Silabus</h3>
-                                                        <button type="button" class="btn-tambah-silabus" onclick="addSilabus()">Tambah Silabus</button>
+                                                        <button type="button" class="btn-tambah-silabus"
+                                                            onclick="addSilabus()">Tambah Silabus</button>
                                                     </div>
                                                 </div>
                                             </div>
