@@ -40,3 +40,19 @@ function closePopup() {
 window.onload = function() {
     setTimeout(closePopup, 3000);
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+    const stars = document.querySelectorAll('.rate label i');
+    const inputs = document.querySelectorAll('.rate input');
+
+    inputs.forEach((input, index) => {
+        input.addEventListener('change', () => {
+            stars.forEach((star, idx) => {
+                star.classList.toggle('fa-solid', idx <= index);
+                star.classList.toggle('fa-regular', idx > index);
+            });
+        });
+    });
+});
+
+

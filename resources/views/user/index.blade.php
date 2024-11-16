@@ -1,69 +1,94 @@
 <x-layout :ShowNavbar="false" :ShowFooter="false">
 
     <x-slot:name>Digital Solution</x-slot>
-    <x-slot:title>{{ asset('css/user-style/style-digital.css') }}</x-slot>
-    <div class="container">
+    <x-slot:title>{{ asset('css/user-style/style-index-product.css') }}</x-slot>
+    <div class="full-screen">
+        <div class="container">
+            <div class="produk-header">
+                <h2 class="produk-title">{{ $produk->nama_produk }}</h2>
+                <img src="{{ asset($produk->image) }}" alt="Produk Image" class="produk-image">
+            </div>
 
-        <div class="produk-item">
-            <h2>{{ $produk->nama_produk }}</h2>
-            <img src="{{ asset($produk->image) }}" alt="image" style="width: 100%; min-height: 150px;">
-            <p><strong>Deskripsi Produk:</strong> {{ $produk->deskripsi }}</p>
-            <p><strong>Durasi:</strong> {{ $produk->durasi }}</p>
-            <p><strong>Personil:</strong> {{ $produk->personil }}</p>
-            <p><strong>Sasaran:</strong> {{ $produk->sasaran }}</p>
-            <p><strong>Persyaratan:</strong> {{ $produk->persyaratan }}</p>
-            <p><strong>Metodologi:</strong> {{ $produk->metodologi }}</p>
-            <p><strong>Jadwal, Lokasi, dan Fasilitas:</strong> {{ $produk->jadwal_lokasi_fasilitas }}</p>
-            <p><strong>Harga:</strong> {{ $produk->desc_harga }} ({{ $produk->hl_harga }})</p>
+            <div class="produk-details">
+                <p><span class="detail-label">Deskripsi Produk:</span> {{ $produk->deskripsi }}</p>
+                <p><span class="detail-label">Durasi:</span> {{ $produk->durasi }}</p>
+                <p><span class="detail-label">Personil:</span> {{ $produk->personil }}</p>
+                <p><span class="detail-label">Sasaran:</span> {{ $produk->sasaran }}</p>
+                <p><span class="detail-label">Persyaratan:</span> {{ $produk->persyaratan }}</p>
+                <p><span class="detail-label">Metodologi:</span> {{ $produk->metodologi }}</p>
+                <p><span class="detail-label">Jadwal, Lokasi, dan Fasilitas:</span> {{ $produk->jadwal_lokasi_fasilitas }}</p>
+                <p><span class="detail-label">Harga:</span> {{ $produk->desc_harga }} ({{ $produk->hl_harga }})</p>
+            </div>
 
-            <h3>Silabus:</h3>
-            @foreach ($produk->silabus as $silabus)
-                <div class="silabus-item">
-                    <h4>{{ $silabus->judul }}</h4>
-                    <p><strong>Deskripsi Silabus:</strong> {{ $silabus->deskripsi }}</p>
-
-                    <h5>Isi Silabus:</h5>
-                    @foreach ($silabus->isiSilabus as $isi)
-                        <div class="isi-silabus">
-                            <h6>{{ $isi->judul_isi }}</h6>
-                            <p>{{ $isi->konten }}</p>
+            <h3 class="section-title">Silabus</h3>
+            <div class="silabus-container">
+                @foreach ($produk->silabus as $silabus)
+                    <div class="silabus-item">
+                        <h4 class="silabus-title">{{ $silabus->judul }}</h4>
+                        <p class="silabus-desc"><span class="detail-label">Deskripsi:</span> {{ $silabus->deskripsi }}</p>
+                        <div class="isi-silabus-list">
+                            <h5>Isi Silabus:</h5>
+                            @foreach ($silabus->isiSilabus as $isi)
+                                <div class="isi-silabus-item">
+                                    <p><strong>{{ $isi->judul_isi }}</strong></p>
+                                    <p>{{ $isi->konten }}</p>
+                                </div>
+                            @endforeach
                         </div>
-                    @endforeach
+                    </div>
+                @endforeach
+            </div>
+
+            <form action="{{ route('review.store') }}" method="POST" class="rating-form">
+                @csrf
+                <input type="hidden" name="booking_id" value="{{ $produk->id }}">
+
+                <div class="rate">
+                    <input type="radio" id="star5" name="rating" value="5" />
+                    <label for="star5" title="5 stars">
+                        <i class="fa-regular fa-star"></i>
+                    </label>
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label for="star4" title="4 stars">
+                        <i class="fa-regular fa-star"></i>
+                    </label>
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label for="star3" title="3 stars">
+                        <i class="fa-regular fa-star"></i>
+                    </label>
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label for="star2" title="2 stars">
+                        <i class="fa-regular fa-star"></i>
+                    </label>
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label for="star1" title="1 star">
+                        <i class="fa-regular fa-star"></i>
+                    </label>
                 </div>
-            @endforeach
+
+                <textarea name="comment" rows="4" placeholder="Tulis ulasan Anda" class="comment-box"></textarea>
+                <button type="submit" class="submit-btn">Kirim</button>
+            </form>
+
+
+            <h3 class="section-title">Ulasan dan Rating</h3>
+            @if ($produk->reviewRatings->isEmpty())
+                <p class="no-reviews">Tidak ada ulasan yang tersedia.</p>
+            @else
+                <ul class="review-list">
+                    @foreach ($produk->reviewRatings as $review)
+                        <li class="review-item">
+                            <strong>{{ $review->user->name ?? 'Tidak diketahui' }}</strong>:
+                            <span class="review-stars">
+                                {!! str_repeat('<i class="fa-solid fa-star"></i>', $review->star_rating) !!}
+                            </span>
+                            <p>{{ $review->comments }}</p>
+                            <p><em>{{ $review->created_at->format('d-m-Y') }}</em></p>
+                        </li>
+                    @endforeach
+                </ul>
+            @endif
         </div>
     </div>
-    <form action="{{ route('review.store') }}" method="POST">
-        @csrf
-        <input type="hidden" name="booking_id" value="{{ $produk->id }}">
-        <div class="rate">
-            <input type="radio" id="star5" name="rating" value="5" />
-            <label for="star5" title="5 star">★</label>
-            <input type="radio" id="star4" name="rating" value="4" />
-            <label for="star4" title="4 stars">★</label>
-            <input type="radio" id="star3" name="rating" value="3" />
-            <label for="star3" title="3 stars">★</label>
-            <input type="radio" id="star2" name="rating" value="2" />
-            <label for="star2" title="2 stars">★</label>
-            <input type="radio" id="star1" name="rating" value="1" />
-            <label for="star1" title="1 stars">★</label>
-        </div>
-        <textarea name="comment" rows="4" placeholder="Comment"></textarea>
-        <button type="submit">Submit</button>
-    </form>
-    <h3>Ulasan dan Rating</h3>
-    @if ($produk->reviewRatings->isEmpty())
-        <p>Tidak ada ulasan yang tersedia.</p>
-    @else
-        <ul>
-            @foreach ($produk->reviewRatings as $review)
-                <li>
-                    <strong>{{ $review->user->name ?? 'Tidak diketahui' }}:</strong>
-                    <span>{{ str_repeat('⭐', $review->star_rating) }}</span>
-                    <p>{{ $review->comments }}</p>
-                    <p><em>{{ $review->created_at->format('d-m-Y') }}</em></p>
-                </li>
-            @endforeach
-        </ul>
-    @endif
+
 </x-layout>
