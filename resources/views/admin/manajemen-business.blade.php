@@ -30,15 +30,24 @@
                                 <p class="product-description">{{ $item->deskripsi }}</p>
                                 <p class="product-price">Harga: {{ $item->hl_harga }}</p>
                             </a>
-                            <form action="{{ route('produk.destroy', $item->id) }}" method="POST"
-                                onsubmit="return submitForm(this);">
+                            <form action="{{ route('produk.destroy', $item->id) }}" method="POST" onsubmit="return false;">
                                 @csrf
                                 @method('DELETE')
                                 <a href="{{ route('produk.edit', $item->id) }}" class="btn-edit">Edit</a>
-                                <button type="submit" class="btn-hapus">Hapus</button>
+                                <button type="button" class="btn-hapus" onclick="showPopup()">Hapus</button>
                             </form>
                         </div>
                     @endforeach
+                </div>
+                <div id="popup-confirm" class="popup-overlay" style="display: none;">
+                    <div class="popup-content">
+                        <h3>Konfirmasi Hapus</h3>
+                        <p>Apakah Anda yakin ingin menghapus data ini?</p>
+                        <div class="popup-buttons">
+                            <button class="btn-cancel" onclick="hidePopup()">Batal</button>
+                            <button class="btn-confirm" onclick="confirmDelete()">Hapus</button>
+                        </div>
+                    </div>
                 </div>
             @endif
         @endforeach

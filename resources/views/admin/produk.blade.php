@@ -29,10 +29,9 @@
                                             </ul>
                                         </div>
                                     @endif
-                                    <form action="{{ route('produk.store') }}" method="POST" <form
-                                        action="{{ route('produk.store') }}" method="POST"
-                                        enctype="multipart/form-data">
+                                    <form action="{{ route('produk.store') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
+                                        <input type="hidden" id="silabus-data" name="silabus_data">
                                         <div class="form-group">
                                             <label for="image" class="form-label">Upload Gambar Produk:</label>
                                             <input type="file" name="image" id="image" class="form-control"
@@ -101,18 +100,7 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="card-prod">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Silabus Program</h4>
-                                                    <div id="silabus-container" class="card-scroll">
-                                                        <h3>Silabus</h3>
-                                                        <button type="button" class="btn-tambah-silabus"
-                                                            onclick="addSilabus()">Tambah Silabus</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <input type="hidden" name="silabus_data" id="silabus-data">
                                         <button type="submit" class="btn-tambah-product">Simpan Produk</button>
                                     </form>
                                 </div>
@@ -120,8 +108,19 @@
                         </div>
                     </div>
                 </div>
-
-
-        </section>
-    </main>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Silabus Program</h5>
+                            <div class="activity">
+                                <div id="silabus-container" class="card-scroll">
+                                    <h3>Silabus</h3>
+                                    <button type="button" class="btn-tambah-silabus" onclick="addSilabus()">Tambah Silabus</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 </x-adminlayout>

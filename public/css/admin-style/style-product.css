@@ -104,19 +104,6 @@
     margin-top: 0.5em;
 }
 
-.card-prod {
-    position: fixed;
-    top: 21%;
-    right: 2%;
-    width: 350px;
-}
-
-.card-scroll {
-    max-height: 350px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
 
 @media (max-width: 768px) {
     form {
