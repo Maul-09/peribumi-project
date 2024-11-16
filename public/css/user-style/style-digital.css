@@ -167,3 +167,31 @@ section.product-digital {
     aligh-item: center;
     margin-bottom: 30px;
 }
+
+.rate {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    width: fit-content;
+}
+
+.rate input {
+    display: none; /* Sembunyikan radio button */
+}
+
+.rate label {
+    font-size: 30px; /* Ukuran bintang */
+    color: #ddd; /* Warna bintang tidak aktif */
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.rate label:hover,
+.rate label:hover ~ label {
+    color: #f39c12; /* Warna bintang saat hover */
+}
+
+.rate input:checked ~ label {
+    color: #f39c12; /* Warna bintang aktif */
+}
+

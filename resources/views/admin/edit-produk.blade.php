@@ -49,7 +49,7 @@
 
                                             <div class="form-group">
                                                 <label for="metodologi">Metodologi :</label>
-                                                <input name="metodologi" id="metodologi" class="form-control" required value="{{ $produk->motodologi }}">
+                                                <input name="metodologi" id="metodologi" class="form-control" required value="{{ $produk->metodologi }}">
                                             </div>
 
                                             <div class="form-group">
