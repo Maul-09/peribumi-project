@@ -16,6 +16,26 @@
         <div>
             <div class="title-produk">
                 <h3>Produk Kami</h3>
+                @foreach ($produkGrouped as $type => $produkList)
+                    <h2>{{ $type }}</h2>
+
+                    @if ($produkList->isEmpty())
+                        <p>Tidak ada produk dalam kategori ini.</p>
+                    @else
+                        <div class="product-container">
+                            @foreach ($produkList as $item)
+                                <div class="product-card">
+                                    <a href="{{ route('produk.show', $item->id) }}">
+                                        <img src="{{ asset($item->image) }}" alt="image">
+                                        <h3 class="product-name">{{ $item->nama_produk }}</h3>
+                                        <p class="product-description">{{ $item->deskripsi }}</p>
+                                        <p class="product-price">Harga: {{ $item->hl_harga }}</p>
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
         <br>

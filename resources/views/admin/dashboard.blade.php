@@ -80,18 +80,17 @@
                             <div class="card">
 
                                 <div class="filter">
-                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                            class="bi bi-three-dots"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li class="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
-                                        <li><a class="dropdown-item filter-option" href="#"
-                                                data-filter="today">Today</a></li>
-                                        <li><a class="dropdown-item filter-option" href="#"
-                                                data-filter="month">This Month</a></li>
-                                        <li><a class="dropdown-item filter-option" href="#"
-                                                data-filter="year">This Year</a></li>
+                                    <button class="btn btn-primary dropdown-toggle" type="button"
+                                        id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Pilih Periode
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#" onclick="showChart('today')">Hari
+                                                Ini</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="showChart('week')">Minggu
+                                                Ini</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="showChart('month')">Bulan
+                                                Ini</a></li>
                                     </ul>
                                 </div>
 
@@ -100,94 +99,111 @@
 
                                     <!-- Line Chart -->
                                     <div id="reportsChart"></div>
-
+                                    <canvas id="visitorChart" width="400" height="200"></canvas>
                                     <script>
-                                        document.addEventListener("DOMContentLoaded", () => {
-                                            let chart; // Simpan instance chart
+                                        const ctx = document.getElementById('visitorChart').getContext('2d');
+                                        let visitorChart;
 
-                                            // Fungsi untuk membuat chart
-                                            function createChart(weeks, visits) {
-                                                const chartElement = document.querySelector("#reportsChart");
+                                        // Data pengunjung dari controller
+                                        const chartData = {
+                                            today: {
+                                                labels: [
+                                                    @foreach ($todayVisitors as $data)
+                                                        "{{ $data->hour }}:00"
+                                                        {{ !$loop->last ? ',' : '' }}
+                                                    @endforeach
+                                                ],
+                                                data: [
+                                                    @foreach ($todayVisitors as $data)
+                                                        {{ $data->count }}{{ !$loop->last ? ',' : '' }}
+                                                    @endforeach
+                                                ]
+                                            },
+                                            week: {
+                                                labels: [
+                                                    @foreach ($weekVisitors as $data)
+                                                        "{{ $data->day }}"
+                                                        {{ !$loop->last ? ',' : '' }}
+                                                    @endforeach
+                                                ],
+                                                data: [
+                                                    @foreach ($weekVisitors as $data)
+                                                        {{ $data->count }}{{ !$loop->last ? ',' : '' }}
+                                                    @endforeach
+                                                ]
+                                            },
+                                            month: {
+                                                labels: [
+                                                    @foreach ($monthVisitors as $data)
+                                                        "Minggu ke-{{ $data->week }}"
+                                                        {{ !$loop->last ? ',' : '' }}
+                                                    @endforeach
+                                                ],
+                                                data: [
+                                                    @foreach ($monthVisitors as $data)
+                                                        {{ $data->count }}{{ !$loop->last ? ',' : '' }}
+                                                    @endforeach
+                                                ]
+                                            }
+                                        };
 
-                                                if (chart) {
-                                                    chart.destroy(); // Hancurkan chart lama jika ada
-                                                }
+                                        // Fungsi untuk menampilkan chart berdasarkan periode
+                                        function showChart(period) {
+                                            if (visitorChart) {
+                                                visitorChart.destroy(); // Hapus chart lama
+                                            }
 
-                                                chart = new ApexCharts(chartElement, {
-                                                    series: [{
-                                                        name: 'Pengunjung',
-                                                        data: visits,
-                                                    }],
-                                                    chart: {
-                                                        height: 350,
-                                                        type: 'area',
-                                                        toolbar: {
-                                                            show: false
-                                                        },
-                                                    },
-                                                    markers: {
-                                                        size: 4
-                                                    },
-                                                    colors: ['#4154f1', '#2eca6a', '#ff771d'],
-                                                    fill: {
-                                                        type: "gradient",
-                                                        gradient: {
-                                                            shadeIntensity: 1,
-                                                            opacityFrom: 0.3,
-                                                            opacityTo: 0.4,
-                                                            stops: [0, 90, 100]
+                                            visitorChart = new Chart(ctx, {
+                                                type: 'line',
+                                                data: {
+                                                    labels: chartData[period].labels, // Label untuk periode
+                                                    datasets: [{
+                                                        label: 'Jumlah Pengunjung',
+                                                        data: chartData[period].data, // Data jumlah pengunjung
+                                                        backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna area di bawah garis
+                                                        borderColor: 'rgba(75, 192, 192, 1)', // Warna garis
+                                                        borderWidth: 2, // Ketebalan garis
+                                                        tension: 0.4, // Garis melengkung
+                                                        pointBackgroundColor: 'rgba(255, 99, 132, 1)', // Warna titik data
+                                                        pointRadius: 5, // Ukuran titik data
+                                                        fill: true // Isi area di bawah garis
+                                                    }]
+                                                },
+                                                options: {
+                                                    responsive: true,
+                                                    plugins: {
+                                                        legend: {
+                                                            display: true, // Menampilkan legenda
+                                                            position: 'top' // Posisi legenda di atas
                                                         }
                                                     },
-                                                    dataLabels: {
-                                                        enabled: false
-                                                    },
-                                                    stroke: {
-                                                        curve: 'smooth',
-                                                        width: 2
-                                                    },
-                                                    xaxis: {
-                                                        type: 'datetime',
-                                                        categories: weeks,
-                                                    },
-                                                    tooltip: {
+                                                    scales: {
                                                         x: {
-                                                            format: 'dd/MM/yy'
+                                                            title: {
+                                                                display: true,
+                                                                text: 'Periode' // Judul sumbu X
+                                                            }
                                                         },
+                                                        y: {
+                                                            beginAtZero: true,
+                                                            title: {
+                                                                display: true,
+                                                                text: 'Jumlah Pengunjung' // Judul sumbu Y
+                                                            }
+                                                        }
                                                     }
-                                                });
-
-                                                chart.render(); // Render chart
-                                            }
-
-                                            // Fungsi untuk mengambil data berdasarkan filter
-                                            function fetchFilteredData(filter) {
-                                                fetch(`/filter-data?range=${filter}`)
-                                                    .then(response => response.json())
-                                                    .then(data => {
-                                                        console.log(data); // Debugging
-                                                        // Update chart dan label tanggal
-                                                        createChart(data.weeks, data.visits);
-                                                        document.getElementById('dateLabel').innerText =
-                                                            `/${filter.charAt(0).toUpperCase() + filter.slice(1)}`;
-                                                    })
-                                                    .catch(error => console.error('Error fetching data:', error));
-                                            }
-
-                                            // Event listener untuk dropdown filter
-                                            document.querySelectorAll(".filter-option").forEach(option => {
-                                                option.addEventListener("click", function(e) {
-                                                    e.preventDefault();
-                                                    const filter = this.getAttribute("data-filter");
-                                                    fetchFilteredData(filter);
-                                                });
+                                                }
                                             });
+                                        }
 
-                                            // Buat chart awal dengan data yang sudah ada (dari server)
-                                            const initialWeeks = @json($weeks); // Pastikan $weeks sudah didefinisikan di backend
-                                            const initialVisits = @json($visits); // Pastikan $visits sudah didefinisikan di backend
-                                            createChart(initialWeeks, initialVisits);
+                                        // Tampilkan chart untuk 'Hari Ini (Jam)' secara default
+                                        document.addEventListener('DOMContentLoaded', () => {
+                                            showChart('today');
                                         });
                                     </script>
+
+
+
 
                                     <!-- End Line Chart -->
 
@@ -203,19 +219,6 @@
                 <!-- Right side columns -->
                 <div class="col-lg-4">
                     <div class="card">
-                        <div class="filter">
-                            <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                    class="bi bi-three-dots"></i></a>
-                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                <li class="dropdown-header text-start">
-                                    <h6>Filter</h6>
-                                </li>
-
-                                <li><a class="dropdown-item" href="#">Today</a></li>
-                                <li><a class="dropdown-item" href="#">This Month</a></li>
-                                <li><a class="dropdown-item" href="#">This Year</a></li>
-                            </ul>
-                        </div>
 
                         <div class="card-body">
                             <h5 class="card-title">Task Manager <span>| Today</span></h5>

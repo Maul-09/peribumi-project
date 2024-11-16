@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="{{ asset('css/admin-style/style-product.css') }}">
   <link rel="stylesheet" href="{{ asset('css/admin-style/style-card-product.css') }}">
   <title>Peribumi Consultant - Admin Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <x-nav-bar-admin></x-nav-bar-admin>

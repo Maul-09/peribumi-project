@@ -2,15 +2,12 @@
 
 namespace App\Models;
 
-namespace App\Models;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Visit extends Model
+class Visitor extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['url', 'count'];
+    protected $fillable = ['ip_address'];
 }
-

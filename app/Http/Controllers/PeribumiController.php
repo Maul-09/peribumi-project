@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produk;
+
 class PeribumiController extends Controller
 {
     public function beranda()
@@ -11,7 +13,12 @@ class PeribumiController extends Controller
 
     public function manajemen()
     {
-        return view('user.manajemen');
+        $kat = ['Pengembangan Bisnis', 'Pendampingan Manajemen Bisnis'];
+
+        session(['kategori' => $kat, 'route' => 'manajemen.admin']);
+
+        $produkGrouped = Produk::whereIn('produkType', $kat)->get()->groupBy('produkType');
+        return view('user.manajemen', compact('produkGrouped'));
     }
 
     public function training()
@@ -38,5 +45,4 @@ class PeribumiController extends Controller
     {
         return view('auth.logreg');
     }
-
 }

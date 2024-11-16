@@ -6,6 +6,7 @@ use App\Http\Controllers\CrudController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\PeribumiController;
 
 Route::middleware('auth')->group(function () {
@@ -30,7 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/email/verification-notification', [AuthController::class, 'verifyHandler'])->middleware('throttle:6,1')->name('verification.send');
 });
 
-Route::get('/', [PeribumiController::class, 'beranda'])->middleware('track.visits')->name('beranda');
+Route::get('/', [PeribumiController::class, 'beranda'])->middleware('record.visitor')->name('beranda');
 
 Route::post('/signup', [AuthController::class, 'signup'])->name('signup');
 Route::get('/auth/logreg', [PeribumiController::class, 'logreg'])->name('logreg');
@@ -62,8 +63,6 @@ Route::post('/post/produk', [ProdukController::class, 'store'])->name('produk.st
 Route::get('/produk/{id}', [ProdukController::class, 'show'])->name('produk.show');
 Route::get('/produk/{id}/edit', [ProdukController::class, 'edit'])->name('produk.edit');
 Route::delete('/produk/{id}', [ProdukController::class, 'destroy'])->name('produk.destroy');
-
-Route::get('/filter-data', [AdminController::class, 'filterData']);
 
 Route::post('/profile/change-password/{id}', [CrudController::class, 'changePassword'])->name('change.password');
 
