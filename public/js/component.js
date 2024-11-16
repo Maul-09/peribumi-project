@@ -74,17 +74,34 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+function showPopup(form) {
+    console.log("Popup triggered");
+    const popup = document.getElementById('delete-popup');
+    if (popup) {
+        popup.style.display = 'flex';
+    } else {
+        console.error("Popup element not found");
+    }
 
+    const confirmButton = document.getElementById('confirm-delete');
+    confirmButton.onclick = function () {
+        form.submit();
+        closePopup();
+    };
 
-function showPopup() {
-    document.getElementById("popup-confirm").style.display = "flex";
+    const cancelButton = document.getElementById('cancel-delete');
+    cancelButton.onclick = function () {
+        closePopup();
+    };
 }
 
-function hidePopup() {
-    document.getElementById("popup-confirm").style.display = "none";
+function closePopup() {
+    const popup = document.getElementById('delete-popup');
+    if (popup) {
+        popup.style.display = 'none';
+    }
 }
 
-function confirmDelete() {
-    document.querySelector("form").submit();
-}
+
+
 

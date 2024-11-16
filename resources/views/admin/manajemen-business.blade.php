@@ -34,18 +34,17 @@
                                 @csrf
                                 @method('DELETE')
                                 <a href="{{ route('produk.edit', $item->id) }}" class="btn-edit">Edit</a>
-                                <button type="button" class="btn-hapus" onclick="showPopup()">Hapus</button>
+                                <button type="button" class="btn-hapus" onclick="showPopup(this.form)">Hapus</button>
                             </form>
                         </div>
                     @endforeach
                 </div>
-                <div id="popup-confirm" class="popup-overlay" style="display: none;">
+                <div id="delete-popup" class="popup-overlay">
                     <div class="popup-content">
-                        <h3>Konfirmasi Hapus</h3>
                         <p>Apakah Anda yakin ingin menghapus data ini?</p>
                         <div class="popup-buttons">
-                            <button class="btn-cancel" onclick="hidePopup()">Batal</button>
-                            <button class="btn-confirm" onclick="confirmDelete()">Hapus</button>
+                            <button id="confirm-delete" class="btn-confirm">Ya, Hapus</button>
+                            <button id="cancel-delete" class="btn-cancel">Batal</button>
                         </div>
                     </div>
                 </div>
