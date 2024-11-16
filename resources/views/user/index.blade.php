@@ -10,15 +10,41 @@
             </div>
 
             <div class="produk-details">
-                <p><span class="detail-label">Deskripsi Produk:</span> {{ $produk->deskripsi }}</p>
-                <p><span class="detail-label">Durasi:</span> {{ $produk->durasi }}</p>
-                <p><span class="detail-label">Personil:</span> {{ $produk->personil }}</p>
-                <p><span class="detail-label">Sasaran:</span> {{ $produk->sasaran }}</p>
-                <p><span class="detail-label">Persyaratan:</span> {{ $produk->persyaratan }}</p>
-                <p><span class="detail-label">Metodologi:</span> {{ $produk->metodologi }}</p>
-                <p><span class="detail-label">Jadwal, Lokasi, dan Fasilitas:</span> {{ $produk->jadwal_lokasi_fasilitas }}</p>
-                <p><span class="detail-label">Harga:</span> {{ $produk->desc_harga }} ({{ $produk->hl_harga }})</p>
+                <h3 class="section-title">Detail Produk</h3>
+                <div class="detail-item">
+                    <span class="detail-label">Deskripsi Produk:</span>
+                    <span class="detail-value">{{ $produk->deskripsi }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Durasi:</span>
+                    <span class="detail-value">{{ $produk->durasi }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Personil:</span>
+                    <span class="detail-value">{{ $produk->personil }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Sasaran:</span>
+                    <span class="detail-value">{{ $produk->sasaran }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Persyaratan:</span>
+                    <span class="detail-value">{{ $produk->persyaratan }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Metodologi:</span>
+                    <span class="detail-value">{{ $produk->metodologi }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Jadwal, Lokasi, dan Fasilitas:</span>
+                    <span class="detail-value">{{ $produk->jadwal_lokasi_fasilitas }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Harga:</span>
+                    <span class="detail-value">{{ $produk->desc_harga }} ({{ $produk->hl_harga }})</span>
+                </div>
             </div>
+
 
             <h3 class="section-title">Silabus</h3>
             <div class="silabus-container">
