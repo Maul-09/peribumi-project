@@ -9,8 +9,8 @@
                 <img src="{{ asset($produk->image) }}" alt="Produk Image" class="produk-image">
             </div>
 
+            <h3 class="section-title">Detail Produk</h3>
             <div class="produk-details">
-                <h3 class="section-title">Detail Produk</h3>
                 <div class="detail-item">
                     <span class="detail-label">Deskripsi Produk:</span>
                     <span class="detail-value">{{ $produk->deskripsi }}</span>
@@ -52,7 +52,7 @@
             <div class="silabus-container">
                 @foreach ($produk->silabus as $silabus)
                     <div class="silabus-item">
-                        <div class="silabus-header" onclick="toggleDropdown(this)">
+                        <div class="silabus-header" onclick="Dropdown(this)">
                             <h4 class="silabus-title">{{ $silabus->judul }}</h4>
                             <span class="silabus-toggle">
                                 <i class="fa-solid fa-chevron-down"></i>
@@ -75,9 +75,7 @@
                     </div>
                 @endforeach
             </div>
-
             <hr class="garis-bawah">
-
             <h3 class="section-title">Ulasan dan Rating</h3>
             <form action="{{ route('review.store') }}" method="POST" class="rating-form">
                 @csrf
