@@ -77,9 +77,8 @@ Route::post('/admin/tolak/{id}', [AdminController::class, 'tolakTransaksi'])->na
 
 
 // Route untuk konfirmasi pembelian
-Route::post('/whatssapp/notice/{id}', [ProdukController::class, 'konfirmasiPembelian'])->name('whatsapp.notice');
+Route::get('/whatssapp/notice/{id}', [ProdukController::class, 'konfirmasiPembelian'])->name('whatsapp.notice');
 
-Route::get('/konfirmasi-pembelian/{id}', [ProdukController::class, 'konfirmasiView'])->name('konfirmasiview');
 // Route untuk memproses pembelian setelah konfirmasi
 Route::post('/proses-pembelian/{id}', [ProdukController::class, 'prosesPembelian'])->name('proses.pembelian');
 
