@@ -107,7 +107,30 @@
                 <ul class="review-list">
                     @foreach ($produk->reviewRatings as $review)
                         <li class="review-item">
-                            <strong>{{ $review->user->name ?? 'Tidak diketahui' }}</strong>:
+                            @php
+                                $emote = '';
+                                switch ($review->star_rating) {
+                                    case 5:
+                                        $emote = '🥳'; // Sangat puas
+                                        break;
+                                    case 4:
+                                        $emote = '😄'; // Puas
+                                        break;
+                                    case 3:
+                                        $emote = '🤔'; // Netral
+                                        break;
+                                    case 2:
+                                        $emote = '😞'; // Tidak puas
+                                        break;
+                                    case 1:
+                                        $emote = '🤬'; // Sangat tidak puas
+                                        break;
+                                    default:
+                                        $emote = '❓'; // Tidak diketahui
+                                }
+                            @endphp
+                            <strong>{{ $emote }} {{ $review->user->name ?? 'Tidak diketahui' }}</strong>
+                            <br>
                             <span class="review-stars">
                                 {!! str_repeat('<i class="fa-solid fa-star"></i>', $review->star_rating) !!}
                             </span>
