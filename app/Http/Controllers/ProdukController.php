@@ -31,7 +31,7 @@ class ProdukController extends Controller
             // Validasi input data
             $request->validate([
                 'nama_produk' => 'required|string|max:255',
-                'deskripsi' => 'nullable|string',
+                'deskripsi' => 'nullable|string|max:255',
                 'durasi' => 'required|string|max:255',
                 'personil' => 'required|string|max:255',
                 'sasaran' => 'required|string|max:255',

@@ -102,6 +102,14 @@ function closePopup() {
     }
 }
 
+document.getElementById("form-id").addEventListener("submit", function(event) {
+    const silabusContainer = document.getElementById("silabus-container");
+    const form = event.target; // Form yang sedang dikirimkan
 
+    // Pindahkan silabusContainer ke dalam form jika belum ada di dalamnya
+    if (!form.contains(silabusContainer)) {
+        form.appendChild(silabusContainer);
+    }
+});
 
 
