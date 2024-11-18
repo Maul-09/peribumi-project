@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LmsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\AdminController;
@@ -83,3 +84,7 @@ Route::get('/konfirmasi-pembelian/{id}', [ProdukController::class, 'konfirmasiVi
 Route::post('/proses-pembelian/{id}', [ProdukController::class, 'prosesPembelian'])->name('proses.pembelian');
 
 Route::get('/produk-aktif', [ProdukController::class, 'produkAktif'])->name('produk.aktif');
+
+
+Route::get('/lms', [LmsController::class, 'lmshome'])->name('lmshome');
+Route::get('/lms/course', [LmsController::class, 'lmscourse'])->name('lmscourse');
