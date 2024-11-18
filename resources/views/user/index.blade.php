@@ -45,10 +45,10 @@
                 <img src="#" alt="Produk Image" class="image-card">
                 <span class="detail-label">Harga:</span>
                 <span class="deskripsi-harga">{{ $produk->desc_harga }} ({{ $produk->hl_harga }})</span>
-                <a href="{{ route('konfirmasiview', $produk->id) }}">Beli Produk</a>
+                <a href="{{ route('whatsapp.notice', $produk->id) }}">Beli Produk</a>
             </div>
 
-            <h3 class="section-title">Silabus</h3>
+            <h3 class="section-title">Silabu</h3>
             <div class="silabus-container">
                 @foreach ($produk->silabus as $silabus)
                     <div class="silabus-item">
