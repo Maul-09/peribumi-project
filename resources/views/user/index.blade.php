@@ -39,32 +39,46 @@
                     <span class="detail-label">Jadwal, Lokasi, dan Fasilitas:</span>
                     <span class="detail-value">{{ $produk->jadwal_lokasi_fasilitas }}</span>
                 </div>
-                <div class="detail-item">
-                    <span class="detail-label">Harga:</span>
-                    <span class="detail-value">{{ $produk->desc_harga }} ({{ $produk->hl_harga }})</span>
-                </div>
             </div>
 
+            <div class="card-harga">
+                <img src="#" alt="Produk Image" class="image-card">
+                <span class="detail-label">Harga:</span>
+                <span class="deskripsi-harga">{{ $produk->desc_harga }} ({{ $produk->hl_harga }})</span>
+                <a href="#">Daftar Sekarang</a>
+            </div>
 
             <h3 class="section-title">Silabus</h3>
             <div class="silabus-container">
                 @foreach ($produk->silabus as $silabus)
                     <div class="silabus-item">
-                        <h4 class="silabus-title">{{ $silabus->judul }}</h4>
-                        <p class="silabus-desc"><span class="detail-label">Deskripsi:</span> {{ $silabus->deskripsi }}</p>
-                        <div class="isi-silabus-list">
-                            <h5>Isi Silabus:</h5>
-                            @foreach ($silabus->isiSilabus as $isi)
-                                <div class="isi-silabus-item">
-                                    <p><strong>{{ $isi->judul_isi }}</strong></p>
-                                    <p>{{ $isi->konten }}</p>
-                                </div>
-                            @endforeach
+                        <div class="silabus-header" onclick="toggleDropdown(this)">
+                            <h4 class="silabus-title">{{ $silabus->judul }}</h4>
+                            <span class="silabus-toggle">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <div class="silabus-content">
+                            <p class="silabus-desc">
+                                <span class="detail-label">Deskripsi:</span> {{ $silabus->deskripsi }}
+                            </p>
+                            <div class="isi-silabus-list">
+                                <h5>Isi Silabus:</h5>
+                                @foreach ($silabus->isiSilabus as $isi)
+                                    <div class="isi-silabus-item">
+                                        <p><strong>{{ $isi->judul_isi }}</strong></p>
+                                        <p>{{ $isi->konten }}</p>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 @endforeach
             </div>
 
+            <hr class="garis-bawah">
+
+            <h3 class="section-title">Ulasan dan Rating</h3>
             <form action="{{ route('review.store') }}" method="POST" class="rating-form">
                 @csrf
                 <input type="hidden" name="booking_id" value="{{ $produk->id }}">
@@ -95,9 +109,6 @@
                 <textarea name="comment" rows="4" placeholder="Tulis ulasan Anda" class="comment-box"></textarea>
                 <button type="submit" class="submit-btn">Kirim</button>
             </form>
-
-
-            <h3 class="section-title">Ulasan dan Rating</h3>
             @if ($produk->reviewRatings->isEmpty())
                 <p class="no-reviews">Tidak ada ulasan yang tersedia.</p>
             @else

@@ -33,6 +33,7 @@
 
     <script src="{{ asset('js/script.js') }}"></script>
     <script src="{{ asset('js/nav.js') }}"></script>
+    <script src="{{ asset('js/product.js') }}"></script>
 </body>
 
 </html>
