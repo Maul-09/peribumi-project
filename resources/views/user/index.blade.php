@@ -9,8 +9,8 @@
                 <img src="{{ asset($produk->image) }}" alt="Produk Image" class="produk-image">
             </div>
 
+            <h3 class="section-title">Detail Produk</h3>
             <div class="produk-details">
-                <h3 class="section-title">Detail Produk</h3>
                 <div class="detail-item">
                     <span class="detail-label">Deskripsi Produk:</span>
                     <span class="detail-value">{{ $produk->deskripsi }}</span>
@@ -75,9 +75,7 @@
                     </div>
                 @endforeach
             </div>
-
             <hr class="garis-bawah">
-
             <h3 class="section-title">Ulasan dan Rating</h3>
             <form action="{{ route('review.store') }}" method="POST" class="rating-form">
                 @csrf
