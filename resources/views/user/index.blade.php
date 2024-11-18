@@ -52,7 +52,7 @@
             <div class="silabus-container">
                 @foreach ($produk->silabus as $silabus)
                     <div class="silabus-item">
-                        <div class="silabus-header" onclick="toggleDropdown(this)">
+                        <div class="silabus-header" onclick="Dropdown(this)">
                             <h4 class="silabus-title">{{ $silabus->judul }}</h4>
                             <span class="silabus-toggle">
                                 <i class="fa-solid fa-chevron-down"></i>

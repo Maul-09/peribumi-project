@@ -1,4 +1,4 @@
-function toggleDropdown(header) {
+function Dropdown(header) {
     const content = header.nextElementSibling;
     const icon = header.querySelector('.silabus-toggle i');
 
