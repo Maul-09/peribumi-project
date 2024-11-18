@@ -41,13 +41,6 @@
                 </div>
             </div>
 
-            <div class="card-harga">
-                <img src="#" alt="Produk Image" class="image-card">
-                <span class="detail-label">Harga:</span>
-                <span class="deskripsi-harga">{{ $produk->desc_harga }} ({{ $produk->hl_harga }})</span>
-                <a href="{{ route('konfirmasiview', $produk->id) }}">Beli Produk</a>
-            </div>
-
             <h3 class="section-title">Silabus</h3>
             <div class="silabus-container">
                 @foreach ($produk->silabus as $silabus)
@@ -123,6 +116,16 @@
                     @endforeach
                 </ul>
             @endif
+        </div>
+        <div class="card-harga">
+            <img src="{{ asset($produk->image) }}" alt="Produk Image" class="image-card">
+            <div class="content">
+                <span class="detail-label">Harga:</span>
+                <span class="deskripsi-harga">{{ $produk->hl_harga }}</span>
+                <span class="detail-label">Deskripsi Harga:</span>
+                <span class="deskripsi-harga">{{ $produk->desc_harga }}</span>
+                <a href="{{ route('konfirmasiview', $produk->id) }}" class="btn-beli">Beli Produk</a>
+            </div>
         </div>
     </div>
 

@@ -1,16 +1,17 @@
 .full-screen {
-    width: 100vw;
-    height: 100vh;
+    padding: 50px;
+    margin: 0;
+    display: flex;
     overflow-y: auto;
     background-color: #fff;
-    padding: 20px;
 }
 
+/*---------------- Title Produk --------------------- */
+
 .container {
-    max-width: 900px;
-    margin: 0 20vh;
+    width: 1100px;
+    margin: 0 15px;
     padding: 20px;
-    border-right: 2px solid #ddd;
     background-color: #ffffff;
 
 }
@@ -72,6 +73,8 @@
     word-wrap: break-word;
 
 }
+
+/*---------------- Silabus --------------------- */
 
 .silabus-container {
     width: 90%;
@@ -183,9 +186,12 @@
 }
 
 .garis-bawah{
+    width: 50%;
     margin-bottom: 30px;
     margin-top: 30px;
 }
+
+/*---------------- Rating dan Comment --------------------- */
 
 .rate {
     display: flex;
@@ -252,6 +258,8 @@
     letter-spacing: 1px;
 }
 
+/*---------------- Review Collom --------------------- */
+
 .no-reviews {
     text-align: center;
     font-size: 16px;
@@ -311,6 +319,67 @@
     background: #f1f1f1;
     transform: translateY(-2px);
     transition: 0.3s ease-in-out;
+}
+
+/*---------------- Card harga --------------------- */
+
+.card-harga {
+    position: sticky;
+    top: 20;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-right: auto;
+    margin-left: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 400px;
+    z-index: 1000000;
+}
+
+.image-card {
+    width: 300px;
+    max-height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.deskripsi-harga {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.btn-beli {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-beli:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
 }
 
 @media (max-width: 480px) {
