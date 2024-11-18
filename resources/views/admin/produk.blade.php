@@ -29,7 +29,7 @@
                                             </ul>
                                         </div>
                                     @endif
-                                    <form action="{{ route('produk.store') }}" method="POST" enctype="multipart/form-data">
+                                    <form action="{{ route('produk.store') }}" method="POST" enctype="multipart/form-data" id="form-id">
                                         @csrf
                                         <input type="hidden" id="silabus-data" name="silabus_data">
                                         <div class="form-group">
