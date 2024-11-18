@@ -48,6 +48,9 @@
                         <a href="{{ route('editProfile', auth()->user()->id) }}" class="menu-items">
                             <i class="fas fa-user-edit"></i> Profile
                         </a>
+                        <a href="{{ route('produk.aktif', auth()->user()->id) }}" class="menu-items">
+                            <i class="fas fa-user-edit"></i> Produk
+                        </a>
                         <button type="drop-button" class="menu-items logout-button" onclick="confirmLogout()">
                             <i class="fas fa-sign-out-alt"></i> Logout
                         </button>

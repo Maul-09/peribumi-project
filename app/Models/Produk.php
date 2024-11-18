@@ -32,4 +32,11 @@ class Produk extends Model
     {
         return $this->hasMany(ReviewRating::class, 'booking_id'); // Sesuaikan dengan kolom yang benar
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'user_produk')
+        ->withPivot('status_transaksi', 'tanggal_beli', 'tanggal_berakhir')
+        ->wherePivot('status_transaksi', 'confirmed'); // hanya pengguna yang membeli dan mengonfirmasi
+    }
 }

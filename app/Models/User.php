@@ -34,5 +34,11 @@ class User extends Authenticatable implements MustVerifyEmail
         });
     }
 
+    public function produk()
+    {
+        return $this->belongsToMany(Produk::class, 'user_produk')
+        ->withPivot('status_transaksi', 'tanggal_beli', 'tanggal_berakhir')
+        ->wherePivot('status_transaksi', 'confirmed'); // hanya produk yang terkonfirmasi
+    }
     // Anda juga dapat menambahkan metode lain di sini jika diperlukan
 }

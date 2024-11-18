@@ -2,7 +2,7 @@
     width: 100vw;
     height: 100vh;
     overflow-y: auto;
-    background-color: #f9f9f9;
+    background-color: #fff;
     padding: 20px;
 }
 
@@ -11,8 +11,7 @@
     margin: 0 auto;
     padding: 20px;
     background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 .produk-header {
@@ -52,52 +51,139 @@
 
 .detail-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    padding: 10px 0;
-    border-bottom: 1px solid #ecf0f1;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+
 }
 
 .detail-label {
     font-size: 16px;
     font-weight: bold;
     color: #34495e;
-    flex: 1;
+    margin-bottom: 8px;
     text-transform: capitalize;
 }
 
 .detail-value {
     font-size: 16px;
     color: #7f8c8d;
-    flex: 2;
-    text-align: right;
     word-wrap: break-word;
-}
 
-.detail-item:hover {
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    transition: 0.3s ease-in-out;
 }
-
 
 .silabus-container {
-    margin-top: 20px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
 }
 
 .silabus-item {
-    margin: 15px 0;
-    padding: 10px;
-    border: 1px solid #e1e1e1;
+    border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #f7f9fc;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+.silabus-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 15px 20px;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+
 .silabus-title {
-    font-size: 18px;
-    color: #2980b9;
+    margin: 0;
+    flex: 1;
+}
+
+.silabus-toggle i {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: #5c5b5b;
+}
+
+.silabus-content {
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    display: none;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.silabus-content.open {
+    display: block;
+}
+
+.silabus-desc {
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.isi-silabus-list {
+    margin-top: 15px;
+}
+
+.isi-silabus-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-left: 3px solid #a6a1a1;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.isi-silabus-item p {
+    margin: 0 0 5px;
+    font-size: 0.95rem;
+}
+
+.isi-silabus-item p strong {
+    color: #a6a1a1;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.isi-silabus-list h5 {
+    font-size: 14px;
+    font-weight: bold;
     margin-bottom: 10px;
+}
+
+.isi-silabus-item p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.garis-bawah{
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .rate {
@@ -143,6 +229,7 @@
     background-color: #2980b9;
     color: white;
     padding: 10px 20px;
+    margin-bottom: 40px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -174,9 +261,12 @@
 
 .review-list {
     list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     padding: 0;
     margin: 0 auto;
-    max-width: 800px;
+    width: 1000px;
 }
 
 .review-item {
@@ -186,6 +276,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     position: relative;
+    max-width: 1200px;
 }
 
 .review-item strong {
@@ -219,4 +310,13 @@
     background: #f1f1f1;
     transform: translateY(-2px);
     transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 480px) {
+    .review-list {
+        max-width: 400px;
+        margin-top: 20px;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
 }
