@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Visit;
 use App\Models\Produk;
 use App\Models\Visitor;
+use App\Models\UserProduk;
 use App\Models\ReviewRating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -34,7 +35,7 @@ class AdminController extends Controller
             ->groupBy('hour')
             ->orderBy('hour')
             ->get();
-            
+
         // Data untuk tampilan Minggu (berdasarkan hari dalam minggu)
         $weekVisitors = DB::table('visitors')
             ->select(DB::raw('DAYNAME(created_at) as day, COUNT(*) as count'))
@@ -52,8 +53,12 @@ class AdminController extends Controller
             ->orderBy('week')
             ->get();
 
+        $transaksiPending = UserProduk::with('produk', 'user')  // Load relasi produk dan user
+            ->where('status_transaksi', 'pending')
+            ->get();
+
         // Mengembalikan view dashboard dengan data yang dibutuhkan
-        return view('admin.dashboard', compact('todayVisitors', 'weekVisitors', 'monthVisitors', 'formattedAverageRating', 'userCount', 'totalProducts'));
+        return view('admin.dashboard', compact('transaksiPending', 'todayVisitors', 'weekVisitors', 'monthVisitors', 'formattedAverageRating', 'userCount', 'totalProducts'));
     }
 
 
@@ -141,5 +146,43 @@ class AdminController extends Controller
         }
 
         return view('admin.organizer', compact('produkGrouped'));
+    }
+
+    public function konfirmasiTransaksi($id)
+    {
+        // Ambil transaksi dengan ID yang diberikan
+        $userProduk = UserProduk::findOrFail($id);
+
+        // Update status transaksi menjadi confirmed
+        $userProduk->status_transaksi = 'confirmed';
+
+        $userProduk->tanggal_beli = now();
+        $userProduk->tanggal_berakhir = now()->addDays(30);
+        // Set status akses produk menjadi aktif
+        $userProduk->status_akses = 'aktif';
+
+        // Simpan perubahan
+        $userProduk->save();
+
+        // Redirect ke halaman dashboard admin
+        return redirect()->route('admin')->with('success', 'Transaksi telah dikonfirmasi!');
+    }
+
+    public function tolakTransaksi($id)
+    {
+        // Ambil transaksi dengan ID yang diberikan
+        $userProduk = UserProduk::findOrFail($id);
+
+        // Update status transaksi menjadi rejected
+        $userProduk->status_transaksi = 'rejected';
+
+        // Set status akses produk menjadi nonaktif
+        $userProduk->status_akses = 'nonaktif';
+
+        // Simpan perubahan
+        $userProduk->save();
+
+        // Redirect ke halaman dashboard admin dengan pesan sukses
+        return redirect()->route('admin')->with('success', 'Transaksi telah ditolak!');
     }
 }

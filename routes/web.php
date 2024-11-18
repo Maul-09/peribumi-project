@@ -8,6 +8,7 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\PeribumiController;
+use App\Http\Controllers\AdminTransaksiController;
 
 Route::middleware('auth')->group(function () {
     Route::middleware('verified')->group(function () {
@@ -67,3 +68,18 @@ Route::delete('/produk/{id}', [ProdukController::class, 'destroy'])->name('produ
 Route::post('/profile/change-password/{id}', [CrudController::class, 'changePassword'])->name('change.password');
 
 Route::post('review-store', [ReviewController::class, 'reviewStore'])->name('review.store');
+
+
+Route::post('/admin/konfirmasi/{id}', [AdminController::class, 'konfirmasiTransaksi'])->name('admin.konfirmasi');
+
+Route::post('/admin/tolak/{id}', [AdminController::class, 'tolakTransaksi'])->name('admin.tolak');
+
+
+// Route untuk konfirmasi pembelian
+Route::post('/whatssapp/notice/{id}', [ProdukController::class, 'konfirmasiPembelian'])->name('whatsapp.notice');
+
+Route::get('/konfirmasi-pembelian/{id}', [ProdukController::class, 'konfirmasiView'])->name('konfirmasiview');
+// Route untuk memproses pembelian setelah konfirmasi
+Route::post('/proses-pembelian/{id}', [ProdukController::class, 'prosesPembelian'])->name('proses.pembelian');
+
+Route::get('/produk-aktif', [ProdukController::class, 'produkAktif'])->name('produk.aktif');

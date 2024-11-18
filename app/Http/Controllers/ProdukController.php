@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Produk;
 use App\Models\Silabus;
 use App\Models\IsiSilabus;
+use App\Models\UserProduk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
 class ProdukController extends Controller
@@ -210,5 +213,68 @@ class ProdukController extends Controller
         $produk->delete();
 
         return redirect()->back()->with('success', 'Produk berhasil dihapus!');
+    }
+
+    public function konfirmasiPembelian($id)
+    {
+        $produk = Produk::findOrFail($id);
+        $user = Auth::user();
+
+        // Cek apakah produk sudah dibeli
+        $userProduk = UserProduk::where('user_id', $user->id)
+            ->where('produk_id', $produk->id)
+            ->first();
+
+        if (!$userProduk) {
+            // Jika belum dibeli, buat transaksi baru
+            $userProduk = new UserProduk();
+            $userProduk->user_id = $user->id;
+            $userProduk->produk_id = $produk->id;
+            $userProduk->status_transaksi = 'pending';  // Status pending
+            $userProduk->save();
+        } else {
+            // Jika sudah ada, update status menjadi pending
+            $userProduk->status_transaksi = 'pending';  // Status pending
+            $userProduk->save();
+        }
+
+        // Redirect ke WhatsApp
+        $whatsappMessage = "Hallo, saya ingin membeli produk: " . $produk->nama_produk;
+        return redirect()->away("https://wa.me/6281586839469?text=" . urlencode($whatsappMessage));
+    }
+
+    public function prosesPembelian($produk_id)
+    {
+        // Ambil produk berdasarkan ID
+        $produk = Produk::findOrFail($produk_id);
+
+        // Buat transaksi baru untuk pembelian produk
+        $transaksi = new UserProduk();
+        $transaksi->user_id = Auth::id(); // Asumsi pengguna yang login
+        $transaksi->produk_id = $produk->id;
+        $transaksi->status_transaksi = 'pending'; // Status awal transaksi
+        $transaksi->tanggal_beli = now();
+        $transaksi->tanggal_berakhir = now()->addDays($produk->durasi); // Durasi produk
+        $transaksi->save();
+
+        // Arahkan pengguna ke halaman konfirmasi sukses atau dashboard
+        return redirect()->route('user.dashboard')->with('success', 'Pembelian produk berhasil. Silakan menunggu konfirmasi.');
+    }
+
+    public function konfirmasiView($id)
+    {
+        $produk = Produk::findOrFail($id);
+        return view('user.konfirmasi', compact('produk'));
+    }
+
+    public function produkAktif()
+    {
+        $produkDibeli = Auth::user()->produk;
+
+        foreach ($produkDibeli as $produk) {
+            $produk->pivot->tanggal_beli = Carbon::parse($produk->pivot->tanggal_beli);
+            $produk->pivot->tanggal_berakhir = Carbon::parse($produk->pivot->tanggal_berakhir);
+        }
+        return view('user.produk-aktif', compact('produkDibeli'));
     }
 }

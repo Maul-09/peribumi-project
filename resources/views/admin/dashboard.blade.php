@@ -300,6 +300,39 @@
                 </div>
         </section>
 
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama Produk</th>
+                    <th>Nama Pengguna</th>
+                    <th>Status Transaksi</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($transaksiPending as $transaksi)
+                    <tr>
+                        <td>{{ $transaksi->produk->nama_produk }}</td>
+                        <td>{{ $transaksi->user->name }}</td>
+                        <td>{{ $transaksi->status_transaksi }}</td>
+                        <td>
+                            <!-- Button Konfirmasi -->
+                            <form action="{{ route('admin.konfirmasi', $transaksi->id) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-success">Konfirmasi Pembelian</button>
+                            </form>
+
+                            <form action="{{ route('admin.tolak', $transaksi->id) }}" method="POST"
+                                style="display:inline;">
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Tolak</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+
     </main><!-- End #main -->
 
 </x-adminlayout>
