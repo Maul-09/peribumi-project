@@ -240,7 +240,9 @@ class ProdukController extends Controller
 
         // Redirect ke WhatsApp
         $whatsappMessage = "Hallo, saya ingin membeli produk: " . $produk->nama_produk;
-        return redirect()->away("https://wa.me/6281586839469?text=" . urlencode($whatsappMessage));
+        $whatsappUrl = "https://wa.me/6281586839469?text=" . urlencode($whatsappMessage);
+
+        return view('user.konfirmasi', compact('whatsappUrl', 'produk'));
     }
 
     public function prosesPembelian($produk_id)
@@ -259,12 +261,6 @@ class ProdukController extends Controller
 
         // Arahkan pengguna ke halaman konfirmasi sukses atau dashboard
         return redirect()->route('user.dashboard')->with('success', 'Pembelian produk berhasil. Silakan menunggu konfirmasi.');
-    }
-
-    public function konfirmasiView($id)
-    {
-        $produk = Produk::findOrFail($id);
-        return view('user.konfirmasi', compact('produk'));
     }
 
     public function produkAktif()
