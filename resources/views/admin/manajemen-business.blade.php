@@ -29,7 +29,8 @@
                                 <h3 class="product-name">{{ $item->nama_produk }}</h3>
                                 <p class="product-description">{{ $item->deskripsi }}</p>
                                 <p class="product-price">Harga: {{ $item->hl_harga }}</p>
-                                <!-- Tampilkan Rata-rata Rating -->
+                            </a>
+                            <!-- Tampilkan Rata-rata Rating -->
                                     <p class="rating">
                                         @if ($item->averageRating > 0)
                                             @php
@@ -57,7 +58,6 @@
                                             <span class="text-muted">Belum ada rating</span>
                                         @endif
                                     </p>
-                            </a>
                             <form action="{{ route('produk.destroy', $item->id) }}" method="POST" onsubmit="return false;">
                                 @csrf
                                 @method('DELETE')
