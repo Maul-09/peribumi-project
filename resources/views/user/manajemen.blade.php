@@ -31,7 +31,8 @@
                                     <h3 class="product-name">{{ $item->nama_produk }}</h3>
                                     <p class="product-description">{{ $item->deskripsi }}</p>
                                     <p class="product-price">Harga: {{ $item->hl_harga }}</p>
-                                    <!-- Tampilkan Rata-rata Rating -->
+                                </a>
+                                <!-- Tampilkan Rata-rata Rating -->
                                     <p class="rating">
                                         @if ($item->averageRating > 0)
                                             @php
@@ -60,7 +61,6 @@
                                         @endif
                                     </p>
 
-                                </a>
                             </div>
                         @endforeach
                     </div>
