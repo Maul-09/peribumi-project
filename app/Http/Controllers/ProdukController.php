@@ -237,25 +237,7 @@ class ProdukController extends Controller
         $whatsappMessage = "Hallo, saya ingin membeli produk: " . $produk->nama_produk;
         $whatsappUrl = "https://wa.me/6281586839469?text=" . urlencode($whatsappMessage);
 
-        return view('user.konfirmasi', compact('whatsappUrl', 'produk'));
-    }
-
-    public function prosesPembelian($produk_id)
-    {
-        // Ambil produk berdasarkan ID
-        $produk = Produk::findOrFail($produk_id);
-
-        // Buat transaksi baru untuk pembelian produk
-        $transaksi = new UserProduk();
-        $transaksi->user_id = Auth::id(); // Asumsi pengguna yang login
-        $transaksi->produk_id = $produk->id;
-        $transaksi->status_transaksi = 'pending'; // Status awal transaksi
-        $transaksi->tanggal_beli = now();
-        $transaksi->tanggal_berakhir = now()->addDays($produk->durasi); // Durasi produk
-        $transaksi->save();
-
-        // Arahkan pengguna ke halaman konfirmasi sukses atau dashboard
-        return redirect()->route('user.dashboard')->with('success', 'Pembelian produk berhasil. Silakan menunggu konfirmasi.');
+        return view('user.index', compact('whatsappUrl', 'produk'));
     }
 
     public function produkAktif()

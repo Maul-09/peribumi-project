@@ -106,37 +106,37 @@
             @else
                 <ul class="review-list">
                     @foreach ($produk->reviewRatings as $review)
-                        <li class="review-item">
-                            @php
-                                $emote = '';
-                                switch ($review->star_rating) {
-                                    case 5:
-                                        $emote = '🥳'; // Sangat puas
-                                        break;
-                                    case 4:
-                                        $emote = '😄'; // Puas
-                                        break;
-                                    case 3:
-                                        $emote = '🤔'; // Netral
-                                        break;
-                                    case 2:
-                                        $emote = '😞'; // Tidak puas
-                                        break;
-                                    case 1:
-                                        $emote = '🤬'; // Sangat tidak puas
-                                        break;
-                                    default:
-                                        $emote = '❓'; // Tidak diketahui
-                                }
-                            @endphp
-                            <strong>{{ $emote }} {{ $review->user->name ?? 'Tidak diketahui' }}</strong>
-                            <br>
-                            <span class="review-stars">
-                                {!! str_repeat('<i class="fa-solid fa-star"></i>', $review->star_rating) !!}
-                            </span>
-                            <p>{{ $review->comments }}</p>
-                            <p><em>{{ $review->created_at->format('d-m-Y') }}</em></p>
-                        </li>
+                    <li class="review-item">
+                        @php
+                            $emote = '';
+                            switch ($review->star_rating) {
+                                case 5:
+                                    $emote = '<i class="fa-solid fa-face-grin-stars color-emote"></i>'; // Sangat puas
+                                    break;
+                                case 4:
+                                    $emote = '<i class="fa-solid fa-face-smile color-emote"></i>'; // Puas
+                                    break;
+                                case 3:
+                                    $emote = '<i class="fa-solid fa-face-meh color-emote"></i>'; // Netral
+                                    break;
+                                case 2:
+                                    $emote = '<i class="fa-solid fa-face-frown color-emote"></i>'; // Tidak puas
+                                    break;
+                                case 1:
+                                    $emote = '<i class="fa-solid fa-face-angry color-emote"></i>'; // Sangat tidak puas
+                                    break;
+                                default:
+                                    $emote = '<i class="fa-solid fa-circle-question text-muted"></i>'; // Tidak diketahui
+                            }
+                        @endphp
+                        <strong>{!! $emote !!} {{ $review->user->name ?? 'Tidak diketahui' }}</strong>
+                        <br>
+                        <span class="review-stars">
+                            {!! str_repeat('<i class="fa-solid fa-star text-warning"></i>', $review->star_rating) !!}
+                        </span>
+                        <p>{{ $review->comments }}</p>
+                        <p><em>{{ $review->created_at->format('d-m-Y') }}</em></p>
+                    </li>
                     @endforeach
                 </ul>
             @endif
@@ -148,9 +148,28 @@
                 <span class="deskripsi-harga">{{ $produk->hl_harga }}</span>
                 <span class="detail-label">Deskripsi Harga:</span>
                 <span class="deskripsi-harga">{{ $produk->desc_harga }}</span>
-                <a href="{{ route('whatsapp.notice', $produk->id) }}" class="btn-beli">Beli Produk</a>
+                <a href="#" class="btn-beli" id="openModal" data-produk-nama="{{ $produk->nama_produk }}"
+                    data-produk-harga="{{ $produk->hl_harga }}" data-produk-durasi="{{ $produk->durasi }}"
+                    data-whatsapp-url="{{ url('https://wa.me/6281586839469?text=' . urlencode('Saya ingin membeli produk ' . $produk->nama_produk)) }}">Beli
+                    Produk</a>
+            </div>
+        </div>
+
+        <!-- Modal Konfirmasi Pembelian -->
+        <div id="konfirmasiModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <h5 id="modalProdukNama"></h5>
+                <p><strong>Harga:</strong> <span id="modalHarga"></span></p>
+                <p><strong>Durasi:</strong> <span id="modalDurasi"></span> Hari</p>
+
+                <h3>Konfirmasi Pembelian</h3>
+                <p>Klik tombol di bawah ini untuk melanjutkan ke WhatsApp dan mengonfirmasi pembelian Anda:</p>
+
+                <a href="#" id="whatsappLink" class="btn btn-success" target="_blank">Konfirmasi via
+                    WhatsApp</a>
+                <a href="#" class="btn btn-danger" id="closeModalBtn">Batal</a>
             </div>
         </div>
     </div>
-
 </x-layout>

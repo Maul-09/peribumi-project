@@ -1,0 +1,121 @@
+/* Style untuk modal */
+.modal {
+    display: none; /* Awalnya modal tidak terlihat */
+    position: fixed;
+    z-index: 1000; /* Pastikan modal di atas konten lainnya */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan hitam */
+    overflow: auto; /* Menambahkan scroll jika diperlukan */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Konten modal */
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: modal-in 0.4s ease-out; /* Animasi muncul */
+}
+
+/* Animasi modal muncul */
+@keyframes modal-in {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Tombol close di pojok kanan atas */
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: #333;
+}
+
+/* Styling untuk judul dan konten modal */
+.modal-content h5 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.modal-content p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #666;
+}
+
+.modal-content h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #444;
+}
+
+/* Tombol dalam modal */
+.modal-content .btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    margin: 10px 0;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-content .btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.modal-content .btn-success:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.modal-content .btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.modal-content .btn-danger:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+/* Responsif untuk perangkat mobile */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 20px;
+        width: 95%;
+    }
+
+    .modal-content h5 {
+        font-size: 20px;
+    }
+
+    .modal-content p {
+        font-size: 14px;
+    }
+}
