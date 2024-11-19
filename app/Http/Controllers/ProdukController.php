@@ -143,7 +143,7 @@ class ProdukController extends Controller
     public function update(Request $request, $id)
     {
         // Validasi input data
-        $request->validate([
+        $validatedData = $request->validate([
             'nama_produk' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
             'durasi' => 'required|string|max:255',
@@ -156,57 +156,52 @@ class ProdukController extends Controller
             'hl_harga' => 'required|string|max:255',
             'produkType' => 'nullable|string|max:255',
 
-            'silabus' => 'array',
+            'silabus' => 'nullable|array',
             'silabus.*.judul' => 'required|string|max:255',
-            'silabus.*.deskripsi' => 'nullable|string',
-            'silabus.*.isi_silabus' => 'array',
+            'silabus.*.isi_silabus' => 'nullable|array',
             'silabus.*.isi_silabus.*.judul_isi' => 'required|string|max:255',
-            'silabus.*.isi_silabus.*.konten' => 'nullable|string',
         ]);
 
         // Ambil produk berdasarkan ID
         $produk = Produk::findOrFail($id);
 
         // Update data produk
-        $produk->update([
-            'nama_produk' => $request->input('nama_produk'),
-            'deskripsi' => $request->input('deskripsi'),
-            'durasi' => $request->input('durasi'),
-            'personil' => $request->input('personil'),
-            'sasaran' => $request->input('sasaran'),
-            'persyaratan' => $request->input('persyaratan'),
-            'metodologi' => $request->input('metodologi'),
-            'jadwal_lokasi_fasilitas' => $request->input('jadwal_lokasi_fasilitas'),
-            'desc_harga' => $request->input('desc_harga'),
-            'hl_harga' => $request->input('hl_harga'),
-            'produkType' => $request->input('produkType'),
-        ]);
+        $produk->update($validatedData);
 
-        // Hapus silabus lama terkait produk
-        $produk->silabus()->delete();
+        // Buat array untuk menyimpan ID silabus baru
+        $silabusBaruIDs = [];
 
-        // Simpan silabus dan isi silabus baru
-        foreach ($request->input('silabus', []) as $silabusData) {
-            $silabus = Silabus::create([
-                'produk_id' => $produk->id,
-                'judul' => $silabusData['judul'],
-                'deskripsi' => $silabusData['deskripsi'],
-            ]);
+        if (!empty($validatedData['silabus'])) {
+            foreach ($validatedData['silabus'] as $silabusData) {
+                $silabus = $produk->silabus()->updateOrCreate(
+                    ['judul' => $silabusData['judul']], // Cari berdasarkan judul
+                    ['judul' => $silabusData['judul']]  // Update atau buat baru
+                );
 
-            // Simpan isi silabus
-            foreach ($silabusData['isi_silabus'] ?? [] as $isiData) {
-                IsiSilabus::create([
-                    'silabus_id' => $silabus->id,
-                    'judul_isi' => $isiData['judul_isi'],
-                    'konten' => $isiData['konten'],
-                ]);
+                // Simpan ID silabus baru
+                $silabusBaruIDs[] = $silabus->id;
+
+                if (!empty($silabusData['isi_silabus'])) {
+                    foreach ($silabusData['isi_silabus'] as $isiSilabusData) {
+                        $silabus->isiSilabus()->updateOrCreate(
+                            ['judul_isi' => $isiSilabusData['judul_isi']],
+                            ['judul_isi' => $isiSilabusData['judul_isi']]
+                        );
+                    }
+                }
             }
         }
+
+        // Hapus silabus yang tidak ada dalam data baru
+        $produk->silabus()->whereNotIn('id', $silabusBaruIDs)->delete();
 
         $route = session('route');
         return redirect()->route($route)->with('success', 'Produk dan silabus berhasil diperbarui!');
     }
 
+
+
+    
     public function destroy($id)
     {
         $produk = Produk::findOrFail($id);

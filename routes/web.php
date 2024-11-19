@@ -64,6 +64,7 @@ Route::get('/produk/create', [ProdukController::class, 'create'])->name('produk.
 Route::post('/post/produk', [ProdukController::class, 'store'])->name('produk.store');
 Route::get('/produk/{id}', [ProdukController::class, 'show'])->name('produk.show');
 Route::get('/produk/{id}/edit', [ProdukController::class, 'edit'])->name('produk.edit');
+Route::put('/produk/{id}/edit/update', [ProdukController::class, 'update'])->name('produk.update');
 Route::delete('/produk/{id}', [ProdukController::class, 'destroy'])->name('produk.destroy');
 
 Route::post('/profile/change-password/{id}', [CrudController::class, 'changePassword'])->name('change.password');

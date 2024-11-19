@@ -20,8 +20,9 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Tambah Produk</h4>
-                                        <form action="{{ route('produk.store') }}" method="POST">
+                                        <form action="{{ route('produk.update', $produk->id) }}" method="POST">
                                             @csrf
+                                            @method('PUT')
                                             <div class="form-group">
                                                 <label for="nama_produk">Nama Produk:</label>
                                                 <input type="text" name="nama_produk" id="nama_produk" class="form-control" required value="{{ $produk->nama_produk }}">
@@ -75,9 +76,11 @@
                                             <label for="kategori">Pilih Kategori:</label>
                                             <select name="produkType" id="produkType">
                                                 <option value="">Pilih Kategori</option>
-                                                    @foreach($kategori as $kat)
-                                                <option value="{{ $kat }}">{{ $kat }}</option>
-                                                    @endforeach
+                                                @foreach($kategori as $kat)
+                                                    <option value="{{ $kat }}" {{ $kat == $produk->produkType ? 'selected' : '' }}>
+                                                        {{ $kat }}
+                                                    </option>
+                                                @endforeach
                                             </select>
 
                                             
