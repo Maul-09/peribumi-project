@@ -106,37 +106,37 @@
             @else
                 <ul class="review-list">
                     @foreach ($produk->reviewRatings as $review)
-                        <li class="review-item">
-                            @php
-                                $emote = '';
-                                switch ($review->star_rating) {
-                                    case 5:
-                                        $emote = '🥳'; // Sangat puas
-                                        break;
-                                    case 4:
-                                        $emote = '😄'; // Puas
-                                        break;
-                                    case 3:
-                                        $emote = '🤔'; // Netral
-                                        break;
-                                    case 2:
-                                        $emote = '😞'; // Tidak puas
-                                        break;
-                                    case 1:
-                                        $emote = '🤬'; // Sangat tidak puas
-                                        break;
-                                    default:
-                                        $emote = '❓'; // Tidak diketahui
-                                }
-                            @endphp
-                            <strong>{{ $emote }} {{ $review->user->name ?? 'Tidak diketahui' }}</strong>
-                            <br>
-                            <span class="review-stars">
-                                {!! str_repeat('<i class="fa-solid fa-star"></i>', $review->star_rating) !!}
-                            </span>
-                            <p>{{ $review->comments }}</p>
-                            <p><em>{{ $review->created_at->format('d-m-Y') }}</em></p>
-                        </li>
+                    <li class="review-item">
+                        @php
+                            $emote = '';
+                            switch ($review->star_rating) {
+                                case 5:
+                                    $emote = '<i class="fa-solid fa-face-grin-stars color-emote"></i>'; // Sangat puas
+                                    break;
+                                case 4:
+                                    $emote = '<i class="fa-solid fa-face-smile color-emote"></i>'; // Puas
+                                    break;
+                                case 3:
+                                    $emote = '<i class="fa-solid fa-face-meh color-emote"></i>'; // Netral
+                                    break;
+                                case 2:
+                                    $emote = '<i class="fa-solid fa-face-frown color-emote"></i>'; // Tidak puas
+                                    break;
+                                case 1:
+                                    $emote = '<i class="fa-solid fa-face-angry color-emote"></i>'; // Sangat tidak puas
+                                    break;
+                                default:
+                                    $emote = '<i class="fa-solid fa-circle-question text-muted"></i>'; // Tidak diketahui
+                            }
+                        @endphp
+                        <strong>{!! $emote !!} {{ $review->user->name ?? 'Tidak diketahui' }}</strong>
+                        <br>
+                        <span class="review-stars">
+                            {!! str_repeat('<i class="fa-solid fa-star text-warning"></i>', $review->star_rating) !!}
+                        </span>
+                        <p>{{ $review->comments }}</p>
+                        <p><em>{{ $review->created_at->format('d-m-Y') }}</em></p>
+                    </li>
                     @endforeach
                 </ul>
             @endif
