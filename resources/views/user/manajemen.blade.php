@@ -16,7 +16,8 @@
         <div>
             <div class="title-produk">
                 <h3>Produk Kami</h3>
-                @foreach ($produkGrouped as $type => $produkList)
+            </div>
+            @foreach ($produkGrouped as $type => $produkList)
                     <h2>{{ $type }}</h2>
 
                     @if ($produkList->isEmpty())
@@ -36,7 +37,6 @@
                         </div>
                     @endif
                 @endforeach
-            </div>
         </div>
         <br>
     </section>
