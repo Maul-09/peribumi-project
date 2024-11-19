@@ -148,9 +148,28 @@
                 <span class="deskripsi-harga">{{ $produk->hl_harga }}</span>
                 <span class="detail-label">Deskripsi Harga:</span>
                 <span class="deskripsi-harga">{{ $produk->desc_harga }}</span>
-                <a href="{{ route('whatsapp.notice', $produk->id) }}" class="btn-beli">Beli Produk</a>
+                <a href="#" class="btn-beli" id="openModal" data-produk-nama="{{ $produk->nama_produk }}"
+                    data-produk-harga="{{ $produk->hl_harga }}" data-produk-durasi="{{ $produk->durasi }}"
+                    data-whatsapp-url="{{ url('https://wa.me/6281586839469?text=' . urlencode('Saya ingin membeli produk ' . $produk->nama_produk)) }}">Beli
+                    Produk</a>
+            </div>
+        </div>
+
+        <!-- Modal Konfirmasi Pembelian -->
+        <div id="konfirmasiModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <h5 id="modalProdukNama"></h5>
+                <p><strong>Harga:</strong> <span id="modalHarga"></span></p>
+                <p><strong>Durasi:</strong> <span id="modalDurasi"></span> Hari</p>
+
+                <h3>Konfirmasi Pembelian</h3>
+                <p>Klik tombol di bawah ini untuk melanjutkan ke WhatsApp dan mengonfirmasi pembelian Anda:</p>
+
+                <a href="#" id="whatsappLink" class="btn btn-success" target="_blank">Konfirmasi via
+                    WhatsApp</a>
+                <a href="#" class="btn btn-danger" id="closeModalBtn">Batal</a>
             </div>
         </div>
     </div>
-
 </x-layout>
