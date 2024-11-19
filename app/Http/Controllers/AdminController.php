@@ -77,6 +77,13 @@ class AdminController extends Controller
             }
         }
 
+        foreach ($produkGrouped as $key => $produks) {
+            foreach ($produks as $produk) {
+                $produk->averageRating = ReviewRating::where('booking_id', $produk->id)->average('star_rating') ?? 0;
+            }
+        }
+
+
         return view('admin.manajemen-business', compact('produkGrouped'));
     }
 
@@ -91,6 +98,12 @@ class AdminController extends Controller
         foreach ($kat as $kategori) {
             if (!$produkGrouped->has($kategori)) {
                 $produkGrouped[$kategori] = collect();  // Set produk kosong jika kategori tidak ada
+            }
+        }
+
+        foreach ($produkGrouped as $key => $produks) {
+            foreach ($produks as $produk) {
+                $produk->averageRating = ReviewRating::where('booking_id', $produk->id)->average('star_rating') ?? 0;
             }
         }
 
@@ -111,6 +124,12 @@ class AdminController extends Controller
             }
         }
 
+        foreach ($produkGrouped as $key => $produks) {
+            foreach ($produks as $produk) {
+                $produk->averageRating = ReviewRating::where('booking_id', $produk->id)->average('star_rating') ?? 0;
+            }
+        }
+
         return view('admin.digital-solution',  compact('produkGrouped'));
     }
 
@@ -128,6 +147,12 @@ class AdminController extends Controller
             }
         }
 
+        foreach ($produkGrouped as $key => $produks) {
+            foreach ($produks as $produk) {
+                $produk->averageRating = ReviewRating::where('booking_id', $produk->id)->average('star_rating') ?? 0;
+            }
+        }
+
         return view('admin.personal-development', compact('produkGrouped'));
     }
 
@@ -142,6 +167,12 @@ class AdminController extends Controller
         foreach ($kat as $kategori) {
             if (!$produkGrouped->has($kategori)) {
                 $produkGrouped[$kategori] = collect();  // Set produk kosong jika kategori tidak ada
+            }
+        }
+
+        foreach ($produkGrouped as $key => $produks) {
+            foreach ($produks as $produk) {
+                $produk->averageRating = ReviewRating::where('booking_id', $produk->id)->average('star_rating') ?? 0;
             }
         }
 

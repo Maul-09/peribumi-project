@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use App\Models\ReviewRating;
 
 class PeribumiController extends Controller
 {
@@ -18,6 +19,13 @@ class PeribumiController extends Controller
         session(['kategori' => $kat, 'route' => 'manajemen.admin']);
 
         $produkGrouped = Produk::whereIn('produkType', $kat)->get()->groupBy('produkType');
+
+        foreach ($produkGrouped as $key => $produks) {
+            foreach ($produks as $produk) {
+                $produk->averageRating = ReviewRating::where('booking_id', $produk->id)->average('star_rating') ?? 0;
+            }
+        }
+
         return view('user.manajemen', compact('produkGrouped'));
     }
 
