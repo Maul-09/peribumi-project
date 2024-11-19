@@ -59,12 +59,13 @@
     font-weight: bold;
     color: #fff !important;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease,
+        transform 0.2s ease;
 }
 
 .btn-edit {
-    background-color: #4CAF50;
-    border: 2px solid #4CAF50;
+    background-color: #4caf50;
+    border: 2px solid #4caf50;
 }
 
 .btn-hapus {
@@ -137,7 +138,7 @@
 }
 
 .btn-cancel {
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: #fff;
     border: none;
     padding: 10px 15px;
@@ -148,6 +149,55 @@
 
 .btn-cancel:hover {
     background-color: #45a049;
+}
+
+/* Container rating */
+.rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Dasar bentuk bintang */
+.star {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    ); /* Membentuk bintang */
+    background-color: #e0e0e0; /* Default abu-abu untuk bintang kosong */
+}
+
+/* Bintang penuh */
+.star.full {
+    background-color: #ffd700; /* Kuning untuk bintang penuh */
+}
+
+/* Bintang setengah */
+.star.half {
+    background: linear-gradient(to right, #ffd700 50%, #e0e0e0 50%);
+}
+
+/* Bintang kosong */
+.star.empty {
+    background-color: #e0e0e0; /* Tetap abu-abu */
+}
+
+/* Styling nilai rating */
+.rating-value {
+    font-size: 14px;
+    color: #555;
+    margin-left: 8px;
 }
 
 @keyframes popup-fade-in {
@@ -161,7 +211,6 @@
     }
 }
 
-
 @media (max-width: 768px) {
     .product-card {
         width: 45%;
@@ -169,8 +218,7 @@
 }
 
 @media (max-width: 576px) {
-
-    .product-container{
+    .product-container {
         display: flex;
         flex-wrap: wrap;
         position: relative;
@@ -232,7 +280,8 @@
         gap: 10px;
     }
 
-    .btn-cancel, .btn-confirm {
+    .btn-cancel,
+    .btn-confirm {
         width: 100%;
         font-size: 0.85rem;
         padding: 10px;
