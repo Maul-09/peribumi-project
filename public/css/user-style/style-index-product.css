@@ -1,5 +1,5 @@
 .full-screen {
-    padding: 50px 100px;
+    padding: 50px 150px;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -330,7 +330,7 @@
 
 .card-harga {
     position: sticky;
-    top: 20;
+    top: 0;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -340,7 +340,6 @@
     width: 250px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-height: 400px;
-    z-index: 1000000;
 }
 
 .image-card {

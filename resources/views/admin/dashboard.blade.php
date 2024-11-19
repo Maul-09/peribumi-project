@@ -13,12 +13,8 @@
 
         <section class="section dashboard">
             <div class="row">
-
-                <!-- Left side columns -->
                 <div class="col-lg-8">
                     <div class="row">
-
-                        <!-- Sales Card -->
                         <div class="col-xxl-4 col-md-6">
                             <div class="card info-card sales-card">
                                 <div class="card-body">
@@ -75,7 +71,6 @@
                             </div>
                         </div>
 
-                        <!-- Reports -->
                         <div class="col-12">
                             <div class="card">
                                 <div class="filter">
@@ -197,66 +192,63 @@
                                             showChart('today');
                                         });
                                     </script>
-
-
-
-
-                                    <!-- End Line Chart -->
-
                                 </div>
-
                             </div>
                         </div>
-
-
-                    </div>
-                </div><!-- End Left side columns -->
-
-                <!-- Right side columns -->
-                <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Verifikasi Produk</h5>
-                            <div class="activity">
-
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Nama Produk</th>
-                                            <th>Nama Pengguna</th>
-                                            <th>Status Transaksi</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($transaksiPending as $transaksi)
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Verifikasi Produk</h5>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Nama Produk</th>
+                                                <th>Nama Pengguna</th>
+                                                <th>Status Transaksi</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($transaksiPending as $transaksi)
                                             <tr>
                                                 <td>{{ $transaksi->produk->nama_produk }}</td>
                                                 <td>{{ $transaksi->user->name }}</td>
                                                 <td>{{ $transaksi->status_transaksi }}</td>
                                                 <td>
-                                                    <!-- Button Konfirmasi -->
-                                                    <form action="{{ route('admin.konfirmasi', $transaksi->id) }}" method="POST">
+                                                    <form action="{{ route('admin.konfirmasi', $transaksi->id) }}" method="POST" style="display:inline;">
                                                         @csrf
-                                                        <button type="submit" class="btn btn-success">Konfirmasi Pembelian</button>
+                                                        <button type="submit" class="btn btn-success">Konfirmasi</button>
                                                     </form>
 
-                                                    <form action="{{ route('admin.tolak', $transaksi->id) }}" method="POST"
-                                                        style="display:inline;">
+                                                    <form action="{{ route('admin.tolak', $transaksi->id) }}" method="POST" style="display:inline;">
                                                         @csrf
                                                         <button type="submit" class="btn btn-danger">Tolak</button>
                                                     </form>
                                                 </td>
                                             </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-        </section>
 
-    </main><!-- End #main -->
+                {{-- <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Verifikasi Produk</h5>
+                            <div class="activity">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+
+        </section>
+    </main>
 
 </x-adminlayout>
