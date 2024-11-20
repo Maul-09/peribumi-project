@@ -55,4 +55,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// document.addEventListener('DOMContentLoaded', () => {
+//     const tabs = document.querySelectorAll('.tab-link');
+//     const panes = document.querySelectorAll('.tab-pane');
+
+//     tabs.forEach(tab => {
+//         tab.addEventListener('click', function (e) {
+//             e.preventDefault();
+
+//             tabs.forEach(t => t.classList.remove('active'));
+//             panes.forEach(p => p.classList.remove('active'));
+
+//             this.classList.add('active');
+//             const targetId = this.dataset.target;
+//             const targetPane = document.getElementById(targetId);
+//             targetPane.classList.add('active');
+//         });
+//     });
+// });
+
+
+
 
