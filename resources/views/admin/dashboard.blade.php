@@ -176,11 +176,18 @@
                                                             }
                                                         },
                                                         y: {
-                                                            beginAtZero: true,
+                                                            beginAtZero: false,
                                                             title: {
                                                                 display: true,
-                                                                text: 'Jumlah Pengunjung' // Judul sumbu Y
-                                                            }
+                                                                text: 'Jumlah Pengunjung'
+                                                            },
+                                                            ticks: {
+                                                                stepSize: 1, // Langkah antar angka
+                                                                min: 1, // Mulai dari angka 1
+                                                                max: 10 // Max sesuai data
+                                                            },
+                                                            suggestedMin: 1,
+                                                            suggestedMax: 10
                                                         }
                                                     }
                                                 }
