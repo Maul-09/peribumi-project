@@ -13,19 +13,6 @@
                 </ol>
             </nav>
         </div>
-        @foreach($produkGrouped as $type => $produkList)
-        <h2>{{ $type }}</h2>
-
-        @if($produkList->isEmpty())
-            <p>Tidak ada produk dalam kategori ini.</p>
-        @else
-            <ul>
-                @foreach($produkList as $item)
-                    <li>{{ $item->nama_produk }} - Harga: {{ $item->hl_harga }}</li>
-                    <p>{{ $item->deskripsi }}</p>
-                @endforeach
-            </ul>
-        @endif
-    @endforeach
+        <x-card-produk></x-card-produk>
     </main>
 </x-adminlayout>
