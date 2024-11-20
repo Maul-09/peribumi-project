@@ -3,7 +3,6 @@
     margin: 0;
     display: flex;
     justify-content: center;
-    overflow-y: auto;
     background-color: #f0f0f0;
 }
 
@@ -330,7 +329,7 @@
 
 .card-harga {
     position: sticky;
-    top: 0;
+    top: 50px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -340,6 +339,7 @@
     width: 250px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-height: 400px;
+    align-self: flex-start;
 }
 
 .image-card {

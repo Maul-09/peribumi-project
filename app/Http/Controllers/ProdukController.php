@@ -237,7 +237,7 @@ class ProdukController extends Controller
         $whatsappMessage = "Hallo, saya ingin membeli produk: " . $produk->nama_produk;
         $whatsappUrl = "https://wa.me/6281586839469?text=" . urlencode($whatsappMessage);
 
-        return view('user.index', compact('whatsappUrl', 'produk'));
+        return redirect($whatsappUrl);
     }
 
     public function produkAktif()
