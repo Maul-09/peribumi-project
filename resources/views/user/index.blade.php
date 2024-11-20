@@ -150,7 +150,7 @@
                 <span class="deskripsi-harga">{{ $produk->desc_harga }}</span>
                 <a href="#" class="btn-beli" id="openModal" data-produk-nama="{{ $produk->nama_produk }}"
                     data-produk-harga="{{ $produk->hl_harga }}" data-produk-durasi="{{ $produk->durasi }}"
-                    data-whatsapp-url="{{ url('https://wa.me/6281586839469?text=' . urlencode('Saya ingin membeli produk ' . $produk->nama_produk)) }}">Beli
+                    data-whatsapp-url="{{ route('whatsapp.notice', $produk->id)}}">Beli
                     Produk</a>
             </div>
         </div>
