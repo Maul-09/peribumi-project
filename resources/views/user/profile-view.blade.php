@@ -117,4 +117,123 @@
         </div>
     </div>
 
+    {{-- <div class="account-settings">
+        <h4>Account Settings</h4>
+        <div class="settings-container">
+            <div class="nav-tabs">
+                <div class="tabs">
+                    <a href="#" class="tab-link active" data-target="general">General</a>
+                    <a href="#" class="tab-link" data-target="change-password">Change Password</a>
+                    <a href="#" class="tab-link" data-target="info">Info</a>
+                    <a href="#" class="tab-link" data-target="social-links">Social Links</a>
+                    <a href="#" class="tab-link" data-target="notifications">Notifications</a>
+                </div>
+            </div>
+            <div class="tab-content">
+                <!-- General -->
+                <div class="tab-pane active" id="general">
+                    <div class="photo-upload">
+                        <img src="default-photo.png" alt="Profile Photo" class="profile-photo">
+                        <div>
+                            <label>Upload new photo</label>
+                            <input type="file" class="file-input">
+                            <button type="button" class="btn-reset">Reset</button>
+                            <small>Allowed JPG, GIF, or PNG. Max size 800KB</small>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label class="form-label"><i class="icon-user"></i> Name</label>
+                            <input type="text" class="form-control" value="nmaxwell">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label"><i class="icon-envelope"></i> Email</label>
+                            <input type="text" class="form-control" value="nmaxwell@mail.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label"><i class="icon-user-circle"></i> Username</label>
+                            <input type="text" class="form-control" value="Nelle Maxwell">
+                            <div class="alert">
+                                Your email is not confirmed. Please check your inbox.<br>
+                                <a href="javascript:void(0)">Resend confirmation</a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label"><i class="icon-briefcase"></i> Company</label>
+                            <input type="text" class="form-control" value="Company Ltd.">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Change Password -->
+                <div class="tab-pane" id="change-password">
+                    <h5>Change Your Password</h5>
+                    <div class="form-group">
+                        <label class="form-label">Current Password</label>
+                        <input type="password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">New Password</label>
+                        <input type="password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Confirm New Password</label>
+                        <input type="password" class="form-control">
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="tab-pane" id="info">
+                    <h5>Personal Information</h5>
+                    <div class="form-group">
+                        <label class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Address</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="tab-pane" id="social-links">
+                    <h5>Social Media Links</h5>
+                    <div class="form-group">
+                        <label class="form-label">Facebook</label>
+                        <input type="url" class="form-control" placeholder="https://facebook.com/username">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Twitter</label>
+                        <input type="url" class="form-control" placeholder="https://twitter.com/username">
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="tab-pane" id="notifications">
+                    <h5>Manage Notifications</h5>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox"> Email Notifications
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox"> SMS Notifications
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox"> Push Notifications
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="action-buttons">
+            <button type="button" class="btn-save">Save changes</button>
+            <button type="button" class="btn-cancel">Cancel</button>
+        </div>
+    </div> --}}
+
 </x-layout>
