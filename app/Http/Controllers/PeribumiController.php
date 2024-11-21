@@ -41,8 +41,8 @@ class PeribumiController extends Controller
         return view('user.event');
     }
 
-    public function logreg()
+    public function login()
     {
-        return view('auth.logreg');
+        return view('auth.login');
     }
 }

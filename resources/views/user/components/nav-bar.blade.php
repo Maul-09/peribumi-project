@@ -19,7 +19,7 @@
         <li><a href="{{ route('beranda') }}#mitra">Mitra</a></li>
         <li><a href="{{ route('beranda') }}#footer">Contact us</a></li>
         @guest
-            <li><a href="{{ route('logreg') }}">Sign in</a></li>
+            <li><a href="{{ route('login') }}">Sign in</a></li>
         @endguest
         @auth
             <li class="dropbutton">

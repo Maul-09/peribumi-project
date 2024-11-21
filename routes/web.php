@@ -36,8 +36,9 @@ Route::middleware('auth')->group(function () {
 Route::get('/', [PeribumiController::class, 'beranda'])->middleware('record.visitor')->name('beranda');
 
 Route::post('/signup', [AuthController::class, 'signup'])->name('signup');
-Route::get('/auth/logreg', [PeribumiController::class, 'logreg'])->name('logreg');
+Route::get('/auth/register', [AuthController::class, 'register'])->name('register');
 Route::post('/signin', [AuthController::class, 'signin'])->name('signin');
+Route::get('/auth/login', [PeribumiController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/edit/profile{id}', [CrudController::class, 'editProfile'])->name('editProfile');

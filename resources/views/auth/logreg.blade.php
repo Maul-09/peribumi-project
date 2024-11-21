@@ -7,86 +7,80 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/head-footer-style/auth.css') }}">
     <link rel="stylesheet" href="{{ asset('css/skin/color-palete.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Peribumi Consultant - Register</title>
 </head>
 
 <body class="log">
     <div class="container">
         <div class="forms-container">
-          <div class="signin-signup">
-            <form action="{{ route('signin') }}" method="post" class="sign-in-form" id="signin">
-                @csrf
-              <h2 class="title">Sign in</h2>
-              <div class="input-field">
-                <i class="fas fa-user"></i>
-                <input type="text" name="username" placeholder="Username" />
-              </div>
-              <div class="input-field">
-                <i class="fas fa-lock"></i>
-                <input type="password" id="password" name="password" placeholder="Password" />
-                <span id="togglePassword" class="toggle-password">
-                    <i class="fas fa-eye-slash" id="eyeIcon"></i>
-                </span>
-              </div>
+            <div class="signin-signup">
+                <form action="{{ route('signin') }}" method="post" class="sign-in-form" id="signin">
+                    @csrf
+                    <h2 class="title">Sign in</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="username" placeholder="Username" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Password" />
+                        <span id="togglePassword" class="toggle-password">
+                            <i class="fas fa-eye-slash" id="eyeIcon"></i>
+                        </span>
+                    </div>
 
-              @if (session('Failed'))
-                <div style="color:red;">
-                    {{ session('Failed') }}
-                </div>
-              @endif
-                <label class="forgot">
-                    <input type="checkbox" name="remember" value="1"> Remember me
-                    <a href="{{ route('password.request') }}">Forgot Password?</a>
-                </label>
-              <input type="submit" class="btn" value="Sign In" />
+                    @if (session('Failed'))
+                        <div style="color:red;">
+                            {{ session('Failed') }}
+                        </div>
+                    @endif
+                    <label class="forgot">
+                        <input type="checkbox" name="remember" value="1"> Remember me
+                        <a href="{{ route('password.request') }}">Forgot Password?</a>
+                    </label>
+                    <input type="submit" class="btn" value="Sign In" />
 
-            </form>
-            <form action="{{ route('signup') }}" method="post" class="sign-up-form" id="signup">
-                @csrf
-              <h2 class="title">Sign up</h2>
-              <div class="input-field">
-                <i class="fas fa-id-card"></i>
-                <input type="text" name="name" placeholder="Nama lengkap" />
-                @error('name')
+                </form>
+                <form action="{{ route('signup') }}" method="post" class="sign-up-form" id="signup">
+                    @csrf
+                    <h2 class="title">Sign up</h2>
+                    <div class="input-field">
+                        <i class="fas fa-id-card"></i>
+                        <input type="text" name="name" placeholder="Nama lengkap" />
+                        @error('name')
+                            <p>{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Email" />
+                        @error('email')
+                            <p>{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="username" placeholder="Username" />
+                        @error('username')
+                            <p>{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Password" />
+                        <span id="togglePassword" class="toggle-password">
+                            <i class="fas fa-eye-slash" id="eyeIcon"></i>
+                        </span>
+                        @error('password')
+                            <p>{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <input type="submit" class="btn" value="Sign up" />
 
-                <p>{{ $message }}</p>
-
-                @enderror
-              </div>
-              <div class="input-field">
-                <i class="fas fa-envelope"></i>
-                <input type="email" name="email" placeholder="Email" />
-                @error('email')
-
-                <p>{{ $message }}</p>
-
-                @enderror
-              </div>
-              <div class="input-field">
-                <i class="fas fa-user"></i>
-                <input type="text" name="username" placeholder="Username" />
-                @error('username')
-
-                <p>{{ $message }}</p>
-
-                @enderror
-              </div>
-              <div class="input-field">
-                <i class="fas fa-lock"></i>
-                <input type="password" id="password" name="password" placeholder="Password" />
-                <span id="togglePassword" class="toggle-password">
-                    <i class="fas fa-eye-slash" id="eyeIcon"></i>
-                </span>
-                @error('password')
-
-                <p>{{ $message }}</p>
-
-                @enderror
-              </div>
-              <input type="submit" class="btn" value="Sign up" />
-
-            </form>
+                </form>
 
             </div>
         </div>

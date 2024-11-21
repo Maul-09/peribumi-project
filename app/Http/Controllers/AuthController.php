@@ -13,39 +13,70 @@ class AuthController extends Controller
 {
     public function signup(Request $request)
     {
+        // Validasi input
+        $field = $request->validate(
+            [
+                'name' => ['required', 'max:255'],
+                'email' => ['required', 'max:255', 'email', 'unique:users'],
+                'username' => ['required', 'max:255'],
+                'password' => ['required', 'min:8'],
+                'password_confirmation' => ['required', 'same:password'],
+            ],
+            [
+                'name.required' => 'Nama wajib diisi',
+                'name.max' => 'Nama tidak boleh lebih dari 255 karakter',
+                'email.required' => 'Email wajib diisi',
+                'email.max' => 'Email tidak boleh lebih dari 255 karakter',
+                'email.email' => 'Email tidak valid',
+                'email.unique' => 'Email sudah digunakan',
+                'username.required' => 'Username wajib diisi',
+                'username.max' => 'Username tidak boleh lebih dari 255 karakter',
+                'password.required' => 'Password wajib diisi',
+                'password.min' => 'Password minimal 8 karakter',
+                'password_confirmation.required' => '',
+                'password_confirmation.same' => 'Konfirmasi password tidak sesuai',
+            ]
+        );
 
-        $field = $request->validate([
-            'name' => ['required', 'max:255'],
-            'email' => ['required', 'max:255', 'email', 'unique:users'],
-            'username' => ['required', 'max:255'],
-            'password' => ['required', 'min:8'],
-        ]);
-
+        // Enkripsi password
         $field['password'] = bcrypt($field['password']);
+
+        // Simpan user ke database
         $peribumi = User::create($field);
 
-        // $peribumi = new User();
-        // $peribumi->name = $request->name;
-        // $peribumi->email = $request->email;
-        // $peribumi->username = $request->username;
-        // $peribumi->password = bcrypt($request->password);
-        // $peribumi->save();
-
+        // Login otomatis
         Auth::login($peribumi);
 
+        // Trigger event pendaftaran
         event(new Registered($peribumi));
-        // event(new Registered($peribumi));
+
+        // Redirect ke halaman notifikasi verifikasi
         return redirect()->route('verification.notice');
+    }
+
+
+
+    public function register()
+    {
+        return view('auth.register');
     }
 
     public function signin(Request $request)
     {
         // Validate the incoming request
-        $request->validate([
-            'username' => 'required|string',
-            'password' => 'required|string',
-            'remember' => 'nullable|boolean', // Optional remember me field
-        ]);
+        $request->validate(
+            [
+                'username' => 'required|string',
+                'password' => 'required|string',
+                'remember' => 'nullable|boolean', // Optional remember me field
+            ],
+            [
+                'username.required' => 'Username wajib diisi',
+                'username.max' => 'Username tidak boleh lebih dari 255 karakter',
+                'password.required' => 'Password wajib diisi',
+                'password.min' => 'Password minimal 8 karakter',
+            ]
+        );
 
         // Retrieve the credentials
         $data = $request->only('username', 'password');
