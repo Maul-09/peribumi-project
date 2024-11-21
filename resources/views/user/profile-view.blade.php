@@ -1,7 +1,7 @@
 <x-layout :ShowNavbar="false" :ShowFooter="false">
     <x-slot:name>Beranda</x-slot>
     <x-slot:title>{{ asset('css/user-style/style-edit-profile.css') }}</x-slot>
-    <div class="profile-container">
+    {{-- <div class="profile-container">
         <!-- Profile Image Section with Icons -->
         <div class="profile-image-section">
             @php
@@ -115,90 +115,143 @@
                 </form>
             </div>
         </div>
-    </div>
-
-    {{-- <div class="account-settings">
-        <h4>Account Settings</h4>
+    </div> --}}
+<div class="screen">
+    <div class="account-settings">
+        <a href="{{ route('beranda') }}" class="btn-back"><i class="fas fa-arrow-left"></i></a>
+        <div class="title">Profile Settings</div>
         <div class="settings-container">
-            <div class="nav-tabs">
+            <!-- Sidebar -->
+            <div class="sidebar">
                 <div class="tabs">
-                    <a href="#" class="tab-link active" data-target="general">General</a>
-                    <a href="#" class="tab-link" data-target="change-password">Change Password</a>
-                    <a href="#" class="tab-link" data-target="info">Info</a>
-                    <a href="#" class="tab-link" data-target="social-links">Social Links</a>
-                    <a href="#" class="tab-link" data-target="notifications">Notifications</a>
+                    <a href="#" class="tab-link active" data-target="general">
+                        <i class="fas fa-user"></i> General
+                    </a>
+                    <a href="#" class="tab-link" data-target="change-password">
+                        <i class="fas fa-key"></i> Change Password
+                    </a>
+                    <a href="#" class="tab-link" data-target="info">
+                        <i class="fas fa-info-circle"></i> Info
+                    </a>
+                    <a href="#" class="tab-link" data-target="social-links">
+                        <i class="fas fa-share-alt"></i> Social Links
+                    </a>
+                    <a href="#" class="tab-link" data-target="product">
+                        <i class="fas fa-box"></i> Product
+                    </a>
                 </div>
             </div>
+
             <div class="tab-content">
-                <!-- General -->
                 <div class="tab-pane active" id="general">
                     <div class="photo-upload">
-                        <img src="default-photo.png" alt="Profile Photo" class="profile-photo">
-                        <div>
-                            <label>Upload new photo</label>
-                            <input type="file" class="file-input">
-                            <button type="button" class="btn-reset">Reset</button>
-                            <small>Allowed JPG, GIF, or PNG. Max size 800KB</small>
+                        <div class="photo-container">
+
+                            @php
+                            $initial = strtolower(substr($field->name, 0, 1));
+                            $defaultImageName = 'default_' . $initial . '.png';
+                            $defaultImagePath = public_path('profile/' . $defaultImageName);
+                            @endphp
+
+                            @if ($field->image)
+                                <img src="{{ asset('profile/' . $field->image) }}" alt="Profile Image" class="photo-container">
+                            @else
+                            <div class="photo-container" style="background-color: #ccc; display: flex; justify-content: center; align-items: center; border-radius:50%;">
+                                <span style="font-size: 60px; color: white;">{{ strtoupper($initial) }}</span>
+                            </div>
+                            @endif
+
+                            @error('image')
+                                <div class="error">{{ $message }}</div>
+                            @enderror
+
+                            <div class="hover-overlay">
+                                <i class="fas fa-eye"></i> Preview
+                            </div>
+                            <label for="file-input" class="upload-icon">
+                                <i class="fas fa-pencil-alt"></i>
+                            </label>
+                            <input type="file" class="file-input" id="file-input" accept="image/*" hidden>
                         </div>
+                        <small>Allowed JPG, GIF, or PNG. Max size 800KB</small>
                     </div>
-                    <hr>
+
                     <div class="form-section">
                         <div class="form-group">
                             <label class="form-label"><i class="icon-user"></i> Name</label>
-                            <input type="text" class="form-control" value="nmaxwell">
+                            <input type="text" class="form-control" placeholder="Your Name">
                         </div>
                         <div class="form-group">
                             <label class="form-label"><i class="icon-envelope"></i> Email</label>
-                            <input type="text" class="form-control" value="nmaxwell@mail.com">
+                            <input type="text" class="form-control" placeholder="example@mail.com">
                         </div>
                         <div class="form-group">
                             <label class="form-label"><i class="icon-user-circle"></i> Username</label>
-                            <input type="text" class="form-control" value="Nelle Maxwell">
+                            <input type="text" class="form-control" placeholder="Your Username">
                             <div class="alert">
                                 Your email is not confirmed. Please check your inbox.<br>
                                 <a href="javascript:void(0)">Resend confirmation</a>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label"><i class="icon-briefcase"></i> Company</label>
-                            <input type="text" class="form-control" value="Company Ltd.">
                         </div>
                     </div>
                 </div>
 
                 <!-- Change Password -->
                 <div class="tab-pane" id="change-password">
-                    <h5>Change Your Password</h5>
+                <h5>Change Your Password</h5>
+                <div class="form-section">
                     <div class="form-group">
                         <label class="form-label">Current Password</label>
-                        <input type="password" class="form-control">
+                        <input type="password" class="form-control" placeholder="Masukan Password Lama">
                     </div>
                     <div class="form-group">
                         <label class="form-label">New Password</label>
-                        <input type="password" class="form-control">
+                        <input type="password" class="form-control" placeholder="Masukan Password Baru">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Confirm New Password</label>
-                        <input type="password" class="form-control">
+                        <input type="password" class="form-control" placeholder="Konfirmasi Password Baru">
                     </div>
+                </div>
                 </div>
 
                 <!-- Info -->
                 <div class="tab-pane" id="info">
-                    <h5>Personal Information</h5>
+                <h5>Personal Information</h5>
+                <div class="form-section">
                     <div class="form-group">
-                        <label class="form-label">Date of Birth</label>
+                        <label class="form-label">Nama Lengkap</label>
+                        <input class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tanggal Lahir</label>
                         <input type="date" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Address</label>
-                        <textarea class="form-control" rows="3"></textarea>
+                        <label class="form-label">Alamat</label>
+                        <input class="form-control" rows="3">
                     </div>
+                    <div class="form-group">
+                        <label class="form-label">Nomor Telepon</label>
+                        <input type="tel" class="form-control" placeholder="+62">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Jenis Kelamis</label>
+                        <select class="form-control">
+                            <option value="">Pilih</option>
+                            <option value="male">Laki-laki</option>
+                            <option value="female">Perempuan</option>
+                            <option value="other">Lainnya</option>
+                        </select>
+                    </div>
+                </div>
+
                 </div>
 
                 <!-- Social Links -->
                 <div class="tab-pane" id="social-links">
                     <h5>Social Media Links</h5>
+                <div class="form-section">
                     <div class="form-group">
                         <label class="form-label">Facebook</label>
                         <input type="url" class="form-control" placeholder="https://facebook.com/username">
@@ -207,33 +260,37 @@
                         <label class="form-label">Twitter</label>
                         <input type="url" class="form-control" placeholder="https://twitter.com/username">
                     </div>
+                    <div class="form-group">
+                        <label class="form-label">Instagram</label>
+                        <input type="url" class="form-control" placeholder="https://instagram.com/username">
+                    </div>
+                </div>
                 </div>
 
                 <!-- Notifications -->
-                <div class="tab-pane" id="notifications">
-                    <h5>Manage Notifications</h5>
+                <div class="tab-pane" id="product">
+                    <h5>Product yang sudah dibeli</h5>
+                {{-- <div class="form-section">
                     <div class="form-group">
-                        <label>
-                            <input type="checkbox"> Email Notifications
-                        </label>
+                        <label class="form-label">Email Notifications</label>
+                        <input type="checkbox" class="form-control"> Enable
                     </div>
                     <div class="form-group">
-                        <label>
-                            <input type="checkbox"> SMS Notifications
-                        </label>
+                        <label class="form-label">Push Notifications</label>
+                        <input type="checkbox" class="form-control"> Enable
                     </div>
-                    <div class="form-group">
-                        <label>
-                            <input type="checkbox"> Push Notifications
-                        </label>
-                    </div>
+                </div> --}}
                 </div>
             </div>
         </div>
+
+        <!-- Action Buttons -->
         <div class="action-buttons">
             <button type="button" class="btn-save">Save changes</button>
             <button type="button" class="btn-cancel">Cancel</button>
         </div>
-    </div> --}}
+    </div>
+
+</div>
 
 </x-layout>
