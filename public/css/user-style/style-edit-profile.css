@@ -1,3 +1,6 @@
+body {
+    overflow: hidden;
+}
 .screen{
     background-color: #fff;
     max-width: 100%;
@@ -17,6 +20,7 @@
 }
 
 .account-settings .btn-back {
+    flex: 0;
     font-size: 26px;
     color: var(--skin-color-1);
     text-decoration: none;
@@ -28,7 +32,17 @@
     text-decoration: underline;
 }
 
+.arrow-back {
+    display: flex; /* Mengaktifkan Flexbox */
+    justify-content: space-between; /* Menyebarkan elemen */
+    align-items: center; /* Menyelaraskan secara vertikal */
+    position: relative;
+}
+
 .account-settings .title {
+    position: absolute; /* Menempatkan di tengah */
+    left: 50%; /* Titik tengah horizontal */
+    transform: translateX(-50%);
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -40,6 +54,7 @@
 .account-settings .settings-container {
     display: flex;
     gap: 20px;
+    height: 100%;
 }
 
 .account-settings .sidebar {
@@ -84,6 +99,9 @@
 }
 
 .account-settings .tab-content {
+    max-height: 350px;
+    min-height: 350px;
+    overflow-y: auto;
     flex: 1;
     padding: 30px;
     border: 1px solid #ddd;

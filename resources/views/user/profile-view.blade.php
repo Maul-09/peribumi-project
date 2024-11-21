@@ -118,8 +118,10 @@
     </div> --}}
 <div class="screen">
     <div class="account-settings">
-        <a href="{{ route('beranda') }}" class="btn-back"><i class="fas fa-arrow-left"></i></a>
-        <div class="title">Profile Settings</div>
+        <div  class="arrow-back">
+            <a href="{{ route('beranda') }}" class="btn-back"><i class="fas fa-arrow-left"></i></a>
+            <div class="title"><p>Profile Settings</p></div>
+        </div>
         <div class="settings-container">
             <!-- Sidebar -->
             <div class="sidebar">
