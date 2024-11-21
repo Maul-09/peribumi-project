@@ -21,3 +21,57 @@ function Dropdown(header) {
     }
 }
 
+const tabLinks = document.querySelectorAll('.tab-link');
+const tabPanes = document.querySelectorAll('.tab-pane');
+
+
+tabLinks.forEach((tabLink) => {
+    tabLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        console.log('Tab clicked:', tabLink);
+        console.log('Target ID:', tabLink.getAttribute('data-target'));
+
+        tabLinks.forEach((link) => link.classList.remove('active'));
+        tabPanes.forEach((pane) => pane.classList.remove('active'));
+
+        const targetId = tabLink.getAttribute('data-target');
+        const targetPane = document.getElementById(targetId);
+
+        if (targetPane) {
+            tabLink.classList.add('active');
+            targetPane.classList.add('active');
+        }
+    });
+});
+
+
+
+const fileInput = document.getElementById('file-input');
+const previewPhotoContainer = document.querySelector('.photo-container');
+
+fileInput.addEventListener('change', function () {
+    const file = this.files[0];
+
+    if (file && file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+
+            let previewPhoto = previewPhotoContainer.querySelector('img');
+            if (!previewPhoto) {
+                previewPhoto = document.createElement('img');
+                previewPhoto.alt = "Profile Image";
+                previewPhoto.style.borderRadius = "50%";
+                previewPhoto.style.width = "100%";
+                previewPhoto.style.height = "100%";
+                previewPhotoContainer.innerHTML = "";
+                previewPhotoContainer.appendChild(previewPhoto);
+            }
+            previewPhoto.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    } else {
+        alert('Please upload a valid image file.');
+    }
+});
+
+

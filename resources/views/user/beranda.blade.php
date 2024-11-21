@@ -71,9 +71,8 @@
                     </div>
                 </div>
             </div>
-            <div class="w50">
                 <img src="{{ asset('../image/bg-4.jpg') }}" alt="foto">
-            </div>
+
         </div>
     </section>
 
@@ -84,6 +83,7 @@
         <div class="cards-container">
             <div class="card">
                 <div class="box">
+                    <a href="{{ route('manajemen') }}">
                     <img src="{{ asset('../image/bg-10.jpg') }}" alt="">
                     <div class="gradient-layer"></div>
                     <div class="textbx-card">
@@ -91,11 +91,13 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
                         </p>
                     </div>
+                    </a>
                 </div>
             </div>
 
             <div class="card">
                 <div class="box">
+                    <a href="{{ route('training') }}">
                     <img src="{{ asset('../image/bg-8.jpg') }}" alt="">
                     <div class="gradient-layer"></div>
                     <div class="textbx-card">
@@ -103,11 +105,13 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
                         </p>
                     </div>
+                    </a>
                 </div>
             </div>
 
             <div class="card">
                 <div class="box">
+                    <a href="{{ route('digital') }}">
                     <img src="{{ asset('../image/bg-4.jpg') }}" alt="">
                     <div class="gradient-layer"></div>
                     <div class="textbx-card">
@@ -115,11 +119,13 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
                         </p>
                     </div>
+                    </a>
                 </div>
             </div>
 
             <div class="card">
                 <div class="box">
+                    <a href="{{ route('personal') }}">
                     <img src="{{ asset('../image/bg-5.jpg') }}" alt="">
                     <div class="gradient-layer"></div>
                     <div class="textbx-card">
@@ -127,11 +133,13 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
                         </p>
                     </div>
+                    </a>
                 </div>
             </div>
 
             <div class="card">
                 <div class="box">
+                    <a href="{{ route('event') }}">
                     <img src="{{ asset('../image/bg-6.jpg') }}" alt="">
                     <div class="gradient-layer"></div>
                     <div class="textbx-card">
@@ -139,14 +147,15 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
                         </p>
                     </div>
+                    </a>
                 </div>
             </div>
         </div>
 
 
-        <hr>
+        <hr id="mitra">
 
-        <div id="mitra">
+        <div>
             <div class="client">
                 <h2>CLIENT & KEMITRAAN</h2>
             </div>
