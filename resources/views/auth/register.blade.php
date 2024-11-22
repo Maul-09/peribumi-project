@@ -10,78 +10,52 @@
 </head>
 
 <body>
+    <div class="bg-register">
+        <img src="{{ asset('image/bg-login.png') }}" alt="bg">
+    </div>
     <div class="register">
         <form action="{{ route('signup') }}" method="post" class="signup">
             @csrf
             <h2 class="title">Sign up</h2>
             <div class="input-field">
-                <input type="text" name="name" placeholder="Nama lengkap" value="{{ old('name') }}">
+                <input type="text" name="name" placeholder=" " value="{{ old('name') }}" />
+                <label for="name">Nama Lengkap</label>
                 @error('name')
                     <p>{{ $message }}</p>
                 @enderror
             </div>
             <div class="input-field">
-                <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                <input type="email" name="email" placeholder=" " value="{{ old('email') }}" />
+                <label for="email">Email</label>
                 @error('email')
                     <p>{{ $message }}</p>
                 @enderror
             </div>
             <div class="input-field">
-                <input type="text" name="username" placeholder="Username" value="{{ old('username') }}">
+                <input type="text" name="username" placeholder=" " value="{{ old('username') }}" />
+                <label for="username">Username</label>
                 @error('username')
                     <p>{{ $message }}</p>
                 @enderror
             </div>
             <div class="input-field">
-                <input type="password" id="password" name="password" placeholder="Password">
+                <input type="password" id="password" name="password" placeholder=" "/>
+                <label for="password">Password</label>
                 @error('password')
                     <p style="color: red;">{{ $message }}</p>
                 @enderror
             </div>
             <div class="input-field">
-                <input type="password" id="password_confirmation" name="password_confirmation"
-                    placeholder="Confirm Password">
-                @error ('password_confirmation')
-                    <p style="color: red;">{{$message }}</p>
+                <input type="password" id="password_confirmation" name="password_confirmation" placeholder=" " />
+                <label for="password_confirmation">Konfirmasi Password</label>
+                @error('password_confirmation')
+                    <p style="color: red;">{{ $message }}</p>
                 @enderror
             </div>
             <input type="submit" class="btn" value="Sign up" />
         </form>
         <p>Sudah punya akun? <a href="{{ route('login') }}" class="btn-login">Sign In</a></p>
     </div>
-
-    <script>
-        document.getElementById('signup-form').onsubmit = function(event) {
-            event.preventDefault(); // Mencegah refresh halaman
-
-            // Mengambil data form
-            const formData = new FormData(this);
-
-            fetch("{{ route('signup') }}", {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                    }
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.errors) {
-                        // Menampilkan kesalahan
-                        for (const [key, value] of Object.entries(data.errors)) {
-                            const errorElement = document.querySelector(`input[name="${key}"]`).nextElementSibling;
-                            if (errorElement) {
-                                errorElement.innerText = value[0]; // Menampilkan pesan kesalahan
-                            }
-                        }
-                    } else {
-                        // Tindakan setelah pendaftaran berhasil, misalnya redirect
-                        window.location.href = data.redirect; // Ganti dengan URL redirect yang sesuai
-                    }
-                })
-                .catch(error => console.error('Error:', error));
-        };
-    </script>
 </body>
 
 </html>
