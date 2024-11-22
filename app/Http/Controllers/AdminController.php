@@ -21,6 +21,10 @@ class AdminController extends Controller
         // Menghitung jumlah pengguna dengan usertype 'user'
         $userCount = User::where('usertype', 'user')->count();
 
+        $usersByType = [
+            'user' => User::where('usertype', 'user')->get(),
+        ];
+
         $totalProducts = Produk::count();
 
         $currentDate = Carbon::now();
@@ -71,7 +75,7 @@ class AdminController extends Controller
         $formattedGlobalAverageRating = number_format($globalAverageRating, 2);
 
         // Mengembalikan view dashboard dengan data yang dibutuhkan
-        return view('admin.dashboard', compact('products', 'transaksiPending', 'todayVisitors', 'weekVisitors', 'monthVisitors', 'productsWithRatings', 'formattedGlobalAverageRating', 'userCount', 'totalProducts'));
+        return view('admin.dashboard', compact('usersByType', 'products', 'transaksiPending', 'todayVisitors', 'weekVisitors', 'monthVisitors', 'productsWithRatings', 'formattedGlobalAverageRating', 'userCount', 'totalProducts'));
     }
 
 

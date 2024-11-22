@@ -70,8 +70,13 @@ body {
     border-color: #007bff; /* Warna biru saat fokus */
 }
 
-.input-field input:focus + label,
-.input-field input:not(:placeholder-shown) + label {
+/* fokus ketika diklik */
+/* .input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label */
+
+/* sekarang fokus ketika mengetik */
+.input-field input:not(:placeholder-shown) + label,
+.input-field input.has-text + label {
     padding: 0 7px;
     background-color: #fff;
     transform: translateY(-70%); /* Reset translate */

@@ -16,7 +16,8 @@
                 <div class="col-lg-8">
                     <div class="row">
                         <div class="col-xxl-4 col-md-6">
-                            <div class="card info-card sales-card">
+                            <div class="card info-card sales-card" data-bs-toggle="modal" data-bs-target="#userModal"
+                                style="cursor: pointer;">
                                 <div class="card-body">
                                     <h5 class="card-title">Member</h5>
                                     <div class="d-flex align-items-center">
@@ -29,9 +30,54 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-                        </div><!-- End Sales Card -->
+
+                            <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content rounded-4 shadow-lg">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="userModalLabel">Daftar User</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            @foreach ($usersByType as $type => $users)
+                                                <h6 class="text-primary text-uppercase mt-3">{{ ucfirst($type) }}</h6>
+                                                <ul class="list-group list-group-flush mb-3">
+                                                    @foreach ($users as $user)
+                                                        <li
+                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                            {{ $user->name }}
+                                                            <span class="badge bg-secondary">{{ $user->email }}</span>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                document.querySelector('.sales-card').addEventListener('click', function() {
+                                    fetch('/admin/dashboard')
+                                        .then(response => response.json())
+                                        .then(users => {
+                                            const userList = document.getElementById('userList');
+                                            userList.innerHTML = ''; // Kosongkan daftar sebelumnya
+                                            users.forEach(user => {
+                                                const li = document.createElement('li');
+                                                li.textContent = user.name; // Tampilkan nama user
+                                                userList.appendChild(li);
+                                            });
+                                        })
+                                        .catch(error => console.error('Error fetching users:', error));
+                                });
+                            </script>
+                        </div>
+                        
+                        <!-- End Sales Card -->
 
                         <!-- Revenue Card -->
                         <div class="col-xxl-4 col-md-6">
@@ -165,7 +211,6 @@
                                 </div>
                             </div>
                         </div>
-
 
                         <script>
                             document.getElementById('ratingCard').addEventListener('click', function() {
