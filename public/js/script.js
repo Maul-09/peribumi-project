@@ -55,24 +55,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const tabs = document.querySelectorAll('.tab-link');
-//     const panes = document.querySelectorAll('.tab-pane');
+document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".toggle");
+    const menu = document.querySelector(".menu");
 
-//     tabs.forEach(tab => {
-//         tab.addEventListener('click', function (e) {
-//             e.preventDefault();
+    const toggleMenu = () => {
+        menu.classList.toggle("active");
+    };
 
-//             tabs.forEach(t => t.classList.remove('active'));
-//             panes.forEach(p => p.classList.remove('active'));
+    if (toggle && !toggle.querySelector("i")) {
+        const burgerIcon = document.createElement("i");
+        burgerIcon.className = "fas fa-bars";
+        toggle.appendChild(burgerIcon);
+    }
 
-//             this.classList.add('active');
-//             const targetId = this.dataset.target;
-//             const targetPane = document.getElementById(targetId);
-//             targetPane.classList.add('active');
-//         });
-//     });
-// });
+    if (toggle) {
+        toggle.addEventListener("click", toggleMenu);
+    }
+
+    const updateToggleVisibility = () => {
+        if (window.innerWidth <= 768) {
+            toggle.style.display = "block";
+        } else {
+            toggle.style.display = "none";
+            menu.classList.remove("active");
+        }
+    };
+
+    updateToggleVisibility();
+
+    window.addEventListener("resize", updateToggleVisibility);
+});
+
+
+
 
 
 
