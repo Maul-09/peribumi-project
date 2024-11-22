@@ -39,13 +39,14 @@
                 @error('password')
                     <p style="color: red;">{{ $message }}</p>
                 @enderror
-            </div>
-
-            @if (session('Failed'))
+                @if (session('Failed'))
                 <div style="color:red;">
-                    {{ session('Failed') }}
+                    <p>{{ session('Failed') }}</p>
                 </div>
             @endif
+            </div>
+
+            
             <label class="forgot">
                 <div class="items-left">
                     <input type="checkbox" name="remember" value="1"> Remember me
