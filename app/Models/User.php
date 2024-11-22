@@ -40,5 +40,10 @@ class User extends Authenticatable implements MustVerifyEmail
         ->withPivot('status_transaksi', 'tanggal_beli', 'tanggal_berakhir')
         ->wherePivot('status_transaksi', 'confirmed'); // hanya produk yang terkonfirmasi
     }
+
+    public function informasiUser()
+    {
+        return $this->hasOne(InformasiUser::class, 'user_id', 'id');
+    }
     // Anda juga dapat menambahkan metode lain di sini jika diperlukan
 }
