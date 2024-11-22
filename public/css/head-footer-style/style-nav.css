@@ -22,10 +22,26 @@ header {
     transition: 0.5s;
 }
 
+header .toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    margin-right: 20px;
+    color: #fff;
+}
+
+header .menu.active {
+    display: flex;
+}
+
 header.sticky {
     background-color: #fff;
     padding: 20px 0px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+header.sticky .toggle{
+    color: var(--skin-color-1);
 }
 header .logo {
     display: flex;
@@ -49,18 +65,18 @@ header .logo img {
 header.sticky .logo {
     color: #04364a;
 }
-header ul {
+header .menu {
     position: relative;
     display: flex;
     align-items: center;
 }
 
-header ul li {
+header .menu li {
     position: relative;
     list-style: none;
 }
 
-header ul li a {
+header .menu li a {
     position: relative;
     display: inline-blok;
     margin: 0 15px;
@@ -127,19 +143,19 @@ header.sticky .dropdown-menu {
     font-size: 11px;
 }
 
-header ul li a:hover,
-header.sticky ul li a:hover,
+header .menu li a:hover,
+header.sticky .menu li a:hover,
 .dropdown-menu a:hover {
     color: var(--skin-color-4);
     font-size: 12px;
 }
 
-header.sticky ul li a,
+header.sticky .menu li a,
 header.sticky .dropdown-button {
     color: var(--skin-color-1);
 }
 
-header.sticky ul li a:hover,
+header.sticky .menu li a:hover,
 header.sticky .dropdown-menu a:hover, {
     color: var(--skin-color-4);
     font-size: 12px;
@@ -303,4 +319,71 @@ header.sticky .dropdown-button:hover {
     }
 }
 
+@media only screen and (max-width: 768px){
+
+    header {
+        position: fixed;
+        width: 100%;
+        padding: 30px 0;
+    }
+
+    .toggle{
+        font-size: 20px;
+    }
+
+    header.sticky{
+        position: fixed;
+        padding: 20px 0;
+    }
+
+    header .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 75px;
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid #444;
+        z-index: 1000;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    header .menu.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    header .menu li {
+        margin: 10px 0;
+
+    }
+
+    header .menu li a {
+        font-size: 16px;
+        padding: 10px 0;
+        display: block;
+        width: 100%;
+        color: var(--skin-color-1);
+    }
+}
+
+@media only screen and (max-width: 541px){
+
+    header {
+        position: fixed;
+        padding: 30px 5px;
+    }
+
+    header.sticky{
+        padding: 20px 0;
+    }
+
+    header .menu{
+        display: none;
+    }
+}
 
