@@ -21,10 +21,11 @@ class AdminController extends Controller
         // Menghitung jumlah pengguna dengan usertype 'user'
         $userCount = User::where('usertype', 'user')->count();
 
-        $totalProducts = Produk::count();
+        $usersByType = [
+            'user' => User::where('usertype', 'user')->get(),
+        ];
 
-        $averageRating = ReviewRating::average('star_rating');
-        $formattedAverageRating = number_format($averageRating, 1);
+        $totalProducts = Produk::count();
 
         $currentDate = Carbon::now();
 
@@ -57,8 +58,24 @@ class AdminController extends Controller
             ->where('status_transaksi', 'pending')
             ->get();
 
+        $products = Produk::all();
+
+        $productsWithRatings = Produk::with('reviewRatings')->get()->map(function ($produk) {
+            // Menghitung rata-rata rating untuk produk tersebut
+            $averageRating = $produk->reviewRatings->avg('star_rating'); // Menghitung rata-rata rating
+            return [
+                'nama_produk' => $produk->nama_produk,
+                'average_rating' => $averageRating ? number_format($averageRating, 2) : '0.00', // Format 2 angka desimal
+                'ratings' => $produk->reviewRatings, // Semua review terkait produk ini
+            ];
+        });
+
+        // Menghitung rata-rata global untuk semua rating di tabel ReviewRating
+        $globalAverageRating = ReviewRating::average('star_rating');
+        $formattedGlobalAverageRating = number_format($globalAverageRating, 2);
+
         // Mengembalikan view dashboard dengan data yang dibutuhkan
-        return view('admin.dashboard', compact('transaksiPending', 'todayVisitors', 'weekVisitors', 'monthVisitors', 'formattedAverageRating', 'userCount', 'totalProducts'));
+        return view('admin.dashboard', compact('usersByType', 'products', 'transaksiPending', 'todayVisitors', 'weekVisitors', 'monthVisitors', 'productsWithRatings', 'formattedGlobalAverageRating', 'userCount', 'totalProducts'));
     }
 
 

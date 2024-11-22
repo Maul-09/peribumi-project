@@ -82,7 +82,6 @@ body {
 
 .login .input-field input {
     padding: 10px;
-    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
     outline: none;
@@ -96,18 +95,22 @@ body {
     color: #aaa;
     font-size: 16px;
     pointer-events: none; /* Agar tidak mengganggu klik */
-    transition: all 1s ease; /* Untuk animasi */
+    transition: all 0.5s ease; /* Untuk animasi */
 }
 
 .input-field input:focus {
     border-color: #007bff; /* Warna biru saat fokus */
 }
 
-.input-field input:focus + label,
-.input-field input:not(:placeholder-shown) + label {
+/* fokus ketika diklik */
+/* .input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label */
+
+.input-field input:not(:placeholder-shown) + label,
+.input-field input.has-text + label {
     padding: 0 7px;
     background-color: #fff;
-    transform: translateY(-90%); /* Reset translate */
+    transform: translateY(-70%); /* Reset translate */
     font-size: 14px; /* Ukuran lebih kecil */
     color: #007bff; /* Warna biru untuk label */
 }

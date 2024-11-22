@@ -39,7 +39,7 @@
                 @enderror
             </div>
             <div class="input-field">
-                <input type="password" id="password" name="password" placeholder=" "/>
+                <input type="password" id="password" name="password" placeholder=" " />
                 <label for="password">Password</label>
                 @error('password')
                     <p style="color: red;">{{ $message }}</p>
@@ -56,6 +56,8 @@
         </form>
         <p>Sudah punya akun? <a href="{{ route('login') }}" class="btn-login">Sign In</a></p>
     </div>
+
+    <script src="{{ asset('js/auth.js') }}"></script>
 </body>
 
 </html>

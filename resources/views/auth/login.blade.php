@@ -40,13 +40,13 @@
                     <p style="color: red;">{{ $message }}</p>
                 @enderror
                 @if (session('Failed'))
-                <div style="color:red;">
-                    <p>{{ session('Failed') }}</p>
-                </div>
-            @endif
+                    <div style="color:red;">
+                        <p>{{ session('Failed') }}</p>
+                    </div>
+                @endif
             </div>
 
-            
+
             <label class="forgot">
                 <div class="items-left">
                     <input type="checkbox" name="remember" value="1"> Remember me
@@ -60,6 +60,7 @@
         <p>Belum punya akun? <a href="{{ route('register') }}" class="btn-register">Sign Up</a></p>
     </div>
 
+    <script src="{{ asset('js/auth.js') }}"></script>
 </body>
 
 </html>
