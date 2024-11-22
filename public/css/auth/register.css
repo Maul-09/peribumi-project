@@ -58,13 +58,12 @@ body {
 
 .input-field label {
     position: absolute;
-    top: 50%;
     left: 10px;
-    transform: translateY(-50%);
+    transform: translateY(50%);
     color: #aaa;
     font-size: 16px;
     pointer-events: none; /* Agar tidak mengganggu klik */
-    transition: all 0.3s ease; /* Untuk animasi */
+    transition: all 0.5s ease; /* Untuk animasi */
 }
 
 .input-field input:focus {
@@ -75,8 +74,7 @@ body {
 .input-field input:not(:placeholder-shown) + label {
     padding: 0 7px;
     background-color: #fff;
-    top: -10px; /* Pindahkan label ke atas */
-    transform: translateY(0); /* Reset translate */
+    transform: translateY(-70%); /* Reset translate */
     font-size: 14px; /* Ukuran lebih kecil */
     color: #007bff; /* Warna biru untuk label */
 }
