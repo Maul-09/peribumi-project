@@ -146,41 +146,38 @@
                     </div>
                 </div>
 
-                <div class="tab-content">
-                    <div class="tab-pane active" id="general">
-                        <div class="photo-upload">
-                            <div class="photo-container">
+            <div class="tab-content">
+                <div class="tab-pane active" id="general">
+                    <div class="photo-upload">
+                        <div class="photo-container">
+                            @php
+                                $initial = strtolower(substr($field->name, 0, 1));
+                                $defaultImageName = 'default_' . $initial . '.png';
+                            @endphp
 
-                                @php
-                                    $initial = strtolower(substr($field->name, 0, 1));
-                                    $defaultImageName = 'default_' . $initial . '.png';
-                                    $defaultImagePath = public_path('profile/' . $defaultImageName);
-                                @endphp
-
-                                @if ($field->image)
-                                    <img src="{{ asset('profile/' . $field->image) }}" alt="Profile Image"
-                                        class="photo-container">
-                                @else
-                                    <div class="photo-container"
-                                        style="background-color: #ccc; display: flex; justify-content: center; align-items: center; border-radius:50%;">
-                                        <span style="font-size: 60px; color: white;">{{ strtoupper($initial) }}</span>
-                                    </div>
-                                @endif
+                            @if ($field->image)
+                                <img src="{{ asset('profile/' . $field->image) }}" alt="Profile Image" class="profile-photo">
+                            @else
+                                <div class="photo-placeholder" style="background-color: #ccc; display: flex; justify-content: center; align-items: center; border-radius:50%; width: 150px; height: 150px;">
+                                    <span style="font-size: 60px; color: white;">{{ strtoupper($initial) }}</span>
+                                </div>
+                            @endif
 
                                 @error('image')
                                     <div class="error">{{ $message }}</div>
                                 @enderror
 
-                                <div class="hover-overlay">
-                                    <i class="fas fa-eye"></i> Preview
-                                </div>
-                                <label for="file-input" class="upload-icon">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </label>
-                                <input type="file" class="file-input" id="file-input" accept="image/*" hidden>
+                            <div class="hover-overlay">
+                                <i class="fas fa-eye"></i> Preview
                             </div>
-                            <small>Allowed JPG, GIF, or PNG. Max size 800KB</small>
+                            <label for="file-input" class="upload-icon">
+                                <i class="fas fa-pencil-alt"></i>
+                            </label>
+                            <input type="file" class="file-input" id="file-input" accept="image/*" hidden>
                         </div>
+
+                        <small>Allowed JPG, GIF, or PNG. Max size 800KB</small>
+                    </div>
 
                         <div class="form-section">
                             <div class="form-group">
