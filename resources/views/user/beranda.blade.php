@@ -77,8 +77,9 @@
     </section>
 
     <section class="mitpro">
-        <div class="client">
+        <div class="title-product">
             <h2>PRODUK KAMI</h2>
+            <p>Kami menghadirkan beragam produk berkualitas tinggi yang dirancang untuk memenuhi kebutuhan Anda. Temukan inovasi, keunggulan, dan solusi terbaik di setiap kategori.</p>
         </div>
         <div class="cards-container">
             <div class="card">
@@ -156,8 +157,9 @@
         <hr id="mitra">
 
         <div>
-            <div class="client">
+            <div class="title-client">
                 <h2>CLIENT & KEMITRAAN</h2>
+                <p>Kami bangga dapat menjalin kerja sama dengan berbagai pihak yang mempercayakan kami sebagai bagian dari perjalanan mereka. Bersama, kami membangun solusi inovatif dan memberikan dampak positif di berbagai bidang.</p>
             </div>
             <div class="mitra-logo">
                 <img src="{{ asset('../image/mitra1.png') }}" alt="logo">
