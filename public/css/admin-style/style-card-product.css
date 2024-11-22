@@ -151,14 +151,12 @@
     background-color: #45a049;
 }
 
-/* Container rating */
 .rating {
     display: inline-flex;
     align-items: center;
     gap: 4px;
 }
 
-/* Dasar bentuk bintang */
 .star {
     display: inline-block;
     width: 20px;
@@ -174,26 +172,21 @@
         32% 57%,
         2% 35%,
         39% 35%
-    ); /* Membentuk bintang */
-    background-color: #e0e0e0; /* Default abu-abu untuk bintang kosong */
+    );
+    background-color: #e0e0e0;
 }
 
-/* Bintang penuh */
-.star.full {
-    background-color: #ffd700; /* Kuning untuk bintang penuh */
+    background-color: #ffd700;
 }
 
-/* Bintang setengah */
 .star.half {
     background: linear-gradient(to right, #ffd700 50%, #e0e0e0 50%);
 }
 
-/* Bintang kosong */
 .star.empty {
-    background-color: #e0e0e0; /* Tetap abu-abu */
+    background-color: #e0e0e0;
 }
 
-/* Styling nilai rating */
 .rating-value {
     font-size: 14px;
     color: #555;

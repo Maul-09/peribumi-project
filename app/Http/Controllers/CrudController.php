@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\View\View;
 use Illuminate\Support\Str;
@@ -31,9 +32,14 @@ class CrudController extends Controller
         // Mendapatkan pengguna berdasarkan ID
         $field = User::findOrFail($id);
 
+        $produkDibeli = Auth::user()->produk;
 
+        foreach ($produkDibeli as $produk) {
+            $produk->pivot->tanggal_beli = Carbon::parse($produk->pivot->tanggal_beli);
+            $produk->pivot->tanggal_berakhir = Carbon::parse($produk->pivot->tanggal_berakhir);
+        }
         // Merender tampilan dengan data pengguna
-        return view('user.profile-view', compact('field'));
+        return view('user.profile-view', compact('field', 'produkDibeli'));
     }
 
     public function changePassword(Request $request, string $id)
@@ -140,6 +146,8 @@ class CrudController extends Controller
         $field->username = $request->username;
         $field->email = $request->email;
         $field->save(); // Simpan perubahan
+
+        
 
         // Redirect ke halaman edit profile dengan pesan sukses
         return redirect()->route('editProfile', $id)->with(['success' => 'Data Berhasil Diubah!']);
