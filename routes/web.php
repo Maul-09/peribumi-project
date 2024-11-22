@@ -20,7 +20,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/event', [PeribumiController::class, 'event'])->name('event');
     });
     Route::middleware('admin')->group(function () {
-        Route::get('admin/dashboard', [AdminController::class, 'admin'])->name('admin');
+        Route::get('/admin/dashboard', [AdminController::class, 'admin'])->name('admin');
         Route::get('/manajemen-admin', [AdminController::class, 'manajemenAdmin'])->name('manajemen.admin');
         Route::get('/training-admin', [AdminController::class, 'trainingAdmin'])->name('training.admin');
         Route::get('/digital-admin', [AdminController::class, 'digitalAdmin'])->name('digital.admin');

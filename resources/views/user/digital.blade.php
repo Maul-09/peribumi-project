@@ -17,6 +17,7 @@
             <div class="title-produk">
                 <h3>Produk Kami</h3>
             </div>
+            <x-card-produk></x-card-produk>
         </div>
         <br>
     </section>
