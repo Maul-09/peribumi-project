@@ -46,32 +46,34 @@ tabLinks.forEach((tabLink) => {
 
 
 
-const fileInput = document.getElementById('file-input');
-const previewPhotoContainer = document.querySelector('.photo-container');
+document.getElementById('file-input').addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    if (file) {
 
-fileInput.addEventListener('change', function () {
-    const file = this.files[0];
+        if (!file.type.startsWith('image/')) {
+            alert('Please upload a valid image file.');
+            return;
+        }
 
-    if (file && file.type.startsWith('image/')) {
         const reader = new FileReader();
         reader.onload = function (e) {
+            const img = document.querySelector('.photo-container img');
+            if (img) {
+                img.src = e.target.result;
+            } else {
+                const placeholder = document.querySelector('.photo-placeholder');
+                if (placeholder) placeholder.remove();
 
-            let previewPhoto = previewPhotoContainer.querySelector('img');
-            if (!previewPhoto) {
-                previewPhoto = document.createElement('img');
-                previewPhoto.alt = "Profile Image";
-                previewPhoto.style.borderRadius = "50%";
-                previewPhoto.style.width = "100%";
-                previewPhoto.style.height = "100%";
-                previewPhotoContainer.innerHTML = "";
-                previewPhotoContainer.appendChild(previewPhoto);
+                const newImg = document.createElement('img');
+                newImg.src = e.target.result;
+                newImg.alt = 'Profile Image';
+                newImg.className = 'profile-photo';
+                document.querySelector('.photo-container').prepend(newImg);
             }
-            previewPhoto.src = e.target.result;
         };
         reader.readAsDataURL(file);
-    } else {
-        alert('Please upload a valid image file.');
     }
 });
+
 
 

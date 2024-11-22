@@ -148,19 +148,17 @@
                 <div class="tab-pane active" id="general">
                     <div class="photo-upload">
                         <div class="photo-container">
-
                             @php
-                            $initial = strtolower(substr($field->name, 0, 1));
-                            $defaultImageName = 'default_' . $initial . '.png';
-                            $defaultImagePath = public_path('profile/' . $defaultImageName);
+                                $initial = strtolower(substr($field->name, 0, 1));
+                                $defaultImageName = 'default_' . $initial . '.png';
                             @endphp
 
                             @if ($field->image)
-                                <img src="{{ asset('profile/' . $field->image) }}" alt="Profile Image" class="photo-container">
+                                <img src="{{ asset('profile/' . $field->image) }}" alt="Profile Image" class="profile-photo">
                             @else
-                            <div class="photo-container" style="background-color: #ccc; display: flex; justify-content: center; align-items: center; border-radius:50%;">
-                                <span style="font-size: 60px; color: white;">{{ strtoupper($initial) }}</span>
-                            </div>
+                                <div class="photo-placeholder" style="background-color: #ccc; display: flex; justify-content: center; align-items: center; border-radius:50%; width: 150px; height: 150px;">
+                                    <span style="font-size: 60px; color: white;">{{ strtoupper($initial) }}</span>
+                                </div>
                             @endif
 
                             @error('image')
@@ -175,6 +173,7 @@
                             </label>
                             <input type="file" class="file-input" id="file-input" accept="image/*" hidden>
                         </div>
+
                         <small>Allowed JPG, GIF, or PNG. Max size 800KB</small>
                     </div>
 
