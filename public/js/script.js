@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.querySelector(".toggle");
     const menu = document.querySelector(".menu");
+    const menuLinks = document.querySelectorAll(".menu a");
 
     const toggleMenu = () => {
         menu.classList.toggle("active");
@@ -73,10 +74,18 @@ document.addEventListener("DOMContentLoaded", function () {
         toggle.addEventListener("click", toggleMenu);
     }
 
+    menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            menu.classList.remove("active");
+        });
+    });
+
     const updateToggleVisibility = () => {
         if (window.innerWidth <= 768) {
+
             toggle.style.display = "block";
         } else {
+
             toggle.style.display = "none";
             menu.classList.remove("active");
         }
@@ -86,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("resize", updateToggleVisibility);
 });
+
 
 
 
