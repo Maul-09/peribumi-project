@@ -24,10 +24,7 @@
     @if ($ShowNavbar)
         <x-navbar></x-navbar>
     @endif
-
-    <main>
         {{ $slot }}
-    </main>
     @if ($ShowFooter)
         <x-footer></x-footer>
     @endif

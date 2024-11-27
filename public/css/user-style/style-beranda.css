@@ -11,10 +11,7 @@ body {
     background-color: #04364a;
 }
 section {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding: 6em 12em;
 }
 
 .banner {
@@ -404,4 +401,22 @@ section.mitpro hr {
 @keyframes slideUp {
     from { transform: translateY(30px); }
     to { transform: translateY(0); }
+}
+
+@media only screen and (max-width: 768px){
+    section{
+        padding: 1.5em;
+    }
+
+    .content{
+        display: block;
+    }
+
+    .content img{
+        display: none;
+    }
+
+    .w50{
+        width: 100%;
+    }
 }
