@@ -100,9 +100,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector('.cards-container');
     const cardWidth = 215; // Sesuaikan dengan lebar card (plus gap jika ada)
     let scrollAmount = 0;
+    let isManualScrolling = false;
 
     function smoothScroll() {
-        if (scrollAmount >= container.scrollWidth - container.clientWidth) {
+        if (isManualScrolling) return; // Jangan jalankan jika sedang scroll manual
+
+        const maxScroll = container.scrollWidth - container.clientWidth;
+
+        if (scrollAmount >= maxScroll) {
             scrollAmount = 0; // Kembali ke awal jika sudah di ujung
         } else {
             scrollAmount += cardWidth; // Geser sejauh lebar card
@@ -133,9 +138,28 @@ document.addEventListener("DOMContentLoaded", function () {
         requestAnimationFrame(animateScroll);
     }
 
+    function updateScrollAmount() {
+        // Hitung posisi terdekat ke card terdekat
+        const scrollPosition = container.scrollLeft;
+        scrollAmount = Math.round(scrollPosition / cardWidth) * cardWidth;
+    }
+
+    // Deteksi aktivitas scroll manual
+    container.addEventListener('scroll', function () {
+        isManualScrolling = true;
+        clearTimeout(container.manualScrollTimeout);
+
+        // Setelah selesai scroll manual, reset flag
+        container.manualScrollTimeout = setTimeout(function () {
+            isManualScrolling = false;
+            updateScrollAmount(); // Perbarui scrollAmount ke posisi terdekat
+        }, 300); // Delay untuk deteksi akhir scroll manual
+    });
+
     // Interval untuk scroll otomatis
     setInterval(smoothScroll, 5000);
 });
+
 
 
 
