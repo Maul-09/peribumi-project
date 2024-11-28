@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Animasi smooth dengan requestAnimationFrame
         let start = container.scrollLeft;
         let change = scrollAmount - start;
-        let duration = 500; // Durasi animasi (ms)
+        let duration = 1500; // Durasi animasi (ms)
         let startTime = null;
 
         function animateScroll(currentTime) {
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Interval untuk scroll otomatis
-    setInterval(smoothScroll, 3000); // Scroll setiap 3 detik
+    setInterval(smoothScroll, 5000);
 });
 
 
