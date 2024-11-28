@@ -403,7 +403,7 @@ section.mitpro hr {
     to { transform: translateY(0); }
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 581px){
     section{
         padding: 1.5em;
     }
@@ -418,5 +418,56 @@ section.mitpro hr {
 
     .w50{
         width: 100%;
+    }
+
+    .mitra-logo{
+        display:flex;
+    }
+
+    .mitra-logo img{
+        width:33%;
+        height:100px;
+    }
+
+    .carousel-container {
+        width: 100%; /* Sesuai layar */
+        overflow-x: hidden; /* Sembunyikan bagian di luar kontainer */
+        position: relative;
+    }
+
+    .cards-container {
+        width:100%;
+        padding: 0px;
+        gap: 15px;
+        justify-content: flex-start;
+        flex-wrap:nowrap;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        transition: transform 0.3s ease;
+    }
+
+
+    .card {
+        min-width: 200px;
+        border-radius: 10px;
+        overflow-x: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .textbx-card h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    }
+
+    .card:hover .textbx-card h3 {
+    transform: translateY(-50px);
+    }
+    
+    .textbx-card p {
+    font-size: 1px;
+    opacity: 0;
+    transform: translateY(5px);
     }
 }

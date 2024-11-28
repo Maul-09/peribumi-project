@@ -81,74 +81,76 @@
             <h2>PRODUK KAMI</h2>
             <p>Kami menghadirkan beragam produk berkualitas tinggi yang dirancang untuk memenuhi kebutuhan Anda. Temukan inovasi, keunggulan, dan solusi terbaik di setiap kategori.</p>
         </div>
-        <div class="cards-container">
-            <div class="card">
-                <div class="box">
-                    <a href="{{ route('manajemen') }}">
-                    <img src="{{ asset('../image/bg-10.jpg') }}" alt="">
-                    <div class="gradient-layer"></div>
-                    <div class="textbx-card">
-                        <h3>Management Business</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
-                        </p>
+        <div class="carousel-container">
+            <div class="cards-container">
+                <div class="card">
+                    <div class="box">
+                        <a href="{{ route('manajemen') }}">
+                        <img src="{{ asset('../image/bg-10.jpg') }}" alt="">
+                        <div class="gradient-layer"></div>
+                        <div class="textbx-card">
+                            <h3>Management Business</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
+                            </p>
+                        </div>
+                        </a>
                     </div>
-                    </a>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="box">
-                    <a href="{{ route('training') }}">
-                    <img src="{{ asset('../image/bg-8.jpg') }}" alt="">
-                    <div class="gradient-layer"></div>
-                    <div class="textbx-card">
-                        <h3>Training Center</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
-                        </p>
+                <div class="card">
+                    <div class="box">
+                        <a href="{{ route('training') }}">
+                        <img src="{{ asset('../image/bg-8.jpg') }}" alt="">
+                        <div class="gradient-layer"></div>
+                        <div class="textbx-card">
+                            <h3>Training Center</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
+                            </p>
+                        </div>
+                        </a>
                     </div>
-                    </a>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="box">
-                    <a href="{{ route('digital') }}">
-                    <img src="{{ asset('../image/bg-4.jpg') }}" alt="">
-                    <div class="gradient-layer"></div>
-                    <div class="textbx-card">
-                        <h3>Digital Solution</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
-                        </p>
+                <div class="card">
+                    <div class="box">
+                        <a href="{{ route('digital') }}">
+                        <img src="{{ asset('../image/bg-4.jpg') }}" alt="">
+                        <div class="gradient-layer"></div>
+                        <div class="textbx-card">
+                            <h3>Digital Solution</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
+                            </p>
+                        </div>
+                        </a>
                     </div>
-                    </a>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="box">
-                    <a href="{{ route('personal') }}">
-                    <img src="{{ asset('../image/bg-5.jpg') }}" alt="">
-                    <div class="gradient-layer"></div>
-                    <div class="textbx-card">
-                        <h3>Personal Development</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
-                        </p>
+                <div class="card">
+                    <div class="box">
+                        <a href="{{ route('personal') }}">
+                        <img src="{{ asset('../image/bg-5.jpg') }}" alt="">
+                        <div class="gradient-layer"></div>
+                        <div class="textbx-card">
+                            <h3>Personal Development</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
+                            </p>
+                        </div>
+                        </a>
                     </div>
-                    </a>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="box">
-                    <a href="{{ route('event') }}">
-                    <img src="{{ asset('../image/bg-6.jpg') }}" alt="">
-                    <div class="gradient-layer"></div>
-                    <div class="textbx-card">
-                        <h3>Organizer</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
-                        </p>
+                <div class="card">
+                    <div class="box">
+                        <a href="{{ route('event') }}">
+                        <img src="{{ asset('../image/bg-6.jpg') }}" alt="">
+                        <div class="gradient-layer"></div>
+                        <div class="textbx-card">
+                            <h3>Organizer</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
+                            </p>
+                        </div>
+                        </a>
                     </div>
-                    </a>
                 </div>
             </div>
         </div>
