@@ -32,10 +32,7 @@
         </div>
 
         <div class="maps">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d990.1381707338038!2d107.64095861518679!3d-6.943938839532725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sid!2sid!4v1728965370957!5m2!1sid!2sid"
-                width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d529.4701028195153!2d107.64098316651061!3d-6.943918653753088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e86bbf1ea201%3A0x2ee1bf329174013e!2sJalan%20H.%20Basuki%20No.15%2C%20Binong%2C%20Kec.%20Batununggal%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040275!5e0!3m2!1sen!2sid!4v1732767255886!5m2!1sen!2sid" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
     <hr>

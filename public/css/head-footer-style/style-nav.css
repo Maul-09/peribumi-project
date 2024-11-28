@@ -339,20 +339,20 @@ header.sticky .dropdown-button:hover {
     header .menu {
         padding: 30px;
         flex-direction: column;
-        position: absolute;
+        position: fixed;
         top: 77px;
-        left: -100%;
+        right: -100%;
         background-color: #fff;
         width: 100%;
         border-top: 1px solid #444;
         z-index: 1000;
-        transition: left 0.5s ease-in-out;
+        transition: right 0.5s ease-in-out;
 
     }
     header .menu.active {
         display: flex;
         text-align: center;
-        left: 0;
+        right: 0;
 
     }
     header .menu li {
@@ -365,6 +365,9 @@ header.sticky .dropdown-button:hover {
         font-size: 18px;
         width: 100%;
         color: var(--skin-color-1);
+    }
+    header .logo{
+        margin-right: 50px;
     }
 
     .dropdown-menu {
