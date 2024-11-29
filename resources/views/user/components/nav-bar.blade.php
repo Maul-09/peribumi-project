@@ -1,25 +1,26 @@
 <header>
     <a href="#home" class="logo">
-        <img src="{{ asset('image/logo-peribumi.png') }}" alt="logo"> PERIBUMI CONSULTANT
+        <img src="{{ asset('image/logo-peribumi.png') }}" alt="logo">
+        <p class="logo-title">PERIBUMI CONSULTANT</p>
     </a>
     <div class="toggle"></div>
     <ul class="menu">
-        <li><a href="{{ route('beranda') }}#home">Home</a></li>
-        <li><a href="{{ route('beranda') }}#about">About us</a></li>
+        <li><a href="{{ route('beranda') }}#home" class="link-bar">Home</a></li>
+        <li><a href="{{ route('beranda') }}#about" class="link-bar">About us</a></li>
         <li class="dropdown">
             <button class="dropdown-button" id="dropdownButton">Product</button>
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="{{ route('manajemen') }}">Management Business</a>
-                <a href="{{ route('training') }}">Training Center</a>
-                <a href="{{ route('digital') }}">Digital Solution</a>
-                <a href="{{ route('personal') }}">Personal Development</a>
-                <a href="{{ route('event') }}">Organizer</a>
+                <a href="{{ route('manajemen') }}" class="link-dropdown">Management Business</a>
+                <a href="{{ route('training') }}" class="link-dropdown">Training Center</a>
+                <a href="{{ route('digital') }}" class="link-dropdown">Digital Solution</a>
+                <a href="{{ route('personal') }}" class="link-dropdown">Personal Development</a>
+                <a href="{{ route('event') }}" class="link-dropdown">Organizer</a>
             </div>
         </li>
-        <li><a href="{{ route('beranda') }}#mitra">Mitra</a></li>
-        <li><a href="{{ route('beranda') }}#footer">Contact us</a></li>
+        <li><a href="{{ route('beranda') }}#mitra" class="link-bar">Mitra</a></li>
+        <li><a href="{{ route('beranda') }}#footer" class="link-bar">Contact us</a></li>
         @guest
-            <li><a href="{{ route('login') }}">Sign in</a></li>
+            <li><a href="{{ route('login') }}" class="link-bar">Sign in</a></li>
         @endguest
         @auth
             <li class="dropbutton">
@@ -47,9 +48,6 @@
                         <hr>
                         <a href="{{ route('editProfile', auth()->user()->id) }}" class="menu-items">
                             <i class="fas fa-user-edit"></i> Profile
-                        </a>
-                        <a href="{{ route('produk.aktif', auth()->user()->id) }}" class="menu-items">
-                            <i class="fas fa-user-edit"></i> Produk
                         </a>
                         <button type="drop-button" class="menu-items logout-button" onclick="confirmLogout()">
                             <i class="fas fa-sign-out-alt"></i> Logout

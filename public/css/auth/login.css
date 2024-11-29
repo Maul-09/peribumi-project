@@ -180,6 +180,22 @@ body {
 /* input:focus-visible,
 input:not(:placeholder-shown) {
     background-color: transparent; /* Atur latar belakang tetap transparan */
-    box-shadow: none; /* Hilangkan efek bayangan */
-    outline: none; /* Hilangkan outline biru */
+    /* box-shadow: none; /* Hilangkan efek bayangan */
+    /* outline: none; Hilangkan outline biru
 } */
+
+
+@media only screen and (max-width: 581px){
+    .login {
+        position: absolute;
+        left: 7%;
+        top: 55%;
+        width: 280px;
+    }
+
+    .bg-login img {
+        width: 100%;
+        float: right;
+        position: relative;
+    }
+}

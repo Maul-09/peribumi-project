@@ -144,7 +144,7 @@ img {
 .tabcontent li {
     padding-left:10px;
     margin-bottom:10px; /* Menambahkan spasi setelah angka */
-    
+
 }
 
 .tabcontent p {
@@ -460,8 +460,8 @@ section.mitpro hr {
     }
 
     .carousel-container {
-        width: 100%; /* Sesuai layar */
-        overflow-x: hidden; /* Sembunyikan bagian di luar kontainer */
+        width: 100%;
+        overflow-x: hidden;
         position: relative;
     }
 
@@ -494,7 +494,7 @@ section.mitpro hr {
     .card:hover .textbx-card h3 {
     transform: translateY(-50px);
     }
-    
+
     .textbx-card p {
     font-size: 1px;
     opacity: 0;
@@ -506,7 +506,7 @@ section.mitpro hr {
     .banner .textBx h2 {
         font-size: 1.5em;
     }
-    
+
     .banner .textBx p {
         font-size: 0.8em;
     }
