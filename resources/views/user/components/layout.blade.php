@@ -22,7 +22,7 @@
 <body>
     @props(['ShowNavbar' => true, 'ShowFooter' => true])
     @if ($ShowNavbar)
-        <x-navbar></x-navbar>
+        <x-nav-bar></x-nav-bar>
     @endif
         {{ $slot }}
     @if ($ShowFooter)
