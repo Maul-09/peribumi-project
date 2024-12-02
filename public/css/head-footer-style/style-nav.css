@@ -156,7 +156,8 @@ header.sticky .menu li .link-bar:hover,
 }
 
 header.sticky .menu li .link-bar,
-header.sticky .dropdown-button {
+header.sticky .dropdown-button,
+header.sticky .dropdown-menu .link-dropdown {
     color: var(--skin-color-1);
 }
 
