@@ -1,3 +1,7 @@
+@php
+    $isAdmin = auth()->user() && auth()->user()->usertype === 'admin';
+@endphp
+
 @foreach ($produkGrouped as $type => $produkList)
     <h2>{{ $type }}</h2>
 
@@ -40,12 +44,14 @@
                             <span class="text-muted">Belum ada rating</span>
                         @endif
                     </p>
+                    @if ($isAdmin)
                     <form action="{{ route('produk.destroy', $item->id) }}" method="POST" onsubmit="return false;">
                         @csrf
                         @method('DELETE')
                         <a href="{{ route('produk.edit', $item->id) }}" class="btn-edit">Edit</a>
                         <button type="button" class="btn-hapus" onclick="showPopup(this.form)">Hapus</button>
                     </form>
+                    @endif
                 </div>
             @endforeach
         </div>
