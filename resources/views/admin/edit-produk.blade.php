@@ -65,7 +65,7 @@
 
                                             <div class="form-group">
                                                 <label for="desc_harga">Deskripsi Harga Produk :</label>
-                                                <input name="desc_harga" id="desc_harga" class="form-control" required value="{{ $produk->desc_harga }}">
+                                                <textarea name="desc_harga" id="desc_harga" class="form-control" required>{{ $produk->desc_harga }}</textarea>
                                             </div>
 
                                             <div class="form-group">

@@ -8,6 +8,7 @@
     @if ($produkList->isEmpty())
         <p>Tidak ada produk dalam kategori ini.</p>
     @else
+    <div class="wadah">
         <div class="product-container">
             @foreach ($produkList as $item)
                 <div class="product-card">
@@ -16,7 +17,7 @@
                         <h3 class="product-name">{{ $item->nama_produk }}</h3>
                         <p class="product-description">{{ $item->deskripsi }}</p>
                         <p class="product-price">Harga: {{ $item->hl_harga }}</p>
-                    </a>
+                    
                     <!-- Tampilkan Rata-rata Rating -->
                     <p class="rating">
                         @if ($item->averageRating > 0)
@@ -52,6 +53,7 @@
                         <button type="button" class="btn-hapus" onclick="showPopup(this.form)">Hapus</button>
                     </form>
                     @endif
+                    </a>
                 </div>
             @endforeach
         </div>
@@ -64,5 +66,6 @@
                 </div>
             </div>
         </div>
+    </div>
     @endif
 @endforeach

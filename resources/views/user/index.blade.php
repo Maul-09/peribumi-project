@@ -147,7 +147,9 @@
                 <span class="detail-label">Harga:</span>
                 <span class="deskripsi-harga">{{ $produk->hl_harga }}</span>
                 <span class="detail-label">Deskripsi Harga:</span>
-                <span class="deskripsi-harga">{{ $produk->desc_harga }}</span>
+                @foreach(explode("\n", $deschr) as $line)
+                    <span class="deskripsi-harga">{{ $line }}</span>
+                @endforeach
                 <a href="#" class="btn-beli" id="openModal" data-produk-nama="{{ $produk->nama_produk }}"
                     data-produk-harga="{{ $produk->hl_harga }}" data-produk-durasi="{{ $produk->durasi }}"
                     data-whatsapp-url="{{ route('whatsapp.notice', $produk->id)}}">Beli
