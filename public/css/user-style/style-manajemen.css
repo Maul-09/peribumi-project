@@ -98,3 +98,7 @@ section.product-manajemen {
     aligh-item: center;
     margin-bottom: 30px;
 }
+
+@media only screen and (max-width: 581px){
+    
+}
