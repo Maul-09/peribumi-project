@@ -6,7 +6,7 @@
     <h2>{{ $type }}</h2>
 
     @if ($produkList->isEmpty())
-        <p>Tidak ada produk dalam kategori ini.</p>
+        <p class="no-produk">Tidak ada produk dalam kategori ini.</p>
     @else
     <div class="wadah">
         <div class="product-container">
