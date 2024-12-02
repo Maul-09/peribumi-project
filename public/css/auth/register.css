@@ -73,9 +73,12 @@ body {
 /* .input-field input:focus + label,
 .input-field input:not(:placeholder-shown) + label */
 
-/* sekarang fokus ketika mengetik */
-.input-field input:not(:placeholder-shown) + label,
-.input-field input.has-text + label {
+/* fokus ketika mengetik */
+/* .input-field input:not(:placeholder-shown) + label,
+.input-field input.has-text + label  */
+
+.input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label {
     padding: 0 7px;
     background-color: #fff;
     transform: translateY(-70%); /* Reset translate */
