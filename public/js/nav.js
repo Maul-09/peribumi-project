@@ -67,3 +67,44 @@ function performLogout() {
 window.onload = function() {
     closeModal();
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".toggle");
+    const menu = document.querySelector(".menu");
+    const menuLinks = document.querySelectorAll(".menu a");
+
+    const toggleMenu = () => {
+        menu.classList.toggle("active");
+    };
+
+    if (toggle && !toggle.querySelector("i")) {
+        const burgerIcon = document.createElement("i");
+        burgerIcon.className = "fas fa-bars";
+        toggle.appendChild(burgerIcon);
+    }
+
+    if (toggle) {
+        toggle.addEventListener("click", toggleMenu);
+    }
+
+    menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            menu.classList.remove("active");
+        });
+    });
+
+    const updateToggleVisibility = () => {
+        if (window.innerWidth <= 768) {
+
+            toggle.style.display = "block";
+        } else {
+
+            toggle.style.display = "none";
+            menu.classList.remove("active");
+        }
+    };
+
+    updateToggleVisibility();
+
+    window.addEventListener("resize", updateToggleVisibility);
+});
