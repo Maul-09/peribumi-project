@@ -59,25 +59,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector('.cards-container');
-    const cardWidth = 215; // Sesuaikan dengan lebar card (plus gap jika ada)
+    const cardWidth = 215;
     let scrollAmount = 0;
     let isManualScrolling = false;
 
     function smoothScroll() {
-        if (isManualScrolling) return; // Jangan jalankan jika sedang scroll manual
+        if (isManualScrolling) return;
 
         const maxScroll = container.scrollWidth - container.clientWidth;
 
         if (scrollAmount >= maxScroll) {
-            scrollAmount = 0; // Kembali ke awal jika sudah di ujung
+            scrollAmount = 0;
         } else {
-            scrollAmount += cardWidth; // Geser sejauh lebar card
+            scrollAmount += cardWidth;
         }
 
-        // Animasi smooth dengan requestAnimationFrame
+
         let start = container.scrollLeft;
         let change = scrollAmount - start;
-        let duration = 1500; // Durasi animasi (ms)
+        let duration = 1500;
         let startTime = null;
 
         function animateScroll(currentTime) {
