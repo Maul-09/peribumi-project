@@ -4,7 +4,7 @@ body {
 .screen{
     background-color: #fff;
     max-width: 100%;
-    max-height: 100%;
+    height: 100vh;
     padding: 80px;
     top: 0;
     left: 0;
@@ -33,15 +33,15 @@ body {
 }
 
 .arrow-back {
-    display: flex; /* Mengaktifkan Flexbox */
-    justify-content: space-between; /* Menyebarkan elemen */
-    align-items: center; /* Menyelaraskan secara vertikal */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
 }
 
 .account-settings .title {
-    position: absolute; /* Menempatkan di tengah */
-    left: 50%; /* Titik tengah horizontal */
+    position: absolute;
+    left: 50%;
     transform: translateX(-50%);
     font-size: 24px;
     font-weight: bold;
@@ -256,4 +256,8 @@ body {
 
 .account-settings .action-buttons .btn-cancel:hover {
     background-color: #5a6268;
+}
+
+@media only screen and (max-width: 581px){
+
 }
