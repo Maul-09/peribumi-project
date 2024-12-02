@@ -106,8 +106,12 @@ body {
 /* .input-field input:focus + label,
 .input-field input:not(:placeholder-shown) + label */
 
-.input-field input:not(:placeholder-shown) + label,
-.input-field input.has-text + label {
+/* fokus ketika mengetik */
+/* .input-field input:not(:placeholder-shown) + label,
+.input-field input.has-text + label  */
+
+.input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label {
     padding: 0 7px;
     background-color: #fff;
     transform: translateY(-70%); /* Reset translate */
@@ -180,12 +184,11 @@ body {
 /* input:focus-visible,
 input:not(:placeholder-shown) {
     background-color: transparent; /* Atur latar belakang tetap transparan */
-    /* box-shadow: none; /* Hilangkan efek bayangan */
-    /* outline: none; Hilangkan outline biru
+/* box-shadow: none; /* Hilangkan efek bayangan */
+/* outline: none; Hilangkan outline biru
 } */
 
-
-@media only screen and (max-width: 581px){
+@media only screen and (max-width: 581px) {
     .login {
         position: absolute;
         left: 7%;
