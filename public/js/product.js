@@ -46,34 +46,41 @@ tabLinks.forEach((tabLink) => {
 
 
 
-document.getElementById('file-input').addEventListener('change', function (event) {
-    const file = event.target.files[0];
-    if (file) {
+document.addEventListener('DOMContentLoaded', function () {
+    const fileInput = document.getElementById('file-input');
+    if (fileInput) {
+        fileInput.addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                if (!file.type.startsWith('image/')) {
+                    alert('Please upload a valid image file.');
+                    return;
+                }
 
-        if (!file.type.startsWith('image/')) {
-            alert('Please upload a valid image file.');
-            return;
-        }
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = document.querySelector('.photo-container img');
+                    if (img) {
+                        img.src = e.target.result;
+                    } else {
+                        const placeholder = document.querySelector('.photo-placeholder');
+                        if (placeholder) placeholder.remove();
 
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            const img = document.querySelector('.photo-container img');
-            if (img) {
-                img.src = e.target.result;
-            } else {
-                const placeholder = document.querySelector('.photo-placeholder');
-                if (placeholder) placeholder.remove();
-
-                const newImg = document.createElement('img');
-                newImg.src = e.target.result;
-                newImg.alt = 'Profile Image';
-                newImg.className = 'profile-photo';
-                document.querySelector('.photo-container').prepend(newImg);
+                        const newImg = document.createElement('img');
+                        newImg.src = e.target.result;
+                        newImg.alt = 'Profile Image';
+                        newImg.className = 'profile-photo';
+                        document.querySelector('.photo-container').prepend(newImg);
+                    }
+                };
+                reader.readAsDataURL(file);
             }
-        };
-        reader.readAsDataURL(file);
+        });
+    } else {
+        console.error('Element with ID "file-input" not found.');
     }
 });
+
 
 
 
