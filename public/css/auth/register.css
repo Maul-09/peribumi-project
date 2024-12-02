@@ -9,15 +9,15 @@ body {
 
 .register {
     position: absolute;
-    right: 15%; /* Menempatkan form di sebelah kanan layar */
+    right: 15%;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #ffffff; /* Latar belakang putih */
-    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.1); /* Memberikan bayangan lembut */
+    background-color: #ffffff;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.1);
     padding: 30px;
     border-radius: 10px;
     border: solid 1px rgba(0, 0, 0, 0.1);
-    width: 320px; /* Lebar form */
+    width: 320px;
     font-family: Arial, sans-serif;
 }
 
@@ -127,4 +127,18 @@ body {
 
 .register .btn-login:hover {
     color: #0056b3;
+}
+
+@media only screen and (max-width: 581px){
+    .register{
+        position: absolute;
+        right: 7%;
+        width: 280px;
+    }
+
+    .bg-register img {
+        width: 100%;
+        float: left;
+        position: relative;
+    }
 }

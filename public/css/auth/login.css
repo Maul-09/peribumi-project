@@ -188,7 +188,7 @@ input:not(:placeholder-shown) {
 /* outline: none; Hilangkan outline biru
 } */
 
-@media only screen and (max-width: 581px) {
+@media only screen and (max-width: 581px){
     .login {
         position: absolute;
         left: 7%;
