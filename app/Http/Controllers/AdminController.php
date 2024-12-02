@@ -74,8 +74,11 @@ class AdminController extends Controller
         $globalAverageRating = ReviewRating::average('star_rating');
         $formattedGlobalAverageRating = number_format($globalAverageRating, 2);
 
+        
+        $jumlahTransaksiPending = UserProduk::where('status_transaksi', 'pending')->count();
+
         // Mengembalikan view dashboard dengan data yang dibutuhkan
-        return view('admin.dashboard', compact('usersByType', 'products', 'transaksiPending', 'todayVisitors', 'weekVisitors', 'monthVisitors', 'productsWithRatings', 'formattedGlobalAverageRating', 'userCount', 'totalProducts'));
+        return view('admin.dashboard', compact('jumlahTransaksiPending', 'usersByType', 'products', 'transaksiPending', 'todayVisitors', 'weekVisitors', 'monthVisitors', 'productsWithRatings', 'formattedGlobalAverageRating', 'userCount', 'totalProducts'));
     }
 
 

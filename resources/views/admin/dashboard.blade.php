@@ -76,7 +76,7 @@
                                 });
                             </script>
                         </div>
-                        
+
                         <!-- End Sales Card -->
 
                         <!-- Revenue Card -->
@@ -129,7 +129,7 @@
                         <!-- End Revenue Card -->
 
                         <!-- Customers Card -->
-                        <div class="col-xxl-4 col-xl-12">
+                        <div class="col-xxl-4 col-md-6">
                             <div id="ratingCard" class="card info-card customers-card" style="cursor: pointer;">
                                 <div class="card-body">
                                     <h5 class="card-title">Rating</h5>
@@ -218,6 +218,79 @@
                                 modal.show();
                             });
                         </script>
+
+                        <div class="col-xxl-4 col-md-6">
+                            <div class="card info-card notification-card" data-bs-toggle="modal"
+                                data-bs-target="#verifikasiModal" style="cursor: pointer;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Verifikasi Produk</h5>
+                                    <div class="d-flex align-items-center">
+                                        <div
+                                            class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-bell"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6>{{ $jumlahTransaksiPending }}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="verifikasiModal" tabindex="-1"
+                            aria-labelledby="verifikasiModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="verifikasiModalLabel">Verifikasi Produk</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nama Produk</th>
+                                                    <th>Nama Pengguna</th>
+                                                    <th>Status Transaksi</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($transaksiPending as $transaksi)
+                                                    <tr>
+                                                        <td>{{ $transaksi->produk->nama_produk }}</td>
+                                                        <td>{{ $transaksi->user->name }}</td>
+                                                        <td>{{ $transaksi->status_transaksi }}</td>
+                                                        <td>
+                                                            <form
+                                                                action="{{ route('admin.konfirmasi', $transaksi->id) }}"
+                                                                method="POST" style="display:inline;">
+                                                                @csrf
+                                                                <button type="submit"
+                                                                    class="btn btn-success">Konfirmasi</button>
+                                                            </form>
+
+                                                            <form action="{{ route('admin.tolak', $transaksi->id) }}"
+                                                                method="POST" style="display:inline;">
+                                                                @csrf
+                                                                <button type="submit"
+                                                                    class="btn btn-danger">Tolak</button>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Tutup</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="col-12">
@@ -352,51 +425,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Verifikasi Produk</h5>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Nama Produk</th>
-                                            <th>Nama Pengguna</th>
-                                            <th>Status Transaksi</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($transaksiPending as $transaksi)
-                                            <tr>
-                                                <td>{{ $transaksi->produk->nama_produk }}</td>
-                                                <td>{{ $transaksi->user->name }}</td>
-                                                <td>{{ $transaksi->status_transaksi }}</td>
-                                                <td>
-                                                    <form action="{{ route('admin.konfirmasi', $transaksi->id) }}"
-                                                        method="POST" style="display:inline;">
-                                                        @csrf
-                                                        <button type="submit"
-                                                            class="btn btn-success">Konfirmasi</button>
-                                                    </form>
 
-                                                    <form action="{{ route('admin.tolak', $transaksi->id) }}"
-                                                        method="POST" style="display:inline;">
-                                                        @csrf
-                                                        <button type="submit" class="btn btn-danger">Tolak</button>
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            {{-- <div class="col-lg-4">
+                    {{-- <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Verifikasi Produk</h5>
