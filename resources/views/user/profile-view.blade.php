@@ -74,19 +74,15 @@
                             @csrf
                             <div class="form-group">
                                 <label class="form-label"><i class="icon-user"></i> Name</label>
-                                <input type="text" class="form-control" name="name" placeholder="Your Name">
+                                <input type="text" class="form-control" name="name" placeholder="Your Name"  value="{{ old('name', auth()->user()->name ?? '') }}">
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="icon-envelope"></i> Email</label>
-                                <input type="text" class="form-control" name="email" placeholder="example@mail.com">
+                                <input type="text" class="form-control" name="email" placeholder="example@mail.com" value="{{ old('email', auth()->user()->email ?? '') }}">
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="icon-user-circle"></i> Username</label>
-                                <input type="text" class="form-control" name="username" placeholder="Your Username">
-                                <div class="alert">
-                                    Your email is not confirmed. Please check your inbox.<br>
-                                    <a href="javascript:void(0)">Resend confirmation</a>
-                                </div>
+                                <input type="text" class="form-control" name="username" placeholder="Your Username" value="{{ old('username', auth()->user()->username ?? '') }}">
                             </div>
                             <div class="action-buttons">
                                 <button type="submit" class="btn-save">Save changes</button>
