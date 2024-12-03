@@ -18,19 +18,19 @@
                 <div class="sidebar">
                     <div class="tabs">
                         <a href="#" class="tab-link active" data-target="general">
-                            <i class="fas fa-user"></i> General
+                            <i class="fas fa-user"></i><span class="title-nav">General</span>
                         </a>
                         <a href="#" class="tab-link" data-target="change-password">
-                            <i class="fas fa-key"></i> Change Password
+                            <i class="fas fa-key"></i><span class="title-nav">Change Password</span>
                         </a>
                         <a href="#" class="tab-link" data-target="info">
-                            <i class="fas fa-info-circle"></i> Info
+                            <i class="fas fa-info-circle"></i><span class="title-nav">Info</span>
                         </a>
                         <a href="#" class="tab-link" data-target="social-links">
-                            <i class="fas fa-share-alt"></i> Social Links
+                            <i class="fas fa-share-alt"></i><span class="title-nav">Social Links</span>
                         </a>
                         <a href="#" class="tab-link" data-target="product">
-                            <i class="fas fa-box"></i> Product
+                            <i class="fas fa-box"></i><span class="title-nav">Product</span>
                         </a>
                     </div>
                 </div>
@@ -53,10 +53,8 @@
                                         <img src="{{ asset('profile/' . $field->image) }}" alt="Profile Image"
                                             class="profile-photo">
                                     @else
-                                        <div class="photo-placeholder"
-                                            style="background-color: #ccc; display: flex; justify-content: center; align-items: center; border-radius:50%; width: 150px; height: 150px;">
-                                            <span
-                                                style="font-size: 60px; color: white;">{{ strtoupper($initial) }}</span>
+                                        <div class="photo-placeholder">
+                                            <span class="initial">{{ strtoupper($initial) }}</span>
                                         </div>
                                     @endif
 
