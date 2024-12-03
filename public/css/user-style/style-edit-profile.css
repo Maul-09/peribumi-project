@@ -6,8 +6,6 @@ body {
     max-width: 100%;
     height: 100vh;
     padding: 80px;
-    top: 0;
-    left: 0;
 }
 .account-settings {
     display: flex;
@@ -202,6 +200,7 @@ body {
 .account-settings .tab-content .form-section .form-group label {
     display: block;
     font-size: 14px;
+    color: #A59D84;
     margin-bottom: 5px;
 }
 
@@ -259,5 +258,103 @@ body {
 }
 
 @media only screen and (max-width: 581px){
+    .screen{
+        max-width: 100%;
+        height: 100vh;
+        padding: 10px;
+    }
+    .account-settings {
+        flex-direction: column;
+        padding: 15px;
+    }
 
+    .account-settings .arrow-back {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .account-settings .arrow-back .btn-back {
+        margin-bottom: 5px;
+        font-size: 22px;
+    }
+
+    .account-settings .arrow-back .title {
+        position: static;
+        transform: none;
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .account-settings .settings-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .account-settings .sidebar {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: #f8f9fa;
+        border-bottom: 2px solid #dee2e6;
+        padding: 10px 0;
+    }
+
+    .account-settings .sidebar .tabs {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+    }
+
+    .account-settings .sidebar .tab-link {
+        font-size: 14px;
+        padding: 8px;
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    .account-settings .tab-content {
+        max-height: auto;
+        min-height: auto;
+        padding: 20px 10px;
+    }
+
+    ..account-settings .tab-content .photo-upload{
+        display: flex;
+        align-items: center;
+    }
+
+    .account-settings .tab-content .photo-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .account-settings .tab-content .photo-placeholder span {
+        font-size: 40px;
+    }
+
+    .account-settings .tab-content .photo-upload small {
+        font-size: 10px;
+    }
+
+    .account-settings .tab-content .form-group label {
+        font-size: 12px;
+    }
+
+    .account-settings .tab-content .form-group .form-control {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .account-settings .action-buttons {
+        gap: 5px;
+        flex-direction: column;
+    }
+
+    .account-settings .action-buttons .btn-save,
+    .account-settings .action-buttons .btn-cancel {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
 }
