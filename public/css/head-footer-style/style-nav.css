@@ -328,7 +328,7 @@ header.sticky .dropdown-button:hover {
     header {
         position: fixed;
         width: 100%;
-        padding: 30px 0;
+        padding: 20px 0;
     }
 
     .toggle{
