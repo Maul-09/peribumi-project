@@ -307,18 +307,22 @@ body {
 
     .account-settings .settings-container {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
     }
 
     .account-settings .sidebar {
         display: flex;
-        background-color: #f8f9fa;
+        gap: 30px;
+        flex: none;
         border-bottom: 2px solid #dee2e6;
-        padding: 10px 0;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
     }
 
     .account-settings .sidebar .tabs {
         display: flex;
+        flex-direction: row;
         gap: 5px;
         flex-wrap: wrap;
         justify-content: center;
@@ -328,8 +332,11 @@ body {
     .account-settings .sidebar .tab-link {
         font-size: 14px;
         padding: 8px;
-        flex: 1 1 auto;
         text-align: center;
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .account-settings .sidebar .tab-link .title-nav{
