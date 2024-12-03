@@ -1,7 +1,7 @@
 <footer id="footer">
     <div class="title-foot">
         <img src="{{ asset('../image/logo-peribumi.png') }}" alt="logo">
-        <h2>PERIBUMI CONSULTANT</h2>
+        <h2>PERI BUMI CONSULTANT</h2>
     </div>
     <div class="con">
         <div class="about-foot">
@@ -20,7 +20,7 @@
                 <li><a href="training">Training Center</a></li>
                 <li><a href="digital">Digital Solution</a></li>
                 <li><a href="personal">Personal Development</a></li>
-                <li><a href="event">Organizer</a></li>
+                <li><a href="event">Event Organizer</a></li>
             </ul>
         </div>
 
@@ -37,6 +37,6 @@
     </div>
     <hr>
     <div class="tm">
-        <p>&copy; Copyright <script type="text/javascript">document.write(new Date().getFullYear());</script><strong><span> PT Peribumi Consulant</span></strong>. All Rights Reserved</p>
+        <p>&copy; Copyright <script type="text/javascript">document.write(new Date().getFullYear());</script><strong><span> PT Peribumi Cahaya Nusa</span></strong>. All Rights Reserved</p>
     </div>
 </footer>
