@@ -89,20 +89,34 @@ class CrudController extends Controller
             'instagram' => 'nullable|string',
         ]);
 
+        // Mapping nama field ke Bahasa Indonesia
+        $fieldLabels = [
+            'name' => 'Nama',
+            'email' => 'Email',
+            'username' => 'Nama Pengguna',
+            'alamat' => 'Alamat',
+            'tanggal_lahir' => 'Tanggal Lahir',
+            'nomor_telepon' => 'Nomor Telepon',
+            'jenis_kelamin' => 'Jenis Kelamin',
+            'facebook' => 'Facebook',
+            'twitter' => 'Twitter',
+            'instagram' => 'Instagram',
+        ];
+
         // Mendapatkan pengguna berdasarkan ID
         $field = User::findOrFail($id);
 
+        // Array untuk pesan sukses
+        $successMessages = [];
+
         // Cek jika gambar diupload
         if ($request->hasFile('image')) {
-            // Tentukan path folder
             $path = public_path('profile');
 
-            // Cek dan buat folder jika belum ada
             if (!File::exists($path)) {
-                File::makeDirectory($path, 0755, true); // Buat folder dengan hak akses 755
+                File::makeDirectory($path, 0755, true);
             }
 
-            // Hapus gambar lama jika ada
             if ($field->image) {
                 $oldImagePath = public_path('profile/' . $field->image);
                 if (File::exists($oldImagePath)) {
@@ -110,64 +124,40 @@ class CrudController extends Controller
                 }
             }
 
-            // Upload gambar baru
             $image = $request->file('image');
-            $imageName = time() . '_' . $image->getClientOriginalName(); // Nama file unik
-            $image->move($path, $imageName); // Simpan gambar ke folder public/profile
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move($path, $imageName);
 
-            // Update pengguna dengan gambar baru
             $field->image = $imageName;
+            $successMessages['image'] = 'Gambar berhasil diperbarui.';
         }
-        // Update data lainnya jika ada input yang diisi
-        if ($request->filled('name')) {
-            $field->name = $request['name'];
+
+        // Periksa perubahan pada nama, email, dan username
+        foreach (['name', 'email', 'username'] as $fieldKey) {
+            if ($request->filled($fieldKey) && $field[$fieldKey] !== $request[$fieldKey]) {
+                $field[$fieldKey] = $request[$fieldKey];
+                $successMessages[$fieldKey] = $fieldLabels[$fieldKey] . ' berhasil diperbarui.'; // Memanggil $fieldLabels
+            }
         }
         
-        if ($request->filled('email')) {
-            $field->email = $request['email'];
-        }
-
         $field->save();
 
-        $informasiUser = $field->informasiUser;
-        
-        if (!$informasiUser) {
-            // Jika data tidak ada, buat data baru
-            $informasiUser = new InformasiUser;
-        }
-        if ($request->filled('alamat')) {
-            $informasiUser->alamat = $request['alamat'];
-        }
-
-        if ($request->filled('tanggal_lahir')) {
-            $informasiUser->tanggal_lahir = $request['tanggal_lahir'];
+        // Kelola tabel InformasiUser
+        $informasiUser = $field->informasiUser ?? new InformasiUser;
+        foreach (['alamat', 'tanggal_lahir', 'nomor_telepon', 'jenis_kelamin', 'facebook', 'twitter', 'instagram'] as $infoKey) {
+            if ($request->filled($infoKey) && $informasiUser[$infoKey] !== $request[$infoKey]) {
+                $informasiUser[$infoKey] = $request[$infoKey];
+                $successMessages[$infoKey] = ucfirst(str_replace('_', ' ', $infoKey)) . ' berhasil diperbarui.';
+            }
         }
 
-        if ($request->filled('nomor_telepon')) {
-            $informasiUser->nomor_telepon = $request['nomor_telepon'];
-        }
+        $informasiUser->user_id = $field->id;
+        $informasiUser->save();
 
-        if ($request->filled('jenis_kelamin')) {
-            $informasiUser->jenis_kelamin = $request['jenis_kelamin'];
-        }
-
-        if ($request->filled('facebook')) {
-            $informasiUser->facebook = $request['facebook'];
-        }
-
-        if ($request->filled('twitter')) {
-            $informasiUser->twitter = $request['twitter'];
-        }
-
-        if ($request->filled('instagram')) {
-            $informasiUser->instagram = $request['instagram'];
-        }
-
-        $informasiUser->user_id = $field->id; // Pastikan foreign key user_id diisi
-        $informasiUser->save(); // Simpan perubahan
-        // Redirect ke halaman edit profile dengan pesan sukses
-        return redirect()->route('editProfile', $id)->with(['success' => 'Data Berhasil Diubah!']);
+        // Simpan pesan ke session
+        return redirect()->route('editProfile', $id)->with('successFields', $successMessages);
     }
+
 
 
     public function deleteAccount($id): RedirectResponse
