@@ -82,7 +82,7 @@
                                         value="{{ old('name', auth()->user()->name ?? '') }}">
 
                                     @if (session('successFields.name'))
-                                        <div class="alert alert-success mt-2">
+                                        <div style="color: #0af248">
                                             {{ session('successFields.name') }}
                                         </div>
                                     @endif
@@ -94,7 +94,7 @@
                                         value="{{ old('email', auth()->user()->email ?? '') }}">
 
                                     @if (session('successFields.email'))
-                                        <div class="alert alert-success mt-2">
+                                        <div style="color: #0af248">
                                             {{ session('successFields.email') }}
                                         </div>
                                     @endif
@@ -106,7 +106,7 @@
                                         value="{{ old('username', auth()->user()->username ?? '') }}">
 
                                     @if (session('successFields.username'))
-                                        <div class="alert alert-success mt-2">
+                                        <div style="color: #0af248">
                                             {{ session('successFields.username') }}
                                         </div>
                                     @endif
