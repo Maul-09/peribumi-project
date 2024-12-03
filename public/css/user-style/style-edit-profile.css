@@ -197,10 +197,33 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.5s ease;
 }
 
 .account-settings .tab-content .upload-icon:hover {
     background-color: #0056b3;
+}
+
+.account-settings .tab-content .delete-icon {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: #f80f0f;
+    color: #fff;
+    border-radius: 50%;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.5s ease;
+}
+
+.account-settings .tab-content .delete-icon:hover {
+    background-color: #bf0707;
 }
 
 .account-settings .tab-content .file-input {

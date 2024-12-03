@@ -48,6 +48,10 @@ tabLinks.forEach((tabLink) => {
 
 document.addEventListener('DOMContentLoaded', function () {
     const fileInput = document.getElementById('file-input');
+    const deleteIcon = document.querySelector('.delete-icon');
+    const photoContainer = document.querySelector('.photo-container');
+    const hiddenDeleteInput = document.getElementById('image-deleted');
+
     if (fileInput) {
         fileInput.addEventListener('change', function (event) {
             const file = event.target.files[0];
@@ -59,18 +63,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const reader = new FileReader();
                 reader.onload = function (e) {
-                    const img = document.querySelector('.photo-container img');
+                    let img = document.querySelector('.photo-container img');
                     if (img) {
                         img.src = e.target.result;
+                        hiddenDeleteInput.value = '0';
                     } else {
                         const placeholder = document.querySelector('.photo-placeholder');
                         if (placeholder) placeholder.remove();
 
-                        const newImg = document.createElement('img');
-                        newImg.src = e.target.result;
-                        newImg.alt = 'Profile Image';
-                        newImg.className = 'profile-photo';
-                        document.querySelector('.photo-container').prepend(newImg);
+                        img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.alt = 'Profile Image';
+                        img.className = 'profile-photo';
+                        photoContainer.prepend(img);
                     }
                 };
                 reader.readAsDataURL(file);
@@ -79,7 +84,40 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         console.error('Element with ID "file-input" not found.');
     }
+
+    if (deleteIcon) {
+        deleteIcon.addEventListener('click', function () {
+            const confirmation = confirm('Are you sure you want to delete this photo?');
+            if (confirmation) {
+                const img = document.querySelector('.photo-container img');
+                if (img) {
+                    img.remove();
+                }
+
+
+                const placeholder = document.querySelector('.photo-placeholder');
+                if (!placeholder) {
+                    const newPlaceholder = document.createElement('div');
+                    newPlaceholder.className = 'photo-placeholder';
+
+                    const initial = document.createElement('span');
+                    initial.className = 'initial';
+                    initial.textContent = '{{ strtoupper($initial) }}';
+
+                    newPlaceholder.appendChild(initial);
+                    photoContainer.prepend(newPlaceholder);
+                }
+
+                hiddenDeleteInput.value = '1';
+                fileInput.value = '';
+            }
+        });
+    } else {
+        console.error('Delete icon element not found.');
+    }
 });
+
+
 
 
 

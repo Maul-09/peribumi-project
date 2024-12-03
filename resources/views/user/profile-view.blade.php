@@ -1,7 +1,6 @@
 <x-layout :ShowNavbar="false" :ShowFooter="false">
     <x-slot:name>Beranda</x-slot>
     <x-slot:title>{{ asset('css/user-style/style-edit-profile.css') }}</x-slot>
-
     <div class="screen">
         <div class="account-settings">
             <div class="arrow-back">
@@ -50,8 +49,7 @@
                                     @endphp
 
                                     @if ($field->image)
-                                        <img src="{{ asset('profile/' . $field->image) }}" alt="Profile Image"
-                                            class="profile-photo">
+                                        <img src="{{ asset('profile/' . $field->image) }}" alt="Profile Image" class="profile-photo">
                                     @else
                                         <div class="photo-placeholder">
                                             <span class="initial">{{ strtoupper($initial) }}</span>
@@ -68,8 +66,11 @@
                                     <label for="file-input" class="upload-icon">
                                         <i class="fas fa-pencil-alt"></i>
                                     </label>
-                                    <input type="file" name="image" class="file-input" id="file-input"
-                                        accept="image/*" hidden>
+                                    <input type="file" name="image" class="file-input" id="file-input" accept="image/*" hidden>
+                                    <label class="delete-icon">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </label>
+                                    <input type="hidden" name="image_deleted" id="image-deleted" value="0">
                                 </div>
                                 <small>Allowed JPG, GIF, or PNG. Max size 800KB</small>
                             </div>
