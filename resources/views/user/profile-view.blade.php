@@ -60,9 +60,7 @@
                                         <div class="error">{{ $message }}</div>
                                     @enderror
 
-                                    <div class="hover-overlay">
-                                        <i class="fas fa-eye"></i> Preview
-                                    </div>
+                                    <div class="hover-overlay"></div>
                                     <label for="file-input" class="upload-icon">
                                         <i class="fas fa-pencil-alt"></i>
                                     </label>
@@ -74,6 +72,17 @@
                                 </div>
                                 <small>Allowed JPG, GIF, or PNG. Max size 800KB</small>
                             </div>
+
+                            <div class="custom-alert">
+                                <div class="alert-box">
+                                    <p class="alert-message"></p>
+                                    <div class="alert-buttons">
+                                        <button class="alert-confirm">Ya</button>
+                                        <button class="alert-cancel">Tidak</button>
+                                    </div>
+                                </div>
+                            </div>
+
 
                             <div class="form-section">
                                 @csrf
