@@ -335,11 +335,6 @@ header.sticky .dropdown-button:hover {
         font-size: 20px;
     }
 
-    header.sticky{
-        position: fixed;
-        padding: 20px 0;
-    }
-
     header .menu {
         padding: 30px;
         flex-direction: column;
