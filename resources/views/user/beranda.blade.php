@@ -24,8 +24,8 @@
     {{-- End Alertt berhasil --}}
     <section class="banner" id="home">
         <div class="textBx">
-            <h2>PERIBUMI CONSULTANT</h2>
-            <p>PERI BUMI hadir dan berkomitmen untuk membantu memfasilitasi langkah percepatan dalam rangka pengembangan
+            <h2>PERI BUMI CONSULTANT</h2>
+            <p>Hadir dan berkomitmen untuk membantu memfasilitasi langkah percepatan dalam rangka pengembangan
                 dan atau peningkatan kompetensi serta kapasitas Sumber daya manusia yang dimiliki</p>
         </div>
     </section>
@@ -33,7 +33,7 @@
     <section class="about" id="about">
         <div class="content">
             <div class="w50">
-                <h1>Tentang Peribumi Consultan</h1>
+                <h1>Tentang Peri bumi Consultant</h1>
                 <h2>Kami hadir sejak tahun 2023</h2>
                 <div class="navtab">
                     <div class="tab">
@@ -62,16 +62,16 @@
                                 sumber daya yang dimiliki</li>
                             <li>Menjadikan kepuasan yang dirasakan oleh pengguna atau
                                 pelanggan atas produk dan layanan yang dihadirkan
-                                sebagai pengalaman berharga tak akan ternilai yang
-                                memberikan motivasi lebih untuk terus berinovasi</li>
+                                sebagai pengalaman berharga tak ternilai Sehingga menjadikan Motivasi lebih bagi kami
+                                untuk terus berinovasi</li>
                         </ol>
                     </div>
                     <div class="tim-peribumi">
-                        <button class="tim-peribumi">Tim Peribumi</button>
+                        <button class="tim-peribumi">Tim Manajemen</button>
                     </div>
                 </div>
             </div>
-                <img src="{{ asset('../image/bg-4.jpg') }}" alt="foto">
+            <img src="{{ asset('../image/bg-4.jpg') }}" alt="foto">
 
         </div>
     </section>
@@ -79,20 +79,22 @@
     <section class="mitpro">
         <div class="title-product">
             <h2>PRODUK KAMI</h2>
-            <p>Kami menghadirkan beragam produk berkualitas tinggi yang dirancang untuk memenuhi kebutuhan Anda. Temukan inovasi, keunggulan, dan solusi terbaik di setiap kategori.</p>
+            <p>Kami menghadirkan beragam produk berkualitas tinggi yang dirancang untuk memenuhi kebutuhan Anda. Temukan
+                inovasi, keunggulan, dan solusi terbaik di setiap kategori.</p>
         </div>
         <div class="carousel-container">
             <div class="cards-container">
                 <div class="card">
                     <div class="box">
                         <a href="{{ route('manajemen') }}">
-                        <img src="{{ asset('../image/bg-10.jpg') }}" alt="">
-                        <div class="gradient-layer"></div>
-                        <div class="textbx-card">
-                            <h3>Management Business</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
-                            </p>
-                        </div>
+                            <img src="{{ asset('../image/bg-10.jpg') }}" alt="">
+                            <div class="gradient-layer"></div>
+                            <div class="textbx-card">
+                                <h3>Management Business</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam
+                                    blanditiis nobis.
+                                </p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -100,13 +102,14 @@
                 <div class="card">
                     <div class="box">
                         <a href="{{ route('training') }}">
-                        <img src="{{ asset('../image/bg-8.jpg') }}" alt="">
-                        <div class="gradient-layer"></div>
-                        <div class="textbx-card">
-                            <h3>Training Center</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
-                            </p>
-                        </div>
+                            <img src="{{ asset('../image/bg-8.jpg') }}" alt="">
+                            <div class="gradient-layer"></div>
+                            <div class="textbx-card">
+                                <h3>Training Center</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam
+                                    blanditiis nobis.
+                                </p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -114,13 +117,14 @@
                 <div class="card">
                     <div class="box">
                         <a href="{{ route('digital') }}">
-                        <img src="{{ asset('../image/bg-4.jpg') }}" alt="">
-                        <div class="gradient-layer"></div>
-                        <div class="textbx-card">
-                            <h3>Digital Solution</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
-                            </p>
-                        </div>
+                            <img src="{{ asset('../image/bg-4.jpg') }}" alt="">
+                            <div class="gradient-layer"></div>
+                            <div class="textbx-card">
+                                <h3>Digital Solutions</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam
+                                    blanditiis nobis.
+                                </p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -128,13 +132,14 @@
                 <div class="card">
                     <div class="box">
                         <a href="{{ route('personal') }}">
-                        <img src="{{ asset('../image/bg-5.jpg') }}" alt="">
-                        <div class="gradient-layer"></div>
-                        <div class="textbx-card">
-                            <h3>Personal Development</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
-                            </p>
-                        </div>
+                            <img src="{{ asset('../image/bg-5.jpg') }}" alt="">
+                            <div class="gradient-layer"></div>
+                            <div class="textbx-card">
+                                <h3>Personal Development</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam
+                                    blanditiis nobis.
+                                </p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -142,13 +147,14 @@
                 <div class="card">
                     <div class="box">
                         <a href="{{ route('event') }}">
-                        <img src="{{ asset('../image/bg-6.jpg') }}" alt="">
-                        <div class="gradient-layer"></div>
-                        <div class="textbx-card">
-                            <h3>Organizer</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam blanditiis nobis.
-                            </p>
-                        </div>
+                            <img src="{{ asset('../image/bg-6.jpg') }}" alt="">
+                            <div class="gradient-layer"></div>
+                            <div class="textbx-card">
+                                <h3> Event Organizer</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam
+                                    blanditiis nobis.
+                                </p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -160,8 +166,10 @@
 
         <div>
             <div class="title-client">
-                <h2>CLIENT & KEMITRAAN</h2>
-                <p>Kami bangga dapat menjalin kerja sama dengan berbagai pihak yang mempercayakan kami sebagai bagian dari perjalanan mereka. Bersama, kami membangun solusi inovatif dan memberikan dampak positif di berbagai bidang.</p>
+                <h2>KERJA SAMA & KEMITRAAN</h2>
+                <p>Kami bangga dapat menjalin kerja sama dengan berbagai pihak yang mempercayakan kami sebagai bagian
+                    dari perjalanan mereka. Bersama, kami membangun solusi inovatif dan memberikan dampak positif di
+                    berbagai bidang.</p>
             </div>
             <div class="mitra-logo">
                 <img src="{{ asset('../image/mitra1.png') }}" alt="logo">

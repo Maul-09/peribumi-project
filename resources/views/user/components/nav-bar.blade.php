@@ -1,7 +1,7 @@
 <header>
     <a href="#home" class="logo">
         <img src="{{ asset('image/logo-peribumi.png') }}" alt="logo">
-        <p class="logo-title">PERIBUMI CONSULTANT</p>
+        <p class="logo-title">PERI BUMI CONSULTANT</p>
     </a>
     <div class="toggle"></div>
     <ul class="menu">
@@ -14,10 +14,10 @@
                 <a href="{{ route('training') }}" class="link-dropdown">Training Center</a>
                 <a href="{{ route('digital') }}" class="link-dropdown">Digital Solution</a>
                 <a href="{{ route('personal') }}" class="link-dropdown">Personal Development</a>
-                <a href="{{ route('event') }}" class="link-dropdown">Organizer</a>
+                <a href="{{ route('event') }}" class="link-dropdown">Event Organizer</a>
             </div>
         </li>
-        <li><a href="{{ route('beranda') }}#mitra" class="link-bar">Mitra</a></li>
+        <li><a href="{{ route('beranda') }}#mitra" class="link-bar">Client</a></li>
         <li><a href="{{ route('beranda') }}#footer" class="link-bar">Contact us</a></li>
         @guest
             <li><a href="{{ route('login') }}" class="link-bar">Sign in</a></li>
