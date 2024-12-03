@@ -93,7 +93,7 @@ class CrudController extends Controller
         $fieldLabels = [
             'name' => 'Nama',
             'email' => 'Email',
-            'username' => 'Nama Pengguna',
+            'username' => 'Username',
             'alamat' => 'Alamat',
             'tanggal_lahir' => 'Tanggal Lahir',
             'nomor_telepon' => 'Nomor Telepon',
@@ -135,11 +135,21 @@ class CrudController extends Controller
         // Periksa perubahan pada nama, email, dan username
         foreach (['name', 'email', 'username'] as $fieldKey) {
             if ($request->filled($fieldKey) && $field[$fieldKey] !== $request[$fieldKey]) {
-                $field[$fieldKey] = $request[$fieldKey];
-                $successMessages[$fieldKey] = $fieldLabels[$fieldKey] . ' berhasil diperbarui.'; // Memanggil $fieldLabels
+                if ($fieldKey == 'email' && $field[$fieldKey] !== $request[$fieldKey]) {
+                    // Mengirimkan email verifikasi untuk perubahan email
+                    $field->email = $request[$fieldKey];
+                    $field->email_verified_at = null; // Mengatur status email belum diverifikasi
+                    $field->save();
+
+                    $field->sendEmailVerificationNotification();
+                    $successMessages['email'] = 'Email baru telah dikirim untuk verifikasi.';
+                } else {
+                    $field[$fieldKey] = $request[$fieldKey];
+                    $successMessages[$fieldKey] = $fieldLabels[$fieldKey] . ' berhasil diperbarui.';
+                }
             }
         }
-        
+
         $field->save();
 
         // Kelola tabel InformasiUser
