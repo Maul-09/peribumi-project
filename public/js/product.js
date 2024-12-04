@@ -48,38 +48,102 @@ tabLinks.forEach((tabLink) => {
 
 document.addEventListener('DOMContentLoaded', function () {
     const fileInput = document.getElementById('file-input');
+    const deleteIcon = document.querySelector('.delete-icon');
+    const imgElement = document.querySelector('.photo-container img');
+    const placeholder = document.querySelector('.photo-placeholder');
+    const hiddenInput = document.getElementById('image-deleted');
+
+    const alertContainer = document.querySelector('.custom-alert');
+    const alertMessage = document.querySelector('.custom-alert .alert-message');
+    const alertConfirm = document.querySelector('.custom-alert .alert-confirm');
+    const alertCancel = document.querySelector('.custom-alert .alert-cancel');
+
+    function showAlert(message, confirmCallback = null) {
+        if (alertContainer && alertMessage) {
+            alertMessage.textContent = message;
+            alertContainer.style.display = 'flex';
+
+            // Event tombol konfirmasi
+            const confirmHandler = function () {
+                if (confirmCallback) confirmCallback();
+                closeAlert(); // Tutup alert setelah konfirmasi
+                alertConfirm.removeEventListener('click', confirmHandler); // Bersihkan listener
+            };
+            alertConfirm.addEventListener('click', confirmHandler);
+
+            // Event tombol batal
+            alertCancel.addEventListener('click', closeAlert);
+        }
+    }
+
+    function closeAlert() {
+        if (alertContainer) alertContainer.style.display = 'none';
+    }
+
     if (fileInput) {
         fileInput.addEventListener('change', function (event) {
             const file = event.target.files[0];
             if (file) {
+
                 if (!file.type.startsWith('image/')) {
-                    alert('Please upload a valid image file.');
+                    alert('Harap unggah file berupa gambar.');
                     return;
                 }
 
                 const reader = new FileReader();
                 reader.onload = function (e) {
-                    const img = document.querySelector('.photo-container img');
-                    if (img) {
-                        img.src = e.target.result;
-                    } else {
-                        const placeholder = document.querySelector('.photo-placeholder');
-                        if (placeholder) placeholder.remove();
 
+                    if (placeholder) placeholder.remove();
+
+
+                    if (imgElement) {
+                        imgElement.src = e.target.result;
+                    } else {
                         const newImg = document.createElement('img');
                         newImg.src = e.target.result;
                         newImg.alt = 'Profile Image';
                         newImg.className = 'profile-photo';
                         document.querySelector('.photo-container').prepend(newImg);
                     }
+
+
+                    if (hiddenInput) hiddenInput.value = '0';
                 };
                 reader.readAsDataURL(file);
             }
         });
-    } else {
-        console.error('Element with ID "file-input" not found.');
     }
+
+
+if (deleteIcon) {
+    deleteIcon.addEventListener('click', function () {
+        showAlert('Apakah Anda yakin ingin menghapus foto?', function () {
+
+            if (imgElement) imgElement.remove();
+
+            if (!placeholder) {
+                const newPlaceholder = document.createElement('div');
+                newPlaceholder.className = 'photo-placeholder';
+
+                const initialElement = document.querySelector('.photo-placeholder .initial');
+                const initialText = initialElement
+                    ? initialElement.textContent
+                    : 'A';
+
+                newPlaceholder.innerHTML = `<span class="initial">${initialText}</span>`;
+                document.querySelector('.photo-container').prepend(newPlaceholder);
+            }
+
+            if (hiddenInput) hiddenInput.value = '1';
+        });
+    });
+}
+
 });
+
+
+
+
 
 
 
