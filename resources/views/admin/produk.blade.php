@@ -7,7 +7,7 @@
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
-                    <li class="breadcrumb-item active">Produk Manajement</li>
+                    <li class="breadcrumb-item active">Produk Manajemen</li>
                 </ol>
             </nav>
         </div>
@@ -29,7 +29,8 @@
                                             </ul>
                                         </div>
                                     @endif
-                                    <form action="{{ route('produk.store') }}" method="POST" enctype="multipart/form-data" id="form-id">
+                                    <form action="{{ route('produk.store') }}" method="POST"
+                                        enctype="multipart/form-data" id="form-id">
                                         @csrf
                                         <input type="hidden" id="silabus-data" name="silabus_data">
                                         <div class="form-group">
@@ -39,67 +40,82 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="nama_produk" class="form-label">Nama Produk:</label>
+                                            <label for="nama_produk" class="form-label">Nama:</label>
                                             <input type="text" name="nama_produk" id="nama_produk"
-                                                class="form-control" required>
+                                                class="form-control" required></input>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="deskripsi" class="form-label">Deskripsi Singkat Produk:</label>
+                                            <label for="teknis" class="form-label">Teknis:</label>
+                                            <input type="text" name="teknis" id="teknis" class="form-control"
+                                                required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="deskripsi" class="form-label">Deskripsi Singkat:</label>
                                             <input name="deskripsi" id="deskripsi" class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="durasi" class="form-label">Durasi Produk:</label>
+                                            <label for="durasi" class="form-label">Durasi:</label>
                                             <input name="durasi" id="durasi" class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="personil" class="form-label">Personil :</label>
+                                            <label for="personil" class="form-label">Personil:</label>
                                             <input name="personil" id="personil" class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="persyaratan" class="form-label">Persyaratan Produk:</label>
-                                            <input name="persyaratan" id="persyaratan" class="form-control" required>
+                                            <label for="persyaratan" class="form-label">Persyaratan:</label>
+                                            <textarea name="persyaratan" id="persyaratan" class="form-control" required></textarea>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="metodologi" class="form-label">Metodologi :</label>
+                                            <label for="metodologi" class="form-label">Metodologi:</label>
                                             <input name="metodologi" id="metodologi" class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="sasaran" class="form-label">Sasaran Produk:</label>
-                                            <input name="sasaran" id="sasaran" class="form-control" required>
+                                            <label for="sasaran" class="form-label">Sasaran:</label>
+                                            <textarea name="sasaran" id="sasaran" class="form-control" required></textarea>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="jadwal_lokasi_fasilitas" class="form-label">Jadwal, Lokasi,
-                                                Fasilitas :</label>
-                                            <input name="jadwal_lokasi_fasilitas" id="jadwal_lokasi_fasilitas"
-                                                class="form-control" required>
+                                                Fasilitas:</label>
+                                            <textarea name="jadwal_lokasi_fasilitas" id="jadwal_lokasi_fasilitas" class="form-control" required></textarea>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="desc_harga" class="form-label">Deskripsi Harga Produk :</label>
+                                            <label for="desc_harga" class="form-label">Highlight:</label>
                                             <textarea name="desc_harga" id="desc_harga" class="form-control" required></textarea>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="hl_harga" class="form-label">Highlight Harga Produk :</label>
-                                            <input name="hl_harga" id="hl_harga" class="form-control" required>
+                                            <label for="hl_harga" class="form-label">Harga:</label>
+                                            <textarea name="hl_harga" id="hl_harga" class="form-control" required></textarea>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="produkType" class="form-label">Pilih Kategori:</label>
+                                            <label for="produkType" class="form-label">Pilihan Kategori:</label>
                                             <select name="produkType" id="produkType" class="select-control">
-                                                <option value="">Pilih Kategori</option>
+                                                <option value="">Pilihan Kategori</option>
                                                 @foreach ($kategori as $kat)
                                                     <option value="{{ $kat }}">{{ $kat }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="link" class="form-label">Masukkan Link:</label>
+                                            <div class="input-group">
+                                                <input type="url" name="link" id="link"
+                                                    class="form-control link-input" placeholder="https://contoh.com">
+                                                <button type="button" class="btn btn-small btn-preview"
+                                                    onclick="previewLink()">Preview</button>
+                                            </div>
+                                        </div>
+
                                         <input type="hidden" name="silabus_data" id="silabus-data">
                                         <button type="submit" class="btn-tambah-product">Simpan Produk</button>
                                     </form>
@@ -108,19 +124,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Silabus Program</h5>
                             <div class="activity">
                                 <div id="silabus-container" class="card-scroll">
                                     <h3>Silabus</h3>
-                                    <button type="button" class="btn-tambah-silabus" onclick="addSilabus()">Tambah Silabus</button>
+                                    <button type="button" class="btn-tambah-silabus" onclick="addSilabus()">Tambah
+                                        Silabus</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </main>
+                </div> --}}
+        </section>
+    </main>
 </x-adminlayout>

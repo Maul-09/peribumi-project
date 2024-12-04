@@ -53,7 +53,7 @@ class PeribumiController extends Controller
         $kat = ['MICE & Travel Vacation', 'Wedding & Integrated Event'];
 
         session(['kategori' => $kat, 'route' => 'organizer.admin']);
-        
+
         return view('user.event');
     }
 

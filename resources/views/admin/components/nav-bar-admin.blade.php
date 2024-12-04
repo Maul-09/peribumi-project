@@ -121,7 +121,7 @@
                 </li>
                 <li>
                     <a href="{{ route('organizer.admin') }}">
-                        <i class="bi bi-circle"></i><span>Organizer</span>
+                        <i class="bi bi-circle"></i><span>Event Organizer</span>
                     </a>
                 </li>
             </ul>

@@ -34,16 +34,18 @@ class ProdukController extends Controller
             // Validasi input data
             $request->validate([
                 'nama_produk' => 'required|string|max:255',
+                'teknis' => 'required|string|max:255',
                 'deskripsi' => 'nullable|string|max:255',
                 'durasi' => 'required|string|max:255',
                 'personil' => 'required|string|max:255',
-                'sasaran' => 'required|string|max:255',
+                'sasaran' => 'required|string|max:1000',
                 'persyaratan' => 'required|string|max:255',
                 'metodologi' => 'required|string|max:255',
                 'jadwal_lokasi_fasilitas' => 'required|string|max:255',
-                'desc_harga' => 'required|string|max:255',
+                'desc_harga' => 'required|string|max:1000',
                 'hl_harga' => 'required|string|max:255',
                 'produkType' => 'nullable|string|max:255',
+                'link' => 'nullable|url',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
 
                 'silabus' => 'array',
@@ -55,6 +57,7 @@ class ProdukController extends Controller
             // Simpan data produk tanpa gambar terlebih dahulu
             $produk = Produk::create([
                 'nama_produk' => $request->input('nama_produk'),
+                'teknis' => $request->input('teknis'),
                 'deskripsi' => $request->input('deskripsi'),
                 'durasi' => $request->input('durasi'),
                 'personil' => $request->input('personil'),
@@ -65,6 +68,7 @@ class ProdukController extends Controller
                 'desc_harga' => $request->input('desc_harga'),
                 'hl_harga' => $request->input('hl_harga'),
                 'produkType' => $request->input('produkType'),
+                'link' => $request->input('link'),
             ]);
 
             // Jika ada file gambar yang diunggah
@@ -147,16 +151,18 @@ class ProdukController extends Controller
         // Validasi input data
         $validatedData = $request->validate([
             'nama_produk' => 'required|string|max:255',
+            'teknis' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
             'durasi' => 'required|string|max:255',
             'personil' => 'required|string|max:255',
-            'sasaran' => 'required|string|max:255',
+            'sasaran' => 'required|string|max:1000',
             'persyaratan' => 'required|string|max:255',
             'metodologi' => 'required|string|max:255',
             'jadwal_lokasi_fasilitas' => 'required|string|max:255',
-            'desc_harga' => 'required|string|max:255',
+            'desc_harga' => 'required|string|max:1000',
             'hl_harga' => 'required|string|max:255',
             'produkType' => 'nullable|string|max:255',
+            'link' => 'nullable|string|max:1000',
 
             'silabus' => 'nullable|array',
             'silabus.*.judul' => 'required|string|max:255',
@@ -203,7 +209,7 @@ class ProdukController extends Controller
 
 
 
-    
+
     public function destroy($id)
     {
         $produk = Produk::findOrFail($id);

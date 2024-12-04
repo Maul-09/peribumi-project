@@ -74,7 +74,7 @@ class AdminController extends Controller
         $globalAverageRating = ReviewRating::average('star_rating');
         $formattedGlobalAverageRating = number_format($globalAverageRating, 2);
 
-        
+
         $jumlahTransaksiPending = UserProduk::where('status_transaksi', 'pending')->count();
 
         // Mengembalikan view dashboard dengan data yang dibutuhkan
@@ -85,7 +85,7 @@ class AdminController extends Controller
 
     public function manajemenAdmin()
     {
-        $kat = ['Pengembangan Bisnis', 'Pendampingan Manajemen Bisnis'];
+        $kat = ['Pengembangan (Inkubasi) Bisnis', 'Pendampingan Manajemen Bisnis'];
 
         session(['kategori' => $kat, 'route' => 'manajemen.admin']);
 
@@ -94,7 +94,7 @@ class AdminController extends Controller
 
     public function trainingAdmin()
     {
-        $kat = ['Pelatihan Calon Tenaga Kerja', 'Pelatihan Tenaga Kerja Aktif'];
+        $kat = ['Pelatihan Calon Tenaga Kerja', 'Pelatihan Tenaga Kerja (Profesi)'];
 
         session(['kategori' => $kat, 'route' => 'training.admin']);
 

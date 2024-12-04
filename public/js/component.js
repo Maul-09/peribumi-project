@@ -144,4 +144,14 @@ document.getElementById("form-id").addEventListener("submit", function(event) {
     }
 });
 
+// button link preview link
+function previewLink() {
+        const link = document.getElementById('link').value;
+        if (link) {
+            window.open(link, '_blank');
+        } else {
+            alert('Masukkan link terlebih dahulu!');
+        }
+    }
+
 

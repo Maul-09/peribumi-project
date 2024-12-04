@@ -59,7 +59,7 @@
 .btn-tambah-silabus,
 .btn-tambah-product {
     display: inline-block;
-    padding: 0.50em 1em;
+    padding: 0.5em 1em;
     font-size: 1em;
     font-weight: bold;
     color: #fff;
@@ -76,14 +76,14 @@
 
 .btn-tambah-silabus:hover,
 .btn-tambah-product:hover {
-    background-color: #357ABD;
+    background-color: #357abd;
 }
 
-#silabus-arrow-2{
+#silabus-arrow-2 {
     padding: 1em;
 }
 
-#silabus-arrow{
+#silabus-arrow {
     padding-top: 1.3em;
     border-top: 2px solid #eee;
 }
@@ -104,7 +104,6 @@
     margin-top: 0.5em;
 }
 
-
 @media (max-width: 768px) {
     form {
         padding: 1em;
@@ -113,4 +112,34 @@
     h2 {
         font-size: 1.75em;
     }
+}
+
+/* Input Styling */
+.link-input {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Button Styling */
+.btn-small {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.btn-small:hover {
+    background-color: #0056b3;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
 }

@@ -16,6 +16,10 @@
                     <span class="detail-value">{{ $produk->deskripsi }}</span>
                 </div>
                 <div class="detail-item">
+                    <span class="detail-label">Teknis:</span>
+                    <span class="detail-value">{{ $produk->teknis }}</span>
+                </div>
+                <div class="detail-item">
                     <span class="detail-label">Durasi:</span>
                     <span class="detail-value">{{ $produk->durasi }}</span>
                 </div>
@@ -40,9 +44,16 @@
                     <span class="detail-value">{{ $produk->jadwal_lokasi_fasilitas }}</span>
                 </div>
             </div>
+            <div class="detail-item">
+                <span class="detail-label">Proposal Pelatihan:</span>
+                @if ($produk->link)
+                    <a href="{{ $produk->link }}" class="btn-link" target="_blank">Unduh Sekarang</a>
+                @else
+                    <span class="no-link">Tidak ada link tersedia</span>
+                @endif
+            </div>
 
-
-            <h3 class="section-title">Silabus</h3>
+            {{-- <h3 class="section-title">Silabus</h3>
             <div class="silabus-container">
                 @foreach ($produk->silabus as $silabus)
                     <div class="silabus-item">
@@ -68,7 +79,7 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
+            </div> --}}
             <hr class="garis-bawah">
             <h3 class="section-title">Ulasan dan Rating</h3>
             <form action="{{ route('review.store') }}" method="POST" class="rating-form">
@@ -106,37 +117,37 @@
             @else
                 <ul class="review-list">
                     @foreach ($produk->reviewRatings as $review)
-                    <li class="review-item">
-                        @php
-                            $emote = '';
-                            switch ($review->star_rating) {
-                                case 5:
-                                    $emote = '<i class="fa-solid fa-face-grin-stars color-emote"></i>'; // Sangat puas
-                                    break;
-                                case 4:
-                                    $emote = '<i class="fa-solid fa-face-smile color-emote"></i>'; // Puas
-                                    break;
-                                case 3:
-                                    $emote = '<i class="fa-solid fa-face-meh color-emote"></i>'; // Netral
-                                    break;
-                                case 2:
-                                    $emote = '<i class="fa-solid fa-face-frown color-emote"></i>'; // Tidak puas
-                                    break;
-                                case 1:
-                                    $emote = '<i class="fa-solid fa-face-angry color-emote"></i>'; // Sangat tidak puas
-                                    break;
-                                default:
-                                    $emote = '<i class="fa-solid fa-circle-question text-muted"></i>'; // Tidak diketahui
-                            }
-                        @endphp
-                        <strong>{!! $emote !!} {{ $review->user->name ?? 'Tidak diketahui' }}</strong>
-                        <br>
-                        <span class="review-stars">
-                            {!! str_repeat('<i class="fa-solid fa-star text-warning"></i>', $review->star_rating) !!}
-                        </span>
-                        <p>{{ $review->comments }}</p>
-                        <p><em>{{ $review->created_at->format('d-m-Y') }}</em></p>
-                    </li>
+                        <li class="review-item">
+                            @php
+                                $emote = '';
+                                switch ($review->star_rating) {
+                                    case 5:
+                                        $emote = '<i class="fa-solid fa-face-grin-stars color-emote"></i>'; // Sangat puas
+                                        break;
+                                    case 4:
+                                        $emote = '<i class="fa-solid fa-face-smile color-emote"></i>'; // Puas
+                                        break;
+                                    case 3:
+                                        $emote = '<i class="fa-solid fa-face-meh color-emote"></i>'; // Netral
+                                        break;
+                                    case 2:
+                                        $emote = '<i class="fa-solid fa-face-frown color-emote"></i>'; // Tidak puas
+                                        break;
+                                    case 1:
+                                        $emote = '<i class="fa-solid fa-face-angry color-emote"></i>'; // Sangat tidak puas
+                                        break;
+                                    default:
+                                        $emote = '<i class="fa-solid fa-circle-question text-muted"></i>'; // Tidak diketahui
+                                }
+                            @endphp
+                            <strong>{!! $emote !!} {{ $review->user->name ?? 'Tidak diketahui' }}</strong>
+                            <br>
+                            <span class="review-stars">
+                                {!! str_repeat('<i class="fa-solid fa-star text-warning"></i>', $review->star_rating) !!}
+                            </span>
+                            <p>{{ $review->comments }}</p>
+                            <p><em>{{ $review->created_at->format('d-m-Y') }}</em></p>
+                        </li>
                     @endforeach
                 </ul>
             @endif
@@ -147,12 +158,12 @@
                 <span class="detail-label">Harga:</span>
                 <span class="deskripsi-harga">{{ $produk->hl_harga }}</span>
                 <span class="detail-label">Deskripsi Harga:</span>
-                @foreach(explode("\n", $deschr) as $line)
+                @foreach (explode("\n", $deschr) as $line)
                     <span class="deskripsi-harga">{{ $line }}</span>
                 @endforeach
                 <a href="#" class="btn-beli" id="openModal" data-produk-nama="{{ $produk->nama_produk }}"
                     data-produk-harga="{{ $produk->hl_harga }}" data-produk-durasi="{{ $produk->durasi }}"
-                    data-whatsapp-url="{{ route('whatsapp.notice', $produk->id)}}">Beli
+                    data-whatsapp-url="{{ route('whatsapp.notice', $produk->id) }}">Beli
                     Produk</a>
             </div>
         </div>

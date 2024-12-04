@@ -8,6 +8,7 @@ class Produk extends Model
 {
     protected $fillable = [
         'nama_produk',
+        'teknis',
         'image',
         'deskripsi',
         'durasi',
@@ -19,6 +20,7 @@ class Produk extends Model
         'jadwal_lokasi_fasilitas',
         'desc_harga',
         'hl_harga',
+        'link',
         'produkType'
     ];
     // Definisikan relasi dengan model Silabus
@@ -36,7 +38,7 @@ class Produk extends Model
     public function users()
     {
         return $this->belongsToMany(User::class, 'user_produk')
-        ->withPivot('status_transaksi', 'tanggal_beli', 'tanggal_berakhir')
-        ->wherePivot('status_transaksi', 'confirmed'); // hanya pengguna yang membeli dan mengonfirmasi
+            ->withPivot('status_transaksi', 'tanggal_beli', 'tanggal_berakhir')
+            ->wherePivot('status_transaksi', 'confirmed'); // hanya pengguna yang membeli dan mengonfirmasi
     }
 }
