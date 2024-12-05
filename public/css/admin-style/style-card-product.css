@@ -175,9 +175,9 @@
 
 .rating {
     display: flex;
-    align-items: center;
     gap: 4px;
     margin: 20px 0;
+    justify-content: center;
 }
 
 .rating span{
