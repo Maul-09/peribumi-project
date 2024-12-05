@@ -217,7 +217,8 @@ class ProdukController extends Controller
     {
         $produk = Produk::findOrFail($id);
 
-        if ($produk->image && File::exists(public_path($produk->image))) {
+        // Cek apakah file gambar ada dan bukan gambar default
+        if ($produk->image && $produk->image !== 'produk/default.jpg' && File::exists(public_path($produk->image))) {
             // Hapus file gambar dari direktori
             File::delete(public_path($produk->image));
         }
