@@ -424,8 +424,8 @@ body {
     }
 
     .account-settings .tab-content {
-        max-height: auto;
         min-height: auto;
+        overflow: visible;
         padding: 20px 10px;
     }
 

@@ -67,12 +67,29 @@ footer hr {
     color: #fff;
     text-decoration: none;
     transition: 0.5s;
+    position: relative;
 }
 
-.produk-foot a:hover {
-    color: var(--skin-color-4);
-    font-size: 14px;
+.produk-foot ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: var(--skin-color-4);
+    transition: width 0.5s ease-in-out;
 }
+
+.produk-foot ul li a:hover {
+    font-size: 13px;
+}
+
+.produk-foot ul li a:hover::after {
+    width: 100%;
+}
+
+
 
 .media-foot {
     color: #fff;
