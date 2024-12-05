@@ -125,7 +125,7 @@
 
 /* Button Styling */
 .btn-small {
-    padding: 0.3rem 0.6rem;
+    padding: 0.6rem 0.6rem;
     font-size: 0.8rem;
     background-color: #007bff;
     color: #fff;
@@ -142,4 +142,5 @@
 .input-group {
     display: flex;
     align-items: center;
+    gap: 5px;
 }

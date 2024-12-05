@@ -407,6 +407,7 @@
     border-radius: 4px;
     text-decoration: none;
     transition: background-color 0.3s;
+    max-width: 20%;
 }
 
 .btn-link:hover {

@@ -33,7 +33,10 @@
                 </div>
                 <div class="detail-item">
                     <span class="detail-label">Persyaratan:</span>
-                    <span class="detail-value">{{ $produk->persyaratan }}</span>
+                    @foreach (explode("\n", $produk->persyaratan) as $line)
+                    <span class="detail-value">{{ $line }}</span>
+                @endforeach
+                    
                 </div>
                 <div class="detail-item">
                     <span class="detail-label">Metodologi:</span>
@@ -158,7 +161,7 @@
                 <span class="detail-label">Harga:</span>
                 <span class="deskripsi-harga">{{ $produk->hl_harga }}</span>
                 <span class="detail-label">Deskripsi Harga:</span>
-                @foreach (explode("\n", $deschr) as $line)
+                @foreach (explode("\n", $produk->desc_harga) as $line)
                     <span class="deskripsi-harga">{{ $line }}</span>
                 @endforeach
                 <a href="#" class="btn-beli" id="openModal" data-produk-nama="{{ $produk->nama_produk }}"
