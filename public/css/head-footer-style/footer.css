@@ -82,32 +82,45 @@ footer hr {
 }
 
 .produk-foot ul li a:hover {
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .produk-foot ul li a:hover::after {
     width: 100%;
 }
 
-
-
 .media-foot {
-    color: #fff;
     padding: 10px;
     max-width: 500px;
+    display: flex;
+    flex-direction: column;
 }
 
-.media-foot a {
+.media-foot .media-social {
+    display: flex;
+    gap: 10px;
     text-decoration: none;
-    color: #fff;
-    font-size: 30px;
+    color: #fff;;
+    margin-bottom: 10px;
+}
+
+.media-foot .media-social i{
+    font-size: 28px;
+}
+
+.media-foot .media-social span{
+    font-size: 16px;
+    transition: 0.5s ease;
+}
+
+.media-foot .media-social span:hover{
+    color: var(--skin-color-4);
 }
 
 .tm {
     color: #fff;
-    display: flex;
-    justify-content: center;
-    aligh-item: center;
+    font-size: 16px;
+    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -138,7 +151,7 @@ footer hr {
     }
 
     .tm{
-        font-size: 12px;
+        font-size: 11px;
     }
     .about-foot{
         display: flex;

@@ -364,7 +364,7 @@ body {
     }
     .account-settings {
         flex-direction: column;
-        padding: 15px;
+        padding: 0;
     }
 
     .account-settings .arrow-back {
@@ -404,7 +404,6 @@ body {
         display: flex;
         flex-direction: row;
         gap: 5px;
-        flex-wrap: wrap;
         justify-content: center;
         list-style: none;
     }
@@ -468,6 +467,10 @@ body {
     .account-settings .tab-content .form-group .form-control {
         font-size: 12px;
         padding: 8px;
+    }
+
+    .account-settings .tab-content .form-group .form-control option{
+        font-size:18px;
     }
 
     .account-settings .action-buttons {
