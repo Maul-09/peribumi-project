@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ProdukController extends Controller
 {
@@ -215,6 +216,12 @@ class ProdukController extends Controller
     public function destroy($id)
     {
         $produk = Produk::findOrFail($id);
+
+        if ($produk->image && File::exists(public_path($produk->image))) {
+            // Hapus file gambar dari direktori
+            File::delete(public_path($produk->image));
+        }
+
         $produk->delete();
 
         return redirect()->back()->with('success', 'Produk berhasil dihapus!');
