@@ -131,10 +131,12 @@ class ProdukController extends Controller
         // Retrieve the product by ID
         $produk = Produk::findOrFail($id);
 
-        $deschr = Produk::find($id)->desc_harga;
+        // $deschr = Produk::find($id)->desc_harga;
+
+        // $persyaratan = Produk::find($id)->persyaratan;
 
         // Return the view with the product data
-        return view('user.index', compact('produk', 'deschr'));
+        return view('user.index', compact('produk'));
     }
     public function edit($id)
     {

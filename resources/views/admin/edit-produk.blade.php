@@ -84,17 +84,29 @@
                                             <input name="hl_harga" id="hl_harga" class="form-control" required
                                                 value="{{ $produk->hl_harga }}">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="kategori">Pilihan Kategori:</label>
+                                            <select name="produkType" id="produkType" class="select-control">
+                                                <option value="">Pilihan Kategori</option>
+                                                @foreach ($kategori as $kat)
+                                                    <option value="{{ $kat }}"
+                                                        {{ $kat == $produk->produkType ? 'selected' : '' }}>
+                                                        {{ $kat }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
 
-                                        <label for="kategori" class="form-label">Pilihan Kategori:</label>
-                                        <select name="produkType" id="produkType" class="select-control">
-                                            <option value="">Pilihan Kategori</option>
-                                            @foreach ($kategori as $kat)
-                                                <option value="{{ $kat }}"
-                                                    {{ $kat == $produk->produkType ? 'selected' : '' }}>
-                                                    {{ $kat }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                        <div class="form-group">
+                                            <label for="link">Masukkan Link:</label>
+                                            <div class="input-group">
+                                                <input type="url" name="link" id="link"
+                                                    class="form-control link-input" placeholder="https://contoh.com"
+                                                    required value="{{ $produk->link }}">
+                                                <button type="button" class="btn btn-small btn-preview"
+                                                    onclick="previewLink()">Preview</button>
+                                            </div>
+                                        </div>
                                         <button type="submit" class="btn btn-primary mt-3">Simpan Produk</button>
                                     </form>
                                 </div>
