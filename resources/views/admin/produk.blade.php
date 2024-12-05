@@ -111,7 +111,7 @@
                                             <div class="input-group">
                                                 <input type="url" name="link" id="link"
                                                     class="form-control link-input" placeholder="https://contoh.com">
-                                                <button type="button" class="btn btn-small btn-preview"
+                                                <button type="button" class="btn-small"
                                                     onclick="previewLink()">Preview</button>
                                             </div>
                                         </div>
