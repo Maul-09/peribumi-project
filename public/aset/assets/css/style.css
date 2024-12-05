@@ -1213,6 +1213,17 @@ h6 {
     }
 }
 
+@media only screen and (max-width: 581px){
+    .pagetitle h1 {
+        font-size: 20px;
+        margin-bottom: 0;
+        font-weight: 600;
+        color: #012970;
+    }
+    .breadcrumb {
+        display: none;
+    }
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/

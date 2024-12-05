@@ -150,8 +150,7 @@ header.sticky .dropdown-menu {
 }
 
 header .menu li .link-bar:hover,
-header.sticky .menu li .link-bar:hover,
-.dropdown-menu .link-dropdown:hover {
+header .dropdown-menu .link-dropdown:hover {
     color: var(--skin-color-4);
 }
 
@@ -162,10 +161,7 @@ header.sticky .dropdown-menu .link-dropdown {
 }
 
 header.sticky .menu li .link-bar:hover,
-header.sticky .dropdown-menu .link-dropdown:hover, {
-    color: var(--skin-color-4);
-}
-
+header.sticky .dropdown-menu .link-dropdown:hover,
 header.sticky .dropdown-button:hover {
     color: var(--skin-color-4);
 
