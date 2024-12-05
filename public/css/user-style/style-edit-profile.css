@@ -480,4 +480,11 @@ body {
         padding: 8px 15px;
         font-size: 12px;
     }
+
+    thead th {
+        padding: 12px 3px;
+        font-weight: bold;
+        font-size: 10px;
+        text-align: center;
+    }
 }
