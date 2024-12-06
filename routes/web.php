@@ -12,7 +12,7 @@ use App\Http\Controllers\PeribumiController;
 use App\Http\Controllers\AdminTransaksiController;
 
 Route::middleware('auth')->group(function () {
-    Route::middleware('verified', 'admin')->group(function () {
+    Route::middleware('verified')->group(function () {
         Route::get('/manajemen', [PeribumiController::class, 'manajemen'])->name('manajemen');
         Route::get('/training', [PeribumiController::class, 'training'])->name('training');
         Route::get('/digital', [PeribumiController::class, 'digital'])->name('digital');
