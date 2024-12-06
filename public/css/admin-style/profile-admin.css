@@ -1,0 +1,22 @@
+.user-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+}
+
+.user-logo-default {
+    width: 120px;
+    height: 120px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+}
+
+.user-logo-default span {
+    font-size: 36px;
+    color: white;
+}

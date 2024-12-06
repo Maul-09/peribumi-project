@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
     });
     Route::middleware('admin')->group(function () {
         Route::get('/admin/dashboard', [AdminController::class, 'admin'])->name('admin');
+        Route::get('/profile/admin', [AdminController::class, 'profileAdmin'])->name('profile.admin');
         Route::get('/manajemen-admin', [AdminController::class, 'manajemenAdmin'])->name('manajemen.admin');
         Route::get('/training-admin', [AdminController::class, 'trainingAdmin'])->name('training.admin');
         Route::get('/digital-admin', [AdminController::class, 'digitalAdmin'])->name('digital.admin');

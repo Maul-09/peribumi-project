@@ -165,4 +165,9 @@ class AdminController extends Controller
         // Redirect ke halaman dashboard admin dengan pesan sukses
         return redirect()->route('admin')->with('success', 'Transaksi telah ditolak!');
     }
+
+    public function profileAdmin()
+    {
+        return view('admin.profile-admin');
+    }
 }
