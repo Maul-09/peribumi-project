@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Visit;
 use App\Models\Produk;
 use App\Models\Visitor;
+use Illuminate\View\View;
 use App\Models\UserProduk;
 use App\Models\ReviewRating;
 use Illuminate\Http\Request;
@@ -166,7 +167,7 @@ class AdminController extends Controller
         return redirect()->route('admin')->with('success', 'Transaksi telah ditolak!');
     }
 
-    public function profileAdmin($id)
+    public function profileAdmin(string $id): View
     {
         $user = User::findOrFail($id);
         return view('admin.profile-admin', compact('user'));
