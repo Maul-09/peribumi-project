@@ -35,6 +35,8 @@ class CrudController extends Controller
 
         $produkDibeli = Auth::user()->produk;
 
+        
+
         foreach ($produkDibeli as $produk) {
             $produk->pivot->tanggal_beli = Carbon::parse($produk->pivot->tanggal_beli);
             $produk->pivot->tanggal_berakhir = Carbon::parse($produk->pivot->tanggal_berakhir);
@@ -130,6 +132,22 @@ class CrudController extends Controller
 
             $field->image = $imageName;
             $successMessages['image'] = 'Gambar berhasil diperbarui.';
+        }
+
+        if ($request->has('delete_image') && $request->delete_image == 1) {
+            // Jika ada gambar yang akan dihapus, hapus gambar dari storage
+            if ($field->image) {
+                $oldImagePath = public_path('profile/' . $field->image);
+                if (File::exists($oldImagePath)) {
+                    File::delete($oldImagePath);  // Hapus gambar dari storage
+                }
+        
+                // Set nama gambar menjadi null setelah dihapus
+                $field->image = null;
+        
+                // Set pesan sukses untuk penghapusan gambar
+                $successMessages['image'] = 'Gambar berhasil dihapus.';
+            }
         }
 
         // Periksa perubahan pada nama, email, dan username

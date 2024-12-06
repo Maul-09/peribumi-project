@@ -65,11 +65,8 @@
                                         <i class="fas fa-pencil-alt"></i>
                                     </label>
                                     <input type="file" name="image" class="file-input" id="file-input" accept="image/*" hidden>
-                                    <label class="delete-icon">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </label>
-                                    <input type="hidden" name="image_deleted" id="image-deleted" value="0">
                                 </div>
+                                <button type="submit" name="delete_image" value="1" onclick="return confirm('Apakah Aa yakin ingin menghapus gambar ini?')">Hapus Gambar</button>
                                 <small>Allowed JPG, GIF, or PNG. Max size 800KB</small>
                             </div>
 

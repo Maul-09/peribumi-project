@@ -52,12 +52,6 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <i class="bi bi-gear"></i>
-                            <span>Account Settings</span>
-                        </a>
-                    </li>
-                    <li>
                         <hr class="dropdown-divider">
                     </li>
                     <li>
@@ -128,9 +122,15 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="index.html">
+            <a class="nav-link collapsed" href="#">
                 <i class="bi bi-journal-text"></i>
                 <span>LMS</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ route('setting.akun') }}">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
             </a>
         </li>
 </aside><!-- End Sidebar-->
