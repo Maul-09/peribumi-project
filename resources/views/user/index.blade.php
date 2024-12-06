@@ -12,21 +12,21 @@
             <h3 class="section-title">Detail Produk</h3>
             <div class="produk-details">
                 @foreach ($product as $key => $value)
-                    @if (!is_array($value)) {{-- Skip array (seperti relasi jika ada) --}}
+                    @if (in_array($key, $specialKeys) && !empty($value))
+                        <div class="detail-item">
+                            <span class="detail-label">{{ ucwords(str_replace('_', ' ', $key)) }}:</span>
+                            @foreach (explode("\n", $value) as $line)
+                                <span class="detail-value">{{ $line }}</span>
+                            @endforeach
+                        </div>
+                    @elseif (!is_array($value) && !in_array($key, $specialKeys))
                         <div class="detail-item">
                             <span class="detail-label">{{ ucwords(str_replace('_', ' ', $key)) }}:</span>
                             <span class="detail-value">{{ $value }}</span>
                         </div>
                     @endif
-                    @if (isset($product['persyaratan']))
-                        <div class="detail-item">
-                            <span class="detail-label">Persyaratan:</span>
-                            @foreach (explode("\n", $product['persyaratan']) as $line)
-                                <span class="detail-value">{{ $line }}</span>
-                            @endforeach
-                        </div>
-                    @endif
                 @endforeach
+
             </div>
             <div class="detail-item">
                 <span class="detail-label">Proposal Pelatihan:</span>

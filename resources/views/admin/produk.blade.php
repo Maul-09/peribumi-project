@@ -160,8 +160,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="durasi_/_lembaga" class="form-label">Durasi / Lembaga:</label>
-                                            <textarea name="durasi_/_lembaga" id="durasi_/_lembaga" class="form-control" required></textarea>
+                                            <label for="durasi_lembaga" class="form-label">Durasi / Lembaga:</label>
+                                            <textarea name="durasi_lembaga" id="durasi_lembaga" class="form-control" required></textarea>
                                         </div>
 
                                         <div class="form-group">
