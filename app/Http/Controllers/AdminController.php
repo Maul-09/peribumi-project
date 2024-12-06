@@ -106,7 +106,7 @@ class AdminController extends Controller
     {
         $kat = ['Software/Aplikasi/Website', 'Artificial Intelegence'];
 
-        session(['kategori' => $kat, 'route' => 'digital.admin']);
+        session(['kategori' => $kat, 'route' => 'digital.admin', 'formNumber' => '2']);
 
         return view('admin.digital-solution');
     }
@@ -115,7 +115,7 @@ class AdminController extends Controller
     {
         $kat = ['Individu', 'Kelompok'];
 
-        session(['kategori' => $kat, 'route' => 'personal.admin']);
+        session(['kategori' => $kat, 'route' => 'personal.admin', 'formNumber' => '1']);
 
         return view('admin.personal-development');
     }
@@ -124,7 +124,7 @@ class AdminController extends Controller
     {
         $kat = ['MICE & Travel Vacation', 'Wedding & Integrated Event'];
 
-        session(['kategori' => $kat, 'route' => 'organizer.admin']);
+        session(['kategori' => $kat, 'route' => 'organizer.admin', 'formNumber' => '2']);
 
         return view('admin.organizer');
     }
