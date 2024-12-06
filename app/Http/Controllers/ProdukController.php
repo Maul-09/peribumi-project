@@ -45,7 +45,7 @@ class ProdukController extends Controller
             //     'kualifikasi' => 'required|string|max:1000',
             //     'ruang_lingkup' => 'required|string|max:1000',
             //     'klasifikasi' => 'required|string|max:1000',
-            //     'durasi_/_lembaga' => 'required|string|max:1000',
+            //     'durasi_lembaga' => 'required|string|max:1000',
             //     'kategori' => 'required|string|max:1000',
             //     'persyaratan' => 'required|string|max:255',
             //     'metodologi' => 'required|string|max:255',
@@ -74,7 +74,7 @@ class ProdukController extends Controller
             //     'kualifikasi' => $request->input('kualifikasi'),
             //     'ruang_lingkup' => $request->input('ruang_lingkup'),
             //     'klasifikasi' => $request->input('klasifikasi'),
-            //     'durasi_/_lembaga' => $request->input('durasi_/_lembaga'),
+            //     'durasi_lembaga' => $request->input('durasi_lembaga'),
             //     'kategori' => $request->input('kategori'),
             //     'persyaratan' => $request->input('persyaratan'),
             //     'metodologi' => $request->input('metodologi'),
@@ -120,7 +120,7 @@ class ProdukController extends Controller
                     'kualifikasi' => 'required|string',
                     'ruang_lingkup' => 'required|string',
                     'klasifikasi' => 'required|string',
-                    'durasi_/_lembaga' => 'required|string',
+                    'durasi_lembaga' => 'required|string',
                     'kategori' => 'required|string',
                     'deskripsi_harga' => 'required|string',
                     'highlight_harga' => 'required|string',
@@ -131,7 +131,7 @@ class ProdukController extends Controller
                 // Simpan data form2 ke database
                 $produk = Produk::create($request->only([
                     'nama_produk', 'jenis_pekerjaan', 'kualifikasi', 'ruang_lingkup',
-                    'klasifikasi', 'durasi_/_lembaga', 'kategori', 'deskripsi_harga',
+                    'klasifikasi', 'durasi_lembaga', 'kategori', 'deskripsi_harga',
                     'highlight_harga', 'produkType', 'link'
                 ]));
             }
@@ -201,7 +201,18 @@ class ProdukController extends Controller
         // $persyaratan = Produk::find($id)->persyaratan;
 
         // Return the view with the product data
-
+        $specialKeys = [
+            'persyaratan',
+            'sasaran',
+            'jadwal_lokasi_fasilitas',
+            'deskripsi_harga',
+            'highlight_harga',
+            'jenis_pekerjaan',
+            'kualifikasi',
+            'ruang_lingkup',
+            'klasifikasi',
+            'kategori'
+        ];
         $filteredProduct = array_filter($product->toArray(), function ($value, $key) {
             // Hanya ambil yang tidak null dan bukan 'id', 'created_at', atau 'updated_at'
             return !is_null($value) && !in_array($key, ['id', 'created_at', 'updated_at', 'produkType','nama_produk', 'image', 'link']);
@@ -209,7 +220,7 @@ class ProdukController extends Controller
 
         $produk = Produk::findOrFail($id);
 
-        return view('user.index', ['product' => $filteredProduct], compact('produk'));
+        return view('user.index', ['product' => $filteredProduct], compact('produk', 'specialKeys'));
     }
     public function edit($id)
     {
@@ -236,7 +247,7 @@ class ProdukController extends Controller
         //     'kualifikasi' => 'required|string|max:1000',
         //     'ruang_lingkup' => 'required|string|max:1000',
         //     'klasifikasi' => 'required|string|max:1000',
-        //     'durasi_/_lembaga' => 'required|string|max:1000',
+        //     'durasi_lembaga' => 'required|string|max:1000',
         //     'kategori' => 'required|string|max:1000',
         //     'persyaratan' => 'required|string|max:255',
         //     'metodologi' => 'required|string|max:255',
@@ -284,7 +295,7 @@ class ProdukController extends Controller
                     'kualifikasi' => 'required|string',
                     'ruang_lingkup' => 'required|string',
                     'klasifikasi' => 'required|string',
-                    'durasi_/_lembaga' => 'required|string',
+                    'durasi_lembaga' => 'required|string',
                     'kategori' => 'required|string',
                     'deskripsi_harga' => 'required|string',
                     'highlight_harga' => 'required|string',

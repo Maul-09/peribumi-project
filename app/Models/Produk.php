@@ -18,7 +18,7 @@ class Produk extends Model
         'kualifikasi',
         'ruang_lingkup',
         'klasifikasi',
-        'durasi_/_lembaga',
+        'durasi_lembaga',
         'kategori',
         'persyaratan',
         'metodologi',
