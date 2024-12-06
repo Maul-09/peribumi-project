@@ -1,5 +1,5 @@
 <x-layout>
-    <x-slot:name>Personal Development</x-slot>
+    <x-slot:name>Potensial Development</x-slot>
     <x-slot:title>{{ asset('css/user-style/style-personal.css') }}</x-slot>
     <section class="banner" id="home">
         <div class="textBx">

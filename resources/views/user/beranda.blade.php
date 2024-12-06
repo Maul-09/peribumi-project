@@ -80,7 +80,7 @@
         <div class="title-product">
             <h2>PRODUK KAMI</h2>
             <p>Kami menghadirkan beragam produk berkualitas tinggi yang dirancang untuk memenuhi kebutuhan Anda. Temukan
-                inovasi, keunggulan, dan solusi terbaik di setiap kategori.</p>
+                inovasi, keunggulan, dan solusi terbaik di setiap kategori produk kami berikut ini.</p>
         </div>
         <div class="carousel-container">
             <div class="cards-container">
@@ -167,8 +167,8 @@
         <div>
             <div class="title-client">
                 <h2>KERJA SAMA & KEMITRAAN</h2>
-                <p>Kami bangga dapat menjalin kerja sama dengan berbagai pihak yang mempercayakan kami sebagai bagian
-                    dari perjalanan mereka. Bersama, kami membangun solusi inovatif dan memberikan dampak positif di
+                <p>Kami bangga dapat menjalin kerja sama dan kemitraan dengan berbagai pihak yang mempercayakan kami sebagai bagian
+                    dari perjalanan mereka. Secara bersama-sama, kami membangun solusi inovatif dan memberikan dampak positif di
                     berbagai bidang.</p>
             </div>
             <div class="mitra-logo">

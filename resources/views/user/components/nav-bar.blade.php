@@ -13,7 +13,7 @@
                 <a href="{{ route('manajemen') }}" class="link-dropdown">Management Business</a>
                 <a href="{{ route('training') }}" class="link-dropdown">Training Center</a>
                 <a href="{{ route('digital') }}" class="link-dropdown">Digital Solution</a>
-                <a href="{{ route('personal') }}" class="link-dropdown">Personal Development</a>
+                <a href="{{ route('personal') }}" class="link-dropdown">Potensial Development</a>
                 <a href="{{ route('event') }}" class="link-dropdown">Event Organizer</a>
             </div>
         </li>

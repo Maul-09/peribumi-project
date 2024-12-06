@@ -29,7 +29,7 @@
 
             </div>
             <div class="detail-item">
-                <span class="detail-label">Proposal Pelatihan:</span>
+                <span class="detail-label">Proposal:</span>
                 @if ($produk->link)
                     <a href="{{ $produk->link }}" class="btn-link" target="_blank">Unduh Sekarang</a>
                 @else

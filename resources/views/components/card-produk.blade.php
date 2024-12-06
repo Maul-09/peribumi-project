@@ -15,8 +15,7 @@
                         <a href="{{ route('produk.show', $item->id) }}">
                             <img src="{{ asset($item->image) }}" alt="image">
                             <h3 class="product-name">{{ $item->nama_produk }}</h3>
-                            <p class="product-description">{{ $item->deskripsi }}</p>
-                            <p class="product-price">Harga: {{ $item->hl_harga }}</p>
+                            <p class="product-price">Harga: {{ $item->highlight_harga }}</p>
 
                             <!-- Tampilkan Rata-rata Rating -->
                             <p class="rating">
