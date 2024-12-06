@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/png" href="{{ asset('image/favicon.ico') }} ">
     <link href="{{ asset('aset/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
@@ -26,6 +27,7 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('aset/assets/css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/admin-style/style-product.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin-style/profile-admin.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin-style/style-card-product.css') }}">
     <title>Peribumi Consultant - Admin Dashboard</title>
 </head>

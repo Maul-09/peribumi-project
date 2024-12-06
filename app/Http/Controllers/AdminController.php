@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Visit;
 use App\Models\Produk;
 use App\Models\Visitor;
+use Illuminate\View\View;
 use App\Models\UserProduk;
 use App\Models\ReviewRating;
 use Illuminate\Http\Request;
@@ -87,7 +88,7 @@ class AdminController extends Controller
     {
         $kat = ['Pengembangan (Inkubasi) Bisnis', 'Pendampingan Manajemen Bisnis'];
 
-        session(['kategori' => $kat, 'route' => 'manajemen.admin']);
+        session(['kategori' => $kat, 'route' => 'manajemen.admin', 'formNumber' => '2']);
 
         return view('admin.manajemen-business');
     }
@@ -96,7 +97,7 @@ class AdminController extends Controller
     {
         $kat = ['Pelatihan Calon Tenaga Kerja', 'Pelatihan Tenaga Kerja (Profesi)'];
 
-        session(['kategori' => $kat, 'route' => 'training.admin']);
+        session(['kategori' => $kat, 'route' => 'training.admin', 'formNumber' => '1']);
 
         return view('admin.training-center');
     }
@@ -164,5 +165,24 @@ class AdminController extends Controller
 
         // Redirect ke halaman dashboard admin dengan pesan sukses
         return redirect()->route('admin')->with('success', 'Transaksi telah ditolak!');
+    }
+
+    public function profileAdmin(string $id): View
+    {
+        $user = User::findOrFail($id);
+        return view('admin.profile-admin', compact('user'));
+    }
+
+    public function deleteUser($id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return response()->json(['message' => 'User berhasil dihapus.'], 200);
+    }
+
+    public function settingAkun()
+    {
+        return view('admin.account-setting');
     }
 }

@@ -30,9 +30,10 @@
                                         </div>
                                     @endif
                                     <form action="{{ route('produk.store') }}" method="POST"
-                                        enctype="multipart/form-data" id="form-id">
+                                        enctype="multipart/form-data" id="form-id" class="form-section {{ $formNumber == 1 ? 'active' : '' }}">
                                         @csrf
                                         <input type="hidden" id="silabus-data" name="silabus_data">
+                                        <input type="hidden" name="form_identifier" value="form1">
                                         <div class="form-group">
                                             <label for="image" class="form-label">Upload Gambar Produk:</label>
                                             <input type="file" name="image" id="image" class="form-control"
@@ -87,13 +88,95 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="desc_harga" class="form-label">Highlight:</label>
-                                            <textarea name="desc_harga" id="desc_harga" class="form-control" required></textarea>
+                                            <label for="deskripsi_harga" class="form-label">Highlight:</label>
+                                            <textarea name="deskripsi_harga" id="deskripsi_harga" class="form-control" required></textarea>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="hl_harga" class="form-label">Harga:</label>
-                                            <textarea name="hl_harga" id="hl_harga" class="form-control" required></textarea>
+                                            <label for="highlight_harga" class="form-label">Harga:</label>
+                                            <textarea name="highlight_harga" id="highlight_harga" class="form-control" required></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="produkType" class="form-label">Pilihan Kategori:</label>
+                                            <select name="produkType" id="produkType" class="select-control">
+                                                <option value="">Pilihan Kategori</option>
+                                                @foreach ($kategori as $kat)
+                                                    <option value="{{ $kat }}">{{ $kat }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="link" class="form-label">Masukkan Link:</label>
+                                            <div class="input-group">
+                                                <input type="url" name="link" id="link"
+                                                    class="form-control link-input" placeholder="https://contoh.com">
+                                                <button type="button" class="btn-small"
+                                                    onclick="previewLink()">Preview</button>
+                                            </div>
+                                        </div>
+
+                                        <input type="hidden" name="silabus_data" id="silabus-data">
+                                        <button type="submit" class="btn-tambah-product">Simpan Produk</button>
+                                    </form>
+
+                                    <form action="{{ route('produk.store') }}" method="POST"
+                                        enctype="multipart/form-data" id="form-id" class="form-section {{ $formNumber == 2 ? 'active' : '' }}">
+                                        @csrf
+                                        <input type="hidden" id="silabus-data" name="silabus_data">
+                                        <input type="hidden" name="form_identifier" value="form2">
+
+                                        <div class="form-group">
+                                            <label for="image" class="form-label">Upload Gambar Produk:</label>
+                                            <input type="file" name="image" id="image" class="form-control"
+                                                accept="image/*">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="nama_produk" class="form-label">Nama:</label>
+                                            <input type="text" name="nama_produk" id="nama_produk"
+                                                class="form-control" required></input>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="jenis_pekerjaan" class="form-label">Jenis Pekerjaan:</label>
+                                            <textarea type="text" name="jenis_pekerjaan" id="jenis_pekerjaan" class="form-control"
+                                                required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="kualifikasi" class="form-label">Kualifikasi:</label>
+                                            <textarea name="kualifikasi" id="kualifikasi" class="form-control" required></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="ruang_lingkup" class="form-label">Ruang Lingkup:</label>
+                                            <textarea name="ruang_lingkup" id="ruang_lingkup" class="form-control" required></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="klasifikasi" class="form-label">Klasifikasi:</label>
+                                            <textarea name="klasifikasi" id="klasifikasi" class="form-control" required></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="durasi_lembaga" class="form-label">Durasi / Lembaga:</label>
+                                            <textarea name="durasi_lembaga" id="durasi_lembaga" class="form-control" required></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="kategori" class="form-label">Kategori:</label>
+                                            <textarea name="kategori" id="kategori" class="form-control" required></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="deskripsi_harga" class="form-label">Highlight:</label>
+                                            <textarea name="deskripsi_harga" id="deskripsi_harga" class="form-control" required></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="highlight_harga" class="form-label">Harga:</label>
+                                            <textarea name="highlight_harga" id="highlight_harga" class="form-control" required></textarea>
                                         </div>
 
                                         <div class="form-group">

@@ -7,7 +7,6 @@ function Dropdown(header) {
         content.style.maxHeight = null;
         icon.style.transform = 'rotate(0deg)';
     } else {
-
         document.querySelectorAll('.silabus-content.open').forEach((openContent) => {
             openContent.classList.remove('open');
             openContent.style.maxHeight = null;
@@ -23,7 +22,6 @@ function Dropdown(header) {
 
 const tabLinks = document.querySelectorAll('.tab-link');
 const tabPanes = document.querySelectorAll('.tab-pane');
-
 
 tabLinks.forEach((tabLink) => {
     tabLink.addEventListener('click', (event) => {
@@ -43,8 +41,6 @@ tabLinks.forEach((tabLink) => {
         }
     });
 });
-
-
 
 document.addEventListener('DOMContentLoaded', function () {
     const fileInput = document.getElementById('file-input');
@@ -79,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (alertContainer) alertContainer.style.display = 'none';
     }
 
-
     if (fileInput) {
         fileInput.addEventListener('change', function (event) {
             const file = event.target.files[0];
@@ -106,7 +101,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         document.querySelector('.photo-container').prepend(newImg);
                     }
 
-
                     if (hiddenInput) {
                         hiddenInput.value = '0';
                     }
@@ -115,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-
 
     if (deleteIcon) {
         deleteIcon.addEventListener('click', function () {
@@ -135,7 +128,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     placeholder.style.display = 'flex';
                 }
 
-
                 if (hiddenInput) {
                     hiddenInput.value = '1';
                 }
@@ -143,22 +135,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-
     if (saveButton) {
         saveButton.addEventListener('click', function () {
-
             location.reload();
         });
     }
 });
-
-
-
-
-
-
-
-
-
-
-

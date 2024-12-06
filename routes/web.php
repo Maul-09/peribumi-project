@@ -12,7 +12,7 @@ use App\Http\Controllers\PeribumiController;
 use App\Http\Controllers\AdminTransaksiController;
 
 Route::middleware('auth')->group(function () {
-    Route::middleware('verified', 'admin')->group(function () {
+    Route::middleware('verified')->group(function () {
         Route::get('/manajemen', [PeribumiController::class, 'manajemen'])->name('manajemen');
         Route::get('/training', [PeribumiController::class, 'training'])->name('training');
         Route::get('/digital', [PeribumiController::class, 'digital'])->name('digital');
@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/profile{id}', [CrudController::class, 'editProfile'])->name('editProfile');
         Route::post('/edit/profile/delete{id}', [CrudController::class, 'deleteAccount'])->name('deleteAccount');
         Route::post('/edit/profile/update{id}', [CrudController::class, 'update'])->name('update.profile');
+        Route::delete('/edit/profile/delete-image/{id}', [CrudController::class, 'deleteImageProfle'])->name('delete.image.profile');
         Route::get('/produk-aktif', [ProdukController::class, 'produkAktif'])->name('produk.aktif');
         Route::get('/forgot-password', [CrudController::class, 'forgotView'])->name('password.request');
         Route::post('/forgot-password', [CrudController::class, 'forgotSend'])->name('password.email');
@@ -35,6 +36,7 @@ Route::middleware('auth')->group(function () {
     });
     Route::middleware('admin')->group(function () {
         Route::get('/admin/dashboard', [AdminController::class, 'admin'])->name('admin');
+        Route::get('/profile/admin{id}', [AdminController::class, 'profileAdmin'])->name('profile.admin');
         Route::get('/manajemen-admin', [AdminController::class, 'manajemenAdmin'])->name('manajemen.admin');
         Route::get('/training-admin', [AdminController::class, 'trainingAdmin'])->name('training.admin');
         Route::get('/digital-admin', [AdminController::class, 'digitalAdmin'])->name('digital.admin');
@@ -50,8 +52,10 @@ Route::middleware('auth')->group(function () {
         Route::post('/proses-pembelian/{id}', [ProdukController::class, 'prosesPembelian'])->name('proses.pembelian');
         Route::post('/admin/konfirmasi/{id}', [AdminController::class, 'konfirmasiTransaksi'])->name('admin.konfirmasi');
         Route::post('/admin/tolak/{id}', [AdminController::class, 'tolakTransaksi'])->name('admin.tolak');
+        Route::delete('/delete/users/{id}', [AdminController::class, 'deleteUser'])->name('delete.user');
+        Route::get('/akun/setting/', [AdminController::class, 'settingAkun'])->name('setting.akun');
     });
-    
+
     Route::get('/email/verify', [AuthController::class, 'verifyNotice'])->name('verification.notice');
     Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verifyEmail'])->middleware('signed')->name('verification.verify');
     Route::post('/email/verification-notification', [AuthController::class, 'verifyHandler'])->middleware('throttle:6,1')->name('verification.send');
