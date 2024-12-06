@@ -35,6 +35,8 @@ class CrudController extends Controller
 
         $produkDibeli = Auth::user()->produk;
 
+        $field->masked_email = $this->maskEmail($field->email);
+
         foreach ($produkDibeli as $produk) {
             $produk->pivot->tanggal_beli = Carbon::parse($produk->pivot->tanggal_beli);
             $produk->pivot->tanggal_berakhir = Carbon::parse($produk->pivot->tanggal_berakhir);
@@ -130,6 +132,22 @@ class CrudController extends Controller
 
             $field->image = $imageName;
             $successMessages['image'] = 'Gambar berhasil diperbarui.';
+        }
+
+        if ($request->has('delete_image') && $request->delete_image == 1) {
+            // Jika ada gambar yang akan dihapus, hapus gambar dari storage
+            if ($field->image) {
+                $oldImagePath = public_path('profile/' . $field->image);
+                if (File::exists($oldImagePath)) {
+                    File::delete($oldImagePath);  // Hapus gambar dari storage
+                }
+        
+                // Set nama gambar menjadi null setelah dihapus
+                $field->image = null;
+        
+                // Set pesan sukses untuk penghapusan gambar
+                $successMessages['image'] = 'Gambar berhasil dihapus.';
+            }
         }
 
         // Periksa perubahan pada nama, email, dan username
@@ -316,4 +334,29 @@ class CrudController extends Controller
 
     return response()->json(['message' => 'Gambar dan data berhasil dihapus.']);
     }
+
+    private function maskEmail($email)
+    {
+        // Pisahkan bagian email berdasarkan '@'
+        $emailParts = explode('@', $email);
+
+        if (count($emailParts) !== 2) {
+            return $email; // Jika format tidak valid, kembalikan email apa adanya
+        }
+
+        $localPart = $emailParts[0]; // Sebelum '@'
+        $domainParts = explode('.', $emailParts[1]); // Setelah '@'
+
+        if (count($domainParts) < 2) {
+            return $email; // Jika domain tidak valid, kembalikan email apa adanya
+        }
+
+        // Masking bagian email
+        $maskedLocal = substr($localPart, 0, 1) . str_repeat('*', strlen($localPart) - 1);
+        $maskedDomain = substr($domainParts[0], 0, 1) . str_repeat('*', strlen($domainParts[0]) - 1);
+        $maskedExtension = substr($domainParts[1], 0, 1) . str_repeat('*', strlen($domainParts[1]) - 1);
+
+        return "{$maskedLocal}@{$maskedDomain}.{$maskedExtension}";
+    }
 }
+
