@@ -12,6 +12,7 @@ use App\Models\UserProduk;
 use App\Models\ReviewRating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class AdminController extends Controller
 {
@@ -179,6 +180,20 @@ class AdminController extends Controller
         $user->delete();
 
         return response()->json(['message' => 'User berhasil dihapus.'], 200);
+    }
+
+    public function restore($id)
+    {
+        // Cari user termasuk yang soft-deleted
+        $user = User::withTrashed()->findOrFail($id);
+
+        try {
+            $user->restore(); // Pulihkan akun
+            return response()->json(['message' => 'Akun berhasil dipulihkan.'], 200);
+        } catch (\Exception $e) {
+            Log::error("Gagal memulihkan akun ID {$id}: " . $e->getMessage());
+            return response()->json(['message' => 'Gagal memulihkan akun.'], 500);
+        }
     }
 
     public function settingAkun()

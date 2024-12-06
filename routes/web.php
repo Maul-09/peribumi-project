@@ -27,10 +27,11 @@ Route::middleware('auth')->group(function () {
         Route::post('/forgot-password', [CrudController::class, 'forgotSend'])->name('password.email');
         Route::get('/reset-password/{token}', [CrudController::class, 'forgotHandler'])->name('password.reset');
         Route::post('/reset-password', [CrudController::class, 'forgotUpdate'])->name('password.update');
-        Route::post('/restore-user', [CrudController::class, 'restoreByEmail'])->name('restore.user');
-        Route::get('/restore-confirm', [CrudController::class, 'confirmRestore'])->name('restore.confirm');
-        Route::get('/trash', [CrudController::class, 'trash'])->name('trash');
-        Route::get('/after-restore', [CrudController::class, 'afterRestore'])->name('after.restore');
+        Route::get('/produk/{id}', [ProdukController::class, 'show'])->name('produk.show');
+        // Route::post('/restore-user', [CrudController::class, 'restoreByEmail'])->name('restore.user');
+        // Route::get('/restore-confirm', [CrudController::class, 'confirmRestore'])->name('restore.confirm');
+        // Route::get('/trash', [CrudController::class, 'trash'])->name('trash');
+        // Route::get('/after-restore', [CrudController::class, 'afterRestore'])->name('after.restore');
         Route::post('/profile/change-password/{id}', [CrudController::class, 'changePassword'])->name('change.password');
         Route::post('review-store', [ReviewController::class, 'reviewStore'])->name('review.store');
     });
@@ -44,7 +45,6 @@ Route::middleware('auth')->group(function () {
         Route::get('/organizer-admin', [AdminController::class, 'organizerAdmin'])->name('organizer.admin');
         Route::get('/produk/create', [ProdukController::class, 'create'])->name('produk.create');
         Route::post('/post/produk', [ProdukController::class, 'store'])->name('produk.store');
-        Route::get('/produk/{id}', [ProdukController::class, 'show'])->name('produk.show');
         Route::get('/produk/{id}/edit', [ProdukController::class, 'edit'])->name('produk.edit');
         Route::put('/produk/{id}/edit/update', [ProdukController::class, 'update'])->name('produk.update');
         Route::delete('/produk/{id}', [ProdukController::class, 'destroy'])->name('produk.destroy');
@@ -54,6 +54,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/admin/tolak/{id}', [AdminController::class, 'tolakTransaksi'])->name('admin.tolak');
         Route::delete('/delete/users/{id}', [AdminController::class, 'deleteUser'])->name('delete.user');
         Route::get('/akun/setting/', [AdminController::class, 'settingAkun'])->name('setting.akun');
+        Route::patch('/admin/users/{id}/restore', [AdminController::class, 'restore'])->name('users.restore');
+
     });
 
     Route::get('/email/verify', [AuthController::class, 'verifyNotice'])->name('verification.notice');
