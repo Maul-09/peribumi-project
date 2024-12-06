@@ -13,18 +13,24 @@ return new class extends Migration
     {
         Schema::create('produks', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_produk');
-            $table->string('teknis');
+            $table->string('nama_produk')->nullable();
+            $table->string('teknis')->nullable();
             $table->string('image')->nullable();
             $table->string('deskripsi')->nullable();
-            $table->string('durasi');
-            $table->string('personil');
-            $table->string('persyaratan');
-            $table->string('metodologi');
-            $table->string('sasaran');
-            $table->string('jadwal_lokasi_fasilitas');
-            $table->string('desc_harga');
-            $table->string('hl_harga');
+            $table->string('durasi')->nullable();
+            $table->string('personil')->nullable();
+            $table->string('persyaratan')->nullable();
+            $table->string('metodologi')->nullable();
+            $table->string('sasaran')->nullable();
+            $table->string('jenis_pekerjaan')->nullable();
+            $table->string('kualifikasi')->nullable();
+            $table->string('ruang_lingkup')->nullable();
+            $table->string('klasifikasi')->nullable();
+            $table->string('durasi_/_lembaga')->nullable();
+            $table->string('kategori')->nullable();
+            $table->string('jadwal_lokasi_fasilitas')->nullable();
+            $table->string('deskripsi_harga')->nullable();
+            $table->string('highlight_harga')->nullable();
             $table->string('produkType')->nullable();
             $table->timestamps();
         });

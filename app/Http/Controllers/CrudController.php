@@ -296,4 +296,24 @@ class CrudController extends Controller
     {
         return view('auth.after-restore');
     }
+
+    public function deleteImageProfile($id) {
+
+        $image = User::find($id);
+
+    if (!$image) {
+        return response()->json(['error' => 'Gambar tidak ditemukan di database.'], 404);
+    }
+
+    // Cek apakah file ada di storage
+    if (Storage::exists('public/images/' . $image->image)) {
+        // Hapus file dari storage
+        Storage::delete('public/images/' . $image->image);
+    }
+
+    // Hapus data dari database
+    $image->delete();
+
+    return response()->json(['message' => 'Gambar dan data berhasil dihapus.']);
+    }
 }

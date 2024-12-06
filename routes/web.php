@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/profile{id}', [CrudController::class, 'editProfile'])->name('editProfile');
         Route::post('/edit/profile/delete{id}', [CrudController::class, 'deleteAccount'])->name('deleteAccount');
         Route::post('/edit/profile/update{id}', [CrudController::class, 'update'])->name('update.profile');
+        Route::delete('/edit/profile/delete-image/{id}', [CrudController::class, 'deleteImageProfle'])->name('delete.image.profile');
         Route::get('/produk-aktif', [ProdukController::class, 'produkAktif'])->name('produk.aktif');
         Route::get('/forgot-password', [CrudController::class, 'forgotView'])->name('password.request');
         Route::post('/forgot-password', [CrudController::class, 'forgotSend'])->name('password.email');

@@ -104,6 +104,13 @@
     margin-top: 0.5em;
 }
 
+.form-section {
+    display: none; /* Default semua form disembunyikan */
+}
+.form-section.active {
+    display: block; /* Form yang aktif terlihat */
+}
+
 @media (max-width: 768px) {
     form {
         padding: 1em;

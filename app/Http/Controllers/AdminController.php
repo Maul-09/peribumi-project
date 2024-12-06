@@ -87,7 +87,7 @@ class AdminController extends Controller
     {
         $kat = ['Pengembangan (Inkubasi) Bisnis', 'Pendampingan Manajemen Bisnis'];
 
-        session(['kategori' => $kat, 'route' => 'manajemen.admin']);
+        session(['kategori' => $kat, 'route' => 'manajemen.admin', 'formNumber' => '2']);
 
         return view('admin.manajemen-business');
     }
@@ -96,7 +96,7 @@ class AdminController extends Controller
     {
         $kat = ['Pelatihan Calon Tenaga Kerja', 'Pelatihan Tenaga Kerja (Profesi)'];
 
-        session(['kategori' => $kat, 'route' => 'training.admin']);
+        session(['kategori' => $kat, 'route' => 'training.admin', 'formNumber' => '1']);
 
         return view('admin.training-center');
     }

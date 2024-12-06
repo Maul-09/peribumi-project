@@ -11,41 +11,22 @@
 
             <h3 class="section-title">Detail Produk</h3>
             <div class="produk-details">
-                <div class="detail-item">
-                    <span class="detail-label">Deskripsi Produk:</span>
-                    <span class="detail-value">{{ $produk->deskripsi }}</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Teknis:</span>
-                    <span class="detail-value">{{ $produk->teknis }}</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Durasi:</span>
-                    <span class="detail-value">{{ $produk->durasi }}</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Personil:</span>
-                    <span class="detail-value">{{ $produk->personil }}</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Sasaran:</span>
-                    <span class="detail-value">{{ $produk->sasaran }}</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Persyaratan:</span>
-                    @foreach (explode("\n", $produk->persyaratan) as $line)
-                    <span class="detail-value">{{ $line }}</span>
+                @foreach ($product as $key => $value)
+                    @if (!is_array($value)) {{-- Skip array (seperti relasi jika ada) --}}
+                        <div class="detail-item">
+                            <span class="detail-label">{{ ucwords(str_replace('_', ' ', $key)) }}:</span>
+                            <span class="detail-value">{{ $value }}</span>
+                        </div>
+                    @endif
+                    @if (isset($product['persyaratan']))
+                        <div class="detail-item">
+                            <span class="detail-label">Persyaratan:</span>
+                            @foreach (explode("\n", $product['persyaratan']) as $line)
+                                <span class="detail-value">{{ $line }}</span>
+                            @endforeach
+                        </div>
+                    @endif
                 @endforeach
-                    
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Metodologi:</span>
-                    <span class="detail-value">{{ $produk->metodologi }}</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Jadwal, Lokasi, dan Fasilitas:</span>
-                    <span class="detail-value">{{ $produk->jadwal_lokasi_fasilitas }}</span>
-                </div>
             </div>
             <div class="detail-item">
                 <span class="detail-label">Proposal Pelatihan:</span>
@@ -159,13 +140,13 @@
             <img src="{{ asset($produk->image) }}" alt="Produk Image" class="image-card">
             <div class="content">
                 <span class="detail-label">Harga:</span>
-                <span class="deskripsi-harga">{{ $produk->hl_harga }}</span>
+                <span class="deskripsi-harga">{{ $produk->highlight_harga }}</span>
                 <span class="detail-label">Deskripsi Harga:</span>
-                @foreach (explode("\n", $produk->desc_harga) as $line)
+                @foreach (explode("\n", $produk->deskripsi_harga) as $line)
                     <span class="deskripsi-harga">{{ $line }}</span>
                 @endforeach
                 <a href="#" class="btn-beli" id="openModal" data-produk-nama="{{ $produk->nama_produk }}"
-                    data-produk-harga="{{ $produk->hl_harga }}" data-produk-durasi="{{ $produk->durasi }}"
+                    data-produk-harga="{{ $produk->highlight_harga }}" data-produk-durasi="{{ $produk->durasi }}"
                     data-whatsapp-url="{{ route('whatsapp.notice', $produk->id) }}">Beli
                     Produk</a>
             </div>

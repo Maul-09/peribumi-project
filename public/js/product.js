@@ -115,29 +115,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-if (deleteIcon) {
-    deleteIcon.addEventListener('click', function () {
-        showAlert('Apakah Anda yakin ingin menghapus foto?', function () {
+    if (deleteIcon) {
+        deleteIcon.addEventListener('click', function () {
+            showAlert('Apakah Anda yakin ingin menghapus foto?', function () {
 
-            if (imgElement) imgElement.remove();
+                if (imgElement) imgElement.remove();
 
-            if (!placeholder) {
-                const newPlaceholder = document.createElement('div');
-                newPlaceholder.className = 'photo-placeholder';
+                if (!placeholder) {
+                    const newPlaceholder = document.createElement('div');
+                    newPlaceholder.className = 'photo-placeholder';
 
-                const initialElement = document.querySelector('.photo-placeholder .initial');
-                const initialText = initialElement
-                    ? initialElement.textContent
-                    : 'A';
+                    const initialElement = document.querySelector('.photo-placeholder .initial');
+                    const initialText = initialElement
+                        ? initialElement.textContent
+                        : 'A';
 
-                newPlaceholder.innerHTML = `<span class="initial">${initialText}</span>`;
-                document.querySelector('.photo-container').prepend(newPlaceholder);
-            }
+                    newPlaceholder.innerHTML = `<span class="initial">${initialText}</span>`;
+                    document.querySelector('.photo-container').prepend(newPlaceholder);
+                }
 
-            if (hiddenInput) hiddenInput.value = '1';
+                if (hiddenInput) hiddenInput.value = '1';
+            });
         });
-    });
-}
+    }
 
 });
 
