@@ -176,7 +176,7 @@
                                                 class="col-md-4 col-lg-3 col-form-label">Company</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="company" type="text" class="form-control"
-                                                    id="company" value="Lueilwitz, Wisoky and Leuschke">
+                                                    id="company" value="{{ $user->name }}">
                                             </div>
                                         </div>
 
