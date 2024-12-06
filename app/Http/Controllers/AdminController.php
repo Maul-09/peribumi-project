@@ -183,6 +183,6 @@ class AdminController extends Controller
 
     public function settingAkun()
     {
-        return view('admin.account-setting');
+        return view('admin.acount-setting');
     }
 }
