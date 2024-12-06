@@ -49,7 +49,14 @@
                                                         <li
                                                             class="list-group-item d-flex justify-content-between align-items-center">
                                                             {{ $user->name }}
-                                                            <span class="badge bg-secondary">{{ $user->email }}</span>
+                                                            <div>
+                                                                <span
+                                                                    class="badge bg-secondary me-2">{{ $user->email }}</span>
+                                                                <button class="btn btn-danger btn-sm btn-delete-user"
+                                                                    data-user-id="{{ $user->id }}">
+                                                                    Hapus
+                                                                </button>
+                                                            </div>
                                                         </li>
                                                     @endforeach
                                                 </ul>
@@ -60,19 +67,33 @@
                             </div>
 
                             <script>
-                                document.querySelector('.sales-card').addEventListener('click', function() {
-                                    fetch('/admin/dashboard')
-                                        .then(response => response.json())
-                                        .then(users => {
-                                            const userList = document.getElementById('userList');
-                                            userList.innerHTML = ''; // Kosongkan daftar sebelumnya
-                                            users.forEach(user => {
-                                                const li = document.createElement('li');
-                                                li.textContent = user.name; // Tampilkan nama user
-                                                userList.appendChild(li);
-                                            });
-                                        })
-                                        .catch(error => console.error('Error fetching users:', error));
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    document.querySelectorAll('.btn-delete-user').forEach(button => {
+                                        button.addEventListener('click', function() {
+                                            const userId = this.getAttribute('data-user-id');
+                                            const userListItem = this.closest('.list-group-item');
+
+                                            if (confirm('Apakah Anda yakin ingin menghapus member ini?')) {
+                                                fetch(`/delete/users/${userId}`, {
+                                                        method: 'DELETE',
+                                                        headers: {
+                                                            'X-CSRF-TOKEN': document.querySelector(
+                                                                'meta[name="csrf-token"]').content
+                                                        }
+                                                    })
+                                                    .then(response => {
+                                                        if (response.ok) {
+                                                            // Hapus elemen user dari daftar
+                                                            userListItem.remove();
+                                                            alert('Member berhasil dihapus.');
+                                                        } else {
+                                                            alert('Gagal menghapus member.');
+                                                        }
+                                                    })
+                                                    .catch(error => console.error('Error:', error));
+                                            }
+                                        });
+                                    });
                                 });
                             </script>
                         </div>

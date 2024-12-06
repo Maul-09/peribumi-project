@@ -52,6 +52,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/proses-pembelian/{id}', [ProdukController::class, 'prosesPembelian'])->name('proses.pembelian');
         Route::post('/admin/konfirmasi/{id}', [AdminController::class, 'konfirmasiTransaksi'])->name('admin.konfirmasi');
         Route::post('/admin/tolak/{id}', [AdminController::class, 'tolakTransaksi'])->name('admin.tolak');
+        Route::delete('/delete/users/{id}', [AdminController::class, 'deleteUser'])->name('delete.user');
+        Route::get('/akun/setting/', [AdminController::class, 'settingAkun'])->name('setting.akun');
     });
 
     Route::get('/email/verify', [AuthController::class, 'verifyNotice'])->name('verification.notice');

@@ -172,4 +172,17 @@ class AdminController extends Controller
         $user = User::findOrFail($id);
         return view('admin.profile-admin', compact('user'));
     }
+
+    public function deleteUser($id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return response()->json(['message' => 'User berhasil dihapus.'], 200);
+    }
+
+    public function settingAkun()
+    {
+        return view('admin.account-setting');
+    }
 }
