@@ -364,7 +364,7 @@ body {
     }
     .account-settings {
         flex-direction: column;
-        padding: 15px;
+        padding: 0;
     }
 
     .account-settings .arrow-back {
@@ -404,7 +404,6 @@ body {
         display: flex;
         flex-direction: row;
         gap: 5px;
-        flex-wrap: wrap;
         justify-content: center;
         list-style: none;
     }
@@ -424,8 +423,8 @@ body {
     }
 
     .account-settings .tab-content {
-        max-height: auto;
         min-height: auto;
+        overflow: visible;
         padding: 20px 10px;
     }
 
@@ -470,6 +469,10 @@ body {
         padding: 8px;
     }
 
+    .account-settings .tab-content .form-group .form-control option{
+        font-size:18px;
+    }
+
     .account-settings .action-buttons {
         gap: 5px;
         flex-direction: column;
@@ -479,5 +482,12 @@ body {
     .account-settings .action-buttons .btn-cancel {
         padding: 8px 15px;
         font-size: 12px;
+    }
+
+    thead th {
+        padding: 12px 3px;
+        font-weight: bold;
+        font-size: 10px;
+        text-align: center;
     }
 }

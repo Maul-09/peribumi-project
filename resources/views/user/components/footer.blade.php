@@ -26,9 +26,15 @@
 
         <div class="media-foot">
             <h3>Sosial Media</h3>
-            <a href="#" class="fa-brands fa-instagram"></a>
-            <a href="#" class="fa-brands fa-facebook"></a>
-            <a href="#" class="fa-brands fa-youtube"></a>
+            <a href="#" class="media-social">
+                <i class="fa-brands fa-instagram"></i><span class="title-sosmed">Instagram</span>
+            </a>
+            <a href="#" class="media-social">
+                <i class="fa-brands fa-facebook"></i><span class="title-sosmed">Facebook</span>
+            </a>
+            <a href="#" class="media-social">
+                <i class="fa-brands fa-youtube"></i><span class="title-sosmed">Youtube</span>
+            </a>
         </div>
 
         <div class="maps">

@@ -222,15 +222,14 @@ section.mitpro hr {
 
 .cards-container {
     display: flex;
-    padding: 40px;
-    flex-wrap: wrap;
-    grid-template-columns: repeat(3, 1fr);
+    padding: 40px 0;
     gap: 15px;
     justify-content: center;
+    flex-direction: row;
   }
 
   .card {
-    width: 250px;
+    max-width: 250px;
     height: 300px;
     border-radius: 10px;
     overflow: hidden;
@@ -280,19 +279,18 @@ section.mitpro hr {
   }
 
   .textbx-card h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 15px;
   }
 
   .textbx-card p {
-    font-size: 12px;
+    font-size: 11px;
     opacity: 0;
     transform: translateY(20px);
   }
 
   .card:hover .box img {
     filter: brightness(0.7);
-    transform: scale(1.1);
+    transform: scale(1);
   }
 
   .card:hover .gradient-layer {
@@ -310,7 +308,7 @@ section.mitpro hr {
   }
 
   .textbx-card h3 {
-    transform: translateY(-20px);
+    transform: translateY(-15px);
     transition: transform 0.3s ease;
   }
 

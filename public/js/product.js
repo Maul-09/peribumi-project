@@ -57,21 +57,20 @@ document.addEventListener('DOMContentLoaded', function () {
     const alertMessage = document.querySelector('.custom-alert .alert-message');
     const alertConfirm = document.querySelector('.custom-alert .alert-confirm');
     const alertCancel = document.querySelector('.custom-alert .alert-cancel');
+    const saveButton = document.getElementById('btn-save');
 
     function showAlert(message, confirmCallback = null) {
         if (alertContainer && alertMessage) {
             alertMessage.textContent = message;
             alertContainer.style.display = 'flex';
 
-            // Event tombol konfirmasi
             const confirmHandler = function () {
                 if (confirmCallback) confirmCallback();
-                closeAlert(); // Tutup alert setelah konfirmasi
-                alertConfirm.removeEventListener('click', confirmHandler); // Bersihkan listener
+                closeAlert();
+                alertConfirm.removeEventListener('click', confirmHandler);
             };
             alertConfirm.addEventListener('click', confirmHandler);
 
-            // Event tombol batal
             alertCancel.addEventListener('click', closeAlert);
         }
     }
@@ -80,11 +79,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (alertContainer) alertContainer.style.display = 'none';
     }
 
+
     if (fileInput) {
         fileInput.addEventListener('change', function (event) {
             const file = event.target.files[0];
             if (file) {
-
                 if (!file.type.startsWith('image/')) {
                     alert('Harap unggah file berupa gambar.');
                     return;
@@ -92,12 +91,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const reader = new FileReader();
                 reader.onload = function (e) {
-
-                    if (placeholder) placeholder.remove();
-
+                    if (placeholder) {
+                        placeholder.style.display = 'none';
+                    }
 
                     if (imgElement) {
                         imgElement.src = e.target.result;
+                        imgElement.style.display = 'block';
                     } else {
                         const newImg = document.createElement('img');
                         newImg.src = e.target.result;
@@ -107,7 +107,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
 
 
-                    if (hiddenInput) hiddenInput.value = '0';
+                    if (hiddenInput) {
+                        hiddenInput.value = '0';
+                    }
                 };
                 reader.readAsDataURL(file);
             }
@@ -115,29 +117,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    if (deleteIcon) {
-        deleteIcon.addEventListener('click', function () {
-            showAlert('Apakah Anda yakin ingin menghapus foto?', function () {
+if (deleteIcon) {
+    deleteIcon.addEventListener('click', function () {
+        showAlert('Apakah Anda yakin ingin menghapus foto?', function () {
 
-                if (imgElement) imgElement.remove();
+            if (imgElement) imgElement.remove();
 
                 if (!placeholder) {
                     const newPlaceholder = document.createElement('div');
                     newPlaceholder.className = 'photo-placeholder';
 
-                    const initialElement = document.querySelector('.photo-placeholder .initial');
-                    const initialText = initialElement
-                        ? initialElement.textContent
-                        : 'A';
+                const initialElement = document.querySelector('.photo-placeholder .initial');
+                const initialText = initialElement
+                    ? initialElement.textContent
+                    : 'A';
 
-                    newPlaceholder.innerHTML = `<span class="initial">${initialText}</span>`;
-                    document.querySelector('.photo-container').prepend(newPlaceholder);
-                }
+                newPlaceholder.innerHTML = `<span class="initial">${initialText}</span>`;
+                document.querySelector('.photo-container').prepend(newPlaceholder);
+            }
 
-                if (hiddenInput) hiddenInput.value = '1';
-            });
+            if (hiddenInput) hiddenInput.value = '1';
         });
-    }
+    });
+}
 
 });
 
