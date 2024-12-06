@@ -35,7 +35,7 @@ class CrudController extends Controller
 
         $produkDibeli = Auth::user()->produk;
 
-        $field->masked_email = $this->maskEmail($field->email);
+        
 
         foreach ($produkDibeli as $produk) {
             $produk->pivot->tanggal_beli = Carbon::parse($produk->pivot->tanggal_beli);
@@ -334,29 +334,4 @@ class CrudController extends Controller
 
     return response()->json(['message' => 'Gambar dan data berhasil dihapus.']);
     }
-
-    private function maskEmail($email)
-    {
-        // Pisahkan bagian email berdasarkan '@'
-        $emailParts = explode('@', $email);
-
-        if (count($emailParts) !== 2) {
-            return $email; // Jika format tidak valid, kembalikan email apa adanya
-        }
-
-        $localPart = $emailParts[0]; // Sebelum '@'
-        $domainParts = explode('.', $emailParts[1]); // Setelah '@'
-
-        if (count($domainParts) < 2) {
-            return $email; // Jika domain tidak valid, kembalikan email apa adanya
-        }
-
-        // Masking bagian email
-        $maskedLocal = substr($localPart, 0, 1) . str_repeat('*', strlen($localPart) - 1);
-        $maskedDomain = substr($domainParts[0], 0, 1) . str_repeat('*', strlen($domainParts[0]) - 1);
-        $maskedExtension = substr($domainParts[1], 0, 1) . str_repeat('*', strlen($domainParts[1]) - 1);
-
-        return "{$maskedLocal}@{$maskedDomain}.{$maskedExtension}";
-    }
 }
-

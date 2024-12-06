@@ -98,7 +98,7 @@
                                     <label class="form-label"><i class="icon-envelope"></i>Email</label>
                                     <input type="text" class="form-control" name="email"
                                         placeholder="example@mail.com"
-                                        value="{{ $field->masked_email }}">
+                                        value="{{ old('email', auth()->user()->email ?? '') }}">
 
                                     @if (session('successFields.email'))
                                         <div style="color: #0af248">
