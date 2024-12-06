@@ -65,12 +65,9 @@
                                         <i class="fas fa-pencil-alt"></i>
                                     </label>
                                     <input type="file" name="image" class="file-input" id="file-input" accept="image/*" hidden>
-                                    <form action="{{ route('delete.image.profile', $field->id) }}" method="POST">
-                                        @csrf
-                                        <button type="submit" class="delete-icon">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </form>
+                                    <label class="delete-icon">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </label>
                                     <input type="hidden" name="image_deleted" id="image-deleted" value="0">
                                 </div>
                                 <small>Allowed JPG, GIF, or PNG. Max size 800KB</small>
