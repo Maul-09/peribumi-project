@@ -31,72 +31,148 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-lg">
-                                    <div class="modal-content rounded-4 shadow-lg">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="userModalLabel">Daftar User</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            @foreach ($usersByType as $type => $users)
-                                                <h6 class="text-primary text-uppercase mt-3">{{ ucfirst($type) }}</h6>
-                                                <ul class="list-group list-group-flush mb-3">
-                                                    @foreach ($users as $user)
-                                                        <li
-                                                            class="list-group-item d-flex justify-content-between align-items-center">
-                                                            {{ $user->name }}
-                                                            <div>
-                                                                <span
-                                                                    class="badge bg-secondary me-2">{{ $user->email }}</span>
+                        <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content rounded-4 shadow-lg">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="userModalLabel">Daftar User</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Search Bar -->
+                                        <input type="text" id="searchBar" class="form-control mb-3"
+                                            placeholder="Cari user...">
+
+                                        <!-- Daftar User -->
+                                        @foreach ($usersByType as $type => $users)
+                                            <h6 class="text-primary text-uppercase mt-3">{{ ucfirst($type) }}</h6>
+                                            <ul class="list-group list-group-flush mb-3 user-list">
+                                                @foreach ($users as $user)
+                                                    <li
+                                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                                        <span class="user-name">{{ $user->name }}</span>
+                                                        <div>
+                                                            <span
+                                                                class="badge {{ $user->deleted_at ? 'bg-danger' : 'bg-success' }}">
+                                                                {{ $user->deleted_at ? 'Terhapus' : 'Aktif' }}
+                                                            </span>
+                                                            @if ($user->deleted_at)
+                                                                <button class="btn btn-warning btn-sm btn-restore-user"
+                                                                    data-user-id="{{ $user->id }}">
+                                                                    Pulihkan
+                                                                </button>
+                                                            @else
                                                                 <button class="btn btn-danger btn-sm btn-delete-user"
                                                                     data-user-id="{{ $user->id }}">
                                                                     Hapus
                                                                 </button>
-                                                            </div>
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
-                                            @endforeach
-                                        </div>
+                                                            @endif
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <script>
-                                document.addEventListener('DOMContentLoaded', function() {
-                                    document.querySelectorAll('.btn-delete-user').forEach(button => {
-                                        button.addEventListener('click', function() {
-                                            const userId = this.getAttribute('data-user-id');
-                                            const userListItem = this.closest('.list-group-item');
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const searchBar = document.getElementById('searchBar');
+                                const userLists = document.querySelectorAll('.user-list');
 
-                                            if (confirm('Apakah Anda yakin ingin menghapus member ini?')) {
-                                                fetch(`/delete/users/${userId}`, {
-                                                        method: 'DELETE',
-                                                        headers: {
-                                                            'X-CSRF-TOKEN': document.querySelector(
-                                                                'meta[name="csrf-token"]').content
-                                                        }
-                                                    })
-                                                    .then(response => {
-                                                        if (response.ok) {
-                                                            // Hapus elemen user dari daftar
-                                                            userListItem.remove();
-                                                            alert('Member berhasil dihapus.');
-                                                        } else {
-                                                            alert('Gagal menghapus member.');
-                                                        }
-                                                    })
-                                                    .catch(error => console.error('Error:', error));
+                                // Event delegation untuk tombol "Hapus" dan "Pulihkan"
+                                document.querySelector('.modal-body').addEventListener('click', function(event) {
+                                    if (event.target.classList.contains('btn-delete-user')) {
+                                        handleDelete(event.target);
+                                    } else if (event.target.classList.contains('btn-restore-user')) {
+                                        handleRestore(event.target);
+                                    }
+                                });
+
+                                // Fungsi untuk menangani penghapusan user
+                                function handleDelete(button) {
+                                    const userId = button.getAttribute('data-user-id');
+                                    const listItem = button.closest('.list-group-item');
+
+                                    if (confirm('Apakah Anda yakin ingin menghapus member ini?')) {
+                                        fetch(`/delete/users/${userId}`, {
+                                                method: 'DELETE',
+                                                headers: {
+                                                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                                                }
+                                            })
+                                            .then(response => {
+                                                if (response.ok) {
+                                                    updateListItemStatus(listItem, 'Terhapus', 'bg-danger',
+                                                        'btn-warning btn-restore-user', 'Pulihkan');
+                                                    alert('Member berhasil dihapus.');
+                                                } else {
+                                                    alert('Gagal menghapus member.');
+                                                }
+                                            })
+                                            .catch(error => console.error('Error:', error));
+                                    }
+                                }
+
+                                // Fungsi untuk menangani pemulihan user
+                                function handleRestore(button) {
+                                    const userId = button.getAttribute('data-user-id');
+                                    const listItem = button.closest('.list-group-item');
+
+                                    if (confirm('Apakah Anda yakin ingin memulihkan akun ini?')) {
+                                        fetch(`/delete/users/${userId}/restore`, {
+                                                method: 'PATCH',
+                                                headers: {
+                                                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                                                }
+                                            })
+                                            .then(response => {
+                                                if (response.ok) {
+                                                    updateListItemStatus(listItem, 'Aktif', 'bg-success',
+                                                        'btn-danger btn-delete-user', 'Hapus');
+                                                    alert('Akun berhasil dipulihkan.');
+                                                } else {
+                                                    alert('Gagal memulihkan akun.');
+                                                }
+                                            })
+                                            .catch(error => console.error('Error:', error));
+                                    }
+                                }
+
+                                // Fungsi untuk memperbarui status list item
+                                function updateListItemStatus(listItem, statusText, badgeClass, buttonClass, buttonText) {
+                                    const badge = listItem.querySelector('.badge');
+                                    badge.textContent = statusText;
+                                    badge.className = `badge ${badgeClass}`;
+
+                                    const button = listItem.querySelector('button');
+                                    button.textContent = buttonText;
+                                    button.className = `btn btn-sm ${buttonClass}`;
+                                }
+
+                                // Fitur pencarian
+                                searchBar.addEventListener('input', function() {
+                                    const query = searchBar.value.toLowerCase();
+                                    userLists.forEach(list => {
+                                        list.querySelectorAll('.list-group-item').forEach(item => {
+                                            const userName = item.querySelector('.user-name').textContent
+                                                .toLowerCase();
+                                            if (userName.includes(query)) {
+                                                item.style.display = '';
+                                            } else {
+                                                item.style.display = 'none';
                                             }
                                         });
                                     });
                                 });
-                            </script>
-                        </div>
+                            });
+                        </script>
 
                         <!-- End Sales Card -->
 
