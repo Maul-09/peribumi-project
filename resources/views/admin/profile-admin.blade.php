@@ -30,7 +30,6 @@
                                         <span>{{ $initial }}</span>
                                     </div>
                                 @endif
-
                             </div>
                             <div>
                                 @if (Auth::check())
@@ -133,7 +132,18 @@
                                             <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile
                                                 Image</label>
                                             <div class="col-md-8 col-lg-9">
-                                                <img src="assets/img/profile-img.jpg" alt="Profile">
+                                                @php
+                                                    $initial = strtoupper(substr(auth()->user()->name, 0, 1));
+                                                    $hasImage = auth()->user()->image ? true : false;
+                                                @endphp
+                                                @if ($hasImage)
+                                                    <img src="{{ asset('profile/' . auth()->user()->image) }}"
+                                                        alt="User Logo" class="user-logo">
+                                                @else
+                                                    <div class="user-logo-default">
+                                                        <span>{{ $initial }}</span>
+                                                    </div>
+                                                @endif
                                                 <div class="pt-2">
                                                     <a href="#" class="btn btn-primary btn-sm"
                                                         title="Upload new profile image"><i
@@ -149,7 +159,7 @@
                                                 Name</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="fullName" type="text" class="form-control"
-                                                    id="fullName" value="Kevin Anderson">
+                                                    id="fullName" value="{{ $user->name }}">
                                             </div>
                                         </div>
 

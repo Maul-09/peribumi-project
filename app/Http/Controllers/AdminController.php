@@ -166,8 +166,9 @@ class AdminController extends Controller
         return redirect()->route('admin')->with('success', 'Transaksi telah ditolak!');
     }
 
-    public function profileAdmin()
+    public function profileAdmin($id)
     {
-        return view('admin.profile-admin');
+        $user = User::findOrFail($id);
+        return view('admin.profile-admin', compact('user'));
     }
 }
