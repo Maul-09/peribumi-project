@@ -158,10 +158,15 @@
                                             <label for="klasifikasi" class="form-label">Klasifikasi:</label>
                                             <textarea name="klasifikasi" id="klasifikasi" class="form-control" required></textarea>
                                         </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="durasi" class="form-label">Durasi:</label>
+                                            <textarea name="durasi" id="durasi" class="form-control" required></textarea>
+                                        </div>
 
                                         <div class="form-group">
-                                            <label for="durasi_lembaga" class="form-label">Durasi / Lembaga:</label>
-                                            <textarea name="durasi_lembaga" id="durasi_lembaga" class="form-control" required></textarea>
+                                            <label for="lembaga" class="form-label">Durasi / Lembaga:</label>
+                                            <textarea name="lembaga" id="lembaga" class="form-control" required></textarea>
                                         </div>
 
                                         <div class="form-group">

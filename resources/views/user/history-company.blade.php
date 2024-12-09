@@ -1,9 +1,9 @@
 <x-layout>
-    <x-slot:name>Potensial Development</x-slot>
-    <x-slot:title>{{ asset('css/user-style/style-personal.css') }}</x-slot>
+    <x-slot:name>Sejarah Perusahaan</x-slot>
+    <x-slot:title>{{ asset('css/user-style/style-histori.css') }}</x-slot>
     <section class="banner" id="home">
         <div class="textBx">
-            <h2>PERSONAL DEVELOPMENT</h2>
+            <h2>Sejarah Perusahaan</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sint voluptate consequatur alias
                 recusandae
                 explicabo temporibus, ad dolorum nisi, voluptatum ab non minima totam iure repellat sapiente nulla
@@ -12,12 +12,11 @@
         </div>
     </section>
 
-    <section class="product-personal">
+    <section class="product-manajemen">
         <div>
             <div class="title-produk">
                 <h3>Produk Kami</h3>
             </div>
-            <x-card-produk></x-card-produk>
         </div>
         <br>
     </section>

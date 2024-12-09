@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('kualifikasi')->nullable();
             $table->string('ruang_lingkup')->nullable();
             $table->string('klasifikasi')->nullable();
-            $table->string('durasi_lembaga')->nullable();
+            $table->string('lembaga')->nullable();
             $table->string('kategori')->nullable();
             $table->string('jadwal_lokasi_fasilitas')->nullable();
             $table->string('deskripsi_harga')->nullable();

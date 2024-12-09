@@ -165,8 +165,13 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="durasi_lembaga" class="form-label">Durasi / Lembaga:</label>
-                                            <textarea name="durasi_lembaga" id="durasi_lembaga" class="form-control" required></textarea>
+                                            <label for="durasi" class="form-label">durasi:</label>
+                                            <textarea name="durasi" id="durasi" class="form-control" required>{{ $produk->durasi }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="lembaga" class="form-label">Lembaga:</label>
+                                            <textarea name="lembaga" id="lembaga" class="form-control" required>{{ $produk->lembaga }}</textarea>
                                         </div>
 
                                         <div class="form-group">

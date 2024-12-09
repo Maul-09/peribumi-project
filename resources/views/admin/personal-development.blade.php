@@ -2,7 +2,7 @@
     <main id="main" class="main">
         <div class="pagetitle">
             <div class="d-flex align-items-center justify-content-between pe-4">
-                <h1>Personal Development</h1>
+                <h1>Potensial Development</h1>
                 <a href="{{ route('produk.create') }}" class="btn btn-primary"><i class="bi bi-plus me-1"></i> Tambah Data</a>
             </div>
             <nav>

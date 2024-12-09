@@ -18,7 +18,7 @@
             <ul>
                 <li><a href="manajemen">Management Business</a></li>
                 <li><a href="training">Training Center</a></li>
-                <li><a href="digital">Digital Solution</a></li>
+                <li><a href="digital">Potensial Solution</a></li>
                 <li><a href="personal">Personal Development</a></li>
                 <li><a href="event">Event Organizer</a></li>
             </ul>
@@ -26,14 +26,14 @@
 
         <div class="media-foot">
             <h3>Sosial Media</h3>
-            <a href="#" class="media-social">
-                <i class="fa-brands fa-instagram"></i><span class="title-sosmed">Instagram</span>
+            <a href="https://www.instagram.com/peribumi_pro/" class="media-social" >
+                <i class="fa-brands fa-instagram"></i><span class="title-sosmed">Instagram Kami</span>
             </a>
-            <a href="#" class="media-social">
-                <i class="fa-brands fa-facebook"></i><span class="title-sosmed">Facebook</span>
+            <a href="#" class="media-social" target="_blank">
+                <i class="fa-brands fa-facebook"></i><span class="title-sosmed">Facebook Kami</span>
             </a>
-            <a href="#" class="media-social">
-                <i class="fa-brands fa-youtube"></i><span class="title-sosmed">Youtube</span>
+            <a href="#" class="media-social" target="_blank">
+                <i class="fa-brands fa-youtube"></i><span class="title-sosmed">Youtube Kami</span>
             </a>
         </div>
 
