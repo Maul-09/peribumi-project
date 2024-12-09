@@ -45,7 +45,7 @@ class ProdukController extends Controller
             //     'kualifikasi' => 'required|string|max:1000',
             //     'ruang_lingkup' => 'required|string|max:1000',
             //     'klasifikasi' => 'required|string|max:1000',
-            //     'durasi_lembaga' => 'required|string|max:1000',
+            //     'lembaga' => 'required|string|max:1000',
             //     'kategori' => 'required|string|max:1000',
             //     'persyaratan' => 'required|string|max:255',
             //     'metodologi' => 'required|string|max:255',
@@ -74,7 +74,7 @@ class ProdukController extends Controller
             //     'kualifikasi' => $request->input('kualifikasi'),
             //     'ruang_lingkup' => $request->input('ruang_lingkup'),
             //     'klasifikasi' => $request->input('klasifikasi'),
-            //     'durasi_lembaga' => $request->input('durasi_lembaga'),
+            //     'lembaga' => $request->input('lembaga'),
             //     'kategori' => $request->input('kategori'),
             //     'persyaratan' => $request->input('persyaratan'),
             //     'metodologi' => $request->input('metodologi'),
@@ -120,7 +120,7 @@ class ProdukController extends Controller
                     'kualifikasi' => 'required|string',
                     'ruang_lingkup' => 'required|string',
                     'klasifikasi' => 'required|string',
-                    'durasi_lembaga' => 'required|string',
+                    'lembaga' => 'required|string',
                     'kategori' => 'required|string',
                     'deskripsi_harga' => 'required|string',
                     'highlight_harga' => 'required|string',
@@ -131,7 +131,7 @@ class ProdukController extends Controller
                 // Simpan data form2 ke database
                 $produk = Produk::create($request->only([
                     'nama_produk', 'jenis_pekerjaan', 'kualifikasi', 'ruang_lingkup',
-                    'klasifikasi', 'durasi_lembaga', 'kategori', 'deskripsi_harga',
+                    'klasifikasi', 'lembaga', 'kategori', 'deskripsi_harga',
                     'highlight_harga', 'produkType', 'link'
                 ]));
             }
@@ -247,7 +247,7 @@ class ProdukController extends Controller
         //     'kualifikasi' => 'required|string|max:1000',
         //     'ruang_lingkup' => 'required|string|max:1000',
         //     'klasifikasi' => 'required|string|max:1000',
-        //     'durasi_lembaga' => 'required|string|max:1000',
+        //     'lembaga' => 'required|string|max:1000',
         //     'kategori' => 'required|string|max:1000',
         //     'persyaratan' => 'required|string|max:255',
         //     'metodologi' => 'required|string|max:255',
@@ -295,7 +295,7 @@ class ProdukController extends Controller
                     'kualifikasi' => 'required|string',
                     'ruang_lingkup' => 'required|string',
                     'klasifikasi' => 'required|string',
-                    'durasi_lembaga' => 'required|string',
+                    'lembaga' => 'required|string',
                     'kategori' => 'required|string',
                     'deskripsi_harga' => 'required|string',
                     'highlight_harga' => 'required|string',
