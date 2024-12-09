@@ -229,22 +229,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($produkSemua as $produk)
+                                @foreach ($produkSemua as $produk)
                                     <tr>
                                         <td>{{ $produk->nama_produk }}</td>
                                         <td>{{ $produk->status_transaksi }}</td>
                                         <td>
-                                            {{ $produk->pivot->tanggal_beli ? $produk->pivot->tanggal_beli->format('d-m-Y') : 'Tidak Tersedia' }}
+                                            {{ $produk->pivot && $produk->pivot->tanggal_beli ? $produk->pivot->tanggal_beli->format('d-m-Y') : '-' }}
                                         </td>
                                         <td>
-                                            {{ $produk->pivot->tanggal_berakhir ? $produk->pivot->tanggal_berakhir->format('d-m-Y') : 'Tidak Tersedia' }}
+                                            {{ $produk->pivot && $produk->pivot->tanggal_berakhir ? $produk->pivot->tanggal_berakhir->format('d-m-Y') : '-' }}
                                         </td>
                                     </tr>
-                                @empty
-                                    <tr>
-                                        <td colspan="4" class="text-center">Tidak ada produk yang ditemukan.</td>
-                                    </tr>
-                                @endforelse
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
