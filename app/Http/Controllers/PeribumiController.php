@@ -65,6 +65,6 @@ class PeribumiController extends Controller
 
     public function aboutUs()
     {
-        return view('user.history-company');
+        return view('user.about-us');
     }
 }

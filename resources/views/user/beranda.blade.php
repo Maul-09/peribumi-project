@@ -67,7 +67,7 @@
                         </ol>
                     </div>
                     <div class="tim-peribumi">
-                        <button class="tim-peribumi">Tim Manajemen</button>
+                        <a href="{{ route('about.us') }}" class="tim-peribumi">Tim Manajemen</a>
                     </div>
                 </div>
             </div>
@@ -91,7 +91,8 @@
                             <div class="gradient-layer"></div>
                             <div class="textbx-card">
                                 <h3>Management Business</h3>
-                                <p>Ingin bisnismu berkembang cepat? Terapkan manajemen yang terstruktur, efisien, dan penuh strategi
+                                <p>Ingin bisnismu berkembang cepat? Terapkan manajemen yang terstruktur, efisien, dan
+                                    penuh strategi
                                 </p>
                             </div>
                         </a>
@@ -105,7 +106,8 @@
                             <div class="gradient-layer"></div>
                             <div class="textbx-card">
                                 <h3>Training Center</h3>
-                                <p>Mau jadi lebih kompeten dan percaya diri? Ikuti program training center kami dan buktikan hasilnya!
+                                <p>Mau jadi lebih kompeten dan percaya diri? Ikuti program training center kami dan
+                                    buktikan hasilnya!
                                 </p>
                             </div>
                         </a>
@@ -119,7 +121,8 @@
                             <div class="gradient-layer"></div>
                             <div class="textbx-card">
                                 <h3>Digital Solutions</h3>
-                                <p>Tantangan digital? Kami punya solusinya! Optimalkan operasional bisnismu dengan teknologi terkini.
+                                <p>Tantangan digital? Kami punya solusinya! Optimalkan operasional bisnismu dengan
+                                    teknologi terkini.
                                 </p>
                             </div>
                         </a>
@@ -133,7 +136,8 @@
                             <div class="gradient-layer"></div>
                             <div class="textbx-card">
                                 <h3>Potensial Development</h3>
-                                <p>Setiap individu punya potensi besar. Kembangkan bersama kami dan capai versi terbaik dari dirimu!
+                                <p>Setiap individu punya potensi besar. Kembangkan bersama kami dan capai versi terbaik
+                                    dari dirimu!
                                 </p>
                             </div>
                         </a>
@@ -147,7 +151,8 @@
                             <div class="gradient-layer"></div>
                             <div class="textbx-card">
                                 <h3> Event Organizer</h3>
-                                <p>Setiap momen spesial butuh sentuhan profesional. Percayakan acara Anda pada event organizer berpengalaman!
+                                <p>Setiap momen spesial butuh sentuhan profesional. Percayakan acara Anda pada event
+                                    organizer berpengalaman!
                                 </p>
                             </div>
                         </a>
@@ -162,8 +167,10 @@
         <div>
             <div class="title-client">
                 <h2>KERJA SAMA & KEMITRAAN</h2>
-                <p>Kami bangga dapat menjalin kerja sama dan kemitraan dengan berbagai pihak yang mempercayakan kami sebagai bagian
-                    dari perjalanan mereka. Secara bersama-sama, kami membangun solusi inovatif dan memberikan dampak positif di
+                <p>Kami bangga dapat menjalin kerja sama dan kemitraan dengan berbagai pihak yang mempercayakan kami
+                    sebagai bagian
+                    dari perjalanan mereka. Secara bersama-sama, kami membangun solusi inovatif dan memberikan dampak
+                    positif di
                     berbagai bidang.</p>
             </div>
             <div class="mitra-logo">
