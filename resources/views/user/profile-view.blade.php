@@ -49,7 +49,8 @@
                                     @endphp
 
                                     @if ($field->image)
-                                        <img src="{{ asset('profile/' . $field->image) }}" alt="Profile Image" class="profile-photo">
+                                        <img src="{{ asset('profile/' . $field->image) }}" alt="Profile Image"
+                                            class="profile-photo">
                                     @else
                                         <div class="photo-placeholder">
                                             <span class="initial">{{ strtoupper($initial) }}</span>
@@ -64,9 +65,12 @@
                                     <label for="file-input" class="upload-icon">
                                         <i class="fas fa-pencil-alt"></i>
                                     </label>
-                                    <input type="file" name="image" class="file-input" id="file-input" accept="image/*" hidden>
+                                    <input type="file" name="image" class="file-input" id="file-input"
+                                        accept="image/*" hidden>
                                 </div>
-                                <button type="submit" name="delete_image" value="1" onclick="return confirm('Apakah Aa yakin ingin menghapus gambar ini?')">Hapus Gambar</button>
+                                <button type="submit" name="delete_image" value="1"
+                                    onclick="return confirm('Apakah Aa yakin ingin menghapus gambar ini?')">Hapus
+                                    Gambar</button>
                                 <small>Allowed JPG, GIF, or PNG. Max size 800KB</small>
                             </div>
 
@@ -128,7 +132,8 @@
                     <!-- Change Password -->
                     <div class="tab-pane" id="change-password">
                         <h5>Change Your Password</h5>
-                        <form class="form-section" action="{{ route('change.password', $field->id) }}" method="post">
+                        <form class="form-section" action="{{ route('change.password', $field->id) }}"
+                            method="post">
                             @csrf
                             <div class="form-group">
                                 <label class="form-label">Current Password</label>

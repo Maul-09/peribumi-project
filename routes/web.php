@@ -64,6 +64,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/', [PeribumiController::class, 'beranda'])->middleware('record.visitor')->name('beranda');
+Route::get('/beranda/about', [PeribumiController::class, 'aboutUs'])->name('about.us');
 
 Route::post('/signup', [AuthController::class, 'signup'])->name('signup');
 Route::get('/auth/register', [AuthController::class, 'register'])->name('register');

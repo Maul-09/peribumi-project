@@ -62,4 +62,9 @@ class PeribumiController extends Controller
 
         return view('auth.login');
     }
+
+    public function aboutUs()
+    {
+        return view('user.history-company');
+    }
 }

@@ -13,6 +13,8 @@ use App\Models\ReviewRating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\KonfirmasiTransaksiMail;
 
 class AdminController extends Controller
 {
@@ -133,19 +135,21 @@ class AdminController extends Controller
     public function konfirmasiTransaksi($id)
     {
         // Ambil transaksi dengan ID yang diberikan
-        $userProduk = UserProduk::findOrFail($id);
+        $transaksi = UserProduk::findOrFail($id);
 
         // Update status transaksi menjadi confirmed
-        $userProduk->status_transaksi = 'confirmed';
+        $transaksi->status_transaksi = 'confirmed';
 
-        $userProduk->tanggal_beli = now();
-        $userProduk->tanggal_berakhir = now()->addDays(30);
+        $transaksi->tanggal_beli = now();
+        $transaksi->tanggal_berakhir = now()->addDays(30);
         // Set status akses produk menjadi aktif
-        $userProduk->status_akses = 'aktif';
+        $transaksi->status_akses = 'aktif';
 
         // Simpan perubahan
-        $userProduk->save();
+        $transaksi->save();
 
+        // Kirim email ke pengguna
+        Mail::to($transaksi->user->email)->send(new KonfirmasiTransaksiMail($transaksi));
         // Redirect ke halaman dashboard admin
         return redirect()->route('admin')->with('success', 'Transaksi telah dikonfirmasi!');
     }
