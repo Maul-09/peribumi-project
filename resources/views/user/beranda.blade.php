@@ -91,8 +91,7 @@
                             <div class="gradient-layer"></div>
                             <div class="textbx-card">
                                 <h3>Management Business</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam
-                                    blanditiis nobis.
+                                <p>Ingin bisnismu berkembang cepat? Terapkan manajemen yang terstruktur, efisien, dan penuh strategi
                                 </p>
                             </div>
                         </a>
@@ -106,8 +105,7 @@
                             <div class="gradient-layer"></div>
                             <div class="textbx-card">
                                 <h3>Training Center</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam
-                                    blanditiis nobis.
+                                <p>Mau jadi lebih kompeten dan percaya diri? Ikuti program training center kami dan buktikan hasilnya!
                                 </p>
                             </div>
                         </a>
@@ -121,8 +119,7 @@
                             <div class="gradient-layer"></div>
                             <div class="textbx-card">
                                 <h3>Digital Solutions</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam
-                                    blanditiis nobis.
+                                <p>Tantangan digital? Kami punya solusinya! Optimalkan operasional bisnismu dengan teknologi terkini.
                                 </p>
                             </div>
                         </a>
@@ -135,9 +132,8 @@
                             <img src="{{ asset('../image/bg-5.jpg') }}" alt="">
                             <div class="gradient-layer"></div>
                             <div class="textbx-card">
-                                <h3>Personal Development</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam
-                                    blanditiis nobis.
+                                <h3>Potensial Development</h3>
+                                <p>Setiap individu punya potensi besar. Kembangkan bersama kami dan capai versi terbaik dari dirimu!
                                 </p>
                             </div>
                         </a>
@@ -151,8 +147,7 @@
                             <div class="gradient-layer"></div>
                             <div class="textbx-card">
                                 <h3> Event Organizer</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga beatae magnam
-                                    blanditiis nobis.
+                                <p>Setiap momen spesial butuh sentuhan profesional. Percayakan acara Anda pada event organizer berpengalaman!
                                 </p>
                             </div>
                         </a>

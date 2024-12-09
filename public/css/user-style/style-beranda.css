@@ -313,7 +313,7 @@ section.mitpro hr {
   }
 
   .card:hover .textbx-card h3 {
-    transform: translateY(-150px);
+    transform: translateY(-80px);
   }
 
 .client {
