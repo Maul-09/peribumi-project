@@ -87,7 +87,7 @@
                 <div class="card">
                     <div class="box">
                         <a href="{{ route('manajemen') }}">
-                            <img src="{{ asset('../image/bg-10.png') }}" alt="">
+                            <img src="{{ asset('../image/bg-10.jpg') }}" alt="">
                             <div class="gradient-layer"></div>
                             <div class="textbx-card">
                                 <h3>Management Business</h3>
@@ -102,7 +102,7 @@
                 <div class="card">
                     <div class="box">
                         <a href="{{ route('training') }}">
-                            <img src="{{ asset('../image/bg-8.png') }}" alt="">
+                            <img src="{{ asset('../image/bg-8.jpg') }}" alt="">
                             <div class="gradient-layer"></div>
                             <div class="textbx-card">
                                 <h3>Training Center</h3>
@@ -117,7 +117,7 @@
                 <div class="card">
                     <div class="box">
                         <a href="{{ route('digital') }}">
-                            <img src="{{ asset('../image/bg-4.png') }}" alt="">
+                            <img src="{{ asset('../image/bg-4.jpg') }}" alt="">
                             <div class="gradient-layer"></div>
                             <div class="textbx-card">
                                 <h3>Digital Solutions</h3>
@@ -132,7 +132,7 @@
                 <div class="card">
                     <div class="box">
                         <a href="{{ route('personal') }}">
-                            <img src="{{ asset('../image/bg-5.png') }}" alt="">
+                            <img src="{{ asset('../image/bg-5.jpg') }}" alt="">
                             <div class="gradient-layer"></div>
                             <div class="textbx-card">
                                 <h3>Potensial Development</h3>
@@ -147,7 +147,7 @@
                 <div class="card">
                     <div class="box">
                         <a href="{{ route('event') }}">
-                            <img src="{{ asset('../image/bg-6.png') }}" alt="">
+                            <img src="{{ asset('../image/bg-6.jpg') }}" alt="">
                             <div class="gradient-layer"></div>
                             <div class="textbx-card">
                                 <h3> Event Organizer</h3>
