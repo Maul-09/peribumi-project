@@ -22,7 +22,6 @@ Route::middleware('auth')->group(function () {
         Route::post('/edit/profile/delete{id}', [CrudController::class, 'deleteAccount'])->name('deleteAccount');
         Route::post('/edit/profile/update{id}', [CrudController::class, 'update'])->name('update.profile');
         Route::delete('/edit/profile/delete-image/{id}', [CrudController::class, 'deleteImageProfle'])->name('delete.image.profile');
-        Route::get('/produk-aktif', [ProdukController::class, 'produkAktif'])->name('produk.aktif');
         Route::get('/forgot-password', [CrudController::class, 'forgotView'])->name('password.request');
         Route::post('/forgot-password', [CrudController::class, 'forgotSend'])->name('password.email');
         Route::get('/reset-password/{token}', [CrudController::class, 'forgotHandler'])->name('password.reset');
@@ -43,7 +42,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/digital-admin', [AdminController::class, 'digitalAdmin'])->name('digital.admin');
         Route::get('/personal-admin', [AdminController::class, 'personalAdmin'])->name('personal.admin');
         Route::get('/organizer-admin', [AdminController::class, 'organizerAdmin'])->name('organizer.admin');
-        Route::get('/produk/create', [ProdukController::class, 'create'])->name('produk.create');
+        Route::get('/produk-create', [ProdukController::class, 'create'])->name('produk.create');
         Route::post('/post/produk', [ProdukController::class, 'store'])->name('produk.store');
         Route::get('/produk/{id}/edit', [ProdukController::class, 'edit'])->name('produk.edit');
         Route::put('/produk/{id}/edit/update', [ProdukController::class, 'update'])->name('produk.update');

@@ -106,9 +106,19 @@ class ProdukController extends Controller
 
                 // Simpan data form1 ke database
                 $produk = Produk::create($request->only([
-                    'nama_produk', 'teknis', 'deskripsi', 'durasi', 'personil',
-                    'persyaratan', 'metodologi', 'sasaran', 'jadwal_lokasi_fasilitas',
-                    'deskripsi_harga', 'highlight_harga', 'produkType', 'link'
+                    'nama_produk',
+                    'teknis',
+                    'deskripsi',
+                    'durasi',
+                    'personil',
+                    'persyaratan',
+                    'metodologi',
+                    'sasaran',
+                    'jadwal_lokasi_fasilitas',
+                    'deskripsi_harga',
+                    'highlight_harga',
+                    'produkType',
+                    'link'
                 ]));
             }
 
@@ -130,9 +140,17 @@ class ProdukController extends Controller
 
                 // Simpan data form2 ke database
                 $produk = Produk::create($request->only([
-                    'nama_produk', 'jenis_pekerjaan', 'kualifikasi', 'ruang_lingkup',
-                    'klasifikasi', 'lembaga', 'kategori', 'deskripsi_harga',
-                    'highlight_harga', 'produkType', 'link'
+                    'nama_produk',
+                    'jenis_pekerjaan',
+                    'kualifikasi',
+                    'ruang_lingkup',
+                    'klasifikasi',
+                    'lembaga',
+                    'kategori',
+                    'deskripsi_harga',
+                    'highlight_harga',
+                    'produkType',
+                    'link'
                 ]));
             }
 
@@ -215,7 +233,7 @@ class ProdukController extends Controller
         ];
         $filteredProduct = array_filter($product->toArray(), function ($value, $key) {
             // Hanya ambil yang tidak null dan bukan 'id', 'created_at', atau 'updated_at'
-            return !is_null($value) && !in_array($key, ['id', 'created_at', 'updated_at', 'produkType','nama_produk', 'image', 'link']);
+            return !is_null($value) && !in_array($key, ['id', 'created_at', 'updated_at', 'produkType', 'nama_produk', 'image', 'link']);
         }, ARRAY_FILTER_USE_BOTH);
 
         $produk = Produk::findOrFail($id);
@@ -265,47 +283,47 @@ class ProdukController extends Controller
 
         $formIdentifier = $request->input('form_identifier');
 
-            if ($formIdentifier === 'form1') {
-                // Validasi untuk form1
-                $request->validate([
-                    'nama_produk' => 'required|string|max:255',
-                    'teknis' => 'required|string|max:255',
-                    'deskripsi' => 'required|string',
-                    'durasi' => 'required|string|max:255',
-                    'personil' => 'required|string|max:255',
-                    'persyaratan' => 'required|string',
-                    'metodologi' => 'required|string',
-                    'sasaran' => 'required|string',
-                    'jadwal_lokasi_fasilitas' => 'required|string',
-                    'deskripsi_harga' => 'required|string',
-                    'highlight_harga' => 'required|string',
-                    'produkType' => 'required|string',
-                    'link' => 'nullable|url',
-                ]);
-                $produk = Produk::findOrFail($id);
-                // Simpan data form2 ke database
-                $produk->update($request->all());
-            }
+        if ($formIdentifier === 'form1') {
+            // Validasi untuk form1
+            $request->validate([
+                'nama_produk' => 'required|string|max:255',
+                'teknis' => 'required|string|max:255',
+                'deskripsi' => 'required|string',
+                'durasi' => 'required|string|max:255',
+                'personil' => 'required|string|max:255',
+                'persyaratan' => 'required|string',
+                'metodologi' => 'required|string',
+                'sasaran' => 'required|string',
+                'jadwal_lokasi_fasilitas' => 'required|string',
+                'deskripsi_harga' => 'required|string',
+                'highlight_harga' => 'required|string',
+                'produkType' => 'required|string',
+                'link' => 'nullable|url',
+            ]);
+            $produk = Produk::findOrFail($id);
+            // Simpan data form2 ke database
+            $produk->update($request->all());
+        }
 
-            if ($formIdentifier === 'form2') {
-                // Validasi untuk form2
-                $request->validate([
-                    'nama_produk' => 'required|string|max:255',
-                    'jenis_pekerjaan' => 'required|string',
-                    'kualifikasi' => 'required|string',
-                    'ruang_lingkup' => 'required|string',
-                    'klasifikasi' => 'required|string',
-                    'lembaga' => 'required|string',
-                    'kategori' => 'required|string',
-                    'deskripsi_harga' => 'required|string',
-                    'highlight_harga' => 'required|string',
-                    'produkType' => 'required|string',
-                    'link' => 'nullable|url',
-                ]);
-                $produk = Produk::findOrFail($id);
-                // Simpan data form2 ke database
-                $produk->update($request->all());
-            }
+        if ($formIdentifier === 'form2') {
+            // Validasi untuk form2
+            $request->validate([
+                'nama_produk' => 'required|string|max:255',
+                'jenis_pekerjaan' => 'required|string',
+                'kualifikasi' => 'required|string',
+                'ruang_lingkup' => 'required|string',
+                'klasifikasi' => 'required|string',
+                'lembaga' => 'required|string',
+                'kategori' => 'required|string',
+                'deskripsi_harga' => 'required|string',
+                'highlight_harga' => 'required|string',
+                'produkType' => 'required|string',
+                'link' => 'nullable|url',
+            ]);
+            $produk = Produk::findOrFail($id);
+            // Simpan data form2 ke database
+            $produk->update($request->all());
+        }
 
         // // Buat array untuk menyimpan ID silabus baru
         // $silabusBaruIDs = [];
@@ -386,14 +404,4 @@ class ProdukController extends Controller
         return redirect($whatsappUrl);
     }
 
-    public function produkAktif()
-    {
-        $produkDibeli = Auth::user()->produk;
-
-        foreach ($produkDibeli as $produk) {
-            $produk->pivot->tanggal_beli = Carbon::parse($produk->pivot->tanggal_beli);
-            $produk->pivot->tanggal_berakhir = Carbon::parse($produk->pivot->tanggal_berakhir);
-        }
-        return view('user.produk-aktif', compact('produkDibeli'));
-    }
 }
