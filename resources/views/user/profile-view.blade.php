@@ -218,38 +218,33 @@
 
                     <!-- Product -->
                     <div class="tab-pane" id="product">
-                        <h3>Produk yang sudah Anda beli:</h3>
+                        <h3>Produk Anda:</h3>
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th>Nama Produk</th>
-                                    <th>Status Akses</th>
+                                    <th>Status</th>
                                     <th>Tanggal Pembelian</th>
                                     <th>Tanggal Berakhir</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($produkDibeli as $produk)
+                                @foreach ($produkSemua as $produk)
                                     <tr>
                                         <td>{{ $produk->nama_produk }}</td>
+                                        <td>{{ $produk->status_transaksi }}</td>
                                         <td>
-                                            @if ($produk->pivot->tanggal_berakhir && $produk->pivot->tanggal_berakhir->isPast())
-                                                Nonaktif
-                                            @else
-                                                Aktif
-                                            @endif
+                                            {{ $produk->pivot && $produk->pivot->tanggal_beli ? $produk->pivot->tanggal_beli->format('d-m-Y') : '-' }}
                                         </td>
                                         <td>
-                                            {{ $produk->pivot->tanggal_beli ? $produk->pivot->tanggal_beli->format('d-m-Y') : 'Tidak Tersedia' }}
-                                        </td>
-                                        <td>
-                                            {{ $produk->pivot->tanggal_berakhir ? $produk->pivot->tanggal_berakhir->format('d-m-Y') : 'Tidak Tersedia' }}
+                                            {{ $produk->pivot && $produk->pivot->tanggal_berakhir ? $produk->pivot->tanggal_berakhir->format('d-m-Y') : '-' }}
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
                     </div>
+
                 </div>
             </div>
         </div>

@@ -165,7 +165,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="lembaga" class="form-label">Durasi / Lembaga:</label>
+                                            <label for="lembaga" class="form-label">Lembaga:</label>
                                             <textarea name="lembaga" id="lembaga" class="form-control" required></textarea>
                                         </div>
 

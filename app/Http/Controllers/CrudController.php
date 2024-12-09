@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\View\View;
+use App\Models\UserProduk;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\InformasiUser;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
@@ -33,16 +35,52 @@ class CrudController extends Controller
         // Mendapatkan pengguna berdasarkan ID
         $field = User::findOrFail($id);
 
+        // Produk yang sudah dibeli
         $produkDibeli = Auth::user()->produk;
 
-        
-
         foreach ($produkDibeli as $produk) {
-            $produk->pivot->tanggal_beli = Carbon::parse($produk->pivot->tanggal_beli);
-            $produk->pivot->tanggal_berakhir = Carbon::parse($produk->pivot->tanggal_berakhir);
+            if ($produk->pivot) {
+                // Parse tanggal jika ada
+                $produk->pivot->tanggal_beli = $produk->pivot->tanggal_beli
+                ? Carbon::parse($produk->pivot->tanggal_beli)
+                : null;
+                $produk->pivot->tanggal_berakhir = $produk->pivot->tanggal_berakhir
+                ? Carbon::parse($produk->pivot->tanggal_berakhir)
+                : null;
+
+                // Tentukan status transaksi
+                if ($produk->pivot->status_transaksi === 'pending') {
+                    $produk->status_transaksi = 'Pending';
+                } elseif ($produk->pivot->tanggal_berakhir && $produk->pivot->tanggal_berakhir->isPast()) {
+                    $produk->status_transaksi = 'Nonaktif';
+                } else {
+                    $produk->status_transaksi = 'Aktif';
+                }
+            }
         }
-        // Merender tampilan dengan data pengguna
-        return view('user.profile-view', compact('field', 'produkDibeli'));
+
+
+
+        // Transaksi pending
+        $transaksiPending = UserProduk::where('user_id', Auth::id())
+            ->where('status_transaksi', 'pending')
+            ->get();
+
+        // Menambahkan atribut yang sesuai pada transaksi pending
+        foreach ($transaksiPending as $transaksi) {
+            $transaksi->nama_produk = $transaksi->produk->nama_produk ?? 'Tidak Tersedia'; // Relasi ke produk
+            $transaksi->tanggal_beli = $transaksi->created_at; // Menggunakan created_at
+            $transaksi->tanggal_berakhir = null; // Tidak ada tanggal berakhir untuk pending
+            $transaksi->status_transaksi = 'Pending'; // Status pending
+        }
+
+        // Gabungkan semua data produk
+        $produkSemua = (new Collection())
+            ->merge($produkDibeli)
+            ->merge($transaksiPending);
+
+        // Merender tampilan dengan data
+        return view('user.profile-view', compact('field', 'produkSemua'));
     }
 
     public function changePassword(Request $request, string $id)
@@ -141,10 +179,10 @@ class CrudController extends Controller
                 if (File::exists($oldImagePath)) {
                     File::delete($oldImagePath);  // Hapus gambar dari storage
                 }
-        
+
                 // Set nama gambar menjadi null setelah dihapus
                 $field->image = null;
-        
+
                 // Set pesan sukses untuk penghapusan gambar
                 $successMessages['image'] = 'Gambar berhasil dihapus.';
             }
@@ -315,23 +353,24 @@ class CrudController extends Controller
         return view('auth.after-restore');
     }
 
-    public function deleteImageProfile($id) {
+    public function deleteImageProfile($id)
+    {
 
         $image = User::find($id);
 
-    if (!$image) {
-        return response()->json(['error' => 'Gambar tidak ditemukan di database.'], 404);
-    }
+        if (!$image) {
+            return response()->json(['error' => 'Gambar tidak ditemukan di database.'], 404);
+        }
 
-    // Cek apakah file ada di storage
-    if (Storage::exists('public/images/' . $image->image)) {
-        // Hapus file dari storage
-        Storage::delete('public/images/' . $image->image);
-    }
+        // Cek apakah file ada di storage
+        if (Storage::exists('public/images/' . $image->image)) {
+            // Hapus file dari storage
+            Storage::delete('public/images/' . $image->image);
+        }
 
-    // Hapus data dari database
-    $image->delete();
+        // Hapus data dari database
+        $image->delete();
 
-    return response()->json(['message' => 'Gambar dan data berhasil dihapus.']);
+        return response()->json(['message' => 'Gambar dan data berhasil dihapus.']);
     }
 }
