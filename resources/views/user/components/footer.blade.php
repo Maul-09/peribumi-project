@@ -14,12 +14,12 @@
         </div>
 
         <div class="produk-foot">
-            <h3>Produk</h3>
+            <h3>Produk & Layanan</h3>
             <ul>
                 <li><a href="manajemen">Management Business</a></li>
                 <li><a href="training">Training Center</a></li>
-                <li><a href="digital">Potensial Solution</a></li>
-                <li><a href="personal">Personal Development</a></li>
+                <li><a href="digital">Digital Solution</a></li>
+                <li><a href="personal">Potential Development</a></li>
                 <li><a href="event">Event Organizer</a></li>
             </ul>
         </div>
@@ -34,6 +34,9 @@
             </a>
             <a href="#" class="media-social" target="_blank">
                 <i class="fa-brands fa-youtube"></i><span class="title-sosmed">Youtube Kami</span>
+            </a>
+            <a href="#" class="media-social" target="_blank">
+                <i class="fa-brands fa-google"></i><span class="title-sosmed">Mail Kami</span>
             </a>
         </div>
 

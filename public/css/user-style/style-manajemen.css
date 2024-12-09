@@ -12,7 +12,7 @@ body {
 }
 
 section {
-    padding: 100px;
+    padding: 6em 12em;
 }
 
 .banner::before {
@@ -66,28 +66,6 @@ section {
     color: #fff;
     max-width: 700px;
     z-index: -1;
-}
-.content {
-    display: flex;
-    justify-content: space-between;
-}
-.contentBx {
-    padding-right: 30px;
-}
-.contentBx h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-.contentBx p {
-    font-size: 17px;
-    font-style: italic;
-}
-.w50 {
-    max-width: 50%;
-}
-.w50 img {
-    width: 90%;
 }
 
 section.product-manajemen {
