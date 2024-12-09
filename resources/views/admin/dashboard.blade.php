@@ -126,7 +126,7 @@
                                     const listItem = button.closest('.list-group-item');
 
                                     if (confirm('Apakah Anda yakin ingin memulihkan akun ini?')) {
-                                        fetch(`/delete/users/${userId}/restore`, {
+                                        fetch(`/restore/users/${userId}/restore`, {
                                                 method: 'PATCH',
                                                 headers: {
                                                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
@@ -156,18 +156,14 @@
                                     button.className = `btn btn-sm ${buttonClass}`;
                                 }
 
-                                // Fitur pencarian
+                                // search bar
                                 searchBar.addEventListener('input', function() {
                                     const query = searchBar.value.toLowerCase();
                                     userLists.forEach(list => {
                                         list.querySelectorAll('.list-group-item').forEach(item => {
                                             const userName = item.querySelector('.user-name').textContent
                                                 .toLowerCase();
-                                            if (userName.includes(query)) {
-                                                item.style.display = '';
-                                            } else {
-                                                item.style.display = 'none';
-                                            }
+                                            item.style.display = userName.includes(query) ? '' : 'none';
                                         });
                                     });
                                 });

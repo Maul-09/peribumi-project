@@ -43,8 +43,8 @@
             <p>PT Peribumi Cahaya Nusa | Jl. Contoh No. 123, Jakarta</p>
             <p>© 2024 Semua Hak Dilindungi.</p>
             <p>
-                <a href="mailto:support@example.com">Kunjungi Website Kami</a> |
-                <a href="https://example.com">Hubungi Kami</a>
+                <a href="https://example.com">Kunjungi Website Kami</a> |
+                <a href="mailto:support@example.com">Hubungi Kami</a>
             </p>
         </div>
     </div>
