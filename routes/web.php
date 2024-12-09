@@ -53,7 +53,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/admin/tolak/{id}', [AdminController::class, 'tolakTransaksi'])->name('admin.tolak');
         Route::delete('/delete/users/{id}', [AdminController::class, 'deleteUser'])->name('delete.user');
         Route::get('/akun/setting/', [AdminController::class, 'settingAkun'])->name('setting.akun');
-        Route::patch('/admin/users/{id}/restore', [AdminController::class, 'restore'])->name('users.restore');
+        Route::patch('/restore/users/{id}/restore', [AdminController::class, 'restore'])->name('users.restore');
 
     });
 
