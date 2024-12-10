@@ -11,14 +11,14 @@
                 suscipit?</p>
         </div>
     </section>
-
-    <section class="product-manajemen">
-        <div>
-            <div class="title-produk">
-                <h3>Produk & Layanan</h3>
+    <div id="produk-layanan" ></div>
+        <section class="product-manajemen">
+            <div>
+                <div class="title-produk">
+                    <h3>Produk & Layanan</h3>
+                </div>
+                <x-card-produk></x-card-produk>
             </div>
-            <x-card-produk></x-card-produk>
-        </div>
-        <br>
-    </section>
+            <br>
+        </section>
 </x-layout>
