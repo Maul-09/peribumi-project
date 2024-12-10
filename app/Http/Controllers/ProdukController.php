@@ -130,6 +130,7 @@ class ProdukController extends Controller
                     'kualifikasi' => 'required|string',
                     'ruang_lingkup' => 'required|string',
                     'klasifikasi' => 'required|string',
+                    'durasi' => 'required|string',
                     'lembaga' => 'required|string',
                     'kategori' => 'required|string',
                     'deskripsi_harga' => 'required|string',
@@ -145,6 +146,7 @@ class ProdukController extends Controller
                     'kualifikasi',
                     'ruang_lingkup',
                     'klasifikasi',
+                    'durasi',
                     'lembaga',
                     'kategori',
                     'deskripsi_harga',
@@ -227,6 +229,8 @@ class ProdukController extends Controller
             'highlight_harga',
             'jenis_pekerjaan',
             'kualifikasi',
+            'durasi',
+            'lembaga',
             'ruang_lingkup',
             'klasifikasi',
             'kategori'
@@ -236,9 +240,39 @@ class ProdukController extends Controller
             return !is_null($value) && !in_array($key, ['id', 'created_at', 'updated_at', 'produkType', 'nama_produk', 'image', 'link']);
         }, ARRAY_FILTER_USE_BOTH);
 
+        $customOrder = [
+        'nama_produk',
+        'teknis',
+        'image',
+        'deskripsi',
+        'personil',
+        'sasaran',
+        'jenis_pekerjaan',
+        'kualifikasi',
+        'ruang_lingkup',
+        'klasifikasi',
+        'kategori',
+        'persyaratan',
+        'metodologi',
+        'sasaran',
+        'jadwal_lokasi_fasilitas',
+        'durasi',
+        'lembaga',
+        'deskripsi_harga',
+        'highlight_harga',
+        ];
+
+        // Atur urutan berdasarkan yang diinginkan dan pastikan kolom dengan nilai null tidak muncul
+        $orderedProduct = [];
+        foreach ($customOrder as $column) {
+            if (isset($filteredProduct[$column])) {
+                $orderedProduct[$column] = $filteredProduct[$column];
+            }
+        }
+
         $produk = Produk::findOrFail($id);
 
-        return view('user.index', ['product' => $filteredProduct], compact('produk', 'specialKeys'));
+        return view('user.index', ['product' => $orderedProduct], compact('produk', 'specialKeys'));
     }
     public function edit($id)
     {
