@@ -86,75 +86,65 @@ img {
     color: var(--skin-color-4);
 }
 .w50 h2 {
-    font-size: 30px;
+    font-size: 27px;
     color: #fff;
 }
-.tab {
+.container-chose {
     display: flex;
-    margin-top: 10px;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card-chose {
+    width: 250px;
+    background: #fff;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.tab button {
-    background-color: inherit;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 14px 89px;
-    color: var(--skin-color-1);
-    transition: background-color 0.3s;
-    font-weight: 600;
-    font-size: 17px;
+.card-chose:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.tab button:hover {
-    background-color: #ddd;
-}
-
-.tab button.active {
-    background-color: var(--skin-color-3);
+.card-header {
+    background: #4CAF50;
     color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-.tabcontent {
-    display: none;
-    height: 135px;
-    padding: 10px 5px;
-    color: #fff;
-    border-top: none;
-    background-color: transparent;
-    margin-top: 5px;
-    overflow-y: auto;
-}
-.scrollable-content::-webkit-scrollbar {
-    display: none;
+.card-content {
+    padding: 20px;
 }
 
-.tabcontent ol {
-    max-width: 430px;
-    font-size: 14px;
-    padding-left: 10px;
-    text-align:justify;
+.card-section {
+    margin-bottom: 15px;
 }
 
-.tabcontent li {
-    padding-left:10px;
-    margin-bottom:10px;
-
-}
-
-.tabcontent p {
-    max-width: 430px;
-    font-size: 14px;
+.card-section h3 {
     margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+    border-left: 5px solid var(--skin-color-1);
+    padding-left: 10px;
 }
 
-#defaultOpen {
-    display: block;
+.card-section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding: 0;
+    color: #555;
+}
+
+.card-section ul li {
+    margin-bottom: 5px;
 }
 
 .tim-peribumi{
@@ -165,13 +155,13 @@ img {
     justify-content: flex-start;
 }
 
-.tim-peribumi button{
+.tim-peribumi .peribumi{
     background-color: inherit;
     text-transform: uppercase;
     border: 2px solid #fff;
     outline: none;
     cursor: pointer;
-    background-color: transparent;
+    text-decoration: none;
     border-radius: 8px;
     padding: 12px 30px;
     color: #fff;
@@ -181,10 +171,10 @@ img {
 
 }
 
-.tim-peribumi button:hover{
+.tim-peribumi .peribumi:hover{
     color: var(--skin-color-1);
     background: #fff;
-    border: 2px solid var(--skin-color-4);
+    border: 2px solid var(--skin-color-2);
 }
 
 section.mitpro {

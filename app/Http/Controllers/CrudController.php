@@ -39,16 +39,27 @@ class CrudController extends Controller
         $produkDibeli = Auth::user()->produk;
 
         foreach ($produkDibeli as $produk) {
-            $produk->pivot->tanggal_beli = $produk->pivot->tanggal_beli
+            if ($produk->pivot) {
+                // Parse tanggal jika ada
+                $produk->pivot->tanggal_beli = $produk->pivot->tanggal_beli
                 ? Carbon::parse($produk->pivot->tanggal_beli)
                 : null;
-            $produk->pivot->tanggal_berakhir = $produk->pivot->tanggal_berakhir
+                $produk->pivot->tanggal_berakhir = $produk->pivot->tanggal_berakhir
                 ? Carbon::parse($produk->pivot->tanggal_berakhir)
                 : null;
-            $produk->status_transaksi = $produk->pivot->tanggal_berakhir && $produk->pivot->tanggal_berakhir->isPast()
-                ? 'Nonaktif'
-                : 'Aktif';
+
+                // Tentukan status transaksi
+                if ($produk->pivot->status_transaksi === 'pending') {
+                    $produk->status_transaksi = 'Pending';
+                } elseif ($produk->pivot->tanggal_berakhir && $produk->pivot->tanggal_berakhir->isPast()) {
+                    $produk->status_transaksi = 'Nonaktif';
+                } else {
+                    $produk->status_transaksi = 'Aktif';
+                }
+            }
         }
+
+
 
         // Transaksi pending
         $transaksiPending = UserProduk::where('user_id', Auth::id())

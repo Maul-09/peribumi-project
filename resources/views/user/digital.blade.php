@@ -15,7 +15,7 @@
     <section class="product-digital">
         <div>
             <div class="title-produk">
-                <h3>Produk Kami</h3>
+                <h3>Produk & Layanan</h3>
             </div>
             <x-card-produk></x-card-produk>
         </div>

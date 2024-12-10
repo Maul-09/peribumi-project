@@ -33,42 +33,40 @@
     <section class="about" id="about">
         <div class="content">
             <div class="w50">
-                <h1>Tentang Peri bumi Consultant</h1>
-                <h2>Kami hadir sejak tahun 2023</h2>
-                <div class="navtab">
-                    <div class="tab">
-                        <button class="tablinks" onclick="openTab(event, 'Tab1')" id="defaultOpen">Visi</button>
-                        <button class="tablinks" onclick="openTab(event, 'Tab2')">Misi</button>
+                <h1>Mengapa memilih kami?</h1>
+                <h2>Karakteristik Khusus yang kami miliki</h2>
+                <div class="container-chose">
+                    <div class="card-chose">
+                        <div class="card-content">
+                            <div class="card-section">
+                                <h3>Produk :</h3>
+                                <ul>
+                                    <li>Flexibel</li>
+                                    <li>Murah dan Terjangkau</li>
+                                    <li>Berkesesuaian</li>
+                                    <li>Konseptual</li>
+                                    <li>Terverifikasi</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-
-                    <div id="Tab1" class="tabcontent">
-                        <p class="misi">Menjadi Pelopor Bisnis yang Menginspirasi, Mendukung dan
-                            Mewujudkan</p>
+                    <div class="card-chose">
+                        <div class="card-content">
+                            <div class="card-section">
+                                <h3>Layanan :</h3>
+                                <ul>
+                                    <li>Menyeluruh</li>
+                                    <li>Mudah dan Cepat</li>
+                                    <li>Terintegrasi</li>
+                                    <li>Beragam</li>
+                                    <li>Professional</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-
-                    <div id="Tab2" class="tabcontent scrollable-content">
-                        <ol type="1">
-                            <li>Menghadirkan berbagai unit kerja yang berkaitan dengan Pembangunan dan
-                                Pengembangan suatu bisnis baik fisik
-                                maupun non-fisik (Infrastruktur)</li>
-                            <li>Memfasilitasi kebutuhan pengguna atau pelanggan melalui
-                                berbagai produk dan Layanan yang dimiliki baik berupa
-                                barang dan jasa</li>
-                            <li>Memastikan pemenuhan kebutuhan pengguna atau
-                                pelanggan dengan standar mutu yang terjamin dan
-                                berkualitas dalam balutan profesionalitas yang tinggi.</li>
-                            <li>Mendukung proses pertumbuhan pengguna atau pelanggan ke
-                                arah yang lebih baik melalui kesiagaan dan pemberdayaan
-                                sumber daya yang dimiliki</li>
-                            <li>Menjadikan kepuasan yang dirasakan oleh pengguna atau
-                                pelanggan atas produk dan layanan yang dihadirkan
-                                sebagai pengalaman berharga tak ternilai Sehingga menjadikan Motivasi lebih bagi kami
-                                untuk terus berinovasi</li>
-                        </ol>
-                    </div>
-                    <div class="tim-peribumi">
-                        <a href="{{ route('about.us') }}" class="tim-peribumi">Tim Manajemen</a>
-                    </div>
+                </div>
+                <div class="tim-peribumi">
+                    <a href="{{ route('about.us') }}" class="peribumi">Tentang Kami</a>
                 </div>
             </div>
             <img src="{{ asset('../image/bg-4.jpg') }}" alt="foto">
@@ -78,7 +76,7 @@
 
     <section class="mitpro">
         <div class="title-product">
-            <h2>PRODUK KAMI</h2>
+            <h2>PRODUK & LAYANAN</h2>
             <p>Kami menghadirkan beragam produk berkualitas tinggi yang dirancang untuk memenuhi kebutuhan Anda. Temukan
                 inovasi, keunggulan, dan solusi terbaik di setiap kategori produk kami berikut ini.</p>
         </div>
@@ -135,7 +133,7 @@
                             <img src="{{ asset('../image/bg-5.jpg') }}" alt="">
                             <div class="gradient-layer"></div>
                             <div class="textbx-card">
-                                <h3>Potensial Development</h3>
+                                <h3>Potential Development</h3>
                                 <p>Setiap individu punya potensi besar. Kembangkan bersama kami dan capai versi terbaik
                                     dari dirimu!
                                 </p>

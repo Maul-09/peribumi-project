@@ -7,33 +7,35 @@
         <div class="about-foot">
             <h3>Tentang kami</h3>
             <p>
-                PERI BUMI hadir dan berkomitmen untuk membantu memfasilitasi langkah percepatan dalam rangka
-                pengembangan
-                dan atau peningkatan kompetensi serta kapasitas Sumber daya manusia yang dimiliki.
+                PERI BUMI hadir dan berkomitmen untuk membantu serta memfasilitasi langkah percepatan dalam rangka
+                pengembangan dan atau peningkatan kompetensi serta kapasitas Sumber daya manusia yang dimiliki
             </p>
         </div>
 
         <div class="produk-foot">
-            <h3>Produk</h3>
+            <h3>Produk & Layanan</h3>
             <ul>
                 <li><a href="manajemen">Management Business</a></li>
                 <li><a href="training">Training Center</a></li>
-                <li><a href="digital">Potensial Solution</a></li>
-                <li><a href="personal">Personal Development</a></li>
+                <li><a href="digital">Digital Solution</a></li>
+                <li><a href="personal">Potential Development</a></li>
                 <li><a href="event">Event Organizer</a></li>
             </ul>
         </div>
 
         <div class="media-foot">
             <h3>Sosial Media</h3>
-            <a href="https://www.instagram.com/peribumi_pro/" class="media-social" >
-                <i class="fa-brands fa-instagram"></i><span class="title-sosmed">Instagram Kami</span>
+            <a href="https://www.instagram.com/peribumi_pro/" class="media-social" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram"></i><span class="title-sosmed">Peribumi Pro</span>
             </a>
-            <a href="#" class="media-social" target="_blank">
+            <a href="#" class="media-social" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-facebook"></i><span class="title-sosmed">Facebook Kami</span>
             </a>
-            <a href="#" class="media-social" target="_blank">
+            <a href="#" class="media-social" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-youtube"></i><span class="title-sosmed">Youtube Kami</span>
+            </a>
+            <a href="mailto:peribumi.pro@gmail.com" class="media-social" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-google"></i><span class="title-sosmed">peribumi.pro</span>
             </a>
         </div>
 
