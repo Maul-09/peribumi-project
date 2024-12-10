@@ -202,6 +202,57 @@ class AdminController extends Controller
 
     public function settingAkun()
     {
-        return view('admin.acount-setting');
+        $admins = User::with('informasiUser')
+                    ->where('usertype', 'admin')
+                    ->get();
+        return view('admin.acount-setting', ['admins' => $admins]);
+    }
+
+    public function addAccount(Request $request) {
+        $field = $request->validate(
+            [
+                'name' => ['required', 'max:255'],
+                'email' => ['required', 'max:255', 'email', 'unique:users'],
+                'username' => ['required', 'max:255'],
+                'password' => ['required', 'min:8'],
+                'usertype' => ['required', 'string'],
+            ],
+            [
+                'name.required' => 'Nama wajib diisi',
+                'name.max' => 'Nama tidak boleh lebih dari 255 karakter',
+                'email.required' => 'Email wajib diisi',
+                'email.max' => 'Email tidak boleh lebih dari 255 karakter',
+                'email.email' => 'Email tidak valid',
+                'email.unique' => 'Email sudah digunakan',
+                'username.required' => 'Username wajib diisi',
+                'username.max' => 'Username tidak boleh lebih dari 255 karakter',
+                'password.required' => 'Password wajib diisi',
+                'password.min' => 'Password minimal 8 karakter',
+            ]
+        );
+
+        // Enkripsi password
+        $field['password'] = bcrypt($field['password']);
+
+        // Simpan user ke database
+        User::create($field);
+
+        return redirect()->back()->with('success', 'Akun berhasil ditambahkan!');
+    }
+
+    public function delete(Request $request)
+    {
+        // Validasi ID user
+        $validated = $request->validate([
+            'user_id' => 'required|exists:users,id',
+        ]);
+
+        // Cari user berdasarkan ID
+        $user = User::findOrFail($validated['user_id']);
+
+        // Hapus user
+        $user->delete();
+
+        return redirect()->back()->with('success', 'Akun berhasil dihapus!');
     }
 }

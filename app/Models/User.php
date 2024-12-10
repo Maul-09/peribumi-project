@@ -22,7 +22,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'email',
         'username',
         'password',
-        'image' // Tambahkan 'image' jika Anda menyimpan gambar profil
+        'image',
+        'usertype', 
     ];
 
     protected static function boot()
