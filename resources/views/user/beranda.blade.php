@@ -69,7 +69,13 @@
                     <a href="{{ route('about.us') }}" class="peribumi">Tentang Kami</a>
                 </div>
             </div>
-            <img src="{{ asset('../image/bg-4.jpg') }}" alt="foto">
+            <div class="circle">
+                <div class="photo-stack">
+                    <img src="{{ asset('../image/bg-10.jpg') }}" class="photo" alt="">
+                    <img src="{{ asset('../image/bg-8.jpg') }}" class="photo" alt="">
+                    <img src="{{ asset('../image/bg-5.jpg') }}" class="photo" alt="">
+                </div>
+            </div>
 
         </div>
     </section>

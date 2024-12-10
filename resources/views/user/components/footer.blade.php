@@ -7,9 +7,8 @@
         <div class="about-foot">
             <h3>Tentang kami</h3>
             <p>
-                PERI BUMI hadir dan berkomitmen untuk membantu memfasilitasi langkah percepatan dalam rangka
-                pengembangan
-                dan atau peningkatan kompetensi serta kapasitas Sumber daya manusia yang dimiliki.
+                PERI BUMI hadir dan berkomitmen untuk membantu serta memfasilitasi langkah percepatan dalam rangka
+                pengembangan dan atau peningkatan kompetensi serta kapasitas Sumber daya manusia yang dimiliki
             </p>
         </div>
 
@@ -26,17 +25,17 @@
 
         <div class="media-foot">
             <h3>Sosial Media</h3>
-            <a href="https://www.instagram.com/peribumi_pro/" class="media-social" >
-                <i class="fa-brands fa-instagram"></i><span class="title-sosmed">Instagram Kami</span>
+            <a href="https://www.instagram.com/peribumi_pro/" class="media-social" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram"></i><span class="title-sosmed">Peribumi Pro</span>
             </a>
-            <a href="#" class="media-social" target="_blank">
+            <a href="#" class="media-social" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-facebook"></i><span class="title-sosmed">Facebook Kami</span>
             </a>
-            <a href="#" class="media-social" target="_blank">
+            <a href="#" class="media-social" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-youtube"></i><span class="title-sosmed">Youtube Kami</span>
             </a>
-            <a href="#" class="media-social" target="_blank">
-                <i class="fa-brands fa-google"></i><span class="title-sosmed">Mail Kami</span>
+            <a href="mailto:peribumi.pro@gmail.com" class="media-social" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-google"></i><span class="title-sosmed">peribumi.pro</span>
             </a>
         </div>
 
