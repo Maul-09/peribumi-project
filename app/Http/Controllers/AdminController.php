@@ -9,6 +9,7 @@ use App\Models\Produk;
 use App\Models\Visitor;
 use Illuminate\View\View;
 use App\Models\UserProduk;
+use Illuminate\Support\Str;
 use App\Models\ReviewRating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -136,7 +137,8 @@ class AdminController extends Controller
     {
         // Ambil transaksi dengan ID yang diberikan
         $transaksi = UserProduk::findOrFail($id);
-
+        
+        $nomorTransaksi = 'PBC' . Str::upper(Str::random(10));
         // Update status transaksi menjadi confirmed
         $transaksi->status_transaksi = 'confirmed';
 
@@ -144,7 +146,7 @@ class AdminController extends Controller
         $transaksi->tanggal_berakhir = now()->addDays(30);
         // Set status akses produk menjadi aktif
         $transaksi->status_akses = 'aktif';
-
+        $transaksi->nomor_transaksi = $nomorTransaksi;
         // Simpan perubahan
         $transaksi->save();
 

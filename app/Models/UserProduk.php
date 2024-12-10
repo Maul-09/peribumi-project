@@ -18,6 +18,7 @@ class UserProduk extends Model
         'tanggal_berakhir' => 'datetime',
         'status_transaksi',
         'status_akses',
+        'nomor_transaksi'
     ];
 
     // Relasi ke user

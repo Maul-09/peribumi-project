@@ -56,10 +56,10 @@ class CrudController extends Controller
                 } else {
                     $produk->status_transaksi = 'Aktif';
                 }
+                $produk->pivot->nomor_transaksi = $produk->pivot->nomor_transaksi ?? 'Tidak Tersedia';
+                $produk->nama_user = Auth::user()->name ?? 'Tidak Tersedia';
             }
         }
-
-
 
         // Transaksi pending
         $transaksiPending = UserProduk::where('user_id', Auth::id())
@@ -72,6 +72,8 @@ class CrudController extends Controller
             $transaksi->tanggal_beli = $transaksi->created_at; // Menggunakan created_at
             $transaksi->tanggal_berakhir = null; // Tidak ada tanggal berakhir untuk pending
             $transaksi->status_transaksi = 'Pending'; // Status pending
+            $transaksi->nomor_transaksi = $transaksi->nomor_transaksi ?? 'Tidak Tersedia';
+            $transaksi->nama_user = $transaksi->user->name ?? 'Tidak Tersedia';
         }
 
         // Gabungkan semua data produk
