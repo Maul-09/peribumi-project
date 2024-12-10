@@ -133,4 +133,10 @@
                 <span>Account Settings</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ route('produk.aktif', auth()->user()->id) }}">
+                <i class="bi bi-card-checklist"></i>
+                <span>Active Product List</span>
+            </a>
+        </li>
 </aside><!-- End Sidebar-->
