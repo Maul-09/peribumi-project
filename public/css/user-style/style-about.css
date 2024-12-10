@@ -74,7 +74,7 @@ section.history {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 3pc 10px;
+    margin: 3pc 10px 20px;
 }
 
 .content-histori h3{
@@ -210,6 +210,7 @@ section.history {
         display: flex;
         font-size: 24px;
         justify-content: center;
+        margin-bottom: 15px;
     }
 
     .tab {
