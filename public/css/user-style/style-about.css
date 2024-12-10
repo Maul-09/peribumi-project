@@ -62,7 +62,7 @@ section {
 
 .banner .textBx p {
     color: #fff;
-    max-width: 700px; /* Batasi lebar paragraf */
+    max-width: 700px;
 }
 
 section.history {
@@ -74,7 +74,7 @@ section.history {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 3pc;
+    margin: 3pc 10px;
 }
 
 .content-histori h3{
@@ -102,10 +102,6 @@ section.history {
     flex-direction: column;
 }
 
-.navtab h1{
-    font-size: 20px;
-    color: var(--skin-color-4);
-}
 .navtab h2 {
     font-size: 30px;
 }
@@ -150,7 +146,7 @@ section.history {
     border-top: none;
     background-color: transparent;
     overflow-y: auto;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 .scrollable-content::-webkit-scrollbar {
     display: none;
@@ -180,7 +176,7 @@ section.history {
 }
 
 .box-2{
-    max-width: 50%
+    max-width: 50%;
 }
 
 .box-2 img{
@@ -192,11 +188,65 @@ section.history {
 
 
 @media only screen and (max-width: 581px){
+    .banner {
+        position: relative;
+        min-height: 70vh;
+    }
+
+    .banner .textBx h2 {
+        font-size: 1.5em;
+        color: #fff;
+        font-weight: 700;
+        line-height: 1.5em;
+    }
+
+    .banner .textBx p {
+        color: #fff;
+        font-size: 14px;
+        max-width: 700px;
+    }
+
     section{
-        padding: 1.5em;
+        padding: 0.8em;
+    }
+
+    .navtab h1 {
+        display: flex;
+        font-size: 24px;
+        justify-content: center;
+    }
+
+    .tab {
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .tab button {
+        color: var(--skin-color-1);
+        font-weight: 600;
+        font-size: 17px;
+        border-radius: 10px;
+        padding: 12px 60px;
+    }
+
+    .tabcontent {
+        display: none;
+        height: 300px;
+        padding: 0 20px;
     }
 
     .content{
         display: block;
+    }
+
+    .box-1{
+        flex-direction: column;
+    }
+
+    .struktur-image{
+        position: relative;
+        max-width: 100%;
+        left: 5%;
+        height: 100%;
     }
 }

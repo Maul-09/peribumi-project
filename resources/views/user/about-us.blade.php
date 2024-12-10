@@ -32,7 +32,7 @@
         </div>
         <div class="box-1">
             <div class="navtab">
-                <h2>Kami hadir sejak tahun 2021</h2>
+                <h1>Kami hadir sejak tahun 2021</h1>
                 <div class="tab">
                     <button class="tablinks" onclick="openTab(event, 'Tab1')">Visi</button>
                     <button class="tablinks" onclick="openTab(event, 'Tab2')" id="defaultOpen">Misi</button>
@@ -64,9 +64,7 @@
                     </ol>
                 </div>
             </div>
-                <div class="box-2">
-                    <img src="{{ asset('image/struktur.png') }}" alt="" class="strukture">
-                </div>
-            </div>
+            <img src="{{ asset('image/struktur.png') }}" alt="" class="struktur-image">
+        </div>
     </section>
 </x-layout>
