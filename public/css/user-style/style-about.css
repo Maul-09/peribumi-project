@@ -140,8 +140,8 @@ section.history {
 
 .tabcontent {
     display: none;
-    height: 304px;
     padding: 10px 5px;
+    height: 410px;
     color: var(--skin-color-1);
     border-top: none;
     background-color: transparent;
@@ -175,12 +175,8 @@ section.history {
     display: block;
 }
 
-.box-2{
-    max-width: 50%;
-}
-
-.box-2 img{
-    height: 425px;
+.struktur-image{
+    max-width: 63%;
     object-fit: scale-down;
 }
 
