@@ -29,7 +29,7 @@ section {
 .banner {
     position: relative;
     min-height: 100vh;
-    background: url(../../image/bg-7.jpg);
+    background: url(../../image/bg-10.jpg);
     background-size: cover;
     display: flex;
     background-position: right;
@@ -62,7 +62,7 @@ section {
 
 .banner .textBx p {
     color: #fff;
-    max-width: 700px; /* Batasi lebar paragraf */
+    max-width: 700px;
 }
 
 section.product-training {

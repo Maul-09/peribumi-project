@@ -162,7 +162,7 @@
             <h3>Konfirmasi Pembelian</h3>
             <p>Klik tombol di bawah ini untuk melanjutkan ke WhatsApp dan mengonfirmasi pembelian Anda:</p>
 
-            <a href="#" id="whatsappLink" class="btn btn-success" target="_blank">Konfirmasi via
+            <a href="#" id="whatsappLink" class="btn btn-success" target="_blank" data-daftar-url="{{ url()->previous() }}#produk-layanan">Konfirmasi via
                 WhatsApp</a>
             <a href="#" class="btn btn-danger" id="closeModalBtn">Batal</a>
         </div>

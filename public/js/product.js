@@ -110,34 +110,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    if (deleteIcon) {
-        deleteIcon.addEventListener('click', function () {
-            showAlert('Apakah Anda yakin ingin menghapus foto?', function () {
-                if (imgElement) {
-                    imgElement.style.display = 'none';
-                }
-
-                if (!placeholder) {
-                    const newPlaceholder = document.createElement('div');
-                    newPlaceholder.className = 'photo-placeholder';
-
-                    const userInitial = 'A';
-                    newPlaceholder.innerHTML = `<span class="initial">${userInitial}</span>`;
-                    document.querySelector('.photo-container').appendChild(newPlaceholder);
-                } else {
-                    placeholder.style.display = 'flex';
-                }
-
-                if (hiddenInput) {
-                    hiddenInput.value = '1';
-                }
-            });
-        });
-    }
-
-    if (saveButton) {
-        saveButton.addEventListener('click', function () {
-            location.reload();
-        });
-    }
 });

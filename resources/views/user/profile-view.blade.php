@@ -61,16 +61,15 @@
                                         <div class="error">{{ $message }}</div>
                                     @enderror
 
-                                    <div class="hover-overlay"></div>
                                     <label for="file-input" class="upload-icon">
                                         <i class="fas fa-pencil-alt"></i>
                                     </label>
                                     <input type="file" name="image" class="file-input" id="file-input"
                                         accept="image/*" hidden>
+                                    <button type="submit" name="delete_image" value="1" onclick="return confirm('Apakah Aa yakin ingin menghapus gambar ini?')" class="delete-icon">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
                                 </div>
-                                <button type="submit" name="delete_image" value="1"
-                                    onclick="return confirm('Apakah Aa yakin ingin menghapus gambar ini?')">Hapus
-                                    Gambar</button>
                                 <small>Allowed JPG, GIF, or PNG. Max size 800KB</small>
                             </div>
 
