@@ -413,23 +413,12 @@ class ProdukController extends Controller
         $produk = Produk::findOrFail($id);
         $user = Auth::user();
 
-        // Cek apakah produk sudah dibeli
-        $userProduk = UserProduk::where('user_id', $user->id)
-            ->where('produk_id', $produk->id)
-            ->first();
-
-        if (!$userProduk) {
-            // Jika belum dibeli, buat transaksi baru
-            $userProduk = new UserProduk();
-            $userProduk->user_id = $user->id;
-            $userProduk->produk_id = $produk->id;
-            $userProduk->status_transaksi = 'pending';  // Status pending
-            $userProduk->save();
-        } else {
-            // Jika sudah ada, update status menjadi pending
-            $userProduk->status_transaksi = 'pending';  // Status pending
-            $userProduk->save();
-        }
+        // Buat transaksi baru tanpa memeriksa apakah produk sudah dibeli
+        $userProduk = new UserProduk();
+        $userProduk->user_id = $user->id;
+        $userProduk->produk_id = $produk->id;
+        $userProduk->status_transaksi = 'pending';  // Status pending
+        $userProduk->save();
 
         // Redirect ke WhatsApp
         $whatsappMessage = "Hallo, saya ingin membeli produk: " . $produk->nama_produk;
@@ -437,5 +426,6 @@ class ProdukController extends Controller
 
         return redirect($whatsappUrl);
     }
+
 
 }
