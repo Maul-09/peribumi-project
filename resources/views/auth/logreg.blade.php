@@ -7,9 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/head-footer-style/auth.css') }}">
     <link rel="stylesheet" href="{{ asset('css/skin/color-palete.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <title>Peribumi Consultant - Register</title>
 </head>
 
@@ -27,9 +25,9 @@
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
                         <input type="password" id="password" name="password" placeholder="Password" />
-                        <span id="togglePassword" class="toggle-password">
+                        <div id="togglePassword" class="toggle-password">
                             <i class="fas fa-eye-slash" id="eyeIcon"></i>
-                        </span>
+                        </div>
                     </div>
 
                     @if (session('Failed'))

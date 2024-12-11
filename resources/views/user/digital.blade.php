@@ -4,11 +4,7 @@
     <section class="banner" id="home">
         <div class="textBx">
             <h2>DIGITAL SOLUTION</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sint voluptate consequatur alias
-                recusandae
-                explicabo temporibus, ad dolorum nisi, voluptatum ab non minima totam iure repellat sapiente nulla
-                repellendus
-                suscipit?</p>
+            <p>Kami menawarkan solusi digital yang inovatif dan komprehensif untuk membantu bisnis Anda menghadapi tantangan era digital. Dengan teknologi terkini dan pendekatan yang tepat, kami siap meningkatkan efisiensi, mempercepat proses operasional, dan memastikan bisnis Anda siap bersaing di pasar yang terus berkembang</p>
         </div>
     </section>
     <div id="produk-layanan"></div>
