@@ -59,8 +59,9 @@
                             sumber daya yang dimiliki</li>
                         <li>Menjadikan kepuasan yang dirasakan oleh pengguna atau
                             pelanggan atas produk dan layanan yang dihadirkan
-                            sebagai pengalaman berharga tak ternilai Sehingga menjadikan Motivasi lebih bagi kami
-                            untuk terus berinovasi</li>
+                            sebagai pengalaman berharga tak ternilai yang mampu memotivasi lebih diri kami
+                            untuk terus berkembang dengan inovasi
+                        </li>
                     </ol>
                 </div>
             </div>
