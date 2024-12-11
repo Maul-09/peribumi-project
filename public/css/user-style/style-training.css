@@ -85,6 +85,19 @@ section.product-training {
         padding: 1.5em;
     }
 
+    .banner {
+        min-height: 60vh;
+    }
+
+    .banner .textBx h2 {
+        font-size: 22px;
+        color: #fff;
+    }
+
+    .banner .textBx p {
+        font-size: 12px;
+    }
+
     .content{
         display: block;
     }

@@ -225,7 +225,8 @@
                                 <tr>
                                     <th>Nama Pengguna</th>
                                     <th>Nama Produk</th>
-                                    <th>Status</th>
+                                    <th>Status Transaksi</th>
+                                    <th>Status Akses</th> <!-- Tambahkan kolom Status Akses -->
                                     <th>Nomor Transaksi</th>
                                     <th>Tanggal Pembelian</th>
                                     <th>Tanggal Berakhir</th>
@@ -235,8 +236,37 @@
                                 @foreach ($produkSemua as $produk)
                                     <tr>
                                         <td>{{ $produk->nama_user }}</td>
-                                        <td>{{ $produk->nama_produk }}</td>
-                                        <td>{{ $produk->status_transaksi }}</td>
+                                        <td>{{ $produk->nama_produk ?? 'Tidak Tersedia' }}</td>
+                                        <td class="text-center">
+                                            @if ($produk->status_transaksi === 'Pending')
+                                                <span class="icon" title="Pending">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                                        height="32" fill="#FFA500" viewBox="0 0 24 24">
+                                                        <path
+                                                            d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm1-7h4v2h-6V7h2v6z">
+                                                        </path>
+                                                    </svg>
+                                                </span>
+                                            @elseif ($produk->status_transaksi === 'Rejected')
+                                                <span class="icon" title="Rejected">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                                        height="32" fill="red" viewBox="0 0 24 24">
+                                                        <path d="M18 6L6 18M6 6l12 12" stroke="red" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </span>
+                                            @elseif ($produk->status_transaksi === 'Confirmed')
+                                                <span class="icon" title="Confirmed">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                                        height="32" fill="green" viewBox="0 0 24 24">
+                                                        <path
+                                                            d="M10 15.172l-3.586-3.586-1.414 1.414L10 18 19 9l-1.414-1.414z">
+                                                        </path>
+                                                    </svg>
+                                                </span>
+                                            @endif
+                                        </td>
+                                        <td>{{ $produk->status_akses }}</td>
                                         <td>{{ $produk->pivot->nomor_transaksi ?? '-' }}</td>
                                         <td>
                                             {{ $produk->pivot && $produk->pivot->tanggal_beli ? $produk->pivot->tanggal_beli->format('d-m-Y') : '-' }}

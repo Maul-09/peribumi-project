@@ -412,7 +412,6 @@ section.about{
     bottom: -830px;
     right: -150px;
     background-color:#fff;
-
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     z-index:-10;
 }
@@ -708,9 +707,17 @@ section.about{
         overflow-x: hidden;
     }
     .banner {
-        position: relative;
         height: 60vh;
 
+    }
+
+    .banner .textBx h2 {
+        font-size: 28px;
+
+    }
+
+    .banner .textBx p {
+        font-size: 16px;
     }
 
     section{
@@ -821,4 +828,5 @@ section.about{
         color: #fff;
         font-weight: 500;
         font-size: 14px;
+    }
 }
