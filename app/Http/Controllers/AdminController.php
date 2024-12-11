@@ -245,20 +245,16 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Akun berhasil ditambahkan!');
     }
 
-    public function delete(Request $request)
+    public function delete($id)
     {
-        // Validasi ID user
-        $validated = $request->validate([
-            'user_id' => 'required|exists:users,id',
-        ]);
+        // Mencari data yang akan dihapus berdasarkan ID
+        $admin = User::findOrFail($id);
 
-        // Cari user berdasarkan ID
-        $user = User::findOrFail($validated['user_id']);
+        // Menghapus data
+        $admin->forceDelete();
 
-        // Hapus user
-        $user->delete();
-
-        return redirect()->back()->with('success', 'Akun berhasil dihapus!');
+        // Redirect kembali dengan pesan sukses
+        return redirect()->route('setting.akun')->with('success', 'Akun Telah dihapus');
     }
 
     public function produkAktif(string $id): View

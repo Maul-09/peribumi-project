@@ -7,8 +7,7 @@
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
-                    <li class="breadcrumb-item">Account Setting</li>
-                    <li class="breadcrumb-item active">Peri bumi Consultant</li>
+                    <li class="breadcrumb-item active">Account Setting</li>
                 </ol>
             </nav>
             <div class="container">
@@ -81,7 +80,20 @@
                     <tbody>
                         @forelse ($admins as $admin)
                             <tr>
-                                <td><img src="{{ $admin->photo_url ?? '#' }}" alt="Foto Profil" class="profile-pic"></td>
+                                <td>
+                                    @php
+                                        $initial = strtoupper(substr(auth()->user()->name, 0, 1));
+                                        $hasImage = auth()->user()->image ? true : false;
+                                    @endphp
+                                    @if ($hasImage)
+                                        <img src="{{ asset('profile/' . auth()->user()->image) }}" alt="User Logo"
+                                            style="width: 120px; height: 120px; background-color: #ccc; display: flex; justify-content: center; align-items: center; border: 2px solid #ccc; border-radius: 50%;">
+                                    @else
+                                        <div style="width: 60px; height: 60px; background-color: #ccc; display: flex; justify-content: center; align-items: center; border: 2px solid #ccc; border-radius: 50%; ">
+                                            <span style="color:#fff; font-weight:bold; font-size:20px; text-align: center;">{{ $initial }}</span>
+                                        </div>
+                                    @endif
+                                </td>
                                 <td>{{ $admin->name }}</td>
                                 <td>{{ ucfirst($admin->usertype) }}</td>
                                 <td>
@@ -109,7 +121,11 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <button class="delete-btn">Delete</button>
+                                    <form action="{{ route('admin.delete', $admin->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="delete-btn">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         @empty

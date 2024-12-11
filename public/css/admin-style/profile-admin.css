@@ -69,10 +69,12 @@
 
 .account-table th,
 .account-table td {
-    text-align: left;
+    text-align: center;
     padding: 10px;
     border: 1px solid #ddd;
 }
+
+.account-table td 
 
 .account-table th {
     background-color: #d9d7d7;
