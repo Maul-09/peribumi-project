@@ -4,11 +4,7 @@
     <section class="banner" id="home">
         <div class="textBx">
             <h2>POTENTIAL DEVELOPMENT</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sint voluptate consequatur alias
-                recusandae
-                explicabo temporibus, ad dolorum nisi, voluptatum ab non minima totam iure repellat sapiente nulla
-                repellendus
-                suscipit?</p>
+            <p>Kami menawarkan solusi pengembangan potensi yang dirancang untuk mengidentifikasi dan memaksimalkan kekuatan individu maupun tim dalam organisasi. Dengan pendekatan yang berbasis pada penilaian mendalam, kami membantu Anda menjadi pemimpin masa depan yang mampu beradaptasi dengan cepat di dunia bisnis yang terus berkembang</p>
         </div>
     </section>
     <div id="produk-layanan"></div>

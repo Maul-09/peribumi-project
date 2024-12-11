@@ -4,11 +4,7 @@
     <section class="banner" id="home">
         <div class="textBx">
             <h2>EVENT ORGANIZER</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sint voluptate consequatur alias
-                recusandae
-                explicabo temporibus, ad dolorum nisi, voluptatum ab non minima totam iure repellat sapiente nulla
-                repellendus
-                suscipit?</p>
+            <p>Kami menawarkan layanan event organizer profesional yang siap merancang dan menyelenggarakan acara sesuai kebutuhan Anda. Dengan konsep kreatif, tim yang berpengalaman, dan eksekusi yang sempurna, kami memastikan setiap detail acara berjalan lancar dan meninggalkan kesan mendalam bagi para peserta</p>
         </div>
     </section>
     <div id="produk-layanan"></div>

@@ -4,11 +4,7 @@
     <section class="banner" id="home">
         <div class="textBx">
             <h2>TRAINING CENTER</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sint voluptate consequatur alias
-                recusandae
-                explicabo temporibus, ad dolorum nisi, voluptatum ab non minima totam iure repellat sapiente nulla
-                repellendus
-                suscipit?</p>
+            <p>Kami menawarkan pelatihan profesional yang dirancang secara khusus untuk meningkatkan keterampilan dan pengetahuan Anda, sehingga Anda dapat bekerja lebih efisien dan efektif. Dengan materi yang up-to-date dan metode pengajaran yang interaktif, kami membantu Anda siap menghadapi tantangan bisnis dengan percaya diri dan kompeten</p>
         </div>
     </section>
     <div id="produk-layanan"></div>
