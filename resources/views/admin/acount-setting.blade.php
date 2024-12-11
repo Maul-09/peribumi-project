@@ -109,7 +109,6 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <button class="edit-btn">Edit</button>
                                     <button class="delete-btn">Delete</button>
                                 </td>
                             </tr>
