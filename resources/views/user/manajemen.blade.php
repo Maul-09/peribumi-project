@@ -4,11 +4,7 @@
     <section class="banner" id="home">
         <div class="textBx">
             <h2>MANAGEMENT BUSINESS</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sint voluptate consequatur alias
-                recusandae
-                explicabo temporibus, ad dolorum nisi, voluptatum ab non minima totam iure repellat sapiente nulla
-                repellendus
-                suscipit?</p>
+            <p>Kami hadir dengan solusi manajemen bisnis yang efektif dan inovatif untuk membantu perusahaan Anda berkembang pesat. Dengan strategi yang dirancang khusus, kami siap meningkatkan efisiensi operasional dan mendorong pertumbuhan bisnis secara berkelanjutan</p>
         </div>
     </section>
     <div id="produk-layanan" ></div>
