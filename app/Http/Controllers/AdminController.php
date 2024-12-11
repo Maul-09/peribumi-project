@@ -9,10 +9,12 @@ use App\Models\Produk;
 use App\Models\Visitor;
 use Illuminate\View\View;
 use App\Models\UserProduk;
+use Illuminate\Support\Str;
 use App\Models\ReviewRating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\KonfirmasiTransaksiMail;
 
@@ -137,6 +139,7 @@ class AdminController extends Controller
         // Ambil transaksi dengan ID yang diberikan
         $transaksi = UserProduk::findOrFail($id);
 
+        $nomorTransaksi = 'PBC' . Str::upper(Str::random(10));
         // Update status transaksi menjadi confirmed
         $transaksi->status_transaksi = 'confirmed';
 
@@ -144,7 +147,7 @@ class AdminController extends Controller
         $transaksi->tanggal_berakhir = now()->addDays(30);
         // Set status akses produk menjadi aktif
         $transaksi->status_akses = 'aktif';
-
+        $transaksi->nomor_transaksi = $nomorTransaksi;
         // Simpan perubahan
         $transaksi->save();
 
@@ -203,12 +206,13 @@ class AdminController extends Controller
     public function settingAkun()
     {
         $admins = User::with('informasiUser')
-                    ->where('usertype', 'admin')
-                    ->get();
+            ->where('usertype', 'admin')
+            ->get();
         return view('admin.acount-setting', ['admins' => $admins]);
     }
 
-    public function addAccount(Request $request) {
+    public function addAccount(Request $request)
+    {
         $field = $request->validate(
             [
                 'name' => ['required', 'max:255'],
@@ -254,5 +258,43 @@ class AdminController extends Controller
         $user->delete();
 
         return redirect()->back()->with('success', 'Akun berhasil dihapus!');
+    }
+
+    public function produkAktif(string $id): View
+    {
+        // Mendapatkan pengguna berdasarkan ID
+        $field = User::findOrFail($id);
+
+        // Produk yang sudah dibeli
+        $produkDibeli = Auth::user()->produk;
+
+        foreach ($produkDibeli as $produk) {
+            if ($produk->pivot) {
+                // Parse tanggal jika ada
+                $produk->pivot->tanggal_beli = $produk->pivot->tanggal_beli
+                    ? Carbon::parse($produk->pivot->tanggal_beli)
+                    : null;
+                $produk->pivot->tanggal_berakhir = $produk->pivot->tanggal_berakhir
+                    ? Carbon::parse($produk->pivot->tanggal_berakhir)
+                    : null;
+
+                // Tentukan status transaksi
+                if ($produk->pivot->tanggal_berakhir && $produk->pivot->tanggal_berakhir->isPast()) {
+                    $produk->status_transaksi = 'Nonaktif';
+                } else {
+                    $produk->status_transaksi = 'Aktif';
+                }
+                $produk->pivot->nomor_transaksi = $produk->pivot->nomor_transaksi ?? 'Tidak Tersedia';
+                $produk->nama_user = Auth::user()->name ?? 'Tidak Tersedia';
+            }
+        }
+
+        // Gabungkan hanya produk dengan status aktif
+        $produkAktif = collect($produkDibeli)->filter(function ($produk) {
+            return $produk->status_transaksi === 'Aktif';
+        });
+
+        // Merender tampilan dengan data produk aktif saja
+        return view('admin.produk-aktif', compact('field', 'produkAktif'));
     }
 }

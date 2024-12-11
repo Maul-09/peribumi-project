@@ -44,7 +44,7 @@ class Produk extends Model
     public function users()
     {
         return $this->belongsToMany(User::class, 'user_produk')
-            ->withPivot('status_transaksi', 'tanggal_beli', 'tanggal_berakhir')
+            ->withPivot('status_transaksi', 'tanggal_beli', 'tanggal_berakhir', 'nomor_transaksi')
             ->wherePivot('status_transaksi', 'confirmed'); // hanya pengguna yang membeli dan mengonfirmasi
     }
 }
