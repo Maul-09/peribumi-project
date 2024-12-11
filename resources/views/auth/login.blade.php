@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/auth/login.css') }}">
-    <title>Document</title>
+    <title>Peribumi Consultant - Sign In</title>
 </head>
 
 <body>
@@ -24,37 +25,48 @@
         <form action="{{ route('signin') }}" method="post" class="sign-in-form" id="signin">
             @csrf
             <h2 class="title">Sign in</h2>
+
+            <!-- Input Username -->
             <div class="input-field">
-                <input type="text" name="username" placeholder=" " />
+                <input type="text" id="username" name="username" placeholder=" " />
                 <label for="username">Username</label>
                 @error('username')
                     <p style="color: red;">{{ $message }}</p>
                 @enderror
             </div>
+
+            <!-- Input Password -->
             <div class="input-field">
                 <input type="password" id="password" name="password" placeholder=" " />
                 <label for="password">Password</label>
+                <div id="togglePassword" class="toggle-password">
+                    <i class="fas fa-eye-slash" id="eyeIcon"></i>
+                </div>
                 @error('password')
                     <p style="color: red;">{{ $message }}</p>
                 @enderror
                 @if (session('Failed'))
-                    <div style="color:red;">
+                    <div style="color: red;">
                         <p>{{ session('Failed') }}</p>
                     </div>
                 @endif
             </div>
 
-
-            <label class="forgot">
-                <div class="items-left">
+            <!-- Remember Me and Forgot Password -->
+            <div class="forgot">
+                <label class="items-left">
                     <input type="checkbox" name="remember" value="1"> Remember me
-                </div>
+                </label>
                 <div class="items-right">
                     <a href="{{ route('password.request') }}">Forgot Password?</a>
                 </div>
-            </label>
+            </div>
+
+            <!-- Submit Button -->
             <input type="submit" class="btn" value="Sign In" />
         </form>
+
+
         <p>Belum punya akun? <a href="{{ route('register') }}" class="btn-register">Sign Up</a></p>
     </div>
 

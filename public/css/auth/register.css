@@ -86,6 +86,26 @@ body {
     color: #007bff; /* Warna biru untuk label */
 }
 
+
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.toggle-password i {
+    font-size: 16px;
+    color: #aaa;
+    transition: 0.3s ease;
+}
+
+.toggle-password:hover i {
+    color: #007bff;;
+}
+
 .register .input-field p {
     color: red;
     font-size: 12px;
