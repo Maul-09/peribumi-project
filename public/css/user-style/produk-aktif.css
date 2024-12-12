@@ -1,4 +1,156 @@
+/* General Styles */
+body {
+    max-height: 400px; /* Ketinggian maksimal untuk scroll */
+    overflow-y: auto;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--skin-color-1);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h3 {
+    margin-top: 20px;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.alert {
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 600px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.alert-danger {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    border: none;
+}
+
+/* Table Styles */
+.table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.table thead {
+    background: #e0e0e0; /* Warna abu profesional untuk header */
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.table th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+.table td span {
+    font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.table tr:hover {
+    background: #eaeaea; /* Warna abu saat baris dihover */
+}
+
 .table td.text-center {
     text-align: center;
     vertical-align: middle;
 }
+/* Button Styles */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button.cancel-button {
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.cancel-button:hover {
+    background: linear-gradient(to right, #5b86e5, #36d1dc);
+    transform: scale(1.05);
+}
+
+button.delete-button {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.delete-button:hover {
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+}
+
+/* Icon Styles */
+.icon svg {
+    vertical-align: middle;
+    margin-right: 5px;
+    transition: transform 0.3s ease;
+}
+
+.icon svg:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .table {
+        font-size: 0.85em;
+    }
+
+    h3 {
+        font-size: 1.8em;
+    }
+}
+

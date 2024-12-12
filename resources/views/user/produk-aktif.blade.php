@@ -65,7 +65,7 @@
                                     method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit">Cancel Transaction</button>
+                                    <button type="submit">Cancel</button>
                                 </form>
                             @elseif ($produk->pivot->status_transaksi === 'rejected')
                                 <!-- Tombol Delete hanya muncul ketika status transaksi adalah "Rejected" -->
@@ -74,8 +74,7 @@
                                     method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete
-                                        Transaction</button>
+                                    <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
                             @else
                                 <span>-</span>

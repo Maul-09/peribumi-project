@@ -27,7 +27,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/forgot-password', [CrudController::class, 'forgotSend'])->name('password.email');
         Route::get('/reset-password/{token}', [CrudController::class, 'forgotHandler'])->name('password.reset');
         Route::post('/reset-password', [CrudController::class, 'forgotUpdate'])->name('password.update');
-        Route::get('/produk/{id}', [ProdukController::class, 'produkShow'])->name('produk.show');
+        Route::get('/produk/{id}', [ProdukController::class, 'show'])->name('produk.show');
+        Route::get('/produk/user/{id}', [ProdukController::class, 'produkUser'])->name('produk.user');
         // Route::post('/restore-user', [CrudController::class, 'restoreByEmail'])->name('restore.user');
         // Route::get('/restore-confirm', [CrudController::class, 'confirmRestore'])->name('restore.confirm');
         // Route::get('/trash', [CrudController::class, 'trash'])->name('trash');

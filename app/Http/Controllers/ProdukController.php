@@ -428,7 +428,7 @@ class ProdukController extends Controller
         return redirect($whatsappUrl);
     }
 
-    public function produkShow($id)
+    public function produkUser($id)
     {
         $field = User::findOrFail($id);
         // Transaksi pending
