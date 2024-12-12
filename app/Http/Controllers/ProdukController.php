@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\User;
 use App\Models\Produk;
 use App\Models\Silabus;
 use App\Models\IsiSilabus;
@@ -241,25 +242,25 @@ class ProdukController extends Controller
         }, ARRAY_FILTER_USE_BOTH);
 
         $customOrder = [
-        'nama_produk',
-        'teknis',
-        'image',
-        'deskripsi',
-        'personil',
-        'sasaran',
-        'jenis_pekerjaan',
-        'kualifikasi',
-        'ruang_lingkup',
-        'klasifikasi',
-        'kategori',
-        'persyaratan',
-        'metodologi',
-        'sasaran',
-        'jadwal_lokasi_fasilitas',
-        'durasi',
-        'lembaga',
-        'deskripsi_harga',
-        'highlight_harga',
+            'nama_produk',
+            'teknis',
+            'image',
+            'deskripsi',
+            'personil',
+            'sasaran',
+            'jenis_pekerjaan',
+            'kualifikasi',
+            'ruang_lingkup',
+            'klasifikasi',
+            'kategori',
+            'persyaratan',
+            'metodologi',
+            'sasaran',
+            'jadwal_lokasi_fasilitas',
+            'durasi',
+            'lembaga',
+            'deskripsi_harga',
+            'highlight_harga',
         ];
 
         // Atur urutan berdasarkan yang diinginkan dan pastikan kolom dengan nilai null tidak muncul
@@ -427,5 +428,58 @@ class ProdukController extends Controller
         return redirect($whatsappUrl);
     }
 
+    public function produkShow($id)
+    {
+        $field = User::findOrFail($id);
+        // Transaksi pending
+        $produkDibeli = $field->produk()->withPivot('status_transaksi', 'tanggal_beli', 'tanggal_berakhir', 'nomor_transaksi')->get();
 
+        // Proses data untuk menambah status akses dan tombol jika pending
+        foreach ($produkDibeli as $produk) {
+            if ($produk->pivot) {
+                // Parse tanggal jika ada
+                $produk->pivot->tanggal_beli = $produk->pivot->tanggal_beli ? Carbon::parse($produk->pivot->tanggal_beli) : null;
+                $produk->pivot->tanggal_berakhir = $produk->pivot->tanggal_berakhir ? Carbon::parse($produk->pivot->tanggal_berakhir) : null;
+
+                // Tentukan status transaksi dan status akses
+                if ($produk->pivot->status_transaksi === 'pending') {
+                    $produk->status_transaksi = 'Pending';
+                    $produk->status_akses = 'Nonaktif';
+                } elseif ($produk->pivot->status_transaksi === 'rejected') {
+                    $produk->status_transaksi = 'Rejected';
+                    $produk->status_akses = 'Nonaktif';
+                } elseif ($produk->pivot->tanggal_berakhir && $produk->pivot->tanggal_berakhir->isPast()) {
+                    $produk->status_transaksi = 'Nonaktif';
+                    $produk->status_akses = 'Nonaktif';
+                } else {
+                    $produk->status_transaksi = 'Confirmed';
+                    $produk->status_akses = 'Aktif';
+                }
+
+                $produk->nomor_transaksi = $produk->pivot->nomor_transaksi ?? '-';
+            }
+        }
+
+        return view('user.produk-aktif', compact('field', 'produkDibeli'));
+    }
+
+    public function cancleTransaction($produkId, $userId)
+    {
+        // Cari produk berdasarkan ID
+        $produk = Produk::findOrFail($produkId);
+
+        // Cari transaksi user dengan produk tertentu yang statusnya pending atau rejected
+        $transaksi = $produk->users()->wherePivot('user_id', $userId)
+            ->whereIn('status_transaksi', ['pending', 'rejected'])
+            ->first();
+
+        if ($transaksi) {
+            // Hapus hubungan transaksi untuk produk dan user ini
+            $produk->users()->detach($userId);
+
+            return redirect()->back()->with('success', 'Transaksi berhasil dibatalkan.');
+        }
+
+        return redirect()->back()->with('error', 'Transaksi tidak ditemukan atau sudah dikonfirmasi.');
+    }
 }
