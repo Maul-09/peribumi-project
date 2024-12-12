@@ -128,55 +128,12 @@ footer hr {
 
 @media only screen and (max-width: 1280px){
     footer {
-        padding: 0 150px;
-    }
-
-    footer h3 {
-        margin-bottom: 15px;
-        font-size: 14px;
-    }
-    .con {
-        margin: 20px 0px;
-    }
-
-    .title-foot {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 20px;
-    }
-
-
-    .title-foot img{
-        width: 70px;
-    }
-
-    .title-foot h2{
-        font-size: 20px;
-    }
-
-    .about-foot{
-        max-width: 305px;
-    }
-
-    .media-foot .media-social i{
-        font-size: 20px;
-    }
-
-    .media-foot .media-social span{
-        font-size: 14px;
-    }
-
-    .tm{
-        font-size: 14px;
-        margin: 15px 0;
+        padding: 0 125px;
     }
 }
 
 
-
-
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 921px){
     footer {
         padding: 0 15px;
     }
