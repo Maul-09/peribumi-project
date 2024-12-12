@@ -723,7 +723,7 @@ section.about{
     }
 }
 
-@media only screen and (max-width: 921px){
+@media only screen and (max-width: 800px){
     section {
         padding: 3em 6em;
     }
