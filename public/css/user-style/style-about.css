@@ -51,6 +51,7 @@ section {
         transparent 0 30%,
         #04364a 70% 100%
     );
+    z-index:-3;
 }
 
 .banner .textBx h2 {
@@ -58,12 +59,14 @@ section {
     color: #fff;
     font-weight: 700;
     line-height: 1.5em;
+    z-index:-2;
 }
 
 .banner .textBx p {
     color: #fff;
     text-align: justify;
     max-width: 700px;
+    z-index:-1;
 }
 
 section.history {
