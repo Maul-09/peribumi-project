@@ -20,6 +20,7 @@
                     <th>Nomor Transaksi</th>
                     <th>Tanggal Pembelian</th>
                     <th>Tanggal Berakhir</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
