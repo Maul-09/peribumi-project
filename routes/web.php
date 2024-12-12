@@ -18,6 +18,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/digital', [PeribumiController::class, 'digital'])->name('digital');
         Route::get('/personal', [PeribumiController::class, 'personal'])->name('personal');
         Route::get('/event', [PeribumiController::class, 'event'])->name('event');
+        Route::get('/whatssapp/notice/{id}', [ProdukController::class, 'konfirmasiPembelian'])->name('whatsapp.notice');
         Route::get('/edit/profile{id}', [CrudController::class, 'editProfile'])->name('editProfile');
         Route::post('/edit/profile/delete{id}', [CrudController::class, 'deleteAccount'])->name('deleteAccount');
         Route::post('/edit/profile/update{id}', [CrudController::class, 'update'])->name('update.profile');
@@ -33,6 +34,8 @@ Route::middleware('auth')->group(function () {
         // Route::get('/after-restore', [CrudController::class, 'afterRestore'])->name('after.restore');
         Route::post('/profile/change-password/{id}', [CrudController::class, 'changePassword'])->name('change.password');
         Route::post('review-store', [ReviewController::class, 'reviewStore'])->name('review.store');
+        Route::delete('/produk/{produkId}/user/{userId}/cancel', [CrudController::class, 'cancleTransaction'])->name('cancel.transaction');
+
     });
     Route::middleware('admin')->group(function () {
         Route::get('/admin/dashboard', [AdminController::class, 'admin'])->name('admin');
@@ -47,7 +50,6 @@ Route::middleware('auth')->group(function () {
         Route::get('/produk/{id}/edit', [ProdukController::class, 'edit'])->name('produk.edit');
         Route::put('/produk/{id}/edit/update', [ProdukController::class, 'update'])->name('produk.update');
         Route::delete('/produk/{id}', [ProdukController::class, 'destroy'])->name('produk.destroy');
-        Route::get('/whatssapp/notice/{id}', [ProdukController::class, 'konfirmasiPembelian'])->name('whatsapp.notice');
         Route::post('/proses-pembelian/{id}', [ProdukController::class, 'prosesPembelian'])->name('proses.pembelian');
         Route::post('/admin/konfirmasi/{id}', [AdminController::class, 'konfirmasiTransaksi'])->name('admin.konfirmasi');
         Route::post('/admin/tolak/{id}', [AdminController::class, 'tolakTransaksi'])->name('admin.tolak');
