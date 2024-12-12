@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Carbon\Carbon;
 use App\Models\User;
+use App\Models\Produk;
 use Illuminate\View\View;
 use App\Models\UserProduk;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\InformasiUser;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
@@ -35,63 +38,10 @@ class CrudController extends Controller
         // Mendapatkan pengguna berdasarkan ID
         $field = User::findOrFail($id);
 
-        // Produk yang sudah dibeli
-        $produkDibeli = Auth::user()->produk;
-
-        foreach ($produkDibeli as $produk) {
-            if ($produk->pivot) {
-                // Parse tanggal jika ada
-                $produk->pivot->tanggal_beli = $produk->pivot->tanggal_beli
-                    ? Carbon::parse($produk->pivot->tanggal_beli)
-                    : null;
-                $produk->pivot->tanggal_berakhir = $produk->pivot->tanggal_berakhir
-                    ? Carbon::parse($produk->pivot->tanggal_berakhir)
-                    : null;
-
-                // Tentukan status transaksi
-                if ($produk->pivot->status_transaksi === 'pending') {
-                    $produk->status_transaksi = 'Pending';
-                    $produk->status_akses = 'Nonaktif'; // Tambahkan status akses
-                } elseif ($produk->pivot->status_transaksi === 'rejected') {
-                    $produk->status_transaksi = 'Rejected';
-                    $produk->status_akses = 'Nonaktif'; // Tambahkan status akses
-                } elseif ($produk->pivot->tanggal_berakhir && $produk->pivot->tanggal_berakhir->isPast()) {
-                    $produk->status_transaksi = 'Nonaktif';
-                    $produk->status_akses = 'Nonaktif'; // Tambahkan status akses
-                } else {
-                    $produk->status_transaksi = 'Confirmed';
-                    $produk->status_akses = 'Aktif'; // Tambahkan status akses
-                }
-
-                $produk->pivot->nomor_transaksi = $produk->pivot->nomor_transaksi ?? 'Tidak Tersedia';
-                $produk->nama_user = Auth::user()->name; // Nama tetap diisi
-            }
-        }
-
-        // Transaksi pending
-        $transaksiPending = UserProduk::where('user_id', Auth::id())
-            ->whereIn('status_transaksi', ['pending', 'rejected'])
-            ->get();
-
-        // Menambahkan atribut yang sesuai pada transaksi pending/rejected
-        foreach ($transaksiPending as $transaksi) {
-            $transaksi->nama_produk = $transaksi->produk->nama_produk ?? 'Tidak Tersedia'; // Relasi ke produk
-            $transaksi->tanggal_beli = $transaksi->created_at; // Menggunakan created_at
-            $transaksi->tanggal_berakhir = null; // Tidak ada tanggal berakhir untuk pending/rejected
-            $transaksi->status_transaksi = ucfirst($transaksi->status_transaksi); // Status transaksi (Pending/Rejected)
-            $transaksi->status_akses = 'Nonaktif'; // Status akses tetap Nonaktif
-            $transaksi->nomor_transaksi = $transaksi->nomor_transaksi ?? 'Tidak Tersedia';
-            $transaksi->nama_user = Auth::user()->name; // Nama tetap diisi
-        }
-
-        // Gabungkan semua data produk
-        $produkSemua = (new Collection())
-            ->merge($produkDibeli)
-            ->merge($transaksiPending);
-
         // Merender tampilan dengan data
-        return view('user.profile-view', compact('field', 'produkSemua'));
+        return view('user.profile-view', compact('field'));
     }
+
 
 
     public function changePassword(Request $request, string $id)
@@ -384,4 +334,7 @@ class CrudController extends Controller
 
         return response()->json(['message' => 'Gambar dan data berhasil dihapus.']);
     }
+
+    
+
 }

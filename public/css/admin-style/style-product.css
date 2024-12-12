@@ -111,10 +111,7 @@
     display: block; /* Form yang aktif terlihat */
 }
 
-.table td.text-center {
-    text-align: center;
-    vertical-align: middle;
-}
+
 
 @media (max-width: 768px) {
     form {
