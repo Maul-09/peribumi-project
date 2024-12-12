@@ -27,15 +27,14 @@ Route::middleware('auth')->group(function () {
         Route::post('/forgot-password', [CrudController::class, 'forgotSend'])->name('password.email');
         Route::get('/reset-password/{token}', [CrudController::class, 'forgotHandler'])->name('password.reset');
         Route::post('/reset-password', [CrudController::class, 'forgotUpdate'])->name('password.update');
-        Route::get('/produk/{id}', [ProdukController::class, 'show'])->name('produk.show');
+        Route::get('/produk/{id}', [ProdukController::class, 'produkShow'])->name('produk.show');
         // Route::post('/restore-user', [CrudController::class, 'restoreByEmail'])->name('restore.user');
         // Route::get('/restore-confirm', [CrudController::class, 'confirmRestore'])->name('restore.confirm');
         // Route::get('/trash', [CrudController::class, 'trash'])->name('trash');
         // Route::get('/after-restore', [CrudController::class, 'afterRestore'])->name('after.restore');
         Route::post('/profile/change-password/{id}', [CrudController::class, 'changePassword'])->name('change.password');
         Route::post('review-store', [ReviewController::class, 'reviewStore'])->name('review.store');
-        Route::delete('/produk/{produkId}/user/{userId}/cancel', [CrudController::class, 'cancleTransaction'])->name('cancel.transaction');
-
+        Route::delete('/produk/{produkId}/user/{userId}/cancel', [ProdukController::class, 'cancleTransaction'])->name('cancel.transaction');
     });
     Route::middleware('admin')->group(function () {
         Route::get('/admin/dashboard', [AdminController::class, 'admin'])->name('admin');
@@ -59,7 +58,6 @@ Route::middleware('auth')->group(function () {
         Route::post('/new/account/admin', [AdminController::class, 'addAccount'])->name('add.account');
         Route::delete('/users/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete');
         Route::get('/produk/aktif/{id}', [AdminController::class, 'produkAktif'])->name('produk.aktif');
-
     });
 
     Route::get('/email/verify', [AuthController::class, 'verifyNotice'])->name('verification.notice');

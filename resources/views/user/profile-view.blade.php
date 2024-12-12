@@ -28,9 +28,6 @@
                         <a href="#" class="tab-link" data-target="social-links">
                             <i class="fas fa-share-alt"></i><span class="title-nav">Social Links</span>
                         </a>
-                        <a href="#" class="tab-link" data-target="product">
-                            <i class="fas fa-box"></i><span class="title-nav">Product</span>
-                        </a>
                     </div>
                 </div>
 
@@ -215,50 +212,6 @@
                                 <button type="submit" class="btn-save">Save changes</button>
                             </div>
                         </form>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="tab-pane" id="product">
-                        <h3>Produk Anda:</h3>
-                        @if (session('error'))
-                            <div class="alert alert-danger">
-                                {{ session('error') }}
-                            </div>
-                        @endif
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Nama Produk</th>
-                                    <th>Status Transaksi</th>
-                                    <th>Status Akses</th> <!-- Tambahkan kolom Status Akses -->
-                                    <th>Nomor Transaksi</th>
-                                    <th>Tanggal Pembelian</th>
-                                    <th>Tanggal Berakhir</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($produkDibeli as $produk)
-                                    <tr>
-                                        <td>{{ $produk->nama_produk }}</td>
-                                        <td>{{ $produk->status_transaksi }}</td>
-                                        <td>{{ $produk->status_akses }}</td>
-                                        <td>{{ $produk->pivot->tanggal_beli ? $produk->pivot->tanggal_beli->format('d-m-Y') : '-' }}</td>
-                                        <td>{{ $produk->pivot->tanggal_berakhir ? $produk->pivot->tanggal_berakhir->format('d-m-Y') : '-' }}</td>
-                                        <td>
-                                            @if ($produk->pivot->status_transaksi === 'pending')
-                                                <form action="{{ route('cancel.transaction', ['produkId' => $produk->id, 'userId' => Auth::id()]) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit">Cancel Transaction</button>
-                                                </form>
-                                            @else
-                                                <span>-</span>
-                                            @endif
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
                     </div>
 
                 </div>
