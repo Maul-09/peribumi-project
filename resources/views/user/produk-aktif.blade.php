@@ -52,7 +52,7 @@
                                 </span>
                             @endif
                         </td>
-                        <td>{{ $produk->status_akses }}</td>
+                        <td>{{ $produk->pivot->status_akses }}</td>
                         <td>{{ $produk->nomor_transaksi }}</td>
                         <td>{{ $produk->pivot->tanggal_beli ? $produk->pivot->tanggal_beli->format('d-m-Y') : '-' }}
                         </td>
