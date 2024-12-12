@@ -133,12 +133,10 @@ footer hr {
 }
 
 
-@media only screen and (max-width: 921px){
+@media only screen and (max-width: 887px){
     footer {
         padding: 0 15px;
     }
-
-
 
     .title-foot h2{
         font-size: 20px;
