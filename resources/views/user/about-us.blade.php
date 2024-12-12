@@ -4,11 +4,16 @@
     <section class="banner" id="home">
         <div class="textBx">
             <h2>TENTANG KAMI</h2>
-            <p>Bisnis yang kami jalankan tidak hanya selalu tentang menjual produk yang kami miliki, akan tetapi tentunya didasari dengan pendampingan yang kami berikan secara objektif kepada calon pengguna.</p>
+            <p>Kegiatan usaha atau Bisnis yang kami jalankan tidak selalu berbicara tentang menjual produk atau layanan yang ada, akan tetapi  tentunya bagaimana calon pengguna pada akhirnya mengerti dan memahami produk yang akan digunakan.   Untuk itu, dengan senang hati dan sepenuh hati kami kami sebagai konsultan akan selalu hadir untuk memberikan  pendampingan objektif kepada semua calon pengguna produk atau layanan kami</p>
         </div>
     </section>
 
     <section class="history">
+        <div class="nilai-utama">
+            <h3>Nilai Keutamaan</h3>
+            <p>Quality - Trust - Assistance</p>
+
+        </div>
         <div class="content-histori">
             <h3>Sejarah Kami</h3>
             <p>PERI BUMI merupakan suatu platform penyedia yang dimiliki oleh PT. Peribumi
@@ -32,7 +37,6 @@
         </div>
         <div class="box-1">
             <div class="navtab">
-                <h1>Kami hadir sejak tahun 2021</h1>
                 <div class="tab">
                     <button class="tablinks" onclick="openTab(event, 'Tab1')">Visi</button>
                     <button class="tablinks" onclick="openTab(event, 'Tab2')" id="defaultOpen">Misi</button>
@@ -45,27 +49,29 @@
 
                 <div id="Tab2" class="tabcontent scrollable-content">
                     <ol type="1">
-                        <li>Menghadirkan berbagai unit kerja yang berkaitan dengan Pembangunan dan
-                            Pengembangan suatu bisnis baik fisik
-                            maupun non-fisik (Infrastruktur)</li>
-                        <li>Memfasilitasi kebutuhan pengguna atau pelanggan melalui
-                            berbagai produk dan Layanan yang dimiliki baik berupa
-                            barang dan jasa</li>
-                        <li>Memastikan pemenuhan kebutuhan pengguna atau
-                            pelanggan dengan standar mutu yang terjamin dan
-                            berkualitas dalam balutan profesionalitas yang tinggi.</li>
-                        <li>Mendukung proses pertumbuhan pengguna atau pelanggan ke
-                            arah yang lebih baik melalui kesiagaan dan pemberdayaan
-                            sumber daya yang dimiliki</li>
-                        <li>Menjadikan kepuasan yang dirasakan oleh pengguna atau
-                            pelanggan atas produk dan layanan yang dihadirkan
-                            sebagai pengalaman berharga tak ternilai yang mampu memotivasi lebih diri kami
-                            untuk terus berkembang dengan inovasi
+                        <li>Menghadirkan berbagai unit kerja yang berkaitan dengan Pembangunan dan Pengembangan suatu organisasi bisnis baik fisik maupun non-fisik (Infrastruktur)</li>
+                        <li>Memfasilitasi kebutuhan pengguna atau pelanggan melalui berbagai produk dan Layanan yang dimiliki baik berupa barang dan jasa
                         </li>
+                        <li>Memastikan pemenuhan kebutuhan pengguna atau pelanggan dengan standarisasi mutu produk dan layanan yang terjamin dan berkualitas dalam kemasan yang unggul dan visioner
+                        </li>
+                        <li>Mendukung proses pertumbuhan pengguna atau pelanggan ke arah yang lebih baik melalui kesiagaan dan pemberdayaan sumber daya yang dimiliki secara profesional</li>
+                        <li>Menjadikan kepuasan yang dirasakan oleh pengguna atau pelanggan atas produk dan layanan yang dihadirkan sebagai pengalaman berharga tak ternilai yang mampu memotivasi lebih diri kami untuk terus berkembang dengan inovasi</li>
                     </ol>
                 </div>
             </div>
-            <img src="{{ asset('image/struktur.png') }}" alt="" class="struktur-image">
+            <div class="sasaran">
+                <div class="title-sasaran">
+                    <h3>Sasaran</h3>
+                </div>
+                <p class="judul-span">Visioner :</p>
+                <p class="sasaran-span">Mampu menjadi Perusahaan Konsultan Jasa yang mengedepankan visi dalam memenuhi kebutuhan pasar di sektor Jasa Pendampingan, Pelatihan, Pengembangan, Digitalisasi dan Pelaksanaan  kegiatan. Market Share : Mampu mendapatkan posisi yang semakin kuat dalam peta persaingan bisnis sektor jasa yang dipilih seiring dengan peningkatan market share yang telah diperoleh</p>
+
+                <p class="judul-span">Market Share : </p>
+                <p class="sasaran-span">Mampu mendapatkan posisi yang semakin kuat dalam peta persaingan bisnis sektor jasa yang dipilih seiring dengan peningkatan market share yang telah diperoleh</p>
+
+                <p class="judul-span">Positivity Impactfull :</p>
+                <p class="sasaran-span">Mampu menghadirkan dampak positif dan memberikan pengaruh kuat dalam perubahan  karakter serta pergeseran cara berfikir setiap pemangku kepentingan bisnis/usaha terhadap perkembangan kemajuan zaman.</p>
+            </div>
         </div>
     </section>
 </x-layout>

@@ -126,10 +126,9 @@ footer hr {
     margin: 20px 0;
 }
 
-
-@media only screen and (max-width: 1124px){
+@media only screen and (max-width: 1280px){
     footer {
-        padding: 0 30px;
+        padding: 0 150px;
     }
 
     footer h3 {
@@ -156,12 +155,48 @@ footer hr {
         font-size: 20px;
     }
 
+    .about-foot{
+        max-width: 305px;
+    }
+
     .media-foot .media-social i{
         font-size: 20px;
     }
 
     .media-foot .media-social span{
-        font-size: 15px;
+        font-size: 14px;
+    }
+
+    .tm{
+        font-size: 14px;
+        margin: 15px 0;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 800px){
+    footer {
+        padding: 0 15px;
+    }
+
+
+
+    .title-foot h2{
+        font-size: 20px;
+    }
+
+    .about-foot{
+        max-width: 250px;
+    }
+
+    .media-foot .media-social i{
+        font-size: 20px;
+    }
+
+    .media-foot .media-social span{
+        font-size: 14px;
     }
 
     .tm{

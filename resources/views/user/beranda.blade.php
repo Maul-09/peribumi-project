@@ -24,7 +24,7 @@
     {{-- End Alertt berhasil --}}
     <section class="banner" id="home">
         <div class="textBx">
-            <h2>PERI BUMI CONSULTANT</h2>
+            <h2>KonsultanQta "Peri bumi"</h2>
             <p>Hadir dan berkomitmen untuk membantu memfasilitasi langkah percepatan dalam rangka pengembangan
                 dan atau peningkatan kompetensi serta kapasitas Sumber daya manusia yang dimiliki</p>
         </div>
