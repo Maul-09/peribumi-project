@@ -705,6 +705,32 @@ section.about{
     }
 }
 
+@media only screen and (max-width: 1280px){
+    section {
+        padding: 6em 9em;
+    }
+
+    .banner {
+        position: relative;
+        min-height: 80vh;
+
+    }
+
+    .circle{
+        position:absolute;
+        bottom: -500px;
+        right: -250px;
+    }
+}
+
+@media only screen and (max-width: 921px){
+    section {
+        padding: 3em 6em;
+    }
+
+}
+
+
 @media only screen and (max-width: 581px){
     body{
         overflow-x: hidden;
