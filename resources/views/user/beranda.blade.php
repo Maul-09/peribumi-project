@@ -34,7 +34,7 @@
         <div class="content">
             <div class="w50">
                 <h1>Mengapa memilih kami?</h1>
-                <h2>Karakteristik Khusus yang kami miliki</h2>
+                <h2>Keunggulan dan Perbedaan</h2>
                 <div class="container-chose">
                     <div class="card-chose">
                         <div class="card-content">

@@ -4,9 +4,7 @@
     box-sizing: border-box;
     font-family: "poppins", sans-serif;
     scroll-behavior: smooth;
-}
-body {
-    background-color: #04364a;
+
 }
 
 header {
@@ -319,12 +317,35 @@ header.sticky .dropdown-button:hover {
     }
 }
 
+@media only screen and (max-width: 1124px){
+
+    header {
+        position: fixed;
+        width: 100%;
+        padding: 30px 40px;
+    }
+
+    header.sticky {
+
+        padding: 20px 25px;
+    }
+
+    header .logo {
+        margin-right: auto;
+    }
+
+}
+
 @media only screen and (max-width: 581px){
 
     header {
         position: fixed;
         width: 100%;
-        padding: 20px 0;
+        padding: 15px 0;
+    }
+
+    header .logo {
+        margin: 0;
     }
 
     .toggle{
