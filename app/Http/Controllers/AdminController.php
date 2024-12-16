@@ -332,4 +332,22 @@ class AdminController extends Controller
 
         return redirect()->back()->with('error', 'Produk tidak ditemukan.');
     }
+
+    public function searchTransaksi(Request $request)
+    {
+        if ($request->ajax()) {
+            $query = $request->get('query');
+
+            if (empty($query)) {
+                $transaksiPending = UserProduk::where('status_transaksi', 'pending')->get();
+            } else {
+                $transaksiPending = UserProduk::whereHas('user', function ($q) use ($query) {
+                    $q->where('name', 'like', "%$query%");
+                })->where('status_transaksi', 'pending')->get();
+            }
+
+            return response()->json(view('partials.transaction-list', compact('transaksiPending', 'query'))->render());
+        }
+    }
+
 }

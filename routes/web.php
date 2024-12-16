@@ -60,7 +60,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('/users/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete');
         Route::get('/produk/aktif/settings', [AdminController::class, 'produkAktif'])->name('produk.aktif');
         Route::put('/produk/{id}/nonaktifkan', [AdminController::class, 'nonaktifkan'])->name('produk.nonaktifkan');
-        
+        Route::get('/admin/search-transaksi', [AdminController::class, 'searchTransaksi'])->name('admin.search-transaksi');
 
     });
 
