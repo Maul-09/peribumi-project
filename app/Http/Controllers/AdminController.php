@@ -297,7 +297,7 @@ class AdminController extends Controller
 
         // Filter hanya produk dengan status "Confirmed" dan "Aktif"
         $produkDibeli = $produkDibeli->filter(function ($produk) {
-            return $produk->status_transaksi === 'Confirmed' && $produk->status_akses === 'Aktif';
+            return $produk->status_transaksi === 'Confirmed' && $produk->status_akses === 'Aktif' xor $produk->status_akses === 'Nonaktif';
         });
 
         // Transaksi pending tidak diperlukan di sini karena kita hanya menampilkan yang confirmed
@@ -310,5 +310,25 @@ class AdminController extends Controller
 
         // Merender tampilan dengan data produk aktif saja
         return view('admin.produk-aktif', compact('field', 'produkSemua'));
+    }
+
+    public function nonaktifkan($id)
+    {
+        // Ambil pengguna yang sedang login
+        $produk = Produk::findOrFail($id);
+
+        // Temukan produk yang terkait dengan pengguna
+        $produk = $produk->users()->wherePivot('produk_id', $id)->wherePivot('status_akses', 'Aktif')
+            ->first();
+
+        if ($produk) {
+            // Update status_akses di tabel pivot
+            $produk->pivot->status_akses = 'Nonaktif';
+            $produk->pivot->save(); // Ambil data produk terbaru
+
+            return redirect()->back()->with('success', 'Transaksi berhasil dibatalkan.');
+        }
+
+        return redirect()->back()->with('error', 'Produk tidak ditemukan.');
     }
 }

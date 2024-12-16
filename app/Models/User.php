@@ -23,7 +23,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'username',
         'password',
         'image',
-        'usertype', 
+        'usertype',
     ];
 
     protected static function boot()
@@ -38,7 +38,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function produk()
     {
         return $this->belongsToMany(Produk::class, 'user_produk')
-            ->withPivot('status_transaksi', 'tanggal_beli', 'tanggal_berakhir', 'nomor_transaksi');
+            ->withPivot('status_akses', 'status_transaksi', 'tanggal_beli', 'tanggal_berakhir', 'nomor_transaksi');
     }
 
     public function informasiUser()
