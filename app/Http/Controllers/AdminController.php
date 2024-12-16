@@ -257,60 +257,57 @@ class AdminController extends Controller
         return redirect()->route('setting.akun')->with('success', 'Akun Telah dihapus');
     }
 
-    public function produkAktif(string $id): View
+    public function produkAktif(): View
     {
-        // Mendapatkan pengguna berdasarkan ID
-        $field = User::findOrFail($id);
+        // Ambil semua user
+        $users = User::all();
 
-        // Produk yang sudah dibeli
-        $produkDibeli = Auth::user()->produk;
+        // Inisialisasi koleksi produk
+        $produkSemua = collect();
 
-        // Filter produk yang status transaksi "Confirmed" dan akses "Aktif"
-        foreach ($produkDibeli as $produk) {
-            if ($produk->pivot) {
-                $produk->pivot->tanggal_beli = $produk->pivot->tanggal_beli
-                    ? Carbon::parse($produk->pivot->tanggal_beli)
-                    : null;
-                $produk->pivot->tanggal_berakhir = $produk->pivot->tanggal_berakhir
-                    ? Carbon::parse($produk->pivot->tanggal_berakhir)
-                    : null;
+        foreach ($users as $user) {
+            // Ambil produk yang dibeli setiap user
+            $produkDibeli = $user->produk;
 
-                // Tentukan status transaksi dan status akses
-                if ($produk->pivot->status_transaksi === 'pending') {
-                    $produk->status_transaksi = 'Pending';
-                    $produk->status_akses = 'Nonaktif';
-                } elseif ($produk->pivot->status_transaksi === 'rejected') {
-                    $produk->status_transaksi = 'Rejected';
-                    $produk->status_akses = 'Nonaktif';
-                } elseif ($produk->pivot->tanggal_berakhir && $produk->pivot->tanggal_berakhir->isPast()) {
-                    $produk->status_transaksi = 'Nonaktif';
-                    $produk->status_akses = 'Nonaktif';
-                } else {
-                    $produk->status_transaksi = 'Confirmed';
-                    $produk->status_akses = 'Aktif';
+            foreach ($produkDibeli as $produk) {
+                if ($produk->pivot) {
+                    $produk->pivot->tanggal_beli = $produk->pivot->tanggal_beli
+                        ? Carbon::parse($produk->pivot->tanggal_beli)
+                        : null;
+                    $produk->pivot->tanggal_berakhir = $produk->pivot->tanggal_berakhir
+                        ? Carbon::parse($produk->pivot->tanggal_berakhir)
+                        : null;
+
+                    // Tentukan status transaksi dan status akses
+                    if ($produk->pivot->status_transaksi === 'pending') {
+                        $produk->status_transaksi = 'Pending';
+                        $produk->status_akses = 'Nonaktif';
+                    } elseif ($produk->pivot->status_transaksi === 'rejected') {
+                        $produk->status_transaksi = 'Rejected';
+                        $produk->status_akses = 'Nonaktif';
+                    } elseif ($produk->pivot->tanggal_berakhir && $produk->pivot->tanggal_berakhir->isPast()) {
+                        $produk->status_transaksi = 'Nonaktif';
+                        $produk->status_akses = 'Nonaktif';
+                    } else {
+                        $produk->status_transaksi = 'Confirmed';
+                        $produk->status_akses = 'Aktif';
+                    }
+
+                    $produk->pivot->nomor_transaksi = $produk->pivot->nomor_transaksi ?? 'Tidak Tersedia';
+                    $produk->nama_user = $user->name;
                 }
 
-                $produk->pivot->nomor_transaksi = $produk->pivot->nomor_transaksi ?? 'Tidak Tersedia';
-                $produk->nama_user = Auth::user()->name;
+                // Filter hanya produk dengan status "Confirmed" dan "Aktif"
+                if ($produk->status_transaksi === 'Confirmed' && $produk->status_akses === 'Aktif') {
+                    $produkSemua->push($produk);
+                }
             }
         }
 
-        // Filter hanya produk dengan status "Confirmed" dan "Aktif"
-        $produkDibeli = $produkDibeli->filter(function ($produk) {
-            return $produk->status_transaksi === 'Confirmed' && $produk->status_akses === 'Aktif' xor $produk->status_akses === 'Nonaktif';
-        });
-
-        // Transaksi pending tidak diperlukan di sini karena kita hanya menampilkan yang confirmed
-        $transaksiPending = collect(); // Kosongkan untuk mencegah data tambahan
-
-        // Gabungkan semua data produk (hanya produk aktif)
-        $produkSemua = (new Collection())
-            ->merge($produkDibeli)
-            ->merge($transaksiPending);
-
-        // Merender tampilan dengan data produk aktif saja
-        return view('admin.produk-aktif', compact('field', 'produkSemua'));
+        // Merender tampilan dengan data produk aktif
+        return view('admin.produk-aktif', compact('users', 'produkSemua'));
     }
+
 
     public function nonaktifkan($id)
     {
