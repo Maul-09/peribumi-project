@@ -134,7 +134,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ route('produk.aktif', auth()->user()->id) }}">
+            <a class="nav-link collapsed" href="{{ route('produk.aktif') }}">
                 <i class="bi bi-card-checklist"></i>
                 <span>Active Product List</span>
             </a>

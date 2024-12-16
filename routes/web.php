@@ -58,7 +58,7 @@ Route::middleware('auth')->group(function () {
         Route::patch('/restore/users/{id}/restore', [AdminController::class, 'restore'])->name('users.restore');
         Route::post('/new/account/admin', [AdminController::class, 'addAccount'])->name('add.account');
         Route::delete('/users/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete');
-        Route::get('/produk/aktif/{id}', [AdminController::class, 'produkAktif'])->name('produk.aktif');
+        Route::get('/produk/aktif/settings', [AdminController::class, 'produkAktif'])->name('produk.aktif');
         Route::put('/produk/{id}/nonaktifkan', [AdminController::class, 'nonaktifkan'])->name('produk.nonaktifkan');
         
 

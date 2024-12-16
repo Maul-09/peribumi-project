@@ -288,7 +288,10 @@ class AdminController extends Controller
                     } elseif ($produk->pivot->tanggal_berakhir && $produk->pivot->tanggal_berakhir->isPast()) {
                         $produk->status_transaksi = 'Nonaktif';
                         $produk->status_akses = 'Nonaktif';
-                    } else {
+                    } elseif ($produk->pivot->status_akses === 'nonaktif') {
+                        $produk->status_transaksi = 'Confirmed';
+                        $produk->status_akses = 'Nonaktif';
+                    }else {
                         $produk->status_transaksi = 'Confirmed';
                         $produk->status_akses = 'Aktif';
                     }
@@ -298,7 +301,7 @@ class AdminController extends Controller
                 }
 
                 // Filter hanya produk dengan status "Confirmed" dan "Aktif"
-                if ($produk->status_transaksi === 'Confirmed' && $produk->status_akses === 'Aktif') {
+                if ($produk->status_transaksi === 'Confirmed' && $produk->status_akses === 'Aktif' || $produk->status_transaksi === 'Confirmed' && $produk->status_akses === 'Nonaktif') {
                     $produkSemua->push($produk);
                 }
             }
@@ -315,12 +318,13 @@ class AdminController extends Controller
         $produk = Produk::findOrFail($id);
 
         // Temukan produk yang terkait dengan pengguna
-        $produk = $produk->users()->wherePivot('produk_id', $id)->wherePivot('status_akses', 'Aktif')
+        $produk = $produk->users()->wherePivot('produk_id', $id)->wherePivot('status_akses', 'aktif')
+            ->orderBy('pivot_created_at', 'desc')
             ->first();
 
         if ($produk) {
             // Update status_akses di tabel pivot
-            $produk->pivot->status_akses = 'Nonaktif';
+            $produk->pivot->status_akses = 'nonaktif';
             $produk->pivot->save(); // Ambil data produk terbaru
 
             return redirect()->back()->with('success', 'Transaksi berhasil dibatalkan.');
