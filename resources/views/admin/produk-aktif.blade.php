@@ -25,12 +25,12 @@
             </thead>
             <tbody>
                 @foreach ($produkSemua as $produk)
-                    @if ($produk->status_transaksi === 'Confirmed' && $produk->status_akses === 'Aktif')
+                    @if ($produk->pivot->status_transaksi === 'confirmed' && $produk->pivot->status_akses === 'aktif')
                         <tr>
                             <td>{{ $produk->nama_user }}</td>
                             <td>{{ $produk->nama_produk }}</td>
                             <td class="text-center">
-                                @if ($produk->status_transaksi === 'Confirmed')
+                                @if ($produk->pivot->status_transaksi === 'confirmed')
                                     <span class="icon" title="Confirmed">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="green"
                                             viewBox="0 0 24 24">
@@ -50,14 +50,17 @@
                             </td>
                             <td>
                                 <!-- Tombol Nonaktifkan Produk -->
-                                @if ($produk->status_akses === 'Aktif')
+                                @if ($produk->pivot->status_akses === 'aktif')
                                     <form action="{{ route('produk.nonaktifkan', $produk->id) }}" method="POST"
                                         onsubmit="return confirm('Apakah Anda yakin ingin menonaktifkan produk ini?');">
                                         @csrf
                                         @method('PUT')
                                         <button type="submit" class="btn btn-danger btn-sm">Nonaktifkan</button>
                                     </form>
+                                @elseif ($produk->pivot->status_akses === 'nonaktif')
+                                    <p>-</p>
                                 @endif
+
                             </td>
                         </tr>
                     @endif
