@@ -59,9 +59,10 @@ Route::middleware('auth')->group(function () {
         Route::post('/new/account/admin', [AdminController::class, 'addAccount'])->name('add.account');
         Route::delete('/users/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete');
         Route::get('/produk/aktif/settings', [AdminController::class, 'produkAktif'])->name('produk.aktif');
-        Route::put('/produk/{id}/nonaktifkan', [AdminController::class, 'nonaktifkan'])->name('produk.nonaktifkan');
-        Route::get('/admin/search-transaksi', [AdminController::class, 'searchTransaksi'])->name('admin.search-transaksi');
+        Route::put('/produk/{id}/nonaktifkan/{nomorTransaksi}', [AdminController::class, 'nonaktifkan'])->name('produk.nonaktifkan');
 
+
+        Route::get('/admin/search-transaksi', [AdminController::class, 'searchTransaksi'])->name('admin.search-transaksi');
     });
 
     Route::get('/email/verify', [AuthController::class, 'verifyNotice'])->name('verification.notice');

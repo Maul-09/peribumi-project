@@ -291,7 +291,7 @@ class AdminController extends Controller
                     } elseif ($produk->pivot->status_akses === 'nonaktif') {
                         $produk->status_transaksi = 'Confirmed';
                         $produk->status_akses = 'Nonaktif';
-                    }else {
+                    } else {
                         $produk->status_transaksi = 'Confirmed';
                         $produk->status_akses = 'Aktif';
                     }
@@ -312,26 +312,34 @@ class AdminController extends Controller
     }
 
 
-    public function nonaktifkan($id)
+    public function nonaktifkan($id, $nomorTransaksi)
     {
-        // Ambil pengguna yang sedang login
+        // Pastikan produk dengan ID tersebut ada
         $produk = Produk::findOrFail($id);
 
-        // Temukan produk yang terkait dengan pengguna
-        $produk = $produk->users()->wherePivot('produk_id', $id)->wherePivot('status_akses', 'aktif')
-            ->orderBy('pivot_created_at', 'desc')
+        // Cari produk terkait berdasarkan produk_id, user_id, dan nomor_transaksi
+        $pivotEntry = DB::table('user_produk') // Ganti dengan nama tabel pivot Anda
+            ->where('produk_id', $id) // ID produk
+            ->where('user_id', Auth::user()->id) // UUID user yang sedang login
+            ->where('nomor_transaksi', $nomorTransaksi) // Filter berdasarkan nomor transaksi
+            ->where('status_akses', 'aktif') // Pastikan status akses masih aktif
             ->first();
 
-        if ($produk) {
-            // Update status_akses di tabel pivot
-            $produk->pivot->status_akses = 'nonaktif';
-            $produk->pivot->save(); // Ambil data produk terbaru
+        // Jika data ditemukan, update status_akses
+        if ($pivotEntry) {
+            DB::table('user_produk') // Ganti dengan nama tabel pivot Anda
+                ->where('produk_id', $id)
+                ->where('user_id', Auth::user()->id)
+                ->where('nomor_transaksi', $nomorTransaksi)
+                ->update(['status_akses' => 'nonaktif']);
 
-            return redirect()->back()->with('success', 'Transaksi berhasil dibatalkan.');
+            return redirect()->back()->with('success', 'Produk berhasil dinonaktifkan berdasarkan nomor transaksi.');
         }
 
-        return redirect()->back()->with('error', 'Produk tidak ditemukan.');
+        // Jika tidak ada data yang ditemukan, beri pesan error
+        return redirect()->back()->with('error', 'Produk atau transaksi tidak ditemukan.');
     }
+
 
     public function searchTransaksi(Request $request)
     {
@@ -349,5 +357,4 @@ class AdminController extends Controller
             return response()->json(view('partials.transaction-list', compact('transaksiPending', 'query'))->render());
         }
     }
-
 }

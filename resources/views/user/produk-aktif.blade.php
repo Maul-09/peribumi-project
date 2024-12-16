@@ -76,6 +76,15 @@
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
+                            @elseif ($produk->pivot->status_transaksi === 'confirmed' && $produk->pivot->status_akses === 'nonaktif')
+                                <!-- Tombol Delete muncul ketika status transaksi adalah "Confirmed" dan status akses "Nonaktif" -->
+                                <form
+                                    action="{{ route('cancel.transaction', ['produkId' => $produk->id, 'userId' => Auth::id()]) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
                             @else
                                 <span>-</span>
                             @endif

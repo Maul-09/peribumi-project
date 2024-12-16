@@ -468,25 +468,26 @@ class ProdukController extends Controller
         // Cari produk berdasarkan ID
         $produk = Produk::findOrFail($produkId);
 
-        // Cari transaksi spesifik berdasarkan user dan status
+        // Cari transaksi spesifik berdasarkan user dan status transaksi yang bisa dibatalkan atau dihapus
         $transaksi = $produk->users()
             ->wherePivot('user_id', $userId)
-            ->wherePivot('status_transaksi', 'pending')
+            ->whereIn('status_transaksi', ['pending', 'rejected', 'confirmed']) // Menambahkan status transaksi yang bisa diproses
             ->orderBy('pivot_created_at', 'desc') // Misalnya ada `created_at` di pivot
             ->first();
 
         if ($transaksi) {
-            // Hapus transaksi spesifik dengan mengakses tabel pivot langsung
+            // Hapus transaksi spesifik dari tabel pivot
             DB::table('user_produk')
                 ->where('produk_id', $produkId)
                 ->where('user_id', $userId)
-                ->where('status_transaksi', 'pending')
+                ->whereIn('status_transaksi', ['pending', 'rejected', 'confirmed']) // Menghapus transaksi dengan status yang valid
                 ->limit(1) // Pastikan hanya satu yang dihapus
                 ->delete();
 
-            return redirect()->back()->with('success', 'Transaksi berhasil dibatalkan.');
+            return redirect()->back()->with('success', 'Transaksi berhasil dihapus.');
         }
 
-        return redirect()->back()->with('error', 'Transaksi tidak ditemukan atau sudah dikonfirmasi.');
+        return redirect()->back()->with('error', 'Transaksi tidak ditemukan atau status transaksi tidak valid untuk dihapus.');
     }
+
 }

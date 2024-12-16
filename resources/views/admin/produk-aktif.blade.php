@@ -2,14 +2,14 @@
     <main id="main" class="main">
         <h3>Produk Aktif</h3>
         @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <table class="table">
             <thead>
                 <tr>
@@ -32,8 +32,8 @@
                             <td class="text-center">
                                 @if ($produk->pivot->status_transaksi === 'confirmed')
                                     <span class="icon" title="Confirmed">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="green"
-                                            viewBox="0 0 24 24">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                            fill="green" viewBox="0 0 24 24">
                                             <path d="M10 15.172l-3.586-3.586-1.414 1.414L10 18 19 9l-1.414-1.414z">
                                             </path>
                                         </svg>
@@ -49,9 +49,10 @@
                                 {{ $produk->pivot && $produk->pivot->tanggal_berakhir ? $produk->pivot->tanggal_berakhir->format('d-m-Y') : '-' }}
                             </td>
                             <td>
-                                <!-- Tombol Nonaktifkan Produk -->
                                 @if ($produk->pivot->status_akses === 'aktif')
-                                    <form action="{{ route('produk.nonaktifkan', $produk->id) }}" method="POST"
+                                    <form
+                                        action="{{ route('produk.nonaktifkan', ['id' => $produk->id, 'nomorTransaksi' => $produk->pivot->nomor_transaksi]) }}"
+                                        method="POST"
                                         onsubmit="return confirm('Apakah Anda yakin ingin menonaktifkan produk ini?');">
                                         @csrf
                                         @method('PUT')
@@ -60,8 +61,10 @@
                                 @elseif ($produk->pivot->status_akses === 'nonaktif')
                                     <p>-</p>
                                 @endif
-
                             </td>
+
+
+
                         </tr>
                     @endif
                 @endforeach
