@@ -28,11 +28,11 @@
             <a href="https://www.instagram.com/peribumi_pro/" class="media-social" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-instagram"></i><span class="title-sosmed">Peribumi Pro</span>
             </a>
-            <a href="#" class="media-social" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-facebook"></i><span class="title-sosmed">Facebook Kami</span>
+            <a href="https://web.facebook.com/profile.php?id=61552249982971&mibextid=ZbWKwL&_rdc=1&_rdr#" class="media-social" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-facebook"></i><span class="title-sosmed">Peri Bumi Pro</span>
             </a>
-            <a href="#" class="media-social" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-youtube"></i><span class="title-sosmed">Youtube Kami</span>
+            <a href="http://www.youtube.com/@peribumi_cahaya_nusa/" class="media-social" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-youtube"></i><span class="title-sosmed">Peri Bumi Konsultan</span>
             </a>
             <a href="mailto:peribumi.pro@gmail.com" class="media-social" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-google"></i><span class="title-sosmed">peribumi.pro</span>

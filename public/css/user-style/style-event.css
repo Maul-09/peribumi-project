@@ -64,6 +64,7 @@ section {
 
 .banner .textBx p {
     color: #fff;
+    text-align: justify;
     max-width: 700px;
     z- index:-1;
 }

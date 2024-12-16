@@ -64,13 +64,14 @@
                     <h3>Sasaran</h3>
                 </div>
                 <p class="judul-span">Visioner :</p>
-                <p class="sasaran-span">Mampu menjadi Perusahaan Konsultan Jasa yang mengedepankan visi dalam memenuhi kebutuhan pasar di sektor Jasa Pendampingan, Pelatihan, Pengembangan, Digitalisasi dan Pelaksanaan  kegiatan. Market Share : Mampu mendapatkan posisi yang semakin kuat dalam peta persaingan bisnis sektor jasa yang dipilih seiring dengan peningkatan market share yang telah diperoleh</p>
-
-                <p class="judul-span">Market Share : </p>
-                <p class="sasaran-span">Mampu mendapatkan posisi yang semakin kuat dalam peta persaingan bisnis sektor jasa yang dipilih seiring dengan peningkatan market share yang telah diperoleh</p>
+                <p class="sasaran-span">Mampu menjadi Perusahaan Konsultan Jasa yang mengedepankan visi dalam memenuhi kebutuhan pasar di sektor Jasa Pendampingan, Pelatihan, Pengembangan, Digitalisasi dan Pelaksanaan  kegiatan.</p>
 
                 <p class="judul-span">Positivity Impactfull :</p>
                 <p class="sasaran-span">Mampu menghadirkan dampak positif dan memberikan pengaruh kuat dalam perubahan  karakter serta pergeseran cara berfikir setiap pemangku kepentingan bisnis/usaha terhadap perkembangan kemajuan zaman.</p>
+
+                <p class="judul-span">Market Share Positioning : </p>
+                <p class="sasaran-span">Mampu mendapatkan posisi yang semakin kuat dalam peta persaingan bisnis sektor jasa yang dipilih seiring dengan peningkatan market share yang telah diperoleh</p>
+
             </div>
         </div>
     </section>

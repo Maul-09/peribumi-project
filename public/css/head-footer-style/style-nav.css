@@ -319,16 +319,16 @@ header.sticky .dropdown-button:hover {
 
 
 
-@media only screen and (min-width: 888px) and (max-width: 1280px){
+@media only screen and (max-width: 1280px){
     header {
         position: fixed;
         width: 100%;
-        padding: 30px 20px;
+        padding: 30px 40px;
     }
 
     header.sticky {
 
-        padding: 20px 0px;
+        padding: 20px 30px;
     }
 
     header .logo {
@@ -336,11 +336,11 @@ header.sticky .dropdown-button:hover {
     }
 }
 
-@media only screen and (min-width: 583px) and (max-width: 887px){
+@media only screen and (max-width: 891px){
     header {
         position: fixed;
         width: 100%;
-        padding: 30px 15px;
+        padding: 25px 20px;
     }
     header .toggle{
         visibility: hidden;
@@ -348,11 +348,25 @@ header.sticky .dropdown-button:hover {
 
     header.sticky {
 
-        padding: 30px 15px;
+        padding: 25px 20px;
     }
 
     header .logo {
         margin-right: auto;
+    }
+
+    header .menu li .link-bar {
+        margin: 0 10px
+    }
+
+    header .logo img {
+        width: 70px;
+        height: 25px;
+        margin-right: 5px;
+    }
+
+    header .logo .logo-title {
+        font-size: 15px;
     }
 
     .dropdown-button{
@@ -367,7 +381,11 @@ header.sticky .dropdown-button:hover {
     header {
         position: fixed;
         width: 100%;
-        padding: 15px 0;
+        padding: 25px 0;
+    }
+
+    header.sticky {
+        padding: 25px 0;
     }
 
     header .logo {
@@ -375,6 +393,7 @@ header.sticky .dropdown-button:hover {
     }
 
     header .toggle{
+        visibility: visible;
         font-size: 20px;
     }
 
@@ -397,6 +416,7 @@ header.sticky .dropdown-button:hover {
         right: 0;
 
     }
+
     header .menu li {
         padding: 15px 0;
 
@@ -415,7 +435,7 @@ header.sticky .dropdown-button:hover {
     }
 
     header .logo .logo-title{
-        font-size: 15px;
+        font-size: 13px;
         font-weight: 700;
         letter-spacing: 1px;
     }
