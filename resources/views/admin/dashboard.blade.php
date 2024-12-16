@@ -43,132 +43,24 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <!-- Search Bar -->
-                                        <input type="text" id="searchBar" class="form-control mb-3"
-                                            placeholder="Cari user...">
-
                                         <!-- Daftar User -->
-                                        @foreach ($usersByType as $type => $users)
-                                            <h6 class="text-primary text-uppercase mt-3">{{ ucfirst($type) }}</h6>
-                                            <ul class="list-group list-group-flush mb-3 user-list">
+                                        <ul class="list-group list-group-flush mb-3 user-list">
+                                            @foreach ($usersByType as $type => $users)
+                                                <h6 class="text-primary text-uppercase mt-3">{{ ucfirst($type) }}</h6>
                                                 @foreach ($users as $user)
                                                     <li
                                                         class="list-group-item d-flex justify-content-between align-items-center">
                                                         <span class="user-name">{{ $user->name }}</span>
-                                                        <div>
-                                                            <span
-                                                                class="badge {{ $user->deleted_at ? 'bg-danger' : 'bg-success' }}">
-                                                                {{ $user->deleted_at ? 'Terhapus' : 'Aktif' }}
-                                                            </span>
-                                                            @if ($user->deleted_at)
-                                                                <button class="btn btn-warning btn-sm btn-restore-user"
-                                                                    data-user-id="{{ $user->id }}">
-                                                                    Pulihkan
-                                                                </button>
-                                                            @else
-                                                                <button class="btn btn-danger btn-sm btn-delete-user"
-                                                                    data-user-id="{{ $user->id }}">
-                                                                    Hapus
-                                                                </button>
-                                                            @endif
-                                                        </div>
+                                                        <small class="text-muted">{{ $user->email }}</small>
                                                     </li>
                                                 @endforeach
-                                            </ul>
-                                        @endforeach
+                                            @endforeach
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <script>
-                            document.addEventListener('DOMContentLoaded', function() {
-                                const searchBar = document.getElementById('searchBar');
-                                const userLists = document.querySelectorAll('.user-list');
-
-                                // Event delegation untuk tombol "Hapus" dan "Pulihkan"
-                                document.querySelector('.modal-body').addEventListener('click', function(event) {
-                                    if (event.target.classList.contains('btn-delete-user')) {
-                                        handleDelete(event.target);
-                                    } else if (event.target.classList.contains('btn-restore-user')) {
-                                        handleRestore(event.target);
-                                    }
-                                });
-
-                                // Fungsi untuk menangani penghapusan user
-                                function handleDelete(button) {
-                                    const userId = button.getAttribute('data-user-id');
-                                    const listItem = button.closest('.list-group-item');
-
-                                    if (confirm('Apakah Anda yakin ingin menghapus member ini?')) {
-                                        fetch(`/delete/users/${userId}`, {
-                                                method: 'DELETE',
-                                                headers: {
-                                                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                                                }
-                                            })
-                                            .then(response => {
-                                                if (response.ok) {
-                                                    updateListItemStatus(listItem, 'Terhapus', 'bg-danger',
-                                                        'btn-warning btn-restore-user', 'Pulihkan');
-                                                    alert('Member berhasil dihapus.');
-                                                } else {
-                                                    alert('Gagal menghapus member.');
-                                                }
-                                            })
-                                            .catch(error => console.error('Error:', error));
-                                    }
-                                }
-
-                                // Fungsi untuk menangani pemulihan user
-                                function handleRestore(button) {
-                                    const userId = button.getAttribute('data-user-id');
-                                    const listItem = button.closest('.list-group-item');
-
-                                    if (confirm('Apakah Anda yakin ingin memulihkan akun ini?')) {
-                                        fetch(`/restore/users/${userId}/restore`, {
-                                                method: 'PATCH',
-                                                headers: {
-                                                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                                                }
-                                            })
-                                            .then(response => {
-                                                if (response.ok) {
-                                                    updateListItemStatus(listItem, 'Aktif', 'bg-success',
-                                                        'btn-danger btn-delete-user', 'Hapus');
-                                                    alert('Akun berhasil dipulihkan.');
-                                                } else {
-                                                    alert('Gagal memulihkan akun.');
-                                                }
-                                            })
-                                            .catch(error => console.error('Error:', error));
-                                    }
-                                }
-
-                                // Fungsi untuk memperbarui status list item
-                                function updateListItemStatus(listItem, statusText, badgeClass, buttonClass, buttonText) {
-                                    const badge = listItem.querySelector('.badge');
-                                    badge.textContent = statusText;
-                                    badge.className = `badge ${badgeClass}`;
-
-                                    const button = listItem.querySelector('button');
-                                    button.textContent = buttonText;
-                                    button.className = `btn btn-sm ${buttonClass}`;
-                                }
-
-                                // search bar
-                                searchBar.addEventListener('input', function() {
-                                    const query = searchBar.value.toLowerCase();
-                                    userLists.forEach(list => {
-                                        list.querySelectorAll('.list-group-item').forEach(item => {
-                                            const userName = item.querySelector('.user-name').textContent
-                                                .toLowerCase();
-                                            item.style.display = userName.includes(query) ? '' : 'none';
-                                        });
-                                    });
-                                });
-                            });
-                        </script>
 
                         <!-- End Sales Card -->
 
@@ -341,6 +233,10 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
+                                        <!-- Search bar -->
+                                        <input type="text" id="search-name" class="form-control mb-3"
+                                            placeholder="Cari berdasarkan nama pengguna...">
+
                                         <table class="table table-bordered">
                                             <thead>
                                                 <tr>
@@ -350,7 +246,7 @@
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody class="transaction-list">
                                                 @foreach ($transaksiPending as $transaksi)
                                                     <tr>
                                                         <td>{{ $transaksi->produk->nama_produk }}</td>
@@ -384,144 +280,166 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="filter">
-                                <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                        class="bi bi-three-dots"></i></a>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                    <li class="dropdown-header text-start">
-                                        <h6>Filter</h6>
-                                    </li>
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                        <script>
+                            $(document).ready(function() {
+                                $('#search-name').on('input', function() {
+                                    var query = $(this).val();
 
-                                    <li><a class="dropdown-item" href="#">Today</a></li>
-                                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="card-body">
-                                <h5 class="card-title">Reports <span id="dateLabel">/Today</span></h5>
-
-                                <div id="reportsChart"></div>
-                                <canvas id="visitorChart" width="400" height="200"></canvas>
-                                <script>
-                                    const ctx = document.getElementById('visitorChart').getContext('2d');
-                                    let visitorChart;
-
-                                    // Data pengunjung dari controller
-                                    const chartData = {
-                                        today: {
-                                            labels: [
-                                                @foreach ($todayVisitors as $data)
-                                                    "{{ $data->hour }}:00"
-                                                    {{ !$loop->last ? ',' : '' }}
-                                                @endforeach
-                                            ],
-                                            data: [
-                                                @foreach ($todayVisitors as $data)
-                                                    {{ $data->count }}{{ !$loop->last ? ',' : '' }}
-                                                @endforeach
-                                            ]
+                                    $.ajax({
+                                        url: "{{ route('admin.search-transaksi') }}",
+                                        method: 'GET',
+                                        data: {
+                                            query: query
                                         },
-                                        week: {
-                                            labels: [
-                                                @foreach ($weekVisitors as $data)
-                                                    "{{ $data->day }}"
-                                                    {{ !$loop->last ? ',' : '' }}
-                                                @endforeach
-                                            ],
-                                            data: [
-                                                @foreach ($weekVisitors as $data)
-                                                    {{ $data->count }}{{ !$loop->last ? ',' : '' }}
-                                                @endforeach
-                                            ]
-                                        },
-                                        month: {
-                                            labels: [
-                                                @foreach ($monthVisitors as $data)
-                                                    "Minggu ke-{{ $data->week }}"
-                                                    {{ !$loop->last ? ',' : '' }}
-                                                @endforeach
-                                            ],
-                                            data: [
-                                                @foreach ($monthVisitors as $data)
-                                                    {{ $data->count }}{{ !$loop->last ? ',' : '' }}
-                                                @endforeach
-                                            ]
+                                        success: function(data) {
+                                            $('.transaction-list').html(data);
                                         }
-                                    };
+                                    });
+                                });
+                            });
+                        </script>
 
-                                    // Fungsi untuk menampilkan chart berdasarkan periode
-                                    function showChart(period) {
-                                        if (visitorChart) {
-                                            visitorChart.destroy(); // Hapus chart lama
-                                        }
 
-                                        visitorChart = new Chart(ctx, {
-                                            type: 'line',
-                                            data: {
-                                                labels: chartData[period].labels, // Label untuk periode
-                                                datasets: [{
-                                                    label: 'Jumlah Pengunjung',
-                                                    data: chartData[period].data, // Data jumlah pengunjung
-                                                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna area di bawah garis
-                                                    borderColor: 'rgba(75, 192, 192, 1)', // Warna garis
-                                                    borderWidth: 2, // Ketebalan garis
-                                                    tension: 0.4, // Garis melengkung
-                                                    pointBackgroundColor: 'rgba(255, 99, 132, 1)', // Warna titik data
-                                                    pointRadius: 5, // Ukuran titik data
-                                                    fill: true // Isi area di bawah garis
-                                                }]
+
+                        {{-- chart --}}
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="filter">
+                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i
+                                            class="bi bi-three-dots"></i></a>
+                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                        <li class="dropdown-header text-start">
+                                            <h6>Filter</h6>
+                                        </li>
+
+                                        <li><a class="dropdown-item" href="#">Today</a></li>
+                                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Reports <span id="dateLabel">/Today</span></h5>
+
+                                    <div id="reportsChart"></div>
+                                    <canvas id="visitorChart" width="400" height="200"></canvas>
+                                    <script>
+                                        const ctx = document.getElementById('visitorChart').getContext('2d');
+                                        let visitorChart;
+
+                                        // Data pengunjung dari controller
+                                        const chartData = {
+                                            today: {
+                                                labels: [
+                                                    @foreach ($todayVisitors as $data)
+                                                        "{{ $data->hour }}:00"
+                                                        {{ !$loop->last ? ',' : '' }}
+                                                    @endforeach
+                                                ],
+                                                data: [
+                                                    @foreach ($todayVisitors as $data)
+                                                        {{ $data->count }}{{ !$loop->last ? ',' : '' }}
+                                                    @endforeach
+                                                ]
                                             },
-                                            options: {
-                                                responsive: true,
-                                                plugins: {
-                                                    legend: {
-                                                        display: true, // Menampilkan legenda
-                                                        position: 'top' // Posisi legenda di atas
-                                                    }
+                                            week: {
+                                                labels: [
+                                                    @foreach ($weekVisitors as $data)
+                                                        "{{ $data->day }}"
+                                                        {{ !$loop->last ? ',' : '' }}
+                                                    @endforeach
+                                                ],
+                                                data: [
+                                                    @foreach ($weekVisitors as $data)
+                                                        {{ $data->count }}{{ !$loop->last ? ',' : '' }}
+                                                    @endforeach
+                                                ]
+                                            },
+                                            month: {
+                                                labels: [
+                                                    @foreach ($monthVisitors as $data)
+                                                        "Minggu ke-{{ $data->week }}"
+                                                        {{ !$loop->last ? ',' : '' }}
+                                                    @endforeach
+                                                ],
+                                                data: [
+                                                    @foreach ($monthVisitors as $data)
+                                                        {{ $data->count }}{{ !$loop->last ? ',' : '' }}
+                                                    @endforeach
+                                                ]
+                                            }
+                                        };
+
+                                        // Fungsi untuk menampilkan chart berdasarkan periode
+                                        function showChart(period) {
+                                            if (visitorChart) {
+                                                visitorChart.destroy(); // Hapus chart lama
+                                            }
+
+                                            visitorChart = new Chart(ctx, {
+                                                type: 'line',
+                                                data: {
+                                                    labels: chartData[period].labels, // Label untuk periode
+                                                    datasets: [{
+                                                        label: 'Jumlah Pengunjung',
+                                                        data: chartData[period].data, // Data jumlah pengunjung
+                                                        backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna area di bawah garis
+                                                        borderColor: 'rgba(75, 192, 192, 1)', // Warna garis
+                                                        borderWidth: 2, // Ketebalan garis
+                                                        tension: 0.4, // Garis melengkung
+                                                        pointBackgroundColor: 'rgba(255, 99, 132, 1)', // Warna titik data
+                                                        pointRadius: 5, // Ukuran titik data
+                                                        fill: true // Isi area di bawah garis
+                                                    }]
                                                 },
-                                                scales: {
-                                                    x: {
-                                                        title: {
-                                                            display: true,
-                                                            text: 'Periode' // Judul sumbu X
+                                                options: {
+                                                    responsive: true,
+                                                    plugins: {
+                                                        legend: {
+                                                            display: true, // Menampilkan legenda
+                                                            position: 'top' // Posisi legenda di atas
                                                         }
                                                     },
-                                                    y: {
-                                                        beginAtZero: false,
-                                                        title: {
-                                                            display: true,
-                                                            text: 'Jumlah Pengunjung'
+                                                    scales: {
+                                                        x: {
+                                                            title: {
+                                                                display: true,
+                                                                text: 'Periode' // Judul sumbu X
+                                                            }
                                                         },
-                                                        ticks: {
-                                                            stepSize: 1, // Langkah antar angka
-                                                            min: 1, // Mulai dari angka 1
-                                                            max: 10 // Max sesuai data
-                                                        },
-                                                        suggestedMin: 1,
-                                                        suggestedMax: 10
+                                                        y: {
+                                                            beginAtZero: false,
+                                                            title: {
+                                                                display: true,
+                                                                text: 'Jumlah Pengunjung'
+                                                            },
+                                                            ticks: {
+                                                                stepSize: 1, // Langkah antar angka
+                                                                min: 1, // Mulai dari angka 1
+                                                                max: 10 // Max sesuai data
+                                                            },
+                                                            suggestedMin: 1,
+                                                            suggestedMax: 10
+                                                        }
                                                     }
                                                 }
-                                            }
-                                        });
-                                    }
+                                            });
+                                        }
 
-                                    // Tampilkan chart untuk 'Hari Ini (Jam)' secara default
-                                    document.addEventListener('DOMContentLoaded', () => {
-                                        showChart('today');
-                                    });
-                                </script>
+                                        // Tampilkan chart untuk 'Hari Ini (Jam)' secara default
+                                        document.addEventListener('DOMContentLoaded', () => {
+                                            showChart('today');
+                                        });
+                                    </script>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
 
-                    {{-- <div class="col-lg-4">
+                        {{-- <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Verifikasi Produk</h5>
