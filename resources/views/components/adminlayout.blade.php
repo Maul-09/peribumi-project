@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="{{ asset('css/admin-style/style-product.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin-style/profile-admin.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin-style/style-card-product.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin-style/produk-aktif-admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin-style/modal-admin.css') }}">
     <title>Peribumi Consultant - Admin Dashboard</title>
 </head>
 
