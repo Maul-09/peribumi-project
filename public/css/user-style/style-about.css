@@ -92,7 +92,7 @@ section.history {
 }
 
 .nilai-utama p{
-    font-size: 50px;
+    font-size: 3rem;
     color: var(--skin-color-1);
     text-align: justify;
     margin-bottom: 15px;
@@ -240,18 +240,28 @@ section.history {
 
 @media only screen and (max-width: 1280px){
     section {
-        padding: 6em 9em;
+        padding: 6em 7.5em;
     }
 }
 
 
-@media only screen and (max-width: 887px){
+@media only screen and (max-width: 891px){
     section {
         padding: 3em 6em;
     }
 
     .nilai-utama p {
-        font-size: 36px;
+        font-size: 2.2rem;
+    }
+
+    .tab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tab button {
+        padding: 14px 94px;
     }
 
     .tabcontent {
@@ -267,6 +277,11 @@ section.history {
 
 
 @media only screen and (max-width: 581px){
+
+    section{
+        padding: 1.2em;
+    }
+
     .banner {
         position: relative;
         min-height: 60vh;
@@ -282,8 +297,8 @@ section.history {
         font-size: 12px;
     }
 
-    section{
-        padding: 0.8em;
+    .nilai-utama p {
+        font-size: 1.3rem;
     }
 
     .navtab h1 {
