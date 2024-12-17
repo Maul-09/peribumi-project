@@ -76,11 +76,11 @@
                     <img src="{{ asset('../image/bg-5.jpg') }}" class="photo" alt="">
                 </div>
             </div>
-
         </div>
     </section>
 
-    <section class="mitpro">
+
+    <section class="mitpro" id="anchor-produk">
         <div class="title-product">
             <h2>PRODUK & LAYANAN</h2>
             <p>Kami menghadirkan beragam produk berkualitas tinggi yang dirancang untuk memenuhi kebutuhan Anda. Temukan
