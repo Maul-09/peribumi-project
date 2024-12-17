@@ -15,25 +15,10 @@
 
         </div>
         <div class="content-histori">
-            <h3>Sejarah Kami</h3>
-            <p>PERI BUMI merupakan suatu platform penyedia yang dimiliki oleh PT. Peribumi
-            Cahaya Nusa dan telah berjalan semenjak tahun 2021. Peri bumi merupakan
-            Perusahaan yang berbasis Konsultan dan banyak dikenal dengan nama Peri Bumi
-            Konsultan. Hingga kini, Peri Bumi Konsultan telah memiliki banyak mitra dan
-            klien yang berasal dari berbagai sektor, bidang dan latar belakang. Semua
-            pencapaian tersebut tentu atas izin, ridho dan rahmat tuhan yang maha kuasa,
-            doa dan dukungan berbagai pihak serta kegigihan usaha yang dilakukan.</p>
+            <h3>Komitmen Kami</h3>
+            <p>“Peri Bumi” berkomitmen untuk membantu memfasilitasi langkah percepatan dalam rangka pembangunan dan pengembangan organisasi bisnis termasuk didalamnya penguatan kompetensi serta peningkatan kapasitas individu dan lembaga itu sendiri yang tentunya perlu untuk mendapatkan perhatian tersendiri.</p>
 
-            <p>Saat ini, Peri Bumi Konsultan dalam bisnisnya berfokus dalam 5 (lima) bidang
-            yaitu : manajemen bisnis, pusat pelatihan dan sertifikasi, pengembangan potensi,
-            solusi digital serta penyelenggaraan kegiatan (Event). Adapun semua produk/
-            layanan yang kami miliki dapat diperoleh atau digunakan oleh para pengguna/klien
-            baik melalui jalur proyek maupun reguler.</p>
-
-            <p>Harapan kami, semoga dengan kehadiran kami dalam dunia usaha/ dunia idustri
-            akan banyak memberi manfaat secara luas dan tentunya mampu menyumbangkan
-            kontribusi positif dalam mendukung Pembangunan bangsa dan negara Indonesia
-            hingga masa mendatang.</p>
+            <p>Dengan prinsip QTA, “Peri Bumi” hadir untuk mendukung klien dalam mencapai tujuan mereka dengan pendekatan yang personal dan berorientasi pada hasil. Kami siap membantu anda dalam menghadapi tantangan dengan cara yang inovatif, ramah, dan penuh dedikasi.</p>
         </div>
         <div class="box-1">
             <div class="navtab">
