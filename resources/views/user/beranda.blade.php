@@ -23,7 +23,7 @@
     <section class="banner" id="home">
         <div class="textBx">
             <h2>KonsultanQta "Peri Bumi"</h2>
-            <p>"Peri Bumi" adalah layanan konsultasi yang hadir untuk memberikan solusi profesional dengan pendekatan kebersamaan dan kolaboratif. Nama "Peri Bumi" menggambarkan komitmen kami untuk berkontribusi pada kesejahteraan dan keberlanjutan, baik untuk bisnis maupun lingkungan sosial. Kami berfokus untuk memberikan konsultansi yang berkualitas, terpercaya, dan cepat dengan tim yang terlatih dan berkompeten.</p>
+            <p>"Peri Bumi" adalah layanan konsultasi yang hadir untuk memberikan solusi profesional dengan pendekatan kebersamaan dan kolaboratif. Nama "Peri Bumi" menggambarkan komitmen kami untuk berkontribusi pada kesejahteraan dan keberlanjutan, baik untuk bisnis maupun lingkungan sosial. "Peri Bumi" berfokus untuk memberikan konsultansi yang berkualitas, terpercaya, dan cepat dengan tim yang terlatih dan berkompeten.</p>
         </div>
     </section>
 
