@@ -21,6 +21,6 @@ class LayoutLms extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('lms.components.layout-lms');
+        return view('components.layout-lms');
     }
 }

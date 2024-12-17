@@ -111,7 +111,10 @@
     display: block; /* Form yang aktif terlihat */
 }
 
-
+/* ini css highlight di searchbar modal verifikasi produk */
+.highlight {
+    background-color: yellow;
+}
 
 @media (max-width: 768px) {
     form {

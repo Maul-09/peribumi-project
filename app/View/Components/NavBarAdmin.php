@@ -21,6 +21,6 @@ class NavBarAdmin extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('admin\components.nav-bar-admin');
+        return view('components.nav-bar-admin');
     }
 }
