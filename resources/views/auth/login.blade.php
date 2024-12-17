@@ -24,7 +24,9 @@
         </form>
         <form action="{{ route('signin') }}" method="post" class="sign-in-form" id="signin">
             @csrf
-            <h2 class="title">Sign in</h2>
+            <div class="title">
+                <h2>Sign in</h2>
+            </div>
 
             <!-- Input Username -->
             <div class="input-field">
