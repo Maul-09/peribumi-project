@@ -21,6 +21,6 @@ class NavbarLms extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('lms.components.navbar-lms');
+        return view('components.navbar-lms');
     }
 }
