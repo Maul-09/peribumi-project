@@ -1,0 +1,91 @@
+/* Modal Styling */
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.modal-header {
+    border-bottom: 1px solid #eee;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Product Rating Section */
+.product-rating {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.product-name {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.rating-stars i {
+    margin-right: 3px;
+}
+
+.review-list {
+    margin-top: 15px;
+    padding-left: 0;
+}
+
+.review-item {
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.review-date {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.review-stars {
+    margin-top: 5px;
+}
+
+.review-comments {
+    margin-top: 5px;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.review-item:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+.review-item:nth-child(even) {
+    background-color: #fff;
+}
+
+/* Make Modal Responsive */
+@media (max-width: 768px) {
+    .modal-dialog {
+        max-width: 90%;
+    }
+}
