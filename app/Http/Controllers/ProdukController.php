@@ -433,8 +433,8 @@ class ProdukController extends Controller
     public function whatsappBlank($id) {
         $produk = Produk::findOrFail($id);
 
-        $whatsappMessage = "Hallo, saya ingin membeli produk: " . $produk->nama_produk;
-        $whatsappUrl = "https://wa.me/6281586839469?text=" . urlencode($whatsappMessage);
+        $whatsappMessage = "Hallo, saya ingin membeli produk-layanan: " . $produk->nama_produk;
+        $whatsappUrl = "https://wa.me/6281224785684?text=" . urlencode($whatsappMessage);
 
         return redirect($whatsappUrl);        
     }
