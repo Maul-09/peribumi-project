@@ -4,6 +4,7 @@ var btn = document.querySelectorAll(".btn-beli");
 var span = document.getElementById("closeModal");
 var whatsappLink = document.getElementById("whatsappLink");
 var closeModalBtn = document.getElementById("closeModalBtn");
+var form = document.getElementById("konfirmasiModalForm")
 
 // Event listener untuk setiap tombol "Beli Produk"
 btn.forEach(function (button) {
@@ -31,24 +32,30 @@ btn.forEach(function (button) {
 
 // Event listener untuk tombol WhatsApp di modal
 whatsappLink.addEventListener("click", function (event) {
-    event.preventDefault(); // Cegah tindakan default sementara waktu
-
-    // Ambil data URL WhatsApp dan daftar produk
+    event.preventDefault();
     var whatsappUrl = whatsappLink.getAttribute("href");
-    var daftarUrl = whatsappLink.getAttribute("data-daftar-url");
+    // Ambil data dari input tanggal mulai
+    var tanggalMulai = document.getElementById('tanggalMulai').value;
 
-    // Buka URL WhatsApp di tab baru
-    if (whatsappUrl) {
+    if(tanggalMulai){
+        var inputTanggalMulai = document.createElement('input');
+        inputTanggalMulai.type = 'hidden';
+        inputTanggalMulai.name = 'tanggal_mulai';
+        inputTanggalMulai.value = tanggalMulai;
+        inputTanggalMulai.required = true;
+
+        // Tambahkan elemen input ke form
+        form.appendChild(inputTanggalMulai); // Menambahkan input tanggal ke dalam form
+        
+        // Mengirimkan form
+        form.submit();
         window.open(whatsappUrl, "_blank");
-    }
 
-    // Redirect ke halaman daftar produk
-    if (daftarUrl) {
-        window.location.href = daftarUrl;
-    } else {
-        // Jika data-daftar-url tidak tersedia, gunakan fallback
-        window.location.href = "/daftar-produk";
+    }else{
+        alert('Tanggal mulai wajib diisi!');
+        return;
     }
+    
 });
 
 // Event listener untuk menutup modal saat tombol "X" diklik

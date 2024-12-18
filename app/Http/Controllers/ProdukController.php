@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 
 class ProdukController extends Controller
 {
@@ -409,23 +408,35 @@ class ProdukController extends Controller
         return redirect()->back()->with('success', 'Produk berhasil dihapus!');
     }
 
-    public function konfirmasiPembelian($id)
+    public function konfirmasiPembelian(Request $request, $id)
     {
         $produk = Produk::findOrFail($id);
         $user = Auth::user();
+        
+        $validated = $request->validate([
+            'tanggal_mulai' => 'required|date',
+        ]);
+        $tanggalMulai = $validated['tanggal_mulai'];
 
         // Buat transaksi baru tanpa memeriksa apakah produk sudah dibeli
         $userProduk = new UserProduk();
         $userProduk->user_id = $user->id;
         $userProduk->produk_id = $produk->id;
-        $userProduk->status_transaksi = 'pending';  // Status pending
+        $userProduk->status_transaksi = 'pending'; // Status pending
+        $userProduk->tanggal_mulai = $tanggalMulai; 
         $userProduk->save();
 
-        // Redirect ke WhatsApp
+        $route = session('route');
+        return redirect()->route($route)->withFragment('produk-layanan')->with('success','Pesanan anda telah terdaftar silahkan lanjutkan konfirmasi via whatsapp');
+    }
+
+    public function whatsappBlank($id) {
+        $produk = Produk::findOrFail($id);
+
         $whatsappMessage = "Hallo, saya ingin membeli produk: " . $produk->nama_produk;
         $whatsappUrl = "https://wa.me/6281586839469?text=" . urlencode($whatsappMessage);
 
-        return redirect($whatsappUrl);
+        return redirect($whatsappUrl);        
     }
 
     public function produkUser($id)

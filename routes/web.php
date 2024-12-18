@@ -18,7 +18,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/digital', [PeribumiController::class, 'digital'])->name('digital');
         Route::get('/personal', [PeribumiController::class, 'personal'])->name('personal');
         Route::get('/event', [PeribumiController::class, 'event'])->name('event');
-        Route::get('/whatssapp/notice/{id}', [ProdukController::class, 'konfirmasiPembelian'])->name('whatsapp.notice');
+        Route::post('/whatssapp/notice/{id}', [ProdukController::class, 'konfirmasiPembelian'])->name('whatsapp.notice');
+        Route::get('/whatssapp/{id}', [ProdukController::class, 'WhatsappBlank'])->name('whatsapp.blank');
         Route::get('/edit/profile{id}', [CrudController::class, 'editProfile'])->name('editProfile');
         Route::post('/edit/profile/delete{id}', [CrudController::class, 'deleteAccount'])->name('deleteAccount');
         Route::post('/edit/profile/update{id}', [CrudController::class, 'update'])->name('update.profile');

@@ -147,24 +147,30 @@
                 @endforeach
                 <a href="#" class="btn-beli" id="openModal" data-produk-nama="{{ $produk->nama_produk }}"
                     data-produk-harga="{{ $produk->highlight_harga }}" data-produk-durasi="{{ $produk->durasi }}"
-                    data-whatsapp-url="{{ route('whatsapp.notice', $produk->id) }}">Beli
+                    data-whatsapp-url="{{ route('whatsapp.blank', $produk->id) }}">Beli
                     Produk</a>
             </div>
         </div>
     </div>
     <div id="konfirmasiModal" class="modal">
         <div class="modal-content">
-            <span class="close" id="closeModal"><i class="fas fa-cloese"></i></span>
+            <span class="close" id="closeModal"><i class="fas fa-close"></i></span>
             <h5 id="modalProdukNama"></h5>
             <p><strong>Harga:</strong> <span id="modalHarga"></span></p>
             <p><strong>Durasi:</strong> <span id="modalDurasi"></span> Hari</p>
-
+    
             <h3>Konfirmasi Pembelian</h3>
             <p>Klik tombol di bawah ini untuk melanjutkan ke WhatsApp dan mengonfirmasi pembelian Anda:</p>
-
-            <a href="#" id="whatsappLink" class="btn btn-success" target="_blank" data-daftar-url="{{ url()->previous() }}#produk-layanan">Konfirmasi via
-                WhatsApp</a>
+            <form id="konfirmasiModalForm" action="{{ route('whatsapp.notice', $produk->id) }}" method="POST" style="display: none;">
+                @csrf
+                @method('post')
+            </form>
+            <label for="tanggalMulai">Tanggal Mulai:</label>
+            <input type="date" id="tanggalMulai" name="tanggal_mulai" required />
+        
+            <button id="whatsappLink" class="btn btn-success" target="_blank">Konfirmasi via WhatsApp</button>
             <a href="#" class="btn btn-danger" id="closeModalBtn">Batal</a>
         </div>
     </div>
+    
 </x-layout>
