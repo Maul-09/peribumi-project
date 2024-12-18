@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Notifications\CustomVerifyEmailNotification;
+use Illuminate\Support\Str; // Import Str untuk UUID
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes; // Import SoftDeletes
-use Illuminate\Support\Str; // Import Str untuk UUID
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -38,7 +39,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function produk()
     {
         return $this->belongsToMany(Produk::class, 'user_produk')
-            ->withPivot('status_akses', 'status_transaksi', 'tanggal_beli', 'tanggal_berakhir', 'nomor_transaksi')
+            ->withPivot('tanggal_mulai', 'status_akses', 'status_transaksi', 'tanggal_beli', 'tanggal_berakhir', 'nomor_transaksi')
             ->withTimestamps(); 
     }
 
@@ -51,5 +52,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(UserProduk::class, 'user_id');
     }
-    // Anda juga dapat menambahkan metode lain di sini jika diperlukan
+
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new CustomVerifyEmailNotification());
+    }
 }

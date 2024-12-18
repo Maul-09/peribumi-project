@@ -16,7 +16,7 @@ class PeribumiController extends Controller
     {
         $kat = ['Pengembangan (Inkubasi) Bisnis', 'Pendampingan Manajemen Bisnis'];
 
-        session(['kategori' => $kat]);
+        session(['kategori' => $kat, 'route' => 'manajemen']);
 
         return view('user.manajemen');
     }
@@ -25,7 +25,7 @@ class PeribumiController extends Controller
     {
         $kat = ['Pelatihan Calon Tenaga Kerja', 'Pelatihan Tenaga Kerja (Profesi)'];
 
-        session(['kategori' => $kat, 'route' => 'training.admin']);
+        session(['kategori' => $kat, 'route' => 'training']);
 
         return view('user.training');
     }
@@ -34,7 +34,7 @@ class PeribumiController extends Controller
     {
         $kat = ['Individu', 'Kelompok'];
 
-        session(['kategori' => $kat, 'route' => 'personal.admin']);
+        session(['kategori' => $kat, 'route' => 'personal']);
 
         return view('user.personal');
     }
@@ -43,7 +43,7 @@ class PeribumiController extends Controller
     {
         $kat = ['Software/Aplikasi/Website', 'Artificial Intelegence'];
 
-        session(['kategori' => $kat, 'route' => 'digital.admin']);
+        session(['kategori' => $kat, 'route' => 'digital']);
 
         return view('user.digital');
     }
@@ -52,7 +52,7 @@ class PeribumiController extends Controller
     {
         $kat = ['MICE & Travel Vacation', 'Wedding & Integrated Event'];
 
-        session(['kategori' => $kat, 'route' => 'organizer.admin']);
+        session(['kategori' => $kat, 'route' => 'event']);
 
         return view('user.event');
     }

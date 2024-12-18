@@ -21,14 +21,14 @@
                 Selamat! Transaksi Anda untuk produk
                 <span class="highlight">"{{ $transaksi->produk->nama_produk }}"</span> telah berhasil dikonfirmasi.
             </p>
-            <p>
+            {{-- <p>
                 Anda kini dapat mengakses pelatihan melalui tautan di bawah ini.
-            </p>
+            </p> --}}
 
             <!-- Button Section -->
-            <div class="button-container">
+            {{-- <div class="button-container">
                 <a href="https://lms.example.com" class="button secondary">Akses LMS</a>
-            </div>
+            </div> --}}
 
             <p>
                 Admin,
