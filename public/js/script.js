@@ -33,13 +33,7 @@ function openTab(evt, tabName) {
 
 document.getElementById("defaultOpen").click();
 
-function closePopup() {
-    document.getElementById("alertPopup").style.display = "none";
-}
 
-window.onload = function() {
-    setTimeout(closePopup, 3000);
-};
 
 document.addEventListener('DOMContentLoaded', () => {
     const stars = document.querySelectorAll('.rate label i');

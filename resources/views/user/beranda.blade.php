@@ -3,19 +3,19 @@
     <x-slot:title>{{ asset('css/user-style/style-beranda.css') }}</x-slot>
     {{-- Alertt berhasil --}}
     @if (session('success'))
-        <div class="alert-popup" id="alertPopup">
+        <div class="alert-popup">
             <div class="alert alert-success">
                 <span class="message">{{ session('success') }}</span>
-                <button class="close-btn" onclick="closePopup()">×</button>
+                <div class="countdown-bar"></div>
             </div>
         </div>
     @endif
 
     @if (session('register'))
-        <div class="alert-popup" id="alertPopup">
+        <div class="alert-popup">
             <div class="alert alert-success">
                 <span class="message">{{ session('register') }}</span>
-                <button class="close-btn" onclick="closePopup()">×</button>
+                <div class="countdown-bar"></div>
             </div>
         </div>
     @endif
