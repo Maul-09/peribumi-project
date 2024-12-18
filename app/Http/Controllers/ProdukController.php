@@ -92,7 +92,7 @@ class ProdukController extends Controller
                     'nama_produk' => 'required|string|max:255',
                     'teknis' => 'required|string|max:255',
                     'deskripsi' => 'required|string',
-                    'durasi' => 'required|string|max:255',
+                    'durasi' => 'required|integer|max:255',
                     'personil' => 'required|string|max:255',
                     'persyaratan' => 'required|string',
                     'metodologi' => 'required|string',
@@ -130,7 +130,7 @@ class ProdukController extends Controller
                     'kualifikasi' => 'required|string',
                     'ruang_lingkup' => 'required|string',
                     'klasifikasi' => 'required|string',
-                    'durasi' => 'required|string',
+                    'durasi' => 'integer|string',
                     'lembaga' => 'required|string',
                     'kategori' => 'required|string',
                     'deskripsi_harga' => 'required|string',
@@ -229,12 +229,12 @@ class ProdukController extends Controller
             'highlight_harga',
             'jenis_pekerjaan',
             'kualifikasi',
-            'durasi',
             'lembaga',
             'ruang_lingkup',
             'klasifikasi',
             'kategori'
         ];
+
         $filteredProduct = array_filter($product->toArray(), function ($value, $key) {
             // Hanya ambil yang tidak null dan bukan 'id', 'created_at', atau 'updated_at'
             return !is_null($value) && !in_array($key, ['id', 'created_at', 'updated_at', 'produkType', 'nama_produk', 'image', 'link']);
@@ -256,7 +256,6 @@ class ProdukController extends Controller
             'metodologi',
             'sasaran',
             'jadwal_lokasi_fasilitas',
-            'durasi',
             'lembaga',
             'deskripsi_harga',
             'highlight_harga',

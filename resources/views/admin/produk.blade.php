@@ -58,7 +58,9 @@
 
                                         <div class="form-group">
                                             <label for="durasi" class="form-label">Durasi:</label>
-                                            <input name="durasi" id="durasi" class="form-control" required>
+                                            <div style="display: flex; align-items: center;">
+                                                <input type="number" name="durasi" id="durasi" placeholder="" class="form-control" required><span style="border: 1px solid #ccc; padding: 0.75em 2em; border-radius: 5px; font-family: Arial, sans-serif; font-weight: bold;">Hari</span>
+                                            </div>
                                         </div>
 
                                         <div class="form-group">
@@ -161,7 +163,9 @@
                                         
                                         <div class="form-group">
                                             <label for="durasi" class="form-label">Durasi:</label>
-                                            <textarea name="durasi" id="durasi" class="form-control" required></textarea>
+                                            <div style="display: flex; align-items: center;">
+                                                <input type="number" name="durasi" id="durasi" placeholder="" class="form-control" required><span style="border: 1px solid #ccc; padding: 0.75em 2em; border-radius: 5px; font-family: Arial, sans-serif; font-weight: bold;">Hari</span>
+                                            </div>
                                         </div>
 
                                         <div class="form-group">

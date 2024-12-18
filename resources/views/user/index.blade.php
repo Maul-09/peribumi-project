@@ -29,6 +29,10 @@
 
             </div>
             <div class="detail-item">
+                <span class="detail-label">Durasi:</span>
+                <span class="detail-value">{{ $produk->durasi }} Hari</span>
+            </div>
+            <div class="detail-item">
                 <span class="detail-label">Proposal:</span>
                 @if ($produk->link)
                     <a href="{{ $produk->link }}" class="btn-link" target="_blank">Unduh Sekarang</a>
