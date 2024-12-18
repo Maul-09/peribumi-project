@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 footer {
-    padding: 0 175px;
+    padding: 0 115px;
 }
 
 footer h3 {
@@ -19,7 +19,7 @@ footer hr {
 .title-foot {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    padding: 20px 0;
 }
 
 .title-foot img {
@@ -40,7 +40,7 @@ footer hr {
 .about-foot {
     color: #fff;
     padding: 10px;
-    max-width: 305px;
+    max-width: 35%;
 }
 
 .about-foot p {
@@ -124,7 +124,7 @@ footer hr {
     margin: 20px 0;
 }
 
-@media only screen and (max-width: 1080px){
+@media only screen and (max-width: 1120px){
     footer {
         padding: 0 70px;
     }
@@ -143,7 +143,18 @@ footer hr {
 
 @media only screen and (max-width: 887px){
     footer {
-        padding: 0 15px;
+        padding: 0 60px;
+    }
+
+    .con{
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    .title-foot{
+        display: flex;
+        justify-content: center;
     }
 
     .title-foot img{
@@ -155,7 +166,7 @@ footer hr {
     }
 
     .about-foot{
-        max-width: 250px;
+        max-width: 48%;
     }
 
     .media-foot .media-social i{

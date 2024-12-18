@@ -118,13 +118,13 @@ window.onload = function() {
 
     popups.forEach((popup) => {
         const countdownBar = popup.querySelector(".countdown-bar");
-        countdownBar.style.animation = "countdown 3s linear forwards";
+        countdownBar.style.animation = "countdown 5s linear forwards";
 
         setTimeout(() => {
             popup.style.animation = "fadeOut 0.5s forwards";
             setTimeout(() => {
                 popup.style.display = "none";
             }, 500);
-        }, 2300);
+        }, 4200);
     });
 };

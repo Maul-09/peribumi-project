@@ -29,7 +29,7 @@ section {
 .banner {
     position: relative;
     min-height: 100vh;
-    background: url(../../image/bg-9.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../image/bg-9.jpg);
     background-size: cover;
     display: flex;
     background-position: right;
