@@ -80,7 +80,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal fade" id="produkModal" tabindex="-1" aria-labelledby="produkModalLabel"
+                            {{-- <div class="modal fade" id="produkModal" tabindex="-1" aria-labelledby="produkModalLabel"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
@@ -106,7 +106,7 @@
                                     var modal = new bootstrap.Modal(document.getElementById('produkModal'));
                                     modal.show();
                                 });
-                            </script>
+                            </script> --}}
                         </div>
 
 
@@ -143,59 +143,67 @@
                                     </div>
                                     <div class="modal-body">
                                         @foreach ($productsWithRatings as $produk)
-                                            <h6>{{ $produk['nama_produk'] }}</h6>
-                                            <p><strong>Rata-rata Rating:</strong>
-                                                <!-- Menampilkan satu bintang -->
-                                                {!! '<i class="fa-solid fa-star text-warning"></i>' !!}
-                                                <!-- Menampilkan rata-rata rating dengan angka -->
-                                                {{ $produk['average_rating'] }}
-                                            </p>
+                                            <div class="product-rating mb-4">
+                                                <h6 class="product-name">{{ $produk['nama_produk'] }}</h6>
+                                                <p><strong>Rata-rata Rating:</strong>
+                                                    <!-- Menampilkan satu bintang -->
+                                                    {!! '<i class="fa-solid fa-star text-warning"></i>' !!}
+                                                    <!-- Menampilkan rata-rata rating dengan angka -->
+                                                    {{ $produk['average_rating'] }}
+                                                </p>
 
-                                            <ul class="list-group mb-3">
-                                                @forelse($produk['ratings'] as $review)
-                                                    <li class="list-group-item">
-                                                        @php
-                                                            $emote = '';
-                                                            switch ($review->star_rating) {
-                                                                case 5:
-                                                                    $emote = '🥳';
-                                                                    break;
-                                                                case 4:
-                                                                    $emote = '😄';
-                                                                    break;
-                                                                case 3:
-                                                                    $emote = '🤔';
-                                                                    break;
-                                                                case 2:
-                                                                    $emote = '😞';
-                                                                    break;
-                                                                case 1:
-                                                                    $emote = '🤬';
-                                                                    break;
-                                                                default:
-                                                                    $emote = '❓';
-                                                                    break;
-                                                            }
-                                                        @endphp
+                                                <div class="rating-stars mb-2">
+                                                    {!! str_repeat('<i class="fa-solid fa-star text-warning"></i>', $produk['average_rating']) !!}
+                                                </div>
 
-                                                        <strong>{!! $emote !!}
-                                                            {{ $review->user->name ?? 'Tidak diketahui' }}</strong>
-                                                        <br>
-                                                        <span class="review-stars">
-                                                            {!! str_repeat('<i class="fa-solid fa-star text-warning"></i>', $review->star_rating) !!}
-                                                        </span>
-                                                        <p>{{ $review->comments }}</p>
-                                                        <p><em>{{ $review->created_at->format('d-m-Y') }}</em></p>
-                                                    </li>
-                                                @empty
-                                                    <li class="list-group-item">Belum ada rating.</li>
-                                                @endforelse
-                                            </ul>
+                                                <ul class="list-group review-list">
+                                                    @forelse($produk['ratings'] as $review)
+                                                        <li class="list-group-item review-item">
+                                                            @php
+                                                                $emote = '';
+                                                                switch ($review->star_rating) {
+                                                                    case 5:
+                                                                        $emote = '🥳';
+                                                                        break;
+                                                                    case 4:
+                                                                        $emote = '😄';
+                                                                        break;
+                                                                    case 3:
+                                                                        $emote = '🤔';
+                                                                        break;
+                                                                    case 2:
+                                                                        $emote = '😞';
+                                                                        break;
+                                                                    case 1:
+                                                                        $emote = '🤬';
+                                                                        break;
+                                                                    default:
+                                                                        $emote = '❓';
+                                                                        break;
+                                                                }
+                                                            @endphp
+                                                            <div class="review-header">
+                                                                <strong>{!! $emote !!}
+                                                                    {{ $review->user->name ?? 'Tidak diketahui' }}</strong>
+                                                                <span
+                                                                    class="review-date"><em>{{ $review->created_at->format('d-m-Y') }}</em></span>
+                                                            </div>
+                                                            <div class="review-stars">
+                                                                {!! str_repeat('<i class="fa-solid fa-star text-warning"></i>', $review->star_rating) !!}
+                                                            </div>
+                                                            <p class="review-comments">{{ $review->comments }}</p>
+                                                        </li>
+                                                    @empty
+                                                        <li class="list-group-item">Belum ada rating.</li>
+                                                    @endforelse
+                                                </ul>
+                                            </div>
                                         @endforeach
                                     </div>
                                 </div>
                             </div>
                         </div>
+
 
                         <script>
                             document.getElementById('ratingCard').addEventListener('click', function() {
@@ -448,9 +456,10 @@
 
                             </div>
                         </div>
+                    </div> --}}
                     </div>
-                </div> --}}
-
+                </div>
+            </div>
         </section>
     </main>
 

@@ -47,13 +47,13 @@
                         @endif
                         <hr>
                         <a href="{{ route('editProfile', auth()->user()->id) }}" class="menu-items">
-                            <i class="fas fa-user-edit"></i> Profile
+                            <i class="fas fa-user-edit"></i>Profile
                         </a>
                         <a href="{{ route('produk.user', auth()->user()->id) }}" class="menu-items">
-                            <i class="fas fa-box"></i> Product
+                            <i class="fas fa-box"></i>Product
                         </a>
                         <button type="drop-button" class="menu-items logout-button" onclick="confirmLogout()">
-                            <i class="fas fa-sign-out-alt"></i> Logout
+                            <i class="fas fa-sign-out-alt"></i>Logout
                         </button>
                         <form action="{{ route('logout') }}" method="POST" id="logoutForm" style="display: none;">
                             @csrf

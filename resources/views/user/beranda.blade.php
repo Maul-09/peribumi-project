@@ -3,30 +3,27 @@
     <x-slot:title>{{ asset('css/user-style/style-beranda.css') }}</x-slot>
     {{-- Alertt berhasil --}}
     @if (session('success'))
-        <div class="alert-popup" id="alertPopup">
+        <div class="alert-popup">
             <div class="alert alert-success">
-                <i class="fa fa-check-circle icon"></i>
                 <span class="message">{{ session('success') }}</span>
-                <button class="close-btn" onclick="closePopup()">×</button>
+                <div class="countdown-bar"></div>
             </div>
         </div>
     @endif
 
     @if (session('register'))
-        <div class="alert-popup" id="alertPopup">
+        <div class="alert-popup">
             <div class="alert alert-success">
-                <i class="fa fa-check-circle icon"></i>
                 <span class="message">{{ session('register') }}</span>
-                <button class="close-btn" onclick="closePopup()">×</button>
+                <div class="countdown-bar"></div>
             </div>
         </div>
     @endif
     {{-- End Alertt berhasil --}}
     <section class="banner" id="home">
         <div class="textBx">
-            <h2>KonsultanQta "Peri bumi"</h2>
-            <p>Hadir dan berkomitmen untuk membantu memfasilitasi langkah percepatan dalam rangka pengembangan
-                dan atau peningkatan kompetensi serta kapasitas Sumber daya manusia yang dimiliki</p>
+            <h2>KonsultanQta "Peri Bumi"</h2>
+            <p>"Peri Bumi" adalah layanan konsultasi yang hadir untuk memberikan solusi profesional dengan pendekatan kebersamaan dan kolaboratif. Nama "Peri Bumi" menggambarkan komitmen kami untuk berkontribusi pada kesejahteraan dan keberlanjutan, baik untuk bisnis maupun lingkungan sosial. "Peri Bumi" berfokus untuk memberikan konsultansi yang berkualitas, terpercaya, dan cepat dengan tim yang terlatih dan berkompeten.</p>
         </div>
     </section>
 
@@ -76,11 +73,11 @@
                     <img src="{{ asset('../image/bg-5.jpg') }}" class="photo" alt="">
                 </div>
             </div>
-
         </div>
     </section>
 
-    <section class="mitpro">
+
+    <section class="mitpro" id="anchor-produk">
         <div class="title-product">
             <h2>PRODUK & LAYANAN</h2>
             <p>Kami menghadirkan beragam produk berkualitas tinggi yang dirancang untuk memenuhi kebutuhan Anda. Temukan

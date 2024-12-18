@@ -21,7 +21,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($produkDibeli as $produk)
+                @forelse ($produkDibeli as $produk)
                     <tr>
                         <td>{{ $produk->nama_produk }}</td>
                         <td class="text-center">
@@ -90,7 +90,14 @@
                             @endif
                         </td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="7" class="text-center">
+                            <h4 class="empty-text">Tidak ada produk aktif saat ini. Ayo beli produk kamu sekarang!</h4>
+                            <a href="{{ route('beranda') }}#anchor-produk" class="btn-empty">Cari Produk</a>
+                        </td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
     </div>

@@ -7,8 +7,9 @@
         <div class="about-foot">
             <h3>Tentang kami</h3>
             <p>
-                PERI BUMI hadir dan berkomitmen untuk membantu serta memfasilitasi langkah percepatan dalam rangka
-                pengembangan dan atau peningkatan kompetensi serta kapasitas Sumber daya manusia yang dimiliki
+                Dengan prinsip QTA, “Peri Bumi” hadir untuk mendukung klien dalam mencapai tujuan mereka melalui
+                pendekatan intensif yang terorientasi pada hasil. "Peri Bumi" siap membantu anda dalam menghadapi tantangan
+                dengan cara yang inovatif, ramah, dan penuh dedikasi.
             </p>
         </div>
 

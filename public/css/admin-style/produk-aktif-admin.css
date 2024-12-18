@@ -1,0 +1,123 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body dan font */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* Warna latar belakang yang lebih terang */
+    color: #333;
+}
+
+/* Header */
+.produk-title {
+    font-size: 26px;
+    font-weight: 600;
+    color: #2d3e50; /* Warna gelap yang elegan */
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Alert Box */
+.produk-alert {
+    padding: 12px 18px;
+    background-color: #f8d7da; /* Latar belakang alert lembut */
+    color: #721c24;
+    border-left: 4px solid #e3342f;
+    margin: 15px auto;
+    width: 95%;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Table Container */
+.table-container {
+    margin: 0 auto;
+    width: 95%;
+    overflow-x: auto;
+}
+
+/* Table Style */
+.produk-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #ccc;
+}
+
+.produk-table thead {
+    background-color: #dcdfe1; /* Warna abu cerah */
+    color: #333;
+}
+
+.produk-table thead th {
+    font-weight: bold;
+}
+
+.produk-table th,
+.produk-table td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.produk-table tbody tr:nth-child(even) {
+    background-color: #f1f3f5; /* Warna baris genap lebih terang */
+}
+
+.produk-table tbody tr:nth-child(odd) {
+    background-color: #e9ecef; /* Warna baris ganjil sedikit lebih gelap */
+}
+
+.produk-table tbody tr:hover {
+    background-color: #d6d8db; /* Warna hover lebih cerah dan lembut */
+}
+
+/* Tombol Aksi */
+.produk-btn {
+    background-color: #e74c3c; /* Merah yang menonjol */
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.produk-btn:hover {
+    background-color: #c0392b; /* Merah lebih gelap saat hover */
+    transform: translateY(-2px); /* Efek sedikit terangkat */
+}
+
+/* Tombol Aksi Disabled */
+.produk-btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .produk-table th,
+    .produk-table td {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .produk-title {
+        font-size: 22px;
+    }
+
+    .produk-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}

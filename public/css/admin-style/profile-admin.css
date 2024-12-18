@@ -72,9 +72,10 @@
     text-align: center;
     padding: 10px;
     border: 1px solid #ddd;
+    place-items: center;
 }
 
-.account-table td 
+.account-table td
 
 .account-table th {
     background-color: #d9d7d7;
