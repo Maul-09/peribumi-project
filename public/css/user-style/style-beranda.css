@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "poppins", sans-serif;
@@ -9,7 +9,6 @@
 }
 body {
     background-color: #04364a;
-    overflow-x:hidden;
 }
 section {
     padding: 6em 12em;
@@ -74,13 +73,14 @@ section {
     max-width: 100%;
 }
 .content {
+    position: relative;
     display: flex;
     justify-content: space-between;
 }
 .w50 {
     max-width: 50%;
 }
-img {
+.w50 img {
     height: 300px;
     object-fit: scale-down;
 }
@@ -407,12 +407,12 @@ section.about{
 }
 
 .circle{
-    position:absolute;
-    width:700px;
-    height:700px;
+    position: absolute;
+    width:600px;
+    height:600px;
     border-radius:100%;
-    bottom: -830px;
-    right: -150px;
+    top: 5%;
+    right: -35%;
     background-color:#fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     z-index:-1;
@@ -830,6 +830,7 @@ section.about{
     .title-client h2,
     .title-product h2 {
         font-size: 20px;
+        margin-bottom: 10px;
     }
 
     .title-client p,

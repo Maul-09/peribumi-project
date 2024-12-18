@@ -8,7 +8,7 @@ footer h3 {
     color: #fff;
     text-decoration: underline;
     text-underline-position: under;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: medium;
 }
 
@@ -18,12 +18,12 @@ footer hr {
 
 .title-foot {
     display: flex;
-    padding-top: 40px;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .title-foot img {
     width: 90px;
-    height: 35px;
 }
 
 .title-foot h2 {
@@ -124,14 +124,13 @@ footer hr {
     margin: 20px 0;
 }
 
-@media only screen and (max-width: 1280px){
+@media only screen and (max-width: 1080px){
     footer {
         padding: 0 70px;
     }
 
     .title-foot h2{
         font-size: 20px;
-        margin-bottom: 15px;
     }
 
     .con{
@@ -145,6 +144,10 @@ footer hr {
 @media only screen and (max-width: 887px){
     footer {
         padding: 0 15px;
+    }
+
+    .title-foot img{
+        width: 70px;
     }
 
     .title-foot h2{
@@ -175,22 +178,23 @@ footer hr {
     }
 
     footer h3 {
-        font-size: 15px;
+        font-size: 14px;
+        margin-bottom: 13px;
     }
 
     .title-foot{
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
         padding: 20px;
         justify-content: center;
     }
     .title-foot img{
-        width: 70px;
+        width: 55px;
     }
 
     .title-foot h2{
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .produk-foot{
@@ -201,6 +205,10 @@ footer hr {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .produk-foot ul li a {
+        font-size: 12px;
     }
 
     .media-foot .media-social i{
@@ -218,7 +226,7 @@ footer hr {
     .con{
         display: flex;
         flex-wrap: wrap;
-        margin: 0 15px;
+        margin: 0 10px;
         justify-content: space-between;
         flex-direction: row-reverse;
     }
