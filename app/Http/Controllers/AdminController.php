@@ -139,13 +139,16 @@ class AdminController extends Controller
     {
         // Ambil transaksi dengan ID yang diberikan
         $transaksi = UserProduk::findOrFail($id);
+        $tanggalMulai  = Carbon::parse($transaksi->tanggal_mulai);
+        $durasi = $transaksi->produk->durasi;
 
         $nomorTransaksi = 'PBC' . Str::upper(Str::random(10));
         // Update status transaksi menjadi confirmed
         $transaksi->status_transaksi = 'confirmed';
-
+        
         $transaksi->tanggal_beli = now();
-        $transaksi->tanggal_berakhir = now()->addDays(30);
+        $transaksi->tanggal_berakhir = $tanggalMulai->addDays($durasi);
+
         // Set status akses produk menjadi aktif
         $transaksi->status_akses = 'aktif';
         $transaksi->nomor_transaksi = $nomorTransaksi;
@@ -295,7 +298,7 @@ class AdminController extends Controller
                         $produk->status_transaksi = 'Confirmed';
                         $produk->status_akses = 'Aktif';
                     }
-
+                    
                     $produk->pivot->nomor_transaksi = $produk->pivot->nomor_transaksi ?? 'Tidak Tersedia';
                     $produk->nama_user = $user->name;
                 }
