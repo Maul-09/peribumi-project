@@ -43,6 +43,10 @@ return new class extends Migration
             $table->string('kategori', 255)->change();
             $table->string('jadwal_lokasi_fasilitas', 255)->change();
             $table->string('deskripsi_harga', 255)->change();
+            $table->string('persyaratan', 255)->change();
+            $table->string('highlight_harga', 255)->change();
+            $table->string('sasaran', 255)->change();
+            $table->string('deskripsi', 255)->change();
         });
     }
 };
