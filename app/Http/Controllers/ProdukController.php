@@ -98,8 +98,8 @@ class ProdukController extends Controller
                     'metodologi' => 'required|string|max:65535',
                     'sasaran' => 'required|string|max:65535',
                     'jadwal_lokasi_fasilitas' => 'required|string|max:65535',
-                    'deskripsi_harga' => 'required|string|max:65535',
-                    'highlight_harga' => 'required|string|max:65535',
+                    'highlight' => 'required|string|max:65535',
+                    'harga' => 'required|string|max:65535',
                     'produkType' => 'required|string',
                     'link' => 'nullable|url',
                 ]);
@@ -115,8 +115,8 @@ class ProdukController extends Controller
                     'metodologi',
                     'sasaran',
                     'jadwal_lokasi_fasilitas',
-                    'deskripsi_harga',
-                    'highlight_harga',
+                    'highlight',
+                    'harga',
                     'produkType',
                     'link'
                 ]));
@@ -133,8 +133,8 @@ class ProdukController extends Controller
                     'durasi' => 'integer|string|max:65535',
                     'lembaga' => 'required|string|max:65535',
                     'kategori' => 'required|string|max:65535',
-                    'deskripsi_harga' => 'required|string|max:65535',
-                    'highlight_harga' => 'required|string|max:65535',
+                    'highlight' => 'required|string|max:65535',
+                    'harga' => 'required|string|max:65535',
                     'produkType' => 'required|string',
                     'link' => 'nullable|url',
                 ]);
@@ -149,8 +149,8 @@ class ProdukController extends Controller
                     'durasi',
                     'lembaga',
                     'kategori',
-                    'deskripsi_harga',
-                    'highlight_harga',
+                    'highlight',
+                    'harga',
                     'produkType',
                     'link'
                 ]));
@@ -225,8 +225,8 @@ class ProdukController extends Controller
             'persyaratan',
             'sasaran',
             'jadwal_lokasi_fasilitas',
-            'deskripsi_harga',
-            'highlight_harga',
+            'highlight',
+            'harga',
             'jenis_pekerjaan',
             'kualifikasi',
             'lembaga',
@@ -257,8 +257,8 @@ class ProdukController extends Controller
             'sasaran',
             'jadwal_lokasi_fasilitas',
             'lembaga',
-            'deskripsi_harga',
-            'highlight_harga',
+            'highlight',
+            'harga',
         ];
 
         // Atur urutan berdasarkan yang diinginkan dan pastikan kolom dengan nilai null tidak muncul
@@ -328,8 +328,8 @@ class ProdukController extends Controller
                 'metodologi' => 'required|string',
                 'sasaran' => 'required|string',
                 'jadwal_lokasi_fasilitas' => 'required|string',
-                'deskripsi_harga' => 'required|string',
-                'highlight_harga' => 'required|string',
+                'highlight' => 'required|string',
+                'harga' => 'required|string',
                 'produkType' => 'required|string',
                 'link' => 'nullable|url',
             ]);
@@ -348,8 +348,8 @@ class ProdukController extends Controller
                 'klasifikasi' => 'required|string',
                 'lembaga' => 'required|string',
                 'kategori' => 'required|string',
-                'deskripsi_harga' => 'required|string',
-                'highlight_harga' => 'required|string',
+                'highlight' => 'required|string',
+                'harga' => 'required|string',
                 'produkType' => 'required|string',
                 'link' => 'nullable|url',
             ]);

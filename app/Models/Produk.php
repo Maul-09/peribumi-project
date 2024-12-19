@@ -24,8 +24,8 @@ class Produk extends Model
         'metodologi',
         'sasaran',
         'jadwal_lokasi_fasilitas',
-        'deskripsi_harga',
-        'highlight_harga',
+        'highlight',
+        'harga',
         'link',
         'produkType'
     ];

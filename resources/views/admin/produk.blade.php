@@ -90,13 +90,13 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="deskripsi_harga" class="form-label">Highlight:</label>
-                                            <textarea name="deskripsi_harga" id="deskripsi_harga" class="form-control" required>{{ old('deskripsi_harga') }}</textarea>
+                                            <label for="highlight" class="form-label">Highlight:</label>
+                                            <textarea name="highlight" id="highlight" class="form-control" required>{{ old('highlight') }}</textarea>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="highlight_harga" class="form-label">Harga:</label>
-                                            <textarea name="highlight_harga" id="highlight_harga" class="form-control" required>{{ old('highlight_harga') }}</textarea>
+                                            <label for="harga" class="form-label">Harga:</label>
+                                            <textarea name="harga" id="harga" class="form-control" required>{{ old('harga') }}</textarea>
                                         </div>
 
                                         <div class="form-group">
@@ -179,13 +179,13 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="deskripsi_harga" class="form-label">Highlight:</label>
-                                            <textarea name="deskripsi_harga" id="deskripsi_harga" class="form-control" required>{{ old('deskripsi_harga') }}</textarea>
+                                            <label for="highlight" class="form-label">Highlight:</label>
+                                            <textarea name="highlight" id="highlight" class="form-control" required>{{ old('highlight') }}</textarea>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="highlight_harga" class="form-label">Harga:</label>
-                                            <textarea name="highlight_harga" id="highlight_harga" class="form-control" required>{{ old('highlight_harga') }}</textarea>
+                                            <label for="harga" class="form-label">Harga:</label>
+                                            <textarea name="harga" id="harga" class="form-control" required>{{ old('harga') }}</textarea>
                                         </div>
 
                                         <div class="form-group">
