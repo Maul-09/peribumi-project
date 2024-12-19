@@ -12,7 +12,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 40px 100px;
+    padding: 2.5em 6.25em;
     z-index: 1000;
     display: flex;
     justify-content: space-around;
@@ -23,8 +23,8 @@ header {
 header .toggle {
     display: none;
     cursor: pointer;
-    font-size: 24px;
-    margin-right: 20px;
+    font-size: 1.5em;
+    margin-right: 1.25em;
     color: #fff;
 }
 
@@ -34,38 +34,41 @@ header .menu.active {
 
 header.sticky {
     background-color: #fff;
-    padding: 20px 0px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1.25em 0;
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.2), 0 0.375em 1.25em 0 rgba(0, 0, 0, 0.19);
 }
 
-header.sticky .toggle{
+header.sticky .toggle {
     color: var(--skin-color-1);
 }
+
 header .logo {
     display: flex;
     color: #fff;
     align-items: center;
-    margin-right: 15pc;
+    margin-right: 15em;
     list-style: none;
     text-transform: uppercase;
     text-decoration: none;
     justify-content: flex-end;
 }
 
-header .logo .logo-title{
-    font-size: 18px;
+header .logo .logo-title {
+    font-size: 1.125em;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.0625em;
 }
 
 header .logo img {
-    width: 80px;
-    height: 30px;
-    margin-right: 10px;
+    width: 5em;
+    height: 1.875em;
+    margin-right: 0.625em;
 }
+
 header.sticky .logo {
     color: #04364a;
 }
+
 header .menu {
     position: relative;
     display: flex;
@@ -79,9 +82,9 @@ header .menu li {
 
 header .menu li .link-bar {
     position: relative;
-    margin: 0 15px;
+    margin: 0 0.9375em;
     color: #fff;
-    font-size: 13px;
+    font-size: 0.8125em;
     font-weight: 500;
     text-decoration: none;
     transition: 0.5s;
@@ -90,11 +93,11 @@ header .menu li .link-bar {
 
 .user-logo {
     display: flex;
-    width: 30px;
-    height: 30px;
+    width: 1.875em;
+    height: 1.875em;
     background-color: #fff;
     border-radius: 50%;
-    margin-right: 5px;
+    margin-right: 0.3125em;
 }
 
 .dropdown {
@@ -102,12 +105,12 @@ header .menu li .link-bar {
 }
 
 .dropdown-button {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 0.625em;
+    margin-right: 0.625em;
     background-color: transparent;
     border: none;
     color: #fff;
-    font-size: 12px;
+    font-size: 0.75em;
     font-weight: 500;
     cursor: pointer;
     transition: 0.5s;
@@ -121,12 +124,12 @@ header .menu li .link-bar {
     display: none;
     position: absolute;
     right: -100%;
-    margin-top: 10px;
-    min-width: 200px;
+    margin-top: 0.625em;
+    min-width: 12.5em;
     border: 1px solid #ccc;
     background-color: var(--skin-color-1);
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.3125em;
+    box-shadow: 0 0.125em 0.625em rgba(0, 0, 0, 0.1);
     z-index: 1;
 }
 
@@ -135,12 +138,11 @@ header.sticky .dropdown-menu {
 }
 
 .dropdown-menu .link-dropdown {
-    display: flex
-;
-    padding: 10px;
+    display: flex;
+    padding: 0.625em;
     text-decoration: none;
     transition: 0.5s;
-    font-size: 13px;
+    font-size: 0.8125em;
     color: #fff;
     flex-wrap: nowrap;
     justify-content: center;
@@ -162,7 +164,6 @@ header.sticky .menu li .link-bar:hover,
 header.sticky .dropdown-menu .link-dropdown:hover,
 header.sticky .dropdown-button:hover {
     color: var(--skin-color-4);
-
 }
 
 .drop-down {
@@ -173,20 +174,20 @@ header.sticky .dropdown-button:hover {
     display: none;
     position: absolute;
     right: -75%;
-    top: 15px;
+    top: 0.9375em;
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    padding: 20px;
-    width: 150px;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
+    border-radius: 0.5em;
+    padding: 1.25em;
+    width: 9.3em;
     z-index: 1000;
 }
 
 .username {
-    font-size: 16px;
+    font-size: 1em;
     font-weight: bold;
     color: #333;
-    margin-bottom: 15px;
+    margin-bottom: 0.9em;
     text-align: center;
 }
 
@@ -194,19 +195,19 @@ header.sticky .dropdown-button:hover {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    font-size: 16px;
+    font-size: 1em;
     font-weight: 500;
     color: #111;
     text-decoration: none;
-    gap: 10px;
-    padding: 8px;
+    gap: 0.62em;
+    padding: 0.5em;
     background-color: transparent;
     border: none;
     transition: 0.3s;
 }
 
 .menu-items i {
-    font-size: 16px;
+    font-size: 1em;
     color: #555;
     transition: 0.3s;
 }
@@ -248,38 +249,38 @@ header.sticky .dropdown-button:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    padding: 1.9em;
+    border-radius: 0.6em;
+    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.15);
     text-align: center;
     width: 80%;
-    max-width: 400px;
+    max-width: 25em;
     animation: modalFadeIn 0.4s ease-out;
 }
 
 .modal-content h2 {
     font-size: 1.8em;
-    margin-bottom: 15px;
+    margin-bottom: 0.9em;
     color: #333;
 }
 
 .modal-content p {
     font-size: 1em;
     color: #666;
-    margin-bottom: 30px;
+    margin-bottom: 1.9em;
 }
 
 .modal-buttons {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 0.6em;
 }
 
 .button-confirm,
 .button-cancel {
-    padding: 10px 20px;
+    padding: 0.6em 1.3em;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.3em;
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -303,7 +304,6 @@ header.sticky .dropdown-button:hover {
     background-color: #31b0d5;
 }
 
-
 @keyframes modalFadeIn {
     from {
         opacity: 0;
@@ -317,36 +317,52 @@ header.sticky .dropdown-button:hover {
 
 
 
-@media only screen and (max-width: 1280px){
+@media only screen and (min-width: 1200px) {
     header {
         position: fixed;
         width: 100%;
-        padding: 30px 40px;
+        padding: 1.88em 2.5em;
     }
 
     header.sticky {
-
-        padding: 20px 30px;
+        padding: 1.25em 1.88em;
     }
 
     header .logo {
-        margin-right: 15px;
+        margin-right: 0.94em;
     }
 }
 
-@media only screen and (max-width: 891px){
+@media only screen and (max-width: 1280px) and (min-width: 1024px) {
     header {
         position: fixed;
         width: 100%;
-        padding: 25px 20px;
+        padding: 1.88em 2.5em;
     }
-    header .toggle{
+
+    header.sticky {
+        padding: 1.25em 1.88em;
+    }
+
+    header .logo {
+        margin-right: 0.94em;
+    }
+}
+
+
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+    header {
+        position: fixed;
+        width: 100%;
+        padding: 1.56em 1.25em;
+    }
+    header .toggle {
         visibility: hidden;
     }
 
     header.sticky {
-
-        padding: 25px 20px;
+        padding: 1.56em 1.25em;
     }
 
     header .logo {
@@ -354,110 +370,193 @@ header.sticky .dropdown-button:hover {
     }
 
     header .menu li .link-bar {
-        margin: 0 10px
+        margin: 0 0.63em;
     }
 
     header .logo img {
-        width: 70px;
-        height: 25px;
-        margin-right: 5px;
+        width: 4.38em;
+        height: 1.56em;
+        margin-right: 0.31em;
     }
 
     header .logo .logo-title {
-        font-size: 15px;
+        font-size: 0.94em;
     }
 
-    .dropdown-button{
+    .dropdown-button {
         margin: 0;
     }
-
 }
 
 
-@media only screen and (max-width: 581px){
-
+@media only screen and (max-width: 768px) and (min-width: 480px) {
     header {
         position: fixed;
         width: 100%;
-        padding: 25px 0;
+        padding: 1.56em 0;
     }
 
     header.sticky {
-        padding: 25px 0;
+        padding: 1.56em 0;
     }
 
     header .logo {
         margin: 0;
     }
 
-    header .toggle{
+    header .toggle {
         visibility: visible;
-        font-size: 20px;
+        font-size: 1.25em;
     }
 
     header .menu {
-        padding: 30px;
+        padding: 1.88em;
         flex-direction: column;
         position: fixed;
-        top: 77px;
+        top: 4.81em;
         right: -100%;
         background-color: #fff;
         width: 100%;
         border-top: 1px solid #444;
         z-index: 1000;
         transition: right 0.5s ease-in-out;
-
     }
+
     header .menu.active {
         display: flex;
         text-align: center;
         right: 0;
-
     }
 
     header .menu li {
-        padding: 15px 0;
-
+        padding: 0.94em 0;
     }
+
     header .menu button,
     header .menu li .link-bar {
         display: flex;
-        font-size: 16px;
+        font-size: 1em;
         width: 100%;
         color: var(--skin-color-1);
-
-    }
-    header .logo{
-        margin-right: 50px;
-        font-size: 18px;
     }
 
-    header .logo .logo-title{
-        font-size: 13px;
+    header .logo {
+        margin-right: 3.13em;
+        font-size: 1.13em;
+    }
+
+    header .logo .logo-title {
+        font-size: 0.81em;
         font-weight: 700;
-        letter-spacing: 1px;
+        letter-spacing: 0.06em;
     }
 
     header .logo img {
-        width: 75px;
-        height: 25px;
+        width: 4.69em;
+        height: 1.56em;
     }
 
-    headar .dropdown-menu {
+    header .dropdown-menu {
         display: none;
         position: absolute;
-        right: -80px;
-        margin-top: 10px;
-        min-width: 250px;
+        right: -5em;
+        margin-top: 0.63em;
+        min-width: 15.63em;
         border: 1px solid #ccc;
         background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 0.31em;
+        box-shadow: 0 0.13em 0.63em rgba(0, 0, 0, 0.1);
         z-index: 1;
     }
-    .dropdown-menu .link-dropdown{
+
+    .dropdown-menu .link-dropdown {
         background-color: #fff;
         color: var(--skin-color-1);
     }
+}
 
+@media only screen and (max-width: 480px) {
+    header {
+        position: fixed;
+        width: 100%;
+        padding: 1.25em 0.5em;
+    }
+
+    header.sticky {
+        padding: 1.25em 0.5em;
+    }
+
+    header .logo {
+        margin: 0;
+    }
+
+    header .toggle {
+        visibility: visible;
+        font-size: 1.5em;
+    }
+
+    header .menu {
+        padding: 1.5em;
+        flex-direction: column;
+        position: fixed;
+        top: 4em;
+        right: -100%;
+        background-color: #fff;
+        width: 100%;
+        border-top: 1px solid #444;
+        z-index: 1000;
+        transition: right 0.5s ease-in-out;
+    }
+
+    header .menu.active {
+        display: flex;
+        text-align: center;
+        right: 0;
+    }
+
+    header .menu li {
+        padding: 0.75em 0;
+    }
+
+    header .menu button,
+    header .menu li .link-bar {
+        display: flex;
+        font-size: 1.1em;
+        width: 100%;
+        color: var(--skin-color-1);
+    }
+
+    header .logo {
+        margin-right: 2.5em;
+        font-size: 1em;
+    }
+
+    header .logo .logo-title {
+        font-size: 0.75em;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+    }
+
+    header .logo img {
+        width: 4em;
+        height: 1.25em;
+    }
+
+    header .dropdown-menu {
+        display: none;
+        position: absolute;
+        right: -4em;
+        margin-top: 0.5em;
+        min-width: 14em;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        border-radius: 0.25em;
+        box-shadow: 0 0.13em 0.5em rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    .dropdown-menu .link-dropdown {
+        background-color: #fff;
+        color: var(--skin-color-1);
+    }
 }
