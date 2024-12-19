@@ -1,5 +1,5 @@
 footer {
-    padding: 0 5em;
+    padding: 0 4em;
 }
 
 footer h3 {
@@ -7,7 +7,7 @@ footer h3 {
     text-decoration: underline;
     text-underline-position: under;
     margin-bottom: 0.94em;
-    font-size: medium;
+    font-size: 1em;
 }
 
 footer hr {
@@ -17,7 +17,7 @@ footer hr {
 .title-foot {
     display: flex;
     align-items: center;
-    padding: 1.25em 0;
+    padding: 1.3em 2.5em;
 }
 
 .title-foot img {
@@ -26,13 +26,13 @@ footer hr {
 
 .title-foot h2 {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.35em;
 }
 
 .con {
     display: flex;
-    margin: 0 0.31em;
-    justify-content: center;
+    margin: 0 4em;
+    justify-content: space-between;
 }
 
 .about-foot {
@@ -43,7 +43,7 @@ footer hr {
 
 .about-foot p {
     padding-top: 0.38em;
-    font-size: 0.81em;
+    font-size: 0.85em;
     text-align: justify;
 }
 
@@ -58,7 +58,7 @@ footer hr {
 }
 
 .produk-foot ul li a {
-    font-size: 0.88em;
+    font-size: 0.85em;
     color: #fff;
     text-decoration: none;
     transition: 0.5s;
@@ -100,11 +100,11 @@ footer hr {
 }
 
 .media-foot .media-social i{
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
 .media-foot .media-social span{
-    font-size: 0.88em;
+    font-size: 0.85em;
     transition: 0.5s ease;
     display: flex;
     justify-content: center;
@@ -125,52 +125,94 @@ footer hr {
 
 @media only screen and (max-width: 1280px) and (min-width: 1024px) {
     footer {
-        padding: 0em 2.5em;
+        padding: 0 2.5em;
     }
 
-    footer .title-foot h2 {
-        font-size: 1.3em;
+    footer h3{
+        font-size: 0.8em;
     }
 
-    footer .produk-foot ul li a {
-        font-size: 0.9em;
+    .title-foot img {
+        width: 4.5em;
     }
 
-    footer .media-foot .media-social i {
-        font-size: 1.75em;
+    .title-foot {
+        display: flex;
+        align-items: center;
+        padding: 1.3em 0em;
     }
 
-    footer .media-foot .media-social span {
-        font-size: 0.9em;
+    .title-foot h2 {
+        font-size: 1.15em;
     }
 
-    footer .con {
+    .about-foot {
+        padding: 0.2em;
+    }
+
+    .about-foot p {
+        font-size: 0.7em;
+    }
+
+    .produk-foot ul li a {
+        font-size: 0.7em;
+    }
+
+    .media-foot .media-social i {
+        font-size: 1.2em;
+    }
+
+    .media-foot .media-social span {
+        font-size: 0.7em;
+    }
+
+    .con {
         justify-content: space-between;
+    }
+
+    .tm {
+        font-size: 0.8em;
     }
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
     footer {
-        padding: 0 2em;
+        padding: 0;
     }
 
-    footer .title-foot h2 {
-        font-size: 1.2em;
+    footer h3{
+        font-size: 0.75em;
     }
 
-    footer .produk-foot ul li a {
-        font-size: 0.85em;
+    .title-foot img {
+        width: 3.5em;
     }
 
-    footer .media-foot .media-social i {
-        font-size: 1.5em;
+    .title-foot h2 {
+        font-size: 0.95em;
     }
 
-    footer .media-foot .media-social span {
-        font-size: 0.85em;
+    .about-foot p {
+        font-size: 0.65em;
     }
 
-    footer .con {
+    .produk-foot ul li a {
+        font-size: 0.65em;
+    }
+
+    .produk-foot {
+        max-width: 9em;
+    }
+
+    .media-foot .media-social i {
+        font-size: 1em;
+    }
+
+    .media-foot .media-social span {
+        font-size: 0.65em;
+    }
+
+    .con {
         justify-content: space-between;
     }
 }
