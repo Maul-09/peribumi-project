@@ -12,7 +12,7 @@
             <div class="product-container">
                 @foreach ($produkList as $item)
                     <a href="{{ route('produk.show', $item->id) }}">
-                        <div class="product-card">
+                        <div class="product-card" style="list-style:none;">
                             <img src="{{ asset($item->image) }}" alt="image">
                             <h3 class="product-name">{{ $item->nama_produk }}</h3>
                             <span class="product-price" style="font-weight:700; color:grey;">Harga</span>
