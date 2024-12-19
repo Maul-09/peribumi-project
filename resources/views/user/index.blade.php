@@ -145,6 +145,8 @@
             <div class="content">
                 <span class="detail-label">Harga:</span>
                 <span class="deskripsi-harga">{{ $produk->harga }}</span>
+                <span class="detail-label">Durasi</span>
+                <span class="deskripsi-harga">{{ $produk->durasi }} Hari</span>
                 <a href="#" class="btn-beli" id="openModal" data-produk-nama="{{ $produk->nama_produk }}"
                     data-produk-harga="{{ $produk->harga }}" data-produk-durasi="{{ $produk->durasi }}"
                     data-whatsapp-url="{{ route('whatsapp.blank', $produk->id) }}">Beli

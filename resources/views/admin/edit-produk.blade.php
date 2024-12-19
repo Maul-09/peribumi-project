@@ -69,7 +69,7 @@
 
                                         <div class="form-group">
                                             <label for="persyaratan" class="form-label">Persyaratan:</label>
-                                            <textarea name="persyaratan" id="persyaratan" class="form-control" required>{{ $produk->image }}</textarea>
+                                            <textarea name="persyaratan" id="persyaratan" class="form-control" required>{{ $produk->persyaratan }}</textarea>
                                         </div>
 
                                         <div class="form-group">
@@ -79,23 +79,23 @@
 
                                         <div class="form-group">
                                             <label for="sasaran" class="form-label">Sasaran:</label>
-                                            <textarea name="sasaran" id="sasaran" class="form-control" required>{{ $produk->image }}</textarea>
+                                            <textarea name="sasaran" id="sasaran" class="form-control" required>{{ $produk->sasaran }}</textarea>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="jadwal_lokasi_fasilitas" class="form-label">Jadwal, Lokasi,
                                                 Fasilitas:</label>
-                                            <textarea name="jadwal_lokasi_fasilitas" id="jadwal_lokasi_fasilitas" class="form-control" required>{{ $produk->image }}</textarea>
+                                            <textarea name="jadwal_lokasi_fasilitas" id="jadwal_lokasi_fasilitas" class="form-control" required>{{ $produk->jadwal_lokasi_fasilitas }}</textarea>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="highlight" class="form-label">Highlight:</label>
-                                            <textarea name="highlight" id="highlight" class="form-control" required>{{ $produk->image }}</textarea>
+                                            <textarea name="highlight" id="highlight" class="form-control" required>{{ $produk->highlight }}</textarea>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="harga" class="form-label">Harga:</label>
-                                            <textarea name="harga" id="harga" class="form-control" required>{{ $produk->image }}</textarea>
+                                            <textarea name="harga" id="harga" class="form-control" required>{{ $produk->harga }}</textarea>
                                         </div>
 
                                         <div class="form-group">
