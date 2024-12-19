@@ -69,7 +69,7 @@ section {
     z-index:-1;
 }
 
-section.history {
+.history {
     background-color: #fff;
 }
 
@@ -145,7 +145,6 @@ section.history {
 }
 
 .tab button {
-    background-color: inherit;
     border: 1px solid;
     outline: none;
     cursor: pointer;
