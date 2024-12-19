@@ -144,13 +144,9 @@
             <img src="{{ asset($produk->image) }}" alt="Produk Image" class="image-card">
             <div class="content">
                 <span class="detail-label">Harga:</span>
-                <span class="deskripsi-harga">{{ $produk->highlight_harga }}</span>
-                <span class="detail-label">Deskripsi Harga:</span>
-                @foreach (explode("\n", $produk->deskripsi_harga) as $line)
-                    <span class="deskripsi-harga">{{ $line }}</span>
-                @endforeach
+                <span class="deskripsi-harga">{{ $produk->harga }}</span>
                 <a href="#" class="btn-beli" id="openModal" data-produk-nama="{{ $produk->nama_produk }}"
-                    data-produk-harga="{{ $produk->highlight_harga }}" data-produk-durasi="{{ $produk->durasi }}"
+                    data-produk-harga="{{ $produk->harga }}" data-produk-durasi="{{ $produk->durasi }}"
                     data-whatsapp-url="{{ route('whatsapp.blank', $produk->id) }}">Beli
                     Produk</a>
             </div>
