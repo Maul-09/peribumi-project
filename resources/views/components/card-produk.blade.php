@@ -8,7 +8,7 @@
     @if ($produkList->isEmpty())
         <p class="no-produk">Tidak ada produk dalam kategori ini.</p>
     @else
-        <div class="wadah">
+        <div class="wadah" id="wadah">
             <div class="product-container">
                 @foreach ($produkList as $item)
                     <div class="product-card" style="list-style:none;">

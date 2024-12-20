@@ -128,3 +128,12 @@ window.onload = function() {
         }, 4200);
     });
 };
+const container = document.getElementById('wadah');
+
+container.addEventListener('wheel', (event) => {
+    // Mencegah scroll default
+    event.preventDefault();
+
+    // Scroll horizontal sesuai dengan delta Y (scroll vertikal)
+    container.scrollLeft += event.deltaY;
+});
