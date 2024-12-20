@@ -1,10 +1,5 @@
 .wadah{
     overflow-x: auto;
-    scrollbar-width: none;
-}
-
-.wadah::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Edge */
 }
 
 .no-produk{
