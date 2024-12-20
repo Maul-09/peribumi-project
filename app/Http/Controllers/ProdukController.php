@@ -326,7 +326,7 @@ class ProdukController extends Controller
         if ($formIdentifier === 'form1') {
             // Validasi untuk form1
             $produk = $request->validate([
-                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10000',
                 'nama_produk' => 'required|string|max:255',
                 'teknis' => 'required|string|max:255',
                 'deskripsi' => 'required|string',
@@ -371,7 +371,7 @@ class ProdukController extends Controller
         if ($formIdentifier === 'form2') {
             // Validasi untuk form2
             $produk = $request->validate([
-                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10000',
                 'nama_produk' => 'required|string|max:255',
                 'jenis_pekerjaan' => 'required|string',
                 'kualifikasi' => 'required|string',
