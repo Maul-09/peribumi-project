@@ -70,36 +70,38 @@
             </div> --}}
             <hr class="garis-bawah">
             <h3 class="section-title">Ulasan dan Rating</h3>
-            <form action="{{ route('review.store') }}" method="POST" class="rating-form">
-                @csrf
-                <input type="hidden" name="booking_id" value="{{ $produk->id }}">
+            @if ($userProduk && $userProduk->pivot->status_transaksi === 'confirmed')
+                <form action="{{ route('review.store') }}" method="POST" class="rating-form">
+                    @csrf
+                    <input type="hidden" name="booking_id" value="{{ $produk->id }}">
 
-                <div class="rate">
-                    <input type="radio" id="star5" name="rating" value="5" />
-                    <label for="star5" title="5 stars">
-                        <i class="fa-regular fa-star"></i>
-                    </label>
-                    <input type="radio" id="star4" name="rating" value="4" />
-                    <label for="star4" title="4 stars">
-                        <i class="fa-regular fa-star"></i>
-                    </label>
-                    <input type="radio" id="star3" name="rating" value="3" />
-                    <label for="star3" title="3 stars">
-                        <i class="fa-regular fa-star"></i>
-                    </label>
-                    <input type="radio" id="star2" name="rating" value="2" />
-                    <label for="star2" title="2 stars">
-                        <i class="fa-regular fa-star"></i>
-                    </label>
-                    <input type="radio" id="star1" name="rating" value="1" />
-                    <label for="star1" title="1 star">
-                        <i class="fa-regular fa-star"></i>
-                    </label>
-                </div>
+                    <div class="rate">
+                        <input type="radio" id="star5" name="rating" value="5" />
+                        <label for="star5" title="5 stars">
+                            <i class="fa-regular fa-star"></i>
+                        </label>
+                        <input type="radio" id="star4" name="rating" value="4" />
+                        <label for="star4" title="4 stars">
+                            <i class="fa-regular fa-star"></i>
+                        </label>
+                        <input type="radio" id="star3" name="rating" value="3" />
+                        <label for="star3" title="3 stars">
+                            <i class="fa-regular fa-star"></i>
+                        </label>
+                        <input type="radio" id="star2" name="rating" value="2" />
+                        <label for="star2" title="2 stars">
+                            <i class="fa-regular fa-star"></i>
+                        </label>
+                        <input type="radio" id="star1" name="rating" value="1" />
+                        <label for="star1" title="1 star">
+                            <i class="fa-regular fa-star"></i>
+                        </label>
+                    </div>
 
-                <textarea name="comment" rows="4" placeholder="Tulis ulasan Anda" class="comment-box"></textarea>
-                <button type="submit" class="submit-btn">Kirim</button>
-            </form>
+                    <textarea name="comment" rows="4" placeholder="Tulis ulasan Anda" class="comment-box"></textarea>
+                    <button type="submit" class="submit-btn">Kirim</button>
+                </form>
+            @endif
             @if ($produk->reviewRatings->isEmpty())
                 <p class="no-reviews">Tidak ada ulasan yang tersedia.</p>
             @else
@@ -158,19 +160,20 @@
             <h5 id="modalProdukNama"></h5>
             <p><strong>Harga:</strong> <span id="modalHarga"></span></p>
             <p><strong>Durasi:</strong> <span id="modalDurasi"></span> Hari</p>
-    
+
             <h3>Konfirmasi Pembelian</h3>
             <p>Klik tombol di bawah ini untuk melanjutkan ke WhatsApp dan mengonfirmasi pembelian Anda:</p>
-            <form id="konfirmasiModalForm" action="{{ route('whatsapp.notice', $produk->id) }}" method="POST" style="display: none;">
+            <form id="konfirmasiModalForm" action="{{ route('whatsapp.notice', $produk->id) }}" method="POST"
+                style="display: none;">
                 @csrf
                 @method('post')
             </form>
             <label for="tanggalMulai">Tanggal Mulai:</label>
             <input type="date" id="tanggalMulai" name="tanggal_mulai" required />
-        
+
             <button id="whatsappLink" class="btn btn-success" target="_blank">Konfirmasi via WhatsApp</button>
             <a href="#" class="btn btn-danger" id="closeModalBtn">Batal</a>
         </div>
     </div>
-    
+
 </x-layout>
