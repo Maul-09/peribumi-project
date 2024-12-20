@@ -274,7 +274,11 @@ class ProdukController extends Controller
 
         $produk = Produk::findOrFail($id);
 
-        return view('user.index', ['product' => $orderedProduct], compact('produk', 'specialKeys'));
+        $userProduk = $produk->users()
+            ->wherePivot('produk_id', $id)
+            ->first();
+
+        return view('user.index', ['product' => $orderedProduct], compact('produk', 'specialKeys', 'userProduk'));
     }
     public function edit($id)
     {
