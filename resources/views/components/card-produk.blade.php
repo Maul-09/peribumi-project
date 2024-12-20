@@ -11,11 +11,16 @@
         <div class="wadah">
             <div class="product-container">
                 @foreach ($produkList as $item)
-                    <div class="product-card">
+                    <div class="product-card" style="list-style:none;">
                         <a href="{{ route('produk.show', $item->id) }}">
                             <img src="{{ asset($item->image) }}" alt="image">
                             <h3 class="product-name">{{ $item->nama_produk }}</h3>
-                            <p class="product-price">Harga: <br> {{ $item->harga }}</p>
+                            <span class="product-price" style="font-weight:700; color:grey;">Harga</span>
+                            <div style="display: flex; flex-direction: column;">
+                            @foreach (explode("\n", $item->harga) as $line)
+                                <span class="product-price">{{ $line }}</span>
+                            @endforeach
+                            </div>
 
                             <!-- Tampilkan Rata-rata Rating -->
                             <p class="rating">
