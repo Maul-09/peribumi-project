@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ProdukController extends Controller
 {
@@ -89,6 +90,7 @@ class ProdukController extends Controller
             if ($formIdentifier === 'form1') {
                 // Validasi untuk form1
                 $request->validate([
+                    'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
                     'nama_produk' => 'required|string|max:255',
                     'teknis' => 'required|string|max:65535',
                     'deskripsi' => 'required|string',
@@ -125,6 +127,7 @@ class ProdukController extends Controller
             if ($formIdentifier === 'form2') {
                 // Validasi untuk form2
                 $request->validate([
+                    'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
                     'nama_produk' => 'required|string|max:255',
                     'jenis_pekerjaan' => 'required|string|max:65535',
                     'kualifikasi' => 'required|string|max:65535',
@@ -318,7 +321,8 @@ class ProdukController extends Controller
 
         if ($formIdentifier === 'form1') {
             // Validasi untuk form1
-            $request->validate([
+            $produk = $request->validate([
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
                 'nama_produk' => 'required|string|max:255',
                 'teknis' => 'required|string|max:255',
                 'deskripsi' => 'required|string',
@@ -333,14 +337,37 @@ class ProdukController extends Controller
                 'produkType' => 'required|string',
                 'link' => 'nullable|url',
             ]);
-            $produk = Produk::findOrFail($id);
+            
+            $update = Produk::findOrFail($id);
+            if ($request->hasFile('image')) {
+                $destinationPath = public_path('produk');
+
+                if ($update->image && $update->image !== 'produk/default.jpg') {
+                    $oldImagePath = public_path($update->image);
+                    if (File::exists($oldImagePath)) {
+                        File::delete($oldImagePath);
+                    }
+                }
+    
+                // Buat folder jika belum ada
+                if (!File::exists($destinationPath)) {
+                    File::makeDirectory($destinationPath, 0755, true);
+                }
+
+    
+                // Pindahkan file dan simpan pathnya
+                $fileName = time() . '.' . $request->image->extension();
+                $request->image->move($destinationPath, $fileName);
+                $produk['image'] = 'produk/' . $fileName; // Simpan perubahan
+            }
             // Simpan data form2 ke database
-            $produk->update($request->all());
+            $update->update($produk);
         }
 
         if ($formIdentifier === 'form2') {
             // Validasi untuk form2
-            $request->validate([
+            $produk = $request->validate([
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
                 'nama_produk' => 'required|string|max:255',
                 'jenis_pekerjaan' => 'required|string',
                 'kualifikasi' => 'required|string',
@@ -353,10 +380,33 @@ class ProdukController extends Controller
                 'produkType' => 'required|string',
                 'link' => 'nullable|url',
             ]);
-            $produk = Produk::findOrFail($id);
-            // Simpan data form2 ke database
-            $produk->update($request->all());
+            
+            $update = Produk::findOrFail($id);
+            if ($request->hasFile('image')) {
+                $destinationPath = public_path('produk');
+
+                if ($update->image && $update->image !== 'produk/default.jpg') {
+                    $oldImagePath = public_path($update->image);
+                    if (File::exists($oldImagePath)) {
+                        File::delete($oldImagePath);
+                    }
+                }
+    
+                // Buat folder jika belum ada
+                if (!File::exists($destinationPath)) {
+                    File::makeDirectory($destinationPath, 0755, true);
+                }
+
+    
+                // Pindahkan file dan simpan pathnya
+                $fileName = time() . '.' . $request->image->extension();
+                $request->image->move($destinationPath, $fileName);
+                $produk['image'] = 'produk/' . $fileName; // Simpan perubahan
+            }
+            $update->update($produk);
         }
+
+        
 
         // // Buat array untuk menyimpan ID silabus baru
         // $silabusBaruIDs = [];
