@@ -90,7 +90,7 @@ class ProdukController extends Controller
             if ($formIdentifier === 'form1') {
                 // Validasi untuk form1
                 $request->validate([
-                    'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                    'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10000',
                     'nama_produk' => 'required|string|max:255',
                     'teknis' => 'required|string|max:65535',
                     'deskripsi' => 'required|string',
@@ -127,8 +127,10 @@ class ProdukController extends Controller
             if ($formIdentifier === 'form2') {
                 // Validasi untuk form2
                 $request->validate([
-                    'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                    'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10000',
                     'nama_produk' => 'required|string|max:255',
+                    'deskripsi' => 'required|string',
+                    'teknis' => 'required|string|max:65535',
                     'jenis_pekerjaan' => 'required|string|max:65535',
                     'ruang_lingkup' => 'required|string|max:65535',
                     'klasifikasi' => 'required|string|max:65535',
@@ -142,6 +144,8 @@ class ProdukController extends Controller
                 // Simpan data form2 ke database
                 $produk = Produk::create($request->only([
                     'nama_produk',
+                    'teknis',
+                    'deskripsi',
                     'jenis_pekerjaan',
                     'ruang_lingkup',
                     'klasifikasi',

@@ -52,7 +52,7 @@
                                                 required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="deskripsi" class="form-label">Deskripsi Singkat:</label>
+                                            <label for="deskripsi" class="form-label">Deskripsi:</label>
                                             <input name="deskripsi" id="deskripsi" value="{{ old('deskripsi') }}" class="form-control" required>
                                         </div>
 
@@ -139,6 +139,17 @@
                                             <label for="nama_produk" class="form-label">Nama:</label>
                                             <input type="text" name="nama_produk" id="nama_produk" value="{{ old('nama_produk') }}"
                                                 class="form-control" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="teknis" class="form-label">Teknis:</label>
+                                            <input type="text" name="teknis" id="teknis" class="form-control" value="{{ old('teknis') }}"
+                                                required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="deskripsi" class="form-label">Deskripsi:</label>
+                                            <input name="deskripsi" id="deskripsi" value="{{ old('deskripsi') }}" class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
