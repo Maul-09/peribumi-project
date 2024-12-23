@@ -92,7 +92,7 @@ class AdminController extends Controller
 
     public function manajemenAdmin()
     {
-        $kat = ['Pra Eksis', 'Eksis', 'Pasca Eksis'];
+        $kat = ['Proses Bisnis', 'Sistem Manajemen Bisnis', 'Inkubasi Bisnis'];
 
         session(['kategori' => $kat, 'route' => 'manajemen.admin', 'formNumber' => '2']);
 

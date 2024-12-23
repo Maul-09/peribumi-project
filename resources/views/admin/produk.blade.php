@@ -153,12 +153,6 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="jenis_pekerjaan" class="form-label">Jenis Pekerjaan:</label>
-                                            <textarea type="text" name="jenis_pekerjaan" id="jenis_pekerjaan" class="form-control"
-                                                required>{{ old('jenis_pekerjaan') }}</textarea>
-                                        </div>
-
-                                        <div class="form-group">
                                             <label for="klasifikasi" class="form-label">Klasifikasi:</label>
                                             <textarea name="klasifikasi" id="klasifikasi" class="form-control" required>{{ old('klasifikasi') }}</textarea>
                                         </div>
