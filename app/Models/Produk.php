@@ -20,6 +20,7 @@ class Produk extends Model
         'klasifikasi',
         'lembaga',
         'kategori',
+        'tahapan',
         'persyaratan',
         'metodologi',
         'sasaran',

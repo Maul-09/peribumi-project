@@ -146,10 +146,6 @@
                                             <textarea type="text" name="jenis_pekerjaan" id="jenis_pekerjaan" class="form-control"
                                                 required>{{ old('jenis_pekerjaan') }}</textarea>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="kualifikasi" class="form-label">Kualifikasi:</label>
-                                            <textarea name="kualifikasi" id="kualifikasi" class="form-control" required>{{ old('kualifikasi') }}</textarea>
-                                        </div>
 
                                         <div class="form-group">
                                             <label for="ruang_lingkup" class="form-label">Ruang Lingkup:</label>
@@ -169,18 +165,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="lembaga" class="form-label">Lembaga:</label>
-                                            <textarea name="lembaga" id="lembaga" class="form-control" required>{{ old('lembaga') }}</textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="kategori" class="form-label">Kategori:</label>
-                                            <textarea name="kategori" id="kategori" class="form-control" required>{{ old('kategori') }}</textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="highlight" class="form-label">Highlight:</label>
-                                            <textarea name="highlight" id="highlight" class="form-control" required>{{ old('highlight') }}</textarea>
+                                            <label for="tahapan" class="form-label">Tahapan:</label>
+                                            <textarea name="tahapan" id="tahapan" class="form-control" required>{{ old('tahapan') }}</textarea>
                                         </div>
 
                                         <div class="form-group">

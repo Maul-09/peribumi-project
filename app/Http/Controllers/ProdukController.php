@@ -130,13 +130,10 @@ class ProdukController extends Controller
                     'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
                     'nama_produk' => 'required|string|max:255',
                     'jenis_pekerjaan' => 'required|string|max:65535',
-                    'kualifikasi' => 'required|string|max:65535',
                     'ruang_lingkup' => 'required|string|max:65535',
                     'klasifikasi' => 'required|string|max:65535',
                     'durasi' => 'integer|string|max:65535',
-                    'lembaga' => 'required|string|max:65535',
-                    'kategori' => 'required|string|max:65535',
-                    'highlight' => 'required|string|max:65535',
+                    'tahapan' => 'required|string|max:65535',
                     'harga' => 'required|string|max:65535',
                     'produkType' => 'required|string',
                     'link' => 'nullable|url',
@@ -146,13 +143,10 @@ class ProdukController extends Controller
                 $produk = Produk::create($request->only([
                     'nama_produk',
                     'jenis_pekerjaan',
-                    'kualifikasi',
                     'ruang_lingkup',
                     'klasifikasi',
                     'durasi',
-                    'lembaga',
-                    'kategori',
-                    'highlight',
+                    'tahapan',
                     'harga',
                     'produkType',
                     'link'
@@ -235,7 +229,8 @@ class ProdukController extends Controller
             'lembaga',
             'ruang_lingkup',
             'klasifikasi',
-            'kategori'
+            'kategori',
+            'tahapan',
         ];
 
         $filteredProduct = array_filter($product->toArray(), function ($value, $key) {
@@ -262,6 +257,7 @@ class ProdukController extends Controller
             'lembaga',
             'highlight',
             'harga',
+            'tahapan',
         ];
 
         // Atur urutan berdasarkan yang diinginkan dan pastikan kolom dengan nilai null tidak muncul
