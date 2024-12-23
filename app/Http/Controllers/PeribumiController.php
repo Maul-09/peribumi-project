@@ -14,7 +14,7 @@ class PeribumiController extends Controller
 
     public function manajemen()
     {
-        $kat = ['Pra Eksis', 'Eksis', 'Pasca Eksis'];
+        $kat = ['Proses Bisnis', 'Sistem Manajemen Bisnis', 'Inkubasi Bisnis'];
 
         session(['kategori' => $kat, 'route' => 'manajemen']);
 
@@ -23,7 +23,7 @@ class PeribumiController extends Controller
 
     public function training()
     {
-        $kat = ['Spesifik (Okupasi)', 'Generik (Cluster)', 'Tematik (Bimtek)'];
+        $kat = ['Spesifik (Okupasi)', 'Generik (Klaster)', 'Tematik (Bimtek)'];
 
         session(['kategori' => $kat, 'route' => 'training']);
 

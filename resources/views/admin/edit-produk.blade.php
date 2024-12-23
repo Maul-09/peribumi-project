@@ -101,7 +101,7 @@
                                         <div class="form-group">
                                             <label for="kategori">Pilihan Kategori:</label>
                                             <select name="produkType" id="produkType" class="select-control">
-                                                <option value="">Pilihan Kategori</option>
+                                                <option value="{{ $produk->produkType }}">Pilihan Kategori</option>
                                                 @foreach ($kategori as $kat)
                                                     <option value="{{ $kat }}"
                                                         {{ $kat == $produk->produkType ? 'selected' : '' }}>
@@ -145,13 +145,19 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="jenis_pekerjaan" class="form-label">Jenis Pekerjaan:</label>
-                                            <textarea type="text" name="jenis_pekerjaan" id="jenis_pekerjaan" class="form-control"
-                                                required>{{ $produk->jenis_pekerjaan }}</textarea>
+                                            <label for="teknis" class="form-label">Teknis:</label>
+                                            <input type="text" name="teknis" id="teknis" class="form-control" value="{{ $produk->teknis }}"
+                                                required>
                                         </div>
+
                                         <div class="form-group">
-                                            <label for="kualifikasi" class="form-label">Kualifikasi:</label>
-                                            <textarea name="kualifikasi" id="kualifikasi" class="form-control" required>{{ $produk->kualifikasi }}</textarea>
+                                            <label for="deskripsi" class="form-label">Deskripsi:</label>
+                                            <input name="deskripsi" id="deskripsi" value="{{ $produk->deskripsi }}" class="form-control" required>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="klasifikasi" class="form-label">Klasifikasi:</label>
+                                            <textarea name="klasifikasi" id="klasifikasi" class="form-control" required>{{ $produk->klasifikasi }}</textarea>
                                         </div>
 
                                         <div class="form-group">
@@ -160,28 +166,20 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="klasifikasi" class="form-label">Klasifikasi:</label>
-                                            <textarea name="klasifikasi" id="klasifikasi" class="form-control" required>{{ $produk->klasifikasi }}</textarea>
-                                        </div>
-
-                                        <div class="form-group">
                                             <label for="durasi" class="form-label">durasi:</label>
-                                            <textarea name="durasi" id="durasi" class="form-control" required>{{ $produk->durasi }}</textarea>
+                                            <div style="display: flex; align-items: center;">
+                                                <input type="number" name="durasi" id="durasi" placeholder="" value="{{ $produk->durasi }}" class="form-control" required><span style="border: 1px solid #ccc; padding: 0.75em 2em; border-radius: 5px; font-family: Arial, sans-serif; font-weight: bold;">Hari</span>
+                                            </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="lembaga" class="form-label">Lembaga:</label>
-                                            <textarea name="lembaga" id="lembaga" class="form-control" required>{{ $produk->lembaga }}</textarea>
+                                            <label for="persyaratan" class="form-label">Persyaratan:</label>
+                                            <textarea name="persyaratan" id="persyaratan" class="form-control" required>{{ $produk->persyaratan }}</textarea>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="kategori" class="form-label">Kategori:</label>
-                                            <textarea name="kategori" id="kategori" class="form-control" required>{{ $produk->kategori }}</textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="highlight" class="form-label">Highlight:</label>
-                                            <textarea name="highlight" id="highlight" class="form-control" required>{{ $produk->highlight }}</textarea>
+                                            <label for="tahapan" class="form-label">Tahapan:</label>
+                                            <textarea name="tahapan" id="tahapan" class="form-control" required>{{ $produk->tahapan }}</textarea>
                                         </div>
 
                                         <div class="form-group">
@@ -189,10 +187,11 @@
                                             <textarea name="harga" id="harga" class="form-control" required>{{ $produk->harga }}</textarea>
                                         </div>
 
+
                                         <div class="form-group">
                                             <label for="kategori">Pilihan Kategori:</label>
                                             <select name="produkType" id="produkType" class="select-control">
-                                                <option value="">Pilihan Kategori</option>
+                                                <option value="{{ $produk->produkType }}">Pilihan Kategori</option>
                                                 @foreach ($kategori as $kat)
                                                     <option value="{{ $kat }}"
                                                         {{ $kat == $produk->produkType ? 'selected' : '' }}>
