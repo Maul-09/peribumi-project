@@ -1,5 +1,5 @@
 .full-screen {
-    padding: 50px 150px;
+    padding: 3em 8em;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -9,68 +9,69 @@
 /*---------------- Title Produk --------------------- */
 
 .container {
-    width: 900px;
-    margin: 0 15px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 56.25em; /* 900px */
+    margin: 0 1em;
+    padding: 1.25em;
+    border: 0.063em solid #ddd;
+    border-radius: 0.625em;
+    box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
 }
 
 .produk-header {
     text-align: center;
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
 }
 
 .produk-title {
-    font-size: 24px;
-    color: #2c3e50;
+    font-size: 1.5em;
+    color: var(--skin-color-1);
+    font-weight: 750;
     text-transform: uppercase;
-    margin-bottom: 15px;
+    margin-bottom: 0.938em;
 }
 
 .produk-image {
     width: 100%;
-    max-height: 300px;
+    max-height: 18.75em;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 0.625em;
 }
 
 .section-title {
-    font-size: 24px;
+    font-size: 1.5em;
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--skin-color-1);
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.063em;
 }
 
 .produk-details {
-    max-width: 800px;
+    max-width: 50em;
     margin: 0;
 }
 
 .detail-item {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
-    padding: 10px 15px;
+    margin-bottom: 1.25em;
+    padding: 0.625em 0.938em;
 }
 
 .detail-label {
-    font-size: 16px;
+    font-size: 1em;
     font-weight: bold;
     color: #34495e;
-    margin-bottom: 8px;
+    margin-bottom: 0.5em;
     text-transform: capitalize;
 }
 
 .detail-value {
-    font-size: 16px;
-    color: #7f8c8d;
+    font-size: 1em;
+    color: #545454;
     word-wrap: break-word;
 }
 
@@ -83,10 +84,10 @@
 }
 
 .silabus-item {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 0.063em solid #ccc;
+    border-radius: 0.5em;
+    margin-bottom: 0.938em;
+    box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -96,11 +97,11 @@
     justify-content: space-between;
     align-items: center;
     background: #fff;
-    padding: 15px 20px;
+    padding: 0.938em 1.25em;
     cursor: pointer;
     color: #000;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.2em;
     transition: background 0.3s ease;
 }
 
@@ -110,15 +111,15 @@
 }
 
 .silabus-toggle i {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     transition: transform 0.3s ease, color 0.3s ease;
     color: #5c5b5b;
 }
 
 .silabus-content {
-    padding: 15px 20px;
+    padding: 0.938em 1.25em;
     background-color: #f9f9f9;
-    border-top: 1px solid #ddd;
+    border-top: 0.063em solid #ddd;
     display: none;
     transition: max-height 0.3s ease, padding 0.3s ease;
 }
@@ -128,213 +129,48 @@
 }
 
 .silabus-desc {
-    margin-bottom: 15px;
+    margin-bottom: 0.938em;
     color: #555;
-    font-size: 1rem;
+    font-size: 1em;
     line-height: 1.5;
 }
 
-.detail-label {
-    font-weight: bold;
-    color: #333;
-}
-
-.isi-silabus-list {
-    margin-top: 15px;
-}
-
 .isi-silabus-item {
-    margin-bottom: 15px;
-    padding: 10px;
-    border-left: 3px solid #a6a1a1;
+    margin-bottom: 0.938em;
+    padding: 0.625em;
+    border-left: 0.188em solid #a6a1a1;
     background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.isi-silabus-item p {
-    margin: 0 0 5px;
-    font-size: 0.95rem;
-}
-
-.isi-silabus-item p strong {
-    color: #a6a1a1;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.isi-silabus-list h5 {
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.isi-silabus-item p {
-    margin: 5px 0;
-    color: #555;
-    font-size: 14px;
+    border-radius: 0.25em;
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.05);
 }
 
 .garis-bawah {
-    width: 50%;
-    margin-bottom: 30px;
-    margin-top: 30px;
-}
-
-/*---------------- Rating dan Comment --------------------- */
-
-.rate {
-    display: flex;
-    justify-content: center;
-    flex-direction: row-reverse;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.rate input[type="radio"] {
-    display: none;
-}
-
-.rate label {
-    font-size: 30px;
-    cursor: pointer;
-    color: #ccc;
-    transition: color 0.3s;
-    width: fit-content;
-}
-
-.rate label:hover ~ label,
-.rate label:hover {
-    color: #f39c12;
-}
-
-.rate input:checked ~ label {
-    color: #f39c12;
-}
-
-.comment-box {
-    width: 95%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    resize: none;
-}
-
-.submit-btn {
-    background-color: #2980b9;
-    color: white;
-    padding: 15px 20px;
-    margin-bottom: 40px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.submit-btn:hover {
-    background-color: #1abc9c;
-}
-
-.section-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #34495e;
-    margin-bottom: 20px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    width: 100%;
+    margin: 2em 0;
 }
 
 /*---------------- Review Collom --------------------- */
 
 .no-reviews {
     text-align: center;
-    font-size: 16px;
+    font-size: 1em;
     color: #7f8c8d;
     font-style: italic;
-    margin-top: 20px;
-}
-
-.review-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-
-.review-item {
-    background: #f9f9f9;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    position: relative;
-    max-width: 1200px;
-}
-
-.review-item strong {
-    font-size: 18px;
-    color: #2c3e50;
-    margin-right: 10px;
-}
-
-.review-stars i {
-    color: #f39c12;
-    margin-right: 2px;
-    font-size: 16px;
-}
-
-.review-item p {
-    font-size: 14px;
-    color: #7f8c8d;
-    margin: 10px 0 0;
-}
-
-.review-item em {
-    font-size: 12px;
-    color: #bdc3c7;
-    display: block;
-    margin-top: 5px;
-    text-align: right;
-    font-style: normal;
-}
-
-.review-item:hover {
-    background: #f1f1f1;
-    transform: translateY(-2px);
-    transition: 0.3s ease-in-out;
+    margin-top: 1.25em;
 }
 
 /*---------------- Card harga --------------------- */
 
 .card-harga {
     position: sticky;
-    top: 50px;
+    top: 3.125em;
     background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
-    margin-right: auto;
-    margin-left: 0;
-    width: 250px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-height: auto;
-    align-self: flex-start;
+    border: 0.063em solid #ddd;
+    border-radius: 0.625em;
+    padding: 0.938em;
+    width: 25%;
+    max-height: 22em;
+    box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1);
 }
 
 .image-card {
@@ -353,7 +189,7 @@
 .detail-label {
     font-size: 1rem;
     font-weight: bold;
-    color: #555;
+    color: #242424;
     margin-bottom: 8px;
 }
 
@@ -389,7 +225,23 @@
     border-radius: 50%;
 }
 
-@media (max-width: 480px) {
+
+@media only screen and (max-width: 1280px) and (min-width: 1024px){
+    .full-screen {
+        padding: 4em;
+    }
+
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+
+}
+
+@media only screen and (max-width: 768px) and (min-width: 480px){
+
+}
+
+@media only screen and (max-width: 480px) {
     .review-list {
         max-width: 400px;
         margin-top: 20px;

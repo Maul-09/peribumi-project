@@ -24,7 +24,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
-    width: 280px;
+    width: 260px;
     text-align: center;
 }
 
@@ -45,14 +45,14 @@
 
 .product-name {
     text-transform: uppercase;
-    font-size: 1.1rem;
+    font-size: 0.95em;
     font-weight: bold;
     color: #333;
     margin: 15px 0 5px;
 }
 
 .product-price {
-    font-size: 1rem;
+    font-size: 0.85rem;
     color: #888;
     margin: 5px 0;
 }
@@ -176,8 +176,8 @@
 
 .rating {
     display: flex;
-    gap: 4px;
-    margin: 20px 0;
+    gap: 2px;
+    margin: 15px 0;
     justify-content: center;
 }
 
