@@ -24,10 +24,6 @@ Route::middleware('auth')->group(function () {
         Route::post('/edit/profile/delete{id}', [CrudController::class, 'deleteAccount'])->name('deleteAccount');
         Route::post('/edit/profile/update{id}', [CrudController::class, 'update'])->name('update.profile');
         Route::delete('/edit/profile/delete-image/{id}', [CrudController::class, 'deleteImageProfle'])->name('delete.image.profile');
-        Route::get('/forgot-password', [CrudController::class, 'forgotView'])->name('password.request');
-        Route::post('/forgot-password', [CrudController::class, 'forgotSend'])->name('password.email');
-        Route::get('/reset-password/{token}', [CrudController::class, 'forgotHandler'])->name('password.reset');
-        Route::post('/reset-password', [CrudController::class, 'forgotUpdate'])->name('password.update');
         Route::get('/produk/{id}', [ProdukController::class, 'show'])->name('produk.show');
         Route::get('/produk/user/{id}', [ProdukController::class, 'produkUser'])->name('produk.user');
         // Route::post('/restore-user', [CrudController::class, 'restoreByEmail'])->name('restore.user');
@@ -79,6 +75,10 @@ Route::get('/auth/register', [AuthController::class, 'register'])->name('registe
 Route::post('/signin', [AuthController::class, 'signin'])->name('signin');
 Route::get('/auth/login', [PeribumiController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/forgot-password', [CrudController::class, 'forgotView'])->name('password.request');
+Route::post('/forgot-password', [CrudController::class, 'forgotSend'])->name('password.email');
+Route::get('/reset-password/{token}', [CrudController::class, 'forgotHandler'])->name('password.reset');
+Route::post('/reset-password', [CrudController::class, 'forgotUpdate'])->name('password.update');
 
 Route::get('/lms', [LmsController::class, 'lmshome'])->name('lmshome');
 Route::get('/lms/course', [LmsController::class, 'lmscourse'])->name('lmscourse');

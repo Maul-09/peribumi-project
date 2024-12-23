@@ -52,7 +52,7 @@
                                                 required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="deskripsi" class="form-label">Deskripsi Singkat:</label>
+                                            <label for="deskripsi" class="form-label">Deskripsi:</label>
                                             <input name="deskripsi" id="deskripsi" value="{{ old('deskripsi') }}" class="form-control" required>
                                         </div>
 
@@ -142,13 +142,20 @@
                                         </div>
 
                                         <div class="form-group">
+                                            <label for="teknis" class="form-label">Teknis:</label>
+                                            <input type="text" name="teknis" id="teknis" class="form-control" value="{{ old('teknis') }}"
+                                                required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="deskripsi" class="form-label">Deskripsi:</label>
+                                            <input name="deskripsi" id="deskripsi" value="{{ old('deskripsi') }}" class="form-control" required>
+                                        </div>
+
+                                        <div class="form-group">
                                             <label for="jenis_pekerjaan" class="form-label">Jenis Pekerjaan:</label>
                                             <textarea type="text" name="jenis_pekerjaan" id="jenis_pekerjaan" class="form-control"
                                                 required>{{ old('jenis_pekerjaan') }}</textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="kualifikasi" class="form-label">Kualifikasi:</label>
-                                            <textarea name="kualifikasi" id="kualifikasi" class="form-control" required>{{ old('kualifikasi') }}</textarea>
                                         </div>
 
                                         <div class="form-group">
@@ -169,18 +176,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="lembaga" class="form-label">Lembaga:</label>
-                                            <textarea name="lembaga" id="lembaga" class="form-control" required>{{ old('lembaga') }}</textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="kategori" class="form-label">Kategori:</label>
-                                            <textarea name="kategori" id="kategori" class="form-control" required>{{ old('kategori') }}</textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="highlight" class="form-label">Highlight:</label>
-                                            <textarea name="highlight" id="highlight" class="form-control" required>{{ old('highlight') }}</textarea>
+                                            <label for="tahapan" class="form-label">Tahapan:</label>
+                                            <textarea name="tahapan" id="tahapan" class="form-control" required>{{ old('tahapan') }}</textarea>
                                         </div>
 
                                         <div class="form-group">

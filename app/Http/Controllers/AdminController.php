@@ -92,7 +92,7 @@ class AdminController extends Controller
 
     public function manajemenAdmin()
     {
-        $kat = ['Pengembangan (Inkubasi) Bisnis', 'Pendampingan Manajemen Bisnis'];
+        $kat = ['Pra Eksis', 'Eksis', 'Pasca Eksis'];
 
         session(['kategori' => $kat, 'route' => 'manajemen.admin', 'formNumber' => '2']);
 
@@ -101,7 +101,7 @@ class AdminController extends Controller
 
     public function trainingAdmin()
     {
-        $kat = ['Pelatihan Calon Tenaga Kerja', 'Pelatihan Tenaga Kerja (Profesi)'];
+        $kat = ['Spesifik (Okupasi)', 'Generik (Cluster)', 'Tematik (Bimtek)'];
 
         session(['kategori' => $kat, 'route' => 'training.admin', 'formNumber' => '1']);
 
@@ -110,7 +110,7 @@ class AdminController extends Controller
 
     public function digitalAdmin()
     {
-        $kat = ['Software/Aplikasi/Website', 'Artificial Intelegence'];
+        $kat = ['Perangkat Keras (Hardware)', 'Perangkat Lunak (Software)', 'Kecerdasan Buatan (Artificial Intelligence)'];
 
         session(['kategori' => $kat, 'route' => 'digital.admin', 'formNumber' => '2']);
 
@@ -119,7 +119,7 @@ class AdminController extends Controller
 
     public function personalAdmin()
     {
-        $kat = ['Individu', 'Kelompok'];
+        $kat = ['Pembinaan (Coaching)', 'Penyuluhan (Counseling)', 'Pembentukan (Building)'];
 
         session(['kategori' => $kat, 'route' => 'personal.admin', 'formNumber' => '1']);
 
@@ -128,7 +128,7 @@ class AdminController extends Controller
 
     public function organizerAdmin()
     {
-        $kat = ['MICE & Travel Vacation', 'Wedding & Integrated Event'];
+        $kat = ['MICE', 'Vacation', 'Promotion'];
 
         session(['kategori' => $kat, 'route' => 'organizer.admin', 'formNumber' => '2']);
 

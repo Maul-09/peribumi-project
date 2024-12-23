@@ -114,8 +114,8 @@
                                         <div class="form-group">
                                             <label for="link" class="form-label">Masukkan Link:</label>
                                             <div class="input-group">
-                                                <input type="url" name="link" id="link"
-                                                    class="form-control link-input" placeholder="https://contoh.com">
+                                                <input type="url" name="link" id="link" value="{{ $produk->link }}"
+                                                    class="form-control link-input" placeholder="https://contoh.com" >
                                                 <button type="button" class="btn-small"
                                                     onclick="previewLink()">Preview</button>
                                             </div>
@@ -205,7 +205,7 @@
                                         <div class="form-group">
                                             <label for="link" class="form-label">Masukkan Link:</label>
                                             <div class="input-group">
-                                                <input type="url" name="link" id="link"
+                                                <input type="url" name="link" id="link" value="{{ $produk->link }}"
                                                     class="form-control link-input" placeholder="https://contoh.com">
                                                 <button type="button" class="btn-small"
                                                     onclick="previewLink()">Preview</button>

@@ -31,6 +31,8 @@
     <script src="{{ asset('js/nav.js') }}"></script>
     <script src="{{ asset('js/product.js') }}"></script>
     <script src="{{ asset('js/modalkonfirmasi.js') }}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/js/jquery.mousewheel.js"></script>
 </body>
 
 </html>

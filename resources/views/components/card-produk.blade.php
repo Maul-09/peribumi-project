@@ -8,11 +8,11 @@
     @if ($produkList->isEmpty())
         <p class="no-produk">Tidak ada produk dalam kategori ini.</p>
     @else
-        <div class="wadah">
+        <div class="wadah" id="wadah">
             <div class="product-container">
                 @foreach ($produkList as $item)
-                    <a href="{{ route('produk.show', $item->id) }}">
-                        <div class="product-card" style="list-style:none;">
+                    <div class="product-card" style="list-style:none;">
+                        <a href="{{ route('produk.show', $item->id) }}">
                             <img src="{{ asset($item->image) }}" alt="image">
                             <h3 class="product-name">{{ $item->nama_produk }}</h3>
                             <span class="product-price" style="font-weight:700; color:grey;">Harga</span>
@@ -59,8 +59,8 @@
                                         onclick="showPopup(this.form)">Hapus</button>
                                 </form>
                             @endif
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 @endforeach
             </div>
             <div id="delete-popup" class="popup-overlay">
