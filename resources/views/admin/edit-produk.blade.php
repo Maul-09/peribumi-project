@@ -101,7 +101,7 @@
                                         <div class="form-group">
                                             <label for="kategori">Pilihan Kategori:</label>
                                             <select name="produkType" id="produkType" class="select-control">
-                                                <option value="">Pilihan Kategori</option>
+                                                <option value="{{ $produk->produkType }}">Pilihan Kategori</option>
                                                 @foreach ($kategori as $kat)
                                                     <option value="{{ $kat }}"
                                                         {{ $kat == $produk->produkType ? 'selected' : '' }}>
@@ -191,7 +191,7 @@
                                         <div class="form-group">
                                             <label for="kategori">Pilihan Kategori:</label>
                                             <select name="produkType" id="produkType" class="select-control">
-                                                <option value="">Pilihan Kategori</option>
+                                                <option value="{{ $produk->produkType }}">Pilihan Kategori</option>
                                                 @foreach ($kategori as $kat)
                                                     <option value="{{ $kat }}"
                                                         {{ $kat == $produk->produkType ? 'selected' : '' }}>

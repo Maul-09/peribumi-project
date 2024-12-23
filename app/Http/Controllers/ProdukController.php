@@ -375,7 +375,6 @@ class ProdukController extends Controller
                 'nama_produk' => 'required|string|max:255',
                 'deskripsi' => 'required|string',
                 'teknis' => 'required|string|max:65535',
-                'jenis_pekerjaan' => 'required|string|max:65535',
                 'ruang_lingkup' => 'required|string|max:65535',
                 'klasifikasi' => 'required|string|max:65535',
                 'durasi' => 'integer|string|max:65535',
