@@ -159,13 +159,13 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="ruang_lingkup" class="form-label">Ruang Lingkup:</label>
-                                            <textarea name="ruang_lingkup" id="ruang_lingkup" class="form-control" required>{{ old('ruang_lingkup') }}</textarea>
+                                            <label for="klasifikasi" class="form-label">Klasifikasi:</label>
+                                            <textarea name="klasifikasi" id="klasifikasi" class="form-control" required>{{ old('klasifikasi') }}</textarea>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="klasifikasi" class="form-label">Klasifikasi:</label>
-                                            <textarea name="klasifikasi" id="klasifikasi" class="form-control" required>{{ old('klasifikasi') }}</textarea>
+                                            <label for="ruang_lingkup" class="form-label">Ruang Lingkup:</label>
+                                            <textarea name="ruang_lingkup" id="ruang_lingkup" class="form-control" required>{{ old('ruang_lingkup') }}</textarea>
                                         </div>
                                         
                                         <div class="form-group">
@@ -173,6 +173,11 @@
                                             <div style="display: flex; align-items: center;">
                                                 <input type="number" name="durasi" id="durasi" placeholder="" value="{{ old('durasi') }}" class="form-control" required><span style="border: 1px solid #ccc; padding: 0.75em 2em; border-radius: 5px; font-family: Arial, sans-serif; font-weight: bold;">Hari</span>
                                             </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="persyaratan" class="form-label">Persyaratan:</label>
+                                            <textarea name="persyaratan" id="persyaratan" class="form-control" required>{{ old('persyaratan') }}</textarea>
                                         </div>
 
                                         <div class="form-group">
