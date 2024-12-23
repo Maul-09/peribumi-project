@@ -1,5 +1,5 @@
 footer {
-    padding: 0 4em;
+    padding: 0 5em;
 }
 
 footer h3 {
@@ -37,7 +37,7 @@ footer hr {
 
 .about-foot {
     color: #fff;
-    padding: 0.63em;
+    padding: 0;
     max-width: 30%;
 }
 
@@ -215,6 +215,10 @@ footer hr {
     .con {
         justify-content: space-between;
     }
+
+    .tm {
+        font-size: 0.7em;
+    }
 }
 
 @media only screen and (max-width: 768px) and (min-width: 480px) {
@@ -224,151 +228,160 @@ footer hr {
 
     footer h3 {
         font-size: 1em;
-        margin-bottom: 1em;
     }
 
-    footer .title-foot {
-        padding: 1.25em;
-        flex-direction: column;
+    .title-foot{
+        display: flex;
         align-items: center;
+        gap: 0.4em;
+        padding: 1.3em;
+        justify-content: center;
     }
-
-    footer .title-foot img {
+    .title-foot img{
         width: 3em;
     }
 
-    footer .title-foot h2 {
-        font-size: 1.1em;
-    }
-
-    footer .produk-foot {
-        text-align: center;
-    }
-
-    footer .media-foot {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    footer .produk-foot ul li a {
-        font-size: 0.85em;
-    }
-
-    footer .media-foot .media-social i {
-        font-size: 1.5em;
-    }
-
-    footer .media-foot .media-social span {
+    .title-foot h2{
         font-size: 1em;
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
     }
 
-    footer .con {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    .produk-foot{
+        max-width: 12em;
     }
 
-    footer .tm {
-        font-size: 0.75em;
-    }
-
-    footer .about-foot {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    footer .about-foot p {
-        font-size: 0.9em;
-    }
-
-    footer .maps {
-        margin: auto;
-        border: none;
-        max-width: 100%;
-        margin-top: 1em;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    footer {
-        padding: 0 1.25em;
-    }
-
-    footer h3 {
-        font-size: 0.9em;
-    }
-
-    footer .title-foot {
-        flex-direction: column;
-        gap: 0.5em;
-        padding: 1em;
-    }
-
-    footer .title-foot img {
-        width: 2.5em;
-    }
-
-    footer .title-foot h2 {
-        font-size: 0.9em;
-    }
-
-    footer .produk-foot {
-        text-align: center;
-    }
-
-    footer .media-foot {
+    .media-foot{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
 
-    footer .produk-foot ul li a {
-        font-size: 0.7em;
+    .produk-foot ul li a {
+        font-size: 0.85em;
     }
 
-    footer .media-foot .media-social i {
-        font-size: 1.2em;
+    .media-foot .media-social i{
+        font-size: 1.3em;
     }
 
-    footer .media-foot .media-social span {
-        font-size: 0.7em;
+    .media-foot .media-social span{
+        font-size: 0.95em;
+        transition: 0.5s ease;
         display: flex;
         justify-content: center;
         flex-direction: column;
     }
 
-    footer .con {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    footer .tm {
-        font-size: 0.6em;
-    }
-
-    footer .about-foot {
+    .con{
         display: flex;
+        flex-wrap: wrap;
+        margin: 0 0.5em;
+    }
+
+    .tm{
+        font-size: 10px;
+    }
+    .about-foot{
+        display: flex;
+        max-width: 100%;
         justify-content: center;
-        align-items: center;
         flex-direction: column;
+        align-items: center;
+
     }
 
-    footer .about-foot p {
-        font-size: 0.7em;
+    .about-foot p {
+        font-size: 0.95em;
+        margin: 0 1em 0.5em;
     }
 
-    footer .maps {
+    .maps{
         margin: auto;
         border: none;
         max-width: 100%;
-        margin-top: 1em;
+        margin-top: 20px;
     }
+}
+
+@media only screen and (max-width: 480px) {
+    footer {
+        padding: 0 0.3em;
+    }
+
+    footer h3 {
+        font-size: 0.92em;
+    }
+
+    .title-foot{
+        display: flex;
+        align-items: center;
+        gap: 0.4em;
+        padding: 1.3em;
+        justify-content: center;
+    }
+    .title-foot img{
+        width: 3em;
+    }
+
+    .title-foot h2{
+        font-size: 1em;
+    }
+
+    .produk-foot{
+        text-align: end;
+        max-width: 10em;
+    }
+
+    .media-foot{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .produk-foot ul li a {
+        font-size: 0.75em;
+    }
+
+    .media-foot .media-social i{
+        font-size: 1.3em;
+    }
+
+    .media-foot .media-social span{
+        font-size: 0.75em;
+        transition: 0.5s ease;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .con{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 0.5em;
+        flex-direction: row-reverse;
+    }
+
+    .tm{
+        font-size: 10px;
+    }
+    .about-foot{
+        display: flex;
+        max-width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .about-foot p {
+        font-size: 0.85em;
+        margin: 0 0.7em 0.5em;
+    }
+
+    .maps{
+        margin: auto;
+        border: none;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
 }
