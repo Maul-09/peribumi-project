@@ -177,47 +177,82 @@ footer hr {
 
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
     footer {
-        padding: 0;
+        padding: 0 2em;
     }
 
-    footer h3{
-        font-size: 0.75em;
+    footer h3 {
+        font-size: 1.1em;
     }
 
-    .title-foot img {
-        width: 3.5em;
+    .title-foot{
+        display: flex;
+        align-items: center;
+        gap: 0.4em;
+        padding: 1.3em;
+        justify-content: center;
+    }
+    .title-foot img{
+        width: 3em;
     }
 
-    .title-foot h2 {
-        font-size: 0.95em;
-    }
-
-    .about-foot p {
-        font-size: 0.65em;
-    }
-
-    .produk-foot ul li a {
-        font-size: 0.65em;
-    }
-
-    .produk-foot {
-        max-width: 9em;
-    }
-
-    .media-foot .media-social i {
+    .title-foot h2{
         font-size: 1em;
     }
 
-    .media-foot .media-social span {
+    .produk-foot{
+        max-width: 12em;
+    }
+
+    .media-foot{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .produk-foot ul li a {
+        font-size: 0.9em;
+    }
+
+    .media-foot .media-social i{
+        font-size: 1.3em;
+    }
+
+    .media-foot .media-social span{
+        font-size: 0.95em;
+        transition: 0.5s ease;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .con{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 0.5em;
+    }
+
+    .tm{
         font-size: 0.65em;
     }
+    .about-foot{
+        display: flex;
+        max-width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
 
-    .con {
-        justify-content: space-between;
     }
 
-    .tm {
-        font-size: 0.7em;
+    .about-foot p {
+        font-size: 1em;
+        margin: 0 0.5em 0.5em;
+    }
+
+    .maps{
+        margin: auto;
+        border: none;
+        max-width: 100%;
+        margin-top: 20px;
     }
 }
 
@@ -278,7 +313,7 @@ footer hr {
     }
 
     .tm{
-        font-size: 10px;
+        font-size: 0.65em;
     }
     .about-foot{
         display: flex;

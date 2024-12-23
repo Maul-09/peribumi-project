@@ -497,7 +497,7 @@ header.sticky .dropdown-button:hover {
         padding: 1.5em;
         flex-direction: column;
         position: fixed;
-        top: 4em;
+        top: 3.6em;
         right: -100%;
         background-color: #fff;
         width: 100%;
