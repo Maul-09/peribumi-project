@@ -163,14 +163,52 @@ class ProdukController extends Controller
 
                 // Buat folder jika belum ada
                 if (!File::exists($destinationPath)) {
-                    File::makeDirectory($destinationPath, 0755, true);
+                    File::makeDirectory($destinationPath, 0755,
+                        true
+                    );
                 }
 
-                // Pindahkan file dan simpan pathnya
-                $fileName = time() . '.' . $request->image->extension();
+                // Ambil ekstensi file dan buat nama file unik
+                $fileExtension = $request->image->extension();
+                $fileName = time() . '.' . $fileExtension;
+
+                // Pindahkan gambar sementara ke folder produk
                 $request->image->move($destinationPath, $fileName);
-                $produk->image = 'produk/' . $fileName; // Simpan path gambar ke database
-                $produk->save(); // Simpan perubahan
+
+                // Menggunakan GD untuk mengompres gambar
+                $path = $destinationPath . '/' . $fileName;
+                $image = null;
+                if ($fileExtension == 'jpeg' || $fileExtension == 'jpg') {
+                    $image = imagecreatefromjpeg($path);
+                } elseif ($fileExtension == 'png') {
+                    $image = imagecreatefrompng($path);
+                } elseif ($fileExtension == 'gif') {
+                    $image = imagecreatefromgif($path);
+                }
+
+                // Kompres gambar jika berhasil dimuat
+                if ($image) {
+                    // Tentukan kualitas kompresi
+                    $quality = 75; // Anda bisa menyesuaikan kualitas sesuai kebutuhan
+                    $compressedPath = $destinationPath . '/' . $fileName;
+
+                    if (
+                        $fileExtension == 'jpeg' || $fileExtension == 'jpg'
+                    ) {
+                        imagejpeg($image, $compressedPath, $quality);  // Mengompres gambar JPEG
+                    } elseif ($fileExtension == 'png') {
+                        imagepng($image, $compressedPath, 6);  // Mengompres gambar PNG (level kompresi 0-9)
+                    } elseif ($fileExtension == 'gif') {
+                        imagegif($image, $compressedPath);  // GIF tidak menggunakan kualitas, hanya disimpan
+                    }
+
+                    // Hapus image dari memori
+                    imagedestroy($image);
+
+                    // Simpan path gambar yang sudah dikompres ke database
+                    $produk->image = 'produk/' . $fileName;
+                    $produk->save();
+                }
             } else {
                 $produk->image = 'produk/default.jpg'; // Gambar default jika tidak ada yang di-upload
                 $produk->save();
@@ -346,22 +384,56 @@ class ProdukController extends Controller
             if ($request->hasFile('image')) {
                 $destinationPath = public_path('produk');
 
+                // Hapus gambar lama jika ada dan bukan default
                 if ($update->image && $update->image !== 'produk/default.jpg') {
                     $oldImagePath = public_path($update->image);
                     if (File::exists($oldImagePath)) {
                         File::delete($oldImagePath);
                     }
                 }
-    
+
                 // Buat folder jika belum ada
                 if (!File::exists($destinationPath)) {
                     File::makeDirectory($destinationPath, 0755, true);
                 }
 
-    
-                // Pindahkan file dan simpan pathnya
-                $fileName = time() . '.' . $request->image->extension();
+                // Ambil ekstensi file dan buat nama file unik
+                $fileExtension = $request->image->extension();
+                $fileName = time() . '.' . $fileExtension;
+
+                // Pindahkan gambar sementara ke folder produk
                 $request->image->move($destinationPath, $fileName);
+
+                // Menggunakan GD untuk mengompres gambar
+                $path = $destinationPath . '/' . $fileName;
+                $image = null;
+                if ($fileExtension == 'jpeg' || $fileExtension == 'jpg') {
+                    $image = imagecreatefromjpeg($path);
+                } elseif ($fileExtension == 'png') {
+                    $image = imagecreatefrompng($path);
+                } elseif ($fileExtension == 'gif') {
+                    $image = imagecreatefromgif($path);
+                }
+
+                // Kompres gambar jika berhasil dimuat
+                if ($image) {
+                    // Tentukan kualitas kompresi
+                    $quality = 75; // Anda bisa menyesuaikan kualitas sesuai kebutuhan
+                    $compressedPath = $destinationPath . '/' . $fileName;
+
+                    if ($fileExtension == 'jpeg' || $fileExtension == 'jpg') {
+                        imagejpeg($image, $compressedPath, $quality); // Kompres gambar JPEG
+                    } elseif ($fileExtension == 'png') {
+                        imagepng($image, $compressedPath, 6); // Kompres gambar PNG (level kompresi 0-9)
+                    } elseif ($fileExtension == 'gif') {
+                        imagegif($image, $compressedPath); // Kompres gambar GIF
+                    }
+
+                    // Hapus image dari memori
+                    imagedestroy($image);
+                }
+
+                // Simpan path gambar yang sudah dikompres ke array $produk
                 $produk['image'] = 'produk/' . $fileName; // Simpan perubahan
             }
             // Simpan data form2 ke database
@@ -389,22 +461,56 @@ class ProdukController extends Controller
             if ($request->hasFile('image')) {
                 $destinationPath = public_path('produk');
 
+                // Hapus gambar lama jika ada dan bukan default
                 if ($update->image && $update->image !== 'produk/default.jpg') {
                     $oldImagePath = public_path($update->image);
                     if (File::exists($oldImagePath)) {
                         File::delete($oldImagePath);
                     }
                 }
-    
+
                 // Buat folder jika belum ada
                 if (!File::exists($destinationPath)) {
                     File::makeDirectory($destinationPath, 0755, true);
                 }
 
-    
-                // Pindahkan file dan simpan pathnya
-                $fileName = time() . '.' . $request->image->extension();
+                // Ambil ekstensi file dan buat nama file unik
+                $fileExtension = $request->image->extension();
+                $fileName = time() . '.' . $fileExtension;
+
+                // Pindahkan gambar sementara ke folder produk
                 $request->image->move($destinationPath, $fileName);
+
+                // Menggunakan GD untuk mengompres gambar
+                $path = $destinationPath . '/' . $fileName;
+                $image = null;
+                if ($fileExtension == 'jpeg' || $fileExtension == 'jpg') {
+                    $image = imagecreatefromjpeg($path);
+                } elseif ($fileExtension == 'png') {
+                    $image = imagecreatefrompng($path);
+                } elseif ($fileExtension == 'gif') {
+                    $image = imagecreatefromgif($path);
+                }
+
+                // Kompres gambar jika berhasil dimuat
+                if ($image) {
+                    // Tentukan kualitas kompresi
+                    $quality = 75; // Anda bisa menyesuaikan kualitas sesuai kebutuhan
+                    $compressedPath = $destinationPath . '/' . $fileName;
+
+                    if ($fileExtension == 'jpeg' || $fileExtension == 'jpg') {
+                        imagejpeg($image, $compressedPath, $quality); // Kompres gambar JPEG
+                    } elseif ($fileExtension == 'png') {
+                        imagepng($image, $compressedPath, 6); // Kompres gambar PNG (level kompresi 0-9)
+                    } elseif ($fileExtension == 'gif') {
+                        imagegif($image, $compressedPath); // Kompres gambar GIF
+                    }
+
+                    // Hapus image dari memori
+                    imagedestroy($image);
+                }
+
+                // Simpan path gambar yang sudah dikompres ke array $produk
                 $produk['image'] = 'produk/' . $fileName; // Simpan perubahan
             }
             $update->update($produk);
