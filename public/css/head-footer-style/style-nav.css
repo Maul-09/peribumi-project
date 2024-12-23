@@ -12,7 +12,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2.5em 6.25em;
+    padding: 2em 6.25em;
     z-index: 1000;
     display: flex;
     justify-content: space-around;
@@ -82,9 +82,9 @@ header .menu li {
 
 header .menu li .link-bar {
     position: relative;
-    margin: 0 0.9375em;
+    margin: 0 1em;
     color: #fff;
-    font-size: 0.8125em;
+    font-size: 0.85em;
     font-weight: 500;
     text-decoration: none;
     transition: 0.5s;
@@ -316,36 +316,34 @@ header.sticky .dropdown-button:hover {
 }
 
 
-
-@media only screen and (min-width: 1200px) {
-    header {
-        position: fixed;
-        width: 100%;
-        padding: 1.88em 2.5em;
-    }
-
-    header.sticky {
-        padding: 1.25em 1.88em;
-    }
-
-    header .logo {
-        margin-right: 0.94em;
-    }
-}
-
 @media only screen and (max-width: 1280px) and (min-width: 1024px) {
     header {
         position: fixed;
         width: 100%;
-        padding: 1.88em 2.5em;
+        padding: 1.75em 2.5em;
     }
 
     header.sticky {
-        padding: 1.25em 1.88em;
+        padding: 1.25em 2em;
     }
 
     header .logo {
         margin-right: 0.94em;
+    }
+
+    header .menu li .link-bar {
+        margin: 0 0.6em;
+        font-size: 0.8em
+    }
+
+    header .logo img {
+        width: 4.38em;
+        height: 1.56em;
+        margin-right: 0.31em;
+    }
+
+    header .logo .logo-title {
+        font-size: 1em;
     }
 }
 
@@ -355,14 +353,14 @@ header.sticky .dropdown-button:hover {
     header {
         position: fixed;
         width: 100%;
-        padding: 1.56em 1.25em;
+        padding: 1.5em 1.8em;
     }
     header .toggle {
         visibility: hidden;
     }
 
     header.sticky {
-        padding: 1.56em 1.25em;
+        padding: 1.5em 1.6em;
     }
 
     header .logo {
@@ -393,11 +391,11 @@ header.sticky .dropdown-button:hover {
     header {
         position: fixed;
         width: 100%;
-        padding: 1.56em 0;
+        padding: 1.25em 0;
     }
 
     header.sticky {
-        padding: 1.56em 0;
+        padding: 1.25em 0;
     }
 
     header .logo {
@@ -452,7 +450,7 @@ header.sticky .dropdown-button:hover {
     }
 
     header .logo img {
-        width: 4.69em;
+        width: 4.3em;
         height: 1.56em;
     }
 
@@ -479,11 +477,11 @@ header.sticky .dropdown-button:hover {
     header {
         position: fixed;
         width: 100%;
-        padding: 1.25em 0.5em;
+        padding: 1em 0em;
     }
 
     header.sticky {
-        padding: 1.25em 0.5em;
+        padding: 1em 0em;
     }
 
     header .logo {
@@ -492,7 +490,7 @@ header.sticky .dropdown-button:hover {
 
     header .toggle {
         visibility: visible;
-        font-size: 1.5em;
+        font-size: 1em;
     }
 
     header .menu {
@@ -521,7 +519,7 @@ header.sticky .dropdown-button:hover {
     header .menu button,
     header .menu li .link-bar {
         display: flex;
-        font-size: 1.1em;
+        font-size: 0.85em;
         width: 100%;
         color: var(--skin-color-1);
     }
