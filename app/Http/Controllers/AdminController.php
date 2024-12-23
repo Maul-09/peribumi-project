@@ -101,7 +101,7 @@ class AdminController extends Controller
 
     public function trainingAdmin()
     {
-        $kat = ['Spesifik (Okupasi)', 'Generik (Cluster)', 'Tematik (Bimtek)'];
+        $kat = ['Spesifik (Okupasi)', 'Generik (Klaster)', 'Tematik (Bimtek)'];
 
         session(['kategori' => $kat, 'route' => 'training.admin', 'formNumber' => '1']);
 

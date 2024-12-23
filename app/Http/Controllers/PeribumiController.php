@@ -23,7 +23,7 @@ class PeribumiController extends Controller
 
     public function training()
     {
-        $kat = ['Spesifik (Okupasi)', 'Generik (Cluster)', 'Tematik (Bimtek)'];
+        $kat = ['Spesifik (Okupasi)', 'Generik (Klaster)', 'Tematik (Bimtek)'];
 
         session(['kategori' => $kat, 'route' => 'training']);
 
