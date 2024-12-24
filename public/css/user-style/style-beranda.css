@@ -10,7 +10,9 @@ body {
     background-color: #04364a;
     scroll-behavior: smooth;
 
-}section {
+}
+
+section{
     padding: 6em 12em;
 }
 
@@ -63,10 +65,9 @@ body {
 .banner .textBx h2 {
     font-size: 2em;
     color: #fff;
-    margin-bottom: 0.63em;
+    margin-bottom: 0.6em;
     font-weight: 700;
     line-height: 1.5em;
-    z-index: 0;
 }
 
 .banner .textBx p {
@@ -82,12 +83,7 @@ body {
 }
 
 .w50 {
-    max-width: 50%;
-}
-
-.w50 img {
-    height: 18.75em;
-    object-fit: scale-down;
+    max-width: 100%;
 }
 
 .w50 h1 {
@@ -130,7 +126,7 @@ body {
 }
 
 .card-content {
-    padding: 1.25em;
+    padding: 1.5em;
 }
 
 .card-section {
@@ -199,7 +195,7 @@ body {
 
 .title-client h2,
 .title-product h2 {
-    font-size: 1.4em;
+    font-size: 1.8em;
     margin-bottom: 0.8em;
     text-align: center;
 }
@@ -212,11 +208,8 @@ body {
     text-align: center;
 }
 
-
-
 .mitpro hr {
-    margin-top: 2.5em;
-    margin-bottom: 2.5em;
+    margin: 2.5em 0;
 }
 
 .cards-container {
@@ -495,7 +488,6 @@ body {
     animation: photo3 20s ease-in-out infinite;
 }
 
-/* Keyframes untuk Foto 1 */
 @keyframes photo1 {
     0%{
         z-index: 3;
@@ -568,7 +560,6 @@ body {
     }
 }
 
-/* Keyframes untuk Foto 2 */
 @keyframes photo2 {
     0%{
         z-index: 2;
@@ -641,7 +632,6 @@ body {
     }
 }
 
-/* Keyframes untuk Foto 3 */
 @keyframes photo3 {
     0%{
         z-index: 1;
@@ -715,222 +705,238 @@ body {
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1024px){
-
-}
-
-@media only screen and (max-width: 1024px) and (min-width: 768px){
-
-}
-
-@media only screen and (max-width: 768px) and (min-width: 480px){
-
-}
-
-@media only screen and (max-width: 480px) {}
-
-
-@media only screen and (max-width: 1280px){
     section {
-        padding: 6em 9em;
+        padding: 6em 10em;
+    }
+
+    .mitpro,
+    .about{
+        padding: 5em 8em;
     }
 
     .banner {
         position: relative;
-        min-height: 80vh;
-    }
-
-    .circle {
-        position: absolute;
-        bottom: -31.25em;
-        right: -15.625em;
-    }
-}
-
-@media only screen and (max-width: 887px){
-    section {
-        padding: 3em 6em;
-    }
-
-    .banner {
-        position: relative;
-        min-height: 70vh;
-    }
-
-    .circle {
-        position: absolute;
-        bottom: -12.5em; /* -200px */
-        right: -17.5em; /* -280px */
-    }
-}
-
-@media only screen and (max-width: 728px){
-    body {
-        overflow-x: hidden;
-    }
-    .banner {
-        height: 60vh;
+        min-height: 100vh;
     }
 
     .banner .textBx h2 {
-        font-size: 1.75em; /* 28px */
+        font-size: 1.8em;
+        margin-bottom: 0.45em;
     }
 
     .banner .textBx p {
-        font-size: 1em; /* 16px */
-    }
-
-    section {
-        padding: 1.5em;
-    }
-
-    .container-chose {
-        display: flex;
-        gap: 0.625em; /* 10px */
-        padding: 0.625em; /* 10px */
-    }
-
-    .card-header {
-        padding: 0.9375em; /* 15px */
-        font-size: 1.5rem;
-        font-weight: 500;
-    }
-
-    .card-content {
-        padding: 1.25em; /* 20px */
-    }
-
-    .card-section {
-        margin-bottom: 0.9375em; /* 15px */
-    }
-
-    .card-section h3 {
-        margin-bottom: 0.5em; /* 8px */
-        font-size: 1.125em; /* 18px */
-    }
-
-    .card-section ul {
-        font-size: 0.875em; /* 14px */
-    }
-
-    .card-section ul li {
-        margin-bottom: 0.3125em; /* 5px */
-        font-size: 0.75em; /* 12px */
-    }
-
-    .circle {
-        display: none;
-    }
-
-    .content {
-        display: block;
-    }
-
-    .content img {
-        display: none;
-    }
-
-    .tab button {
-        padding: 0.875em 4.0625em; /* 14px 65px */
-    }
-
-    .w50 {
+        font-size: 1em;
         max-width: 100%;
     }
 
     .w50 h1 {
-        font-size: 1em; /* 16px */
+        font-size: 1.1em;
     }
 
     .w50 h2 {
-        font-size: 1.25em; /* 20px */
+        font-size: 1.5em;
     }
 
-    .alert-popup {
-        position: fixed;
-        top: 13%;
-        right: -1.25em; /* -20px */
-        z-index: 1000;
-        animation: fadeIn 0.5s forwards;
-        opacity: 1;
-        margin-bottom: 0.625em; /* 10px */
+    .container-chose {
+        gap: 0.8em;
+        padding: 0.8em;
     }
 
-    .alert {
-        padding: 0.625em; /* 10px */
-        max-width: 25em; /* 400px */
-        position: relative;
+    .card-chose {
+        width: 13.5em;
     }
 
-    .message {
-        font-size: 0.625em; /* 10px */
-        font-weight: 600;
-        margin-bottom: 0.625em; /* 10px */
+    .card-header {
+        padding: 0.94em;
+        font-size: 1.5rem;
+    }
+
+    .card-content {
+        padding: 1.25em;
+    }
+
+    .card-section h3 {
+        font-size: 1.13em;
+    }
+
+    .card-section ul {
+        font-size: 0.87em;
+    }
+
+    .tim-peribumi .peribumi {
+        padding: 0.5em 1.5em;
+        font-size: 1.1em;
+    }
+
+    .circle {
+        position: absolute;
+        top: 0;
+        right: -21.5em;
     }
 
     .title-client h2,
     .title-product h2 {
-        font-size: 1.25em; /* 20px */
-        margin-bottom: 0.625em; /* 10px */
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
     }
 
     .title-client p,
     .title-product p {
-        font-size: 0.75em; /* 12px */
+        font-size: 0.8em;
+        padding: 0em;
+        margin-bottom: 0.3em;
     }
 
-    .mitra-logo {
-        flex-direction: row;
-        justify-content: flex-start;
-        overflow-x: auto;
-    }
-
-    .mitra-logo img {
-        width: 100%;
-    }
-
-    .carousel-container {
-        width: 100%;
-        overflow-x: hidden;
-        position: relative;
+    .mitpro hr {
+        margin: 1.5em 0;
     }
 
     .cards-container {
-        width: 100%;
-        padding: 0;
-        gap: 0.9375em; /* 15px */
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        transition: transform 0.3s ease;
-    }
+        display: flex;
+        padding: 2em 0;
+        gap: 0.75em;
+        justify-content: center;
+        flex-direction: row;
+      }
 
     .card {
-        min-width: 12.5em; /* 200px */
-        border-radius: 0.625em; /* 10px */
-        overflow-x: hidden;
-        box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        max-width: 12em;
+        height: 17em;
+      }
 
     .textbx-card h3 {
-        font-size: 0.875em; /* 14px */
-        margin-bottom: 0.625em; /* 10px */
-        transform: translateY(-0.3125em); /* -5px */
-        transition: transform 0.3s ease;
-    }
-
-    .card:hover .textbx-card h3 {
-        transform: translateY(-3.125em); /* -50px */
+        font-size: 0.88em;
     }
 
     .textbx-card p {
-        font-size: 0.0625em; /* 1px */
-        opacity: 0;
-        transform: translateY(0.3125em); /* 5px */
+        font-size: 0.65em;
+    }
+
+    .mitra-logo img {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+    section {
+        padding: 6em 10em;
+    }
+
+    .mitpro,
+    .about{
+        padding: 5em 8em;
     }
 
     .banner {
-        min-height: 80vh;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .banner .textBx h2 {
+        font-size: 1.8em;
+        margin-bottom: 0.45em;
+    }
+
+    .banner .textBx p {
+        font-size: 1em;
+        max-width: 100%;
+    }
+
+    .w50 h1 {
+        font-size: 1.1em;
+    }
+
+    .w50 h2 {
+        font-size: 1.5em;
+    }
+
+    .container-chose {
+        gap: 0.8em;
+        padding: 0.8em;
+    }
+
+    .card-chose {
+        width: 13.5em;
+    }
+
+    .card-header {
+        padding: 0.94em;
+        font-size: 1.5rem;
+    }
+
+    .card-content {
+        padding: 1.25em;
+    }
+
+    .card-section h3 {
+        font-size: 1.13em;
+    }
+
+    .card-section ul {
+        font-size: 0.87em;
+    }
+
+    .tim-peribumi .peribumi {
+        padding: 0.5em 1.5em;
+        font-size: 1.1em;
+    }
+
+    .circle {
+        position: absolute;
+        top: 0;
+        right: -21.5em;
+    }
+
+    .title-client h2,
+    .title-product h2 {
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .title-client p,
+    .title-product p {
+        font-size: 0.8em;
+        padding: 0em;
+        margin-bottom: 0.3em;
+    }
+
+    .mitpro hr {
+        margin: 1.5em 0;
+    }
+
+    .cards-container {
+        display: flex;
+        padding: 2em 0;
+        gap: 0.75em;
+        justify-content: center;
+        flex-direction: row;
+      }
+
+    .card {
+        max-width: 12em;
+        height: 17em;
+      }
+
+    .textbx-card h3 {
+        font-size: 0.88em;
+    }
+
+    .textbx-card p {
+        font-size: 0.65em;
+    }
+
+    .mitra-logo img {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 480px){
+    section {
+        padding: 4em;
+    }
+
+    .banner {
+        min-height: 75vh;
     }
 
     .banner .textBx h2 {
@@ -938,18 +944,33 @@ body {
     }
 
     .banner .textBx p {
-        font-size: 0.8em; /* 12px */
+        font-size: 0.75em;
     }
 
-    .tim-peribumi {
-        justify-content: center;
-    }
-
-    .tim-peribumi .peribumi {
-        border: 0.125em solid #fff; /* 2px */
-        padding: 0.625em 1.25em; /* 10px 20px */
-        color: #fff;
-        font-weight: 600;
-        font-size: 0.875em; /* 14px */
+    .circle {
+        display: none;
     }
 }
+
+@media only screen and (max-width: 480px) {
+    section {
+        padding: 2.5em;
+    }
+
+    .banner {
+        min-height: 65vh;
+    }
+
+    .banner .textBx h2 {
+        font-size: 1em;
+    }
+
+    .banner .textBx p {
+        font-size: 0.65em;
+    }
+
+    .circle{
+        display: none;
+    }
+}
+
