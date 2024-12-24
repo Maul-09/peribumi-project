@@ -140,6 +140,7 @@ footer hr {
         display: flex;
         align-items: center;
         padding: 1.3em 0em;
+        margin: 0 3em;
     }
 
     .title-foot h2 {
