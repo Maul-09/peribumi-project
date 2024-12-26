@@ -853,11 +853,13 @@ section{
     }
 
     .w50 h1 {
-        font-size: 1em;
+        font-size: 1.8em;
+        text-align: center;
     }
 
     .w50 h2 {
         font-size: 1.3em;
+        text-align: center;
     }
 
     .container-chose {
@@ -953,6 +955,7 @@ section{
     .container-chose {
         display: flex;
         gap: 10px;
+        justify-content: center;
         padding: 10px;
     }
 
@@ -1003,10 +1006,12 @@ section{
     }
 
     .w50 h1 {
-        font-size: 16px;
+        font-size: 28px;
+        text-align: center;
     }
     .w50 h2 {
         font-size: 20px;
+        text-align: center;
     }
 
     .alert-popup {
