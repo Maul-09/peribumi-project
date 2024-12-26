@@ -39,10 +39,7 @@
                 <i class="fa-brands fa-google"></i><span class="title-sosmed">peribumi.pro</span>
             </a>
         </div>
-
-        <div class="maps">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.552314793147!2d107.63835597454126!3d-6.9439825679770895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e9005c05bbd9%3A0x76b165d2404cf6af!2sPT.%20Peribumi%20Cahaya%20Nusa!5e0!3m2!1sen!2sid!4v1735016274060!5m2!1sen!2sid" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+            <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.552314793147!2d107.63835597454126!3d-6.9439825679770895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e9005c05bbd9%3A0x76b165d2404cf6af!2sPT.%20Peribumi%20Cahaya%20Nusa!5e0!3m2!1sen!2sid!4v1735016274060!5m2!1sen!2sid" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <hr>
     <div class="tm">

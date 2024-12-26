@@ -412,4 +412,9 @@ footer hr {
         font-size: 0.85em;
         margin: 0 0.7em 0.5em;
     }
+
+    .maps{
+        padding: 0.8rem;
+        width: 100%;
+    }
 }
