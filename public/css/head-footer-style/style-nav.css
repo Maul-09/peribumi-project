@@ -34,7 +34,7 @@ header .menu.active {
 
 header.sticky {
     background-color: #fff;
-    padding: 1.25em 0;
+    padding: 1.25em 1.5em;
     box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.2), 0 0.375em 1.25em 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -54,14 +54,13 @@ header .logo {
 }
 
 header .logo .logo-title {
-    font-size: 1.15em;
+    font-size: 1.1em;
     font-weight: 700;
     letter-spacing: 0.0625em;
 }
 
 header .logo img {
-    width: 5em;
-    height: 1.8em;
+    width: 5.5em;
     margin-right: 0.625em;
 }
 
@@ -110,7 +109,7 @@ header .menu li .link-bar {
     background-color: transparent;
     border: none;
     color: #fff;
-    font-size: 0.75em;
+    font-size: 0.85em;
     font-weight: 500;
     cursor: pointer;
     transition: 0.5s;
@@ -320,11 +319,11 @@ header.sticky .dropdown-button:hover {
     header {
         position: fixed;
         width: 100%;
-        padding: 1.75em 1.5em;
+        padding: 2.25em 1.5em;
     }
 
     header.sticky {
-        padding: 1.25em 1.5em;
+        padding: 1.75em 0;
     }
 
     header .logo {
@@ -337,8 +336,7 @@ header.sticky .dropdown-button:hover {
     }
 
     header .logo img {
-        width: 4.3em;
-        height: 1.5em;
+        width: 4.5em;
         margin-right: 0.31em;
     }
 
@@ -353,14 +351,14 @@ header.sticky .dropdown-button:hover {
     header {
         position: fixed;
         width: 100%;
-        padding: 1.75em 0;
+        padding: 1.85em 0;
     }
     header .toggle {
         visibility: hidden;
     }
 
     header.sticky {
-        padding: 1.25em 0em;
+        padding: 1.35em 0em;
     }
 
     header .logo {
@@ -369,12 +367,11 @@ header.sticky .dropdown-button:hover {
 
     header .menu li .link-bar {
         margin: 0 0.6em;
-        font-size: 0.75em;
+        font-size: 0.8em;
     }
 
     header .logo img {
-        width: 3.8em;
-        height: 1.33em;
+        width: 4em;
         margin-right: 0.31em;
     }
 
@@ -383,6 +380,7 @@ header.sticky .dropdown-button:hover {
     }
 
     .dropdown-button {
+        font-size: 0.8em;
         margin: 0;
     }
 }
@@ -392,11 +390,11 @@ header.sticky .dropdown-button:hover {
     header {
         position: fixed;
         width: 100%;
-        padding: 1.25em 0;
+        padding: 1.35em 0;
     }
 
     header.sticky {
-        padding: 1.25em 0;
+        padding: 1.35em 0;
     }
 
     header .logo {
@@ -441,18 +439,16 @@ header.sticky .dropdown-button:hover {
 
     header .logo {
         margin-right: 5em;
-        font-size: 1.13em;
     }
 
     header .logo .logo-title {
-        font-size: 0.75em;
+        font-size: 0.8em;
         font-weight: 700;
         letter-spacing: 0.06em;
     }
 
     header .logo img {
         width: 3.5em;
-        height: 1.35em;
     }
 
     header .dropdown-menu {

@@ -1,5 +1,5 @@
 footer {
-    padding: 0 5em;
+    padding: 0 6em;
 }
 
 footer h3 {
@@ -26,7 +26,7 @@ footer hr {
 
 .title-foot h2 {
     color: #fff;
-    font-size: 1.35em;
+    font-size: 1.25em;
 }
 
 .con {
@@ -48,7 +48,6 @@ footer hr {
 }
 
 .produk-foot {
-    padding: 0.63em;
     width: 100%;
     max-width: 12em;
 }
@@ -85,7 +84,6 @@ footer hr {
 }
 
 .media-foot {
-    padding: 0.63em;
     max-width: 31.25em;
     display: flex;
     flex-direction: column;
@@ -125,11 +123,11 @@ footer hr {
 
 @media only screen and (max-width: 1280px) and (min-width: 1024px) {
     footer {
-        padding: 0 2.5em;
+        padding: 0 3.5em;
     }
 
     footer h3{
-        font-size: 0.8em;
+        font-size: 0.85em;
     }
 
     .title-foot img {
@@ -152,11 +150,11 @@ footer hr {
     }
 
     .about-foot p {
-        font-size: 0.7em;
+        font-size: 0.75em;
     }
 
     .produk-foot ul li a {
-        font-size: 0.7em;
+        font-size: 0.75em;
     }
 
     .media-foot .media-social i {
@@ -164,7 +162,7 @@ footer hr {
     }
 
     .media-foot .media-social span {
-        font-size: 0.7em;
+        font-size: 0.75em;
     }
 
     .con {
@@ -182,7 +180,7 @@ footer hr {
     }
 
     footer h3 {
-        font-size: 0.95em;
+        font-size: 0.9em;
     }
 
     .title-foot{
@@ -197,7 +195,7 @@ footer hr {
     }
 
     .title-foot h2{
-        font-size: 1.15em;
+        font-size: 1em;
     }
 
     .produk-foot{
@@ -245,8 +243,8 @@ footer hr {
     }
 
     .about-foot p {
-        font-size: 0.95em;
-        margin: 0 0.5em 0.5em;
+        font-size: 0.85em;
+        margin: 1em 0;
     }
 
     .maps{
@@ -327,7 +325,7 @@ footer hr {
 
     .about-foot p {
         font-size: 0.95em;
-        margin: 0 1em 0.5em;
+        margin: 1em 0;
     }
 
     .maps{
@@ -373,6 +371,7 @@ footer hr {
         align-items: flex-start;
     }
 
+    .produk-foot ul li a:hover,
     .produk-foot ul li a {
         font-size: 0.75em;
     }
@@ -394,14 +393,15 @@ footer hr {
         flex-wrap: wrap;
         margin: 0 0.5em;
         flex-direction: row-reverse;
+        justify-content: space-around;
     }
 
     .tm{
-        font-size: 10px;
+        font-size: 0.6em;
     }
     .about-foot{
         display: flex;
-        max-width: 100%;
+        max-width: 88%;
         justify-content: center;
         flex-direction: column;
         align-items: center;
@@ -410,7 +410,7 @@ footer hr {
 
     .about-foot p {
         font-size: 0.85em;
-        margin: 0 0.7em 0.5em;
+        margin: 1.2em 0;
     }
 
     .maps{

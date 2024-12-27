@@ -57,7 +57,7 @@ section {
     font-size: 2em;
     color: #fff;
     font-weight: 700;
-    line-height: 1.5em;
+    line-height: 2em;
 }
 
 .banner .textBx p {
@@ -108,14 +108,13 @@ section {
     text-transform: uppercase;
     font-size: 2em;
     font-weight: 700;
-    margin-bottom: 1.6em;
 }
 
 .content-histori p{
     font-size: 1em;
     color: var(--skin-color-1);
     text-align: justify;
-    margin-bottom: 15px;
+    margin: 1.1em 0;
 }
 
 .box-1 {
@@ -217,7 +216,7 @@ section {
 
 .sasaran .judul-span{
     display: flex;
-    font-size: 1.1em;
+    font-size: 1.15em;
     font-weight: 500;
     color: var(--skin-color-1);
     margin-bottom: 0.75em;
@@ -225,7 +224,7 @@ section {
 }
 
 .sasaran .sasaran-span{
-    font-size: 14px;
+    font-size: 1em;
     text-align: justify;
     color: var(--skin-color-1);
     margin-bottom: 0.9em;
@@ -238,29 +237,30 @@ section {
 
     .banner {
         position: relative;
-        min-height: 100vh;
+        min-height: 85vh;
     }
 
     .banner .textBx h2 {
-        font-size: 1.5em;
+        font-size: 1.8em;
         line-height: 2em;
     }
 
     .banner .textBx p {
-        font-size: 0.85em;
+        font-size: 1em;
     }
 
     .history{
-        padding: 4em 6em;
+        padding: 2.5em 6.5em;
     }
 
     .nilai-utama h3{
-        font-size: 1.25em;
-        margin: 1.2em 0;
+        font-size: 1.35em;
+        margin: 1.1em 0;
     }
 
     .nilai-utama p{
         font-size: 2.5rem;
+        font-weight: 500;
         margin: 0.5em;
     }
 
@@ -269,12 +269,12 @@ section {
     }
 
     .content-histori h3{
-        font-size: 1.5em;
+        font-size: 1.65em;
         margin: 0.8em 0;
     }
 
     .content-histori p{
-        font-size: 0.9em;
+        font-size: 0.95em;
         margin: 0.85em 0;
     }
 
@@ -294,11 +294,12 @@ section {
 
     .tabcontent p,
     .tabcontent ol {
-        font-size: 0.9em;
+        font-size: 0.95em;
     }
 
     .sasaran .judul-span{
         font-size: 1em;
+        font-weight: 500;
         margin: 0.5em 0.5em;
     }
 
@@ -312,22 +313,22 @@ section {
 
 @media only screen and (max-width: 1024px) and (min-width: 768px){
     section {
-        padding: 3em 8em;
+        padding: 3em 6em;
     }
 
     .banner {
         position: relative;
-        min-height: 70vh;
+        min-height: 60vh;
     }
 
     .banner .textBx h2 {
-        font-size: 1.3em;
+        font-size: 1.5em;
         line-height: 2.5em;
     }
 
     .banner .textBx p {
-        max-width: 80%;
-        font-size: 0.7em;
+        max-width: 100%;
+        font-size: 0.85em;
     }
 
     .history{
@@ -341,6 +342,7 @@ section {
 
     .nilai-utama p{
         font-size: 2rem;
+        font-weight: 500;
     }
 
     .content-histori {
@@ -373,7 +375,7 @@ section {
     }
 
     .tabcontent{
-        height: 17em;
+        height: 17.5em;
         place-items: center;
     }
 
@@ -411,13 +413,12 @@ section {
     }
 
     .banner .textBx h2 {
-        font-size: 1.2em;
+        font-size: 1.35em;
         line-height: 2.5em;
     }
 
     .banner .textBx p {
-        max-width: 80%;
-        font-size: 0.7em;
+        max-width: 100%;
     }
 
     .nilai-utama h3{
