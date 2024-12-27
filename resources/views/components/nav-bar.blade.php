@@ -69,7 +69,7 @@
 <div id="logoutModal" class="modal">
     <div class="modal-content">
         <h2>Confirm Logout</h2>
-        <p>Apa Anda serius ingin Signup?</p>
+        <p>Apakah Anda ingin Logout sekarang?</p>
         <div class="modal-buttons">
             <button onclick="performLogout()" class="button-confirm">Yes</button>
             <button onclick="closeModal()" class="button-cancel">Cancel</button>
