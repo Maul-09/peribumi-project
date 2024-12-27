@@ -82,11 +82,11 @@
                             <tr>
                                 <td>
                                     @php
-                                        $initial = strtoupper(substr(auth()->user()->name, 0, 1));
-                                        $hasImage = auth()->user()->image ? true : false;
+                                        $initial = strtoupper(substr($admin->username, 0, 1));
+                                        $hasImage =  $admin->image ? true : false;
                                     @endphp
                                     @if ($hasImage)
-                                        <img src="{{ asset('profile/' . auth()->user()->image) }}" alt="User Logo"
+                                        <img src="{{ asset('profile/' .  $admin->image)  }}" alt="User Logo"
                                             style="width: 120px; height: 120px; background-color: #ccc; display: flex; justify-content: center; align-items: center; border: 2px solid #ccc; border-radius: 50%;">
                                     @else
                                         <div style="width: 60px; height: 60px; background-color: #ccc; display: flex; justify-content: center; align-items: center; border: 2px solid #ccc; border-radius: 50%; ">
