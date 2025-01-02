@@ -151,10 +151,8 @@
                 <span class="detail-label" id="label-harga">Harga:</span>
                 <span class="deskripsi-harga">{{ $produk->harga }}</span>
                 @if($produk->durasi)
-                    <div class="detail-item">
-                        <span class="detail-label">Durasi:</span>
-                        <span class="detail-value">{{ $produk->durasi }} Hari</span>
-                    </div>
+                    <span class="detail-label">Durasi:</span>
+                    <span class="detail-value">{{ $produk->durasi }} Hari</span>
                 @endif
                 <a href="#" class="btn-beli" id="openModal" data-produk-nama="{{ $produk->nama_produk }}"
                     data-produk-harga="{{ $produk->harga }}"
