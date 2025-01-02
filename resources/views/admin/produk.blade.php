@@ -114,7 +114,7 @@
                                             <div class="input-group">
                                                 <input type="url" name="link" id="link" value="{{ old('link') }}"
                                                     class="form-control link-input" placeholder="https://contoh.com">
-                                                <button type="button" class="btn-small"
+                                                <button type="button" class="btn-small" style="border: 1px solid #ccc; padding: 0.75em 2em; border-radius: 5px; font-family: Arial, sans-serif; font-weight: bold;"
                                                     onclick="previewLink()">Preview</button>
                                             </div>
                                         </div>
@@ -199,7 +199,7 @@
                                             <div class="input-group">
                                                 <input type="url" name="link" id="link" value="{{ old('link') }}"
                                                     class="form-control link-input" placeholder="https://contoh.com">
-                                                <button type="button" class="btn-small"
+                                                <button type="button" class="btn-small" style="border: 1px solid #ccc; padding: 0.75em 2em; border-radius: 5px; font-family: Arial, sans-serif; font-weight: bold;"
                                                     onclick="previewLink()">Preview</button>
                                             </div>
                                         </div>
