@@ -170,7 +170,7 @@
             <p><strong>Harga:</strong> <span id="modalHarga"></span></p>
             @if($produk->durasi)
                 <div class="detail-item">
-                    <p><strong>Durasi:</strong> <span id="modalDurasi"></span> Hari</p>
+                    <p><strong>Durasi:</strong> <span id="modalDurasi">{{ $produk->durasi }}</span> Hari</p>
                 </div>
             @endif
 
