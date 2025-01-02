@@ -274,20 +274,24 @@
         font-size: 18px;
     }
     .product-card {
-        width: 200px;
+        width: 160px;
         margin-bottom: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
+    .product-card:hover {
+        transform: none;
+    }
+
     .product-name {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
         margin: 10px 0 5px;
     }
 
     .product-price {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         margin: 5px 0;
     }
 
@@ -328,11 +332,15 @@
         font-size: 0.6rem;
         padding: 10px;
     }
-    
+
     .rating {
         display: flex;
         gap: 0;
         margin: 20px 0;
         justify-content: center;
+    }
+
+    .rating span{
+        font-size: 0.7em;
     }
 }
