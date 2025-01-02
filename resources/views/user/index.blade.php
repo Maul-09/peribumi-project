@@ -169,9 +169,7 @@
             <h5 id="modalProdukNama"></h5>
             <p><strong>Harga:</strong> <span id="modalHarga"></span></p>
             @if($produk->durasi)
-                <div class="detail-item">
-                    <p><strong>Durasi:</strong> <span id="modalDurasi">{{ $produk->durasi }}</span> Hari</p>
-                </div>
+                <p><strong>Durasi:</strong> <span id="modalDurasi">{{ $produk->durasi }}</span> Hari</p>
             @endif
 
             <h3>Konfirmasi Pembelian</h3>
