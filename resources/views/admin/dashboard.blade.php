@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="row">
                     <div class="col-xxl-4 col-md-6">
-                        <div class="card info-card sales-card" data-bs-toggle="modal" data-bs-target="#userModal"
+                        <div class="card info-card sales-card hover-card" data-bs-toggle="modal" data-bs-target="#userModal"
                             style="cursor: pointer;">
                             <div class="card-body">
                                 <h5 class="card-title">Member</h5>
@@ -65,7 +65,7 @@
 
                     <!-- Revenue Card -->
                     <div class="col-xxl-4 col-md-6">
-                        <div id="produkCard" class="card info-card revenue-card" style="cursor: pointer;">
+                        <div id="produkCard" class="card info-card revenue-card hover-card" style="cursor: pointer;">
                             <div class="card-body">
                                 <h5 class="card-title">Produk</h5>
                                 <div class="d-flex align-items-center">
@@ -114,7 +114,7 @@
 
                     <!-- Customers Card -->
                     <div class="col-xxl-4 col-md-6">
-                        <div id="ratingCard" class="card info-card customers-card" style="cursor: pointer;">
+                        <div id="ratingCard" class="card info-card customers-card hover-card" style="cursor: pointer;">
                             <div class="card-body">
                                 <h5 class="card-title">Rating</h5>
                                 <div class="d-flex align-items-center">
@@ -212,7 +212,7 @@
                     </script>
 
                     <div class="col-xxl-4 col-md-6">
-                        <div class="card info-card notification-card" data-bs-toggle="modal"
+                        <div class="card info-card notification-card hover-card" data-bs-toggle="modal"
                             data-bs-target="#verifikasiModal" style="cursor: pointer;">
                             <div class="card-body">
                                 <h5 class="card-title">Verifikasi Produk</h5>

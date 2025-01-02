@@ -5,6 +5,9 @@
     </a>
     <div class="toggle"></div>
     <ul class="menu">
+        @if(Auth::check() && Auth::user()->usertype === 'admin')
+            <li><a href="{{ route('admin') }}" class="link-bar">Admin</a></li>
+        @endif
         <li><a href="{{ route('beranda') }}#home" class="link-bar">Home</a></li>
         <li><a href="{{ route('beranda') }}#about" class="link-bar">About us</a></li>
         <li class="dropdown">
