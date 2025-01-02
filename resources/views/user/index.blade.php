@@ -27,13 +27,13 @@
                     @endif
                 @endforeach
 
+                @if($produk->durasi)
+                    <div class="detail-item">
+                        <span class="detail-label">Durasi:</span>
+                        <span class="detail-value">{{ $produk->durasi }} Hari</span>
+                    </div>
+                @endif
             </div>
-            @if($produk->durasi)
-                <div class="detail-item">
-                    <span class="detail-label">Durasi:</span>
-                    <span class="detail-value">{{ $produk->durasi }} Hari</span>
-                </div>
-            @endif
             <div class="detail-item">
                 <span class="detail-label">Proposal:</span>
                 @if ($produk->link)
