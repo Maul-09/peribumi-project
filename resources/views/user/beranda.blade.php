@@ -19,6 +19,8 @@
             </div>
         </div>
     @endif
+
+    
     {{-- End Alertt berhasil --}}
     <section class="banner" id="home">
         <div class="textBx">

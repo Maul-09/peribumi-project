@@ -1,13 +1,14 @@
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center">
-
     <div class="d-flex align-items-center justify-content-between">
         <img src="{{ asset('image/logo-peribumi.png') }}" alt="" style="width: 70px; height: auto;">
         <a href="#" class="logo d-flex align-items-center">
             <span class="d-none d-lg-block pe-3">Adminisitrator</span>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </a>
-
+        <a href="{{ url('/') }}" class="arrow-link">
+            <i class="bi bi-house-door-fill"></i><span>View Web</span>
+        </a>
     </div>
 
     <nav class="header-nav ms-auto">
@@ -15,7 +16,6 @@
             <li class="nav-item dropdown pe-5">
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                     @php
-
                         $initial = strtoupper(substr(auth()->user()->name, 0, 1));
                         $hasImage = auth()->user()->image ? true : false;
                     @endphp
@@ -34,7 +34,6 @@
                         @if (Auth::check())
                             <h6>{{ Auth::user()->name }}</h6>
                         @endif
-
                         <span>Admin</span>
                     </li>
                     <li>
@@ -68,7 +67,6 @@
                             @csrf
                         </form>
                     </li>
-
                 </ul><!-- End Profile Dropdown Items -->
             </li><!-- End Profile Nav -->
 
