@@ -168,7 +168,7 @@
                                         <div class="form-group">
                                             <label for="durasi" class="form-label">durasi:</label>
                                             <div style="display: flex; align-items: center;">
-                                                <input type="number" name="durasi" id="durasi" placeholder="" value="{{ $produk->durasi }}" class="form-control" required><span style="border: 1px solid #ccc; padding: 0.75em 2em; border-radius: 5px; font-family: Arial, sans-serif; font-weight: bold;">Hari</span>
+                                                <input type="number" name="durasi" id="durasi" placeholder="" value="{{ $produk->durasi }}" class="form-control"><span style="border: 1px solid #ccc; padding: 0.75em 2em; border-radius: 5px; font-family: Arial, sans-serif; font-weight: bold;">Hari</span>
                                             </div>
                                         </div>
 

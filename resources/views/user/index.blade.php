@@ -28,10 +28,12 @@
                 @endforeach
 
             </div>
-            <div class="detail-item">
-                <span class="detail-label">Durasi:</span>
-                <span class="detail-value">{{ $produk->durasi }} Hari</span>
-            </div>
+            @if($produk->durasi)
+                <div class="detail-item">
+                    <span class="detail-label">Durasi:</span>
+                    <span class="detail-value">{{ $produk->durasi }} Hari</span>
+                </div>
+            @endif
             <div class="detail-item">
                 <span class="detail-label">Proposal:</span>
                 @if ($produk->link)
@@ -148,10 +150,14 @@
             <div class="content">
                 <span class="detail-label" id="label-harga">Harga:</span>
                 <span class="deskripsi-harga">{{ $produk->harga }}</span>
-                <span class="detail-label" id="label-harga">Durasi</span>
-                <span class="deskripsi-harga">{{ $produk->durasi }} Hari</span>
+                @if($produk->durasi)
+                    <div class="detail-item">
+                        <span class="detail-label">Durasi:</span>
+                        <span class="detail-value">{{ $produk->durasi }} Hari</span>
+                    </div>
+                @endif
                 <a href="#" class="btn-beli" id="openModal" data-produk-nama="{{ $produk->nama_produk }}"
-                    data-produk-harga="{{ $produk->harga }}" data-produk-durasi="{{ $produk->durasi }}"
+                    data-produk-harga="{{ $produk->harga }}"
                     data-whatsapp-url="{{ route('whatsapp.blank', $produk->id) }}">Beli
                     Produk</a>
             </div>
@@ -162,7 +168,9 @@
             <span class="close" id="closeModal"><i class="fas fa-close"></i></span>
             <h5 id="modalProdukNama"></h5>
             <p><strong>Harga:</strong> <span id="modalHarga"></span></p>
-            <p><strong>Durasi:</strong> <span id="modalDurasi"></span> Hari</p>
+            @if($produk->durasi)
+                <p><strong>Durasi:</strong> <span id="modalDurasi">{{ $produk->durasi }}</span> Hari</p>
+            @endif
 
             <h3>Konfirmasi Pembelian</h3>
             <p>Klik tombol di bawah ini untuk melanjutkan ke WhatsApp dan mengonfirmasi pembelian Anda:</p>
@@ -171,8 +179,11 @@
                 @csrf
                 @method('post')
             </form>
-            <label for="tanggalMulai">Tanggal Mulai:</label>
-            <input type="date" id="tanggalMulai" name="tanggal_mulai" required />
+            
+            @if($produk->durasi)
+                <label for="tanggalMulai">Tanggal Mulai:</label>
+                <input type="date" id="tanggalMulai" name="tanggal_mulai" required />
+            @endif
 
             <button id="whatsappLink" class="btn btn-success" target="_blank">Konfirmasi via WhatsApp</button>
             <a href="#" class="btn btn-danger" id="closeModalBtn">Batal</a>
