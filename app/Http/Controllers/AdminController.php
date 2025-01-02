@@ -92,7 +92,7 @@ class AdminController extends Controller
 
     public function manajemenAdmin()
     {
-        $kat = ['Proses Bisnis', 'Sistem Manajemen Bisnis', 'Inkubasi Bisnis'];
+        $kat = ['Rencana Bisnis', 'Sistem Manajemen Bisnis', 'Inkubasi Bisnis'];
 
         session(['kategori' => $kat, 'route' => 'manajemen.admin', 'formNumber' => '2']);
 
@@ -110,7 +110,7 @@ class AdminController extends Controller
 
     public function digitalAdmin()
     {
-        $kat = ['Perangkat Keras (Hardware)', 'Perangkat Lunak (Software)', 'Kecerdasan Buatan (Artificial Intelligence)'];
+        $kat = ['Barang Digital', 'Jasa Digital', 'Kecerdasan Buatan (Artificial Intelligence)'];
 
         session(['kategori' => $kat, 'route' => 'digital.admin', 'formNumber' => '2']);
 

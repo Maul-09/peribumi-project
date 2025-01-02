@@ -44,7 +44,7 @@
             <p>© 2024 Semua Hak Dilindungi.</p>
             <p>
                 <a href="https://konsultanqta.com">Kunjungi Website Kami</a> |
-                <a href="mailto:support@example.com">Hubungi Kami</a>
+                <a href="mailto:peribumi.pro@gmail.com">Hubungi Kami</a>
             </p>
         </div>
     </div>
