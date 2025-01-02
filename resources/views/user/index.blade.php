@@ -37,7 +37,7 @@
             <div class="detail-item">
                 <span class="detail-label">Proposal:</span>
                 @if ($produk->link)
-                    <a href="{{ $produk->link }}" class="btn-link" target="_blank">Unduh Sekarang</a>
+                    <a href="{{ $produk->link }}" class="btn-detail" target="_blank">Unduh Sekarang</a>
                 @else
                     <span class="no-link">Tidak ada link tersedia</span>
                 @endif
@@ -179,7 +179,7 @@
                 @csrf
                 @method('post')
             </form>
-            
+
             @if($produk->durasi)
                 <label for="tanggalMulai">Tanggal Mulai:</label>
                 <input type="date" id="tanggalMulai" name="tanggal_mulai" required />
