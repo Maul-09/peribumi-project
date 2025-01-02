@@ -1267,7 +1267,7 @@ section{
 
 
     .card {
-        min-width: 11em;
+        min-width: 10em;
         height: 15em;
         border-radius: 10px;
         overflow-x: hidden;

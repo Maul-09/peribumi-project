@@ -114,7 +114,7 @@
                                             <div class="input-group">
                                                 <input type="url" name="link" id="link" value="{{ old('link') }}"
                                                     class="form-control link-input" placeholder="https://contoh.com">
-                                                <button type="button" class="btn-small"
+                                                <button type="button" class="btn-small" style="border: 1px solid #ccc; padding: 0.75em 2em; border-radius: 5px; font-family: Arial, sans-serif; font-weight: bold;"
                                                     onclick="previewLink()">Preview</button>
                                             </div>
                                         </div>
@@ -165,13 +165,80 @@
                                         <div class="form-group">
                                             <label for="durasi" class="form-label">Durasi:</label>
                                             <div style="display: flex; align-items: center;">
-                                                <input type="number" name="durasi" id="durasi" placeholder="" value="{{ old('durasi') }}" class="form-control" required><span style="border: 1px solid #ccc; padding: 0.75em 2em; border-radius: 5px; font-family: Arial, sans-serif; font-weight: bold;">Hari</span>
+                                                <input type="number" name="durasi" id="durasi" placeholder="" value="{{ old('durasi') }}" class="form-control"><span style="border: 1px solid #ccc; padding: 0.75em 2em; border-radius: 5px; font-family: Arial, sans-serif; font-weight: bold;">Hari</span>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="persyaratan" class="form-label">Persyaratan:</label>
                                             <textarea name="persyaratan" id="persyaratan" class="form-control" required>{{ old('persyaratan') }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="tahapan" class="form-label">Tahapan:</label>
+                                            <textarea name="tahapan" id="tahapan" class="form-control" required>{{ old('tahapan') }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="harga" class="form-label">Harga:</label>
+                                            <textarea name="harga" id="harga" class="form-control" required>{{ old('harga') }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="produkType" class="form-label">Pilihan Kategori:</label>
+                                            <select name="produkType" id="produkType" class="select-control">
+                                                <option value="{{ old('produkType') }}">Pilihan Kategori</option>
+                                                @foreach ($kategori as $kat)
+                                                    <option value="{{ $kat }}">{{ $kat }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="link" class="form-label">Masukkan Link:</label>
+                                            <div class="input-group">
+                                                <input type="url" name="link" id="link" value="{{ old('link') }}"
+                                                    class="form-control link-input" placeholder="https://contoh.com">
+                                                <button type="button" class="btn-small" style="border: 1px solid #ccc; padding: 0.75em 2em; border-radius: 5px; font-family: Arial, sans-serif; font-weight: bold;"
+                                                    onclick="previewLink()">Preview</button>
+                                            </div>
+                                        </div>
+
+                                        <input type="hidden" name="silabus_data" id="silabus-data">
+                                        <button type="submit" class="btn-tambah-product">Simpan Produk</button>
+                                    </form>
+
+                                    {{-- <form action="{{ route('produk.store') }}" method="POST"
+                                        enctype="multipart/form-data" id="form-id" class="form-section {{ $formNumber == 3 ? 'active' : '' }}">
+                                        @csrf
+                                        <input type="hidden" id="silabus-data" name="silabus_data">
+                                        <input type="hidden" name="form_identifier" value="form3">
+
+                                        <div class="form-group">
+                                            <label for="image" class="form-label">Upload Gambar Produk:</label>
+                                            <input type="file" name="image" id="image" class="form-control"
+                                                accept="image/*" value="{{ old('image') }}">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="nama_produk" class="form-label">Nama Produk:</label>
+                                            <input type="text" name="nama_produk" id="nama_produk" value="{{ old('nama_produk') }}"
+                                                class="form-control" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="deskripsi" class="form-label">Deskripsi:</label>
+                                            <input name="deskripsi" id="deskripsi" value="{{ old('deskripsi') }}" class="form-control" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="klasifikasi" class="form-label">Klasifikasi:</label>
+                                            <textarea name="klasifikasi" id="klasifikasi" class="form-control" required>{{ old('klasifikasi') }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="ruang_lingkup" class="form-label">Ruang Lingkup:</label>
+                                            <textarea name="ruang_lingkup" id="ruang_lingkup" class="form-control" required>{{ old('ruang_lingkup') }}</textarea>
                                         </div>
 
                                         <div class="form-group">
@@ -206,7 +273,9 @@
 
                                         <input type="hidden" name="silabus_data" id="silabus-data">
                                         <button type="submit" class="btn-tambah-product">Simpan Produk</button>
-                                    </form>
+                                    </form> --}}
+
+
                                 </div>
                             </div>
                         </div>
