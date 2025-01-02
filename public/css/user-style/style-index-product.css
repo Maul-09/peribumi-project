@@ -57,8 +57,8 @@
 .detail-item {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.25em;
-    padding: 0.6em 0.95em;
+    max-width: 100%;
+    height: 75px;
 }
 
 .detail-label {
@@ -310,6 +310,23 @@
     margin-bottom: 8px;
 }
 
+.btn-detail{
+    padding: 10px;
+    text-align: center;
+    width: 20%;
+    background-color: #385d9a;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.btn-detail:hover{
+    transform: scale(1.05);
+}
+
 .deskripsi-harga {
     font-size: 1rem;
     color: #333;
@@ -376,6 +393,10 @@
         font-size: 0.9em;
     }
 
+    .btn-detail{
+        font-size: 0.85rem
+    }
+
     .no-reviews {
         font-size: 0.9em;
     }
@@ -415,7 +436,15 @@
     }
 
     .detail-value {
-        font-size: 0.75em;
+        font-size: 0.53rem;
+    }
+
+    .btn-detail:hover{
+        transform: none;
+    }
+
+    .btn-detail{
+        font-size: 0.75rem
     }
 
     .card-harga {
@@ -462,6 +491,10 @@
 
     .detail-value {
         font-size: 0.65em;
+    }
+
+    .btn-detail:hover{
+        transform: none;
     }
 
     .card-harga {
@@ -514,6 +547,15 @@
 
     .detail-value {
         font-size: 0.65em;
+    }
+
+    .btn-detail{
+        width: 30%;
+        font-size: 0.6rem;
+    }
+
+    .btn-detail:hover{
+        transform: none;
     }
 
     .card-harga {
