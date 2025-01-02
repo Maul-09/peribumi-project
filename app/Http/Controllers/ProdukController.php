@@ -133,7 +133,7 @@ class ProdukController extends Controller
                     'deskripsi' => 'required|string',
                     'klasifikasi' => 'required|string|max:65535',
                     'ruang_lingkup' => 'required|string|max:65535',
-                    'durasi' => 'integer|string|max:65535',
+                    'durasi' => 'integer|string|max:65535|nullable',
                     'persyaratan' => 'required|string|max:65535',
                     'tahapan' => 'required|string|max:65535',
                     'harga' => 'required|string|max:65535',
@@ -156,6 +156,43 @@ class ProdukController extends Controller
                     'link'
                 ]));
             }
+
+            // if ($formIdentifier === 'form3') {
+            //     // Validasi untuk form1
+            //     $request->validate([
+            //         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10000',
+            //         'nama_produk' => 'required|string|max:255',
+            //         'teknis' => 'required|string|max:65535',
+            //         'deskripsi' => 'required|string',
+            //         'durasi' => 'required|integer|max:10',
+            //         'personil' => 'required|string|max:65535',
+            //         'persyaratan' => 'required|string|max:65535',
+            //         'metodologi' => 'required|string|max:65535',
+            //         'sasaran' => 'required|string|max:65535',
+            //         'jadwal_lokasi_fasilitas' => 'required|string|max:65535',
+            //         'highlight' => 'required|string|max:65535',
+            //         'harga' => 'required|string|max:65535',
+            //         'produkType' => 'required|string',
+            //         'link' => 'nullable|url',
+            //     ]);
+
+            //     // Simpan data form1 ke database
+            //     $produk = Produk::create($request->only([
+            //         'nama_produk',
+            //         'teknis',
+            //         'deskripsi',
+            //         'durasi',
+            //         'personil',
+            //         'persyaratan',
+            //         'metodologi',
+            //         'sasaran',
+            //         'jadwal_lokasi_fasilitas',
+            //         'highlight',
+            //         'harga',
+            //         'produkType',
+            //         'link'
+            //     ]));
+            // }
 
             // Jika ada file gambar yang diunggah
             if ($request->hasFile('image')) {
@@ -449,7 +486,7 @@ class ProdukController extends Controller
                 'teknis' => 'required|string|max:65535',
                 'ruang_lingkup' => 'required|string|max:65535',
                 'klasifikasi' => 'required|string|max:65535',
-                'durasi' => 'integer|string|max:65535',
+                'durasi' => 'integer|string|max:65535|nullable',
                 'persyaratan' => 'required|string|max:65535',
                 'tahapan' => 'required|string|max:65535',
                 'harga' => 'required|string|max:65535',

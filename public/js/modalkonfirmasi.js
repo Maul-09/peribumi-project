@@ -14,13 +14,11 @@ btn.forEach(function (button) {
         // Ambil data dari tombol yang memicu modal
         var produkNama = button.getAttribute("data-produk-nama");
         var harga = button.getAttribute("data-produk-harga");
-        var durasi = button.getAttribute("data-produk-durasi");
         var whatsappUrl = button.getAttribute("data-whatsapp-url");
 
         // Isi data ke dalam modal
         document.getElementById("modalProdukNama").innerText = produkNama;
         document.getElementById("modalHarga").innerText = harga;
-        document.getElementById("modalDurasi").innerText = durasi;
 
         // Salin data WhatsApp URL ke tombol di modal
         whatsappLink.setAttribute("href", whatsappUrl);
