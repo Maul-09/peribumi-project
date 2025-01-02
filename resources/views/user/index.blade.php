@@ -114,22 +114,23 @@
                                 $emote = '';
                                 switch ($review->star_rating) {
                                     case 5:
-                                        $emote = '<i class="fa-solid fa-face-grin-stars color-emote"></i>'; // Sangat puas
+                                        $emote = '🥳';
                                         break;
                                     case 4:
-                                        $emote = '<i class="fa-solid fa-face-smile color-emote"></i>'; // Puas
+                                        $emote = '😄';
                                         break;
                                     case 3:
-                                        $emote = '<i class="fa-solid fa-face-meh color-emote"></i>'; // Netral
+                                        $emote = '🤔';
                                         break;
                                     case 2:
-                                        $emote = '<i class="fa-solid fa-face-frown color-emote"></i>'; // Tidak puas
+                                        $emote = '😞';
                                         break;
                                     case 1:
-                                        $emote = '<i class="fa-solid fa-face-angry color-emote"></i>'; // Sangat tidak puas
+                                        $emote = '🤬';
                                         break;
                                     default:
-                                        $emote = '<i class="fa-solid fa-circle-question text-muted"></i>'; // Tidak diketahui
+                                        $emote = '❓';
+                                        break;
                                 }
                             @endphp
                             <strong>{!! $emote !!} {{ $review->user->name ?? 'Tidak diketahui' }}</strong>
