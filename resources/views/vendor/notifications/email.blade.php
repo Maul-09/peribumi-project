@@ -68,7 +68,7 @@
         text-decoration: none;"
                     onmouseover="this.style.textDecoration='underline'"
                     onmouseout="this.style.textDecoration='none'">Kunjungi Website Kami</a> |
-                <a href="mailto:support@example.com" style="color: #4CAF50;
+                <a href="mailto:peribumi.pro@gmail.com" style="color: #4CAF50;
         text-decoration: none;"
                     onmouseover="this.style.textDecoration='underline'"
                     onmouseout="this.style.textDecoration='none'">Hubungi Kami</a>
