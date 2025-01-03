@@ -136,6 +136,7 @@ class ProdukController extends Controller
                     'durasi' => 'integer|string|max:65535|nullable',
                     'persyaratan' => 'required|string|max:65535',
                     'tahapan' => 'required|string|max:65535',
+                    'keuntungan' => 'required|string|max:65535',
                     'harga' => 'required|string|max:65535',
                     'produkType' => 'required|string',
                     'link' => 'nullable|url',
@@ -151,6 +152,7 @@ class ProdukController extends Controller
                     'durasi',
                     'persyaratan',
                     'tahapan',
+                    'keuntungan',
                     'harga',
                     'produkType',
                     'link'
@@ -310,6 +312,7 @@ class ProdukController extends Controller
             'klasifikasi',
             'kategori',
             'tahapan',
+            'keuntungan',
         ];
 
         $filteredProduct = array_filter($product->toArray(), function ($value, $key) {
@@ -335,8 +338,9 @@ class ProdukController extends Controller
             'jadwal_lokasi_fasilitas',
             'lembaga',
             'highlight',
-            'harga',
+            'keuntungan',
             'tahapan',
+            'harga',
         ];
 
         // Atur urutan berdasarkan yang diinginkan dan pastikan kolom dengan nilai null tidak muncul
@@ -489,6 +493,7 @@ class ProdukController extends Controller
                 'durasi' => 'integer|string|max:65535|nullable',
                 'persyaratan' => 'required|string|max:65535',
                 'tahapan' => 'required|string|max:65535',
+                'keuntungan' => 'required|string|max:65535',
                 'harga' => 'required|string|max:65535',
                 'produkType' => 'required|string',
                 'link' => 'nullable|url',

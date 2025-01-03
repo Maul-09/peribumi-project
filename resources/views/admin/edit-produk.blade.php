@@ -183,6 +183,11 @@
                                         </div>
 
                                         <div class="form-group">
+                                            <label for="keuntungan" class="form-label">Keuntungan:</label>
+                                            <textarea name="keuntungan" id="keuntungan" class="form-control" required>{{ $produk->keuntungan }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
                                             <label for="harga" class="form-label">Harga:</label>
                                             <textarea name="harga" id="harga" class="form-control" required>{{ $produk->harga }}</textarea>
                                         </div>
