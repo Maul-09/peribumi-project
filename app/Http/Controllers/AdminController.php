@@ -224,6 +224,7 @@ class AdminController extends Controller
                 'username' => ['required', 'max:255'],
                 'password' => ['required', 'min:8'],
                 'usertype' => ['required', 'string'],
+
             ],
             [
                 'name.required' => 'Nama wajib diisi',
@@ -241,7 +242,7 @@ class AdminController extends Controller
 
         // Enkripsi password
         $field['password'] = bcrypt($field['password']);
-
+        $field['email_verified_at'] = now();
         // Simpan user ke database
         User::create($field);
 
