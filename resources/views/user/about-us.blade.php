@@ -80,8 +80,8 @@
 
     <section class="grid-css">
         <div class="title-grid">
-            <h2>Gallery</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            <h2>Gallery Kami</h2>
+            <p>Jelajahi perjalanan kami dalam memberikan solusi terbaik untuk klien melalui galeri visual ini. Dari pertemuan hingga implementasi, setiap gambar adalah cerita keberhasilan yang menginspirasi.</p>
         </div>
         <div class="image-grid">
             <div class="item1"></div>
