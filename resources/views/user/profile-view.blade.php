@@ -8,8 +8,8 @@
                     <i class="fas fa-arrow-left"></i>
                 </a>
                 <div class="title">
-                    <p>Profile Settings</p>
-                    
+                    <p>Pengaturan Akun</p>
+
                 </div>
             </div>
 
@@ -18,16 +18,16 @@
                 <div class="sidebar">
                     <div class="tabs">
                         <a href="#" class="tab-link active" data-target="general">
-                            <i class="fas fa-user"></i><span class="title-nav">General</span>
+                            <i class="fas fa-user"></i><span class="title-nav">Umum</span>
                         </a>
                         <a href="#" class="tab-link" data-target="change-password">
-                            <i class="fas fa-key"></i><span class="title-nav">Change Password</span>
+                            <i class="fas fa-key"></i><span class="title-nav">Ganti Kata Sandi</span>
                         </a>
                         <a href="#" class="tab-link" data-target="info">
-                            <i class="fas fa-info-circle"></i><span class="title-nav">Info</span>
+                            <i class="fas fa-info-circle"></i><span class="title-nav">Data Diri</span>
                         </a>
                         <a href="#" class="tab-link" data-target="social-links">
-                            <i class="fas fa-share-alt"></i><span class="title-nav">Social Links</span>
+                            <i class="fas fa-share-alt"></i><span class="title-nav">Sosial Media</span>
                         </a>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
                                     @endif
                                 </div>
                                 <div class="action-buttons">
-                                    <button type="submit" class="btn-save">Save changes</button>
+                                    <button type="submit" class="btn-save">Simpan Perubahan</button>
                                 </div>
                             </div>
                         </form>
@@ -130,87 +130,94 @@
 
                     <!-- Change Password -->
                     <div class="tab-pane" id="change-password">
-                        <h5>Change Your Password</h5>
-                        <form class="form-section" action="{{ route('change.password', $field->id) }}"
-                            method="post">
+                        <h5>Ganti Kata Sandi Anda</h5>
+                        <form class="form-section" action="{{ route('change.password', $field->id) }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <label class="form-label">Current Password</label>
+                                <label class="form-label">Kata Sandi Lama</label>
                                 <input type="password" class="form-control" name="current_password"
-                                    placeholder="Masukan Password Lama">
+                                    placeholder="Masukan Kata Sandi Lama">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">New Password</label>
+                                <label class="form-label">Kata Sandi Baru</label>
                                 <input type="password" class="form-control" name="new_password"
-                                    placeholder="Masukan Password Baru">
+                                    placeholder="Masukan Kata Sandi Baru">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Confirm New Password</label>
+                                <label class="form-label">Konfirmasi Kata Sandi Baru</label>
                                 <input type="password" class="form-control" name="new_password_confirmation"
-                                    placeholder="Konfirmasi Password Baru">
+                                    placeholder="Konfirmasi Kata Sandi Baru">
                             </div>
                             <div class="action-buttons">
-                                <button type="submit" class="btn-save">Save changes</button>
+                                <button type="submit" class="btn-save">Simpan Perubahan</button>
                             </div>
                         </form>
                     </div>
 
                     <!-- Info -->
                     <div class="tab-pane" id="info">
-                        <h5>Personal Information</h5>
+                        <h5>Data Diri</h5>
                         <form class="form-section" action="{{ route('update.profile', $field->id) }}"
                             method="post">
                             @csrf
                             <div class="form-group">
                                 <label class="form-label">Tanggal Lahir</label>
-                                <input type="date" class="form-control" name="tanggal_lahir">
+                                <input type="date" class="form-control" name="tanggal_lahir"
+                                    value="{{ $field->InformasiUser->tanggal_lahir ?? '' }}">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Alamat</label>
-                                <textarea class="form-control" rows="3" name="alamat"></textarea>
+                                <textarea class="form-control" rows="3" name="alamat">{{ $field->InformasiUser->alamat ?? '' }}</textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Nomor Telepon</label>
-                                <input type="tel" class="form-control" placeholder="+62" name="nomor_telepon">
+                                <input type="tel" class="form-control" placeholder="+62" name="nomor_telepon"
+                                    value="{{ $field->InformasiUser->nomor_telepon ?? '' }}">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Jenis Kelamin</label>
                                 <select class="form-control" name="jenis_kelamin">
                                     <option value="">Pilih</option>
-                                    <option value="male">Laki-laki</option>
-                                    <option value="female">Perempuan</option>
-                                    <option value="other">Lainnya</option>
+                                    <option value="Laki-laki"
+                                        {{ $field->InformasiUser->jenis_kelamin == 'Laki-laki' ? 'selected' : '' }}>
+                                        Laki-laki</option>
+                                    <option value="Perempuan"
+                                        {{ $field->InformasiUser->jenis_kelamin == 'Perempuan' ? 'selected' : '' }}>
+                                        Perempuan</option>
+                                    <option value="Lainnya"
+                                        {{ $field->InformasiUser->jenis_kelamin == 'Lainnya' ? 'selected' : '' }}>
+                                        Lainnya</option>
                                 </select>
                             </div>
                             <div class="action-buttons">
-                                <button type="submit" class="btn-save">Save changes</button>
+                                <button type="submit" class="btn-save">Simpan Perubahan</button>
                             </div>
                         </form>
                     </div>
 
                     <!-- Social Links -->
                     <div class="tab-pane" id="social-links">
-                        <h5>Social Media Links</h5>
+                        <h5>Link Sosial Media</h5>
                         <form class="form-section" action="{{ route('update.profile', $field->id) }}"
                             method="post">
                             @csrf
                             <div class="form-group">
                                 <label class="form-label">Facebook</label>
                                 <input type="url" class="form-control"
-                                    placeholder="https://facebook.com/username" name="facebook">
+                                    placeholder="https://facebook.com/username" name="facebook" value="{{ $field->InformasiUser->facebook ?? '' }}">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Twitter</label>
                                 <input type="url" class="form-control" placeholder="https://twitter.com/username"
-                                    name="twitter">
+                                    name="twitter" value="{{ $field->InformasiUser->twitter ?? '' }}">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Instagram</label>
                                 <input type="url" class="form-control"
-                                    placeholder="https://instagram.com/username" name="instagram">
+                                    placeholder="https://instagram.com/username" name="instagram" value="{{ $field->InformasiUser->instagram ?? '' }}">
                             </div>
                             <div class="action-buttons">
-                                <button type="submit" class="btn-save">Save changes</button>
+                                <button type="submit" class="btn-save">Simpan Perubahan</button>
                             </div>
                         </form>
                     </div>

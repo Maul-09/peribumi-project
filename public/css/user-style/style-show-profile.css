@@ -1,107 +1,183 @@
-/* Global Styling */
 body {
-    font-family: Arial, sans-serif;
-    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
-}
-
-.container {
-    width: 100%;
-    padding: 40px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f4f7fa; /* Background lebih soft dan elegan */
+    font-family: 'Arial', sans-serif; /* Font yang lebih modern */
 }
 
 .profile-layout {
     display: flex;
+    align-items: center;
     gap: 40px;
-    align-items: flex-start;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
-/* Profile Photo Styling */
+.profile-layout:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
 .profile-photo-wrapper {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
     flex-shrink: 0;
-    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.profile-photo {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
+.profile-photo-wrapper:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.profile-photo-wrapper img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
 }
 
 .photo-placeholder {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #ff7f50, #ff6347);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 60px;
+    width: 100%;
+    height: 100%;
+    background-color: #757575;
+    font-size: 3rem;
     color: #fff;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
-/* Profile Info Styling */
 .profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 160px;
     flex-grow: 1;
-    color: #333;
+    padding-right: 20px;
 }
 
 .profile-name {
-    margin-bottom: 15px;
-    font-size: 32px;
-    font-weight: bold;
-    color: #222;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+    text-align: left;
 }
 
 .user-info {
     display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 18px;
+    justify-content: space-between;
+    width: 320px;
+    margin-top: 10px; /* Memberikan ruang di atas antara nama dan info pengguna */
+}
+
+.user-info h6 {
+    margin: 0;
+    font-size: 1.1rem;
     color: #555;
 }
 
 .separator {
-    font-weight: bold;
-    color: #aaa;
+    font-size: 1.6rem;
+    color: #bbb;
+    border-left: 2px solid #ccc; /* Garis vertikal */
+    height: 20px; /* Menyesuaikan tinggi garis */
+    margin: 0 10px; /* Memberikan ruang di kiri dan kanan garis */
+}
+
+
+
+.social-media {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .social-media a {
-    margin-right: 15px;
-    text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    font-size: 16px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
+    gap: 10px;
+    padding: 10px 18px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
 }
 
 .social-media a:hover {
-    transform: scale(1.1);
+    background-color: #0056b3;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
-.social-media .btn {
-    font-size: 16px;
-    text-transform: capitalize;
+.social-media a i {
+    font-size: 1.3rem;
 }
 
-/* Additional Info Styling */
+/* Gaya untuk bagian informasi tambahan */
 .additional-info {
-    margin-top: 40px;
-    font-size: 18px;
-    line-height: 1.8;
-    color: #444;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.additional-info p {
+    font-size: 16px;
+    margin: 8px 0;
 }
 
 .additional-info strong {
+    color: #333;
     font-weight: bold;
-    color: #000;
+}
+
+/* Gaya untuk tombol edit profil dan beranda */
+.button-edit-beranda {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.button-edit-beranda a {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.button-edit-beranda a:hover {
+    background-color: #45a049;
+}
+
+.button-edit-beranda a:last-child {
+    background-color: #2196F3;
+}
+
+.button-edit-beranda a:last-child:hover {
+    background-color: #0b7dda;
 }

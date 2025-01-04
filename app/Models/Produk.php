@@ -46,7 +46,7 @@ class Produk extends Model
     public function users()
     {
         return $this->belongsToMany(User::class, 'user_produk')
-            ->withPivot('tanggal_mulai','status_akses', 'status_transaksi', 'tanggal_beli', 'tanggal_berakhir', 'nomor_transaksi')
+            ->withPivot('tanggal_mulai', 'status_akses', 'status_transaksi', 'tanggal_beli', 'tanggal_berakhir', 'nomor_transaksi')
             ->withTimestamps();
     }
 }

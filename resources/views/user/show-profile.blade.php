@@ -23,7 +23,7 @@
             <h3 class="profile-name">{{ $user->name }}</h3>
             <div class="user-info">
                 <h6>{{ $user->email }}</h6>
-                <span class="separator mx-2">|</span>
+                <span class="separator mx-2"></span>
                 <h6>{{ $user->username }}</h6>
             </div>
 
@@ -60,6 +60,8 @@
             <p><strong>Jenis Kelamin:</strong> {{ $user->informasiUser->jenis_kelamin ?? 'Data tidak ditemukan' }}</p>
         @endif
     </div>
-    <a href="{{ route('editProfile', $user->id) }}">Edit Profil</a>
-    <a href="{{ route('beranda') }}">Beranda</a>
+    <div class="button-edit-beranda">
+        <a href="{{ route('editProfile', $user->id) }}">Edit Profil</a>
+        <a href="{{ route('beranda') }}">Beranda</a>
+    </div>
 </x-layout>

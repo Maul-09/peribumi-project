@@ -202,7 +202,9 @@ class ProdukController extends Controller
 
                 // Buat folder jika belum ada
                 if (!File::exists($destinationPath)) {
-                    File::makeDirectory($destinationPath, 0755,
+                    File::makeDirectory(
+                        $destinationPath,
+                        0755,
                         true
                     );
                 }
@@ -420,7 +422,7 @@ class ProdukController extends Controller
                 'produkType' => 'required|string',
                 'link' => 'nullable|url',
             ]);
-            
+
             $update = Produk::findOrFail($id);
             if ($request->hasFile('image')) {
                 $destinationPath = public_path('produk');
@@ -498,7 +500,7 @@ class ProdukController extends Controller
                 'produkType' => 'required|string',
                 'link' => 'nullable|url',
             ]);
-            
+
             $update = Produk::findOrFail($id);
             if ($request->hasFile('image')) {
                 $destinationPath = public_path('produk');
@@ -558,7 +560,7 @@ class ProdukController extends Controller
             $update->update($produk);
         }
 
-        
+
 
         // // Buat array untuk menyimpan ID silabus baru
         // $silabusBaruIDs = [];
@@ -613,7 +615,7 @@ class ProdukController extends Controller
     {
         $produk = Produk::findOrFail($id);
         $user = Auth::user();
-        
+
         $validated = $request->validate([
             'tanggal_mulai' => 'required|date',
         ]);
@@ -624,20 +626,21 @@ class ProdukController extends Controller
         $userProduk->user_id = $user->id;
         $userProduk->produk_id = $produk->id;
         $userProduk->status_transaksi = 'pending'; // Status pending
-        $userProduk->tanggal_mulai = $tanggalMulai; 
+        $userProduk->tanggal_mulai = $tanggalMulai;
         $userProduk->save();
 
         $route = session('route');
-        return redirect()->route($route)->withFragment('produk-layanan')->with('success','Pesanan anda telah terdaftar silahkan lanjutkan konfirmasi via whatsapp');
+        return redirect()->route($route)->withFragment('produk-layanan')->with('success', 'Pesanan anda telah terdaftar silahkan lanjutkan konfirmasi via whatsapp');
     }
 
-    public function whatsappBlank($id) {
+    public function whatsappBlank($id)
+    {
         $produk = Produk::findOrFail($id);
 
         $whatsappMessage = "Hallo, saya ingin membeli produk-layanan: " . $produk->nama_produk;
         $whatsappUrl = "https://wa.me/6281224785684?text=" . urlencode($whatsappMessage);
 
-        return redirect($whatsappUrl);        
+        return redirect($whatsappUrl);
     }
 
     public function produkUser($id)
@@ -701,5 +704,4 @@ class ProdukController extends Controller
 
         return redirect()->back()->with('error', 'Transaksi tidak ditemukan atau status transaksi tidak valid untuk dihapus.');
     }
-
 }
