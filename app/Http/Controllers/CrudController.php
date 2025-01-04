@@ -335,6 +335,9 @@ class CrudController extends Controller
         return response()->json(['message' => 'Gambar dan data berhasil dihapus.']);
     }
 
-    
-
+    public function showProfile($id)
+    {
+        $user = User::with('informasiUser')->findOrFail($id);
+        return view('user.show-profile', compact('user'));
+    }
 }

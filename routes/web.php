@@ -19,6 +19,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/edit/profile/delete{id}', [CrudController::class, 'deleteAccount'])->name('deleteAccount');
         Route::post('/edit/profile/update{id}', [CrudController::class, 'update'])->name('update.profile');
         Route::delete('/edit/profile/delete-image/{id}', [CrudController::class, 'deleteImageProfle'])->name('delete.image.profile');
+        Route::get('/profile/show/{id}', [CrudController::class, 'showProfile'])->name('profile.show');
         Route::get('/produk/user/{id}', [ProdukController::class, 'produkUser'])->name('produk.user');
         // Route::post('/restore-user', [CrudController::class, 'restoreByEmail'])->name('restore.user');
         // Route::get('/restore-confirm', [CrudController::class, 'confirmRestore'])->name('restore.confirm');

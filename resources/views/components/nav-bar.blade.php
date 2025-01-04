@@ -49,7 +49,7 @@
                             <h6 class="username"><span>Hello, </span>{{ Auth::user()->name }}</h6>
                         @endif
                         <hr>
-                        <a href="{{ route('editProfile', auth()->user()->id) }}" class="menu-items">
+                        <a href="{{ route('profile.show', auth()->user()->id) }}" class="menu-items">
                             <i class="fas fa-user-edit"></i>Profile
                         </a>
                         <a href="{{ route('produk.user', auth()->user()->id) }}" class="menu-items">

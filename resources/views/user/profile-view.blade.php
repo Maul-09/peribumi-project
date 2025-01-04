@@ -4,11 +4,12 @@
     <div class="screen">
         <div class="account-settings">
             <div class="arrow-back">
-                <a href="{{ route('beranda') }}" class="btn-back">
+                <a href="{{ route('profile.show', $field->id) }}" class="btn-back">
                     <i class="fas fa-arrow-left"></i>
                 </a>
                 <div class="title">
                     <p>Profile Settings</p>
+                    
                 </div>
             </div>
 
