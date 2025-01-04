@@ -32,7 +32,7 @@
     <section class="about" id="about">
         <div class="content">
             <div class="w50">
-                <h2>Keunggulan dan Perbedaan</h2>
+                <h2>Mengapa memilih kami?</h2>
                 <div class="container-chose">
                     <div class="card-chose">
                         <div class="card-content">
