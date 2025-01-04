@@ -501,7 +501,7 @@
     }
 
     .card-harga {
-        width: 100%;
+        max-width: 100%;
     }
 
     #label-harga,
@@ -562,7 +562,7 @@
     }
 
     .card-harga {
-        width: 100%;
+        max-width: 100%;
     }
 
     #label-harga,
