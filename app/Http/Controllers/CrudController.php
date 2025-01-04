@@ -36,7 +36,7 @@ class CrudController extends Controller
     public function editProfile(string $id): View
     {
         // Mendapatkan pengguna berdasarkan ID
-        $field = User::findOrFail($id);
+        $field = User::with('informasiUser')->findOrFail($id);
 
         // Merender tampilan dengan data
         return view('user.profile-view', compact('field'));
@@ -179,6 +179,13 @@ class CrudController extends Controller
         }
 
         $informasiUser->user_id = $field->id;
+        $informasiUser->alamat = $request->input('alamat') ?: null;
+        $informasiUser->tanggal_lahir = $request->input('tanggal_lahir') ?: null;
+        $informasiUser->nomor_telepon = $request->input('nomor_telepon') ?: null;
+        $informasiUser->jenis_kelamin = $request->input('jenis_kelamin') ?: null;
+        $informasiUser->facebook = $request->input('facebook') ?: null;
+        $informasiUser->twitter = $request->input('twitter') ?: null;
+        $informasiUser->instagram = $request->input('instagram') ?: null;
         $informasiUser->save();
 
         // Simpan pesan ke session
