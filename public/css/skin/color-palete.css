@@ -3,4 +3,8 @@
     --skin-color-2: #7F8F97;
     --skin-color-3: #176B87;
     --skin-color-4: #FF9B06;
+
+    --gap: 1em;
+    --num-cols: 4;
+    --row-height: 300px;
 }

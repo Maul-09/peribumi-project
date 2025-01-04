@@ -67,9 +67,10 @@ section {
     max-width: 70%;
 }
 
+.grid-css,
 .history {
     background-color: #fff;
-    padding: 6em 12em;
+    padding: 4em 12em;
 }
 
 .nilai-utama {
@@ -230,6 +231,63 @@ section {
     margin-bottom: 0.9em;
 }
 
+.title-grid{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 3em 0;
+}
+
+.image-grid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 150px;
+    gap: 10px;
+}
+
+.image-grid div {
+    background-size: cover;
+    background-position: center;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.item1 {
+    grid-column: span 2;
+    grid-row: span 2;
+    background-image: url('../../image/bg-8.jpg');
+}
+
+.item2 {
+    grid-column: span 2;
+    grid-row: span 1;
+    background-image: url('../../image/bg-2.jpg');
+}
+
+.item3 {
+    grid-column: span 2;
+    grid-row: span 3;
+    background-image: url('../../image/bg-7.jpg');
+}
+
+.item4 {
+    grid-column: span 2;
+    grid-row: span 1;
+    background-image: url('../../image/bg-4.jpg');
+}
+
+.item5 {
+    grid-column: span 4;
+    grid-row: span 2;
+    background-image: url('../../image/bg-5.jpg');
+}
+
+.item6 {
+    grid-column: span 2;
+    grid-row: span 1;
+    background-image: url('../../image/bg-6.jpg');
+}
+
 @media only screen and (max-width: 1280px) and (min-width: 1024px){
     section {
         padding: 3em 8em;
@@ -249,6 +307,7 @@ section {
         font-size: 1em;
     }
 
+    .grid-css,
     .history{
         padding: 2.5em 6.5em;
     }
@@ -331,6 +390,7 @@ section {
         font-size: 0.85em;
     }
 
+    .grid-css,
     .history{
         padding: 2em 4em;
     }
@@ -393,6 +453,24 @@ section {
     .sasaran .sasaran-span{
         font-size: 0.8em;
         margin: 0.25em 0.8em;
+    }.image-grid{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .item4 {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .item5 {
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+
+    .item6 {
+        grid-column: span 1;
+        grid-row: span 2;
     }
 }
 
@@ -403,6 +481,8 @@ section {
     section{
         padding: 5em;
     }
+
+    .grid-css,
     .history {
         padding: 3.5em;
     }
@@ -480,12 +560,15 @@ section {
         font-size: 0.75em;
         margin: 0.25em 0.8em;
     }
+
 }
 
 @media only screen and (max-width: 480px){
     section{
         padding: 3.5em;
     }
+
+    .grid-css,
     .history {
         padding: 1.5em;
     }
@@ -563,6 +646,41 @@ section {
     .sasaran .sasaran-span{
         font-size: 0.75em;
         margin: 0.25em 0.8em;
+    }
+
+    .image-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item1 {
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+
+    .item2 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .item3 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .item4 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .item5 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .item6 {
+        grid-column: span 2;
+        grid-row: span 1;
     }
 
 }

@@ -20,7 +20,7 @@
         </div>
     @endif
 
-    
+
     {{-- End Alertt berhasil --}}
     <section class="banner" id="home">
         <div class="textBx">
@@ -32,7 +32,6 @@
     <section class="about" id="about">
         <div class="content">
             <div class="w50">
-                <h1>Mengapa memilih kami?</h1>
                 <h2>Keunggulan dan Perbedaan</h2>
                 <div class="container-chose">
                     <div class="card-chose">

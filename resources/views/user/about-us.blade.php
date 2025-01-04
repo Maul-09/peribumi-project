@@ -74,8 +74,22 @@
                 <p class="judul-span">Market Share Positioning : </p>
                 <p class="sasaran-span">Mampu mendapatkan posisi yang semakin kuat dalam peta persaingan bisnis sektor
                     jasa yang dipilih seiring dengan peningkatan market share yang telah diperoleh</p>
-
             </div>
+        </div>
+    </section>
+
+    <section class="grid-css">
+        <div class="title-grid">
+            <h2>Gallery</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="image-grid">
+            <div class="item1"></div>
+            <div class="item2"></div>
+            <div class="item3"></div>
+            <div class="item4"></div>
+            <div class="item5"></div>
+            <div class="item6"></div>
         </div>
     </section>
 </x-layout>

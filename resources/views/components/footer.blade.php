@@ -1,7 +1,12 @@
 <footer id="footer">
     <div class="title-foot">
-        <img src="{{ asset('../image/logo-peribumi.png') }}" alt="logo">
-        <h2>PERI BUMI CONSULTANT</h2>
+        <div class="title-foot-utama">
+            <img src="{{ asset('../image/logo-peribumi.png') }}" alt="logo">
+            <h2>PERI BUMI CONSULTANT</h2>
+        </div>
+        <div class="title-foot-moto">
+            <p>“ensure competency increase capacity”</p>
+        </div>
     </div>
     <div class="con">
         <div class="about-foot">
