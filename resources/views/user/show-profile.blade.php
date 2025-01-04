@@ -65,6 +65,4 @@
                 <a href="{{ route('beranda') }}">Beranda</a>
             </div>
         </div>
-    </div>
-
 </x-layout>
