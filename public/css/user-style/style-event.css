@@ -74,32 +74,116 @@ section.product-event {
 }
 
 .title-produk {
-    color: #04364a;
     display: flex;
     justify-content: center;
-    aligh-item: center;
+    align-items: center;
     margin-bottom: 30px;
+    text-transform: justify;
 }
 
-@media only screen and (max-width: 581px){
-    section{
-        padding: 1.5em;
+.title-produk h3 {
+    color: var(--skin-color-1);
+    font-size: 1.75em;
+}
+
+
+@media only screen and (max-width: 1280px) and (min-width: 1024px){
+    section {
+        padding: 6em 10em;
     }
 
     .banner {
-        min-height: 60vh;
+        position: relative;
+        min-height: 100vh;
     }
 
     .banner .textBx h2 {
-        font-size: 22px;
-        color: #fff;
+        font-size: 1.8em;
+        margin-bottom: 0.45em;
+    }
+
+    .banner .textBx p {
+        font-size: 1em;
+        max-width: 100%;
+    }
+
+    .title-produk h3 {
+        color: var(--skin-color-1);
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+    section {
+        padding: 3em 4em;
+    }
+
+    .banner {
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .banner .textBx h2 {
+        font-size: 1.5em;
+        margin-bottom: 0.35em;
+        line-height: 1.5em;
+    }
+
+    .banner .textBx p {
+        font-size: 1em;
+        max-width: 100%;
+    }
+
+    .title-produk h3 {
+        color: var(--skin-color-1);
+        font-size: 1.35em;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 480px){
+    section {
+        padding: 4em;
+    }
+
+    .banner {
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .banner .textBx h2 {
+        font-size: 1.5em;
+    }
+
+    .banner .textBx p {
+        font-size: 0.8em;
+    }
+
+    .title-produk h3 {
+        color: var(--skin-color-1);
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    section{
+        padding: 2.5em;
+    }
+
+    .banner .textBx h2 {
+        font-size: 28px;
+
+    }
+
+    .banner .textBx p {
+        font-size: 16px;
     }
 
     .banner .textBx p {
         font-size: 12px;
     }
 
-    .content{
-        display: block;
+    .title-produk h3 {
+        color: var(--skin-color-1);
+        font-size: 1.4em;
     }
 }
