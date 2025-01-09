@@ -234,8 +234,21 @@ section {
 .title-grid{
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
     margin: 3em 0;
+}
+
+.title-grid h2{
+    color: var(--skin-color-1);
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.title-grid p{
+    color: var(--skin-color-1);
+    font-size: 0.95em;
+    text-align: center;
 }
 
 .image-grid{
@@ -255,37 +268,37 @@ section {
 .item1 {
     grid-column: span 2;
     grid-row: span 2;
-    background-image: url('../../image/bg-8.jpg');
+    background-image: url('../../image/item-1.jpg');
 }
 
 .item2 {
     grid-column: span 2;
     grid-row: span 1;
-    background-image: url('../../image/bg-2.jpg');
+    background-image: url('../../image/item-2.jpg');
 }
 
 .item3 {
     grid-column: span 2;
     grid-row: span 3;
-    background-image: url('../../image/bg-7.jpg');
+    background-image: url('../../image/item-3.jpg');
 }
 
 .item4 {
     grid-column: span 2;
     grid-row: span 1;
-    background-image: url('../../image/bg-4.jpg');
+    background-image: url('../../image/item-5.jpg');
 }
 
 .item5 {
     grid-column: span 4;
     grid-row: span 2;
-    background-image: url('../../image/bg-5.jpg');
+    background-image: url('../../image/item-4.jpg');
 }
 
 .item6 {
     grid-column: span 2;
     grid-row: span 1;
-    background-image: url('../../image/bg-6.jpg');
+    background-image: url('../../image/item-6.jpg');
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1024px){

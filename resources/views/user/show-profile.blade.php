@@ -27,6 +27,19 @@
                 <h6>{{ $user->username }}</h6>
             </div>
 
+            <div class="mt-3 additional-info">
+                @if ($user->informasiUser)
+                    <p class="title-profile">Alamat<span>:</span></p>
+                    <p>{{ $user->informasiUser->alamat ?? 'Data tidak ditemukan' }}</p>
+                    <p class="title-profile">Tanggal Lahir<span>:</span></p>
+                    <p>{{ $user->informasiUser->tanggal_lahir ?? 'Data tidak ditemukan' }}</p>
+                    <p class="title-profile">Nomor Telepon<span>:</span></p>
+                    <p>{{ $user->informasiUser->nomor_telepon ?? 'Data tidak ditemukan' }}</p>
+                    <p class="title-profile">Jenis Kelamin<span>:</span></p>
+                    <p>{{ $user->informasiUser->jenis_kelamin ?? 'Data tidak ditemukan' }}</p>
+                @endif
+            </div>
+
             <!-- Sosial Media -->
             <div class="mt-3 social-media">
                 @if ($user->informasiUser && $user->informasiUser->facebook)
@@ -47,21 +60,9 @@
                     </a>
                 @endif
             </div>
-
+            <div class="button-edit-beranda">
+                <a href="{{ route('editProfile', $user->id) }}">Edit Profil</a>
+                <a href="{{ route('beranda') }}">Beranda</a>
+            </div>
         </div>
-
-    </div>
-    <!-- Alamat, Tanggal Lahir, Nomor Telepon, Jenis Kelamin -->
-    <div class="mt-3 additional-info">
-        @if ($user->informasiUser)
-            <p><strong>Alamat:</strong> {{ $user->informasiUser->alamat ?? 'Data tidak ditemukan' }}</p>
-            <p><strong>Tanggal Lahir:</strong> {{ $user->informasiUser->tanggal_lahir ?? 'Data tidak ditemukan' }}</p>
-            <p><strong>Nomor Telepon:</strong> {{ $user->informasiUser->nomor_telepon ?? 'Data tidak ditemukan' }}</p>
-            <p><strong>Jenis Kelamin:</strong> {{ $user->informasiUser->jenis_kelamin ?? 'Data tidak ditemukan' }}</p>
-        @endif
-    </div>
-    <div class="button-edit-beranda">
-        <a href="{{ route('editProfile', $user->id) }}">Edit Profil</a>
-        <a href="{{ route('beranda') }}">Beranda</a>
-    </div>
 </x-layout>

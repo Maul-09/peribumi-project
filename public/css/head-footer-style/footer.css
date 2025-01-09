@@ -17,7 +17,7 @@ footer hr {
 .title-foot {
     padding: 1.3em 2.5em;
     display: flex;
-    justify-content: space-between
+    justify-content: center;
 }
 
 .title-foot-utama{
@@ -25,17 +25,19 @@ footer hr {
 }
 
 .title-foot-utama img {
-    width: 5.63em;
+    width: 7.5em;
 }
 
-.title-foot-utama h2 {
+.title-foot-moto h2 {
     color: #fff;
     font-size: 1.25em;
 }
 
 .title-foot-moto p{
-    color: #fff;
-    font-size: 1em;
+    color: var(--skin-color-4);
+    font-size: 0.6em;
+    line-height: 0;
+    letter-spacing: 1.2px;
 }
 
 .con {
@@ -139,19 +141,21 @@ footer hr {
         font-size: 0.85em;
     }
 
-    .title-foot img {
-        width: 4.5em;
-    }
-
-    .title-foot {
+    .title-foot-utama{
         display: flex;
-        align-items: center;
-        padding: 1.3em 0em;
-        margin: 0 3em;
     }
 
-    .title-foot h2 {
-        font-size: 1.15em;
+    .title-foot-utama img {
+        width: 6.5em;
+    }
+
+    .title-foot-moto h2 {
+        font-size: 1.1em;
+    }
+
+    .title-foot-moto p{
+        font-size: 0.55em;
+        letter-spacing: 1px;
     }
 
     .about-foot {
@@ -192,19 +196,22 @@ footer hr {
         font-size: 0.9em;
     }
 
-    .title-foot{
+    .title-foot-utama{
         display: flex;
-        align-items: center;
-        gap: 0.4em;
-        padding: 1.3em;
-        justify-content: center;
-    }
-    .title-foot img{
-        width: 4em;
     }
 
-    .title-foot h2{
+    .title-foot-utama img {
+        width: 5.5em;
+    }
+
+    .title-foot-moto h2 {
+        color: #fff;
         font-size: 1em;
+    }
+
+    .title-foot-moto p{
+        font-size: 0.5em;
+        letter-spacing: 0.9px;
     }
 
     .produk-foot{
@@ -273,19 +280,22 @@ footer hr {
         font-size: 1em;
     }
 
-    .title-foot{
+    .title-foot-utama{
         display: flex;
-        align-items: center;
-        gap: 0.4em;
-        padding: 1.3em;
-        justify-content: center;
-    }
-    .title-foot img{
-        width: 3em;
     }
 
-    .title-foot h2{
+    .title-foot-utama img {
+        width: 5em;
+    }
+
+    .title-foot-moto h2 {
+        color: #fff;
         font-size: 1em;
+    }
+
+    .title-foot-moto p{
+        font-size: 0.5em;
+        letter-spacing: 0.9px;
     }
 
     .produk-foot{
@@ -354,19 +364,22 @@ footer hr {
         font-size: 0.85em;
     }
 
-    .title-foot{
+    .title-foot-utama{
         display: flex;
-        align-items: center;
-        gap: 0.4em;
-        padding: 1.3em;
-        justify-content: center;
-    }
-    .title-foot img{
-        width: 3em;
     }
 
-    .title-foot h2{
-        font-size: 1em;
+    .title-foot-utama img {
+        width: 4.5em;
+    }
+
+    .title-foot-moto h2 {
+        color: #fff;
+        font-size: 0.9em;
+    }
+
+    .title-foot-moto p{
+        font-size: 0.44em;
+        letter-spacing: 0.9px;
     }
 
     .produk-foot{

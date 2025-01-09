@@ -80,8 +80,7 @@
 
     <section class="grid-css">
         <div class="title-grid">
-            <h2>Gallery</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            <h2>Dokumentasi Kerja</h2>
         </div>
         <div class="image-grid">
             <div class="item1"></div>
