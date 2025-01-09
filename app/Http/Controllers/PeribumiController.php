@@ -32,7 +32,7 @@ class PeribumiController extends Controller
 
     public function personal()
     {
-        $kat = ['Pembinaan (Coaching)', 'Penyuluhan (Counseling)', 'Pembentukan (Building)'];
+        $kat = ['Pembinaan (Coaching)', 'Penyuluhan (Counseling)', 'Pembangunan (Building)'];
 
         session(['kategori' => $kat, 'route' => 'personal']);
 

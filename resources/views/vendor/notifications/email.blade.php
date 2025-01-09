@@ -61,18 +61,8 @@
         <div class="email-footer" style="text-align: center;
         font-size: 12px;
         color: #777;">
-            <p>PT Peribumi Cahaya Nusa | Jl. Contoh No. 123, Jakarta</p>
+            <p>PT Peribumi Cahaya Nusa | Jl. H. Basuki No. 6, Binong  Jati, Batununggal, Bandung</p>
             <p>© 2024 Semua Hak Dilindungi.</p>
-            <p>
-                <a href="https://konsultanqta.com" style="color: #4CAF50;
-        text-decoration: none;"
-                    onmouseover="this.style.textDecoration='underline'"
-                    onmouseout="this.style.textDecoration='none'">Kunjungi Website Kami</a> |
-                <a href="mailto:peribumi.pro@gmail.com" style="color: #4CAF50;
-        text-decoration: none;"
-                    onmouseover="this.style.textDecoration='underline'"
-                    onmouseout="this.style.textDecoration='none'">Hubungi Kami</a>
-            </p>
         </div>
     </div>
 </body>
