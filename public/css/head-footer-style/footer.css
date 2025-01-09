@@ -61,6 +61,7 @@ footer hr {
 .produk-foot {
     width: 100%;
     max-width: 12em;
+    line-height: 1.8em;
 }
 
 .produk-foot ul {
@@ -98,14 +99,16 @@ footer hr {
     max-width: 31.25em;
     display: flex;
     flex-direction: column;
+    line-height: 1.8em;
 }
 
 .media-foot .media-social {
     display: flex;
     gap: 0.63em;
     text-decoration: none;
-    color: #fff;;
+    color: #fff;
     margin-bottom: 0.63em;
+    align-items: center;
 }
 
 .media-foot .media-social i{
@@ -160,14 +163,23 @@ footer hr {
 
     .about-foot {
         padding: 0.2em;
+        max-width: 33%;
     }
 
     .about-foot p {
         font-size: 0.75em;
     }
 
+    .produk-foot{
+        line-height: 1.5em;
+    }
+
     .produk-foot ul li a {
         font-size: 0.75em;
+    }
+
+    .media-foot{
+        line-height: 1.5em;
     }
 
     .media-foot .media-social i {
@@ -385,18 +397,21 @@ footer hr {
     .produk-foot{
         text-align: end;
         max-width: 10em;
+        line-height: 1.5em;
     }
 
     .media-foot{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        line-height: 1.5em;
     }
 
     .produk-foot ul li a:hover,
     .produk-foot ul li a {
         font-size: 0.75em;
     }
+
 
     .media-foot .media-social i{
         font-size: 1.3em;
@@ -423,7 +438,7 @@ footer hr {
     }
     .about-foot{
         display: flex;
-        max-width: 88%;
+        max-width: 95%;
         justify-content: center;
         flex-direction: column;
         align-items: center;

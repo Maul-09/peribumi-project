@@ -1,29 +1,24 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
-    background-color: #f4f7fa; /* Background lebih soft dan elegan */
-    font-family: 'Arial', sans-serif; /* Font yang lebih modern */
+    padding: 0;
+    background-color: #f4f7fa;
+    font-family: 'Arial', sans-serif;
 }
 
 .profile-layout {
     display: flex;
     align-items: center;
-    gap: 40px;
     padding: 40px;
     background-color: #fff;
-    border-radius: 15px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
     width: 100%;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    justify-content: space-around;
 }
 
 .profile-layout:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 .profile-photo-wrapper {
@@ -62,13 +57,11 @@ body {
     text-transform: uppercase;
 }
 
+
 .profile-info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: fit-content;
-    flex-grow: 1;
-    padding-right: 20px;
 }
 
 .profile-name {
@@ -96,13 +89,11 @@ body {
 
 .separator {
     font-size: 1.6rem;
-    color: #bbb;
+    color: #898383;
     border-left: 2px solid #ccc; /* Garis vertikal */
     height: 20px; /* Menyesuaikan tinggi garis */
     margin: 0 0.75em; /* Memberikan ruang di kiri dan kanan garis */
 }
-
-
 
 .social-media {
     margin-top: 20px;
@@ -124,26 +115,23 @@ body {
     text-decoration: none;
 }
 
-.social-media a:hover {
-    background-color: #0056b3;
-    transform: translateY(-4px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-}
-
 .social-media a i {
     display: flex;
     font-size: 1.3rem;
 }
 
 .additional-info {
-    margin-bottom: 1.1em;
+    padding-left: 12em;
 }
 
-.additional-info .title-profile {
+.additional-info .title-profile{
+    margin: 1.5em 0;
+}
+
+.additional-info .des-profile {
     display: flex;
-    font-size: 16px;
-    margin: 8px 0;
-    justify-content: space-around;
+    font-size: 1.1em;
+    margin: 0.5em 0;
 }
 
 .additional-info span {
@@ -151,20 +139,25 @@ body {
     font-weight: bold;
 }
 
-/* Gaya untuk tombol edit profil dan beranda */
 .button-edit-beranda {
     display: flex;
-    gap: 15px;
-    margin-top: 20px;
+    gap: 1em;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.social-media a:hover {
+    background-color: #0056b3;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 .button-edit-beranda a {
-    padding: 10px 20px;
+    padding: 1em;
     background-color: #4CAF50;
-    color: white;
+    color: #fff;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 50%;
     transition: background-color 0.3s ease;
 }
 
@@ -178,4 +171,344 @@ body {
 
 .button-edit-beranda a:last-child:hover {
     background-color: #0b7dda;
+}
+
+.profile-layout-info {
+    display: flex;
+    height: 65vh;
+    padding: 40px;
+    background-color: #fff;
+    width: 100%;
+}
+
+.profile-info-user{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+    flex-grow: 1;
+    padding-right: 20px;
+}
+
+
+@media only screen and (max-width: 1280px) and (min-width: 1024px){
+    .profile-layout {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .profile-photo-wrapper {
+        position: relative;
+        width: 160px;
+        height: 160px;
+    }
+
+    .profile-photo-wrapper:hover {
+        transform: scale(1.05);
+    }
+
+    .profile-photo-wrapper img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .photo-placeholder {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+
+    .profile-name {
+        font-size: 1.8rem;
+        margin-bottom: 0.3em;
+    }
+
+    .user-info {
+        display: flex;
+        justify-content: flex-start;
+        width: 320px;
+        margin: 0.75em 0 1.5em;
+    }
+
+    .user-info h6 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    .separator {
+        border-left: 3px solid #ccc;
+        margin: 0 0.5em;
+    }
+
+    .social-media {
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+    }
+
+    .social-media a {
+        display: flex;
+        padding: 0.75em 1em;
+        font-size: 1rem;
+    }
+
+    .social-media a i {
+        display: flex;
+        font-size: 1.3rem;
+    }
+
+    .additional-info {
+        padding-left: 10em;
+    }
+
+    .additional-info .title-profile{
+        margin: 1.25em 0;
+    }
+
+    .additional-info .des-profile {
+        display: flex;
+        font-size: 1.1em;
+        margin: 0.5em 0;
+    }
+
+    .additional-info span {
+        color: #333;
+    }
+
+    .button-edit-beranda {
+        display: flex;
+        gap: 1em;
+    }
+
+    .button-edit-beranda a {
+        padding: 1em;
+        color: #fff;
+    }
+
+    .profile-layout-info {
+        display: flex;
+        width: 100%;
+    }
+
+    .profile-info-user{
+        display: flex;
+        padding-right: 20px;
+    }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+    .profile-layout {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .profile-photo-wrapper {
+        position: relative;
+        width: 160px;
+        height: 160px;
+    }
+
+    .profile-photo-wrapper:hover {
+        transform: scale(1.05);
+    }
+
+    .profile-photo-wrapper img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .photo-placeholder {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+
+    .profile-name {
+        font-size: 1.8rem;
+        margin-bottom: 0.3em;
+    }
+
+    .user-info {
+        display: flex;
+        justify-content: flex-start;
+        width: 320px;
+        margin: 0.75em 0 1.5em;
+    }
+
+    .user-info h6 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    .separator {
+        border-left: 3px solid #ccc;
+        margin: 0 0.5em;
+    }
+
+    .social-media {
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+    }
+
+    .social-media a {
+        display: flex;
+        padding: 0.75em 1em;
+        font-size: 1rem;
+    }
+
+    .social-media a i {
+        display: flex;
+        font-size: 1.3rem;
+    }
+
+    .additional-info {
+        padding-left: 3em;
+    }
+
+    .additional-info .title-profile{
+        margin: 1.25em 0;
+    }
+
+    .additional-info .des-profile {
+        display: flex;
+        font-size: 1.1em;
+        margin: 0.5em 0;
+    }
+
+    .additional-info span {
+        color: #333;
+    }
+
+    .button-edit-beranda {
+        display: flex;
+        gap: 1em;
+    }
+
+    .button-edit-beranda a {
+        padding: 1em;
+        color: #fff;
+    }
+
+    .profile-layout-info {
+        display: flex;
+        height:80vh;
+    }
+
+    .profile-info-user{
+        display: flex;
+        padding-right: 20px;
+    }
+}
+@media only screen and (max-width: 768px) and (min-width: 480px){
+    .profile-layout {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .additional-info {
+        padding-left: 2em;
+    }
+
+    .profile-layout-info {
+        display: flex;
+        height:75vh;
+    }
+}
+@media only screen and (max-width: 480px){
+    .profile-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5em;
+        margin: 0 0 0.5em 0;
+    }
+
+    .profile-photo-wrapper:hover {
+        transform: none;
+    }
+
+    .profile-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-name {
+        font-size: 1.8rem;
+        margin-bottom: 0.3em;
+    }
+
+    .user-info {
+        display: flex;
+        justify-content: center;
+        margin: 0.75em 0 1.5em;
+    }
+
+    .user-info h6 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    .separator {
+        border-left: 3px solid #ccc;
+        margin: 0 0.5em;
+    }
+
+    .social-media {
+        display: flex;
+        gap: 5px;
+    }
+
+    .social-media a {
+        display: flex;
+        padding: 1.25em 1.4em;
+        font-size: 0.75rem;
+    }
+
+    .social-media a i {
+        display: flex;
+        font-size: 1.3rem;
+    }
+
+    .additional-info {
+        padding-left: 0;
+    }
+
+    .additional-info .title-profile{
+        margin: 1.25em 0;
+    }
+
+    .additional-info .des-profile {
+        display: flex;
+        font-size: 1.1em;
+        margin: 0.5em 0;
+    }
+
+    .additional-info span {
+        color: #333;
+    }
+
+    .button-edit-beranda {
+        display: flex;
+        gap: 1.2em;
+        flex-direction: row;
+    }
+
+    .button-edit-beranda a {
+        padding: 1em;
+        color: #fff;
+    }
+
+    .profile-layout-info {
+        display: flex;
+        width: 100%;
+        height:50vh;
+    }
+
+    .profile-info-user{
+        display: flex;
+        padding-right: 20px;
+    }
 }

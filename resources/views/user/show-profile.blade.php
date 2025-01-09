@@ -26,20 +26,6 @@
                 <span class="separator mx-2"></span>
                 <h6>{{ $user->username }}</h6>
             </div>
-
-            <div class="mt-3 additional-info">
-                @if ($user->informasiUser)
-                    <p class="title-profile">Alamat<span>:</span></p>
-                    <p>{{ $user->informasiUser->alamat ?? 'Data tidak ditemukan' }}</p>
-                    <p class="title-profile">Tanggal Lahir<span>:</span></p>
-                    <p>{{ $user->informasiUser->tanggal_lahir ?? 'Data tidak ditemukan' }}</p>
-                    <p class="title-profile">Nomor Telepon<span>:</span></p>
-                    <p>{{ $user->informasiUser->nomor_telepon ?? 'Data tidak ditemukan' }}</p>
-                    <p class="title-profile">Jenis Kelamin<span>:</span></p>
-                    <p>{{ $user->informasiUser->jenis_kelamin ?? 'Data tidak ditemukan' }}</p>
-                @endif
-            </div>
-
             <!-- Sosial Media -->
             <div class="mt-3 social-media">
                 @if ($user->informasiUser && $user->informasiUser->facebook)
@@ -60,9 +46,35 @@
                     </a>
                 @endif
             </div>
-            <div class="button-edit-beranda">
-                <a href="{{ route('editProfile', $user->id) }}">Edit Profil</a>
-                <a href="{{ route('beranda') }}">Beranda</a>
+        </div>
+        <div class="button-edit-beranda">
+            <a href="{{ route('editProfile', $user->id) }}"><i class="fas fa-edit"></i></a>
+            <a href="{{ route('beranda') }}"><i class="fas fa-home"></i></a>
+        </div>
+    </div>
+
+    <div class="profile-layout-info">
+        <div class="profile-info-user">
+            <div class="mt-3 additional-info">
+                @if ($user->informasiUser)
+                    <div class="title-profile">
+                        <p class="des-profile">Alamat<span>:</span></p>
+                        <p>{{ $user->informasiUser->alamat ?? 'Data tidak ditemukan' }}</p>
+                    </div>
+                        <div class="title-profile">
+                        <p class="des-profile">Tanggal Lahir<span>:</span></p>
+                        <p>{{ $user->informasiUser->tanggal_lahir ?? 'Data tidak ditemukan' }}</p>
+                    </div>
+                    <div class="title-profile">
+                        <p class="des-profile">Nomor Telepon<span>:</span></p>
+                        <p>{{ $user->informasiUser->nomor_telepon ?? 'Data tidak ditemukan' }}</p>
+                    </div>
+                    <div class="title-profile">
+                        <p class="des-profile">Jenis Kelamin<span>:</span></p>
+                        <p>{{ $user->informasiUser->jenis_kelamin ?? 'Data tidak ditemukan' }}</p>
+                    </div>
+                @endif
             </div>
         </div>
+    </div>
 </x-layout>
