@@ -119,7 +119,7 @@ class AdminController extends Controller
 
     public function personalAdmin()
     {
-        $kat = ['Pembinaan (Coaching)', 'Penyuluhan (Counseling)', 'Pembentukan (Building)'];
+        $kat = ['Pembinaan (Coaching)', 'Penyuluhan (Counseling)', 'Pembangunan (Building)'];
 
         session(['kategori' => $kat, 'route' => 'personal.admin', 'formNumber' => '1']);
 
