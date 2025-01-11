@@ -10,11 +10,10 @@
     </div>
     <div class="con">
         <div class="about-foot">
-            <h3>Tentang kami</h3>
-            <p>
-                Dengan prinsip QTA, “Peri Bumi” hadir untuk mendukung klien dalam mencapai tujuan mereka melalui
-                pendekatan intensif yang terorientasi pada hasil. "Peri Bumi" siap membantu anda dalam menghadapi tantangan
-                dengan cara yang inovatif, ramah, dan penuh dedikasi.
+            <h3>Komitmen Kami</h3>
+            <p>“Peri Bumi” turut pula berkomitmen untuk membantu memfasilitasi langkah percepatan dalam rangka pembangunan dan
+                pengembangan organisasi bisnis termasuk didalamnya penguatan kompetensi serta peningkatan kapasitas
+                individu dan lembaga itu sendiri yang tentunya perlu untuk mendapatkan perhatian tersendiri.
             </p>
         </div>
 
@@ -44,7 +43,7 @@
                 <i class="fa-brands fa-google"></i><span class="title-sosmed">peribumi.pro</span>
             </a>
         </div>
-            <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.552314793147!2d107.63835597454126!3d-6.9439825679770895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e9005c05bbd9%3A0x76b165d2404cf6af!2sPT.%20Peribumi%20Cahaya%20Nusa!5e0!3m2!1sen!2sid!4v1735016274060!5m2!1sen!2sid" width="300" height="160" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.552314793147!2d107.63835597454126!3d-6.9439825679770895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e9005c05bbd9%3A0x76b165d2404cf6af!2sPT.%20Peribumi%20Cahaya%20Nusa!5e0!3m2!1sen!2sid!4v1735016274060!5m2!1sen!2sid" width="300" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <hr>
     <div class="tm">
