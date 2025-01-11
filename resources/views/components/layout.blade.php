@@ -12,9 +12,13 @@
     <link rel="stylesheet" href="{{ asset('css/head-footer-style/style-nav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin-style/style-card-product.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user-style/style-modalkonfirmasi.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Peribumi Consultant - Wellcome</title>
     <title>{{ $name }}</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8681639826710276"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -22,7 +26,7 @@
     @if ($ShowNavbar)
         <x-nav-bar></x-nav-bar>
     @endif
-        {{ $slot }}
+    {{ $slot }}
     @if ($ShowFooter)
         <x-footer></x-footer>
     @endif
