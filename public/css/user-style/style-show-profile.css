@@ -16,11 +16,6 @@ body {
     justify-content: space-around;
 }
 
-.profile-layout:hover {
-    transform: scale(1.01);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-}
-
 .profile-photo-wrapper {
     position: relative;
     width: 160px;
@@ -30,11 +25,6 @@ body {
     flex-shrink: 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.profile-photo-wrapper:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
 }
 
 .profile-photo-wrapper img {
@@ -121,22 +111,38 @@ body {
 }
 
 .additional-info {
-    padding-left: 12em;
-}
-
-.additional-info .title-profile{
-    margin: 1.5em 0;
-}
-
-.additional-info .des-profile {
     display: flex;
-    font-size: 1.1em;
-    margin: 0.5em 0;
+    justify-content: space-around;
 }
 
-.additional-info span {
+.title-profile {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.des-profile {
+    font-weight: 600;
     color: #333;
-    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.title-profile p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+.title-profile span {
+    font-weight: 400;
+    color: #007bff;
+    margin-left: 5px;
+}
+
+.title-profile p:last-child {
+    font-style: italic;
+    color: #999;
 }
 
 .button-edit-beranda {
@@ -203,10 +209,6 @@ body {
         height: 160px;
     }
 
-    .profile-photo-wrapper:hover {
-        transform: scale(1.05);
-    }
-
     .profile-photo-wrapper img {
         width: 100%;
         height: 100%;
@@ -259,7 +261,8 @@ body {
     }
 
     .additional-info {
-        padding-left: 10em;
+        display: flex;
+        justify-content: space-evenly;
     }
 
     .additional-info .title-profile{
@@ -308,10 +311,6 @@ body {
         height: 160px;
     }
 
-    .profile-photo-wrapper:hover {
-        transform: scale(1.05);
-    }
-
     .profile-photo-wrapper img {
         width: 100%;
         height: 100%;
@@ -363,10 +362,6 @@ body {
         font-size: 1.3rem;
     }
 
-    .additional-info {
-        padding-left: 3em;
-    }
-
     .additional-info .title-profile{
         margin: 1.25em 0;
     }
@@ -408,7 +403,8 @@ body {
     }
 
     .additional-info {
-        padding-left: 2em;
+        display: flex;
+        justify-content: space-between;
     }
 
     .profile-layout-info {
@@ -422,10 +418,6 @@ body {
         flex-direction: column;
         gap: 2.5em;
         margin: 0 0 0.5em 0;
-    }
-
-    .profile-photo-wrapper:hover {
-        transform: none;
     }
 
     .profile-info{
@@ -473,7 +465,8 @@ body {
     }
 
     .additional-info {
-        padding-left: 0;
+        display: flex;
+        flex-direction: column;
     }
 
     .additional-info .title-profile{
