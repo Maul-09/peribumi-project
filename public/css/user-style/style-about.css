@@ -56,15 +56,15 @@ section {
 .banner .textBx h2 {
     font-size: 2em;
     color: #fff;
+    margin-bottom: 0.6em;
     font-weight: 700;
-    line-height: 2em;
+    line-height: 1.5em;
 }
 
 .banner .textBx p {
-    font-size: 1em;
     color: #fff;
     text-align: justify;
-    max-width: 70%;
+    max-width: 80%;
 }
 
 .grid-css,
@@ -303,17 +303,17 @@ section {
 
 @media only screen and (max-width: 1280px) and (min-width: 1024px){
     section {
-        padding: 3em 8em;
+        padding: 6em 10em;
     }
 
     .banner {
         position: relative;
-        min-height: 85vh;
+        min-height: 100vh;
     }
 
     .banner .textBx h2 {
         font-size: 1.8em;
-        line-height: 2em;
+        margin-bottom: 0.5em;
     }
 
     .banner .textBx p {
@@ -322,7 +322,7 @@ section {
 
     .grid-css,
     .history{
-        padding: 2.5em 6.5em;
+        padding: 5em 8em;
     }
 
     .nilai-utama h3{
@@ -390,22 +390,23 @@ section {
 
     .banner {
         position: relative;
-        min-height: 60vh;
+        min-height: 56vh;
     }
 
     .banner .textBx h2 {
         font-size: 1.5em;
-        line-height: 2.5em;
+        margin-bottom: 0.35em;
+        line-height: 1.5em;
     }
 
     .banner .textBx p {
+        font-size: 1em;
         max-width: 100%;
-        font-size: 0.85em;
     }
 
     .grid-css,
     .history{
-        padding: 2em 4em;
+        padding: 4em 2em;
     }
 
     .nilai-utama h3{
@@ -502,16 +503,15 @@ section {
 
     .banner {
         position: relative;
-        min-height: 70vh;
+        min-height: 75vh;
     }
 
     .banner .textBx h2 {
-        font-size: 1.35em;
-        line-height: 2.5em;
+        font-size: 1.7em;
     }
 
     .banner .textBx p {
-        max-width: 100%;
+        font-size: 1em;
     }
 
     .nilai-utama h3{
@@ -578,7 +578,7 @@ section {
 
 @media only screen and (max-width: 480px){
     section{
-        padding: 3.5em;
+        padding: 1em 1.5em;
     }
 
     .grid-css,
@@ -588,17 +588,17 @@ section {
 
     .banner {
         position: relative;
-        min-height: 70vh;
+        min-height: 80vh;
     }
 
     .banner .textBx h2 {
         font-size: 1.2em;
-        line-height: 2.5em;
+        line-height: 1.5em;
     }
 
     .banner .textBx p {
         max-width: 100%;
-        font-size: 0.7em;
+        font-size: 0.8em;
     }
 
     .nilai-utama h3{
@@ -607,7 +607,8 @@ section {
     }
 
     .nilai-utama p{
-        font-size: 1.35rem;
+        font-size: 1.25rem;
+        font-weight: 700;
     }
 
     .content-histori {

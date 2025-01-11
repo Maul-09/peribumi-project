@@ -57,16 +57,15 @@ section {
 .banner .textBx h2 {
     font-size: 2em;
     color: #fff;
+    margin-bottom: 0.6em;
     font-weight: 700;
     line-height: 1.5em;
-    z-index:-2;
 }
 
 .banner .textBx p {
     color: #fff;
     text-align: justify;
-    max-width: 700px;
-    z-index:-1; /* Batasi lebar paragraf */
+    max-width: 80%;
 }
 
 section.product-personal {
@@ -98,7 +97,7 @@ section.product-personal {
 
     .banner .textBx h2 {
         font-size: 1.8em;
-        margin-bottom: 0.45em;
+        margin-bottom: 0.5em;
     }
 
     .banner .textBx p {
@@ -119,7 +118,7 @@ section.product-personal {
 
     .banner {
         position: relative;
-        min-height: 100vh;
+        min-height: 55vh;
     }
 
     .banner .textBx h2 {
@@ -141,20 +140,20 @@ section.product-personal {
 
 @media only screen and (max-width: 768px) and (min-width: 480px){
     section {
-        padding: 4em;
+        padding: 3em;
     }
 
     .banner {
         position: relative;
-        min-height: 100vh;
+        min-height: 40vh;
     }
 
     .banner .textBx h2 {
-        font-size: 1.5em;
+        font-size: 1.7em;
     }
 
     .banner .textBx p {
-        font-size: 0.8em;
+        font-size: 1em;
     }
 
     .title-produk h3 {
@@ -165,24 +164,31 @@ section.product-personal {
 
 @media only screen and (max-width: 480px){
     section{
-        padding: 2.5em;
+        padding: 1.5em;
+    }
+
+    .banner{
+        min-height: 45vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../image/bg-4.jpg);
+        background-size: cover;
     }
 
     .banner .textBx h2 {
-        font-size: 28px;
+        font-size: 1.15em;
 
     }
 
     .banner .textBx p {
-        font-size: 16px;
+        font-size: 0.9em;
     }
 
     .banner .textBx p {
-        font-size: 12px;
+        font-size: 0.8em;
+        max-width: 100%;
     }
 
     .title-produk h3 {
         color: var(--skin-color-1);
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 }

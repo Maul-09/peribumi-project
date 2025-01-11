@@ -328,8 +328,7 @@ input:not(:placeholder-shown) {
 
     .login {
         left: 5%;
-        top: 48%;
-        width: 16em;
+        max-width: 16em;
     }
 
     .bg-login img {
