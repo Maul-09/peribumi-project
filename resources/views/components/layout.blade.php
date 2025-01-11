@@ -17,6 +17,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Peribumi Consultant - Wellcome</title>
     <title>{{ $name }}</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8681639826710276"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -35,8 +37,6 @@
     <script src="{{ asset('js/modalkonfirmasi.js') }}"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/js/jquery.mousewheel.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8681639826710276"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>
