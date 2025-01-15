@@ -22,6 +22,8 @@
 </head>
 
 <body>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-8681639826710276">
+    </amp-auto-ads>
     @props(['ShowNavbar' => true, 'ShowFooter' => true])
     @if ($ShowNavbar)
         <x-nav-bar></x-nav-bar>
