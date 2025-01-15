@@ -57,8 +57,7 @@ section{
 }
 
 .banner .txtBx {
-    margin-left: 9.38em;
-    margin-right: 9.38em;
+    margin: 0 9.38em;
     z-index: -1;
 }
 
@@ -719,12 +718,12 @@ section{
 
     .banner {
         position: relative;
-        min-height: 85vh;
+        min-height: 100vh;
     }
 
     .banner .textBx h2 {
         font-size: 1.8em;
-        margin-bottom: 0.45em;
+        margin-bottom: 0.5em;
     }
 
     .banner .textBx p {
@@ -821,12 +820,12 @@ section{
     section,
     .mitpro,
     .about{
-        padding: 3em 4em;
+        padding: 0 4em 4em;;
     }
 
     .banner {
         position: relative;
-        min-height: 60vh;
+        min-height: 70vh;
     }
 
     .banner .textBx h2 {
@@ -940,15 +939,14 @@ section{
 @media only screen and (max-width: 768px) and (min-width: 480px){
     .banner {
         min-height: 60vh;
-
     }
 
     .banner .textBx h2 {
-        font-size: 1.5em;
+        font-size: 1.7em;
     }
 
     .banner .textBx p {
-        font-size: 0.8em;
+        font-size: 1em;
     }
 
     .mitpro,
@@ -1103,26 +1101,24 @@ section{
 
 @media only screen and (max-width: 480px) {
 
-    section {
-        padding: 2.5em;
+    
+
+    section{
+        padding: 0 1em 2.5em;
     }
 
     .banner {
-        height: 60vh;
+        min-height: 60vh;
 
     }
 
     .banner .textBx h2 {
-        font-size: 28px;
+        font-size: 1.2em;
 
     }
 
     .banner .textBx p {
-        font-size: 16px;
-    }
-
-    section{
-        padding: 1.5em 0.5em;
+        font-size: 0.75em;
     }
 
 
@@ -1273,16 +1269,7 @@ section{
         opacity: 0;
         transform: translateY(5px);
     }
-    .banner{
-        min-height:80vh;
-    }
-    .banner .textBx h2 {
-        font-size: 1.5em;
-    }
 
-    .banner .textBx p {
-        font-size: 0.8em;
-    }
     .tim-peribumi{
         justify-content: center;
     }
