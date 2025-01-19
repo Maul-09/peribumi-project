@@ -110,7 +110,7 @@ class AdminController extends Controller
 
     public function digitalAdmin()
     {
-        $kat = ['Barang Digital', 'Jasa Digital', 'Kecerdasan Buatan (Artificial Intelligence)'];
+        $kat = ['Barang Digital', 'Jasa Digital', 'Keahilan Digital'];
 
         session(['kategori' => $kat, 'route' => 'digital.admin', 'formNumber' => '2']);
 

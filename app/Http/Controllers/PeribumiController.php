@@ -41,7 +41,7 @@ class PeribumiController extends Controller
 
     public function digital()
     {
-        $kat = ['Barang Digital', 'Jasa Digital', 'Kecerdasan Buatan (Artificial Intelligence)'];
+        $kat = ['Barang Digital', 'Jasa Digital', 'Keahilan Digital'];
 
         session(['kategori' => $kat, 'route' => 'digital']);
 
